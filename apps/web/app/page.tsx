@@ -1,7 +1,10 @@
 import Link from "next/link";
 import { ResponsiveAsset, StoryCard } from "@firstscene/ui";
 import { SiteShell } from "../components/SiteShell";
-import { PreviewCollection, PreviewTeaser } from "../components/PreviewCollection";
+import {
+  PreviewCollection,
+  PreviewTeaser,
+} from "../components/PreviewCollection";
 import { stories, storyCard, asset } from "../lib/catalog";
 export default function Home() {
   return (
