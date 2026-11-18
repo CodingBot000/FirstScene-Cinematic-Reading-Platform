@@ -1,0 +1,108 @@
+/**
+ * Landing-only previews. These are original fictional concepts, not published
+ * reading manuscripts. Do not merge them into the canonical 'stories' array:
+ * the reader requires complete scene/beat snapshots.
+ */
+export type PreviewStory = {
+  id: string;
+  title: string;
+  summary: string;
+  palette: "midnight" | "copper" | "mist" | "plum" | "forest" | "coral" | "ocean" | "sand" | "rose" | "teal";
+  symbol: string;
+};
+
+export type PreviewShelf = {
+  id: string;
+  index: string;
+  title: string;
+  description: string;
+  genre: string;
+  stories: readonly PreviewStory[];
+};
+
+export const previewShelves: readonly PreviewShelf[] = [
+  {
+    id: "time",
+    index: "01",
+    title: "다른 시간의 편지",
+    description: "어제와 내일의 경계에서 도착한, 아직 읽지 않은 이야기.",
+    genre: "SF · 시간",
+    stories: [
+      { id: "midnight-restoration", title: "새벽 0시의 복원실", summary: "망가진 하루를 복원하는 가게에, 한 번도 오지 않은 손님의 기억이 도착한다.", palette: "midnight", symbol: "◐" },
+      { id: "borrow-a-season", title: "계절을 빌려드립니다", summary: "겨울을 잠시 빌린 여름의 도시는 예상치 못한 봄을 맞는다.", palette: "copper", symbol: "✳" },
+      { id: "last-satellite", title: "마지막 위성의 편집자", summary: "지구의 마지막 방송을 편집하던 사람이 삭제된 한 문장을 발견한다.", palette: "mist", symbol: "✦" },
+      { id: "gravity-afternoon", title: "중력이 사라진 오후", summary: "마을 사람들이 떠오른 날, 한 소년만이 땅 위에 남아 있었다.", palette: "ocean", symbol: "◌" },
+      { id: "tomorrow-bookshop", title: "내일을 보관하는 서점", summary: "내일의 일기를 미리 살 수 있는 서점에 오늘이 통째로 사라진다.", palette: "plum", symbol: "□" },
+      { id: "blue-moon-commute", title: "파란 달의 출퇴근길", summary: "매일 같은 열차를 타는 두 사람은 서로 다른 연도에서 출발한다.", palette: "teal", symbol: "◒" },
+      { id: "earth-22-weather", title: "22번째 지구의 기상예보", summary: "다른 지구의 날씨를 맞히는 예보관이 처음으로 비를 숨긴다.", palette: "coral", symbol: "☼" },
+    ],
+  },
+  {
+    id: "city",
+    index: "02",
+    title: "도시의 다른 얼굴",
+    description: "익숙한 길모퉁이를 돌면, 지도에 없는 세계가 열린다.",
+    genre: "미스터리 · 도시",
+    stories: [
+      { id: "trainless-platform", title: "지하철이 지나지 않는 역", summary: "매일 막차 방송이 들리지만 이 승강장엔 선로가 없다.", palette: "forest", symbol: "≋" },
+      { id: "lost-alley-map", title: "사라진 골목의 지도", summary: "철거된 골목을 그린 지도에 실종자의 내일이 표시된다.", palette: "sand", symbol: "◇" },
+      { id: "silent-call", title: "무음 통화 기록", summary: "한 달째 같은 번호로 걸려 온 전화는 단 한 번도 울린 적이 없다.", palette: "midnight", symbol: "⊙" },
+      { id: "lost-and-found-night", title: "늦은 밤의 분실물센터", summary: "분실물 선반에 사람들의 잃어버린 결심이 하나씩 놓인다.", palette: "rose", symbol: "⌁" },
+      { id: "thirteenth-window", title: "13층의 없는 창문", summary: "도면에 없는 창문 안에서 아파트의 내일을 보는 주민.", palette: "plum", symbol: "▣" },
+      { id: "rainy-elevator", title: "비 오는 날의 엘리베이터", summary: "비가 내리는 밤에만 버튼이 하나 더 생기는 오래된 건물.", palette: "teal", symbol: "↟" },
+      { id: "outside-the-camera", title: "감시카메라 밖의 사람", summary: "모든 기록에 등장하지만 어떤 화면에도 찍히지 않는 사람.", palette: "copper", symbol: "◎" },
+    ],
+  },
+  {
+    id: "heart",
+    index: "03",
+    title: "작은 마음의 궤도",
+    description: "크게 말하지 않아도 오래 남는, 삶의 작은 순간들.",
+    genre: "드라마 · 로맨스",
+    stories: [
+      { id: "after-summer", title: "여름이 끝난 자리", summary: "마지막 방학이 끝나고도 비워 두었던 옆자리의 주인을 기다린다.", palette: "sand", symbol: "✺" },
+      { id: "forecast-between-us", title: "우리 사이의 일기예보", summary: "날씨 예보를 핑계로 매일 안부를 전하던 두 사람의 긴 장마.", palette: "ocean", symbol: "☂" },
+      { id: "nameless-cafe", title: "이름 없는 카페의 밤", summary: "간판 없는 카페에는 하루에 딱 한 명의 손님만 들어올 수 있다.", palette: "copper", symbol: "◕" },
+      { id: "station-flower-shop", title: "기차역 꽃집", summary: "떠나는 사람에게만 꽃을 팔던 가게에 돌아온 손님이 찾아온다.", palette: "rose", symbol: "✿" },
+      { id: "fading-voice", title: "천천히 사라지는 목소리", summary: "오래된 음성 메시지를 지우지 못한 사람이 들은 마지막 한마디.", palette: "mist", symbol: "〰" },
+      { id: "again-by-chance", title: "만약 다시 우연이라면", summary: "매년 같은 날짜에 우연히 마주치는 두 사람의 일곱 번째 봄.", palette: "coral", symbol: "∞" },
+      { id: "umbrella-for-the-sea", title: "바다를 기다리는 우산", summary: "바다를 본 적 없는 우산을 들고 먼 길을 떠나는 할머니와 손녀.", palette: "teal", symbol: "◓" },
+    ],
+  },
+  {
+    id: "fantasy",
+    index: "04",
+    title: "기억 밖의 세계",
+    description: "잠시 눈을 감으면 보이는, 현실 너머의 풍경.",
+    genre: "판타지 · 모험",
+    stories: [
+      { id: "paper-kingdom", title: "종이로 접은 왕국", summary: "도서관에서 접은 종이배가 물에 닿자 왕국의 문이 열린다.", palette: "copper", symbol: "△" },
+      { id: "moonlight-tailor", title: "달빛 수선소", summary: "낡은 꿈을 수선해 주는 재봉사가 자신의 찢어진 밤을 발견한다.", palette: "plum", symbol: "✴" },
+      { id: "cloud-library", title: "구름 도서관의 사서", summary: "비가 오기 전에 책을 돌려줘야 하는 하늘 위 도서관.", palette: "mist", symbol: "☁" },
+      { id: "speaking-forest", title: "숲이 말을 거는 날", summary: "오래된 숲이 처음 말을 건넨 상대는 길을 잃은 우체부였다.", palette: "forest", symbol: "❋" },
+      { id: "star-gardener", title: "별을 심는 정원사", summary: "매일 밤 사라지는 별을 땅에 심어 되살리는 작은 정원.", palette: "midnight", symbol: "✶" },
+      { id: "black-lake-promise", title: "검은 호수의 약속", summary: "물에 비친 미래를 본 사람은 반드시 하나를 포기해야 한다.", palette: "ocean", symbol: "◈" },
+      { id: "harvest-of-secrets", title: "비밀을 거두는 수확제", summary: "마을의 비밀이 열매로 맺히는 날, 아이가 빈 나무를 발견한다.", palette: "sand", symbol: "✢" },
+    ],
+  },
+  {
+    id: "after-dark",
+    index: "05",
+    title: "잠들지 않는 장면",
+    description: "이야기의 마지막 페이지에서도 꺼지지 않는 불빛.",
+    genre: "스릴러 · 기묘함",
+    stories: [
+      { id: "room-with-lights-on", title: "불이 꺼지지 않는 방", summary: "정전된 도시에서 혼자 불이 켜져 있는 방의 주민은 오래전에 떠났다.", palette: "midnight", symbol: "◉" },
+      { id: "last-audience", title: "마지막 관객", summary: "폐관한 극장에 매주 한 장씩 도착하는 다음 상영의 표.", palette: "rose", symbol: "▤" },
+      { id: "three-am-footsteps", title: "새벽 세 시의 발자국", summary: "새벽마다 복도에 남는 젖은 발자국은 늘 벽 앞에서 멈춘다.", palette: "teal", symbol: "⋮" },
+      { id: "empty-festival", title: "아무도 없는 축제", summary: "사람이 모두 떠난 광장에서 혼자 시작된 축제의 안내 방송.", palette: "coral", symbol: "✧" },
+      { id: "borrowed-voice", title: "목소리를 빌려간 아이", summary: "낯선 아이가 목소리를 돌려주겠다며 열쇠를 하나 건넨다.", palette: "forest", symbol: "◍" },
+      { id: "after-you-returned", title: "당신이 돌아온 뒤", summary: "모두가 반긴 귀환. 그런데 집 안의 물건만은 그를 알아보지 못한다.", palette: "plum", symbol: "⊚" },
+    ],
+  },
+];
+
+export const previewCount = previewShelves.reduce(
+  (total, shelf) => total + shelf.stories.length,
+  0,
+);
