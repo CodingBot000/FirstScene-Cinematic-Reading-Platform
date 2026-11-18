@@ -140,8 +140,8 @@ const specs = [
     "vitest",
   ],
   ["database", ["test:db"], "evidence/database/test-results.json", "vitest"],
-  ["api", ["test:api"], "evidence/api/test-results.json", "playwright"],
   ["production-build", ["build"]],
+  ["api", ["test:api"], "evidence/api/test-results.json", "playwright"],
   ["storybook", ["storybook:build"]],
   [
     "chromium",

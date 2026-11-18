@@ -58,6 +58,31 @@ const smoke = read("evidence/container/smoke.json");
 const security = read("evidence/security/current/result.json");
 const db = read("evidence/database/test-results.json");
 const api = read("evidence/api/environment.json");
+const perf = read("evidence/performance/current/result.json");
+const navigation = read("evidence/performance/current/navigation.json");
+const perfBrowser = read("evidence/performance/current/browser-results.json");
+const performanceCodes = new Set([
+  "LIGHTHOUSE_PROCESS_FAILED",
+  "LIGHTHOUSE_CDP_NOT_LOOPBACK",
+  "LIGHTHOUSE_RUNTIME_ERROR",
+  "LIGHTHOUSE_METRIC_MISSING",
+  "PERFORMANCE_COLLECTION_ERROR",
+  "PERF_SERVER_EXITED",
+  "PERF_SERVER_NOT_READY",
+  "PERF_SERVER_STOP_TIMEOUT",
+  "NAVIGATION_GATE_FAILED",
+  "NAVIGATION_HASH_MISMATCH",
+  "BROWSER_PERFORMANCE_GATE_FAILED",
+  "RENDERER_LIFECYCLE_GATE_FAILED",
+  "INTERACTION_GATE_FAILED",
+  "INITIAL_RESOURCE_GATE_FAILED",
+  "FIRST_IMAGE_VARIANT_MISSING",
+  "FIRST_IMAGE_BUDGET_FAILED",
+  "STALE_PERFORMANCE_REPORT",
+  "PERFORMANCE_EVIDENCE_INVALID",
+  "PERFORMANCE_COMMAND_FAILED",
+  "UNEXPECTED_SCRIPT_RESOURCE",
+]);
 const summary = {
   commit,
   observedAt: new Date().toISOString(),
@@ -85,8 +110,25 @@ const summary = {
     api?.realDatabase === true
       ? {
           isolatedPostgres: true,
-          version: version(api.postgresVersion),
+          version: version(api.postgresVersion?.match(/^\d+(?:\.\d+)+/)?.[0]),
           testsPassed: count(db?.numPassedTests),
+        }
+      : null,
+  performance:
+    perf?.sourceCommit === commit
+      ? {
+          navigationRuns:
+            navigation?.sourceCommit === commit
+              ? count(navigation.runs?.length)
+              : null,
+          browserChecksPassed: count(perfBrowser?.stats?.expected),
+          budgetPassed: perf.status === "PERFORMANCE_GATES_PASSED",
+          diagnostics: [
+            ...new Set([
+              ...(perf.errors ?? []),
+              navigation?.sourceCommit === commit ? navigation.error : null,
+            ]),
+          ].filter((code) => performanceCodes.has(code)),
         }
       : null,
   privateSourceReview:
