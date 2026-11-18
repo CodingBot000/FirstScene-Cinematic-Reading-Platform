@@ -378,3 +378,33 @@ html{scroll-behavior:auto}#main{scroll-margin-top:96px}body{margin:0;background:
   .preview-shelf-heading h3 { transition: none; }
   .preview-track-fill { transform: none!important; }
 }
+
+
+/* The interlude stays readable without scripts; the mask is GSAP-only. */
+.home-editorial {
+  background: linear-gradient(135deg,rgba(220,209,190,.24),rgba(232,227,215,.10) 55%,rgba(192,204,203,.18));
+  border-radius: 10px;
+  border-bottom: 1px solid #b8b3a9;
+  overflow: hidden;
+  min-height: 395px;
+  margin-block: 14px 48px;
+}
+.home-editorial-statement { display: block; }
+.editorial-line { display: block; padding-inline: 4px; }
+.editorial-rule {
+  display: block;
+  width: clamp(55px,8vw,104px);
+  height: 2px;
+  margin: 0 auto 26px;
+  background: var(--fs-action);
+  transform-origin: 0 50%;
+}
+@media (max-width:640px) {
+  .home-editorial { min-height: 270px; margin-bottom: 34px; border-radius: 8px; }
+  .editorial-line { padding: 0; }
+  .editorial-rule { margin-bottom: 18px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .editorial-line { clip-path: none!important; transform: none!important; }
+  .editorial-rule { transform: none!important; }
+}
