@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ResponsiveAsset, StoryCard } from "@firstscene/ui";
+import { StoryCard } from "@firstscene/ui";
+import { CinematicPrologue } from "../components/CinematicPrologue";
 import { SiteShell } from "../components/SiteShell";
 import {
   PreviewCollection,
@@ -9,28 +10,10 @@ import { stories, storyCard, asset } from "../lib/catalog";
 export default function Home() {
   return (
     <SiteShell>
-      <section className="home-hero" id="top">
-        <div className="hero-copy">
-          <p className="home-hero-kicker">FIRSTSCENE / CINEMATIC READING</p>
-          <h1>
-            문장을 읽고,
-            <br />
-            장면에 머물다.
-          </h1>
-          <p>가입 없이 첫 장면부터 읽어보세요.</p>
-          <Link className="fs-button fs-primary fs-lg" href="/read/post-office">
-            첫 장면 읽기 <span aria-hidden="true">→</span>
-          </Link>
-        </div>
-        <div className="hero-art">
-          <ResponsiveAsset
-            {...asset("mail-cover")}
-            priority
-            aspectRatio="16 / 10"
-            sizes="(max-width:640px) calc(100vw - 40px), 680px"
-          />
-        </div>
-      </section>
+      <CinematicPrologue
+        postCover={asset("mail-cover")}
+        tideCover={asset("tide-cover")}
+      />
       <PreviewTeaser />
       <section className="home-collection" id="read-now">
         <div className="section-heading">
