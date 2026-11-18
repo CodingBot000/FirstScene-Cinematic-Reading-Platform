@@ -8,6 +8,7 @@ import {
   ApiError,
   assertOwnedLocalUrl,
   cleanupExpired,
+  shouldRunRequestCleanup,
 } from "@firstscene/server-data";
 import type { Pool } from "@firstscene/server-data";
 let pool: Pool | undefined, validated: Promise<Pool> | undefined;
@@ -46,7 +47,7 @@ export async function runtimePool() {
         throw error;
       });
   const ready = await validated;
-  await cleanupExpired(ready, 5);
+  if (shouldRunRequestCleanup(process.env)) await cleanupExpired(ready, 5);
   return ready;
 }
 export function httpPolicy() {

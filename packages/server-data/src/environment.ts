@@ -112,3 +112,12 @@ export function hasTrustedPublicIngress(
     /^dpl_[A-Za-z0-9]+$/.test(env.VERCEL_DEPLOYMENT_ID ?? "")
   );
 }
+
+export function shouldRunRequestCleanup(
+  env: Record<string, string | undefined>,
+): boolean {
+  return (
+    env.FIRSTSCENE_PRESERVE_EXISTING_RECORDS !== "1" &&
+    env.DEPLOY_TARGET !== "local-neon"
+  );
+}

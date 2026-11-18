@@ -2,6 +2,7 @@ import { it, expect } from "vitest";
 import {
   validateRuntimeEnvironment,
   deriveOriginPolicy,
+  shouldRunRequestCleanup,
 } from "../../packages/server-data/src/environment";
 const fixture = () => ({
   APP_ORIGIN: "http://127.0.0.1:3100",
@@ -105,4 +106,15 @@ it("pure startup validation does not connect to a temporarily unavailable loopba
         "postgresql://runtime:fixture-only@127.0.0.1:1/firstscene_test_deadbeef",
     }),
   ).toMatchObject({ local: true });
+});
+
+it("request cleanup respects the explicit record preservation setting", () => {
+  expect(
+    shouldRunRequestCleanup({
+      DEPLOY_TARGET: "public",
+      FIRSTSCENE_PRESERVE_EXISTING_RECORDS: "1",
+    }),
+  ).toBe(false);
+  expect(shouldRunRequestCleanup({ DEPLOY_TARGET: "public" })).toBe(true);
+  expect(shouldRunRequestCleanup({ DEPLOY_TARGET: "local-neon" })).toBe(false);
 });
