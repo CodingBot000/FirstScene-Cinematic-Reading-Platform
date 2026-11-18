@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { StoryCard } from "@firstscene/ui";
 import { CinematicPrologue } from "../components/CinematicPrologue";
+import { EditorialInterlude } from "../components/EditorialInterlude";
 import { SiteShell } from "../components/SiteShell";
 import {
   PreviewCollection,
@@ -28,17 +29,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="home-editorial" aria-label="컬렉션 소개">
-        <p className="home-editorial-overline">A WORLD BEHIND EVERY SENTENCE</p>
-        <p className="home-editorial-statement">
-          어떤 이야기는 한 문장으로 시작해,
-          <br />
-          하나의 세계가 됩니다.
-        </p>
-        <a href="#coming-soon" className="home-editorial-continue">
-          새로운 장면을 만나러 가기 <span aria-hidden="true">↓</span>
-        </a>
-      </section>
+      <EditorialInterlude />
       <PreviewCollection />
       <section className="reading-intro">
         <h2>연출은 선택할 수 있어요.</h2>
