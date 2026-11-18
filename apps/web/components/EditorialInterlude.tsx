@@ -52,7 +52,7 @@ export function EditorialInterlude() {
                   },
                 })
                 .fromTo(
-                  lines[0],
+                  lines[0]!,
                   { clipPath: "inset(0 100% 0 0)", y: 20 },
                   {
                     clipPath: "inset(0 0% 0 0)",
@@ -62,7 +62,7 @@ export function EditorialInterlude() {
                   0,
                 )
                 .fromTo(
-                  lines[1],
+                  lines[1]!,
                   { clipPath: "inset(0 100% 0 0)", y: 20 },
                   {
                     clipPath: "inset(0 0% 0 0)",
