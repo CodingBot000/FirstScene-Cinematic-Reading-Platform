@@ -8,6 +8,7 @@
 !/docs/07_QA_ACCESSIBILITY_PERFORMANCE.md
 !/docs/12_FINAL_REVIEW.md
 !/docs/15_COMMAND_CATALOG.md
+/docs/exclusion/
 /tools/README.md
 /references/
 
@@ -50,6 +51,8 @@ storage-state.json
 storageState.json
 *.har
 /evidence/ui/current/
+/evidence/qa/ci-run/
+/evidence/qa/product-qa/
 /evidence/package-consumer/current/
 /evidence/performance/current/
 /evidence/visual/current/

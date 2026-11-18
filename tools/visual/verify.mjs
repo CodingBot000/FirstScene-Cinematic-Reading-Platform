@@ -1,4 +1,4 @@
-import { useLinuxWebkit } from "../browser-runtime.mjs";
+import { browserRuntimeProfile } from "../browser-runtime.mjs";
 import { visualCoverage } from "./coverage.mjs";
 import fs from "node:fs";
 import path from "node:path";
@@ -106,8 +106,7 @@ export function verifyReview(captures, manual, indexPath) {
 }
 export function verifyCurrentCapture(result) {
   if (
-    result.runtimeProfile !==
-      (useLinuxWebkit() ? "mac-chromium/linux-webkit" : "host") ||
+    result.runtimeProfile !== browserRuntimeProfile() ||
     result.collectionVerified !== true ||
     result.commands?.[0]?.exitCode !== 0
   )

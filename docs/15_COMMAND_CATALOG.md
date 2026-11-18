@@ -158,11 +158,24 @@ pnpm assets:generate:api -- --budget-file AUTHORIZED_BUDGET_FILE
 ```
 Default denied; explicit preauthorized finite budget and key needed. No paid call in CI.
 
-## CMD-FULL — release local gate
+## CMD-CI — PR 자동 검사
 ```sh
-pnpm check:full
+pnpm check:ci
 ```
-Serial orchestration lint/type/boundaries/content/unit/DB/API/build/E2E/WebKit/a11y/assets/security/pack/perf, plus reviewed visual artifact references.
+새 DB와 프로덕션 빌드에서 재현할 수 있는 검사를 실행한다. 원시 비공개 입력을 사용할 수 없는 검사와 새 화면의 승인은 각각 보류로 기록한다. 재현 가능한 보안 검사와 화면 수집 자체의 실패는 CI 실패다.
+
+## CMD-PRODUCT-QA — 독립 제품 QA
+```sh
+pnpm check:qa
+pnpm test:visual -- --verify-review
+```
+로컬에서 전체 자동 회귀와 화면 수집을 실행한다. 새 화면을 열어 검토한 뒤 같은 캡처의 승인 근거를 검증한다. 수집 성공과 승인 결과를 각각 보존한다.
+
+## CMD-RELEASE / CMD-FULL — 엄격한 로컬 출시 검사
+```sh
+pnpm check:release
+```
+`pnpm check:full`은 같은 엄격 검사다. 자동 검사와 함께 실제 확대·화면 승인·비공개 출처 검사·관리형 감사 및 필수 작업 상태를 확인한다. 공개 서비스의 실제 배포·smoke·복귀 검증은 P09에서 별도로 확인한다.
 
 ## CMD-STATE — execution ledger
 ```sh

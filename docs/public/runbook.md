@@ -19,7 +19,7 @@ DB 정지 시 `execution/local-database.json`의 소유한 컨테이너를 확�
 ```sh
 CI=true FIRSTSCENE_CI_DISPOSABLE=1 pnpm db:ci:up
 CI=true FIRSTSCENE_CI_DISPOSABLE=1 node tools/database/ci-run.mjs pnpm db:prepare-test
-CI=true FIRSTSCENE_CI_DISPOSABLE=1 node tools/database/ci-run.mjs pnpm check:full -- --collect
+CI=true FIRSTSCENE_CI_DISPOSABLE=1 node tools/database/ci-run.mjs pnpm check:qa
 CI=true FIRSTSCENE_CI_DISPOSABLE=1 pnpm db:ci:down
 ```
 
@@ -31,13 +31,13 @@ macOS에서 WebKit의 trusted pointer 좌표가 잘못 전달되는 환경에는
 
 ## 검증과 배포
 
-`pnpm check:full -- --collect`는 실행한 suite의 실제 결과와 실패를 수집합니다. 수집 성공은 제품 통과가 아닙니다. `pnpm check:full`은 검증 결과와 수동 검수·작업 원장까지 확인하며 미완료 항목이 있으면 실패합니다. 새 화면의 픽셀은 자동 승인하지 않습니다. 사람 평가, 실물 기기, 현장 성능 측정 결과를 만들어내지 않습니다.
+GitHub Actions의 PR 및 `main` 검사는 `pnpm check:ci`로 빌드, 실제 DB와 브라우저 테스트, 재현 가능한 보안 검사, 성능 검사, 화면 수집을 실행합니다. `pnpm check:qa`는 전체 제품 자동 회귀와 새 화면 수집을 실행합니다. 검토한 이미지의 증거는 `pnpm test:visual -- --verify-review`로 확인합니다. `pnpm check:release`와 `pnpm check:full`은 동일한 엄격 검사이며, 관리형 감사와 수동 검수 등 출시 선행조건을 확인합니다.
 
 Docker 이미지는 `pnpm container:build`로 만들고, 준비된 임시 CI DB에서 `pnpm container:smoke`로 검사합니다. 이미지는 비root 사용자로 실행하며 비밀값과 마이그레이션 소유자 환경은 포함하지 않습니다. Docker smoke의 로컬 재시작 증거는 공개 환경의rollback 증거를 대신하지 않습니다.
 
 공개 배포는 아직 수행하지 않았습니다. 연결된 공급자의 접근 확인이403으로 막혀 있습니다. 승인된 프로젝트·현재 요금·DB17호환성·TLS·pooler·비밀값 저장 위치·복귀 artifact가 확인되기 전에는 게시하지 않습니다. `pnpm deploy:preflight`와 `pnpm deploy:smoke -- --base-url URL`은 미확인 대상을 통과시키지 않습니다. 새 요금제·도메인·이미지 API 결제는 자동으로 만들지 않습니다.
 
-CI에는 비공개 원문을 전달하지 않습니다. 비공개 식별자 검사는 로컬의 비공개 입력으로 먼저 수행하고, CI는 해당 공개 소스 묶음의 정확한 fingerprint와 검증 receipt를 대조합니다. 소스가 바뀌면 로컬에서 다시 검사해야 하며, 입력도 유효한 receipt도 없으면 통과하지 않습니다.
+PR에서는 추적 파일의 비밀값, 클라이언트 번들, 인증 우회 여부와 API 부정 사례를 검사합니다. 비공개 입력으로 확인해야 하는 별도 검사는 일치하는 증거가 없으면 `DEFERRED_TO_RELEASE`로 기록합니다. 엄격 검사에는 로컬 비공개 입력 또는 정확한 소스에 대한 유효한 검증 증거가 필요합니다.
 
 피드백은 사용자 승인에 따라 Asia/Seoul달력일(한국시간00:00초기화) 기준5회/작품/세션입니다. DB세션의timezone이나 사용자입력timestamp에 의존하지 않습니다. FEEDBACK_LIMIT429에는 다음한국자정까지의Retry-After가 있습니다. 자유입력·계정간공유·자동오프라인전송은 제공하지 않으며, 응답을 확인하지 못하면 현재 화면에서 같은operationId로 직접 다시 시도합니다.
 

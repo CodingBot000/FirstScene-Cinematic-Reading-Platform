@@ -1,4 +1,5 @@
 import {
+  browserRuntimeProfile,
   useLinuxWebkit,
   runLinuxWebkit,
   mergeBrowserReports,
@@ -51,7 +52,7 @@ for (const name of ["captures.json", "browser-results.json"])
 const result = {
   status: "IN_PROGRESS",
   releaseReady: false,
-  runtimeProfile: useLinuxWebkit() ? "mac-chromium/linux-webkit" : "host",
+  runtimeProfile: browserRuntimeProfile(),
   reviewer: null,
   startedAt: new Date().toISOString(),
   sourceCommit: execFileSync("git", ["rev-parse", "HEAD"], {

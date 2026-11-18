@@ -1,0 +1,157 @@
+{
+  "scope": "PUBLIC_SUMMARY_DERIVED_FROM_LOCAL_QA",
+  "originalLocalRecords": {
+    "automationSha256": "8370a7ba084981ef3e9f3c6a8735a199cd2bfcd9f32211b7f64d1ef08556217f",
+    "visualRepairSha256": "eee1607710a65638ca621da0fbd352d33b49ed72965e66a80b6eefa821762923",
+    "automationSourceCommit": "c910ecbd1fe66dfc2edb8072bce43f5603b71f52",
+    "visualSourceCommit": "829950341c28508b7f06042098943801aa9eac15"
+  },
+  "tasks": {
+    "done": 29,
+    "total": 33
+  },
+  "localSuites": [
+    {
+      "id": "lint",
+      "exitCode": 0,
+      "reportVerified": true
+    },
+    {
+      "id": "type",
+      "exitCode": 0,
+      "reportVerified": true
+    },
+    {
+      "id": "boundaries",
+      "exitCode": 0,
+      "reportVerified": true
+    },
+    {
+      "id": "content",
+      "exitCode": 0,
+      "reportVerified": true
+    },
+    {
+      "id": "unit",
+      "exitCode": 0,
+      "reportVerified": true,
+      "tests": {
+        "passed": 107,
+        "failed": 0,
+        "pending": 0
+      }
+    },
+    {
+      "id": "database",
+      "exitCode": 0,
+      "reportVerified": true,
+      "tests": {
+        "passed": 23,
+        "failed": 0,
+        "pending": 0
+      }
+    },
+    {
+      "id": "api",
+      "exitCode": 0,
+      "reportVerified": true,
+      "tests": {
+        "expected": 25,
+        "unexpected": 0,
+        "skipped": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "id": "production-build",
+      "exitCode": 0,
+      "reportVerified": true
+    },
+    {
+      "id": "storybook",
+      "exitCode": 0,
+      "reportVerified": true
+    },
+    {
+      "id": "chromium",
+      "exitCode": 0,
+      "reportVerified": true,
+      "tests": {
+        "expected": 47,
+        "unexpected": 0,
+        "skipped": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "id": "webkit",
+      "exitCode": 0,
+      "reportVerified": true,
+      "tests": {
+        "expected": 47,
+        "unexpected": 0,
+        "skipped": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "id": "accessibility",
+      "exitCode": 0,
+      "reportVerified": true,
+      "tests": {
+        "expected": 2,
+        "unexpected": 0,
+        "skipped": 0,
+        "flaky": 0
+      }
+    },
+    {
+      "id": "assets",
+      "exitCode": 0,
+      "reportVerified": true
+    },
+    {
+      "id": "security-negatives",
+      "exitCode": 0,
+      "reportVerified": true
+    },
+    {
+      "id": "external-packages",
+      "exitCode": 0,
+      "reportVerified": true
+    },
+    {
+      "id": "startup",
+      "exitCode": 0,
+      "reportVerified": true
+    },
+    {
+      "id": "performance",
+      "exitCode": 0,
+      "reportVerified": true
+    },
+    {
+      "id": "visual",
+      "exitCode": 0,
+      "reportVerified": true
+    },
+    {
+      "id": "ledger",
+      "exitCode": 0,
+      "reportVerified": true
+    }
+  ],
+  "visual": {
+    "reviewedFrames": 104,
+    "browserGroups": 16,
+    "bothStoriesForwardAndReverse": true,
+    "transitionCaptureRepairVerified": true,
+    "beforeSha256": "c618e96def64c1e0b84fd062265e208a5a425e1d5782dc273ec54a6b8e3fea7c",
+    "afterSha256": "3f805a23bb719443941096dd62cc5d71ed03b4b8405a974a1b8aa54c160cc607"
+  },
+  "hostedCI": "UNVERIFIED_AT_SNAPSHOT_CREATION",
+  "humanEvaluations": 0,
+  "localProductReady": false,
+  "publicReleaseReady": false,
+  "limitations": "The local raw logs and screenshots for this run remain in the development workspace. This file summarizes measured results and records their original digests."
+}

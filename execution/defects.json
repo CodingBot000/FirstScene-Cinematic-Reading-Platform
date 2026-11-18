@@ -354,6 +354,15 @@
       "commit": "e6a58aabee0461d33716bc6ad510023a59474901",
       "verification": "Same complete47LinuxWebKit cases passed with0failed/skipped/flaky after owned batch paths became absolute; guard retained.",
       "repair": "path.resolve owned report and environment paths, no config guard or assertion weakening."
+    },
+    {
+      "id": "D-P07-001",
+      "taskId": "P07-T03",
+      "severity": "P2",
+      "status": "RESOLVED",
+      "summary": "A screenshot could capture a scene crossfade before its final artwork settled. The visual test now waits for both background layers to settle.",
+      "fixedCommit": "829950341c28508b7f06042098943801aa9eac15",
+      "verification": "evidence/qa/public-product-qa-20261118.json"
     }
   ]
 }
