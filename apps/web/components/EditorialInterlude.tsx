@@ -40,16 +40,17 @@ export function EditorialInterlude() {
 
           try {
             context = gsap.context(() => {
-              gsap.timeline({
-                defaults: { ease: "none" },
-                scrollTrigger: {
-                  trigger: root,
-                  start: "top 88%",
-                  end: "bottom 38%",
-                  scrub: 0.45,
-                  invalidateOnRefresh: true,
-                },
-              })
+              gsap
+                .timeline({
+                  defaults: { ease: "none" },
+                  scrollTrigger: {
+                    trigger: root,
+                    start: "top 88%",
+                    end: "bottom 38%",
+                    scrub: 0.45,
+                    invalidateOnRefresh: true,
+                  },
+                })
                 .fromTo(
                   lines[0],
                   { clipPath: "inset(0 100% 0 0)", y: 20 },
@@ -110,11 +111,11 @@ export function EditorialInterlude() {
       ref={rootRef}
       data-editorial-motion="static"
     >
-      <p className="home-editorial-overline">
-        A WORLD BEHIND EVERY SENTENCE
-      </p>
+      <p className="home-editorial-overline">A WORLD BEHIND EVERY SENTENCE</p>
       <p className="home-editorial-statement">
-        <span className="editorial-line">어떤 이야기는 한 문장으로 시작해,</span>
+        <span className="editorial-line">
+          어떤 이야기는 한 문장으로 시작해,
+        </span>
         <span className="editorial-line">하나의 세계가 됩니다.</span>
       </p>
       <span className="editorial-rule" aria-hidden="true" />

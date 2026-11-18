@@ -105,58 +105,98 @@ export function CinematicPrologue({
 
               // Beat 01: the opening line and the first finished story.
               timeline
-                .to(visuals[0]!, {
-                  scale: 1.18,
-                  xPercent: 9,
-                  yPercent: -11,
-                  duration: 1.03,
-                }, 0)
-                .to(beats[0]!, {
-                  autoAlpha: 0,
-                  y: -45,
-                  duration: 0.30,
-                }, 0.70)
+                .to(
+                  visuals[0]!,
+                  {
+                    scale: 1.18,
+                    xPercent: 9,
+                    yPercent: -11,
+                    duration: 1.03,
+                  },
+                  0,
+                )
+                .to(
+                  beats[0]!,
+                  {
+                    autoAlpha: 0,
+                    y: -45,
+                    duration: 0.3,
+                  },
+                  0.7,
+                )
                 // Beat 02: a second world enters as the first recedes.
-                .to(visuals[0]!, {
-                  autoAlpha: 0,
-                  duration: 0.38,
-                }, 0.88)
-                .to(visuals[1]!, {
-                  autoAlpha: 1,
-                  scale: 1,
-                  yPercent: 0,
-                  duration: 0.47,
-                }, 0.87)
-                .to(beats[1]!, {
-                  autoAlpha: 1,
-                  y: 0,
-                  duration: 0.32,
-                }, 1.00)
-                .to(visuals[1]!, {
-                  scale: 1.12,
-                  xPercent: -6,
-                  yPercent: -8,
-                  duration: 1.00,
-                }, 1.42)
-                .to(beats[1]!, {
-                  autoAlpha: 0,
-                  y: -45,
-                  duration: 0.30,
-                }, 1.81)
+                .to(
+                  visuals[0]!,
+                  {
+                    autoAlpha: 0,
+                    duration: 0.38,
+                  },
+                  0.88,
+                )
+                .to(
+                  visuals[1]!,
+                  {
+                    autoAlpha: 1,
+                    scale: 1,
+                    yPercent: 0,
+                    duration: 0.47,
+                  },
+                  0.87,
+                )
+                .to(
+                  beats[1]!,
+                  {
+                    autoAlpha: 1,
+                    y: 0,
+                    duration: 0.32,
+                  },
+                  1.0,
+                )
+                .to(
+                  visuals[1]!,
+                  {
+                    scale: 1.12,
+                    xPercent: -6,
+                    yPercent: -8,
+                    duration: 1.0,
+                  },
+                  1.42,
+                )
+                .to(
+                  beats[1]!,
+                  {
+                    autoAlpha: 0,
+                    y: -45,
+                    duration: 0.3,
+                  },
+                  1.81,
+                )
                 // Beat 03: hand off to the actual catalog, never a fake reader.
-                .to(visuals[1]!, {
-                  autoAlpha: 0.3,
-                  duration: 0.40,
-                }, 2.05)
-                .to(beats[2]!, {
-                  autoAlpha: 1,
-                  y: 0,
-                  duration: 0.35,
-                }, 2.09)
-                .to(beats[2]!, {
-                  y: -6,
-                  duration: 0.65,
-                }, 2.44);
+                .to(
+                  visuals[1]!,
+                  {
+                    autoAlpha: 0.3,
+                    duration: 0.4,
+                  },
+                  2.05,
+                )
+                .to(
+                  beats[2]!,
+                  {
+                    autoAlpha: 1,
+                    y: 0,
+                    duration: 0.35,
+                  },
+                  2.09,
+                )
+                .to(
+                  beats[2]!,
+                  {
+                    y: -6,
+                    duration: 0.65,
+                  },
+                  2.44,
+                );
             }, root);
 
             removeAnimation = () => {
@@ -235,7 +275,9 @@ export function CinematicPrologue({
 
         <div className="cinematic-script">
           <article className="cinematic-beat" data-cinematic-beat="0">
-            <p className="cinematic-kicker">FIRSTSCENE — AN INTERACTIVE READING SPACE</p>
+            <p className="cinematic-kicker">
+              FIRSTSCENE — AN INTERACTIVE READING SPACE
+            </p>
             <h1>
               문장을 읽고,
               <br />
@@ -250,7 +292,9 @@ export function CinematicPrologue({
           </article>
 
           <article className="cinematic-beat" data-cinematic-beat="1">
-            <p className="cinematic-kicker">TURN THE PAGE · ENTER ANOTHER WORLD</p>
+            <p className="cinematic-kicker">
+              TURN THE PAGE · ENTER ANOTHER WORLD
+            </p>
             <h2>
               멈춰 선 역에도
               <br />
@@ -265,7 +309,9 @@ export function CinematicPrologue({
           </article>
 
           <article className="cinematic-beat" data-cinematic-beat="2">
-            <p className="cinematic-kicker">FIRSTSCENE COLLECTION / 36 STORIES</p>
+            <p className="cinematic-kicker">
+              FIRSTSCENE COLLECTION / 36 STORIES
+            </p>
             <h2>
               아직 열리지 않은
               <br />

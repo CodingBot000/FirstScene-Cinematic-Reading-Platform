@@ -62,7 +62,10 @@ export function PreviewTeaser() {
           description="이 작품은 현재 공개 준비 중입니다."
         >
           <p className="preview-dialog-summary">{selected.summary}</p>
-          <p>현재 콘셉트만 공개되어 있습니다. 완결된 두 작품은 지금 바로 읽을 수 있습니다.</p>
+          <p>
+            현재 콘셉트만 공개되어 있습니다. 완결된 두 작품은 지금 바로 읽을 수
+            있습니다.
+          </p>
           <a
             href="#read-now"
             className="fs-text-link"
@@ -164,7 +167,10 @@ export function PreviewCollection() {
         </p>
       </div>
 
-      <nav className="preview-jump-nav" aria-label="공개 예정 이야기 장르 바로가기">
+      <nav
+        className="preview-jump-nav"
+        aria-label="공개 예정 이야기 장르 바로가기"
+      >
         <span className="preview-jump-label">SCROLL TO DISCOVER</span>
         {previewShelves.map((shelf) => (
           <a
@@ -213,10 +219,7 @@ export function PreviewCollection() {
                   onClick={() => setSelected(story)}
                   aria-label={`${story.title}, 공개 준비 중 안내 열기`}
                 >
-                  <span
-                    className="preview-cover"
-                    data-palette={story.palette}
-                  >
+                  <span className="preview-cover" data-palette={story.palette}>
                     <span className="preview-cover-overline">
                       FIRSTSCENE / {String(groupIndex + 1).padStart(2, "0")}
                     </span>
