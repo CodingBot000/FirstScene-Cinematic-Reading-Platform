@@ -359,3 +359,22 @@ html{scroll-behavior:auto}#main{scroll-margin-top:96px}body{margin:0;background:
   .cinematic-read-link,.cinematic-skip-link,.cinematic-rail-dot { transition: none!important; }
   .cinematic-visual,.cinematic-beat,.cinematic-rail-track>span { will-change: auto!important; }
 }
+
+
+/* In-collection wayfinding is synchronized to the actual scroll position. */
+.preview-jump-nav a[aria-current="location"] {
+  color: var(--fs-action);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 7px;
+}
+.preview-shelf-heading h3 { transition: color .3s ease; }
+.preview-motion-ready .preview-tile:focus-within {
+  opacity: 1!important;
+  transform: none!important;
+}
+@media (prefers-reduced-motion:reduce) {
+  .preview-shelf-heading h3 { transition: none; }
+  .preview-track-fill { transform: none!important; }
+}
