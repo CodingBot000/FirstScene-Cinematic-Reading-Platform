@@ -1,8 +1,12 @@
 import fs from "node:fs";
 import { execFileSync } from "node:child_process";
+import { assertFirstSceneGateBoundaries } from "./execution-readiness.mjs";
 const [id, status, ...evidence] = process.argv.slice(2);
 const file = "execution/tasks.json";
 const state = JSON.parse(fs.readFileSync(file, "utf8"));
+assertFirstSceneGateBoundaries(
+  new Map(state.tasks.map((task) => [task.id, task])),
+);
 const task = state.tasks.find((t) => t.id === id);
 if (!task) throw new Error("Unknown task");
 const now = new Date().toISOString();

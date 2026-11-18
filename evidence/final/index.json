@@ -15,7 +15,7 @@
   "actualFullCommandExitCode": 2,
   "actualFullCommandStatus": "LOCAL_GATES_BLOCKED",
   "taskCounts": {
-    "done": 24,
+    "done": 29,
     "total": 33
   },
   "localUrl": "http://127.0.0.1:3100",
@@ -45,31 +45,6 @@
           "scope": "Source review found one issue, recorded twice during candidate identity correction; accepted terminal draft remains unsealed per skill. Host reconciliation required."
         }
       ]
-    },
-    {
-      "id": "P07-T01",
-      "status": "PENDING",
-      "blockers": []
-    },
-    {
-      "id": "P07-T02",
-      "status": "PENDING",
-      "blockers": []
-    },
-    {
-      "id": "P07-T03",
-      "status": "PENDING",
-      "blockers": []
-    },
-    {
-      "id": "P08-T01",
-      "status": "PENDING",
-      "blockers": []
-    },
-    {
-      "id": "P08-T02",
-      "status": "PENDING",
-      "blockers": []
     },
     {
       "id": "P09-T01",
@@ -516,15 +491,15 @@
       "artifacts": [
         {
           "path": "PROGRESS.md",
-          "sha256": "8b0d856cbd7387e32c3f73cdd277e94ff090a35251a9c86bb7e432d6fa82f562"
+          "sha256": "d94e4125910462ba0b2a6e0b98ec861079bf84088fc5b8326aff7eb9be3fea49"
         },
         {
           "path": "RELEASE_REPORT.md",
-          "sha256": "e3e042f9fa2d65ca24d086fa846ceee6e81cd856a0ea0d38b77f7f5372f1fe72"
+          "sha256": "81cebdf40075b7cee02cd5de7cca42d623f07c44f205f3a37c675c11349ca0f3"
         },
         {
           "path": "RESUME.md",
-          "sha256": "7ce10f1620ee802b68418cd03743e9759ff2f370232a71b3243d2f4c84a24436"
+          "sha256": "9d6fe938596e1532e0ceb764954e3c5cb71fc6f739b39e1136dc461bcd10b6ab"
         },
         {
           "path": "artifacts/public-documents/README.md",
@@ -1108,9 +1083,16 @@
         },
         {
           "path": "execution/tasks.json",
-          "sha256": "0a42fb5f96593cbccbe63d0ff47f515e2aba046948506e6e58f582ce66832fea"
+          "sha256": "b040496ebb7539e3061f49fae821fbe3f58c5fa3579fc6872ec8934588d1ad5e"
         }
       ]
     }
-  ]
+  ],
+  "latestProductQa": {
+    "status": "PUBLIC_SUMMARY_DERIVED_FROM_LOCAL_QA",
+    "path": "evidence/qa/public-product-qa-20261118.json",
+    "sha256": "89b18e9a9debb3d5fb1fc502c21bc98b21e79f9d5d206a5927684f8c59a0ad3f",
+    "automatedSuitesPassed": 19,
+    "reviewedFrames": 104
+  }
 }

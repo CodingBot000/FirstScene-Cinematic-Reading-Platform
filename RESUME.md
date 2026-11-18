@@ -1,25 +1,5 @@
-# STOPPED — external conditions remain
+# FirstScene 공개 검수 인계
 
-User approved 한국 시간 자정. Implemented5/story/session/AsiaSeoul-calendar-day feedback and actual DB boundaries/replay/concurrency/rollback; explicit online UI and deletion/epoch fences. Decision approved in execution/decisions.json; never ask again.
+개발·제품 QA는 29/33까지 진행됐습니다. 원격 Actions의 정확한 실행 결과를 확인하고 제품 QA 및 출시 상태와 별도로 기록합니다. [진행 검수](REVIEW.md) · [공개 증거 요약](evidence/qa/public-product-qa-20261118.json)
 
-## Final implementation and proof
-- Product source f415ffa792b8d106f10040834e93cf00f2d2ad2b; QA path/runtime repair e6a58aabee0461d33716bc6ad510023a59474901. State checkpoint4f7aac271235826998bc3a07bd05d65a75519c62. No source/checker changes after final full sweep. Final document/privacy/evidence updates have their own checkpoint.
-- Final strict full report evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/index.json:19actual suites,18commands exit0; visual command exit2 for1unreviewed14pixelcorner-raster variant. Full report is unchanged. Actual104frames/16browsergroups passed assertions; new image was opened and explicitly approved. Same capture verify-review and10negativeguard checks then passed: evidence/qa/post-full-visual.json. No pixel threshold was relaxed.
-- Unit105/realDB23/API25/Chromium47/LinuxWebKit47/a11y2, externalReactViteconsumer2, startup12,9cold navigation+4browserperformance all executed and passed.0skip/flaky. Latest final-document ordinarysecurity31unit+25API+5static checks passed; source audit remains separate/unsealed. QA57cases:50automated/4agent/1partial/2externalblocked. Human0.
-- Native actual200% verified by CUA dedicated Chrome for Testing controls/AX, reader/settings/24px/feedbackkeyboard;100% restoration observed. Own incognito closed. Dedicated app quit requested; process termination was not asserted. Existing userChrome untouched. CUA completion_summary already emitted; rewriteDocumentation before any future CUA task.
-- Immutable current104image review: evidence/visual/4f7aac271235826998bc3a07bd05d65a75519c62/index.json. Rootreviewhash/negativeguards bind actual new pixels. Historical8a/e6and all originalfailedruns remain.
-- Latest Docker rebuilt4fsource,13realSQL/sessionisolation/restart checks passed and mobile image opened. No public release.
-
-## State and external conditions
-24/33DONE. P05T01/T02/T03 and P06T01/T02 completed throughVERIFYING→DONE with code/evidencecommit then statecheckpoint. P06T04BLOCKED_EXTERNAL; P07/P08remainPENDING due dependencies despite independent QA/docs evidence. P09T01BLOCKED_EXTERNAL; publicdeploy/smoke successorsPENDING. No LOCAL_PRODUCT_READY or PUBLIC_RELEASE_READY.
-
-Managed Standard scan b65e5088-f5df-4d19-b17f-9bd465d5dfd4 on3eda7775cf4026447452c812cc12c249da92e655 has accepted terminaldraft but duplicate canonical IDs for1source-backedissue. The tracked status summary is in evidence/security/managed-scan-review.json. Local scan details are in the ignored preflight receipt. Security0.1.33 final-report.md says “If both identities are active, leave the scan unsealed and report the conflict.” Do NOTresubmit accepted finaldraft, complete, cancel withoutrequest, manuallyedit canonicalfiles or start replacement tohideconflict. Host-supported reconciliation oforiginal identities/snapshot is required. Report unavailable, finalusageunknown; no independent reviewer or runtimeexploit. The underlying network-bucket issue was fixed independently with real unit/DB/HTTPchecks; original scan remains bound to pre-fixrevision. Actualpublicingress stillnotconfigured. Daybreak notgranted is advisory only and alreadyreported.
-
-Provider access403/teams0, no approved publictarget/tier/DB/TLS/pooler/secretlocation/remote. No grant/publication/push/paidAPI/newimages/agents. User's KST answer does not authorize new external costs/access. Original untracked planning/private inputs preserved; do not bulkstage/publish the entire repository/history.
-
-## Runtime and exact resume
-- Latest localpreview http://127.0.0.1:3100 own exec78178; live/ready/home/both36beatSSR200 verified after rebuild. Preserve unless intentionally restarting this project. Existing developmentPostgreSQL17.12 on55432 preserved.
-- All additional temporarytestDBs0, ownedQAcontainers0; owned disposableCI508295ad/service volume/privateenv/receipt removed. FinaldocumentAPI used a fresh isolated DB on the preserveddevPostgreSQL and removed it; rechecked0testDB. Evidence/ci/final-resource-cleanup.json. No background continuation promised.
-- If external scan reconciliation becomes available, inspect original canonical evidence under the exactskill, finish thatreview safely, then P06T04 normalverification and continueDAG. Do not recompute readiness until requiredtasks/actualevidence pass.
-- For future regression: CI=true FIRSTSCENE_CI_DISPOSABLE=1 pnpm db:ci:up; sameflags node tools/database/ci-run.mjs pnpm db:prepare-test. For MacWebKit coordinateproblem use node tools/prepare-linux-webkit.mjs then FIRSTSCENE_LINUX_WEBKIT=1 with ci-run fullcommand. QAimage/lockreceipt mustmatch. This is LinuxWebKit, not physicaliPhoneSafari. Cleanup only ownedservice.
-- RELEASE_REPORT.md and evidence/final/index.json are authoritative currenthandoff. Five selected publicdocs exported locally only. Source privacyreceipt includes finalversionedpublicdocs. No final readiness claim.
+관리형 감사와 공급자 접근은 차단 상태를 유지합니다. [작업 원장](execution/tasks.json)

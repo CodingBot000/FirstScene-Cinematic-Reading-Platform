@@ -99,6 +99,26 @@
     {
       "id": "P06-T03",
       "sourceCommit": "8c498ed1b093f10e8b99d947d55e849362ec2082"
+    },
+    {
+      "id": "P07-T01",
+      "sourceCommit": "cca2eff2d9fa25d40efd872744a89167f2baa069"
+    },
+    {
+      "id": "P07-T02",
+      "sourceCommit": "88c96d77fa43a06f63e63774a5e73ebd513db37e"
+    },
+    {
+      "id": "P07-T03",
+      "sourceCommit": "88c96d77fa43a06f63e63774a5e73ebd513db37e"
+    },
+    {
+      "id": "P08-T01",
+      "sourceCommit": "57ebce58e3bd3bd63320ad2dc146556268b4872f"
+    },
+    {
+      "id": "P08-T02",
+      "sourceCommit": "d6bc048863c4a03042408b673fb3a67d2aeeb7dc"
     }
   ],
   "changedFiles": [
@@ -291,5 +311,18 @@
   "notes": [
     "The snapshot starts with a new root commit. The source revision and task commits identify the versions used during implementation and testing.",
     "Evidence content and its references were updated where wording was generalized. Existing test outcomes are preserved."
-  ]
+  ],
+  "publicUpdate": {
+    "publicBase": "a75e1c2f6305b6761d71ace963df2d51d8b8479b",
+    "developmentBaseline": "ca64f3a4913f065e8b5be8a68013e45fcd8b5bff",
+    "addedVerifiedHistoricalTaskRefs": [
+      "P07-T01",
+      "P07-T02",
+      "P07-T03",
+      "P08-T01",
+      "P08-T02"
+    ],
+    "derivedProductQaEvidence": "evidence/qa/public-product-qa-20261118.json",
+    "description": "Selected files were copied into a clean public clone. Historical development SHAs are provenance only."
+  }
 }

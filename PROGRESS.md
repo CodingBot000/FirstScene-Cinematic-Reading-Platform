@@ -1,8 +1,8 @@
 # PROGRESS
 
 - 제품 상태: **IN_PROGRESS**
-- 제품 작업 완료: **24 / 33**
-- local gate: 24 / 30; public gate: 0 / 3
+- 제품 작업 완료: **29 / 33**
+- local gate: 29 / 30; public gate: 0 / 3
 - 현재: 없음
 - 다음 실행 가능: 
 - 실제 제품 QA·생성 이미지·DB·배포의 완료는 각 작업 증거로만 확인한다.
@@ -34,11 +34,11 @@
 | P06-T02 실제 이미지 통합·성능 최적화 | DONE |
 | P06-T03 패키지 외부 소비·공유 화면 | DONE |
 | P06-T04 보안·오류·악성 입력 검수 | BLOCKED_EXTERNAL |
-| P07-T01 전체 자동 회귀와 결함 수집 | PENDING |
-| P07-T02 전 화면·12씬 실제 시각 검수 | PENDING |
-| P07-T03 결함 자동 보완·회귀 재검증 | PENDING |
-| P08-T01 제품 README·사례 연구·운영 가이드 | PENDING |
-| P08-T02 로컬 제품 완료 gate·재개 인계 | PENDING |
+| P07-T01 전체 자동 회귀와 결함 수집 | DONE |
+| P07-T02 전 화면·12씬 실제 시각 검수 | DONE |
+| P07-T03 결함 자동 보완·회귀 재검증 | DONE |
+| P08-T01 제품 README·사례 연구·운영 가이드 | DONE |
+| P08-T02 제품 QA 증거·출시 조건 인계 | DONE |
 | P09-T01 외부 배포 환경·권한·비용 확인 | BLOCKED_EXTERNAL |
 | P09-T02 대상 DB·앱 실제 배포 | PENDING |
 | P09-T03 공개 smoke·rollback·최종 인계 | PENDING |

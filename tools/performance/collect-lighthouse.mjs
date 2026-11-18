@@ -1,6 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import os from "node:os";
+import net from "node:net";
+import { once } from "node:events";
 import { spawn, execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { gzipSync } from "node:zlib";
@@ -54,6 +56,52 @@ const diagnosticNames = [
   "lcp-discovery-insight",
   "lcp-breakdown-insight",
 ];
+
+async function runAudit(command, env) {
+  // Use the same pinned browser and launch policy as the Playwright suites.
+  // A fresh profile per audit preserves the cold navigation measurement.
+  const reservation = net.createServer();
+  reservation.listen(0, "127.0.0.1");
+  await once(reservation, "listening");
+  const { port } = reservation.address();
+  await new Promise((resolve) => reservation.close(resolve));
+  const browser = await chromium.launch({
+    channel: "chromium",
+    env,
+    args: [
+      "--remote-debugging-address=127.0.0.1",
+      `--remote-debugging-port=${port}`,
+    ],
+  });
+  try {
+    const endpoint = await fetch(`http://127.0.0.1:${port}/json/version`, {
+      signal: globalThis.AbortSignal.timeout(3000),
+    });
+    const info = await endpoint.json();
+    if (
+      !endpoint.ok ||
+      !info.webSocketDebuggerUrl?.startsWith(
+        `ws://127.0.0.1:${port}/devtools/browser/`,
+      )
+    )
+      throw new Error("LIGHTHOUSE_CDP_NOT_LOOPBACK");
+    return await new Promise((resolve) => {
+      const child = spawn(
+        process.execPath,
+        [...command, `--port=${port}`, "--hostname=127.0.0.1"],
+        {
+          env,
+          stdio: "ignore",
+          timeout: 120000,
+        },
+      );
+      child.on("error", () => resolve(1));
+      child.on("exit", (code) => resolve(code ?? 1));
+    });
+  } finally {
+    await browser.close();
+  }
+}
 try {
   await withProductionServer(async ({ origin, database }) => {
     result.database = {
@@ -73,7 +121,6 @@ try {
           "node_modules/lighthouse/cli/index.js",
           origin + pathname,
           "--config-path=tools/performance/lighthouse.config.mjs",
-          "--chrome-flags=--headless",
           "--output=json",
           `--output-path=${reportFile}`,
           "--quiet",
@@ -85,18 +132,8 @@ try {
           HOME: process.env.HOME,
           TMPDIR: process.env.TMPDIR,
           LANG: "ko_KR.UTF-8",
-          CHROME_PATH: chromium.executablePath(),
         };
-        const code = await new Promise((resolve) => {
-          const child = spawn(process.execPath, command, {
-            env,
-            stdio: ["ignore", "ignore", "pipe"],
-            timeout: 120000,
-          });
-          child.stderr.on("data", () => {});
-          child.on("error", () => resolve(1));
-          child.on("exit", (code) => resolve(code ?? 1));
-        });
+        const code = await runAudit(command, env);
         if (code) throw new Error("LIGHTHOUSE_PROCESS_FAILED");
         const raw = fs.readFileSync(reportFile);
         const lhr = JSON.parse(raw);

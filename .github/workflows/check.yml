@@ -1,16 +1,20 @@
-name: FirstScene checks
+name: FirstScene development checks
 "on":
   pull_request:
+  push:
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
 jobs:
   check:
     runs-on: ubuntu-24.04
+    timeout-minutes: 35
     env:
       CI: "true"
       FIRSTSCENE_CI_DISPOSABLE: "1"
       NEXT_TELEMETRY_DISABLED: "1"
+      FIRSTSCENE_LINUX_WEBKIT: "1"
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -24,25 +28,31 @@ jobs:
           package-manager-cache: false
       - run: npm install --global pnpm@10.14.0
       - run: pnpm install --frozen-lockfile
-      - run: pnpm exec playwright install --with-deps chromium webkit
+      - name: Install and launch Chromium on the runner
+        timeout-minutes: 6
+        run: |
+          pnpm exec playwright install chromium
+          node tools/ci-browser-probe.mjs
+      - name: Prepare the pinned WebKit runtime
+        timeout-minutes: 10
+        run: node tools/prepare-linux-webkit.mjs
       - run: pnpm build:packages
       - run: pnpm db:ci:up
       - run: node tools/database/ci-run.mjs pnpm db:prepare-test
       - run: node tools/database/ci-run.mjs pnpm db:ci:verify
-      - run: node tools/database/ci-run.mjs pnpm check:full
+      - run: node tools/database/ci-run.mjs pnpm check:ci
       - run: pnpm container:build
       - run: node tools/database/ci-run.mjs pnpm container:smoke
       - name: Remove only owned disposable database
         if: always()
         run: pnpm db:ci:down
-      - name: Upload redacted reports
+      - name: Export allowlisted CI evidence
+        if: always()
+        run: node tools/ci-public-summary.mjs
+      - name: Upload CI evidence summary
         if: always()
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
-          name: firstscene-redacted-evidence
-          path: |
-            evidence/qa/full-run/
-            evidence/container/startup.json
-            evidence/container/smoke.json
-            evidence/ci/prepare-test.json
+          name: firstscene-ci-summary
+          path: artifacts/private/ci-public-summary.json
           if-no-files-found: error

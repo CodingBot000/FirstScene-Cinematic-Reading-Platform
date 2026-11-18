@@ -4,7 +4,12 @@ import { spawn, execFileSync } from "node:child_process";
 import { createHash, randomUUID } from "node:crypto";
 import { ownedCiReceipt, privateEnvironment } from "./database/ci-service.mjs";
 export const useLinuxWebkit = () =>
-  process.platform === "darwin" && process.env.FIRSTSCENE_LINUX_WEBKIT === "1";
+  (process.platform === "darwin" || process.platform === "linux") &&
+  process.env.FIRSTSCENE_LINUX_WEBKIT === "1";
+export const browserRuntimeProfile = () =>
+  useLinuxWebkit()
+    ? `${process.platform === "darwin" ? "mac" : "linux"}-chromium/linux-webkit`
+    : "host";
 export function mergeBrowserReports(reports) {
   if (
     !reports.length ||
