@@ -12,6 +12,64 @@ import {
  * A presentation catalog only. Clicking these items never creates a reader
  * session or touches the canonical story, bookmark, or progress APIs.
  */
+/**
+ * A compact cover wall directly below the hero. Its ten teaser covers are
+ * clickable, but explicitly remain unpublished concepts.
+ */
+export function PreviewTeaser() {
+  const [selected, setSelected] = useState<PreviewStory | null>(null);
+  const selections = previewShelves.flatMap((shelf) => shelf.stories.slice(0, 2));
+  return (
+    <section className="preview-teaser" aria-label="공개 예정 작품 미리보기">
+      <div className="preview-teaser-heading">
+        <span>FIRSTSCENE ARCHIVE</span>
+        <p>읽을 수 있는 이야기 2편 + 공개 예정 작품 {previewCount}편</p>
+        <a href="#coming-soon" className="fs-text-link">
+          전체 컬렉션 보기 <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+      <div className="preview-teaser-strip">
+        {selections.map((story, index) => (
+          <button
+            key={story.id}
+            type="button"
+            className="preview-teaser-item"
+            onClick={() => setSelected(story)}
+            aria-label={`${story.title}, 공개 준비 중 안내 열기`}
+          >
+            <span className="preview-cover" data-palette={story.palette}>
+              <span className="preview-cover-overline">
+                NO. {String(index + 1).padStart(2, "0")}
+              </span>
+              <span className="preview-cover-art" aria-hidden="true">
+                {story.symbol}
+              </span>
+              <span className="preview-cover-title">{story.title}</span>
+              <span className="preview-cover-imprint">COMING SOON</span>
+            </span>
+          </button>
+        ))}
+      </div>
+      {selected ? (
+        <Dialog
+          open
+          onOpenChange={(open) => {
+            if (!open) setSelected(null);
+          }}
+          title={selected.title}
+          description="이 작품은 현재 공개 준비 중입니다."
+        >
+          <p className="preview-dialog-summary">{selected.summary}</p>
+          <p>현재 콘셉트만 공개되어 있습니다. 완결된 두 작품은 지금 바로 읽을 수 있습니다.</p>
+          <a href="#read-now" className="fs-text-link" onClick={() => setSelected(null)}>
+            완결작 보기 <span aria-hidden="true">↗</span>
+          </a>
+        </Dialog>
+      ) : null}
+    </section>
+  );
+}
+
 export function PreviewCollection() {
   const [selected, setSelected] = useState<PreviewStory | null>(null);
   const rootRef = useRef<HTMLElement>(null);
