@@ -18,7 +18,9 @@ import {
  */
 export function PreviewTeaser() {
   const [selected, setSelected] = useState<PreviewStory | null>(null);
-  const selections = previewShelves.flatMap((shelf) => shelf.stories.slice(0, 2));
+  const selections = previewShelves.flatMap((shelf) =>
+    shelf.stories.slice(0, 2),
+  );
   return (
     <section className="preview-teaser" aria-label="공개 예정 작품 미리보기">
       <div className="preview-teaser-heading">
@@ -61,7 +63,11 @@ export function PreviewTeaser() {
         >
           <p className="preview-dialog-summary">{selected.summary}</p>
           <p>현재 콘셉트만 공개되어 있습니다. 완결된 두 작품은 지금 바로 읽을 수 있습니다.</p>
-          <a href="#read-now" className="fs-text-link" onClick={() => setSelected(null)}>
+          <a
+            href="#read-now"
+            className="fs-text-link"
+            onClick={() => setSelected(null)}
+          >
             완결작 보기 <span aria-hidden="true">↗</span>
           </a>
         </Dialog>
@@ -163,7 +169,8 @@ export function PreviewCollection() {
         >
           <div className="preview-shelf-heading">
             <span className="preview-shelf-index">
-              CHAPTER {shelf.index} / {previewShelves.length.toString().padStart(2, "0")}
+              CHAPTER {shelf.index} /{" "}
+              {previewShelves.length.toString().padStart(2, "0")}
             </span>
             <p className="preview-shelf-genre">{shelf.genre}</p>
             <h3 id={`preview-heading-${shelf.id}`}>{shelf.title}</h3>
