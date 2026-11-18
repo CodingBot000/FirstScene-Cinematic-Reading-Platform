@@ -1,0 +1,11 @@
+# P02-T05 public asset verification
+
+16publicassets completed:2covers,12distinct scene backgrounds and2portraitderivatives.92AVIF/WebPvariants use onlywidths<=source; metadata stripped/sRGBnormalized, focal/aspectcrops recorded. Filenames include encodedhash/width/format. Exactacceptedproductionprompts were recovered and archived inexecution/image-prompts; all16matched their originalpre-callhashes, so no prompt/provenance was invented retroactively. Totalnativeattempts21including2concepts/3rejectedqualityattempts; no newgeneration/APIcalls during optimization. ActualnativeModelunknown, separateAPIspend0.
+
+Sourceapproval and cropapproval are now distinct. Derivedportraitstate waspending until actual640WebPfiles were opened and identity/face/outfit/headmargin checked, then explicitlyapproved. All14optimizedcover/backgroundmobilevariants also opened; composition, motifs and palette remain legible. Sourcecaveats remain innotes (e.g.secondaryvine inepilogue), not silently promoted toperfection. Humanreview0. ActualAVIFproduct12scenes remainfullvisualphase; decoder/MIME/dimension/hash verification is alreadycomplete forbothformats.
+
+Releaseverify requires exact16IDs/roles/alt/decorative/focaldata, approvedsource+generationimportprovenance, explicitderivedreview, canonicalvariantfilenames, actualdecoderformat(includingAVIFheif/av1), dimensions/bytes/SHA256 andbytebudgets. Not justextensionchecks. `pnpm assets:verify -- --release`exit0:16assets/92variants. ActualHTTP32format samples200/correctMIME/immutablecachepassed. `assets:plan`has no unfinishedentries afterderivedapproval.
+
+Mobileintegration test initially restoredmail-s02-b01 topreviousbeat. Reservedportraitfiguregeometry now staysindependent ofactiveScene; onlyimageURLloadingchanges. Fractionalrestoration offsets round into theintendedbeat instead ofbeforeitsstart. The same390x844directhash/30framestabilitytest passed afterrepair, with screenshotopened. DefectD-P02-001 tracked, originalfailure retained. FullChromium22/22 andunit55/55, currentproductionbuild/lint/typecheck/boundariespassed. No assertion weakened or newimages generated to mask the layout bug.
+
+Evidence: final-verification.txt, optimization-review.json, integration-final-results.json, mobile-portrait-verified.png. This completesassets, not overallproduct/readiness/performance/publicdeployment.

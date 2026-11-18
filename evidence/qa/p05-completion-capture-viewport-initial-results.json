@@ -1,0 +1,260 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/24.5.0/bin/node",
+      "/Users/switch/Development/Web/FirstScene/node_modules/@playwright/test/cli.js",
+      "test",
+      "--project=chromium",
+      "tests/e2e/completion.spec.ts"
+    ],
+    "configFile": "/Users/switch/Development/Web/FirstScene/playwright.config.ts",
+    "rootDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/switch/Development/Web/FirstScene/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/switch/Development/Web/FirstScene/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/switch/Development/Web/FirstScene/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "api",
+        "name": "api",
+        "testDir": "/Users/switch/Development/Web/FirstScene/tests/api",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/switch/Development/Web/FirstScene/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+        "snapshotDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:3110",
+          "locale": "ko-KR",
+          "timezoneId": "Asia/Seoul",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure",
+          "browserName": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "evidence/qa/playwright-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.1",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "completion.spec.ts",
+      "file": "completion.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "P05 completion is an explicit last CTA and a delayed acknowledgement preserves a newer reread anchor",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2652,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T00:48:25.557Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "222eb7ebef88c56bfdae-ac6b227538c8f7607dcd",
+          "file": "completion.spec.ts",
+          "line": 20,
+          "column": 1
+        },
+        {
+          "title": "P05 offline completion stays temporary and reconnect confirms completion before saving the latest anchor",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 6046,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeInViewport\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('heading', { name: '다음 이야기', exact: true })\nExpected: in viewport\nReceived: viewport ratio 0\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeInViewport\" getByRole('heading', { name: '다음 이야기', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: '다음 이야기', exact: true })\u001b[22m\n\u001b[2m    14 × locator resolved to <h2>다음 이야기</h2>\u001b[22m\n\u001b[2m       - unexpected value \"viewport ratio 0\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeInViewport\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('heading', { name: '다음 이야기', exact: true })\nExpected: in viewport\nReceived: viewport ratio 0\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeInViewport\" getByRole('heading', { name: '다음 이야기', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: '다음 이야기', exact: true })\u001b[22m\n\u001b[2m    14 × locator resolved to <h2>다음 이야기</h2>\u001b[22m\n\u001b[2m       - unexpected value \"viewport ratio 0\"\u001b[22m\n\n    at /Users/switch/Development/Web/FirstScene/tests/e2e/completion.spec.ts:104:5",
+                    "location": {
+                      "file": "/Users/switch/Development/Web/FirstScene/tests/e2e/completion.spec.ts",
+                      "column": 5,
+                      "line": 104
+                    },
+                    "snippet": " \u001b[90m 102 |\u001b[39m   \u001b[36mawait\u001b[39m expect(\n \u001b[90m 103 |\u001b[39m     page\u001b[33m.\u001b[39mgetByRole(\u001b[32m\"heading\"\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m\"다음 이야기\"\u001b[39m\u001b[33m,\u001b[39m exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 104 |\u001b[39m   )\u001b[33m.\u001b[39mtoBeInViewport()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 105 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m\".reader-completion-panel\"\u001b[39m)\u001b[33m.\u001b[39mscreenshot({\n \u001b[90m 106 |\u001b[39m     path\u001b[33m:\u001b[39m \u001b[32m`evidence/ui/current/p05-completion-local-${page.viewportSize()!.width}.png`\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 107 |\u001b[39m   })\u001b[33m;\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/switch/Development/Web/FirstScene/tests/e2e/completion.spec.ts",
+                        "column": 5,
+                        "line": 104
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeInViewport\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  getByRole('heading', { name: '다음 이야기', exact: true })\nExpected: in viewport\nReceived: viewport ratio 0\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeInViewport\" getByRole('heading', { name: '다음 이야기', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('heading', { name: '다음 이야기', exact: true })\u001b[22m\n\u001b[2m    14 × locator resolved to <h2>다음 이야기</h2>\u001b[22m\n\u001b[2m       - unexpected value \"viewport ratio 0\"\u001b[22m\n\n\n  102 |   await expect(\n  103 |     page.getByRole(\"heading\", { name: \"다음 이야기\", exact: true }),\n> 104 |   ).toBeInViewport();\n      |     ^\n  105 |   await page.locator(\".reader-completion-panel\").screenshot({\n  106 |     path: `evidence/ui/current/p05-completion-local-${page.viewportSize()!.width}.png`,\n  107 |   });\n    at /Users/switch/Development/Web/FirstScene/tests/e2e/completion.spec.ts:104:5"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T00:48:28.427Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/switch/Development/Web/FirstScene/test-results/completion-P05-offline-com-78465-re-saving-the-latest-anchor-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/switch/Development/Web/FirstScene/test-results/completion-P05-offline-com-78465-re-saving-the-latest-anchor-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/switch/Development/Web/FirstScene/test-results/completion-P05-offline-com-78465-re-saving-the-latest-anchor-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/switch/Development/Web/FirstScene/tests/e2e/completion.spec.ts",
+                    "column": 5,
+                    "line": 104
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "222eb7ebef88c56bfdae-e877249f4512255b873c",
+          "file": "completion.spec.ts",
+          "line": 89,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-18T00:48:24.711Z",
+    "duration": 9843.456,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

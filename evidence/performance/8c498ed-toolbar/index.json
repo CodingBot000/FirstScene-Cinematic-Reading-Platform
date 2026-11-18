@@ -1,0 +1,77 @@
+{
+  "observedAt": "2026-11-18T01:56:12.627911+00:00",
+  "command": "pnpm test:perf",
+  "exitCode": 0,
+  "status": "PERFORMANCE_GATES_PASSED",
+  "applicationCommit": "8c498ed",
+  "scope": "Measured after toolbar gap CSS repair, before the subsequently discovered library progress-value repair. Re-run affected measurements after final code changes; not a whole product readiness claim.",
+  "releaseReady": false,
+  "reviewer": "agent",
+  "humanReviews": 0,
+  "artifacts": [
+    {
+      "path": "evidence/performance/8c498ed-toolbar/navigation.json",
+      "sha256": "af0be3743fd27eebc5f6ce12ab4c21dda267d52248376a7893822c9e03f967e0"
+    },
+    {
+      "path": "evidence/performance/8c498ed-toolbar/home-1.json",
+      "sha256": "f72d7d977c10c61a8f8419e27864a6e451febd4da45d8905e81c8cf0fffd9a92"
+    },
+    {
+      "path": "evidence/performance/8c498ed-toolbar/home-2.json",
+      "sha256": "0864b149a1750172ea5ce1974c69525ae45786f612497f1e63651c8768824c94"
+    },
+    {
+      "path": "evidence/performance/8c498ed-toolbar/home-3.json",
+      "sha256": "4f7fd0551f092966e8245d88f467457414e658ef2d00e2faa6b72bdaf2159d75"
+    },
+    {
+      "path": "evidence/performance/8c498ed-toolbar/introduction-1.json",
+      "sha256": "21575c57f46825389b56cc777b968ce1c7f6b29565d45ee098ffbcb155acd24c"
+    },
+    {
+      "path": "evidence/performance/8c498ed-toolbar/introduction-2.json",
+      "sha256": "6e83e0ac572f1127a5a8ca45180383e2218e20894c7d4bb7335bf80db69473ac"
+    },
+    {
+      "path": "evidence/performance/8c498ed-toolbar/introduction-3.json",
+      "sha256": "7cf576981933dde56d2755059d230ba9ce3acc2cbc2d58beffeb700345589e36"
+    },
+    {
+      "path": "evidence/performance/8c498ed-toolbar/reader-1.json",
+      "sha256": "d1dfae96a0239e7280940dbf5ac58cc906a40087f92e34796ceec01b2fcaa233"
+    },
+    {
+      "path": "evidence/performance/8c498ed-toolbar/reader-2.json",
+      "sha256": "9270e79bfd7cec8c1f5b50420a0404dccc190ccd7b546f991d41f52bb97efa7a"
+    },
+    {
+      "path": "evidence/performance/8c498ed-toolbar/reader-3.json",
+      "sha256": "d9197d8ad40e6c63077d4f8fe0920379eda7100a52339d9562ffb10f60abc985"
+    },
+    {
+      "path": "evidence/performance/8c498ed-toolbar/browser-results.json",
+      "sha256": "477c237d8d2421920b880b9333aaf056d1149c26dd4dd077b8496e1aea9534fa"
+    },
+    {
+      "path": "evidence/performance/8c498ed-toolbar/lifecycle-perf-chromium.json",
+      "sha256": "c820839ca50227a3633e4a970e4e299fb6fdbe65a1df16938a341356eb0ced45"
+    },
+    {
+      "path": "evidence/performance/8c498ed-toolbar/lifecycle-perf-webkit.json",
+      "sha256": "d99cbd1d6c49c41dc00b2c800ec69d14858252966feec96d79a146aa445e4e73"
+    },
+    {
+      "path": "evidence/performance/8c498ed-toolbar/interactions.json",
+      "sha256": "f68136ba59533e43cd540e4421eb4c48e1156433f3aadc9f5aaa0ffb87fac719"
+    },
+    {
+      "path": "evidence/performance/8c498ed-toolbar/resources.json",
+      "sha256": "cbde6ccbfc0573087190b8e1398033081135475410cb57355a6e141f0c06c68d"
+    },
+    {
+      "path": "evidence/performance/8c498ed-toolbar/result.json",
+      "sha256": "13fcbcee18a7ffb5d78702ff95d70c75217adb73beaa02a3f43c0b617618fd44"
+    }
+  ]
+}

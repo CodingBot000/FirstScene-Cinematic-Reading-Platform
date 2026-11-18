@@ -1,0 +1,17 @@
+{
+  "status": "FAILED",
+  "observedAt": "2026-11-18T03:41:27.959Z",
+  "checks": [
+    {
+      "name": "public HTTP error logs redact known credentials",
+      "passed": true
+    },
+    {
+      "name": "actual Next startup rejects public HTTP",
+      "passed": false
+    }
+  ],
+  "releaseReady": false,
+  "error": "STARTUP_CHECK_FAILED",
+  "finishedAt": "2026-11-18T03:41:42.967Z"
+}

@@ -1,0 +1,9 @@
+
+> firstscene-workspace@0.1.0 assets:verify /Users/switch/Development/Web/FirstScene
+> node tools/image-pipeline/cli.mjs verify -- --release
+
+{
+  "publicAssets": 16,
+  "variants": 92,
+  "sha256": "cad05905c91691e15e241c56c35497429ac809e759bf31d3befa9770d50fd138"
+}

@@ -1,0 +1,34 @@
+{
+  "observedAt": "2026-11-18T09:44:17.270791+00:00",
+  "status": "AUTOMATED_SECURITY_NEGATIVES_PASSED",
+  "command": "pnpm test:security",
+  "exitCode": 0,
+  "codeCommit": "4f7aac271235826998bc3a07bd05d65a75519c62",
+  "scope": "Final versioned public-document privacy fingerprint plus ordinary negative regressions, after disposableCI shutdown. API uses fresh isolated DB on preserved developmentPostgreSQL. Not sealed managedsourceaudit.",
+  "unitPassed": 31,
+  "apiPassed": 25,
+  "staticChecks": 5,
+  "artifacts": [
+    {
+      "path": "evidence/security/final-document-check/0-result.json",
+      "producerPath": "evidence/security/current/result.json",
+      "sha256": "abce6ea9f356b54adf0800e4241771c7218c5ca3f21fb5957d69e1dbb7604cbb"
+    },
+    {
+      "path": "evidence/security/final-document-check/1-unit-results.json",
+      "producerPath": "evidence/security/current/unit-results.json",
+      "sha256": "df39f5df6f3d2ecbe5c280262e42c2cdba53d507c4ac628db3333a622b3d1125"
+    },
+    {
+      "path": "evidence/security/final-document-check/2-test-results.json",
+      "producerPath": "evidence/security/current/test-results.json",
+      "sha256": "cb1e3430ad1c1d30a1377cca5a1107b523bb581f243208b229f22101ac18a75b"
+    },
+    {
+      "path": "evidence/security/final-document-check/3-public-source-review.json",
+      "producerPath": "evidence/security/public-source-review.json",
+      "sha256": "0c7ddcedc2ece5b3d924f6f23feb047e7e9fa6312aa50998c3cfc59d9d00043d"
+    }
+  ],
+  "trackedEvidenceIncluded": true
+}

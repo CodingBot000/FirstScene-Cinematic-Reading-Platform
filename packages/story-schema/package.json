@@ -1,0 +1,25 @@
+{
+  "name": "@firstscene/story-schema",
+  "version": "0.1.0",
+  "type": "module",
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "cd ../.. && node tools/generate-schema.mjs && pnpm exec prettier --write packages/story-schema/src/schema.ts && pnpm exec tsc -p packages/story-schema/tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "ajv": "8.20.0",
+    "json-schema-to-ts": "3.1.1"
+  }
+}

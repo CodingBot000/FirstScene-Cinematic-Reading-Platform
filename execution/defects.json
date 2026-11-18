@@ -1,0 +1,359 @@
+{
+  "schemaVersion": 1,
+  "status": "NOT_REVIEWED",
+  "defects": [
+    {
+      "id": "D-P03-001",
+      "taskId": "P03-T04",
+      "severity": "P1",
+      "status": "RESOLVED",
+      "title": "Rapid preference changes lose the captured reading anchor",
+      "reproduction": "pnpm test:e2e -- tests/e2e/preferences.spec.ts",
+      "test": "QA-R05",
+      "actual": "mail-s03-b02 shifted back into mail-s02 afterfont/mode/theme changes",
+      "observedAt": "2026-11-17T17:57:13.219904+00:00",
+      "evidence": "evidence/ui/preferences-initial-results.json",
+      "fixedCommit": "b8bac1007259e2792282793ad9211cd3bed018ed",
+      "verifiedAt": "2026-11-17T18:16:53.519121+00:00",
+      "verification": "evidence/ui/p03-preferences-full-results.json"
+    },
+    {
+      "id": "D-P03-002",
+      "taskId": "P03-T04",
+      "severity": "P1",
+      "status": "RESOLVED",
+      "title": "Same-document unknown hash does not refresh notice/fallback",
+      "reproduction": "pnpm test:e2e -- tests/e2e/preferences.spec.ts",
+      "test": "QA-R06",
+      "actual": "hashchange reused mounted store/renderer and no neutral notice appeared",
+      "observedAt": "2026-11-17T17:57:13.220037+00:00",
+      "evidence": "evidence/ui/preferences-initial-results.json",
+      "fixedCommit": "b8bac1007259e2792282793ad9211cd3bed018ed",
+      "verifiedAt": "2026-11-17T18:16:53.519291+00:00",
+      "verification": "evidence/ui/p03-preferences-full-results.json"
+    },
+    {
+      "id": "D-P03-003",
+      "taskId": "P03-T04",
+      "severity": "P1",
+      "status": "RESOLVED",
+      "title": "TOC target focus is overwritten by dialog focus restoration",
+      "reproduction": "pnpm test:e2e -- tests/e2e/preferences.spec.ts",
+      "test": "TOC focus",
+      "actual": "scene heading remained inactive after dialog closed",
+      "observedAt": "2026-11-17T17:57:13.220040+00:00",
+      "evidence": "evidence/ui/preferences-initial-results.json",
+      "fixedCommit": "b8bac1007259e2792282793ad9211cd3bed018ed",
+      "verifiedAt": "2026-11-17T18:16:53.519295+00:00",
+      "verification": "evidence/ui/p03-preferences-full-results.json"
+    },
+    {
+      "id": "D-P02-001",
+      "taskId": "P02-T05",
+      "affectedTasks": [
+        "P03-T03",
+        "P03-T04"
+      ],
+      "severity": "P1",
+      "status": "RESOLVED",
+      "title": "Mobile portrait-scene hash restores previous beat",
+      "reproduction": "pnpm test:e2e -- tests/e2e/assets.spec.ts",
+      "observed": "390x844directlinkmail-s02-b01 settled onmail-s01-b06 after30frames. Conditionalportraitlayout and fractional scroll boundary are corrected together.",
+      "evidence": "evidence/assets/mobile-integration-initial-results.json",
+      "observedAt": "2026-11-17T20:00:08.316834+00:00",
+      "fixedCommit": "6a011cb7ce254d6e41a1d486ef848b958192e60e",
+      "verifiedAt": "2026-11-17T20:10:20.841339+00:00",
+      "verification": "evidence/assets/integration-final-results.json"
+    },
+    {
+      "id": "D-P05-001",
+      "taskId": "P05-T01",
+      "affectedTasks": [
+        "P03-T04"
+      ],
+      "severity": "P1",
+      "status": "RESOLVED",
+      "title": "First server session overwrites pre-cookie plain reading preference",
+      "reproduction": "pnpm test:e2e -- tests/e2e/preferences.spec.ts",
+      "evidence": "evidence/qa/p05-sync-initial-results.json",
+      "observed": "Plain seeded entry gained cinematic stage after first session default preferences hydrated; existing no-GSAP acceptance failed. Preserve local preferences during first issuance and retain epoch guard when only local cache survives.",
+      "observedAt": "2026-11-17T21:05:23.958892+00:00",
+      "fixedCommit": "231acac809c2965de19ac86c3573eeb62ada71fe",
+      "verifiedAt": "2026-11-17T21:21:12.252753+00:00",
+      "verification": "evidence/qa/p05-sync-chromium-results.json"
+    },
+    {
+      "id": "D-P05-002",
+      "taskId": "P05-T01",
+      "affectedTasks": [
+        "P03-T03",
+        "P03-T04"
+      ],
+      "severity": "P1",
+      "status": "RESOLVED",
+      "title": "Persistence-ready restoration can reverse a fast programmatic jump",
+      "reproduction": "pnpm test:e2e -- tests/e2e/renderer.spec.ts",
+      "evidence": "evidence/qa/p05-restore-initial-results.json",
+      "fixedCommit": "231acac809c2965de19ac86c3573eeb62ada71fe",
+      "verifiedAt": "2026-11-17T21:21:12.252753+00:00",
+      "verification": "evidence/qa/p05-sync-chromium-results.json"
+    },
+    {
+      "id": "D-P05-003",
+      "taskId": "P05-T02",
+      "affectedTasks": [
+        "P01-T03",
+        "P03-T03",
+        "P03-T04",
+        "P05-T01"
+      ],
+      "severity": "P1",
+      "status": "RESOLVED",
+      "title": "WebKit dialog fails to restore focus to its actual toolbar opener",
+      "evidence": "evidence/qa/p05-library-webkit-initial-results.json",
+      "observedAt": "2026-11-17T21:48:05.894914+00:00",
+      "fixedCommit": "55cf9330154d0bff40d754c20f37515c8c906ff8",
+      "verifiedAt": "2026-11-17T21:58:45.833942+00:00",
+      "verification": "evidence/qa/p05-library-webkit-results.json"
+    },
+    {
+      "id": "D-P05-004",
+      "taskId": "P05-T02",
+      "affectedTasks": [
+        "P01-T03",
+        "P03-T03",
+        "P03-T04",
+        "P05-T01"
+      ],
+      "severity": "P1",
+      "status": "RESOLVED",
+      "title": "WebKit rapid settings reflow intermittently restores preceding beat",
+      "evidence": "evidence/qa/p05-webkit-anchor-second-results.json",
+      "observedAt": "2026-11-17T21:48:05.894914+00:00",
+      "fixedCommit": "55cf9330154d0bff40d754c20f37515c8c906ff8",
+      "verifiedAt": "2026-11-17T21:58:45.833942+00:00",
+      "verification": "evidence/qa/p05-library-webkit-results.json"
+    },
+    {
+      "id": "D-P05-005",
+      "taskId": "P05-T02",
+      "affectedTasks": [
+        "P01-T03",
+        "P03-T03",
+        "P03-T04",
+        "P05-T01"
+      ],
+      "severity": "P1",
+      "status": "RESOLVED",
+      "title": "Write-only storage denial lets a cache refresh overwrite in-memory font selection",
+      "evidence": "evidence/qa/p05-webkit-focus-repair-results.json",
+      "observedAt": "2026-11-17T21:48:05.894914+00:00",
+      "fixedCommit": "55cf9330154d0bff40d754c20f37515c8c906ff8",
+      "verifiedAt": "2026-11-17T21:58:45.833942+00:00",
+      "verification": "evidence/qa/p05-library-webkit-results.json"
+    },
+    {
+      "id": "D-P05-006",
+      "taskId": "P05-T01",
+      "affectedTasks": [
+        "P05-T02",
+        "P05-T03"
+      ],
+      "severity": "P1",
+      "status": "RESOLVED",
+      "title": "Peer claims deletion succeeded before DELETE settles, even when it fails",
+      "observedAt": "2026-11-17T22:45:00.534805+00:00",
+      "evidence": "evidence/qa/p05-deletion-before-results.json",
+      "beforeScreenshot": "evidence/ui/p05-deletion-peer-before.jpg",
+      "reproduction": "pnpm test:e2e -- tests/e2e/deletion.spec.ts",
+      "fixedCommit": "4e1df9e917b646ba2fd6342fba828d38e061adc7",
+      "verifiedAt": "2026-11-17T23:24:18.164137+00:00",
+      "verification": "evidence/qa/p05-deletion-final-chromium-results.json"
+    },
+    {
+      "id": "D-P05-007",
+      "taskId": "P05-T01",
+      "affectedTasks": [
+        "P05-T03"
+      ],
+      "severity": "P1",
+      "status": "RESOLVED",
+      "title": "Delayed old tab pagehide recreates an erased anchor in a new generation cache",
+      "evidence": "evidence/qa/p05-stale-cache-before-results.json",
+      "reproduction": "pnpm test:e2e -- tests/e2e/deletion.spec.ts --grep \"stale tab\"",
+      "fixedCommit": "4e1df9e917b646ba2fd6342fba828d38e061adc7",
+      "verifiedAt": "2026-11-17T23:24:18.164137+00:00",
+      "verification": "evidence/qa/p05-deletion-final-chromium-results.json"
+    },
+    {
+      "id": "D-P05-008",
+      "taskId": "P05-T01",
+      "affectedTasks": [
+        "P03-T04",
+        "P05-T02"
+      ],
+      "severity": "P1",
+      "status": "RESOLVED",
+      "title": "Navigation can discard asynchronously persisted preference intent and restore older server settings",
+      "evidence": "evidence/qa/p05-preference-navigation-initial-results.json",
+      "reproduction": "pnpm test:e2e -- tests/e2e/sync.spec.ts --grep \"storage lock\"",
+      "fixedCommit": "87cb42f74f09166e0e1ee38e991d077893f29f42",
+      "verifiedAt": "2026-11-18T00:50:06.224526+00:00",
+      "verification": "evidence/qa/p05-completion-chromium-results.json"
+    },
+    {
+      "id": "D-P05-009",
+      "taskId": "P05-T03",
+      "severity": "P2",
+      "status": "RESOLVED",
+      "title": "Collapsed completion footer margin exposes paper background below dark reader",
+      "evidence": "evidence/ui/p05-completion-theme-before-1440.png",
+      "fixedCommit": "87cb42f74f09166e0e1ee38e991d077893f29f42",
+      "verifiedAt": "2026-11-18T00:50:06.224526+00:00",
+      "verification": "evidence/qa/p05-completion-index.json"
+    },
+    {
+      "id": "D-P06-001",
+      "taskId": "P06-T01",
+      "affectedTasks": [
+        "P01-T03",
+        "P06-T03"
+      ],
+      "severity": "P2",
+      "status": "RESOLVED",
+      "title": "Shared story-card summaries exceed the specified two-line limit at all four viewport sizes",
+      "observedAt": "2026-11-18T01:30:47.093655+00:00",
+      "evidence": "evidence/visual/card-summary-before/index.json",
+      "source": "docs/16_SCREEN_SPECS.md S01 StoryCard maximum two-line summary",
+      "reproduction": "pnpm test:visual -- --collect; open home captures at1440/1024/390/320",
+      "fixedCommit": "16a7018fdd5d56536e59d83859cf8092b343fbe2",
+      "verifiedAt": "2026-11-18T01:35:38.904124+00:00",
+      "verification": "evidence/visual/card-summary-repair.json"
+    },
+    {
+      "id": "D-P06-002",
+      "taskId": "P06-T01",
+      "affectedTasks": [
+        "P01-T03",
+        "P03-T04",
+        "P06-T03"
+      ],
+      "severity": "P2",
+      "status": "RESOLVED",
+      "title": "Mobile toolbar focus outline overlaps the save-status text after closing settings",
+      "observedAt": "2026-11-18T01:44:06.015308+00:00",
+      "evidence": "evidence/visual/16a7018fdd5d56536e59d83859cf8092b343fbe2/reader-390x844-plain-font24.png",
+      "reproduction": "Open settings on390px, change font/mode, Escape; settings focus ring crosses save status due negative status-row margin.",
+      "fixedCommit": "8c498ed1b093f10e8b99d947d55e849362ec2082",
+      "verifiedAt": "2026-11-18T01:50:52.376043+00:00",
+      "verification": "evidence/visual/toolbar-gap-repair.json"
+    },
+    {
+      "id": "D-P06-003",
+      "taskId": "P05-T02",
+      "affectedTasks": [
+        "P06-T01"
+      ],
+      "severity": "P2",
+      "status": "RESOLVED",
+      "title": "Library percentage is passed to a0..1 progress element, displaying full bar for3percent",
+      "observedAt": "2026-11-18T01:54:17.791004+00:00",
+      "evidence": "evidence/visual/8c498ed1b093f10e8b99d947d55e849362ec2082/library-390x844-paper-full.png",
+      "source": "apps/web/features/library/Library.tsx passes rounded percent to Progress without max100; public Progress default max1 clamps it.",
+      "plannedRepair": "Use max100 at the percentage call site; compare actual native progress.position to visible percentage and server furthest ordinal.",
+      "fixedCommit": "91fee84a58483b97c72e5964c1ec498e9bc0e9eb",
+      "verifiedAt": "2026-11-18T02:02:12.961971+00:00",
+      "verification": "evidence/visual/progress-bar-repair.json"
+    },
+    {
+      "id": "D-P08-001",
+      "taskId": "P08-T01",
+      "affectedTasks": [
+        "P03-T01",
+        "P04-T01"
+      ],
+      "severity": "P2",
+      "status": "RESOLVED",
+      "title": "Raw Next startup keeps a process serving500after instrumentation rejects invalid configuration",
+      "observedAt": "2026-11-18T03:50:18.355131+00:00",
+      "evidence": "evidence/container/instrumentation-diagnostic.json",
+      "initialTest": "evidence/container/startup-initial-results.json",
+      "actual": "PUBLIC_HTTPS_REQUIRED is thrown, but all three probed routes return500 and process remains alive until SIGTERM. Docker/tool entry already reject before import.",
+      "repair": "Explicit fatal exit with redacted constant code in nodejs register hook; preserve assertion that bad configuration exits1. Temporary DB unavailability remains nonfatal.",
+      "fixedCommit": "675d1c28687f15491047a161205359ebb8f2db16",
+      "verifiedAt": "2026-11-18T04:06:01.306862+00:00",
+      "verification": "evidence/container/startup.json"
+    },
+    {
+      "id": "D-P08-003",
+      "severity": "P1",
+      "status": "RESOLVED",
+      "summary": "CI performance fixture cwd caused all4browser performance cases to remain unexecuted; full collector accepted only outer report.",
+      "observedAt": "2026-11-18T04:33:06.306427+00:00",
+      "reproduction": "CI=true FIRSTSCENE_CI_DISPOSABLE=1 node tools/database/ci-run.mjs pnpm check:full -- --collect",
+      "evidence": [
+        "evidence/qa/full-run/2026-11-18T04-22-30-498Z-d0c52c4c/index.json",
+        "evidence/qa/full-run/2026-11-18T04-22-30-498Z-d0c52c4c/erratum.json",
+        "evidence/qa/full-run/2026-11-18T04-22-30-498Z-d0c52c4c/performance.txt"
+      ],
+      "repair": "Set explicit webServer cwd; require nested execution proof and add negative guards. Direct repaired CI browser performance4/4PASS; full strict rerun pending.",
+      "resolvedAt": "2026-11-18T04:43:50.136Z",
+      "commit": "dacef08e483dffc604530d7b9931b668ab558462",
+      "verification": [
+        "evidence/qa/full-run/2026-11-18T04-33-54-683Z-914b802e/index.json",
+        "evidence/ci/performance-cwd-repair/browser-results.json",
+        "tests/unit/gate-evidence.test.ts"
+      ],
+      "result": "Corrected CI cwd and actual nested9+4executions passed in full strict sweep; all19suite reports verified,0collectionErrors/qualityFailures. Strict exit2 retained for real external/decision blockers."
+    },
+    {
+      "id": "D-P08-002",
+      "severity": "P1",
+      "status": "RESOLVED",
+      "summary": "Private attachment name in two public tooling sources blocked selective public-source checks; original private input preserved.",
+      "observedAt": "2026-11-18T04:18:37.052984+00:00",
+      "resolvedAt": "2026-11-18T04:43:50.136Z",
+      "commit": "7c4de6413b46abaefae3a609ffbeb83c0f964eb9",
+      "evidence": [
+        "evidence/security/privacy-repair.json",
+        "evidence/security/public-source-review.json"
+      ],
+      "note": "Historical Git blobs/local original remain private; no repository history or remote publication."
+    },
+    {
+      "id": "D-P04-001",
+      "severity": "P1",
+      "status": "RESOLVED",
+      "observedAt": "2026-11-18T07:30:28.455026+00:00",
+      "summary": "Public-mode session creation used a global shared30/15min bucket instead of isolating request-network scopes.",
+      "sourceRevision": "3eda7775cf4026447452c812cc12c249da92e655",
+      "managedScanId": "b65e5088-f5df-4d19-b17f-9bd465d5dfd4",
+      "evidence": [
+        "evidence/security/managed-scan-review.json",
+        "evidence/security/network-isolation-repair/index.json"
+      ],
+      "repair": "Explicit validated network scope, protected Vercel metadata/header only with operator opt-in, reject unsupported public ingress; loopback remains one local scope. Unit103/DB23pass; HTTP regression pending.",
+      "independentValidation": false,
+      "resolvedAt": "2026-11-18T07:51:56.167424+00:00",
+      "commit": "f415ffa792b8d106f10040834e93cf00f2d2ad2b",
+      "verification": "Unit103/DB23/API25/automatedsecurity31units+5checks passed. TrustednetworkA31st blocked,Bfirstallowed; missingnetwork refusesnew rows and validcookie reuse survives. Actualpublicingress verification remains P09; native scan unsealed canonical conflict remains P06blocker."
+    },
+    {
+      "id": "D-P08-004",
+      "severity": "P1",
+      "status": "RESOLVED",
+      "summary": "Linux WebKit full batches wrote relative report paths while the Linux config requires an absolute owned evidence path; full47-case invocation did not execute.",
+      "observedAt": "2026-11-18T09:23:15.522400+00:00",
+      "sourceRevision": "8a050dec3bcf2ae44f70a8268434bf18207f6d9f",
+      "evidence": [
+        "evidence/qa/full-run/2026-11-18T09-20-31-258Z-96264056/webkit.txt",
+        "evidence/qa/suites/webkit-6f76e40e-19af-4ece-9e0e-0774ceea5ce6/combined.json"
+      ],
+      "repairPlan": "Resolve each owned batch report path against the workspace before passing it to the child. Keep the Linux owned-root guard, all47 cases and no retries/skips.",
+      "resolvedAt": "2026-11-18T09:29:57.635451+00:00",
+      "commit": "e6a58aabee0461d33716bc6ad510023a59474901",
+      "verification": "Same complete47LinuxWebKit cases passed with0failed/skipped/flaky after owned batch paths became absolute; guard retained.",
+      "repair": "path.resolve owned report and environment paths, no config guard or assertion weakening."
+    }
+  ]
+}

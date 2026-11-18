@@ -1,0 +1,26 @@
+{
+  "name": "@firstscene/web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1 --port 3100",
+    "build": "next build",
+    "start": "node ../../tools/start-web.mjs",
+    "typecheck": "next typegen && tsc --noEmit"
+  },
+  "dependencies": {
+    "@firstscene/reader-core": "workspace:*",
+    "@firstscene/reader-react": "workspace:*",
+    "@firstscene/server-data": "workspace:*",
+    "@firstscene/story-schema": "workspace:*",
+    "@firstscene/tokens": "workspace:*",
+    "@firstscene/ui": "workspace:*",
+    "next": "16.4.6",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "json-schema-to-ts": "3.1.1"
+  }
+}

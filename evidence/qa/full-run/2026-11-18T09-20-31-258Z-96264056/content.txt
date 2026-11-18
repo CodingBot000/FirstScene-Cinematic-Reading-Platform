@@ -1,0 +1,14 @@
+
+> firstscene-workspace@0.1.0 content:check /Users/switch/Development/Web/FirstScene
+> pnpm --filter @firstscene/story-schema build && pnpm --filter @firstscene/content-compiler build && node tools/content-check.mjs
+
+
+> @firstscene/story-schema@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/story-schema
+> cd ../.. && node tools/generate-schema.mjs && pnpm exec prettier --write packages/story-schema/src/schema.ts && pnpm exec tsc -p packages/story-schema/tsconfig.json
+
+packages/story-schema/src/schema.ts 26ms
+
+> @firstscene/content-compiler@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/content-compiler
+> tsc -p tsconfig.json
+
+Canonical manuscripts compiled:2 stories,12 scenes,72 beats;5 invalid fixtures rejected.

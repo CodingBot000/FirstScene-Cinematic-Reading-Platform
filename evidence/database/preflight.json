@@ -1,0 +1,27 @@
+{
+  "observedAt": "2026-11-17T18:39:25.339Z",
+  "scope": "local-real-postgresql",
+  "version": "17.12 (Debian 17.12-1.pgdg13+1)",
+  "host": "127.0.0.1",
+  "port": 55432,
+  "tables": [
+    "bookmarks",
+    "feedback",
+    "mutation_receipts",
+    "preferences",
+    "rate_buckets",
+    "reading_progress",
+    "schema_migrations",
+    "sessions"
+  ],
+  "runtimeRole": {
+    "current_user": "firstscene_runtime",
+    "rolsuper": false,
+    "rolcreatedb": false,
+    "rolcreaterole": false,
+    "rolbypassrls": false,
+    "rolinherit": false
+  },
+  "migrationSha256": "e8b4de19c9cab3fcaed20d3c8d5385c9083512698b9509d27b6a53cc5e9f442f",
+  "secretsPrinted": false
+}

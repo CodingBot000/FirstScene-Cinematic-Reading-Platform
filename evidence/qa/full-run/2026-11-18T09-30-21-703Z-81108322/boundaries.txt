@@ -1,0 +1,5 @@
+
+> firstscene-workspace@0.1.0 check:boundaries /Users/switch/Development/Web/FirstScene
+> node tools/check-boundaries.mjs
+
+Package boundaries passed.

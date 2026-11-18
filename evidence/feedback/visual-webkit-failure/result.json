@@ -1,0 +1,51 @@
+{
+  "status": "FAILED",
+  "releaseReady": false,
+  "reviewer": null,
+  "startedAt": "2026-11-18T07:37:38.263Z",
+  "sourceCommit": "f415ffa792b8d106f10040834e93cf00f2d2ad2b",
+  "commands": [
+    {
+      "command": "playwright test --config=tools/visual-playwright.config.ts",
+      "exitCode": 1
+    }
+  ],
+  "captures": [],
+  "sourceFingerprint": {
+    "sha256": "767b3661df6f7bc44cc6a19a6afee4a8012c5e250b511e0d4cb17fa7ac0d7814",
+    "files": 163,
+    "roots": [
+      "apps/web",
+      "packages/ui",
+      "packages/tokens",
+      "packages/story-schema",
+      "packages/reader-core",
+      "packages/reader-react",
+      "content/generated",
+      "pnpm-lock.yaml",
+      "package.json",
+      "pnpm-workspace.yaml",
+      ".npmrc",
+      "tsconfig.base.json"
+    ]
+  },
+  "checkFingerprint": {
+    "sha256": "d5b216b6a4c22fd956c3fee7c7d56a45cd082fa79f5539d07b9ce8b238b4bc13",
+    "files": 11,
+    "roots": [
+      "tests/visual",
+      "tools/visual",
+      "tools/visual-playwright.config.ts"
+    ]
+  },
+  "productionBuildId": "K3fiYYsPstj8N4FA7VvQu",
+  "scope": "Viewport rendering/keyboard/axe and agent visual rubric. Native200%zoom and human usability review are separate.",
+  "database": {
+    "name": "firstscene_test_daa26e9163c741df88ad509edc0bb834",
+    "real": true,
+    "fresh": true,
+    "authBypass": false
+  },
+  "error": "VISUAL_BROWSER_CHECKS_FAILED",
+  "finishedAt": "2026-11-18T07:39:12.367Z"
+}

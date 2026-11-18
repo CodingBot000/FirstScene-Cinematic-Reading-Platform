@@ -1,0 +1,295 @@
+{
+  "schemaVersion": 1,
+  "status": "SOURCE_COMMITS_VERIFIED_BEFORE_EXPORT",
+  "observedAt": "2026-11-18T10:06:09.051391+00:00",
+  "sourceRevision": "43d1ccd29ccb07ec9fb606600cb7cc1b9a342ebd",
+  "completedTasks": [
+    {
+      "id": "P00-T01",
+      "sourceCommit": "1822e7aaa4916552821bfc66e70b06e4a92b6086"
+    },
+    {
+      "id": "P00-T02",
+      "sourceCommit": "68135c9f9e61ec6a823aba564bdbcec268312510"
+    },
+    {
+      "id": "P01-T01",
+      "sourceCommit": "92e0747aca51a1e46cf2db27c9bd5b1214534003"
+    },
+    {
+      "id": "P01-T02",
+      "sourceCommit": "882a09dd45d537415fe85e48000d826c9e9c522d"
+    },
+    {
+      "id": "P01-T03",
+      "sourceCommit": "8c498ed1b093f10e8b99d947d55e849362ec2082"
+    },
+    {
+      "id": "P02-T01",
+      "sourceCommit": "c0bd24049f48f2efea98121e37f7a6d4f3f99c36"
+    },
+    {
+      "id": "P02-T02",
+      "sourceCommit": "9cd192361a25540d6f9e2b310906bc23720e92b0"
+    },
+    {
+      "id": "P02-T03",
+      "sourceCommit": "3e7383be3bb0eb6f72299a9c1057e7d15ea55a00"
+    },
+    {
+      "id": "P02-T04",
+      "sourceCommit": "c15b7a11123d9833ba18ebacd0871df29161f636"
+    },
+    {
+      "id": "P02-T05",
+      "sourceCommit": "6a011cb7ce254d6e41a1d486ef848b958192e60e"
+    },
+    {
+      "id": "P03-T01",
+      "sourceCommit": "675d1c28687f15491047a161205359ebb8f2db16"
+    },
+    {
+      "id": "P03-T02",
+      "sourceCommit": "6a011cb7ce254d6e41a1d486ef848b958192e60e"
+    },
+    {
+      "id": "P03-T03",
+      "sourceCommit": "55cf9330154d0bff40d754c20f37515c8c906ff8"
+    },
+    {
+      "id": "P03-T04",
+      "sourceCommit": "8c498ed1b093f10e8b99d947d55e849362ec2082"
+    },
+    {
+      "id": "P04-T01",
+      "sourceCommit": "675d1c28687f15491047a161205359ebb8f2db16"
+    },
+    {
+      "id": "P04-T02",
+      "sourceCommit": "f415ffa792b8d106f10040834e93cf00f2d2ad2b"
+    },
+    {
+      "id": "P04-T03",
+      "sourceCommit": "f415ffa792b8d106f10040834e93cf00f2d2ad2b"
+    },
+    {
+      "id": "P04-T04",
+      "sourceCommit": "f415ffa792b8d106f10040834e93cf00f2d2ad2b"
+    },
+    {
+      "id": "P05-T01",
+      "sourceCommit": "ffcdf3470be2f0a2a5ae4406fc96ec8d23018346"
+    },
+    {
+      "id": "P05-T02",
+      "sourceCommit": "ffcdf3470be2f0a2a5ae4406fc96ec8d23018346"
+    },
+    {
+      "id": "P05-T03",
+      "sourceCommit": "ffcdf3470be2f0a2a5ae4406fc96ec8d23018346"
+    },
+    {
+      "id": "P06-T01",
+      "sourceCommit": "ffcdf3470be2f0a2a5ae4406fc96ec8d23018346"
+    },
+    {
+      "id": "P06-T02",
+      "sourceCommit": "ffcdf3470be2f0a2a5ae4406fc96ec8d23018346"
+    },
+    {
+      "id": "P06-T03",
+      "sourceCommit": "8c498ed1b093f10e8b99d947d55e849362ec2082"
+    }
+  ],
+  "changedFiles": [
+    {
+      "path": "RELEASE_REPORT.md",
+      "sourceSha256": "bb65ae7b963558f433870d4084104b9849d4f2732846f93ef7fe78ef1027c402",
+      "snapshotSha256": "e3e042f9fa2d65ca24d086fa846ceee6e81cd856a0ea0d38b77f7f5372f1fe72"
+    },
+    {
+      "path": "REVIEW.md",
+      "sourceSha256": "e16e0f3691eaee23afd3fe644d3182bf1da4cf7cbc5fb60ce120693e0ed3921d",
+      "snapshotSha256": "5e149225494865bc0b3ec4d44c77127e30fc3070742118c51abcb2e4ed46c562"
+    },
+    {
+      "path": "artifacts/public-documents/RELEASE_REPORT.md",
+      "sourceSha256": "6aa52370d84b60a4e5db74fc2142656fada3f67df7feddfe82c27df56ced55e7",
+      "snapshotSha256": "79c4022bf453f4a5ec4f22b51dcd5b4bfdf801c81f110a4ff7eb802718037872"
+    },
+    {
+      "path": "artifacts/public-documents/docs/public/runbook.md",
+      "sourceSha256": "1bbcdf8b37c779a9802e04e3ec54106a3750c1406eb5ee6512cad9ef98782d14",
+      "snapshotSha256": "af0e7a16be59700526cf4b5d309bad7dc68cf5c4848d628f68c18079d727ce65"
+    },
+    {
+      "path": "artifacts/public-documents/index.json",
+      "sourceSha256": "f8e1b34ad3f16effd742dc0e8c81d1164291c4116b8953eb2a107da00240b945",
+      "snapshotSha256": "86a965b3349b1426f7047565749d3cd58e38d8e506679686b57563cfaa567dd3"
+    },
+    {
+      "path": "contracts/qa-cases.yaml",
+      "sourceSha256": "285c5e5201a307234d7f934197b7aef3ffd094608a1833c310a9e114b101bed3",
+      "snapshotSha256": "96ea0398bb16303605ddb7f898036cb09754ee83ca6c2440e47dbe82576914c9"
+    },
+    {
+      "path": "docs/public/runbook.md",
+      "sourceSha256": "b7a1a0a61328c62e27978c17d4e593ab8cbbc21956442e64849480e77ad07532",
+      "snapshotSha256": "5c4d53f256a771c16d3b6318f763c6626b4dc11c00e55f489ad064b6b5f1dc71"
+    },
+    {
+      "path": "evidence/container/README.md",
+      "sourceSha256": "3c0731a8792d55112d28d0335341c5e3495012c442b4d1ec59c14d097c1c9815",
+      "snapshotSha256": "57d87ef90d10440d38bb94869bac597a9aad04bb5729ec423605f0b24a8e5c2e"
+    },
+    {
+      "path": "evidence/container/index.json",
+      "sourceSha256": "37dbc309697a3f49865b638f633058ae57e29bf97edfa7b64e43a1fcbaf80158",
+      "snapshotSha256": "3535eab4cca87c8c1845d165a37d4dc6957adb9942c6ea7a2c1fc3bc9079f9a1"
+    },
+    {
+      "path": "evidence/container/smoke.json",
+      "sourceSha256": "049548913a425f4182ac827897605304a2044954a3f3292c8347cbe1def7fccf",
+      "snapshotSha256": "674a9cd3c790fb3b484d0f838febb71c6af6931e4b2bb4053225af69129cbeb6"
+    },
+    {
+      "path": "evidence/design/package-validation.json",
+      "sourceSha256": "1e7764befb376047950753d10e91b2e693d82f43a0f9802f045eccf0ebbfaf14",
+      "snapshotSha256": "e98a32693c2b2ad182cc036cb5ca168d3eb863a803c2f235001751afdf3fcb7f"
+    },
+    {
+      "path": "evidence/feedback/verification-index.json",
+      "sourceSha256": "a63f7088f8d77997d8a535285cc32604a5967d8537a508654e529d0713170de2",
+      "snapshotSha256": "d7648a03f10026ab8f7ac48b152834040c2413b7f69780d7d49b62e5aa9a5331"
+    },
+    {
+      "path": "evidence/final/index.json",
+      "sourceSha256": "79865359d8b037cc980dca528c5ef4a02cf5b1f2fa173ff979fc180229c56732",
+      "snapshotSha256": "2fa03218f9d15cac3d2e96cf3b38a710bfaa12f082d736c3eb868cc27a79ba1b"
+    },
+    {
+      "path": "evidence/package-checker-initial-failures.txt",
+      "sourceSha256": "85f7d5222078fa8030dffa5010b2ec2029cc28e66c6603b1984a7e26c9d5d8e4",
+      "snapshotSha256": "0e4b5794f31d1321517e4b02559d5e8d1f81ee36f2c95f9b5ce76b1cab59e7f8"
+    },
+    {
+      "path": "evidence/package-checker-tests.txt",
+      "sourceSha256": "9f088048a3f86cd5c94b9457992c05e9af8b5536106bc950ab685050f9ba6a71",
+      "snapshotSha256": "2f8223471e1907d6b54821acd649b527e638e364c811e0fcd13c7c41c7ac5321"
+    },
+    {
+      "path": "evidence/package-validation.json",
+      "sourceSha256": "6d1acb411601e1550087f731510c11afe7e81759b3e1a96e687a5de7671cebba",
+      "snapshotSha256": "a9b7e1a1cc348eebae9b95ea875fc4370511b234bd37dad0f0b6fe7420f1b28f"
+    },
+    {
+      "path": "evidence/qa/case-coverage.json",
+      "sourceSha256": "35f815f72da02fdc508764ac116839d602d205c40e1317d41dae327c4e2e7108",
+      "snapshotSha256": "bf0443867793b50836209c864d2dcf951ef13827f1481016a8044dbb555bf2c9"
+    },
+    {
+      "path": "evidence/qa/full-run/2026-11-18T04-22-30-498Z-d0c52c4c/erratum.json",
+      "sourceSha256": "175c78881b6ef8763ec07912c6fd200dfca7b7bbb17491e2eae995624d1958d5",
+      "snapshotSha256": "6652369355e3a3b9716ebb02993376729bcd13f4dfaa73738695940e52e11d56"
+    },
+    {
+      "path": "evidence/qa/full-run/2026-11-18T04-22-30-498Z-d0c52c4c/index.json",
+      "sourceSha256": "19b36c3eeb5446412a07763e06cd608d390cf83b4ca945bedb7e8ef1c5460ed2",
+      "snapshotSha256": "8490085f86973a176513a3b7a57dd1f67a4695b886df3b8b21119253553940d1"
+    },
+    {
+      "path": "evidence/qa/full-run/2026-11-18T04-22-30-498Z-d0c52c4c/production-build.txt",
+      "sourceSha256": "513cf25322e8cb9c39daa297e0ad0d135ac3691eace9a5975ae3e47fb6d9d3dc",
+      "snapshotSha256": "26b68ec3381396db13a203891b7c75afcc6e1e4337a12a89a0e1a40a38692f36"
+    },
+    {
+      "path": "evidence/qa/full-run/2026-11-18T04-33-54-683Z-914b802e/index.json",
+      "sourceSha256": "09eca67d0a208e0bd686470455d2e1996dca06af58e4f621cfbe61c244fb99fa",
+      "snapshotSha256": "cf18ebb8e46d48aeb4d666c73957214791c974dd57f9ec8fabdf45e807acf085"
+    },
+    {
+      "path": "evidence/qa/full-run/2026-11-18T04-33-54-683Z-914b802e/production-build.txt",
+      "sourceSha256": "b587903562e40cc453b7c04c46b34eff6204121ad93a3765eee8b9be880a10da",
+      "snapshotSha256": "bb65bf1ec0f6ac3be6ef2e666adf3eecbd57563493fd633e7b31ae2f4cfbb144"
+    },
+    {
+      "path": "evidence/qa/full-run/2026-11-18T09-20-31-258Z-96264056/index.json",
+      "sourceSha256": "e10ade628c42fae37453d4434e3230591d894a7185382abe51f93187ed99089b",
+      "snapshotSha256": "2c92c029a0bb06fabdcc503bebe8854bd9fa39b3ca2f8b6429ee5ebbd0247a2e"
+    },
+    {
+      "path": "evidence/qa/full-run/2026-11-18T09-20-31-258Z-96264056/production-build.txt",
+      "sourceSha256": "0d15b60af937e2760fdd70817b5915931a569e366a80acdd63835688fee4fbc5",
+      "snapshotSha256": "58767ab5f4943f5264ad421812f883f465540a0759fb41d70b5eae0318092d2e"
+    },
+    {
+      "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/index.json",
+      "sourceSha256": "3773d60133c3bf907dc0e54b76347de7de4c3c251c31a10ece44e351c41025bd",
+      "snapshotSha256": "429fa1a525c2c5c60a082ebedd2cd22838c239a695fa030c5a27017b34daec58"
+    },
+    {
+      "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/production-build.txt",
+      "sourceSha256": "95df7589ac01171bf01f3a5ea0b2134b050249922706f2a7334b55b04bb6e1f7",
+      "snapshotSha256": "13407ede68c62a2ca6ea59cf630e24caad5705d95fbb6562f28a680ff476f972"
+    },
+    {
+      "path": "evidence/qa/full-run/latest.json",
+      "sourceSha256": "b877b7245bb5fdee97f2b37f5b3cfd30ed00f35dbd2c4ec81766548fbf5d8a31",
+      "snapshotSha256": "cc2378c9c20ba89ef6c3a67adef2776d40b16f2497044ddd73cc6fc95ef0f8b5"
+    },
+    {
+      "path": "evidence/qa/post-full-visual.json",
+      "sourceSha256": "2ae8b91cec08991b7387a2ebdf38b0ca89cb32beb4be8d71e22ab196f64c208f",
+      "snapshotSha256": "9b20fbe732648cb34f8ac128f478c2e643fa80b69267220fbceb3e99a2180d2c"
+    },
+    {
+      "path": "evidence/security/final-document-check/0-result.json",
+      "sourceSha256": "f644a53f4aaf443bea2f2399d2f2b15315beac2091b7ba5545040a979ceee8b3",
+      "snapshotSha256": "abce6ea9f356b54adf0800e4241771c7218c5ca3f21fb5957d69e1dbb7604cbb"
+    },
+    {
+      "path": "evidence/security/final-document-check/index.json",
+      "sourceSha256": "443c267756055dccbf0e853d49568fbe9e0681e6044567d2640dac49fab875dd",
+      "snapshotSha256": "56d62d8ea27a5f1fe2c0603a46c4ee59f273057b8d27e5937267596421e9c350"
+    },
+    {
+      "path": "evidence/security/privacy-repair.json",
+      "sourceSha256": "da8473c6e3e2d811ca05fefc392d80e23c3e37a0b223af8e49f467ba45b65e0d",
+      "snapshotSha256": "c0e7e82bb6dfc759c79afe2bfd63023e79e954ed9712e232d7697797fc7cabf1"
+    },
+    {
+      "path": "evidence/security/public-source-review.json",
+      "sourceSha256": "6e71982b8c87c84a519fa0863482a8e854c53d452d8f6c192513b9a0ef408728",
+      "snapshotSha256": "b5de6190271a427710b5240cb88e20eeb030f334552f34f544233b15aaed8792"
+    },
+    {
+      "path": "execution/tasks.json",
+      "sourceSha256": "91d37ab4d540f5f179cd3dd44104bf9db198f00d87d599f64fe858f37d9b7bc0",
+      "snapshotSha256": "0a42fb5f96593cbccbe63d0ff47f515e2aba046948506e6e58f582ce66832fea"
+    },
+    {
+      "path": "tools/check-state.mjs",
+      "sourceSha256": "4aa2fc0951a2587348cbc347fb0576ee3ccde496dbf919304a66a7ed4c261eac",
+      "snapshotSha256": "fb0751aae2d8f107fb4148b2b586379b689802e2acb942bf8b6bd9148d1d4ecb"
+    },
+    {
+      "path": "tools/container-smoke.mjs",
+      "sourceSha256": "1024bd0c6125ef06001de3b27f7634b7e018ff97b5e3431e5bd944ae11941fde",
+      "snapshotSha256": "70f22546d43633b98faf324172c530e1ea93d28bb385b8c922bc6f5bf4f43dcb"
+    },
+    {
+      "path": "tools/test_validate_package.py",
+      "sourceSha256": "4b3a61eff94090fcb5afb947b4dd51cea2c3b31c472771e78369fee1d28a7c1c",
+      "snapshotSha256": "086f09c5f4ad7de82a59e3e0b3bd6d5c317cd4a14645a2bd91747d208209a4c7"
+    },
+    {
+      "path": "tools/validate_package.py",
+      "sourceSha256": "a7641f4cf935176b9bed2a71b57941a3bc482c029a024334fa4a87cce9bc9312",
+      "snapshotSha256": "c098b935d46e8855018f1ac7b5ded18ebbbf470b69d97464e619f2f2c64da29a"
+    }
+  ],
+  "notes": [
+    "The snapshot starts with a new root commit. The source revision and task commits identify the versions used during implementation and testing.",
+    "Evidence content and its references were updated where wording was generalized. Existing test outcomes are preserved."
+  ]
+}

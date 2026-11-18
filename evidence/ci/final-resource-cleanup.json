@@ -1,0 +1,12 @@
+{
+  "observedAt": "2026-11-18T09:40:08.018Z",
+  "status": "OWNED_CI_REMOVED",
+  "testDatabases": 0,
+  "qaContainersRunning": 0,
+  "ownedCiContainerId": "fdff88c1b78c3c85dab52a64dbf07d2c0f736a6b4738f53b85fbc62ddbd2cc15",
+  "ownedCiContainerName": "firstscene-ci-508295ad",
+  "developmentDatabasePreserved": true,
+  "removed": true,
+  "verifiedAfterCleanupAt": "2026-11-18T09:40:31.479516+00:00",
+  "privateReceiptRemoved": true
+}

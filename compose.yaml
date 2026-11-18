@@ -1,0 +1,19 @@
+name: firstscene-local
+services:
+  postgres:
+    image: postgres@sha256:0d938e975177bef9f1f61f3f9dbcf2e0aa0a139568f66d3415ed8892eb97f6ac
+    environment:
+      POSTGRES_USER: firstscene_owner
+      POSTGRES_DB: firstscene_dev
+      POSTGRES_PASSWORD: ${LOCAL_POSTGRES_PASSWORD:?Generated project-local password required}
+    ports:
+      - "127.0.0.1:${LOCAL_POSTGRES_PORT:?Project-local port required}:5432"
+    volumes:
+      - firstscene_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U firstscene_owner -d firstscene_dev"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+volumes:
+  firstscene_pgdata:

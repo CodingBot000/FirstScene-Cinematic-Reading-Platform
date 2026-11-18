@@ -1,0 +1,24 @@
+
+> firstscene-workspace@0.1.0 test:visual /Users/switch/Development/Web/FirstScene
+> node tools/visual/collect.mjs
+
+
+Running 14 tests using 1 worker
+
+  ✓   1 [visual1440] › tests/visual/journey.spec.ts:10:1 › saved library, reader settings, plain/reduced and actual image-failure states retain readable controls (4.8s)
+  ✓   2 [visual1440] › tests/visual/responsive-reader.spec.ts:3:1 › reader and dialog keep text,44px controls and keyboard focus visible at this viewport (1.6s)
+  ✓   3 [visual1440] › tests/visual/responsive.spec.ts:3:1 › public surfaces keep readable geometry, keyboard entry and AA-tag axe checks at this viewport (3.2s)
+  ✓   4 [visual1440] › tests/visual/scenes.spec.ts:5:1 › both complete stories render all twelve real images and local moods in forward and reverse order (12.8s)
+  ✓   5 [visual1024] › tests/visual/responsive-reader.spec.ts:3:1 › reader and dialog keep text,44px controls and keyboard focus visible at this viewport (1.5s)
+  ✓   6 [visual1024] › tests/visual/responsive.spec.ts:3:1 › public surfaces keep readable geometry, keyboard entry and AA-tag axe checks at this viewport (3.2s)
+  ✓   7 [visual390] › tests/visual/journey.spec.ts:10:1 › saved library, reader settings, plain/reduced and actual image-failure states retain readable controls (4.9s)
+  ✓   8 [visual390] › tests/visual/responsive-reader.spec.ts:3:1 › reader and dialog keep text,44px controls and keyboard focus visible at this viewport (1.4s)
+  ✓   9 [visual390] › tests/visual/responsive.spec.ts:3:1 › public surfaces keep readable geometry, keyboard entry and AA-tag axe checks at this viewport (3.1s)
+  ✓  10 [visual390] › tests/visual/scenes.spec.ts:5:1 › both complete stories render all twelve real images and local moods in forward and reverse order (3.6s)
+  ✓  11 [visual320] › tests/visual/responsive-reader.spec.ts:3:1 › reader and dialog keep text,44px controls and keyboard focus visible at this viewport (1.5s)
+  ✓  12 [visual320] › tests/visual/responsive.spec.ts:3:1 › public surfaces keep readable geometry, keyboard entry and AA-tag axe checks at this viewport (3.1s)
+  ✓  13 [visual-webkit390] › tests/visual/responsive-reader.spec.ts:3:1 › reader and dialog keep text,44px controls and keyboard focus visible at this viewport (1.9s)
+  ✓  14 [visual-webkit390] › tests/visual/responsive.spec.ts:3:1 › public surfaces keep readable geometry, keyboard entry and AA-tag axe checks at this viewport (3.9s)
+
+  14 passed (53.0s)
+{"status":"VISUAL_CHECKS_PASSED","report":"evidence/visual/current/result.json","releaseReady":false}

@@ -1,0 +1,141 @@
+{
+  "observedAt": "2026-11-17T20:10:20.234968+00:00",
+  "scope": "optimized-public16",
+  "humanReviews": 0,
+  "assets": [
+    {
+      "id": "mail-bg-01",
+      "reviewedPath": "/assets/mail-bg-01.731a07a5.480.webp",
+      "variantSha256": "731a07a59e31ed0d2f82a71455abd1b332dd400703b2b0d0922f6ae8feb0df6f",
+      "reviewerType": "agent_visual",
+      "observation": "Actual optimized WebP opened. Primary scene/identity motifs remain legible, opaque portrait crop/scene framing preserved, no visible new encoding artifacts. Original source review caveats remain applicable.",
+      "sourceReviewScore": 10
+    },
+    {
+      "id": "mail-bg-02",
+      "reviewedPath": "/assets/mail-bg-02.2fd4e373.480.webp",
+      "variantSha256": "2fd4e3730939fb6b84d56f888be767a9f6d59c957fa4614a99c9788977f272a8",
+      "reviewerType": "agent_visual",
+      "observation": "Actual optimized WebP opened. Primary scene/identity motifs remain legible, opaque portrait crop/scene framing preserved, no visible new encoding artifacts. Original source review caveats remain applicable.",
+      "sourceReviewScore": 10
+    },
+    {
+      "id": "mail-bg-03",
+      "reviewedPath": "/assets/mail-bg-03.1faa9467.480.webp",
+      "variantSha256": "1faa94677ca9794b639e382acfb18979734e0f4a4ecb86aac9aea5286798e605",
+      "reviewerType": "agent_visual",
+      "observation": "Actual optimized WebP opened. Primary scene/identity motifs remain legible, opaque portrait crop/scene framing preserved, no visible new encoding artifacts. Original source review caveats remain applicable.",
+      "sourceReviewScore": 10
+    },
+    {
+      "id": "mail-bg-04",
+      "reviewedPath": "/assets/mail-bg-04.602e5fd4.480.webp",
+      "variantSha256": "602e5fd4063206137933d031b2bcfe418e188a00bb4cd533a8b2195bc1fcb412",
+      "reviewerType": "agent_visual",
+      "observation": "Actual optimized WebP opened. Primary scene/identity motifs remain legible, opaque portrait crop/scene framing preserved, no visible new encoding artifacts. Original source review caveats remain applicable.",
+      "sourceReviewScore": 9
+    },
+    {
+      "id": "mail-bg-05",
+      "reviewedPath": "/assets/mail-bg-05.0d6c3658.480.webp",
+      "variantSha256": "0d6c365850f57e46e61e83f469930c9122ff7876dab0f446c225d1bd58c95ba4",
+      "reviewerType": "agent_visual",
+      "observation": "Actual optimized WebP opened. Primary scene/identity motifs remain legible, opaque portrait crop/scene framing preserved, no visible new encoding artifacts. Original source review caveats remain applicable.",
+      "sourceReviewScore": 10
+    },
+    {
+      "id": "mail-bg-06",
+      "reviewedPath": "/assets/mail-bg-06.d72280ca.480.webp",
+      "variantSha256": "d72280caf83a5b3e99e2c08d8894aa1dda68c56a02ad0fab4d6703eb43d08d77",
+      "reviewerType": "agent_visual",
+      "observation": "Actual optimized WebP opened. Primary scene/identity motifs remain legible, opaque portrait crop/scene framing preserved, no visible new encoding artifacts. Original source review caveats remain applicable.",
+      "sourceReviewScore": 9
+    },
+    {
+      "id": "mail-cover",
+      "reviewedPath": "/assets/mail-cover.02e70458.320.webp",
+      "variantSha256": "02e704586a83afa94b144ae5d91d4edd1469314a8f5e6c73144fe9659a611d96",
+      "reviewerType": "agent_visual",
+      "observation": "Actual optimized WebP opened. Primary scene/identity motifs remain legible, opaque portrait crop/scene framing preserved, no visible new encoding artifacts. Original source review caveats remain applicable.",
+      "sourceReviewScore": 9
+    },
+    {
+      "id": "mail-portrait",
+      "reviewedPath": "/assets/mail-portrait.04382a43.640.webp",
+      "variantSha256": "04382a439687c7e850bb23a1665ad87d4144b4a94819a25f39024e8ac8c149f9",
+      "reviewerType": "agent_visual",
+      "observation": "Actual optimized WebP opened. Primary scene/identity motifs remain legible, opaque portrait crop/scene framing preserved, no visible new encoding artifacts. Original source review caveats remain applicable.",
+      "sourceReviewScore": 10
+    },
+    {
+      "id": "tide-bg-01",
+      "reviewedPath": "/assets/tide-bg-01.098c4deb.480.webp",
+      "variantSha256": "098c4debe9ee8caeead21e328991905ad284bf86a6cf08b7f9603f545592cd2f",
+      "reviewerType": "agent_visual",
+      "observation": "Actual optimized WebP opened. Primary scene/identity motifs remain legible, opaque portrait crop/scene framing preserved, no visible new encoding artifacts. Original source review caveats remain applicable.",
+      "sourceReviewScore": 9
+    },
+    {
+      "id": "tide-bg-02",
+      "reviewedPath": "/assets/tide-bg-02.819de81c.480.webp",
+      "variantSha256": "819de81c99751a4c7a46b05aa064da561bbbe04b9919d7ca7f705f3373f0e9f5",
+      "reviewerType": "agent_visual",
+      "observation": "Actual optimized WebP opened. Primary scene/identity motifs remain legible, opaque portrait crop/scene framing preserved, no visible new encoding artifacts. Original source review caveats remain applicable.",
+      "sourceReviewScore": 9
+    },
+    {
+      "id": "tide-bg-03",
+      "reviewedPath": "/assets/tide-bg-03.db0a26f1.480.webp",
+      "variantSha256": "db0a26f1345c82e6995666f5e41370655a7d0d7af831d6fc5fa3491128ae7135",
+      "reviewerType": "agent_visual",
+      "observation": "Actual optimized WebP opened. Primary scene/identity motifs remain legible, opaque portrait crop/scene framing preserved, no visible new encoding artifacts. Original source review caveats remain applicable.",
+      "sourceReviewScore": 10
+    },
+    {
+      "id": "tide-bg-04",
+      "reviewedPath": "/assets/tide-bg-04.9c98bee8.480.webp",
+      "variantSha256": "9c98bee89f74cc3918d13c9472d4afd51db9a98e7ed7afc84a50a7c7c6541f78",
+      "reviewerType": "agent_visual",
+      "observation": "Actual optimized WebP opened. Primary scene/identity motifs remain legible, opaque portrait crop/scene framing preserved, no visible new encoding artifacts. Original source review caveats remain applicable.",
+      "sourceReviewScore": 10
+    },
+    {
+      "id": "tide-bg-05",
+      "reviewedPath": "/assets/tide-bg-05.810ca0a3.480.webp",
+      "variantSha256": "810ca0a363d1a818acc49567cf27e45999fc95652110d485c7a6fd4b8afc7bda",
+      "reviewerType": "agent_visual",
+      "observation": "Actual optimized WebP opened. Primary scene/identity motifs remain legible, opaque portrait crop/scene framing preserved, no visible new encoding artifacts. Original source review caveats remain applicable.",
+      "sourceReviewScore": 9
+    },
+    {
+      "id": "tide-bg-06",
+      "reviewedPath": "/assets/tide-bg-06.91871df8.480.webp",
+      "variantSha256": "91871df8ac3cd47ad982334600fd7d89368919a8f61160ec87692ad9449da0db",
+      "reviewerType": "agent_visual",
+      "observation": "Actual optimized WebP opened. Primary scene/identity motifs remain legible, opaque portrait crop/scene framing preserved, no visible new encoding artifacts. Original source review caveats remain applicable.",
+      "sourceReviewScore": 10
+    },
+    {
+      "id": "tide-cover",
+      "reviewedPath": "/assets/tide-cover.a1d07b04.320.webp",
+      "variantSha256": "a1d07b04e822f03fe9acecfb78b6817ccb6fbea64117de34161e9fbd690a57e8",
+      "reviewerType": "agent_visual",
+      "observation": "Actual optimized WebP opened. Primary scene/identity motifs remain legible, opaque portrait crop/scene framing preserved, no visible new encoding artifacts. Original source review caveats remain applicable.",
+      "sourceReviewScore": 9
+    },
+    {
+      "id": "tide-portrait",
+      "reviewedPath": "/assets/tide-portrait.dad3a465.640.webp",
+      "variantSha256": "dad3a465486a266dba231ea5961d070f44f2efdd058af57aefbb1f032a274eef",
+      "reviewerType": "agent_visual",
+      "observation": "Actual optimized WebP opened. Primary scene/identity motifs remain legible, opaque portrait crop/scene framing preserved, no visible new encoding artifacts. Original source review caveats remain applicable.",
+      "sourceReviewScore": 10
+    }
+  ],
+  "manifestSha256": "a7f27a1ce7fd17f39c76de62e4b8297d117651a89504e13382a41a82e3485d14",
+  "variantCount": 92,
+  "apiGenerationCalls": 0,
+  "portraitDerivation": "sharp; no upscaling; approved reference hashes preserved",
+  "browserEvidence": "evidence/assets/mobile-portrait-verified.png",
+  "notYetClaimed": "Full12sceneactualAVIFproductvisualreview/performance remainP06/P07."
+}

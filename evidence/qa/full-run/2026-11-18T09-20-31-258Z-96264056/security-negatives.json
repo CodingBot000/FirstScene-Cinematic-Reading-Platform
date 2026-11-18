@@ -1,0 +1,85 @@
+{
+  "status": "AUTOMATED_SECURITY_NEGATIVES_PASSED",
+  "startedAt": "2026-11-18T09:21:57.375Z",
+  "sourceCommit": "8a050dec3bcf2ae44f70a8268434bf18207f6d9f",
+  "releaseReady": false,
+  "managedSourceAudit": "SOURCE_REVIEW_PERFORMED_UNSEALED",
+  "commands": [
+    {
+      "command": "pnpm exec vitest run tests/unit/compiler.test.ts tests/unit/http.test.ts tests/unit/runtime-environment.test.ts tests/unit/request-network.test.ts --reporter=json --outputFile=evidence/security/current/unit-results.json",
+      "startedAt": "2026-11-18T09:21:57.388Z",
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T09:21:58.115Z"
+    },
+    {
+      "command": "pnpm test:api",
+      "startedAt": "2026-11-18T09:21:58.116Z",
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T09:22:07.568Z"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "evidence/security/current/unit-results.json",
+      "sha256": "2fa683fae984ffb343602ef027db437f1979889e6794e301128aad694c628771"
+    },
+    {
+      "path": "evidence/security/current/test-results.json",
+      "sha256": "edea859d2757def7a0c68b708df821b9e06bc76bd2c6363dd445a105fd832371"
+    },
+    {
+      "path": "evidence/security/public-source-review.json",
+      "sha256": "77b03673f91127692252e990d2b2cdb36810994d3b4eab6dd868a17b383fd79e"
+    }
+  ],
+  "checks": [
+    {
+      "name": "ACTUAL_NEGATIVE_REPORTS",
+      "status": "PASS",
+      "compilerHttpEnvironmentTests": 31,
+      "apiTests": 25,
+      "coverage": [
+        "CSRF",
+        "opaque-cookie",
+        "IDOR",
+        "concurrent-rate",
+        "16KiB",
+        "malformed-input",
+        "nonce-CSP",
+        "SQL-CAS",
+        "receipt-replay",
+        "session-expiry",
+        "deletion"
+      ]
+    },
+    {
+      "name": "TRACKED_CREDENTIAL_AND_PATH_SCAN",
+      "status": "PASS",
+      "files": 1278,
+      "credentialValuesPrinted": false
+    },
+    {
+      "name": "PUBLIC_PRIVATE_SOURCE_NAME_SCAN",
+      "status": "PASS",
+      "files": 339,
+      "privateTermsPrinted": false,
+      "sourceFingerprint": {
+        "files": 338,
+        "sha256": "1f02023b2cb772d1433c685a284b72be9c775806938ecec33ce28855cd4711aa"
+      }
+    },
+    {
+      "name": "PRODUCTION_CLIENT_BUNDLE_SCAN",
+      "status": "PASS",
+      "javascriptChunks": 16
+    },
+    {
+      "name": "NO_RUNTIME_AUTH_OR_MOCK_TEST_BYPASS",
+      "status": "PASS",
+      "runtimeSources": 33,
+      "method": "Bounded forbidden-pattern regression; not exhaustive source audit"
+    }
+  ],
+  "errors": [],
+  "finishedAt": "2026-11-18T09:22:07.958Z"
+}

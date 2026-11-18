@@ -1,0 +1,36 @@
+{
+  "observedAt": "2026-11-18T09:40:31.703Z",
+  "status": "SELECTED_DOCUMENTS_EXPORTED",
+  "publication": false,
+  "includesGitHistory": false,
+  "includesPrivateBriefing": false,
+  "includesCredentials": false,
+  "artifacts": [
+    {
+      "path": "artifacts/public-documents/README.md",
+      "source": "README.md",
+      "sha256": "c9ad270d45d8933dabe48a5a5badc8bba2345e7951c9503aaba1d067d138351b"
+    },
+    {
+      "path": "artifacts/public-documents/RELEASE_REPORT.md",
+      "source": "RELEASE_REPORT.md",
+      "sha256": "79c4022bf453f4a5ec4f22b51dcd5b4bfdf801c81f110a4ff7eb802718037872"
+    },
+    {
+      "path": "artifacts/public-documents/docs/public/runbook.md",
+      "source": "docs/public/runbook.md",
+      "sha256": "af0e7a16be59700526cf4b5d309bad7dc68cf5c4848d628f68c18079d727ce65"
+    },
+    {
+      "path": "artifacts/public-documents/docs/public/case-study.md",
+      "source": "docs/public/case-study.md",
+      "sha256": "33e75fd105067db4bfc118a82dd2a019dfcc80d138e2ae4171b4bb308e6a70e3"
+    },
+    {
+      "path": "artifacts/public-documents/docs/public/architecture.md",
+      "source": "docs/public/architecture.md",
+      "sha256": "93634749b639f75d55f2137806499faa7d2402bf10674fe33990a28ddf87f073"
+    }
+  ],
+  "note": "Local selected document copies; original internal planning inputs remain private."
+}

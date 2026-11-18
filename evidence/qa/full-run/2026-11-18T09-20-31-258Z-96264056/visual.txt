@@ -1,0 +1,32 @@
+
+> firstscene-workspace@0.1.0 test:visual /Users/switch/Development/Web/FirstScene
+> node tools/visual/collect.mjs
+
+
+Running 14 tests using 1 worker
+
+  ✓   1 [visual1440] › tests/visual/feedback.spec.ts:4:1 › feedback initial,accepted,offline and Korean-midnight limit states remain readable (6.9s)
+  ✓   2 [visual1440] › tests/visual/journey.spec.ts:10:1 › saved library, reader settings, plain/reduced and actual image-failure states retain readable controls (9.1s)
+  ✓   3 [visual1440] › tests/visual/responsive-reader.spec.ts:3:1 › reader and dialog keep text,44px controls and keyboard focus visible at this viewport (2.5s)
+  ✓   4 [visual1440] › tests/visual/responsive.spec.ts:3:1 › public surfaces keep readable geometry, keyboard entry and AA-tag axe checks at this viewport (3.6s)
+  ✓   5 [visual1440] › tests/visual/scenes.spec.ts:5:1 › both complete stories render all twelve real images and local moods in forward and reverse order (14.0s)
+  ✓   6 [visual1024] › tests/visual/responsive-reader.spec.ts:3:1 › reader and dialog keep text,44px controls and keyboard focus visible at this viewport (2.6s)
+  ✓   7 [visual1024] › tests/visual/responsive.spec.ts:3:1 › public surfaces keep readable geometry, keyboard entry and AA-tag axe checks at this viewport (3.7s)
+  ✓   8 [visual390] › tests/visual/feedback.spec.ts:4:1 › feedback initial,accepted,offline and Korean-midnight limit states remain readable (6.3s)
+  ✓   9 [visual390] › tests/visual/journey.spec.ts:10:1 › saved library, reader settings, plain/reduced and actual image-failure states retain readable controls (9.0s)
+  ✓  10 [visual390] › tests/visual/responsive-reader.spec.ts:3:1 › reader and dialog keep text,44px controls and keyboard focus visible at this viewport (2.5s)
+  ✓  11 [visual390] › tests/visual/responsive.spec.ts:3:1 › public surfaces keep readable geometry, keyboard entry and AA-tag axe checks at this viewport (3.6s)
+  ✓  12 [visual390] › tests/visual/scenes.spec.ts:5:1 › both complete stories render all twelve real images and local moods in forward and reverse order (5.5s)
+  ✓  13 [visual320] › tests/visual/responsive-reader.spec.ts:3:1 › reader and dialog keep text,44px controls and keyboard focus visible at this viewport (2.5s)
+  ✓  14 [visual320] › tests/visual/responsive.spec.ts:3:1 › public surfaces keep readable geometry, keyboard entry and AA-tag axe checks at this viewport (3.7s)
+
+  14 passed (1.3m)
+
+Running 2 tests using 1 worker
+
+  ✓  1 [visual-webkit390] › tests/visual/responsive-reader.spec.ts:3:1 › reader and dialog keep text,44px controls and keyboard focus visible at this viewport (3.5s)
+  ✓  2 [visual-webkit390] › tests/visual/responsive.spec.ts:3:1 › public surfaces keep readable geometry, keyboard entry and AA-tag axe checks at this viewport (4.1s)
+
+  2 passed (8.1s)
+{"status":"REVIEW_REQUIRED","report":"evidence/visual/current/result.json","releaseReady":false}
+ ELIFECYCLE  Command failed with exit code 2.

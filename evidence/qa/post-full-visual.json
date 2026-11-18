@@ -1,0 +1,49 @@
+{
+  "observedAt": "2026-11-18T09:40:07.798503+00:00",
+  "status": "POST_FULL_VISUAL_REVERIFICATION_PASSED",
+  "fullReport": {
+    "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/index.json",
+    "sha256": "429fa1a525c2c5c60a082ebedd2cd22838c239a695fa030c5a27017b34daec58",
+    "status": "LOCAL_GATES_BLOCKED",
+    "releaseReady": false
+  },
+  "originalFullResultPreserved": true,
+  "originalVisualExitCode": 2,
+  "reason": "One unreviewed raster variant:14antialiasing pixels on two rounded radio-row edges. Opened actual image; all104frames now have explicit matching approved observations. No product/checker change, no relaxed pixel threshold.",
+  "commands": [
+    {
+      "command": "FIRSTSCENE_LINUX_WEBKIT=1 pnpm test:visual -- --verify-review",
+      "exitCode": 0
+    },
+    {
+      "command": "FIRSTSCENE_LINUX_WEBKIT=1 node tools/visual-self-check.mjs",
+      "exitCode": 0,
+      "rejectedCases": 10
+    }
+  ],
+  "sourceCommit": "4f7aac271235826998bc3a07bd05d65a75519c62",
+  "artifacts": [
+    {
+      "path": "evidence/qa/final-visual-reverification/0-result.json",
+      "producerPath": "evidence/visual/current/result.json",
+      "sha256": "8b3b73df0081e26b616d5f5fc6cbdfad98f7fb7ef90b10eee924f4fa6d2e4cec"
+    },
+    {
+      "path": "evidence/qa/final-visual-reverification/1-negative-cases.json",
+      "producerPath": "evidence/visual/current/negative-cases.json",
+      "sha256": "91145262c8249726caae1e077f54a230feda494b2744ec758bc7822b59323bfe"
+    },
+    {
+      "path": "evidence/qa/final-visual-reverification/2-review.json",
+      "producerPath": "evidence/visual/review.json",
+      "sha256": "1aa821a875a911ceceebc64c23eee0542e512ebc70b8124b65eaa4c3ed107ad3"
+    },
+    {
+      "path": "evidence/qa/final-visual-reverification/3-index.json",
+      "producerPath": "evidence/visual/4f7aac271235826998bc3a07bd05d65a75519c62/index.json",
+      "sha256": "28a8fb4102404e11ff471b98565c7238d1824daa829195d7f9b6e3753aa96200"
+    }
+  ],
+  "humanReviews": 0,
+  "releaseReady": false
+}

@@ -1,0 +1,526 @@
+[
+  {
+    "type": "scrollTo",
+    "args": [
+      {
+        "top": 5168.154375,
+        "behavior": "instant"
+      }
+    ],
+    "time": 170,
+    "y": 0,
+    "top": 5454.234375,
+    "height": 228,
+    "beat": "mail-s01-b01",
+    "locked": null,
+    "width": 390,
+    "activeTag": "BODY",
+    "activeText": "본문 바로가기← 작품 소개빛을 접어 보내는 우체국1/6",
+    "dialog": false,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s01-b01",
+      "fraction": 0
+    }
+  },
+  {
+    "type": "scroll",
+    "time": 181,
+    "y": 5168,
+    "top": 286.234375,
+    "height": 228,
+    "beat": "mail-s01-b01",
+    "locked": null,
+    "width": 390,
+    "activeTag": "BODY",
+    "activeText": "본문 바로가기← 작품 소개빛을 접어 보내는 우체국1/6",
+    "dialog": false,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s01-b01",
+      "fraction": 0
+    }
+  },
+  {
+    "type": "pointerdown",
+    "time": 236,
+    "y": 5168,
+    "top": 286.234375,
+    "height": 228,
+    "beat": "mail-s03-b02",
+    "locked": null,
+    "width": 390,
+    "activeTag": "BODY",
+    "activeText": "본문 바로가기← 작품 소개빛을 접어 보내는 우체국3/6",
+    "dialog": false,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b02",
+      "fraction": 0.2993229166666648
+    }
+  },
+  {
+    "type": "focusin",
+    "time": 236,
+    "y": 5168,
+    "top": 286.234375,
+    "height": 228,
+    "beat": "mail-s03-b02",
+    "locked": null,
+    "width": 390,
+    "activeTag": "BUTTON",
+    "activeText": "설정",
+    "dialog": false,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b02",
+      "fraction": 0.2993229166666648
+    }
+  },
+  {
+    "type": "pointerup",
+    "time": 236,
+    "y": 5168,
+    "top": 286.234375,
+    "height": 228,
+    "beat": "mail-s03-b02",
+    "locked": null,
+    "width": 390,
+    "activeTag": "BUTTON",
+    "activeText": "설정",
+    "dialog": false,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b02",
+      "fraction": 0.2993229166666648
+    }
+  },
+  {
+    "type": "click",
+    "time": 237,
+    "y": 5168,
+    "top": 286.234375,
+    "height": 228,
+    "beat": "mail-s03-b02",
+    "locked": null,
+    "width": 390,
+    "activeTag": "BUTTON",
+    "activeText": "설정",
+    "dialog": false,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b02",
+      "fraction": 0.2993229166666648
+    }
+  },
+  {
+    "type": "focusin",
+    "time": 252,
+    "y": 5168,
+    "top": 286.234375,
+    "height": 228,
+    "beat": "mail-s03-b02",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "INPUT",
+    "activeText": "",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b02",
+      "fraction": 0.2993229166666648
+    }
+  },
+  {
+    "type": "pointerdown",
+    "time": 363,
+    "y": 5168,
+    "top": 286.234375,
+    "height": 228,
+    "beat": "mail-s03-b02",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "INPUT",
+    "activeText": "",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b02",
+      "fraction": 0.2993229166666648
+    }
+  },
+  {
+    "type": "focusin",
+    "time": 363,
+    "y": 5168,
+    "top": 286.234375,
+    "height": 228,
+    "beat": "mail-s03-b02",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "INPUT",
+    "activeText": "",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b02",
+      "fraction": 0.2993229166666648
+    }
+  },
+  {
+    "type": "pointerup",
+    "time": 364,
+    "y": 5168,
+    "top": 286.234375,
+    "height": 228,
+    "beat": "mail-s03-b02",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "INPUT",
+    "activeText": "",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b02",
+      "fraction": 0.2993229166666648
+    }
+  },
+  {
+    "type": "click",
+    "time": 364,
+    "y": 5168,
+    "top": 286.234375,
+    "height": 228,
+    "beat": "mail-s03-b02",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "INPUT",
+    "activeText": "",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b02",
+      "fraction": 0.2993229166666648
+    }
+  },
+  {
+    "type": "scrollTo",
+    "args": [
+      {
+        "top": 6584,
+        "behavior": "instant"
+      }
+    ],
+    "time": 374,
+    "y": 5168,
+    "top": 1661.234375,
+    "height": 364.75,
+    "beat": "mail-s03-b02",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "INPUT",
+    "activeText": "",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b02",
+      "fraction": 0.2993229166666648
+    }
+  },
+  {
+    "type": "scroll",
+    "time": 415,
+    "y": 6584,
+    "top": 245.234375,
+    "height": 364.75,
+    "beat": "mail-s03-b02",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "INPUT",
+    "activeText": "",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b02",
+      "fraction": 0.2993229166666648
+    }
+  },
+  {
+    "type": "pointerdown",
+    "time": 430,
+    "y": 6584,
+    "top": 245.234375,
+    "height": 364.75,
+    "beat": "mail-s03-b02",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "INPUT",
+    "activeText": "",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b02",
+      "fraction": 0.2995082248115135
+    }
+  },
+  {
+    "type": "focusin",
+    "time": 430,
+    "y": 6584,
+    "top": 245.234375,
+    "height": 364.75,
+    "beat": "mail-s03-b02",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "INPUT",
+    "activeText": "",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b02",
+      "fraction": 0.2995082248115135
+    }
+  },
+  {
+    "type": "pointerup",
+    "time": 431,
+    "y": 6584,
+    "top": 245.234375,
+    "height": 364.75,
+    "beat": "mail-s03-b02",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "INPUT",
+    "activeText": "",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b02",
+      "fraction": 0.2995082248115135
+    }
+  },
+  {
+    "type": "click",
+    "time": 431,
+    "y": 6584,
+    "top": 245.234375,
+    "height": 364.75,
+    "beat": "mail-s03-b02",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "INPUT",
+    "activeText": "",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b02",
+      "fraction": 0.2995082248115135
+    }
+  },
+  {
+    "type": "scrollTo",
+    "args": [
+      {
+        "top": 5728,
+        "behavior": "instant"
+      }
+    ],
+    "time": 438,
+    "y": 6584,
+    "top": -611.015625,
+    "height": 364.75,
+    "beat": "mail-s03-b02",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "INPUT",
+    "activeText": "",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b02",
+      "fraction": 0.2995082248115135
+    }
+  },
+  {
+    "type": "scroll",
+    "time": 479,
+    "y": 5728,
+    "top": 244.984375,
+    "height": 364.75,
+    "beat": "mail-s03-b02",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "INPUT",
+    "activeText": "",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b02",
+      "fraction": 0.2993229166666648
+    }
+  },
+  {
+    "type": "pointerdown",
+    "time": 494,
+    "y": 5728,
+    "top": 244.984375,
+    "height": 364.75,
+    "beat": "mail-s03-b02",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "INPUT",
+    "activeText": "",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b02",
+      "fraction": 0.2993229166666648
+    }
+  },
+  {
+    "type": "focusin",
+    "time": 494,
+    "y": 5728,
+    "top": 244.984375,
+    "height": 364.75,
+    "beat": "mail-s03-b02",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "INPUT",
+    "activeText": "",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b02",
+      "fraction": 0.2993229166666648
+    }
+  },
+  {
+    "type": "pointerup",
+    "time": 494,
+    "y": 5728,
+    "top": 244.984375,
+    "height": 364.75,
+    "beat": "mail-s03-b02",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "INPUT",
+    "activeText": "",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b02",
+      "fraction": 0.2993229166666648
+    }
+  },
+  {
+    "type": "click",
+    "time": 495,
+    "y": 5728,
+    "top": 244.984375,
+    "height": 364.75,
+    "beat": "mail-s03-b02",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "INPUT",
+    "activeText": "",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b02",
+      "fraction": 0.2993229166666648
+    }
+  },
+  {
+    "type": "focusin",
+    "time": 516,
+    "y": 5728,
+    "top": 244.984375,
+    "height": 364.75,
+    "beat": "mail-s03-b02",
+    "locked": null,
+    "width": 390,
+    "activeTag": "BUTTON",
+    "activeText": "설정",
+    "dialog": false,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b02",
+      "fraction": 0.2993229166666648
+    }
+  },
+  {
+    "type": "scrollTo",
+    "args": [
+      {
+        "top": 5728,
+        "behavior": "instant"
+      }
+    ],
+    "time": 526,
+    "y": 5728,
+    "top": 244.984375,
+    "height": 364.75,
+    "beat": "mail-s03-b02",
+    "locked": null,
+    "width": 390,
+    "activeTag": "BUTTON",
+    "activeText": "설정",
+    "dialog": false,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b02",
+      "fraction": 0.2993229166666648
+    }
+  }
+]

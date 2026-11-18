@@ -1,0 +1,53 @@
+{
+  "observedAt": "2026-11-18T00:59:56.758433+00:00",
+  "collectorCommit": "9438e8486297f7e471a7c0313ceb798fc0ea2c22",
+  "collectionSourceCommit": "596685441dca478cd7c5cffad1395a65440f55d1",
+  "command": "node tools/performance/collect-lighthouse.mjs",
+  "exitCode": 0,
+  "coverage": "navigation-only",
+  "releaseReady": false,
+  "reviewer": "agent",
+  "humanReviews": 0,
+  "artifacts": [
+    {
+      "path": "evidence/performance/navigation-baseline/home-1.json",
+      "sha256": "c009a20465616f786224a98f6a7f8259ba4c5dd111c666e5cae7458c251b648b"
+    },
+    {
+      "path": "evidence/performance/navigation-baseline/home-2.json",
+      "sha256": "b6c3bb01be7e46d3fd58d3725b90a1fb3e8c35366f8d2aebddfdcdcc10350c09"
+    },
+    {
+      "path": "evidence/performance/navigation-baseline/home-3.json",
+      "sha256": "55dadb8db1d13bf73ecaa30481857abbac5db81c7111337cb2ed1c60428c3028"
+    },
+    {
+      "path": "evidence/performance/navigation-baseline/introduction-1.json",
+      "sha256": "9686eb46c0c5d20cbb1aca7d5c61bdbe78c3cb64cd8189df7563a914154b8f01"
+    },
+    {
+      "path": "evidence/performance/navigation-baseline/introduction-2.json",
+      "sha256": "d4fbafd408078d52d19bd1c2e4040592d553e2361f28dff5b038d202a3e19727"
+    },
+    {
+      "path": "evidence/performance/navigation-baseline/introduction-3.json",
+      "sha256": "f53790436eae1df8ab6e8541b5af3bfdb4f7df85b3b0868f6b0d5507af2fd80e"
+    },
+    {
+      "path": "evidence/performance/navigation-baseline/reader-1.json",
+      "sha256": "a88b6f994cebc6fc84aee87517e91898c915268e586344fb45649310b3e0346e"
+    },
+    {
+      "path": "evidence/performance/navigation-baseline/reader-2.json",
+      "sha256": "092b1cccddea80b323a5c041bce3ed66ac43754636f2d7fa6f08af99e6773fae"
+    },
+    {
+      "path": "evidence/performance/navigation-baseline/reader-3.json",
+      "sha256": "6d61dbc0951b12d9647bf41519725c53081c2422fe59462d442dceced5555dbb"
+    },
+    {
+      "path": "evidence/performance/navigation-baseline/collection.json",
+      "sha256": "ea5d3fe688b66a9cb3955510d1ff6b1ae757cb37a6861883a44ac5bbf076800d"
+    }
+  ]
+}

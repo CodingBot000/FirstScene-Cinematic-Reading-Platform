@@ -1,0 +1,31 @@
+{
+  "observedAt": "2026-11-18T04:44:50.260065+00:00",
+  "status": "VISUAL_CHECKS_PASSED",
+  "codeCommit": "dacef08e483dffc604530d7b9931b668ab558462",
+  "reviewer": "agent",
+  "humanReviews": 0,
+  "artifacts": [
+    {
+      "path": "evidence/visual/verified-dacef08/bindings.json",
+      "sha256": "ad0755b4ab62135d1af75f8c4fa60872cd3f649af6a115be34aa02a55ee75a4a"
+    },
+    {
+      "path": "evidence/visual/verified-dacef08/captures.json",
+      "sha256": "141e1367596f426fba591395a8a9eb2377f37a20a7d6015ca08d6b22fe7fb603"
+    },
+    {
+      "path": "evidence/visual/verified-dacef08/result.json",
+      "sha256": "4e37a02caa836b359b4aa711aaafa2bc2e69b54d21e3ff0b051795b397108e36"
+    },
+    {
+      "path": "evidence/visual/verified-dacef08/negative-cases.json",
+      "sha256": "ded12242f0426051cf2ca5a2de373a66ab6d2c07468e36510b2d9020d96dbc8b"
+    },
+    {
+      "path": "evidence/visual/verified-dacef08/browser-results.json",
+      "sha256": "bf5345260eae5d35615f49a7168a1750ee7f0848eaba6d59a007a4479852e6f4"
+    }
+  ],
+  "nativeZoom": "BLOCKED_EXTERNAL",
+  "releaseReady": false
+}

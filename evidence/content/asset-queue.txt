@@ -1,0 +1,151 @@
+
+> firstscene-workspace@0.1.0 assets:plan /Users/switch/Development/Web/FirstScene
+> node tools/image-pipeline/cli.mjs plan
+
+{
+  "attemptsUsed": 2,
+  "maxAttempts": 22,
+  "apiBudgetUsd": 0,
+  "queue": [
+    {
+      "id": "mail-bg-01",
+      "method": "generate",
+      "dependencies": [
+        "mail-cover"
+      ],
+      "ready": false
+    },
+    {
+      "id": "mail-bg-02",
+      "method": "generate",
+      "dependencies": [
+        "mail-cover"
+      ],
+      "ready": false
+    },
+    {
+      "id": "mail-bg-03",
+      "method": "generate",
+      "dependencies": [
+        "mail-cover"
+      ],
+      "ready": false
+    },
+    {
+      "id": "mail-bg-04",
+      "method": "generate",
+      "dependencies": [
+        "mail-cover"
+      ],
+      "ready": false
+    },
+    {
+      "id": "mail-bg-05",
+      "method": "generate",
+      "dependencies": [
+        "mail-cover"
+      ],
+      "ready": false
+    },
+    {
+      "id": "mail-bg-06",
+      "method": "generate",
+      "dependencies": [
+        "mail-cover"
+      ],
+      "ready": false
+    },
+    {
+      "id": "mail-character-ref",
+      "method": "generate",
+      "dependencies": [],
+      "ready": true
+    },
+    {
+      "id": "mail-cover",
+      "method": "generate",
+      "dependencies": [
+        "mail-character-ref"
+      ],
+      "ready": false
+    },
+    {
+      "id": "mail-portrait",
+      "method": "derive",
+      "dependencies": [
+        "mail-character-ref"
+      ],
+      "ready": false
+    },
+    {
+      "id": "tide-bg-01",
+      "method": "generate",
+      "dependencies": [
+        "tide-cover"
+      ],
+      "ready": false
+    },
+    {
+      "id": "tide-bg-02",
+      "method": "generate",
+      "dependencies": [
+        "tide-cover"
+      ],
+      "ready": false
+    },
+    {
+      "id": "tide-bg-03",
+      "method": "generate",
+      "dependencies": [
+        "tide-cover"
+      ],
+      "ready": false
+    },
+    {
+      "id": "tide-bg-04",
+      "method": "generate",
+      "dependencies": [
+        "tide-cover"
+      ],
+      "ready": false
+    },
+    {
+      "id": "tide-bg-05",
+      "method": "generate",
+      "dependencies": [
+        "tide-cover"
+      ],
+      "ready": false
+    },
+    {
+      "id": "tide-bg-06",
+      "method": "generate",
+      "dependencies": [
+        "tide-cover"
+      ],
+      "ready": false
+    },
+    {
+      "id": "tide-character-ref",
+      "method": "generate",
+      "dependencies": [],
+      "ready": true
+    },
+    {
+      "id": "tide-cover",
+      "method": "generate",
+      "dependencies": [
+        "tide-character-ref"
+      ],
+      "ready": false
+    },
+    {
+      "id": "tide-portrait",
+      "method": "derive",
+      "dependencies": [
+        "tide-character-ref"
+      ],
+      "ready": false
+    }
+  ]
+}

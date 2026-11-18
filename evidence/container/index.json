@@ -1,0 +1,41 @@
+{
+  "observedAt": "2026-11-18T09:44:17.306405+00:00",
+  "codeCommit": "4f7aac271235826998bc3a07bd05d65a75519c62",
+  "productionSourceCommit": "f415ffa792b8d106f10040834e93cf00f2d2ad2b",
+  "reviewer": "agent",
+  "humanReviews": 0,
+  "dockerBuildVerified": true,
+  "localDockerSmokePassed": true,
+  "publicReleaseReady": false,
+  "hostedGithubWorkflowExecuted": false,
+  "managedSecurityAudit": "SOURCE_REVIEW_PERFORMED_UNSEALED",
+  "ciServiceRemoved": true,
+  "developmentDatabasePreserved": true,
+  "artifacts": [
+    {
+      "path": "evidence/container/build-feedback.json",
+      "sha256": "3930b16fe53844363770e2d3d028789aba3ea95b2c93a75ab95b5d969ecded9e",
+      "opened": false
+    },
+    {
+      "path": "evidence/container/smoke.json",
+      "sha256": "674a9cd3c790fb3b484d0f838febb71c6af6931e4b2bb4053225af69129cbeb6",
+      "opened": false
+    },
+    {
+      "path": "evidence/container/startup.json",
+      "sha256": "afa9dca546deb6c30fe543e528a9c102c9b19441e42b401a27c4326e5273c044",
+      "opened": false
+    },
+    {
+      "path": "evidence/container/reader-390.png",
+      "sha256": "af1a7863ebb385552f3a6eca0df40dc544dfc369912b0ebf99a5fe3685fed115",
+      "opened": true
+    },
+    {
+      "path": "evidence/ci/final-resource-cleanup.json",
+      "sha256": "43fa82540dccb46515665da9f45619b3a099dafe5ff18110f28008672dea6249",
+      "opened": false
+    }
+  ]
+}

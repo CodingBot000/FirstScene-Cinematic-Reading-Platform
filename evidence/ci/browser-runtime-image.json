@@ -1,0 +1,11 @@
+{
+  "observedAt": "2026-11-18T08:29:59.408Z",
+  "status": "QA_IMAGE_BUILT",
+  "imageId": "sha256:90415183474877c557f3a7d591634db895d8d8e172b4b3df509896a993b04331",
+  "nodeVersion": "v24.22.3",
+  "playwrightVersion": "1.65.1",
+  "dockerfileSha256": "87871364b512ca57611e27fe46360d77415302a964b40094209ae12982079b35",
+  "lockSha256": "dd1142733f8099833ad657ede274ce800671c93af061e6d2ae3e2fb34132e1c8",
+  "applicationSourceCopied": false,
+  "hostNodeChanged": false
+}

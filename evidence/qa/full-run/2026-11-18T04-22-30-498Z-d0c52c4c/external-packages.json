@@ -1,0 +1,240 @@
+{
+  "observedAt": "2026-11-18T04:24:30.463Z",
+  "status": "PASS",
+  "sourceCommit": "6f82f1c1e2261420a322e9257bc3c319a4592c31",
+  "node": "v24.5.0",
+  "isolatedTemporaryConsumer": true,
+  "workspaceAliases": false,
+  "nextOrDatabaseDependencies": false,
+  "paidApiCalls": 0,
+  "publication": false,
+  "tarballs": [
+    {
+      "name": "@firstscene/tokens",
+      "version": "0.1.0",
+      "file": "tarballs/firstscene-tokens-0.1.0.tgz",
+      "sha256": "bd1d7e15e3b24d5fb7e8dc3b3dd2998850896659ced07cd933997ea3b2930ec5",
+      "bytes": 3730,
+      "entries": [
+        "package/dist/tokens.css",
+        "package/dist/index.js",
+        "package/package.json",
+        "package/dist/tokens.json",
+        "package/dist/index.js.map",
+        "package/dist/css.d.ts",
+        "package/dist/index.d.ts"
+      ]
+    },
+    {
+      "name": "@firstscene/story-schema",
+      "version": "0.1.0",
+      "file": "tarballs/firstscene-story-schema-0.1.0.tgz",
+      "sha256": "ca999015a116ab418cc82aa3a320d60f6d0e084dcadd21a7c390804e083b66bd",
+      "bytes": 5140,
+      "entries": [
+        "package/dist/index.js",
+        "package/dist/schema.js",
+        "package/package.json",
+        "package/dist/index.js.map",
+        "package/dist/schema.js.map",
+        "package/dist/index.d.ts",
+        "package/dist/schema.d.ts"
+      ]
+    },
+    {
+      "name": "@firstscene/ui",
+      "version": "0.1.0",
+      "file": "tarballs/firstscene-ui-0.1.0.tgz",
+      "sha256": "4eaaa28e69b7a023c9a88251402c4c0039054387c2f0b348c93ff21352d2e479",
+      "bytes": 9440,
+      "entries": [
+        "package/dist/styles.css",
+        "package/dist/index.js",
+        "package/package.json",
+        "package/dist/index.js.map",
+        "package/dist/css.d.ts",
+        "package/dist/index.d.ts"
+      ]
+    },
+    {
+      "name": "@firstscene/reader-core",
+      "version": "0.1.0",
+      "file": "tarballs/firstscene-reader-core-0.1.0.tgz",
+      "sha256": "7637b5efdc7c1f1b703bc47f7adfd3731e182cc78b0bfadb3b07b0850ab7ea2b",
+      "bytes": 3608,
+      "entries": [
+        "package/dist/index.js",
+        "package/package.json",
+        "package/dist/index.js.map",
+        "package/dist/index.d.ts"
+      ]
+    },
+    {
+      "name": "@firstscene/reader-react",
+      "version": "0.1.0",
+      "file": "tarballs/firstscene-reader-react-0.1.0.tgz",
+      "sha256": "7eae40787bffeda7b8630bc87ae183466e7b083f2aa765dd7b7b1a686dd247e3",
+      "bytes": 12074,
+      "entries": [
+        "package/dist/styles.css",
+        "package/dist/index.js",
+        "package/dist/motion.js",
+        "package/package.json",
+        "package/dist/index.js.map",
+        "package/dist/motion.js.map",
+        "package/dist/css.d.ts",
+        "package/dist/index.d.ts",
+        "package/dist/motion.d.ts"
+      ]
+    }
+  ],
+  "resolved": [
+    {
+      "name": "@firstscene/tokens",
+      "insideIsolatedConsumer": true
+    },
+    {
+      "name": "@firstscene/story-schema",
+      "insideIsolatedConsumer": true
+    },
+    {
+      "name": "@firstscene/ui",
+      "insideIsolatedConsumer": true
+    },
+    {
+      "name": "@firstscene/reader-core",
+      "insideIsolatedConsumer": true
+    },
+    {
+      "name": "@firstscene/reader-react",
+      "insideIsolatedConsumer": true
+    }
+  ],
+  "dependencyTreeSha256": "b14472f15ed9a80d4aaa12ca2ad61aae79bcc917be13fc31bf869e8566aae691",
+  "lockfileSha256": "f34cd97c507a7536aa2c55075e27871dc3c51ff9d9e4ff28f242eebba95dab39",
+  "browserReport": "evidence/package-consumer/browser-results.json",
+  "browserReportSha256": "ed58411b8e419496c9b8ddcc80f713df2c602a41a8a4846ec71095d1b70d7938",
+  "localStaticArtifact": "artifacts/package-consumer-demo",
+  "staticArchive": {
+    "path": "artifacts/package-consumer-demo/firstscene-consumer-static.tgz",
+    "bytes": 5780881,
+    "sha256": "55f1d808a99dfa6b26786a6128b4382a6bcbc1a6f91f4d7977f9976b826429d6"
+  },
+  "commands": [
+    {
+      "command": "pnpm --filter @firstscene/tokens pack --out /private/var/folders/0t/c8ctlf3s71g_tb7h3t3nfksr0000gn/T/firstscene-consumer-gwYxrV/tarballs/firstscene-tokens-0.1.0.tgz --json",
+      "durationMs": 160,
+      "exitCode": 0
+    },
+    {
+      "command": "tar -tzf /private/var/folders/0t/c8ctlf3s71g_tb7h3t3nfksr0000gn/T/firstscene-consumer-gwYxrV/tarballs/firstscene-tokens-0.1.0.tgz",
+      "durationMs": 6,
+      "exitCode": 0
+    },
+    {
+      "command": "tar -xOf /private/var/folders/0t/c8ctlf3s71g_tb7h3t3nfksr0000gn/T/firstscene-consumer-gwYxrV/tarballs/firstscene-tokens-0.1.0.tgz package/package.json",
+      "durationMs": 5,
+      "exitCode": 0
+    },
+    {
+      "command": "pnpm --filter @firstscene/story-schema pack --out /private/var/folders/0t/c8ctlf3s71g_tb7h3t3nfksr0000gn/T/firstscene-consumer-gwYxrV/tarballs/firstscene-story-schema-0.1.0.tgz --json",
+      "durationMs": 163,
+      "exitCode": 0
+    },
+    {
+      "command": "tar -tzf /private/var/folders/0t/c8ctlf3s71g_tb7h3t3nfksr0000gn/T/firstscene-consumer-gwYxrV/tarballs/firstscene-story-schema-0.1.0.tgz",
+      "durationMs": 5,
+      "exitCode": 0
+    },
+    {
+      "command": "tar -xOf /private/var/folders/0t/c8ctlf3s71g_tb7h3t3nfksr0000gn/T/firstscene-consumer-gwYxrV/tarballs/firstscene-story-schema-0.1.0.tgz package/package.json",
+      "durationMs": 4,
+      "exitCode": 0
+    },
+    {
+      "command": "pnpm --filter @firstscene/ui pack --out /private/var/folders/0t/c8ctlf3s71g_tb7h3t3nfksr0000gn/T/firstscene-consumer-gwYxrV/tarballs/firstscene-ui-0.1.0.tgz --json",
+      "durationMs": 155,
+      "exitCode": 0
+    },
+    {
+      "command": "tar -tzf /private/var/folders/0t/c8ctlf3s71g_tb7h3t3nfksr0000gn/T/firstscene-consumer-gwYxrV/tarballs/firstscene-ui-0.1.0.tgz",
+      "durationMs": 5,
+      "exitCode": 0
+    },
+    {
+      "command": "tar -xOf /private/var/folders/0t/c8ctlf3s71g_tb7h3t3nfksr0000gn/T/firstscene-consumer-gwYxrV/tarballs/firstscene-ui-0.1.0.tgz package/package.json",
+      "durationMs": 5,
+      "exitCode": 0
+    },
+    {
+      "command": "pnpm --filter @firstscene/reader-core pack --out /private/var/folders/0t/c8ctlf3s71g_tb7h3t3nfksr0000gn/T/firstscene-consumer-gwYxrV/tarballs/firstscene-reader-core-0.1.0.tgz --json",
+      "durationMs": 156,
+      "exitCode": 0
+    },
+    {
+      "command": "tar -tzf /private/var/folders/0t/c8ctlf3s71g_tb7h3t3nfksr0000gn/T/firstscene-consumer-gwYxrV/tarballs/firstscene-reader-core-0.1.0.tgz",
+      "durationMs": 4,
+      "exitCode": 0
+    },
+    {
+      "command": "tar -xOf /private/var/folders/0t/c8ctlf3s71g_tb7h3t3nfksr0000gn/T/firstscene-consumer-gwYxrV/tarballs/firstscene-reader-core-0.1.0.tgz package/package.json",
+      "durationMs": 4,
+      "exitCode": 0
+    },
+    {
+      "command": "pnpm --filter @firstscene/reader-react pack --out /private/var/folders/0t/c8ctlf3s71g_tb7h3t3nfksr0000gn/T/firstscene-consumer-gwYxrV/tarballs/firstscene-reader-react-0.1.0.tgz --json",
+      "durationMs": 157,
+      "exitCode": 0
+    },
+    {
+      "command": "tar -tzf /private/var/folders/0t/c8ctlf3s71g_tb7h3t3nfksr0000gn/T/firstscene-consumer-gwYxrV/tarballs/firstscene-reader-react-0.1.0.tgz",
+      "durationMs": 5,
+      "exitCode": 0
+    },
+    {
+      "command": "tar -xOf /private/var/folders/0t/c8ctlf3s71g_tb7h3t3nfksr0000gn/T/firstscene-consumer-gwYxrV/tarballs/firstscene-reader-react-0.1.0.tgz package/package.json",
+      "durationMs": 5,
+      "exitCode": 0
+    },
+    {
+      "command": "pnpm install --ignore-scripts",
+      "durationMs": 684,
+      "exitCode": 0
+    },
+    {
+      "command": "pnpm install --frozen-lockfile --ignore-scripts",
+      "durationMs": 252,
+      "exitCode": 0
+    },
+    {
+      "command": "pnpm exec tsc --noEmit",
+      "durationMs": 1519,
+      "exitCode": 0
+    },
+    {
+      "command": "pnpm exec vite build",
+      "durationMs": 1498,
+      "exitCode": 0
+    },
+    {
+      "command": "pnpm list --json --depth Infinity",
+      "durationMs": 152,
+      "exitCode": 0
+    },
+    {
+      "command": "pnpm exec playwright test --config tools/consumer-playwright.config.ts",
+      "durationMs": 2969,
+      "exitCode": 0
+    },
+    {
+      "command": "tar -czf <workspace>/artifacts/package-consumer-demo/firstscene-consumer-static.tgz -C /private/var/folders/0t/c8ctlf3s71g_tb7h3t3nfksr0000gn/T/firstscene-consumer-gwYxrV dist",
+      "durationMs": 130,
+      "exitCode": 0
+    },
+    {
+      "command": "git rev-parse HEAD",
+      "durationMs": 12,
+      "exitCode": 0
+    }
+  ]
+}

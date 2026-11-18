@@ -1,0 +1,369 @@
+{
+  "schemaVersion": 1,
+  "id": "tide-station",
+  "version": 1,
+  "title": "수심 없는 역",
+  "summary": "폐역의 수위 경보가 매일 같은 시각에 울린다. 마른 승강장 아래에서 정하가 발견한 것은 물이 아니라, 아직 도착했다는 답을 받지 못한 도시의 소리였다.",
+  "genre": "도시 미스터리",
+  "tags": [
+    "미스터리",
+    "도시"
+  ],
+  "language": "ko",
+  "coverAssetId": "tide-cover",
+  "characters": [
+    {
+      "id": "jeongha",
+      "name": "정하"
+    },
+    {
+      "id": "byeol",
+      "name": "별"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "tide-s01",
+      "title": "마른 승강장",
+      "backgroundAssetId": "tide-bg-01",
+      "portraitAssetId": null,
+      "mood": "tension",
+      "beats": [
+        {
+          "id": "tide-s01-b01",
+          "kind": "narration",
+          "speaker": null,
+          "text": "폐역의 수위 경보는 매일 새벽 네 시 십이 분에 울렸다. 정하는 세 번째 경보가 울리던 날 계단을 내려갔다. 안전등은 켜져 있었고 공기는 건조했다. 승강장 바닥에는 물자국 하나 없었다. 도시 시설 점검표에는 그 역이 십이 년 전에 폐쇄되었다고 적혀 있었다.",
+          "mood": "tension",
+          "effect": "none"
+        },
+        {
+          "id": "tide-s01-b02",
+          "kind": "dialogue",
+          "speaker": "byeol",
+          "text": "“전원은 분명 남아 있어. 오래된 기록 설비에 연결된 회선이야.” 지상에 있는 별이 무전으로 말했다. 정하는 수위계를 확인했다. 바늘은 영에 멈춰 있었다. 그 아래 작은 주황색 등이 규칙적으로 깜빡이고 있었다.",
+          "mood": "tension",
+          "effect": "none"
+        },
+        {
+          "id": "tide-s01-b03",
+          "kind": "narration",
+          "speaker": null,
+          "text": "경보음 사이로 물방울 소리가 들렸다. 하지만 소리가 나는 곳에 손전등을 비추면 마른 타일뿐이었다. 정하는 지붕에서 새는 물이라고 결론짓지 않고 녹음기를 켰다. 세 번의 물방울 뒤에는 짧은 침묵, 그리고 바퀴가 레일을 지나는 듯한 낮은 진동이 이어졌다.",
+          "mood": "tension",
+          "effect": "none"
+        },
+        {
+          "id": "tide-s01-b04",
+          "kind": "narration",
+          "speaker": null,
+          "text": "물은 없는데, 역은 계속 잠기고 있었다.",
+          "mood": "tension",
+          "effect": "reveal"
+        },
+        {
+          "id": "tide-s01-b05",
+          "kind": "narration",
+          "speaker": null,
+          "text": "그 말은 점검 메모에 쓰기에는 지나치게 시적이었다. 정하는 곧 지우고 “경보와 실제 수위 불일치”라고 적었다. 그런데 바늘을 비추던 손전등 끝이 아주 잠깐 흔들렸다. 바닥이 아니라 소리가 깊어지고 있다는 느낌이 들었다.",
+          "mood": "tension",
+          "effect": "none"
+        },
+        {
+          "id": "tide-s01-b06",
+          "kind": "narration",
+          "speaker": null,
+          "text": "승강장 끝에는 사용하지 않는 매표창구가 있었다. 그 안에서 종이 한 장이 천천히 밀려 나왔다. 오래된 감열지에는 숫자 영 하나만 선명했다. 표 뒷면은 이상하게도 조금 전까지 누군가 손에 쥐고 있었던 것처럼 따뜻했다.",
+          "mood": "tension",
+          "effect": "none"
+        }
+      ]
+    },
+    {
+      "id": "tide-s02",
+      "title": "회수되지 않은 표",
+      "backgroundAssetId": "tide-bg-02",
+      "portraitAssetId": "tide-portrait",
+      "mood": "memory",
+      "beats": [
+        {
+          "id": "tide-s02-b01",
+          "kind": "narration",
+          "speaker": null,
+          "text": "정하는 표를 뒤집어 냄새를 맡았다. 종이에는 비 냄새가 났지만 젖어 있지는 않았다. 유리창 안쪽에는 오래된 안내판이 눕혀져 있었다. 글씨 대부분은 지워졌고 “회수”와 “수신 확인” 두 단어만 남아 있었다.",
+          "mood": "memory",
+          "effect": "none"
+        },
+        {
+          "id": "tide-s02-b02",
+          "kind": "dialogue",
+          "speaker": "jeongha",
+          "text": "“별, 이 회선이 진짜 배수 설비인지 다시 봐 줘. 수위계 옆 단자가 소리 기록 장치랑 연결되어 있어.” 잠시 뒤 무전기에서 키보드 소리가 났다. 별은 당장 대답하지 않았다. 정하는 그 침묵을 재촉하지 않았다.",
+          "mood": "memory",
+          "effect": "none"
+        },
+        {
+          "id": "tide-s02-b03",
+          "kind": "narration",
+          "speaker": null,
+          "text": "매표창구 아래에서 얇은 서랍이 열렸다. 안에는 손으로 그린 역의 단면도가 있었다. 승강장 밑 공간은 저수조처럼 그려져 있었지만 수도관은 한 개도 연결되어 있지 않았다. 대신 여러 골목과 시장, 학교를 가리키는 가는 선들이 그곳으로 모였다.",
+          "mood": "memory",
+          "effect": "none"
+        },
+        {
+          "id": "tide-s02-b04",
+          "kind": "dialogue",
+          "speaker": "byeol",
+          "text": "“이 역은 교통 시설만이 아니었어. 재개발 전에 동네 소리를 보관하던 시범 설비가 있었대. 이름이 수조였고, 깊이는 저장량 표시였어. 배수 기록으로 잘못 옮겨진 것 같아.”",
+          "mood": "memory",
+          "effect": "none"
+        },
+        {
+          "id": "tide-s02-b05",
+          "kind": "narration",
+          "speaker": null,
+          "text": "정하는 수위계의 영을 다시 보았다. 그것은 물이 없다는 뜻이 아니라 회수된 기록이 없다는 뜻일 수 있었다. 경보는 누수가 아니라 인계가 끝나지 않았다는 신호였다. 하지만 왜 매일 같은 시각에 깨어나는지는 아직 알 수 없었다.",
+          "mood": "memory",
+          "effect": "none"
+        },
+        {
+          "id": "tide-s02-b06",
+          "kind": "narration",
+          "speaker": null,
+          "text": "그녀는 따뜻한 표를 단면도 옆에 놓았다. 종이에 닿은 손끝에서 작은 떨림이 전해졌다. 정하는 무전기 음량을 낮췄다. 물방울 사이의 침묵 끝에서 누군가 아주 짧게 웃고 있었다.",
+          "mood": "memory",
+          "effect": "none"
+        }
+      ]
+    },
+    {
+      "id": "tide-s03",
+      "title": "물결의 지도",
+      "backgroundAssetId": "tide-bg-03",
+      "portraitAssetId": null,
+      "mood": "tension",
+      "beats": [
+        {
+          "id": "tide-s03-b01",
+          "kind": "narration",
+          "speaker": null,
+          "text": "단면도에 표시된 통로는 선로 옆이 아니라 매표창구 뒤에 있었다. 정하는 시설 기록과 통로 번호를 대조한 뒤 문을 열었다. 좁은 계단이 아래로 이어졌다. 벽에는 녹슨 배관처럼 보이는 동선들이 나란히 박혀 있었다.",
+          "mood": "tension",
+          "effect": "none"
+        },
+        {
+          "id": "tide-s03-b02",
+          "kind": "narration",
+          "speaker": null,
+          "text": "한 선에서는 채소 상자가 바닥에 놓이는 소리가 났고, 다른 선에서는 학교 종이 울렸다. 정하는 손을 대지 않고 기록 번호를 읽었다. 소리들은 현재 바깥에서 들어오는 것이 아니었다. 별이 확인한 마지막 수집 날짜는 모두 역이 문을 닫은 날 이전이었다.",
+          "mood": "tension",
+          "effect": "none"
+        },
+        {
+          "id": "tide-s03-b03",
+          "kind": "dialogue",
+          "speaker": "byeol",
+          "text": "“네 시 십이 분은 마지막 기록이 들어온 시각이야. 그런데 수신 확인 항목 하나가 비어 있어. 설비가 하루에 한 번 인계 요청을 다시 보내는 거였네.” 정하는 고개를 끄덕였다. 고장처럼 들리던 반복에 이제 이유가 생겼다.",
+          "mood": "tension",
+          "effect": "none"
+        },
+        {
+          "id": "tide-s03-b04",
+          "kind": "narration",
+          "speaker": null,
+          "text": "경보는 구조 요청이 아니라, 아직 끝나지 않은 인사였다.",
+          "mood": "memory",
+          "effect": "reveal"
+        },
+        {
+          "id": "tide-s03-b05",
+          "kind": "narration",
+          "speaker": null,
+          "text": "맨 끝 동선에는 출처 이름이 없었다. 정하는 그것을 따라 둥근 문 앞까지 걸었다. 문에는 손잡이 대신 표를 넣는 좁은 틈이 있었다. 감열지에 찍힌 영이 처음으로 다른 의미를 가졌다. 승객 수가 아니라 아직 받아 간 사람이 없다는 표시였다.",
+          "mood": "tension",
+          "effect": "none"
+        },
+        {
+          "id": "tide-s03-b06",
+          "kind": "narration",
+          "speaker": null,
+          "text": "정하는 먼저 별에게 현재 위치와 돌아갈 시간을 알렸다. 그런 다음 표를 틈에 넣었다. 문이 열리며 차가운 바람이 나왔지만 물은 쏟아지지 않았다. 안쪽은 소리가 거의 없어, 자신의 옷깃이 움직이는 소리가 유난히 크게 들렸다.",
+          "mood": "tension",
+          "effect": "none"
+        }
+      ]
+    },
+    {
+      "id": "tide-s04",
+      "title": "비가 내리지 않는 방",
+      "backgroundAssetId": "tide-bg-04",
+      "portraitAssetId": "tide-portrait",
+      "mood": "climax",
+      "beats": [
+        {
+          "id": "tide-s04-b01",
+          "kind": "narration",
+          "speaker": null,
+          "text": "방 가운데 유리 원통이 서 있었다. 물은 없었다. 원통 안에서 옅은 푸른빛이 둥근 파문을 만들고 있었다. 정하는 입구의 기록 단자를 확인했다. 마지막 파일 하나가 인계 대기 상태였고, 원본을 지우지 않는 복사 연결이 남아 있었다.",
+          "mood": "climax",
+          "effect": "none"
+        },
+        {
+          "id": "tide-s04-b02",
+          "kind": "narration",
+          "speaker": null,
+          "text": "파일을 재생하자 비가 왔다. 방에 비가 내린 것은 아니었다. 우산을 펴는 소리와 장화가 웅덩이를 밟는 소리, 누군가 넘어지지 않도록 속도를 늦추는 소리가 한꺼번에 들렸다. 조금 뒤 아이가 웃었다. 어디서 들은 듯했지만 정하 자신의 기억은 아니었다.",
+          "mood": "climax",
+          "effect": "none"
+        },
+        {
+          "id": "tide-s04-b03",
+          "kind": "dialogue",
+          "speaker": "byeol",
+          "text": "“출처 찾았어. 철거된 시장 입구의 빗물받이래. 소음이라 분류돼서 다른 기록은 전시관으로 갔는데 이것만 인계 대상에서 빠졌어.” 별의 말이 끝나자 방 안은 다시 조용해졌다. 비 소리가 사라진 자리에 경보가 들어오려 했다.",
+          "mood": "climax",
+          "effect": "none"
+        },
+        {
+          "id": "tide-s04-b04",
+          "kind": "dialogue",
+          "speaker": "jeongha",
+          "text": "“소음이 아니라, 누군가 살던 자리야.”",
+          "mood": "climax",
+          "effect": "typewriter"
+        },
+        {
+          "id": "tide-s04-b05",
+          "kind": "narration",
+          "speaker": null,
+          "text": "정하는 경보 회선을 끊는 대신 보존용 복사 장치를 연결했다. 이것은 오늘의 빗소리를 새로 녹음하는 작업이 아니었다. 이미 있던 소리를 잃지 않도록 옮기는 일이었다. 파일 크기와 검증값이 일치하는 것을 확인할 때까지 인계 버튼은 누르지 않았다.",
+          "mood": "climax",
+          "effect": "none"
+        },
+        {
+          "id": "tide-s04-b06",
+          "kind": "narration",
+          "speaker": null,
+          "text": "복사가 끝나자 별에게 수신 확인을 요청했다. 지상의 장치에서 같은 웃음소리가 짧게 들렸다. 원통의 파문이 작아졌다. 정하는 그때에야 역이 깊어지는 것이 아니라, 너무 오래 같은 순간을 붙들고 있었다는 것을 이해했다.",
+          "mood": "climax",
+          "effect": "none"
+        }
+      ]
+    },
+    {
+      "id": "tide-s05",
+      "title": "도착 표시",
+      "backgroundAssetId": "tide-bg-05",
+      "portraitAssetId": null,
+      "mood": "relief",
+      "beats": [
+        {
+          "id": "tide-s05-b01",
+          "kind": "narration",
+          "speaker": null,
+          "text": "지상 장치에 수신 기록이 남자 원통의 빛이 꺼졌다. 파일은 보관소 두 곳에 남아 있었고 역의 마지막 인계 항목은 더 이상 비어 있지 않았다. 정하는 작업 기록에 경보 원인을 적었다. 이번에는 처음 썼던 문장을 지울 필요가 없었다.",
+          "mood": "relief",
+          "effect": "none"
+        },
+        {
+          "id": "tide-s05-b02",
+          "kind": "dialogue",
+          "speaker": "byeol",
+          "text": "“경보 해제됐어. 수위계도 그대로 영이야.” 정하는 웃었다. “이번 영은 다른 영이네.” 무전기 너머에서 별도 웃었다. 둘은 확인할 항목을 하나씩 읽고 정상값을 서로 맞췄다. 이야기처럼 보였던 밤도 마지막에는 체크리스트로 끝났다.",
+          "mood": "relief",
+          "effect": "none"
+        },
+        {
+          "id": "tide-s05-b03",
+          "kind": "narration",
+          "speaker": null,
+          "text": "계단을 올라오자 매표창구의 주황색 등이 켜져 있었다. 더는 깜빡이지 않았다. 표는 반환구에 놓여 있었는데 이번에는 차갑고 평범한 종이였다. 정하는 그것을 개인 기념품으로 가져가지 않고 시설 기록 봉투에 넣었다.",
+          "mood": "relief",
+          "effect": "none"
+        },
+        {
+          "id": "tide-s05-b04",
+          "kind": "narration",
+          "speaker": null,
+          "text": "승강장은 처음 내려왔을 때와 똑같았다. 마른 바닥, 짙은 타일, 빈 선로. 그런데 조용함의 성격이 달라져 있었다. 누군가 말하려고 숨을 들이마신 듯한 침묵이 아니라, 말을 마친 뒤 편히 쉬는 장소의 침묵이었다.",
+          "mood": "relief",
+          "effect": "none"
+        },
+        {
+          "id": "tide-s05-b05",
+          "kind": "dialogue",
+          "speaker": "jeongha",
+          "text": "“보관소에 이 파일 설명을 추가해 줘. 비가 아니라 비를 지나가던 사람들의 소리라고.” 별은 그렇게 적겠다고 했다. 정하는 새 이름이 원래 장소를 대신할 수는 없어도, 적어도 지워진 이유까지 반복하지는 않을 거라 생각했다.",
+          "mood": "relief",
+          "effect": "none"
+        },
+        {
+          "id": "tide-s05-b06",
+          "kind": "narration",
+          "speaker": null,
+          "text": "출구의 셔터를 닫기 전 정하는 녹음기를 껐다. 역의 침묵까지 자기 파일로 만들 필요는 없었다. 지상에서 새벽 청소차가 지나가는 소리가 들렸다. 그녀는 그 소리를 따라 계단 마지막 단을 올랐다.",
+          "mood": "relief",
+          "effect": "none"
+        }
+      ]
+    },
+    {
+      "id": "tide-s06",
+      "title": "오늘의 소리",
+      "backgroundAssetId": "tide-bg-06",
+      "portraitAssetId": null,
+      "mood": "calm",
+      "beats": [
+        {
+          "id": "tide-s06-b01",
+          "kind": "narration",
+          "speaker": null,
+          "text": "며칠 뒤 새로 생긴 작은 공공 청취대에 그 기록이 올라갔다. 정하는 퇴근길에 잠깐 들렀다. 화면에는 시장의 위치와 녹음 날짜, 파일이 늦게 도착한 이유가 짧게 적혀 있었다. 역이 유령에 잠겼다는 자극적인 제목은 없었다.",
+          "mood": "calm",
+          "effect": "none"
+        },
+        {
+          "id": "tide-s06-b02",
+          "kind": "narration",
+          "speaker": null,
+          "text": "버튼을 누르자 비가 왔다. 지나가던 사람이 우산을 찾아 하늘을 올려다보더니 웃었다. 정하는 그 사람이 끝까지 듣는지 지켜보지 않았다. 기록은 모두를 붙잡아 세우기 위해 돌아온 것이 아니었다. 듣고 싶은 사람이 잠깐 머물 수 있으면 충분했다.",
+          "mood": "calm",
+          "effect": "none"
+        },
+        {
+          "id": "tide-s06-b03",
+          "kind": "dialogue",
+          "speaker": "byeol",
+          "text": "“다음 점검에서는 그냥 평범한 펌프가 나왔으면 좋겠다.” 별의 메시지에 정하는 짧게 동의했다. 밤새 긴장했던 목덜미가 이제야 풀리는 것 같았다. 설명할 수 있는 고장이 얼마나 고마운 일인지 두 사람은 잘 알고 있었다.",
+          "mood": "calm",
+          "effect": "none"
+        },
+        {
+          "id": "tide-s06-b04",
+          "kind": "narration",
+          "speaker": null,
+          "text": "도시는 사라진 소리보다, 이제 들을 수 있는 소리만큼 넓어졌다.",
+          "mood": "relief",
+          "effect": "reveal"
+        },
+        {
+          "id": "tide-s06-b05",
+          "kind": "narration",
+          "speaker": null,
+          "text": "청취대 옆의 어린 나무에서 잎이 부딪혔다. 그 소리는 아직 어느 보관소에도 없을 것이었다. 정하는 녹음기를 꺼내지 않았다. 모든 순간을 저장할 수 없다는 사실이 더는 불안하게 느껴지지 않았다.",
+          "mood": "calm",
+          "effect": "none"
+        },
+        {
+          "id": "tide-s06-b06",
+          "kind": "narration",
+          "speaker": null,
+          "text": "다음 날 네 시 십이 분, 정하의 전화는 울리지 않았다. 그녀는 충분히 잔 뒤 창문을 열었다. 밖에서는 하루가 시작되고 있었다. 그날의 소리는 어제와 조금 달랐고, 정하는 그 차이를 들으며 천천히 아침을 준비했다.",
+          "mood": "calm",
+          "effect": "none"
+        }
+      ]
+    }
+  ],
+  "contentHash": "cabf9b98c0def39935378bea4dd467b34c93bf73b17796e6d9a68475c0b04e62"
+}

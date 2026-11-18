@@ -1,0 +1,1254 @@
+{
+  "observedAt": "2026-11-18T09:39:20.639Z",
+  "status": "COVERAGE_RECONCILED_NOT_PRODUCT_READINESS",
+  "sourceCommit": "4f7aac271235826998bc3a07bd05d65a75519c62",
+  "fullReport": {
+    "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/index.json",
+    "sha256": "429fa1a525c2c5c60a082ebedd2cd22838c239a695fa030c5a27017b34daec58",
+    "status": "LOCAL_GATES_BLOCKED",
+    "releaseReady": false
+  },
+  "releaseReady": false,
+  "humanReviews": 0,
+  "cases": [
+    {
+      "id": "QA-C01",
+      "group": "content",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/content.txt",
+          "sha256": "6b4d8f7f96c98c527b6e8077315a2154eb755642c659be57575bcd94003ecf67"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/content.json",
+          "sha256": "f4f40c9415c8ef526bef82906f8c5fa7f1e26d86222b2ace5158df57608acea8"
+        }
+      ]
+    },
+    {
+      "id": "QA-C02",
+      "group": "content",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/content.txt",
+          "sha256": "6b4d8f7f96c98c527b6e8077315a2154eb755642c659be57575bcd94003ecf67"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/content.json",
+          "sha256": "f4f40c9415c8ef526bef82906f8c5fa7f1e26d86222b2ace5158df57608acea8"
+        }
+      ]
+    },
+    {
+      "id": "QA-C03",
+      "group": "content",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/content.txt",
+          "sha256": "6b4d8f7f96c98c527b6e8077315a2154eb755642c659be57575bcd94003ecf67"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/content.json",
+          "sha256": "f4f40c9415c8ef526bef82906f8c5fa7f1e26d86222b2ace5158df57608acea8"
+        }
+      ]
+    },
+    {
+      "id": "QA-C04",
+      "group": "content",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/content.txt",
+          "sha256": "6b4d8f7f96c98c527b6e8077315a2154eb755642c659be57575bcd94003ecf67"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/content.json",
+          "sha256": "f4f40c9415c8ef526bef82906f8c5fa7f1e26d86222b2ace5158df57608acea8"
+        }
+      ]
+    },
+    {
+      "id": "QA-C05",
+      "group": "content",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/content.txt",
+          "sha256": "6b4d8f7f96c98c527b6e8077315a2154eb755642c659be57575bcd94003ecf67"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/content.json",
+          "sha256": "f4f40c9415c8ef526bef82906f8c5fa7f1e26d86222b2ace5158df57608acea8"
+        }
+      ]
+    },
+    {
+      "id": "QA-C06",
+      "group": "content",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/content.txt",
+          "sha256": "6b4d8f7f96c98c527b6e8077315a2154eb755642c659be57575bcd94003ecf67"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/content.json",
+          "sha256": "f4f40c9415c8ef526bef82906f8c5fa7f1e26d86222b2ace5158df57608acea8"
+        }
+      ]
+    },
+    {
+      "id": "QA-C07",
+      "group": "content",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/unit.txt",
+          "sha256": "c873148ef81ceb29af23eaa0a4d614e9eb7fc30d024e7584ebe49b3781c86864"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/unit.json",
+          "sha256": "f7afe74bc6ab0e13aa94cc1684f27a4db3a7e4992d73938f35efa4b4b6d4b527"
+        }
+      ]
+    },
+    {
+      "id": "QA-C08",
+      "group": "content",
+      "status": "AGENT_REVIEWED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/content/editorial-review.md",
+          "sha256": "abc743c1e7465906a63fe7c2c45e4510f03a65fcb15044195dbc1d3bbb7bab01"
+        }
+      ]
+    },
+    {
+      "id": "QA-R01",
+      "group": "reader",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/unit.txt",
+          "sha256": "c873148ef81ceb29af23eaa0a4d614e9eb7fc30d024e7584ebe49b3781c86864"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/unit.json",
+          "sha256": "f7afe74bc6ab0e13aa94cc1684f27a4db3a7e4992d73938f35efa4b4b6d4b527"
+        }
+      ]
+    },
+    {
+      "id": "QA-R02",
+      "group": "reader",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.txt",
+          "sha256": "fc106e316a79fd10d9663b1c4e678cf1ba58ba5f976aa9095ac2d81d35067b53"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.json",
+          "sha256": "1cbcf90c1621dc22ec7c28492f8a2d3abad2848f3e05a5fd2ccf0cd8ef22668d"
+        }
+      ]
+    },
+    {
+      "id": "QA-R03",
+      "group": "reader",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.txt",
+          "sha256": "fc106e316a79fd10d9663b1c4e678cf1ba58ba5f976aa9095ac2d81d35067b53"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.json",
+          "sha256": "1cbcf90c1621dc22ec7c28492f8a2d3abad2848f3e05a5fd2ccf0cd8ef22668d"
+        }
+      ]
+    },
+    {
+      "id": "QA-R04",
+      "group": "reader",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/unit.txt",
+          "sha256": "c873148ef81ceb29af23eaa0a4d614e9eb7fc30d024e7584ebe49b3781c86864"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/unit.json",
+          "sha256": "f7afe74bc6ab0e13aa94cc1684f27a4db3a7e4992d73938f35efa4b4b6d4b527"
+        }
+      ]
+    },
+    {
+      "id": "QA-R05",
+      "group": "reader",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.txt",
+          "sha256": "fc106e316a79fd10d9663b1c4e678cf1ba58ba5f976aa9095ac2d81d35067b53"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.json",
+          "sha256": "1cbcf90c1621dc22ec7c28492f8a2d3abad2848f3e05a5fd2ccf0cd8ef22668d"
+        }
+      ]
+    },
+    {
+      "id": "QA-R06",
+      "group": "reader",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.txt",
+          "sha256": "fc106e316a79fd10d9663b1c4e678cf1ba58ba5f976aa9095ac2d81d35067b53"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.json",
+          "sha256": "1cbcf90c1621dc22ec7c28492f8a2d3abad2848f3e05a5fd2ccf0cd8ef22668d"
+        }
+      ]
+    },
+    {
+      "id": "QA-R07",
+      "group": "reader",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.txt",
+          "sha256": "fc106e316a79fd10d9663b1c4e678cf1ba58ba5f976aa9095ac2d81d35067b53"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.json",
+          "sha256": "1cbcf90c1621dc22ec7c28492f8a2d3abad2848f3e05a5fd2ccf0cd8ef22668d"
+        }
+      ]
+    },
+    {
+      "id": "QA-R08",
+      "group": "reader",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.txt",
+          "sha256": "fc106e316a79fd10d9663b1c4e678cf1ba58ba5f976aa9095ac2d81d35067b53"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.json",
+          "sha256": "1cbcf90c1621dc22ec7c28492f8a2d3abad2848f3e05a5fd2ccf0cd8ef22668d"
+        }
+      ]
+    },
+    {
+      "id": "QA-R09",
+      "group": "reader",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.txt",
+          "sha256": "fc106e316a79fd10d9663b1c4e678cf1ba58ba5f976aa9095ac2d81d35067b53"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.json",
+          "sha256": "1cbcf90c1621dc22ec7c28492f8a2d3abad2848f3e05a5fd2ccf0cd8ef22668d"
+        }
+      ]
+    },
+    {
+      "id": "QA-R10",
+      "group": "reader",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/unit.txt",
+          "sha256": "c873148ef81ceb29af23eaa0a4d614e9eb7fc30d024e7584ebe49b3781c86864"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/unit.json",
+          "sha256": "f7afe74bc6ab0e13aa94cc1684f27a4db3a7e4992d73938f35efa4b4b6d4b527"
+        }
+      ]
+    },
+    {
+      "id": "QA-R11",
+      "group": "reader",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.txt",
+          "sha256": "fc106e316a79fd10d9663b1c4e678cf1ba58ba5f976aa9095ac2d81d35067b53"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.json",
+          "sha256": "1cbcf90c1621dc22ec7c28492f8a2d3abad2848f3e05a5fd2ccf0cd8ef22668d"
+        }
+      ]
+    },
+    {
+      "id": "QA-R12",
+      "group": "reader",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance.txt",
+          "sha256": "f0443ed9d721a02c7da281223ed1b5cdb9534b1530ae86ae9447000d7b2329b0"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance.json",
+          "sha256": "781e52628fd13fe3a93c49f2a006ce8a702b965ebcc5d3eaf42ca04716ebadfe"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-0-navigation.json",
+          "sha256": "fec7c70cabc26b0f124f7a10cd169b91caab5abe2dacf45964c5afb75571add6",
+          "producerPath": "evidence/performance/current/navigation.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-1-home-1.json",
+          "sha256": "b1923c8ef3a7758a6e6f587313bca7efe89d94576c9850f44b36ee20dced984b",
+          "producerPath": "evidence/performance/current/home-1.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-2-home-2.json",
+          "sha256": "6d3eb7042be27dea4560589ccd9773bdb99cb44c3be24f31b6d3ddef8e0c20dd",
+          "producerPath": "evidence/performance/current/home-2.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-3-home-3.json",
+          "sha256": "b97675ade739696d74495a71b680f34163535bb6284219978985ed8a6755bc76",
+          "producerPath": "evidence/performance/current/home-3.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-4-introduction-1.json",
+          "sha256": "6a1cc29807f50a374f8cacef1638cb6888e03c88383cae748c6ce8b3c00d51bc",
+          "producerPath": "evidence/performance/current/introduction-1.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-5-introduction-2.json",
+          "sha256": "7cc4dabb18371b549fd1d5c5f2bf012a3838f71688d84ad0c1d4cca3a7ab198d",
+          "producerPath": "evidence/performance/current/introduction-2.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-6-introduction-3.json",
+          "sha256": "61b3c39b45d748bfa4b59667b613a082bd5e008313fa370a795da0f8c9daa829",
+          "producerPath": "evidence/performance/current/introduction-3.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-7-reader-1.json",
+          "sha256": "b5538e4243110cccf5ee0a7898c8957903497bbfe29d31a57712ff51b4648f28",
+          "producerPath": "evidence/performance/current/reader-1.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-8-reader-2.json",
+          "sha256": "d00cf01cccc73ee6e2a83bc04bcf4d8d8d609ebd28d45fecd77f70fc630ae07b",
+          "producerPath": "evidence/performance/current/reader-2.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-9-reader-3.json",
+          "sha256": "03e458e7845938acc6906e09b1ade928bc9b015abf623959410213460a44cfd7",
+          "producerPath": "evidence/performance/current/reader-3.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-10-browser-results.json",
+          "sha256": "18289775e29594e5464ca02735b3662558e77cb4e14251f86d135745d7f0c5a3",
+          "producerPath": "evidence/performance/current/browser-results.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-11-lifecycle-perf-chromium.json",
+          "sha256": "e91c710b2da665db8734b4be5e28896c173a46955981d742a4f69ef14b33d7b7",
+          "producerPath": "evidence/performance/current/lifecycle-perf-chromium.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-12-lifecycle-perf-webkit.json",
+          "sha256": "282f5a19d460018fd13bdfee6571965e1cf86f72b644406057b93ea3aa6153d4",
+          "producerPath": "evidence/performance/current/lifecycle-perf-webkit.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-13-interactions.json",
+          "sha256": "9ed435209a1a3c867dfe9b13dfc39b0cd4a5cc2be7dda0c324629e7b4970f42e",
+          "producerPath": "evidence/performance/current/interactions.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-14-resources.json",
+          "sha256": "b18f2f87ec8df3d660e810e8ece82e91efef7a5728631c7f8e3d668366d4778b",
+          "producerPath": "evidence/performance/current/resources.json"
+        }
+      ]
+    },
+    {
+      "id": "QA-D01",
+      "group": "data",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/database.txt",
+          "sha256": "2f1064eb28d4784000eb57f399f3da1e198322f92cd08cd6e6762b718538e9cb"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/database.json",
+          "sha256": "8257be257dc4d53efb194e42b8b6e333c241d9e7676dda2dbfbec7af158ce81b"
+        }
+      ]
+    },
+    {
+      "id": "QA-D02",
+      "group": "data",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/api.txt",
+          "sha256": "330f5f2d245d8033a6ccb645b314ad18fb74aff75754c64524c6ec0debdbee92"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/api.json",
+          "sha256": "6317b259c299645674c44ec1a82c2fa2fb3f418211527096720889e7b76410e7"
+        }
+      ]
+    },
+    {
+      "id": "QA-D03",
+      "group": "data",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/api.txt",
+          "sha256": "330f5f2d245d8033a6ccb645b314ad18fb74aff75754c64524c6ec0debdbee92"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/api.json",
+          "sha256": "6317b259c299645674c44ec1a82c2fa2fb3f418211527096720889e7b76410e7"
+        }
+      ]
+    },
+    {
+      "id": "QA-D04",
+      "group": "data",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/api.txt",
+          "sha256": "330f5f2d245d8033a6ccb645b314ad18fb74aff75754c64524c6ec0debdbee92"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/api.json",
+          "sha256": "6317b259c299645674c44ec1a82c2fa2fb3f418211527096720889e7b76410e7"
+        }
+      ]
+    },
+    {
+      "id": "QA-D05",
+      "group": "data",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/api.txt",
+          "sha256": "330f5f2d245d8033a6ccb645b314ad18fb74aff75754c64524c6ec0debdbee92"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/api.json",
+          "sha256": "6317b259c299645674c44ec1a82c2fa2fb3f418211527096720889e7b76410e7"
+        }
+      ]
+    },
+    {
+      "id": "QA-D06",
+      "group": "data",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/api.txt",
+          "sha256": "330f5f2d245d8033a6ccb645b314ad18fb74aff75754c64524c6ec0debdbee92"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/api.json",
+          "sha256": "6317b259c299645674c44ec1a82c2fa2fb3f418211527096720889e7b76410e7"
+        }
+      ]
+    },
+    {
+      "id": "QA-D07",
+      "group": "data",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/api.txt",
+          "sha256": "330f5f2d245d8033a6ccb645b314ad18fb74aff75754c64524c6ec0debdbee92"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/api.json",
+          "sha256": "6317b259c299645674c44ec1a82c2fa2fb3f418211527096720889e7b76410e7"
+        }
+      ]
+    },
+    {
+      "id": "QA-D08",
+      "group": "data",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.txt",
+          "sha256": "fc106e316a79fd10d9663b1c4e678cf1ba58ba5f976aa9095ac2d81d35067b53"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.json",
+          "sha256": "1cbcf90c1621dc22ec7c28492f8a2d3abad2848f3e05a5fd2ccf0cd8ef22668d"
+        }
+      ]
+    },
+    {
+      "id": "QA-D09",
+      "group": "data",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.txt",
+          "sha256": "fc106e316a79fd10d9663b1c4e678cf1ba58ba5f976aa9095ac2d81d35067b53"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.json",
+          "sha256": "1cbcf90c1621dc22ec7c28492f8a2d3abad2848f3e05a5fd2ccf0cd8ef22668d"
+        }
+      ]
+    },
+    {
+      "id": "QA-D10",
+      "group": "data",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.txt",
+          "sha256": "fc106e316a79fd10d9663b1c4e678cf1ba58ba5f976aa9095ac2d81d35067b53"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.json",
+          "sha256": "1cbcf90c1621dc22ec7c28492f8a2d3abad2848f3e05a5fd2ccf0cd8ef22668d"
+        }
+      ]
+    },
+    {
+      "id": "QA-D11",
+      "group": "data",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/api.txt",
+          "sha256": "330f5f2d245d8033a6ccb645b314ad18fb74aff75754c64524c6ec0debdbee92"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/api.json",
+          "sha256": "6317b259c299645674c44ec1a82c2fa2fb3f418211527096720889e7b76410e7"
+        }
+      ]
+    },
+    {
+      "id": "QA-D12",
+      "group": "data",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/database.txt",
+          "sha256": "2f1064eb28d4784000eb57f399f3da1e198322f92cd08cd6e6762b718538e9cb"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/database.json",
+          "sha256": "8257be257dc4d53efb194e42b8b6e333c241d9e7676dda2dbfbec7af158ce81b"
+        }
+      ]
+    },
+    {
+      "id": "QA-S01",
+      "group": "security",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/api.txt",
+          "sha256": "330f5f2d245d8033a6ccb645b314ad18fb74aff75754c64524c6ec0debdbee92"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/api.json",
+          "sha256": "6317b259c299645674c44ec1a82c2fa2fb3f418211527096720889e7b76410e7"
+        }
+      ]
+    },
+    {
+      "id": "QA-S02",
+      "group": "security",
+      "status": "PARTIAL",
+      "note": "Local HttpOnly cookie/runtime-policy unit/client-bundle checks passed; actual HTTPS __Host cookie requires approved deployment.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/api.txt",
+          "sha256": "330f5f2d245d8033a6ccb645b314ad18fb74aff75754c64524c6ec0debdbee92"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/api.json",
+          "sha256": "6317b259c299645674c44ec1a82c2fa2fb3f418211527096720889e7b76410e7"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/security-negatives.txt",
+          "sha256": "2433e360d60c1a9292fda6e3e7c1d0b1602866077e2d60f8dbae57266c630de0"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/security-negatives.json",
+          "sha256": "872379898ba33dd9f672ed4159b3fed1bd5641e17af1a31e6c6902c81ef93d5f"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/security-negatives-0-unit-results.json",
+          "sha256": "51fd1ae190ee5a6870dcb2be292cfeff279a7597d0617b7d929cb3765e2434f5",
+          "producerPath": "evidence/security/current/unit-results.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/security-negatives-1-test-results.json",
+          "sha256": "233298e27bd6942320e285457d70114d95487d14eb0ed853d6ac7d2d29583e8c",
+          "producerPath": "evidence/security/current/test-results.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/security-negatives-2-public-source-review.json",
+          "sha256": "30e1f00c9401066bc7351923167b3cfe446a3a7daf00eb0ca2fd7eb7549e52fe",
+          "producerPath": "evidence/security/public-source-review.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/unit.txt",
+          "sha256": "c873148ef81ceb29af23eaa0a4d614e9eb7fc30d024e7584ebe49b3781c86864"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/unit.json",
+          "sha256": "f7afe74bc6ab0e13aa94cc1684f27a4db3a7e4992d73938f35efa4b4b6d4b527"
+        },
+        {
+          "path": "evidence/deploy/final-smoke.json",
+          "sha256": "60dc4676e9374a636bdf8642622c3f664660137b867196b5737e98120e49098d"
+        }
+      ]
+    },
+    {
+      "id": "QA-S03",
+      "group": "security",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Network-scoped30/15min session creation,120/min writes,64bookmarks,16KiB and concurrency checks; approved5/story/session/AsiaSeoul-calendar-day quota, boundaries/replays/rollback tested. Actual public ingress configuration remains unverified.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/api.txt",
+          "sha256": "330f5f2d245d8033a6ccb645b314ad18fb74aff75754c64524c6ec0debdbee92"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/api.json",
+          "sha256": "6317b259c299645674c44ec1a82c2fa2fb3f418211527096720889e7b76410e7"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/database.txt",
+          "sha256": "2f1064eb28d4784000eb57f399f3da1e198322f92cd08cd6e6762b718538e9cb"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/database.json",
+          "sha256": "8257be257dc4d53efb194e42b8b6e333c241d9e7676dda2dbfbec7af158ce81b"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/unit.txt",
+          "sha256": "c873148ef81ceb29af23eaa0a4d614e9eb7fc30d024e7584ebe49b3781c86864"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/unit.json",
+          "sha256": "f7afe74bc6ab0e13aa94cc1684f27a4db3a7e4992d73938f35efa4b4b6d4b527"
+        }
+      ]
+    },
+    {
+      "id": "QA-S04",
+      "group": "security",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/api.txt",
+          "sha256": "330f5f2d245d8033a6ccb645b314ad18fb74aff75754c64524c6ec0debdbee92"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/api.json",
+          "sha256": "6317b259c299645674c44ec1a82c2fa2fb3f418211527096720889e7b76410e7"
+        }
+      ]
+    },
+    {
+      "id": "QA-S05",
+      "group": "security",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/security-negatives.txt",
+          "sha256": "2433e360d60c1a9292fda6e3e7c1d0b1602866077e2d60f8dbae57266c630de0"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/security-negatives.json",
+          "sha256": "872379898ba33dd9f672ed4159b3fed1bd5641e17af1a31e6c6902c81ef93d5f"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/security-negatives-0-unit-results.json",
+          "sha256": "51fd1ae190ee5a6870dcb2be292cfeff279a7597d0617b7d929cb3765e2434f5",
+          "producerPath": "evidence/security/current/unit-results.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/security-negatives-1-test-results.json",
+          "sha256": "233298e27bd6942320e285457d70114d95487d14eb0ed853d6ac7d2d29583e8c",
+          "producerPath": "evidence/security/current/test-results.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/security-negatives-2-public-source-review.json",
+          "sha256": "30e1f00c9401066bc7351923167b3cfe446a3a7daf00eb0ca2fd7eb7549e52fe",
+          "producerPath": "evidence/security/public-source-review.json"
+        }
+      ]
+    },
+    {
+      "id": "QA-U01",
+      "group": "ux",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.txt",
+          "sha256": "fc106e316a79fd10d9663b1c4e678cf1ba58ba5f976aa9095ac2d81d35067b53"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.json",
+          "sha256": "1cbcf90c1621dc22ec7c28492f8a2d3abad2848f3e05a5fd2ccf0cd8ef22668d"
+        }
+      ]
+    },
+    {
+      "id": "QA-U02",
+      "group": "ux",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.txt",
+          "sha256": "fc106e316a79fd10d9663b1c4e678cf1ba58ba5f976aa9095ac2d81d35067b53"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.json",
+          "sha256": "1cbcf90c1621dc22ec7c28492f8a2d3abad2848f3e05a5fd2ccf0cd8ef22668d"
+        }
+      ]
+    },
+    {
+      "id": "QA-U03",
+      "group": "ux",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.txt",
+          "sha256": "fc106e316a79fd10d9663b1c4e678cf1ba58ba5f976aa9095ac2d81d35067b53"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.json",
+          "sha256": "1cbcf90c1621dc22ec7c28492f8a2d3abad2848f3e05a5fd2ccf0cd8ef22668d"
+        }
+      ]
+    },
+    {
+      "id": "QA-U04",
+      "group": "ux",
+      "status": "AGENT_REVIEWED",
+      "note": "Original full run required manual observation for1new14pixelrounded-row variant; actual same capture reviewed and post-full verify-review plus10negative guards passed. Original full report not rewritten.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.txt",
+          "sha256": "fc106e316a79fd10d9663b1c4e678cf1ba58ba5f976aa9095ac2d81d35067b53"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.json",
+          "sha256": "1cbcf90c1621dc22ec7c28492f8a2d3abad2848f3e05a5fd2ccf0cd8ef22668d"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/visual.txt",
+          "sha256": "eccf05b49975f5537f95f83bde5c32b7e3b6649279e2c44112dc628e7bcf4b70"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/visual.json",
+          "sha256": "a6b3852cf5fee8deeca67ee913a897acbfe2a05018a64c3c8a8c73c646e8216c"
+        },
+        {
+          "path": "evidence/responsive/native-zoom-blocker.json",
+          "sha256": "b55fc37d6dc08145b1ab4d89a811730344b925ae9bbf90b4b2a1b55df7792b40"
+        },
+        {
+          "path": "evidence/qa/post-full-visual.json",
+          "sha256": "9b20fbe732648cb34f8ac128f478c2e643fa80b69267220fbceb3e99a2180d2c"
+        }
+      ]
+    },
+    {
+      "id": "QA-U05",
+      "group": "ux",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.txt",
+          "sha256": "fc106e316a79fd10d9663b1c4e678cf1ba58ba5f976aa9095ac2d81d35067b53"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.json",
+          "sha256": "1cbcf90c1621dc22ec7c28492f8a2d3abad2848f3e05a5fd2ccf0cd8ef22668d"
+        }
+      ]
+    },
+    {
+      "id": "QA-U06",
+      "group": "ux",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.txt",
+          "sha256": "fc106e316a79fd10d9663b1c4e678cf1ba58ba5f976aa9095ac2d81d35067b53"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.json",
+          "sha256": "1cbcf90c1621dc22ec7c28492f8a2d3abad2848f3e05a5fd2ccf0cd8ef22668d"
+        }
+      ]
+    },
+    {
+      "id": "QA-U07",
+      "group": "ux",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.txt",
+          "sha256": "fc106e316a79fd10d9663b1c4e678cf1ba58ba5f976aa9095ac2d81d35067b53"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.json",
+          "sha256": "1cbcf90c1621dc22ec7c28492f8a2d3abad2848f3e05a5fd2ccf0cd8ef22668d"
+        }
+      ]
+    },
+    {
+      "id": "QA-U08",
+      "group": "ux",
+      "status": "AGENT_REVIEWED",
+      "note": "Original full run required manual observation for1new14pixelrounded-row variant; actual same capture reviewed and post-full verify-review plus10negative guards passed. Original full report not rewritten.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/visual.txt",
+          "sha256": "eccf05b49975f5537f95f83bde5c32b7e3b6649279e2c44112dc628e7bcf4b70"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/visual.json",
+          "sha256": "a6b3852cf5fee8deeca67ee913a897acbfe2a05018a64c3c8a8c73c646e8216c"
+        },
+        {
+          "path": "evidence/qa/post-full-visual.json",
+          "sha256": "9b20fbe732648cb34f8ac128f478c2e643fa80b69267220fbceb3e99a2180d2c"
+        }
+      ]
+    },
+    {
+      "id": "QA-A01",
+      "group": "assets",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Budget-zero adapter denial; no paid call performed.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/unit.txt",
+          "sha256": "c873148ef81ceb29af23eaa0a4d614e9eb7fc30d024e7584ebe49b3781c86864"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/unit.json",
+          "sha256": "f7afe74bc6ab0e13aa94cc1684f27a4db3a7e4992d73938f35efa4b4b6d4b527"
+        }
+      ]
+    },
+    {
+      "id": "QA-A02",
+      "group": "assets",
+      "status": "AGENT_REVIEWED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/assets/generation-review.json",
+          "sha256": "fc8fff7291f05c7d502e60aad608b6af3c21ee16d08c39fe404cf4825a791786"
+        },
+        {
+          "path": "evidence/assets/optimization-review.json",
+          "sha256": "f615fc342212167f04002ea6309d3920968edad73fdd4c07c1de12f1ad8627b7"
+        }
+      ]
+    },
+    {
+      "id": "QA-A03",
+      "group": "assets",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Unknown outcome/duplicate-call refusal and resume ledger tests; no new generation call.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/unit.txt",
+          "sha256": "c873148ef81ceb29af23eaa0a4d614e9eb7fc30d024e7584ebe49b3781c86864"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/unit.json",
+          "sha256": "f7afe74bc6ab0e13aa94cc1684f27a4db3a7e4992d73938f35efa4b4b6d4b527"
+        }
+      ]
+    },
+    {
+      "id": "QA-A04",
+      "group": "assets",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/assets.txt",
+          "sha256": "d2c4a12842cef8159f68446ed1736a37075ef2db98870bc1edd140fd13e10a83"
+        }
+      ]
+    },
+    {
+      "id": "QA-A05",
+      "group": "assets",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/unit.txt",
+          "sha256": "c873148ef81ceb29af23eaa0a4d614e9eb7fc30d024e7584ebe49b3781c86864"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/unit.json",
+          "sha256": "f7afe74bc6ab0e13aa94cc1684f27a4db3a7e4992d73938f35efa4b4b6d4b527"
+        }
+      ]
+    },
+    {
+      "id": "QA-P01",
+      "group": "performance",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance.txt",
+          "sha256": "f0443ed9d721a02c7da281223ed1b5cdb9534b1530ae86ae9447000d7b2329b0"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance.json",
+          "sha256": "781e52628fd13fe3a93c49f2a006ce8a702b965ebcc5d3eaf42ca04716ebadfe"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-0-navigation.json",
+          "sha256": "fec7c70cabc26b0f124f7a10cd169b91caab5abe2dacf45964c5afb75571add6",
+          "producerPath": "evidence/performance/current/navigation.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-1-home-1.json",
+          "sha256": "b1923c8ef3a7758a6e6f587313bca7efe89d94576c9850f44b36ee20dced984b",
+          "producerPath": "evidence/performance/current/home-1.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-2-home-2.json",
+          "sha256": "6d3eb7042be27dea4560589ccd9773bdb99cb44c3be24f31b6d3ddef8e0c20dd",
+          "producerPath": "evidence/performance/current/home-2.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-3-home-3.json",
+          "sha256": "b97675ade739696d74495a71b680f34163535bb6284219978985ed8a6755bc76",
+          "producerPath": "evidence/performance/current/home-3.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-4-introduction-1.json",
+          "sha256": "6a1cc29807f50a374f8cacef1638cb6888e03c88383cae748c6ce8b3c00d51bc",
+          "producerPath": "evidence/performance/current/introduction-1.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-5-introduction-2.json",
+          "sha256": "7cc4dabb18371b549fd1d5c5f2bf012a3838f71688d84ad0c1d4cca3a7ab198d",
+          "producerPath": "evidence/performance/current/introduction-2.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-6-introduction-3.json",
+          "sha256": "61b3c39b45d748bfa4b59667b613a082bd5e008313fa370a795da0f8c9daa829",
+          "producerPath": "evidence/performance/current/introduction-3.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-7-reader-1.json",
+          "sha256": "b5538e4243110cccf5ee0a7898c8957903497bbfe29d31a57712ff51b4648f28",
+          "producerPath": "evidence/performance/current/reader-1.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-8-reader-2.json",
+          "sha256": "d00cf01cccc73ee6e2a83bc04bcf4d8d8d609ebd28d45fecd77f70fc630ae07b",
+          "producerPath": "evidence/performance/current/reader-2.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-9-reader-3.json",
+          "sha256": "03e458e7845938acc6906e09b1ade928bc9b015abf623959410213460a44cfd7",
+          "producerPath": "evidence/performance/current/reader-3.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-10-browser-results.json",
+          "sha256": "18289775e29594e5464ca02735b3662558e77cb4e14251f86d135745d7f0c5a3",
+          "producerPath": "evidence/performance/current/browser-results.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-11-lifecycle-perf-chromium.json",
+          "sha256": "e91c710b2da665db8734b4be5e28896c173a46955981d742a4f69ef14b33d7b7",
+          "producerPath": "evidence/performance/current/lifecycle-perf-chromium.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-12-lifecycle-perf-webkit.json",
+          "sha256": "282f5a19d460018fd13bdfee6571965e1cf86f72b644406057b93ea3aa6153d4",
+          "producerPath": "evidence/performance/current/lifecycle-perf-webkit.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-13-interactions.json",
+          "sha256": "9ed435209a1a3c867dfe9b13dfc39b0cd4a5cc2be7dda0c324629e7b4970f42e",
+          "producerPath": "evidence/performance/current/interactions.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-14-resources.json",
+          "sha256": "b18f2f87ec8df3d660e810e8ece82e91efef7a5728631c7f8e3d668366d4778b",
+          "producerPath": "evidence/performance/current/resources.json"
+        }
+      ]
+    },
+    {
+      "id": "QA-P02",
+      "group": "performance",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance.txt",
+          "sha256": "f0443ed9d721a02c7da281223ed1b5cdb9534b1530ae86ae9447000d7b2329b0"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance.json",
+          "sha256": "781e52628fd13fe3a93c49f2a006ce8a702b965ebcc5d3eaf42ca04716ebadfe"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-0-navigation.json",
+          "sha256": "fec7c70cabc26b0f124f7a10cd169b91caab5abe2dacf45964c5afb75571add6",
+          "producerPath": "evidence/performance/current/navigation.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-1-home-1.json",
+          "sha256": "b1923c8ef3a7758a6e6f587313bca7efe89d94576c9850f44b36ee20dced984b",
+          "producerPath": "evidence/performance/current/home-1.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-2-home-2.json",
+          "sha256": "6d3eb7042be27dea4560589ccd9773bdb99cb44c3be24f31b6d3ddef8e0c20dd",
+          "producerPath": "evidence/performance/current/home-2.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-3-home-3.json",
+          "sha256": "b97675ade739696d74495a71b680f34163535bb6284219978985ed8a6755bc76",
+          "producerPath": "evidence/performance/current/home-3.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-4-introduction-1.json",
+          "sha256": "6a1cc29807f50a374f8cacef1638cb6888e03c88383cae748c6ce8b3c00d51bc",
+          "producerPath": "evidence/performance/current/introduction-1.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-5-introduction-2.json",
+          "sha256": "7cc4dabb18371b549fd1d5c5f2bf012a3838f71688d84ad0c1d4cca3a7ab198d",
+          "producerPath": "evidence/performance/current/introduction-2.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-6-introduction-3.json",
+          "sha256": "61b3c39b45d748bfa4b59667b613a082bd5e008313fa370a795da0f8c9daa829",
+          "producerPath": "evidence/performance/current/introduction-3.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-7-reader-1.json",
+          "sha256": "b5538e4243110cccf5ee0a7898c8957903497bbfe29d31a57712ff51b4648f28",
+          "producerPath": "evidence/performance/current/reader-1.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-8-reader-2.json",
+          "sha256": "d00cf01cccc73ee6e2a83bc04bcf4d8d8d609ebd28d45fecd77f70fc630ae07b",
+          "producerPath": "evidence/performance/current/reader-2.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-9-reader-3.json",
+          "sha256": "03e458e7845938acc6906e09b1ade928bc9b015abf623959410213460a44cfd7",
+          "producerPath": "evidence/performance/current/reader-3.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-10-browser-results.json",
+          "sha256": "18289775e29594e5464ca02735b3662558e77cb4e14251f86d135745d7f0c5a3",
+          "producerPath": "evidence/performance/current/browser-results.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-11-lifecycle-perf-chromium.json",
+          "sha256": "e91c710b2da665db8734b4be5e28896c173a46955981d742a4f69ef14b33d7b7",
+          "producerPath": "evidence/performance/current/lifecycle-perf-chromium.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-12-lifecycle-perf-webkit.json",
+          "sha256": "282f5a19d460018fd13bdfee6571965e1cf86f72b644406057b93ea3aa6153d4",
+          "producerPath": "evidence/performance/current/lifecycle-perf-webkit.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-13-interactions.json",
+          "sha256": "9ed435209a1a3c867dfe9b13dfc39b0cd4a5cc2be7dda0c324629e7b4970f42e",
+          "producerPath": "evidence/performance/current/interactions.json"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/performance-14-resources.json",
+          "sha256": "b18f2f87ec8df3d660e810e8ece82e91efef7a5728631c7f8e3d668366d4778b",
+          "producerPath": "evidence/performance/current/resources.json"
+        }
+      ]
+    },
+    {
+      "id": "QA-P03",
+      "group": "packages",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/external-packages.txt",
+          "sha256": "f531c2012538e9605bf5cbf679e2d0aaffc798b77d805035beea72bc8a28dff1"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/external-packages.json",
+          "sha256": "f87c9ea7a91430bab6e0a91d9f2abbba0517d659da5320ae7c09de1be092745b"
+        }
+      ]
+    },
+    {
+      "id": "QA-X01",
+      "group": "deployment",
+      "status": "BLOCKED_EXTERNAL",
+      "note": "No approved public HTTPS deployment; provider403.",
+      "artifacts": [
+        {
+          "path": "evidence/deploy/preflight.json",
+          "sha256": "4d4940cbf57545e9b8ecad09e9e3f8a9461be0d0812f84108b2424f734fe8311"
+        },
+        {
+          "path": "evidence/deploy/final-smoke.json",
+          "sha256": "60dc4676e9374a636bdf8642622c3f664660137b867196b5737e98120e49098d"
+        }
+      ]
+    },
+    {
+      "id": "QA-X02",
+      "group": "deployment",
+      "status": "BLOCKED_EXTERNAL",
+      "note": "No approved preview rollback rehearsal; local container restart is separate evidence.",
+      "artifacts": [
+        {
+          "path": "evidence/deploy/preflight.json",
+          "sha256": "4d4940cbf57545e9b8ecad09e9e3f8a9461be0d0812f84108b2424f734fe8311"
+        },
+        {
+          "path": "evidence/deploy/final-smoke.json",
+          "sha256": "60dc4676e9374a636bdf8642622c3f664660137b867196b5737e98120e49098d"
+        }
+      ]
+    },
+    {
+      "id": "QA-X03",
+      "group": "reporting",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/unit.txt",
+          "sha256": "c873148ef81ceb29af23eaa0a4d614e9eb7fc30d024e7584ebe49b3781c86864"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/unit.json",
+          "sha256": "f7afe74bc6ab0e13aa94cc1684f27a4db3a7e4992d73938f35efa4b4b6d4b527"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/ledger.txt",
+          "sha256": "4253dadb02e55dcabc8713854c39e46d420b5b0da7938e85b9c5c2fd17aa1452"
+        }
+      ]
+    },
+    {
+      "id": "QA-U09",
+      "group": "library",
+      "status": "AUTOMATED_SCOPE_PASSED",
+      "note": "Scoped actual automated or agent evidence; not a claim of complete product readiness.",
+      "artifacts": [
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.txt",
+          "sha256": "fc106e316a79fd10d9663b1c4e678cf1ba58ba5f976aa9095ac2d81d35067b53"
+        },
+        {
+          "path": "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/chromium.json",
+          "sha256": "1cbcf90c1621dc22ec7c28492f8a2d3abad2848f3e05a5fd2ccf0cd8ef22668d"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "AUTOMATED_SCOPE_PASSED": 50,
+    "AGENT_REVIEWED": 4,
+    "PARTIAL": 1,
+    "BLOCKED_EXTERNAL": 2
+  },
+  "inputs": [
+    {
+      "path": "contracts/qa-cases.yaml",
+      "sha256": "96ea0398bb16303605ddb7f898036cb09754ee83ca6c2440e47dbe82576914c9"
+    },
+    {
+      "path": "contracts/qa-coverage-map.json",
+      "sha256": "3c238455998e58bb5d2137fd5d6cd6923823919ab615417aeafa593a4440ce3e"
+    }
+  ],
+  "postFullReconciliation": {
+    "path": "evidence/qa/post-full-visual.json",
+    "sha256": "9b20fbe732648cb34f8ac128f478c2e643fa80b69267220fbceb3e99a2180d2c"
+  }
+}

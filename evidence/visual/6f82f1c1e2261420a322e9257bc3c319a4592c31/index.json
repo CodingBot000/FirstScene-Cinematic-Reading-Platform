@@ -1,0 +1,3383 @@
+{
+  "observedAt": "2026-11-18T04:33:39.557230+00:00",
+  "codeCommit": "6f82f1c1e2261420a322e9257bc3c319a4592c31",
+  "collectionBaseCommit": "6f82f1c1e2261420a322e9257bc3c319a4592c31",
+  "reviewer": "agent",
+  "humanReviews": 0,
+  "status": "AGENT_VISUAL_REVIEW_COMPLETE",
+  "nativeZoom": "BLOCKED_EXTERNAL",
+  "releaseReady": false,
+  "coverage": "96actual captured viewport/state frames plus exact-PNG review transfers; independent keyboard/axe/realDB checks. Native browser200% and human usability evaluation are not included.",
+  "sourceFingerprint": {
+    "sha256": "7312f224e44ca2ab67e7e552b897aab6793fbf876755bc08f5ebc262d03282fc",
+    "files": 161,
+    "roots": [
+      "apps/web",
+      "packages/ui",
+      "packages/tokens",
+      "packages/story-schema",
+      "packages/reader-core",
+      "packages/reader-react",
+      "content/generated",
+      "pnpm-lock.yaml",
+      "package.json",
+      "pnpm-workspace.yaml",
+      ".npmrc",
+      "tsconfig.base.json"
+    ]
+  },
+  "fingerprintRecordedAt": "2026-11-18T04:33:39.557230+00:00",
+  "fingerprintScope": "Recorded after capture/review; production sources have not changed since the91fee84 build. Next collection checks this fingerprint before and after the real browser run.",
+  "captures": [
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/reader-bookmark-1440x1000-cinematic-saved.png",
+      "name": "reader-bookmark",
+      "mode": "cinematic",
+      "state": "saved",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "bdffe9e120f3820c8e9b4552d6c1faa7575140749afd4807211dcc74bbc4d0be",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened new1440saved-state reader: filled star and remove tooltip stay in reserved right gutter outside the text column, artwork/caption and paragraphs remain readable. Independent both-engine all-paragraph tooltip-intersection checks returned0; first-capture geometry will be checked again in the final visual run.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/reader-bookmark-1440x1000-cinematic-saved.png",
+        "sha256": "bdffe9e120f3820c8e9b4552d6c1faa7575140749afd4807211dcc74bbc4d0be",
+        "reviewedAt": "2026-11-18T02:19:33.845863+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/reader-settings-1440x1000-cinematic-font24.png",
+      "name": "reader-settings",
+      "mode": "cinematic",
+      "state": "font24",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "e1671f09cce3fdebd294f555a161151064f18a15530552c8d8d27c55358639d8",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/390: modal paper panel has clear title/groups, selected24px state, readable labels and visible close action. Large text behind overlay reflows; focus trap/Escape/return-to-opener checked by real browser. Narrower320modal and native200% remain separate checks, not inferred from390.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/reader-settings-1440x1000-cinematic-font24.png",
+        "sha256": "e1671f09cce3fdebd294f555a161151064f18a15530552c8d8d27c55358639d8",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/reader-1440x1000-plain-font24.png",
+      "name": "reader",
+      "mode": "plain",
+      "state": "font24",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "b641e9459565086ce61e8fb5510e242f4c7c22258fbcb86e97039d28358c08af",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/390: plain24px removes stage and keeps full opaque text; OS-reduced20px keeps static illustration and same text. Strong focus ring returns to settings. At390 its bottom edge overlaps the save-status row: D-P06-002, repair required before visual approval.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/reader-1440x1000-plain-font24.png",
+        "sha256": "b641e9459565086ce61e8fb5510e242f4c7c22258fbcb86e97039d28358c08af",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/reader-1440x1000-cinematic-os-reduced.png",
+      "name": "reader",
+      "mode": "cinematic",
+      "state": "os-reduced",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "3c981f69192d9760119443e3132313b00c42e291781c7e9a342fc027164a82cf",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/390: plain24px removes stage and keeps full opaque text; OS-reduced20px keeps static illustration and same text. Strong focus ring returns to settings. At390 its bottom edge overlaps the save-status row: D-P06-002, repair required before visual approval.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/reader-1440x1000-cinematic-os-reduced.png",
+        "sha256": "3c981f69192d9760119443e3132313b00c42e291781c7e9a342fc027164a82cf",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/library-1440x1000-paper-full.png",
+      "name": "library",
+      "mode": "paper",
+      "state": "full",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "4d1b2c666f39e361abb069687ab75cf1d1d12288482ac8ccaa129b2464f2c349",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened new1440/390 after max100 correction:3% label now corresponds to short rust fill with grey remaining track. Real native progress.position matched36% in the negative-reproduction journey after fix and3% in the visual flow. Recent/saved/quote sections and controls remain readable, with no overlap.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/library-1440x1000-paper-full.png",
+        "sha256": "4d1b2c666f39e361abb069687ab75cf1d1d12288482ac8ccaa129b2464f2c349",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/reader-tide-1440x1000-reduced-image-failure.png",
+      "name": "reader-tide",
+      "mode": "reduced",
+      "state": "image-failure",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "a78307934bf5cbce7f9b6e5b132beecd6ff594972ad5f86c0ccca8fe8fe04790",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/390 controlled actual image abort: empty colored stage/inline region retains its geometry, no broken-image icon or loading cover over text; all real paragraphs remain readable, toolbar/status and bookmark controls keep their position. This is explicitly a fault state, not an approved substitute for final images.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/reader-tide-1440x1000-reduced-image-failure.png",
+        "sha256": "a78307934bf5cbce7f9b6e5b132beecd6ff594972ad5f86c0ccca8fe8fe04790",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/reader-reflow-1440x1000-cinematic-first.png",
+      "name": "reader-reflow",
+      "mode": "cinematic",
+      "state": "first",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "54f685c0be02ebcf9b46762cafff8e0d48b8655c6391f17296d41b8724e3fcdd",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/1024: desktop uses separate sticky stage/text columns,1024reflows to a centered inline-image reading column; all current text and toolbar controls remain unobscured. Settings groups/selection contrast are clear. At1024initial modal close is below its scroll viewport (interaction1); actual keyboard traversal reaches it, keeps focus in the modal and Escape returns to Settings, as checked by14-group tests.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/reader-reflow-1440x1000-cinematic-first.png",
+        "sha256": "54f685c0be02ebcf9b46762cafff8e0d48b8655c6391f17296d41b8724e3fcdd",
+        "reviewedAt": "2026-11-18T02:13:01.664324+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/reader-reflow-settings-1440x1000-cinematic-initial.png",
+      "name": "reader-reflow-settings",
+      "mode": "cinematic",
+      "state": "initial",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "0bc741858186032a0ef8b9b10b81c7dc6849b96efd7c92872fb85578d41d24a8",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/1024: desktop uses separate sticky stage/text columns,1024reflows to a centered inline-image reading column; all current text and toolbar controls remain unobscured. Settings groups/selection contrast are clear. At1024initial modal close is below its scroll viewport (interaction1); actual keyboard traversal reaches it, keeps focus in the modal and Escape returns to Settings, as checked by14-group tests.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/reader-reflow-settings-1440x1000-cinematic-initial.png",
+        "sha256": "0bc741858186032a0ef8b9b10b81c7dc6849b96efd7c92872fb85578d41d24a8",
+        "reviewedAt": "2026-11-18T02:13:01.664592+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/home-1440x1000-paper-default.png",
+      "name": "home",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "2990049974b6b378f39ee43e176fc1db07125181f2b2a297da70c47cea1267b5",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened all4widths after repair: paper/ink hierarchy, warm cover hero, distinct CTA and2real cards; card summaries now2lines, nav/tags/CTA readable at320; no overlap. Interaction/keyboard/axe evidence is the9-group real-browser run, not a human usability rating.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/home-1440x1000-paper-default.png",
+        "sha256": "2990049974b6b378f39ee43e176fc1db07125181f2b2a297da70c47cea1267b5",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/discover-1440x1000-paper-default.png",
+      "name": "discover",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "6ddf7b836f2fd768e3c28358b5bc4a0dc30d95d391f3d48596bd9c41c4e52847",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/1024/390/320: clear visible search label, search button and3distinct filter choices; result count separates controls from exactly2real story cards. Two-line summaries/tags/links fit narrow widths, titles wrap naturally, no hidden mobile navigation. Keyboard filtering/URL/empty reset checked in actual browser.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/discover-1440x1000-paper-default.png",
+        "sha256": "6ddf7b836f2fd768e3c28358b5bc4a0dc30d95d391f3d48596bd9c41c4e52847",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/intro-post-office-1440x1000-paper-default.png",
+      "name": "intro-post-office",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "8aea1c33506bcd974bae9b63a07b43aa5c30fa18c819dbcee06709adb4637b80",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened1440/1024/390/320: whole3:4coastal cover remains separate from real title; mobile cover under70%viewport and title wraps naturally at320. Full synopsis remains readable after card clamp; first-reading and save controls remain distinct, AI disclosure and collapsed6sceneTOC visible without spoiler expansion. Footer wraps at320 without horizontal clipping.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/intro-post-office-1440x1000-paper-default.png",
+        "sha256": "8aea1c33506bcd974bae9b63a07b43aa5c30fa18c819dbcee06709adb4637b80",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/intro-tide-station-1440x1000-paper-default.png",
+      "name": "intro-tide-station",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "4b611880c7fe5e9e140aa4a258c2aea54bdab2f31c227c61da968a0d6a828289",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/1024/390/320: full station cover/gauge/copper family, distinct real text title and full synopsis, sensible mobile cover width, clear primary read/save actions and collapsed6sceneTOC; readable AI disclosure and wrapping footer. No horizontal clipping.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/intro-tide-station-1440x1000-paper-default.png",
+        "sha256": "4b611880c7fe5e9e140aa4a258c2aea54bdab2f31c227c61da968a0d6a828289",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/library-1440x1000-paper-empty.png",
+      "name": "library",
+      "mode": "paper",
+      "state": "empty",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "d90765f7578d809ea2355dc97daab439dbe5ab9f7a3113153f2359dcfe6ddbbb",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 1,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 11,
+      "observation": "Opened1440/1024/390/320: truthful empty message and discover CTA, clear labels for recent/stories/quotes, no invented records/skeletons. Empty-section hints repeat information and lengthen the page slightly (hierarchy1), but each section explains its intended action, text stays readable and footer wraps without clipping. Real-browser checks verified no session creation for empty library.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/library-1440x1000-paper-empty.png",
+        "sha256": "d90765f7578d809ea2355dc97daab439dbe5ab9f7a3113153f2359dcfe6ddbbb",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/settings-1440x1000-paper-default.png",
+      "name": "settings",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "774ff5aa82c30a2e8a43642800e07c5a769cffd4a2af541c2477e4836cd546d0",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/1024/390/320: labeled mode/effects/size/theme groups retain distinct selected states and generous targets. Long Korean storage/deletion explanation reflows,30day access is distinguished from cleanup, delete action has its own heading and privacy link. No clipped radios, overlapping labels or horizontal overflow. Initial local-default status is not a server-save acknowledgement; actual changes/ack/deletion were tested separately.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/settings-1440x1000-paper-default.png",
+        "sha256": "774ff5aa82c30a2e8a43642800e07c5a769cffd4a2af541c2477e4836cd546d0",
+        "reviewedAt": "2026-11-18T02:06:02.336755+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/about-1440x1000-paper-default.png",
+      "name": "about",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "e6232025986cfea600582674c01608b7c23af00434bff95e67cf6ab5a7e559cc",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/1024/390/320: prose headings/lead/body remain clear and reflow without overlap. AI-fiction disclosure and human-evaluation-not-performed text are explicit;30day access vs cleanup/cookie-loss/local pending/failed-deletion limits are readable. Real settings privacy link is visibly differentiated, no fake contact or release claim; footer adapts to320.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/about-1440x1000-paper-default.png",
+        "sha256": "e6232025986cfea600582674c01608b7c23af00434bff95e67cf6ab5a7e559cc",
+        "reviewedAt": "2026-11-18T02:06:23.037527+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/design-system-1440x1000-paper-default.png",
+      "name": "design-system",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "e91e539846d81649bbfac9759e6f2ad2d0c54774b77521b8db06556c9eaf2abd",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened1440/390: token swatches reflow3→2columns, readonly disabled/loading controls distinguished, dark reading sample with real text and consistentpadding; footer does not overlap content.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/design-system-1440x1000-paper-default.png",
+        "sha256": "e91e539846d81649bbfac9759e6f2ad2d0c54774b77521b8db06556c9eaf2abd",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/discover-1440x1000-paper-empty.png",
+      "name": "discover",
+      "mode": "paper",
+      "state": "empty",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "af6df173cc5922048bdb916ce275ec0cf12c3c4a4b7b93c9379b0698e2a4ce13",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/1024/390/320: focused search field keeps visible outline without touching button or label, actual0result status and helpful no-match message are distinct. Clear filter-reset control remains visible/reachable; no fake cards, clipped headings or lost mobile nav, footer wraps cleanly.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/discover-1440x1000-paper-empty.png",
+        "sha256": "af6df173cc5922048bdb916ce275ec0cf12c3c4a4b7b93c9379b0698e2a4ce13",
+        "reviewedAt": "2026-11-18T02:06:43.886908+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/missing-story-1440x1000-paper-404.png",
+      "name": "missing-story",
+      "mode": "paper",
+      "state": "404",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "1caf6301268e76a19bb343ba522f976317b176bf35d2b0de15550f97ded19ed7",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/1024/390/320: actualHTTP404 presents a clear readable missing-scene heading, short address/recovery explanation and real discover CTA. No raw stack/internal endpoint or fake content; mobile header/footer fit and unused viewport space is simply a short page, not a forced content interstitial.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/missing-story-1440x1000-paper-404.png",
+        "sha256": "1caf6301268e76a19bb343ba522f976317b176bf35d2b0de15550f97ded19ed7",
+        "reviewedAt": "2026-11-18T02:07:36.036657+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/mail-s01-1440x1000-cinematic-calm.png",
+      "name": "mail-s01",
+      "mode": "cinematic",
+      "state": "calm",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "54f685c0be02ebcf9b46762cafff8e0d48b8655c6391f17296d41b8724e3fcdd",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened1440/390: golden envelope, brass balance and sea window match opening post-office scene; opaque dark text column and separate bookmark gutter/flow row remain readable. Mobile inline image partly above current reading anchor, not a sticky overlay.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/mail-s01-1440x1000-cinematic-calm.png",
+        "sha256": "54f685c0be02ebcf9b46762cafff8e0d48b8655c6391f17296d41b8724e3fcdd",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/mail-s02-1440x1000-cinematic-memory.png",
+      "name": "mail-s02",
+      "mode": "cinematic",
+      "state": "memory",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "9aea7e1714c65090a5bf9e629bbd21028f5906ae37dfe9e85cb2a35dc81a5ffd",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened1440/390: opened luminous envelope, sunlit scales and warm memory stage match folded-evening scene; small Yunseo portrait stays outside text. Mobile portrait and caption occupy own row; long Korean lines wrap with generous leading and no toolbar overlap.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/mail-s02-1440x1000-cinematic-memory.png",
+        "sha256": "9aea7e1714c65090a5bf9e629bbd21028f5906ae37dfe9e85cb2a35dc81a5ffd",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/mail-s03-1440x1000-cinematic-tension.png",
+      "name": "mail-s03",
+      "mode": "cinematic",
+      "state": "tension",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "0284bc478c14074056ad414e9913b691388b4e1f370129284a4f6980710231f6",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/390: wet stone lane, blank wall/postbox trace and spilled golden envelope light reinforce missing-address tension; indigo stage stays separate from opaque readable text. Header/bookmark gutter/inline mobile controls do not cover words.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/mail-s03-1440x1000-cinematic-tension.png",
+        "sha256": "0284bc478c14074056ad414e9913b691388b4e1f370129284a4f6980710231f6",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/mail-s04-1440x1000-cinematic-climax.png",
+      "name": "mail-s04",
+      "mode": "cinematic",
+      "state": "climax",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "61c11c35087da3ea97b6e10916ae665e4e68ce02af35545a0e00eb3e407ab7e9",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/390: open envelope, blank address card/pen, brass scale and round dawn-lit window match receiving-person climax; purple local mood distinct from memory. Repeated Yunseo portrait/caption is outside text in both layouts; no title/paragraph overlap.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/mail-s04-1440x1000-cinematic-climax.png",
+        "sha256": "61c11c35087da3ea97b6e10916ae665e4e68ce02af35545a0e00eb3e407ab7e9",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/mail-s05-1440x1000-cinematic-relief.png",
+      "name": "mail-s05",
+      "mode": "cinematic",
+      "state": "relief",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "928e33ba460b35fe24f73abb1516f2e960f9a6647d65561df2b7b40a188f777d",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/390: dawn exterior of the same coastal post office and green relief mood give a quiet closure; no added figures/text in artwork. Scene5caption and readable first paragraphs share consistent spacing; mobile image/heading are in document flow.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/mail-s05-1440x1000-cinematic-relief.png",
+        "sha256": "928e33ba460b35fe24f73abb1516f2e960f9a6647d65561df2b7b40a188f777d",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/mail-s06-1440x1000-cinematic-calm.png",
+      "name": "mail-s06",
+      "mode": "cinematic",
+      "state": "calm",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "f8335b04f8244421cea628a8501a984f7488656c170ef5bad3289e38bb743e3e",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/390: sunlit new kitchen, two cups, plant and unpacking box match final present-day scene; calm teal stage separates from opaque text. Toolbar6/6 stays readable; final paragraphs are not hidden by images or bookmark controls.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/mail-s06-1440x1000-cinematic-calm.png",
+        "sha256": "f8335b04f8244421cea628a8501a984f7488656c170ef5bad3289e38bb743e3e",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/tide-s01-1440x1000-cinematic-tension.png",
+      "name": "tide-s01",
+      "mode": "cinematic",
+      "state": "tension",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "8325767bd2388be6e7005e0c4f2aa13f9444c2261bcd6ebb6e0d0590b7bc6fa0",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/390: blue tiled closed station, dry rail opening, gauge and orange warning light establish tension; reflective glazed floor has visible tile grid rather than a submerged platform. Dark opaque reading panel/inline mobile layout keep the manuscript legible; no hidden text or control overlap.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/tide-s01-1440x1000-cinematic-tension.png",
+        "sha256": "8325767bd2388be6e7005e0c4f2aa13f9444c2261bcd6ebb6e0d0590b7bc6fa0",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/tide-s02-1440x1000-cinematic-memory.png",
+      "name": "tide-s02",
+      "mode": "cinematic",
+      "state": "memory",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "3f805a23bb719443941096dd62cc5d71ed03b4b8405a974a1b8aa54c160cc607",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/390: closed ticket booth, paper ticket, route diagram and orange indicator match unrecovered-ticket memory scene. Jeongha portrait is outside the body; memory brown stage and calm white text maintain strong contrast and consistent scene labels.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/tide-s02-1440x1000-cinematic-memory.png",
+        "sha256": "3f805a23bb719443941096dd62cc5d71ed03b4b8405a974a1b8aa54c160cc607",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/tide-s03-1440x1000-cinematic-tension.png",
+      "name": "tide-s03",
+      "mode": "cinematic",
+      "state": "tension",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "fe670e54abcf93ae4312a0c3bff51acb942db2f15f7eca8f04e8b3128c798b4c",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/390: copper wires/pipes lead through the blue tunnel to a circular grating; cyan light-ring motifs and orange lamp match the sound-map tension. The rings are illustrative light on visible tiles; no flooded body text panel. Heading/margins and bookmark positions remain consistent.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/tide-s03-1440x1000-cinematic-tension.png",
+        "sha256": "fe670e54abcf93ae4312a0c3bff51acb942db2f15f7eca8f04e8b3128c798b4c",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/tide-s04-1440x1000-cinematic-climax.png",
+      "name": "tide-s04",
+      "mode": "cinematic",
+      "state": "climax",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "e7483007804e261fd3af92781e71e50fd00a7d3e1ecbf26d452ec0998676ea80",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/390: empty glass cylinder with cool light waves, copper rails and dry tiled room match the no-rain climax; character portrait repeats consistently. Purple mood never reduces paragraph contrast; portrait rows leave all text and toolbar controls unobstructed.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/tide-s04-1440x1000-cinematic-climax.png",
+        "sha256": "e7483007804e261fd3af92781e71e50fd00a7d3e1ecbf26d452ec0998676ea80",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/tide-s05-1440x1000-cinematic-relief.png",
+      "name": "tide-s05",
+      "mode": "cinematic",
+      "state": "relief",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "68d7effe999335af07c0f19755156bd34b70e4086c64b3da0c84c7f854d6d2a4",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/390: ticket office now still and orange light steady, with open stair door suggesting return; green relief stage matches arrival-confirmation scene. Same tile/copper family and legible panel; current-position header5/6 not confused with furthest progress.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/tide-s05-1440x1000-cinematic-relief.png",
+        "sha256": "68d7effe999335af07c0f19755156bd34b70e4086c64b3da0c84c7f854d6d2a4",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/tide-s06-1440x1000-cinematic-calm.png",
+      "name": "tide-s06",
+      "mode": "cinematic",
+      "state": "calm",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "f77a4502f4db1bff4a2b507c64bcdbb2c6a4f212995452ba7785414b07f61b27",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/390: daylight public listening post, speaker grille/tree and closed underground entrance match present-day public recording scene. Calm teal local stage and clean dry street retain story family. Mobile heading/body/toolbar flow remains unclipped.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/tide-s06-1440x1000-cinematic-calm.png",
+        "sha256": "f77a4502f4db1bff4a2b507c64bcdbb2c6a4f212995452ba7785414b07f61b27",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/reader-reflow-1024x768-cinematic-first.png",
+      "name": "reader-reflow",
+      "mode": "cinematic",
+      "state": "first",
+      "layout": {
+        "width": 1024,
+        "height": 768,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "2faac80df659df2aadf3553334d6ebf605a62d7f66b8326b202f011f65dc3873",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/1024: desktop uses separate sticky stage/text columns,1024reflows to a centered inline-image reading column; all current text and toolbar controls remain unobscured. Settings groups/selection contrast are clear. At1024initial modal close is below its scroll viewport (interaction1); actual keyboard traversal reaches it, keeps focus in the modal and Escape returns to Settings, as checked by14-group tests.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/reader-reflow-1024x768-cinematic-first.png",
+        "sha256": "2faac80df659df2aadf3553334d6ebf605a62d7f66b8326b202f011f65dc3873",
+        "reviewedAt": "2026-11-18T02:13:01.664598+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/reader-reflow-settings-1024x768-cinematic-initial.png",
+      "name": "reader-reflow-settings",
+      "mode": "cinematic",
+      "state": "initial",
+      "layout": {
+        "width": 1024,
+        "height": 768,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "4b91236553efca1d93df94bad99d8f30cbe31b6b95ead8c6947285a66ecb04ec",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 1,
+        "mobile": 2
+      },
+      "total": 11,
+      "observation": "Opened1440/1024: desktop uses separate sticky stage/text columns,1024reflows to a centered inline-image reading column; all current text and toolbar controls remain unobscured. Settings groups/selection contrast are clear. At1024initial modal close is below its scroll viewport (interaction1); actual keyboard traversal reaches it, keeps focus in the modal and Escape returns to Settings, as checked by14-group tests.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/reader-reflow-settings-1024x768-cinematic-initial.png",
+        "sha256": "4b91236553efca1d93df94bad99d8f30cbe31b6b95ead8c6947285a66ecb04ec",
+        "reviewedAt": "2026-11-18T02:13:01.664600+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/home-1024x768-paper-default.png",
+      "name": "home",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1024,
+        "height": 768,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "f393f2c77a6c65104baa0bb75f546d69bfb06475d6054a1e5b7117422fe67855",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened all4widths after repair: paper/ink hierarchy, warm cover hero, distinct CTA and2real cards; card summaries now2lines, nav/tags/CTA readable at320; no overlap. Interaction/keyboard/axe evidence is the9-group real-browser run, not a human usability rating.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/home-1024x768-paper-default.png",
+        "sha256": "f393f2c77a6c65104baa0bb75f546d69bfb06475d6054a1e5b7117422fe67855",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/discover-1024x768-paper-default.png",
+      "name": "discover",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1024,
+        "height": 768,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "5a0ac7d03e89ecac54afa3f40e18f41538361d122aee9b9b179e0a280a9598a8",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/1024/390/320: clear visible search label, search button and3distinct filter choices; result count separates controls from exactly2real story cards. Two-line summaries/tags/links fit narrow widths, titles wrap naturally, no hidden mobile navigation. Keyboard filtering/URL/empty reset checked in actual browser.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/discover-1024x768-paper-default.png",
+        "sha256": "5a0ac7d03e89ecac54afa3f40e18f41538361d122aee9b9b179e0a280a9598a8",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/intro-post-office-1024x768-paper-default.png",
+      "name": "intro-post-office",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1024,
+        "height": 768,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "2f3be12851f5913b14624e6dda5cf8f6e4c8b82bfa9a156baa75821a71bbda69",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened1440/1024/390/320: whole3:4coastal cover remains separate from real title; mobile cover under70%viewport and title wraps naturally at320. Full synopsis remains readable after card clamp; first-reading and save controls remain distinct, AI disclosure and collapsed6sceneTOC visible without spoiler expansion. Footer wraps at320 without horizontal clipping.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/intro-post-office-1024x768-paper-default.png",
+        "sha256": "2f3be12851f5913b14624e6dda5cf8f6e4c8b82bfa9a156baa75821a71bbda69",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/intro-tide-station-1024x768-paper-default.png",
+      "name": "intro-tide-station",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1024,
+        "height": 768,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "7eb5c1ef30423a81e5fe72ba37658f4fe7d61eb7d2d26638021631f2b47522cc",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/1024/390/320: full station cover/gauge/copper family, distinct real text title and full synopsis, sensible mobile cover width, clear primary read/save actions and collapsed6sceneTOC; readable AI disclosure and wrapping footer. No horizontal clipping.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/intro-tide-station-1024x768-paper-default.png",
+        "sha256": "7eb5c1ef30423a81e5fe72ba37658f4fe7d61eb7d2d26638021631f2b47522cc",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/library-1024x768-paper-empty.png",
+      "name": "library",
+      "mode": "paper",
+      "state": "empty",
+      "layout": {
+        "width": 1024,
+        "height": 768,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "40f9f0cdd7197ca9e8d17e28877778eefefdeeaa2f914c549ca4b56ea7eeea17",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 1,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 11,
+      "observation": "Opened1440/1024/390/320: truthful empty message and discover CTA, clear labels for recent/stories/quotes, no invented records/skeletons. Empty-section hints repeat information and lengthen the page slightly (hierarchy1), but each section explains its intended action, text stays readable and footer wraps without clipping. Real-browser checks verified no session creation for empty library.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/library-1024x768-paper-empty.png",
+        "sha256": "40f9f0cdd7197ca9e8d17e28877778eefefdeeaa2f914c549ca4b56ea7eeea17",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/settings-1024x768-paper-default.png",
+      "name": "settings",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1024,
+        "height": 768,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "6a057078ddb298407db6826d167e5039b7f82a155a6c080b47e2edca23037a86",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/1024/390/320: labeled mode/effects/size/theme groups retain distinct selected states and generous targets. Long Korean storage/deletion explanation reflows,30day access is distinguished from cleanup, delete action has its own heading and privacy link. No clipped radios, overlapping labels or horizontal overflow. Initial local-default status is not a server-save acknowledgement; actual changes/ack/deletion were tested separately.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/settings-1024x768-paper-default.png",
+        "sha256": "6a057078ddb298407db6826d167e5039b7f82a155a6c080b47e2edca23037a86",
+        "reviewedAt": "2026-11-18T02:06:02.336872+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/about-1024x768-paper-default.png",
+      "name": "about",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1024,
+        "height": 768,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "cb2905de1fc280073d3ea1b5d3c30b5965ec320482d1d61f3e925214fdcd9c4a",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/1024/390/320: prose headings/lead/body remain clear and reflow without overlap. AI-fiction disclosure and human-evaluation-not-performed text are explicit;30day access vs cleanup/cookie-loss/local pending/failed-deletion limits are readable. Real settings privacy link is visibly differentiated, no fake contact or release claim; footer adapts to320.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/about-1024x768-paper-default.png",
+        "sha256": "cb2905de1fc280073d3ea1b5d3c30b5965ec320482d1d61f3e925214fdcd9c4a",
+        "reviewedAt": "2026-11-18T02:06:23.037662+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/design-system-1024x768-paper-default.png",
+      "name": "design-system",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1024,
+        "height": 768,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "c50b7539252396b3b87a068d875bd0276d56cbfb3160ff74e44793b83ca375b6",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1024/320: token grid3→2columns and labeled readonly control states fit. Reading example remains legible with dark opaque panel;320inset sample becomes long/narrow (spacing1) but no clipping or falseinteractive action. Caption/code labels and footer remain clear.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/design-system-1024x768-paper-default.png",
+        "sha256": "c50b7539252396b3b87a068d875bd0276d56cbfb3160ff74e44793b83ca375b6",
+        "reviewedAt": "2026-11-18T02:10:35.311525+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/discover-1024x768-paper-empty.png",
+      "name": "discover",
+      "mode": "paper",
+      "state": "empty",
+      "layout": {
+        "width": 1024,
+        "height": 768,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "ec1f8e422e8c11c76266d1176606198b3809861124ac8aecf7391583f015e084",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/1024/390/320: focused search field keeps visible outline without touching button or label, actual0result status and helpful no-match message are distinct. Clear filter-reset control remains visible/reachable; no fake cards, clipped headings or lost mobile nav, footer wraps cleanly.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/discover-1024x768-paper-empty.png",
+        "sha256": "ec1f8e422e8c11c76266d1176606198b3809861124ac8aecf7391583f015e084",
+        "reviewedAt": "2026-11-18T02:06:43.887739+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/missing-story-1024x768-paper-404.png",
+      "name": "missing-story",
+      "mode": "paper",
+      "state": "404",
+      "layout": {
+        "width": 1024,
+        "height": 768,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "1340f599c7ee76b93d5deddb5f8db1ece24d1ec292d727ef046d72c44dd05aef",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/1024/390/320: actualHTTP404 presents a clear readable missing-scene heading, short address/recovery explanation and real discover CTA. No raw stack/internal endpoint or fake content; mobile header/footer fit and unused viewport space is simply a short page, not a forced content interstitial.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/missing-story-1024x768-paper-404.png",
+        "sha256": "1340f599c7ee76b93d5deddb5f8db1ece24d1ec292d727ef046d72c44dd05aef",
+        "reviewedAt": "2026-11-18T02:07:36.036792+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/reader-bookmark-390x844-cinematic-saved.png",
+      "name": "reader-bookmark",
+      "mode": "cinematic",
+      "state": "saved",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "0a9fdbf3fe5015204713e6d079790094acbad759eaf3ad04efc4b03add834163",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "New390saved-star capture opened: icon and tooltip use the dedicated bookmark row/gap rather than replacing manuscript text; star is visibly filled and label means remove. A separate actual same-component test measured tooltip intersection with ALL paragraphs as0in Chromium and WebKit; final capture-case geometry will also be checked before accepting the whole visual gate. No product change made from a visual concern without evidence.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/reader-bookmark-390x844-cinematic-saved.png",
+        "sha256": "0a9fdbf3fe5015204713e6d079790094acbad759eaf3ad04efc4b03add834163",
+        "reviewedAt": "2026-11-18T02:13:01.664603+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/reader-settings-390x844-cinematic-font24.png",
+      "name": "reader-settings",
+      "mode": "cinematic",
+      "state": "font24",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "abdeb4e6e059e5b0ee2bd2084a15a7e3161a6cea1d99a3c1f93a30945307f1a1",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "New390modal actually opened:24px selected state clearly distinguished; four labeled groups and close button fit the viewport with coherent paper/dark contrast. Focus-trap/Escape/return checked in current14-group run; toolbar status outside panel remains on its own row.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/reader-settings-390x844-cinematic-font24.png",
+        "sha256": "abdeb4e6e059e5b0ee2bd2084a15a7e3161a6cea1d99a3c1f93a30945307f1a1",
+        "reviewedAt": "2026-11-18T02:10:35.311774+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/reader-390x844-plain-font24.png",
+      "name": "reader",
+      "mode": "plain",
+      "state": "font24",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "fd4e303ae5084c073ce8eed1b3db4c3d1dd7a7749ac1b0a181fe4f69be4ce465",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened after mobile gap fix: focus outline and save-status text now have clear vertical separation. Body remains readable and header fits. At320 the initial dialog is vertically scrollable; actual8-key traversal reaches visible close and traps focus without global OS preference changes.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/reader-390x844-plain-font24.png",
+        "sha256": "fd4e303ae5084c073ce8eed1b3db4c3d1dd7a7749ac1b0a181fe4f69be4ce465",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/reader-390x844-cinematic-os-reduced.png",
+      "name": "reader",
+      "mode": "cinematic",
+      "state": "os-reduced",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "042109d7ca21524e5182099ed22f2c9b3910f8598183ea4156cc328d6db49b40",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened after mobile gap fix: focus outline and save-status text now have clear vertical separation. Body remains readable and header fits. At320 the initial dialog is vertically scrollable; actual8-key traversal reaches visible close and traps focus without global OS preference changes.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/reader-390x844-cinematic-os-reduced.png",
+        "sha256": "042109d7ca21524e5182099ed22f2c9b3910f8598183ea4156cc328d6db49b40",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/library-390x844-paper-full.png",
+      "name": "library",
+      "mode": "paper",
+      "state": "full",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "eca691aad6ff746ebd2e996022fcd0c899c990f9835b99511393995aaec79323",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened new1440/390 after max100 correction:3% label now corresponds to short rust fill with grey remaining track. Real native progress.position matched36% in the negative-reproduction journey after fix and3% in the visual flow. Recent/saved/quote sections and controls remain readable, with no overlap.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/library-390x844-paper-full.png",
+        "sha256": "eca691aad6ff746ebd2e996022fcd0c899c990f9835b99511393995aaec79323",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/reader-tide-390x844-reduced-image-failure.png",
+      "name": "reader-tide",
+      "mode": "reduced",
+      "state": "image-failure",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "fa623db6772ce4c171e849d1192334a2dc3c9c644fcd7530012854eea2e7c2fc",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/390 controlled actual image abort: empty colored stage/inline region retains its geometry, no broken-image icon or loading cover over text; all real paragraphs remain readable, toolbar/status and bookmark controls keep their position. This is explicitly a fault state, not an approved substitute for final images.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/reader-tide-390x844-reduced-image-failure.png",
+        "sha256": "fa623db6772ce4c171e849d1192334a2dc3c9c644fcd7530012854eea2e7c2fc",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/reader-reflow-390x844-cinematic-first.png",
+      "name": "reader-reflow",
+      "mode": "cinematic",
+      "state": "first",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "c57daae1e4b11cfdcb7d41fcf5f1e9b47bc4c230814a6e2fd8775c4fc358ab40",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened390Chromium andWebKit reader+initialsettings: opaque body and inline illustration remain readable with separated status row. Modal title, four radio groups and close fit the viewport; native-engine glyph differences do not clip text. Eight-key traversal/Escape/focus-return and44px targets were independently checked in both engines; not a real-iPhone or native200% claim.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/reader-reflow-390x844-cinematic-first.png",
+        "sha256": "c57daae1e4b11cfdcb7d41fcf5f1e9b47bc4c230814a6e2fd8775c4fc358ab40",
+        "reviewedAt": "2026-11-18T02:13:56.870430+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/reader-reflow-settings-390x844-cinematic-initial.png",
+      "name": "reader-reflow-settings",
+      "mode": "cinematic",
+      "state": "initial",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "f47cc8bbad77bc7f8faa71339da9fdb3f9662c0f2388dc622d5f345083fde787",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened390Chromium andWebKit reader+initialsettings: opaque body and inline illustration remain readable with separated status row. Modal title, four radio groups and close fit the viewport; native-engine glyph differences do not clip text. Eight-key traversal/Escape/focus-return and44px targets were independently checked in both engines; not a real-iPhone or native200% claim.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/reader-reflow-settings-390x844-cinematic-initial.png",
+        "sha256": "f47cc8bbad77bc7f8faa71339da9fdb3f9662c0f2388dc622d5f345083fde787",
+        "reviewedAt": "2026-11-18T02:13:56.870578+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/home-390x844-paper-default.png",
+      "name": "home",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "93f7ab74a3524ee0ba0e398046314b1c59b5b1f1ccc8ab06f9436467b88dcad1",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened all4widths after repair: paper/ink hierarchy, warm cover hero, distinct CTA and2real cards; card summaries now2lines, nav/tags/CTA readable at320; no overlap. Interaction/keyboard/axe evidence is the9-group real-browser run, not a human usability rating.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/home-390x844-paper-default.png",
+        "sha256": "93f7ab74a3524ee0ba0e398046314b1c59b5b1f1ccc8ab06f9436467b88dcad1",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/discover-390x844-paper-default.png",
+      "name": "discover",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "8eabed73a03ca9761f423b905ee43d862fbb5b7a37230f51ce6e85eb2fc9a322",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/1024/390/320: clear visible search label, search button and3distinct filter choices; result count separates controls from exactly2real story cards. Two-line summaries/tags/links fit narrow widths, titles wrap naturally, no hidden mobile navigation. Keyboard filtering/URL/empty reset checked in actual browser.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/discover-390x844-paper-default.png",
+        "sha256": "8eabed73a03ca9761f423b905ee43d862fbb5b7a37230f51ce6e85eb2fc9a322",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/intro-post-office-390x844-paper-default.png",
+      "name": "intro-post-office",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "268607e90ba00c68042e218f20b153f202c38db32f2567e798ae1b00ae877f8e",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened1440/1024/390/320: whole3:4coastal cover remains separate from real title; mobile cover under70%viewport and title wraps naturally at320. Full synopsis remains readable after card clamp; first-reading and save controls remain distinct, AI disclosure and collapsed6sceneTOC visible without spoiler expansion. Footer wraps at320 without horizontal clipping.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/intro-post-office-390x844-paper-default.png",
+        "sha256": "268607e90ba00c68042e218f20b153f202c38db32f2567e798ae1b00ae877f8e",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/intro-tide-station-390x844-paper-default.png",
+      "name": "intro-tide-station",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "e40aa6526b34deb8a6fa0211c4b15e6f7cfdd5a16cf0e13bcb252a3f6ee0df6f",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/1024/390/320: full station cover/gauge/copper family, distinct real text title and full synopsis, sensible mobile cover width, clear primary read/save actions and collapsed6sceneTOC; readable AI disclosure and wrapping footer. No horizontal clipping.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/intro-tide-station-390x844-paper-default.png",
+        "sha256": "e40aa6526b34deb8a6fa0211c4b15e6f7cfdd5a16cf0e13bcb252a3f6ee0df6f",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/library-390x844-paper-empty.png",
+      "name": "library",
+      "mode": "paper",
+      "state": "empty",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "c7f240eb6e952e60c155d4c7cf0eefd02b12e171ada19fd82067ecc0c734bb59",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 1,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 11,
+      "observation": "Opened1440/1024/390/320: truthful empty message and discover CTA, clear labels for recent/stories/quotes, no invented records/skeletons. Empty-section hints repeat information and lengthen the page slightly (hierarchy1), but each section explains its intended action, text stays readable and footer wraps without clipping. Real-browser checks verified no session creation for empty library.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/library-390x844-paper-empty.png",
+        "sha256": "c7f240eb6e952e60c155d4c7cf0eefd02b12e171ada19fd82067ecc0c734bb59",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/settings-390x844-paper-default.png",
+      "name": "settings",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "c02649916e498f624a4a3e824707701b681b4a9bfd563b45cb5890608af5bf35",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/1024/390/320: labeled mode/effects/size/theme groups retain distinct selected states and generous targets. Long Korean storage/deletion explanation reflows,30day access is distinguished from cleanup, delete action has its own heading and privacy link. No clipped radios, overlapping labels or horizontal overflow. Initial local-default status is not a server-save acknowledgement; actual changes/ack/deletion were tested separately.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/settings-390x844-paper-default.png",
+        "sha256": "c02649916e498f624a4a3e824707701b681b4a9bfd563b45cb5890608af5bf35",
+        "reviewedAt": "2026-11-18T02:06:02.336875+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/about-390x844-paper-default.png",
+      "name": "about",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "ea6afc1f19038238a46fca03f2aa3fecc43872cb1d95b0aa1f19d98f0c05c484",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/1024/390/320: prose headings/lead/body remain clear and reflow without overlap. AI-fiction disclosure and human-evaluation-not-performed text are explicit;30day access vs cleanup/cookie-loss/local pending/failed-deletion limits are readable. Real settings privacy link is visibly differentiated, no fake contact or release claim; footer adapts to320.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/about-390x844-paper-default.png",
+        "sha256": "ea6afc1f19038238a46fca03f2aa3fecc43872cb1d95b0aa1f19d98f0c05c484",
+        "reviewedAt": "2026-11-18T02:06:23.037666+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/design-system-390x844-paper-default.png",
+      "name": "design-system",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "c9c2499749d0993a20e5b8d3771d7ad1a1a6e32a8a9d0fae4baf3dda4deb461a",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened1440/390: token swatches reflow3→2columns, readonly disabled/loading controls distinguished, dark reading sample with real text and consistentpadding; footer does not overlap content.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/design-system-390x844-paper-default.png",
+        "sha256": "c9c2499749d0993a20e5b8d3771d7ad1a1a6e32a8a9d0fae4baf3dda4deb461a",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/discover-390x844-paper-empty.png",
+      "name": "discover",
+      "mode": "paper",
+      "state": "empty",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "041a86815f0865695a9542b22660dc25de64b7c15cc30074ead71fa18b55b7c7",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/1024/390/320: focused search field keeps visible outline without touching button or label, actual0result status and helpful no-match message are distinct. Clear filter-reset control remains visible/reachable; no fake cards, clipped headings or lost mobile nav, footer wraps cleanly.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/discover-390x844-paper-empty.png",
+        "sha256": "041a86815f0865695a9542b22660dc25de64b7c15cc30074ead71fa18b55b7c7",
+        "reviewedAt": "2026-11-18T02:06:43.887745+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/missing-story-390x844-paper-404.png",
+      "name": "missing-story",
+      "mode": "paper",
+      "state": "404",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "0e5a0b41bbab8f184e752bba4602fb0a52286a9b483c2fb88eaa22b6016a5d0e",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/1024/390/320: actualHTTP404 presents a clear readable missing-scene heading, short address/recovery explanation and real discover CTA. No raw stack/internal endpoint or fake content; mobile header/footer fit and unused viewport space is simply a short page, not a forced content interstitial.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/missing-story-390x844-paper-404.png",
+        "sha256": "0e5a0b41bbab8f184e752bba4602fb0a52286a9b483c2fb88eaa22b6016a5d0e",
+        "reviewedAt": "2026-11-18T02:07:36.036796+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/mail-s01-390x844-cinematic-calm.png",
+      "name": "mail-s01",
+      "mode": "cinematic",
+      "state": "calm",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "73160d6fb4afbe97193564b2844e42d0b670eee6d43a2f4c2afea849f8510dc7",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened1440/390: golden envelope, brass balance and sea window match opening post-office scene; opaque dark text column and separate bookmark gutter/flow row remain readable. Mobile inline image partly above current reading anchor, not a sticky overlay. Re-opened actual new8c mobile capture after toolbar gap change: status row separated, no text/image/portrait overlap.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/mail-s01-390x844-cinematic-calm.png",
+        "sha256": "73160d6fb4afbe97193564b2844e42d0b670eee6d43a2f4c2afea849f8510dc7",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/mail-s02-390x844-cinematic-memory.png",
+      "name": "mail-s02",
+      "mode": "cinematic",
+      "state": "memory",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "1a0ad47a3dbe7e79a8ad84810443c85fd32a9fedadecd9cb498e27dc00828cd6",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened1440/390: opened luminous envelope, sunlit scales and warm memory stage match folded-evening scene; small Yunseo portrait stays outside text. Mobile portrait and caption occupy own row; long Korean lines wrap with generous leading and no toolbar overlap. Re-opened actual new8c mobile capture after toolbar gap change: status row separated, no text/image/portrait overlap.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/mail-s02-390x844-cinematic-memory.png",
+        "sha256": "1a0ad47a3dbe7e79a8ad84810443c85fd32a9fedadecd9cb498e27dc00828cd6",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/mail-s03-390x844-cinematic-tension.png",
+      "name": "mail-s03",
+      "mode": "cinematic",
+      "state": "tension",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "b761a7ebd499e5b6e87b6dc0a13972ae24e77bcd53c81b9e92ee968e8a8e0850",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/390: wet stone lane, blank wall/postbox trace and spilled golden envelope light reinforce missing-address tension; indigo stage stays separate from opaque readable text. Header/bookmark gutter/inline mobile controls do not cover words. Re-opened actual new8c mobile capture after toolbar gap change: status row separated, no text/image/portrait overlap.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/mail-s03-390x844-cinematic-tension.png",
+        "sha256": "b761a7ebd499e5b6e87b6dc0a13972ae24e77bcd53c81b9e92ee968e8a8e0850",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/mail-s04-390x844-cinematic-climax.png",
+      "name": "mail-s04",
+      "mode": "cinematic",
+      "state": "climax",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "dde64bc19ac2e5d659e403c71207ae5f60b17e441a705318ff183a225f81d762",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/390: open envelope, blank address card/pen, brass scale and round dawn-lit window match receiving-person climax; purple local mood distinct from memory. Repeated Yunseo portrait/caption is outside text in both layouts; no title/paragraph overlap. Re-opened actual new8c mobile capture after toolbar gap change: status row separated, no text/image/portrait overlap.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/mail-s04-390x844-cinematic-climax.png",
+        "sha256": "dde64bc19ac2e5d659e403c71207ae5f60b17e441a705318ff183a225f81d762",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/mail-s05-390x844-cinematic-relief.png",
+      "name": "mail-s05",
+      "mode": "cinematic",
+      "state": "relief",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "e1bfafb355477ba24e6fa434f9b1e3a4f2c91eff4cdfa7edcb0c7d7d27b5759d",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/390: dawn exterior of the same coastal post office and green relief mood give a quiet closure; no added figures/text in artwork. Scene5caption and readable first paragraphs share consistent spacing; mobile image/heading are in document flow. Actual91fee84mobilecapture opened again: extra toolbar status-row spacing remains clear and body/portrait/bookmark flow is unobstructed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/mail-s05-390x844-cinematic-relief.png",
+        "sha256": "e1bfafb355477ba24e6fa434f9b1e3a4f2c91eff4cdfa7edcb0c7d7d27b5759d",
+        "reviewedAt": "2026-11-18T02:03:28.003315+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/mail-s06-390x844-cinematic-calm.png",
+      "name": "mail-s06",
+      "mode": "cinematic",
+      "state": "calm",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "9c7543f63660fee61a80a220bbc6b85b486f5867000904a5a849a757ca7d5b6a",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/390: sunlit new kitchen, two cups, plant and unpacking box match final present-day scene; calm teal stage separates from opaque text. Toolbar6/6 stays readable; final paragraphs are not hidden by images or bookmark controls. Actual91fee84mobilecapture opened again: extra toolbar status-row spacing remains clear and body/portrait/bookmark flow is unobstructed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/mail-s06-390x844-cinematic-calm.png",
+        "sha256": "9c7543f63660fee61a80a220bbc6b85b486f5867000904a5a849a757ca7d5b6a",
+        "reviewedAt": "2026-11-18T02:03:28.003439+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/tide-s01-390x844-cinematic-tension.png",
+      "name": "tide-s01",
+      "mode": "cinematic",
+      "state": "tension",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "ea0bbdd05a911c9385ab44bf0d1f7f870d7379af207c2153befd7fd94803fa93",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/390: blue tiled closed station, dry rail opening, gauge and orange warning light establish tension; reflective glazed floor has visible tile grid rather than a submerged platform. Dark opaque reading panel/inline mobile layout keep the manuscript legible; no hidden text or control overlap. Actual91fee84mobilecapture opened again: extra toolbar status-row spacing remains clear and body/portrait/bookmark flow is unobstructed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/tide-s01-390x844-cinematic-tension.png",
+        "sha256": "ea0bbdd05a911c9385ab44bf0d1f7f870d7379af207c2153befd7fd94803fa93",
+        "reviewedAt": "2026-11-18T02:03:28.003442+00:00"
+      },
+      "approvedVariants": [
+        {
+          "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/reviewed-variants/tide-s01-390x844-cinematic-tension.png",
+          "name": "tide-s01",
+          "mode": "cinematic",
+          "state": "tension",
+          "layout": {
+            "width": 390,
+            "height": 844,
+            "dpr": 1,
+            "horizontalOverflow": 0,
+            "h1": 1,
+            "main": 1
+          },
+          "sha256": "2f135e72e5179deba650221b035508e29100eb91e29c4da3f815fe6822ab75a8",
+          "opened": true,
+          "reviewer": "agent",
+          "reviewedAt": "2026-11-18T04:21:15.693019+00:00",
+          "status": "APPROVED",
+          "scores": {
+            "hierarchy": 2,
+            "typography": 2,
+            "colorContrast": 2,
+            "alignmentSpacing": 2,
+            "interaction": 2,
+            "mobile": 2
+          },
+          "total": 12,
+          "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+          "observation": "Opened current390x844 PNG: full first paragraph and following dialogue remain legible on an opaque dark panel; blue tiled station image and amber accent establish tension. Title,44px toolbar controls, separate save-status row and bookmark do not cover text. Gold scene number and white heading preserve hierarchy; no horizontal overflow. This is an agent observation, not human usability or native200%zoom proof.",
+          "reviewTransferredFrom": {
+            "path": "evidence/visual/7c4de6413b46abaefae3a609ffbeb83c0f964eb9/tide-s01-390x844-cinematic-tension.png",
+            "sha256": "2f135e72e5179deba650221b035508e29100eb91e29c4da3f815fe6822ab75a8",
+            "reviewedAt": "2026-11-18T04:21:15.693019+00:00"
+          }
+        }
+      ]
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/tide-s02-390x844-cinematic-memory.png",
+      "name": "tide-s02",
+      "mode": "cinematic",
+      "state": "memory",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "5840b9a4ee46f99e477e805b10245db1b59cd9130d002b16a208785ef607b448",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/390: closed ticket booth, paper ticket, route diagram and orange indicator match unrecovered-ticket memory scene. Jeongha portrait is outside the body; memory brown stage and calm white text maintain strong contrast and consistent scene labels. Actual91fee84mobilecapture opened again: extra toolbar status-row spacing remains clear and body/portrait/bookmark flow is unobstructed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/tide-s02-390x844-cinematic-memory.png",
+        "sha256": "5840b9a4ee46f99e477e805b10245db1b59cd9130d002b16a208785ef607b448",
+        "reviewedAt": "2026-11-18T02:03:28.003443+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/tide-s03-390x844-cinematic-tension.png",
+      "name": "tide-s03",
+      "mode": "cinematic",
+      "state": "tension",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "f86306e3f05a9dcaa5409b0175aadd444726739f603c7cdf7617a7c7058c7e9d",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/390: copper wires/pipes lead through the blue tunnel to a circular grating; cyan light-ring motifs and orange lamp match the sound-map tension. The rings are illustrative light on visible tiles; no flooded body text panel. Heading/margins and bookmark positions remain consistent. New91fee84mobilecapture actually re-opened: status has a separate row, text stays unobscured and portraits remain in their own figure.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/tide-s03-390x844-cinematic-tension.png",
+        "sha256": "f86306e3f05a9dcaa5409b0175aadd444726739f603c7cdf7617a7c7058c7e9d",
+        "reviewedAt": "2026-11-18T02:03:51.187144+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/tide-s04-390x844-cinematic-climax.png",
+      "name": "tide-s04",
+      "mode": "cinematic",
+      "state": "climax",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "5524ca61b72717f2876e671328dfd10440e17283186f7bea03772326a56e406c",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/390: empty glass cylinder with cool light waves, copper rails and dry tiled room match the no-rain climax; character portrait repeats consistently. Purple mood never reduces paragraph contrast; portrait rows leave all text and toolbar controls unobstructed. New91fee84mobilecapture actually re-opened: status has a separate row, text stays unobscured and portraits remain in their own figure.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/tide-s04-390x844-cinematic-climax.png",
+        "sha256": "5524ca61b72717f2876e671328dfd10440e17283186f7bea03772326a56e406c",
+        "reviewedAt": "2026-11-18T02:03:51.187276+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/tide-s05-390x844-cinematic-relief.png",
+      "name": "tide-s05",
+      "mode": "cinematic",
+      "state": "relief",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "7397673cc9f534c95f74710ad9747cd548c8c1e57b7f9960d03bc9fa3f2a489f",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/390: ticket office now still and orange light steady, with open stair door suggesting return; green relief stage matches arrival-confirmation scene. Same tile/copper family and legible panel; current-position header5/6 not confused with furthest progress. New91fee84mobilecapture actually re-opened: status has a separate row, text stays unobscured and portraits remain in their own figure.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/tide-s05-390x844-cinematic-relief.png",
+        "sha256": "7397673cc9f534c95f74710ad9747cd548c8c1e57b7f9960d03bc9fa3f2a489f",
+        "reviewedAt": "2026-11-18T02:03:51.187279+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/tide-s06-390x844-cinematic-calm.png",
+      "name": "tide-s06",
+      "mode": "cinematic",
+      "state": "calm",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "2f290c59289d2b2540bc5b07d9f76afd9f6d804e9dd378e13a6345681d5304fb",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/390: daylight public listening post, speaker grille/tree and closed underground entrance match present-day public recording scene. Calm teal local stage and clean dry street retain story family. Mobile heading/body/toolbar flow remains unclipped. New91fee84mobilecapture actually re-opened: status has a separate row, text stays unobscured and portraits remain in their own figure.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/tide-s06-390x844-cinematic-calm.png",
+        "sha256": "2f290c59289d2b2540bc5b07d9f76afd9f6d804e9dd378e13a6345681d5304fb",
+        "reviewedAt": "2026-11-18T02:03:51.187281+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/reader-reflow-320x740-cinematic-first.png",
+      "name": "reader-reflow",
+      "mode": "cinematic",
+      "state": "first",
+      "layout": {
+        "width": 320,
+        "height": 740,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "2d5f47ec374768516e688b116a44cd9aa085ef9826fe0872277dc3e27c659f89",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened after mobile gap fix: focus outline and save-status text now have clear vertical separation. Body remains readable and header fits. At320 the initial dialog is vertically scrollable; actual8-key traversal reaches visible close and traps focus without global OS preference changes.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/reader-reflow-320x740-cinematic-first.png",
+        "sha256": "2d5f47ec374768516e688b116a44cd9aa085ef9826fe0872277dc3e27c659f89",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/reader-reflow-settings-320x740-cinematic-initial.png",
+      "name": "reader-reflow-settings",
+      "mode": "cinematic",
+      "state": "initial",
+      "layout": {
+        "width": 320,
+        "height": 740,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "d4dcbb204769cf2610df51c04ad607f5c48f47d88193c1f7b18d1443d9c07aae",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 1,
+        "mobile": 2
+      },
+      "total": 11,
+      "observation": "Actually opened after mobile gap fix: focus outline and save-status text now have clear vertical separation. Body remains readable and header fits. At320 the initial dialog is vertically scrollable; actual8-key traversal reaches visible close and traps focus without global OS preference changes.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/reader-reflow-settings-320x740-cinematic-initial.png",
+        "sha256": "d4dcbb204769cf2610df51c04ad607f5c48f47d88193c1f7b18d1443d9c07aae",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/home-320x740-paper-default.png",
+      "name": "home",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 320,
+        "height": 740,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "6834fa0544a95c32990eed3acbfb352a742232d9dc1ead2fddddbb8943301290",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened all4widths after repair: paper/ink hierarchy, warm cover hero, distinct CTA and2real cards; card summaries now2lines, nav/tags/CTA readable at320; no overlap. Interaction/keyboard/axe evidence is the9-group real-browser run, not a human usability rating.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/home-320x740-paper-default.png",
+        "sha256": "6834fa0544a95c32990eed3acbfb352a742232d9dc1ead2fddddbb8943301290",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/discover-320x740-paper-default.png",
+      "name": "discover",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 320,
+        "height": 740,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "3be93d9036e2207662c2fb8d85477be99ab75913bbcce5fdd42f5314b3441b06",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/1024/390/320: clear visible search label, search button and3distinct filter choices; result count separates controls from exactly2real story cards. Two-line summaries/tags/links fit narrow widths, titles wrap naturally, no hidden mobile navigation. Keyboard filtering/URL/empty reset checked in actual browser.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/discover-320x740-paper-default.png",
+        "sha256": "3be93d9036e2207662c2fb8d85477be99ab75913bbcce5fdd42f5314b3441b06",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/intro-post-office-320x740-paper-default.png",
+      "name": "intro-post-office",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 320,
+        "height": 740,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "9696a043c35a559a02f061771ea8661fc30b2bdc0e69444c6ab2b2b4443b7f9c",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened1440/1024/390/320: whole3:4coastal cover remains separate from real title; mobile cover under70%viewport and title wraps naturally at320. Full synopsis remains readable after card clamp; first-reading and save controls remain distinct, AI disclosure and collapsed6sceneTOC visible without spoiler expansion. Footer wraps at320 without horizontal clipping.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/intro-post-office-320x740-paper-default.png",
+        "sha256": "9696a043c35a559a02f061771ea8661fc30b2bdc0e69444c6ab2b2b4443b7f9c",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/intro-tide-station-320x740-paper-default.png",
+      "name": "intro-tide-station",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 320,
+        "height": 740,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "a093c382367295e4197768ee67629598fef1fa282f25ada3c84c5c1827e94782",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/1024/390/320: full station cover/gauge/copper family, distinct real text title and full synopsis, sensible mobile cover width, clear primary read/save actions and collapsed6sceneTOC; readable AI disclosure and wrapping footer. No horizontal clipping.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/intro-tide-station-320x740-paper-default.png",
+        "sha256": "a093c382367295e4197768ee67629598fef1fa282f25ada3c84c5c1827e94782",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/library-320x740-paper-empty.png",
+      "name": "library",
+      "mode": "paper",
+      "state": "empty",
+      "layout": {
+        "width": 320,
+        "height": 740,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "788b3e389a7bb115ed9c521af830e70a8d2941ca16508a8596a0413840ad0aef",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 1,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 11,
+      "observation": "Opened1440/1024/390/320: truthful empty message and discover CTA, clear labels for recent/stories/quotes, no invented records/skeletons. Empty-section hints repeat information and lengthen the page slightly (hierarchy1), but each section explains its intended action, text stays readable and footer wraps without clipping. Real-browser checks verified no session creation for empty library.",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/library-320x740-paper-empty.png",
+        "sha256": "788b3e389a7bb115ed9c521af830e70a8d2941ca16508a8596a0413840ad0aef",
+        "reviewedAt": "2026-11-18T02:02:12.961971+00:00"
+      },
+      "transferReason": "Exact PNG SHA256 match to a genuinely opened artifact; source change only corrected library progress units, new14-group run passed.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER"
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/settings-320x740-paper-default.png",
+      "name": "settings",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 320,
+        "height": 740,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "edc2ef15579af3163c3aef8ce60122e0aba76b5b77d2e030dc5933475ce0b6d4",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/1024/390/320: labeled mode/effects/size/theme groups retain distinct selected states and generous targets. Long Korean storage/deletion explanation reflows,30day access is distinguished from cleanup, delete action has its own heading and privacy link. No clipped radios, overlapping labels or horizontal overflow. Initial local-default status is not a server-save acknowledgement; actual changes/ack/deletion were tested separately.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/settings-320x740-paper-default.png",
+        "sha256": "edc2ef15579af3163c3aef8ce60122e0aba76b5b77d2e030dc5933475ce0b6d4",
+        "reviewedAt": "2026-11-18T02:06:02.336878+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/about-320x740-paper-default.png",
+      "name": "about",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 320,
+        "height": 740,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "f36ebb91c8f6bf6f611f3136260de91e72143d201697ce645b128f93236b9bc4",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/1024/390/320: prose headings/lead/body remain clear and reflow without overlap. AI-fiction disclosure and human-evaluation-not-performed text are explicit;30day access vs cleanup/cookie-loss/local pending/failed-deletion limits are readable. Real settings privacy link is visibly differentiated, no fake contact or release claim; footer adapts to320.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/about-320x740-paper-default.png",
+        "sha256": "f36ebb91c8f6bf6f611f3136260de91e72143d201697ce645b128f93236b9bc4",
+        "reviewedAt": "2026-11-18T02:06:23.037669+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/design-system-320x740-paper-default.png",
+      "name": "design-system",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 320,
+        "height": 740,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "3c082c36242c511b367a777bc369b817d5ea17db2cd6c92614b320e3d024cae5",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 1,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 11,
+      "observation": "Opened1024/320: token grid3→2columns and labeled readonly control states fit. Reading example remains legible with dark opaque panel;320inset sample becomes long/narrow (spacing1) but no clipping or falseinteractive action. Caption/code labels and footer remain clear.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/design-system-320x740-paper-default.png",
+        "sha256": "3c082c36242c511b367a777bc369b817d5ea17db2cd6c92614b320e3d024cae5",
+        "reviewedAt": "2026-11-18T02:10:35.311782+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/discover-320x740-paper-empty.png",
+      "name": "discover",
+      "mode": "paper",
+      "state": "empty",
+      "layout": {
+        "width": 320,
+        "height": 740,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "6fc55df9e4c63fd9f74a79d0d333fc49611b4e1d49e24dcbbced78cc67369521",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/1024/390/320: focused search field keeps visible outline without touching button or label, actual0result status and helpful no-match message are distinct. Clear filter-reset control remains visible/reachable; no fake cards, clipped headings or lost mobile nav, footer wraps cleanly.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/discover-320x740-paper-empty.png",
+        "sha256": "6fc55df9e4c63fd9f74a79d0d333fc49611b4e1d49e24dcbbced78cc67369521",
+        "reviewedAt": "2026-11-18T02:06:43.887748+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/missing-story-320x740-paper-404.png",
+      "name": "missing-story",
+      "mode": "paper",
+      "state": "404",
+      "layout": {
+        "width": 320,
+        "height": 740,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "3f0d2b36e6dcaf84876a3be919d00fbcd3edc46d162c818dd23e698e1aacbc1c",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened1440/1024/390/320: actualHTTP404 presents a clear readable missing-scene heading, short address/recovery explanation and real discover CTA. No raw stack/internal endpoint or fake content; mobile header/footer fit and unused viewport space is simply a short page, not a forced content interstitial.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/missing-story-320x740-paper-404.png",
+        "sha256": "3f0d2b36e6dcaf84876a3be919d00fbcd3edc46d162c818dd23e698e1aacbc1c",
+        "reviewedAt": "2026-11-18T02:07:36.036799+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/reader-reflow-390x844-cinematic-first-webkit.png",
+      "name": "reader-reflow",
+      "mode": "cinematic",
+      "state": "first",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "0d51962d0eb945afe2211249b0b6256a6e55e45349b8b2eb8c455e730bb919ca",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened390Chromium andWebKit reader+initialsettings: opaque body and inline illustration remain readable with separated status row. Modal title, four radio groups and close fit the viewport; native-engine glyph differences do not clip text. Eight-key traversal/Escape/focus-return and44px targets were independently checked in both engines; not a real-iPhone or native200% claim.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/reader-reflow-390x844-cinematic-first-webkit.png",
+        "sha256": "0d51962d0eb945afe2211249b0b6256a6e55e45349b8b2eb8c455e730bb919ca",
+        "reviewedAt": "2026-11-18T02:13:56.870583+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/reader-reflow-settings-390x844-cinematic-initial-webkit.png",
+      "name": "reader-reflow-settings",
+      "mode": "cinematic",
+      "state": "initial",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "59c0fb322a4f8cb3d1dafc8e33b3681068bba09c880337ccaa9d630c27986df4",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened390Chromium andWebKit reader+initialsettings: opaque body and inline illustration remain readable with separated status row. Modal title, four radio groups and close fit the viewport; native-engine glyph differences do not clip text. Eight-key traversal/Escape/focus-return and44px targets were independently checked in both engines; not a real-iPhone or native200% claim.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/reader-reflow-settings-390x844-cinematic-initial-webkit.png",
+        "sha256": "59c0fb322a4f8cb3d1dafc8e33b3681068bba09c880337ccaa9d630c27986df4",
+        "reviewedAt": "2026-11-18T02:13:56.870585+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/home-390x844-paper-default-webkit.png",
+      "name": "home",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "113a5dcce05b2b75357a6b956ace02095fb84f653e0926a110403713fe4f2413",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened390WebKit: image-first paper hero, readable real title/CTA, exactly2cards with2line summaries and wrapping lower explanations/footer. No viewport overflow or hidden navigation; artwork/theme match Chromium view.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/home-390x844-paper-default-webkit.png",
+        "sha256": "113a5dcce05b2b75357a6b956ace02095fb84f653e0926a110403713fe4f2413",
+        "reviewedAt": "2026-11-18T02:14:57.006781+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/discover-390x844-paper-default-webkit.png",
+      "name": "discover",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "b7ef603d9f0f21b64920e364aea3b4a8f9eaeb2040fa90fd80190325afea8583",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened390WebKit default results: label/input/search/filter groups remain readable,2real cards and short summaries fit, native placeholder/glyph differences preserve hierarchy. ActualOption-Tab/search focus behavior verified without global setting changes.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/discover-390x844-paper-default-webkit.png",
+        "sha256": "b7ef603d9f0f21b64920e364aea3b4a8f9eaeb2040fa90fd80190325afea8583",
+        "reviewedAt": "2026-11-18T02:14:57.007048+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/intro-post-office-390x844-paper-default-webkit.png",
+      "name": "intro-post-office",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "5eb3dcde2a9cbc71e9f69572c0854ea5fb02b57d6f8f35afd46e4dff6723db2a",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened390WebKit: uncropped3:4coastal cover, real story title/full synopsis/AI disclosure, distinct read/save actions and collapsed6sceneTOC. All text stays within mobile margins, footer remains legible.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/intro-post-office-390x844-paper-default-webkit.png",
+        "sha256": "5eb3dcde2a9cbc71e9f69572c0854ea5fb02b57d6f8f35afd46e4dff6723db2a",
+        "reviewedAt": "2026-11-18T02:14:57.007051+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/intro-tide-station-390x844-paper-default-webkit.png",
+      "name": "intro-tide-station",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "527985bb502e9e3b2599de48410c429653a3f38339fdd4b66168351463444c42",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened390WebKit: blue station cover/gauge motif, clear real title and full synopsis, visible primary/secondary actions, genre/tags and AI disclosure; no cropped labels or horizontal overflow.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/intro-tide-station-390x844-paper-default-webkit.png",
+        "sha256": "527985bb502e9e3b2599de48410c429653a3f38339fdd4b66168351463444c42",
+        "reviewedAt": "2026-11-18T02:14:57.007053+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/library-390x844-paper-empty-webkit.png",
+      "name": "library",
+      "mode": "paper",
+      "state": "empty",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "d3c3aed72a7b63c21ed0a75bebfdc38711cc24136b05c3a160db13c0f4076bdd",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 1,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 11,
+      "observation": "Actually opened390WebKit empty library: honest no-record state and discover CTA with explicit empty section hints, no invented data. Repeated hints modestly lengthen page(hierarchy1); text, margins and footer remain readable and keyboard entry is tested.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/library-390x844-paper-empty-webkit.png",
+        "sha256": "d3c3aed72a7b63c21ed0a75bebfdc38711cc24136b05c3a160db13c0f4076bdd",
+        "reviewedAt": "2026-11-18T02:15:32.846066+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/settings-390x844-paper-default-webkit.png",
+      "name": "settings",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "6c4253ee5a98dca2d5572d756cf71eadcd2a33b289b983ff920700ed03244488",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened390WebKit settings: all mode/effect/size/theme choices fit with distinct selected states, readable storage/deletion explanation and privacy link. Initiallocal status does not claim a serverack; actualsave/deletionflows are tested elsewhere.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/settings-390x844-paper-default-webkit.png",
+        "sha256": "6c4253ee5a98dca2d5572d756cf71eadcd2a33b289b983ff920700ed03244488",
+        "reviewedAt": "2026-11-18T02:15:32.846222+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/about-390x844-paper-default-webkit.png",
+      "name": "about",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "38cb3116344d2cb1e3b5d5fe91b32ab0fa0cb6ac55a143c30d1a038b94a7b82b",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened390WebKit About: prose hierarchy, truthfulAI/human0/current-release-limit statements and storage/cookie/deletion details remain legible with clean wrapping; no clipped metadata or footer overlap.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/about-390x844-paper-default-webkit.png",
+        "sha256": "38cb3116344d2cb1e3b5d5fe91b32ab0fa0cb6ac55a143c30d1a038b94a7b82b",
+        "reviewedAt": "2026-11-18T02:15:32.846225+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/design-system-390x844-paper-default-webkit.png",
+      "name": "design-system",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "08e8e41ec11a3ece7f6b08be25b12f5d81860bf03d139f4f97cc18b624877599",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened390WebKit gallery: swatches2columns, actual token labels and readonlycontrolstates/realtextsample render consistently; no horizontal clipping, duplicateh1orfakeinteractiveactions.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/design-system-390x844-paper-default-webkit.png",
+        "sha256": "08e8e41ec11a3ece7f6b08be25b12f5d81860bf03d139f4f97cc18b624877599",
+        "reviewedAt": "2026-11-18T02:15:32.846227+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/discover-390x844-paper-empty-webkit.png",
+      "name": "discover",
+      "mode": "paper",
+      "state": "empty",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "0dd1cc789464658e61ab6787573dd56100f56027d4e4ceb2cf05804b4aec7475",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened390WebKit empty result: focused native search clear control differs from Chromium but remains inside the field; clear0count/no-match message/reset action and stable keyboard focus, no fake results or clipped footer.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/discover-390x844-paper-empty-webkit.png",
+        "sha256": "0dd1cc789464658e61ab6787573dd56100f56027d4e4ceb2cf05804b4aec7475",
+        "reviewedAt": "2026-11-18T02:19:33.846154+00:00"
+      }
+    },
+    {
+      "path": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/missing-story-390x844-paper-404-webkit.png",
+      "name": "missing-story",
+      "mode": "paper",
+      "state": "404",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "fdb8f8042a7f3b3be40a06b02eb7f1d095abc2596b1105a8ab410033de7a38ad",
+      "opened": true,
+      "reviewedAt": "2026-11-18T04:33:39.557230+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Opened390WebKit actual404: readable missing-scene heading/address explanation and discover recovery action; clear main landmark, no raw internal errors, mobile header/footer remain within viewport.",
+      "reviewMethod": "EXACT_PNG_HASH_REVIEW_TRANSFER",
+      "reviewTransferredFrom": {
+        "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/missing-story-390x844-paper-404-webkit.png",
+        "sha256": "fdb8f8042a7f3b3be40a06b02eb7f1d095abc2596b1105a8ab410033de7a38ad",
+        "reviewedAt": "2026-11-18T02:19:33.846157+00:00"
+      }
+    }
+  ],
+  "approvedVariantPolicy": "Only explicitly observed and hash-bound PNGs;1frame has2already opened variants differing in27pixels at lower rounded-image corners. No tolerance, unknown pixels or automatic approval. All versions retain full agent rubric/path/hash proof."
+}

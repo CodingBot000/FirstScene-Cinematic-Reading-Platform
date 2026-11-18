@@ -1,0 +1,19 @@
+{
+  "observedAt": "2026-11-18T01:20:34.236801+00:00",
+  "status": "BLOCKED_EXTERNAL",
+  "check": "native browser200%zoom",
+  "sourceCommit": "87cb42f",
+  "method": "CUA browser-tab accelerator followed by native Chrome app menu access",
+  "observations": [
+    "In-app browser Cmd+= left DOM viewport1280x720/DPR1 unchanged; no zoom claimed.",
+    "Owned Chrome Bot test tab Cmd+= also left1026x765/DPR1 unchanged; tab-level key dispatch is not proof of browser zoom.",
+    "Native Google Chrome app access returned: The Mac is locked and automatic unlock could not unlock it."
+  ],
+  "requires": "Mac manually unlocked and native browser zoom UI available; use actual200% zoom and restore prior zoom afterward.",
+  "cssZoomUsed": false,
+  "deviceScaleOrViewportPassedAsZoom": false,
+  "otherUserTabsModified": false,
+  "cuaPartCompleted": true,
+  "localPreview": "http://127.0.0.1:3100",
+  "ownedServerSession": 11853
+}

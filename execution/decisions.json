@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "decisions": [
+    {
+      "id": "FEEDBACK_DAY_BOUNDARY",
+      "status": "APPROVED",
+      "source": "docs/11_SECURITY_OPERATIONS.md specifies5/story/session/day but no day boundary; AGENTS.md requires clarification of material limit policies.",
+      "options": [
+        "Asia/Seoul calendar midnight",
+        "UTC calendar midnight",
+        "rolling24hours"
+      ],
+      "recommended": "Asia/Seoul calendar midnight",
+      "askedAt": "2026-11-17T18:56:42.690880+00:00",
+      "blocks": [
+        "P04-T04 feedback quota implementation"
+      ],
+      "independentWork": "Session/API/CAS/bookmarks/deletion/readiness/other ready tasks continue.",
+      "decidedAt": "2026-11-18T06:24:45.999605+00:00",
+      "selected": "Asia/Seoul calendar midnight",
+      "timeZone": "Asia/Seoul",
+      "dailyLimit": 5,
+      "userAnswer": "한국 시간 자정 (권장)",
+      "sourceOfApproval": "Explicit user reply to pending policy question",
+      "resetRule": "Server-side Asia/Seoul calendar date; resets at00:00KST; not UTC midnight or rolling24hours."
+    }
+  ]
+}

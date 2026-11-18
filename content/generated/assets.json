@@ -1,0 +1,1061 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "id": "mail-bg-01",
+      "role": "background",
+      "sourceSha256": "398ac742ca4244b56f7de1b2d6decb7d3db041566a74d1572658c3e294876fd1",
+      "generationId": "2d2a4ca0-95e8-495f-91fe-f2eac7264d2b",
+      "alt": "",
+      "decorative": true,
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 10,
+        "notes": "Observed empty post office INTERIOR: wooden counter, brass balance scale, shallow drawer wall, central translucent golden envelope with narrow glowing seam; window to dark teal sea at blue hour. Correct scene meaning and recurring motifs, responsive-safe central envelope/scale, restrained painterly family, no people/readable text/logo/watermark. Rubric2/2/2/2/2."
+      },
+      "variants": [
+        {
+          "path": "/assets/mail-bg-01.cbbc11b1.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 300,
+          "bytes": 10265,
+          "sha256": "cbbc11b1fe5716d408023a55ec7bf94ac9d099eda6cae153f4b97d2cb7a7fef6"
+        },
+        {
+          "path": "/assets/mail-bg-01.731a07a5.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 300,
+          "bytes": 19996,
+          "sha256": "731a07a59e31ed0d2f82a71455abd1b332dd400703b2b0d0922f6ae8feb0df6f"
+        },
+        {
+          "path": "/assets/mail-bg-01.93c0bc1d.960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 600,
+          "bytes": 34127,
+          "sha256": "93c0bc1d7fa17e410b30d9f0a317c01cafd8f9bf3bb61818f4fcb81034653771"
+        },
+        {
+          "path": "/assets/mail-bg-01.e2856b9b.960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 600,
+          "bytes": 71040,
+          "sha256": "e2856b9b41b7364561fb2b97b3fb140a84edfa1f2771886b21706699ba6c6c3a"
+        },
+        {
+          "path": "/assets/mail-bg-01.c07558be.1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 900,
+          "bytes": 72278,
+          "sha256": "c07558be8e26b380a004f2dd0471b305fd3a06acad43ed18d026b116e7067d8b"
+        },
+        {
+          "path": "/assets/mail-bg-01.22451140.1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 900,
+          "bytes": 138740,
+          "sha256": "22451140218ca5f43330aa4a8fabf5677e755f92ac323aa559c3b53679702fde"
+        }
+      ],
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "mail-bg-02",
+      "role": "background",
+      "sourceSha256": "4cc7e735df7df905d61023b4d373f58ba0c22aa16edb02d9cb7915375ec49193",
+      "generationId": "9c09d45a-388c-4274-aee6-44580c9e04d3",
+      "alt": "",
+      "decorative": true,
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 10,
+        "notes": "Observed interior close-up with open translucent envelope, unmarked two-pan brass balance consistent with scene01, and soft rectangular golden window reflection across wood. Palette/materials match approved family; no people, ghosts, faces, numbers, readable text, logos or watermark. Envelope/scale remain central and crop-safe. Rubric2/2/2/2/2."
+      },
+      "variants": [
+        {
+          "path": "/assets/mail-bg-02.4b5cbebb.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 300,
+          "bytes": 11957,
+          "sha256": "4b5cbebbe24c3d85fd6396ad73fc33dbc27bd6800478b8edc18cb5dd5e981a7e"
+        },
+        {
+          "path": "/assets/mail-bg-02.2fd4e373.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 300,
+          "bytes": 24124,
+          "sha256": "2fd4e3730939fb6b84d56f888be767a9f6d59c957fa4614a99c9788977f272a8"
+        },
+        {
+          "path": "/assets/mail-bg-02.6488b5a3.960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 600,
+          "bytes": 40655,
+          "sha256": "6488b5a34a649f267c4dccb26d224317fc0b020c9376fa0cb5dd4f44c0e0ac8c"
+        },
+        {
+          "path": "/assets/mail-bg-02.5ff20445.960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 600,
+          "bytes": 81828,
+          "sha256": "5ff20445ba38d3e7dc78544d6cf500ec783d4a8dd3339cc57cf67d0b0cec6a27"
+        },
+        {
+          "path": "/assets/mail-bg-02.cd6bb232.1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 900,
+          "bytes": 83938,
+          "sha256": "cd6bb232e703b9c0600cc733ed16d1c3e17adfda510f46430019513e7cff860e"
+        },
+        {
+          "path": "/assets/mail-bg-02.868a88a1.1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 900,
+          "bytes": 154518,
+          "sha256": "868a88a111acdcf70915fee975cbfce9732f44ceb6ed6f4bb2516c66113eb5b3"
+        }
+      ],
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "mail-bg-03",
+      "role": "background",
+      "sourceSha256": "93d8c29b35210b4bb015bd720212308c545d0e2d4500f87f5072a778b863948f",
+      "generationId": "2d2423c1-b142-4d62-a27b-28c9ac70a923",
+      "alt": "",
+      "decorative": true,
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 10,
+        "notes": "Observed quiet fictional hillside night alley, large pale rectangular absence-mark on retaining wall, lone open empty mailbox post, distant teal sea, and narrow warm reflection on wet paving from unseen envelope. No intact old house, visible people/ghosts, horror, text, logo or watermark. Wall mark and light central/crop-safe, consistent painterly palette. Rubric2/2/2/2/2."
+      },
+      "variants": [
+        {
+          "path": "/assets/mail-bg-03.ea771b5e.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 300,
+          "bytes": 11612,
+          "sha256": "ea771b5e6aa58803c50b81de07f3dddd761b6486aef8d3a7e4da5b76951794e1"
+        },
+        {
+          "path": "/assets/mail-bg-03.1faa9467.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 300,
+          "bytes": 22702,
+          "sha256": "1faa94677ca9794b639e382acfb18979734e0f4a4ecb86aac9aea5286798e605"
+        },
+        {
+          "path": "/assets/mail-bg-03.ced3cd01.960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 600,
+          "bytes": 44546,
+          "sha256": "ced3cd01c99c81273a97a5fd3488d7d8809bb977c87062ca6005748574bbf43a"
+        },
+        {
+          "path": "/assets/mail-bg-03.7241983a.960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 600,
+          "bytes": 91044,
+          "sha256": "7241983ac37afef73328694986bd0fc0432d90fb08df182710f05f40db08feea"
+        },
+        {
+          "path": "/assets/mail-bg-03.9902d8dd.1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 900,
+          "bytes": 93498,
+          "sha256": "9902d8ddc495f93450eb288fa3e0e0c7d63c4512fd9f8aa4eca82d5e9ed1c2dc"
+        },
+        {
+          "path": "/assets/mail-bg-03.bfd33646.1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 900,
+          "bytes": 178126,
+          "sha256": "bfd3364626b7811a704795dc5b680d0a2361fe8982449492b10bd40bc67e3198"
+        }
+      ],
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "mail-bg-04",
+      "role": "background",
+      "sourceSha256": "c4cbf59adc5ed0352eae499760cb953fa321ec75f9acce841c92591517a8daff",
+      "generationId": "e41f1853-7fef-47d4-b1e7-c8c195c5f7f7",
+      "alt": "",
+      "decorative": true,
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 9,
+        "notes": "Observed near-dawn counter with central blank address card, unbranded fountain pen, open envelope, balanced unmarked two-pan brass scale and golden light through round opening against teal. No hands/people, text, numbers, logo or watermark. Envelope glow is subdued compared with earlier scene but scene meaning and key objects remain clear and crop-safe. Rubric meaning2 motifs1 composition2 style2 artifacts2."
+      },
+      "variants": [
+        {
+          "path": "/assets/mail-bg-04.9330947d.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 300,
+          "bytes": 9953,
+          "sha256": "9330947da86711896ea85a742269a89fe83e9cf811869cef342ce0e90b6cc64f"
+        },
+        {
+          "path": "/assets/mail-bg-04.602e5fd4.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 300,
+          "bytes": 18982,
+          "sha256": "602e5fd4063206137933d031b2bcfe418e188a00bb4cd533a8b2195bc1fcb412"
+        },
+        {
+          "path": "/assets/mail-bg-04.0361a697.960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 600,
+          "bytes": 34541,
+          "sha256": "0361a6977d3bb480fbae11569f458ecc2144a0f9f8d1dba59a56e79676ca2355"
+        },
+        {
+          "path": "/assets/mail-bg-04.f6f2bd06.960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 600,
+          "bytes": 66838,
+          "sha256": "f6f2bd06558c1ce49f005119631e18a74f9c03849dac9390a2591437d314df46"
+        },
+        {
+          "path": "/assets/mail-bg-04.b08d5af4.1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 900,
+          "bytes": 74190,
+          "sha256": "b08d5af42038f44b94bc1c36f210f4e2d0995cc651fc0741b4f4c7db63ed0dad"
+        },
+        {
+          "path": "/assets/mail-bg-04.7be6d44d.1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 900,
+          "bytes": 136610,
+          "sha256": "7be6d44de4eaaed7104176e15bdc5a02836a664e3b6eb3eb8057fccdb65d23e9"
+        }
+      ],
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "mail-bg-05",
+      "role": "background",
+      "sourceSha256": "c720cfeb1ecc18a8902084f8abdc43f5e1f4d0e2c7af0c42fa18fa9bab1bc5ac",
+      "generationId": "9135f85d-efac-4975-80c1-5ef200af41e3",
+      "alt": "",
+      "decorative": true,
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 10,
+        "notes": "Observed recurring hill post office at first dawn: closed wooden shutters, pale peach sky over teal sea, and one small golden paper form drifting toward town. No people/hands, readable lettering/numbers, logos or watermark. Facade/roof/chimney family recognizable from approved cover; main scene and paper visible in responsive framing, gentle grounded magical realism. Rubric2/2/2/2/2."
+      },
+      "variants": [
+        {
+          "path": "/assets/mail-bg-05.d07633e0.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 300,
+          "bytes": 10369,
+          "sha256": "d07633e0d21053f356ac216ad2976d4b38038cc7a7b89165df2174b15a9e0609"
+        },
+        {
+          "path": "/assets/mail-bg-05.0d6c3658.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 300,
+          "bytes": 21230,
+          "sha256": "0d6c365850f57e46e61e83f469930c9122ff7876dab0f446c225d1bd58c95ba4"
+        },
+        {
+          "path": "/assets/mail-bg-05.2132e127.960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 600,
+          "bytes": 40816,
+          "sha256": "2132e127ae633165e153cfcbc035e18945317fe4bac351fec724d72357543357"
+        },
+        {
+          "path": "/assets/mail-bg-05.725e846c.960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 600,
+          "bytes": 85926,
+          "sha256": "725e846ceb0d53df8d9bf1f586e5283d96ea1556129f81fe6b8f1967bc5587cf"
+        },
+        {
+          "path": "/assets/mail-bg-05.1f0addf2.1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 900,
+          "bytes": 86593,
+          "sha256": "1f0addf204bbebb11c08dde46c5be40941b6862d7c20a1b8a6901dc64e4adb04"
+        },
+        {
+          "path": "/assets/mail-bg-05.97d4fbee.1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 900,
+          "bytes": 175638,
+          "sha256": "97d4fbee298af9e30a8db32a0b7cf01d483970a3958ce0ee4eb74d078981e67c"
+        }
+      ],
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "mail-bg-06",
+      "role": "background",
+      "sourceSha256": "2992494e8850f71e1eecb0ce855184d4dd4dcd1ace5c41646886ba5a73134e8f",
+      "generationId": "2f4a9d75-017e-442d-915f-fa823b6c76b0",
+      "alt": "",
+      "decorative": true,
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 9,
+        "notes": "Observed new apartment kitchen in morning light, exactly two mismatched handled ceramic cups on windowsill, one primary healthy potted plant, partly unpacked moving box and soft sun pool. A secondary decorative trailing vine appears at upper-left shelf; primary narrative plant/cups are clear and central. No post-office scale/mailbox, people, readable text/numbers, logos or watermark. Rubric meaning2 motifs1 composition2 lighting2 artifacts2."
+      },
+      "variants": [
+        {
+          "path": "/assets/mail-bg-06.f53fa884.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 300,
+          "bytes": 11272,
+          "sha256": "f53fa884a3fa2994d9100bf01fe6a7aaab50d7bb18e998aef5b6eeb868df98d6"
+        },
+        {
+          "path": "/assets/mail-bg-06.d72280ca.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 300,
+          "bytes": 22274,
+          "sha256": "d72280caf83a5b3e99e2c08d8894aa1dda68c56a02ad0fab4d6703eb43d08d77"
+        },
+        {
+          "path": "/assets/mail-bg-06.24e7a524.960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 600,
+          "bytes": 38039,
+          "sha256": "24e7a524df08b39375a1f48f6aaea3788bf45c0618df75a66efe827f9cd772ae"
+        },
+        {
+          "path": "/assets/mail-bg-06.d8f0e1d0.960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 600,
+          "bytes": 79446,
+          "sha256": "d8f0e1d04090cc74074893870f371f39370321c04786658ba4766b368388a02d"
+        },
+        {
+          "path": "/assets/mail-bg-06.544198a5.1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 900,
+          "bytes": 81085,
+          "sha256": "544198a5d7512003218c3d3803d13b79a4c4dfc24cdc019cd2cd1682d780af5b"
+        },
+        {
+          "path": "/assets/mail-bg-06.81947dd4.1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 900,
+          "bytes": 155444,
+          "sha256": "81947dd450d92cce56342ee4cad38377aa429a54dee65efd285a673d581e9b9c"
+        }
+      ],
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "mail-cover",
+      "role": "cover",
+      "sourceSha256": "e0c89a38f08d22555b984429dfc0ab367dac24a403c0ec5423994a2eb6182add",
+      "generationId": "cd6d84c4-b04d-4d20-ba5b-be8fecdb0eae",
+      "alt": "빛을 접어 보내는 우체국의 오리지널 표지",
+      "decorative": false,
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 9,
+        "notes": "Observed original warm painterly seaside post office, teal sea, gold folded envelope at doorway; no people, lettering, logos or watermark. Wider camera brings full building and envelope into central horizontal crop; envelope is small but readable at cover size. Reference palette matches, no spoilers. Rubric meaning2 motifs2 composition1 lighting2 artifacts2."
+      },
+      "variants": [
+        {
+          "path": "/assets/mail-cover.e18d5d5c.320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 427,
+          "bytes": 6994,
+          "sha256": "e18d5d5c3feb0b955a6eece09ba5d5befd251dfb95528c155e77af5e2a751dcc"
+        },
+        {
+          "path": "/assets/mail-cover.02e70458.320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 427,
+          "bytes": 13678,
+          "sha256": "02e704586a83afa94b144ae5d91d4edd1469314a8f5e6c73144fe9659a611d96"
+        },
+        {
+          "path": "/assets/mail-cover.9b446423.640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 853,
+          "bytes": 27343,
+          "sha256": "9b446423b1f7ba5c46c6fcd450f964443b3ca00d78546876f6615aefba13e6f8"
+        },
+        {
+          "path": "/assets/mail-cover.cea1486a.640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 853,
+          "bytes": 58370,
+          "sha256": "cea1486aba3f46f1d3d40ec3e31b6bb0215a2135e09d426e99a75dfadbf528e6"
+        },
+        {
+          "path": "/assets/mail-cover.c10a1680.960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1280,
+          "bytes": 60533,
+          "sha256": "c10a1680896d610da65f3c4dc500f91bd19d3f20c1817d4520604750ebe46e1b"
+        },
+        {
+          "path": "/assets/mail-cover.47da6df2.960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1280,
+          "bytes": 125948,
+          "sha256": "47da6df2d11d5452bed7a6d1e2a1894029a0d9550b1197dfdf51895cee04136c"
+        }
+      ],
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "mail-portrait",
+      "role": "portrait",
+      "sourceSha256": "00a0faecba48a4a756b652589de844ef52890b2278d41eba7834c4d01463aa5e",
+      "generationId": "a014aeaf-877d-4133-ac6e-464ae4e19327",
+      "alt": "윤서의 캐릭터 일러스트",
+      "decorative": false,
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 10,
+        "notes": "Opened actual optimized640WebP portrait. Full face and bob retained, ivory blouse/rust cardigan/left chest brass crescent intact, no source upscaling, opaque panel preserved and no extra artifacts/text. Identity and caption Yunseo match approved reference; source hash/derivation recorded. Rubric2/2/2/2/2."
+      },
+      "variants": [
+        {
+          "path": "/assets/mail-portrait.d9c3f52f.320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 480,
+          "bytes": 7901,
+          "sha256": "d9c3f52f0337aebed94e260f5fc9731f9ed3896ea6635cdc623853aed5764dd6"
+        },
+        {
+          "path": "/assets/mail-portrait.68bf9adf.320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 480,
+          "bytes": 12850,
+          "sha256": "68bf9adf0ce3d7c1fb096344143d11d075273af8df0f9fa4e73952ef29917c92"
+        },
+        {
+          "path": "/assets/mail-portrait.0df415be.640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 960,
+          "bytes": 27395,
+          "sha256": "0df415be1eef1a6b6b63e518d1edbf5967fc84cea119c88cf27ae49586e6ef78"
+        },
+        {
+          "path": "/assets/mail-portrait.04382a43.640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 960,
+          "bytes": 53700,
+          "sha256": "04382a439687c7e850bb23a1665ad87d4144b4a94819a25f39024e8ac8c149f9"
+        }
+      ],
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.38
+      }
+    },
+    {
+      "id": "tide-bg-01",
+      "role": "background",
+      "sourceSha256": "b9d68fe1c823d97865c728da6e057996633a09aa39e1f7c891b13bbaddba759b",
+      "generationId": "7e341c8a-521c-4e17-ab9d-6ae7c49e42fa",
+      "alt": "",
+      "decorative": true,
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 9,
+        "notes": "Observed a distinct wide establishing view of empty fictional blue-tiled station, dry gridded platform and rails, copper gauge with illegible ticks and one orange indicator. Cyan bands are reflected light, with no visible fluid or flooding. Central station geometry and recurring objects survive mobile crop. Painterly style consistent, no people/logo/text/watermark. Rubric meaning2 motifs2 crop2 lighting1 artifacts2."
+      },
+      "variants": [
+        {
+          "path": "/assets/tide-bg-01.b201763a.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 300,
+          "bytes": 9386,
+          "sha256": "b201763a59db224c6774e7dffeea24ec43b5e506d911039c00ae093cfcbf0451"
+        },
+        {
+          "path": "/assets/tide-bg-01.098c4deb.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 300,
+          "bytes": 16754,
+          "sha256": "098c4debe9ee8caeead21e328991905ad284bf86a6cf08b7f9603f545592cd2f"
+        },
+        {
+          "path": "/assets/tide-bg-01.6ba7d608.960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 600,
+          "bytes": 38054,
+          "sha256": "6ba7d6081b86b88a7ed5dbe7cfe02600234d208c97bb00e8fc61c5df5416304a"
+        },
+        {
+          "path": "/assets/tide-bg-01.ab45e2a5.960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 600,
+          "bytes": 70128,
+          "sha256": "ab45e2a570f6e4a28e3fbcc87501341b31f049c9822eab79c96b42d1469bf2e9"
+        },
+        {
+          "path": "/assets/tide-bg-01.78dfecff.1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 900,
+          "bytes": 85331,
+          "sha256": "78dfecffeed803d19cacf8ab0dc6e6560435839d9c813af660a9afee6ab3ec6d"
+        },
+        {
+          "path": "/assets/tide-bg-01.8617a694.1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 900,
+          "bytes": 152290,
+          "sha256": "8617a69455adf068027a4241eb615730603c7ac709422d4fad802933b431cef8"
+        }
+      ],
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "tide-bg-02",
+      "role": "background",
+      "sourceSha256": "9e85cf53108a3aa289f196aac55058026debe4b26132495703a28522656a74c1",
+      "generationId": "5222eab6-bddf-4f0e-9e6e-3a29f7c1c651",
+      "alt": "",
+      "decorative": true,
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 9,
+        "notes": "Observed distinct ticket counter in blue-tiled dry station: central blank pale ticket on copper tray, cabinet holding abstract schematic lines without labels, warm orange indicator and restrained cyan reflections. Primary ticket crop-safe; schematic is secondary on right. No people, numbers, readable text, logos, watermark or actual water. Rubric meaning2 motifs2 composition1 lighting2 artifacts2."
+      },
+      "variants": [
+        {
+          "path": "/assets/tide-bg-02.7520c1ad.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 300,
+          "bytes": 11239,
+          "sha256": "7520c1ad376532674bb439fb398a69e1b6434eb88281a986d500682031d641cf"
+        },
+        {
+          "path": "/assets/tide-bg-02.819de81c.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 300,
+          "bytes": 18790,
+          "sha256": "819de81c99751a4c7a46b05aa064da561bbbe04b9919d7ca7f705f3373f0e9f5"
+        },
+        {
+          "path": "/assets/tide-bg-02.377f292a.960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 600,
+          "bytes": 41770,
+          "sha256": "377f292a4157bb0d46f50ec690085a11ccdf71e126a4872a9fc4db28fab761c2"
+        },
+        {
+          "path": "/assets/tide-bg-02.de89f73b.960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 600,
+          "bytes": 72814,
+          "sha256": "de89f73b0052243c7db152e2579e8c47a6b77948396b3c1e2d59dc19cd891e4a"
+        },
+        {
+          "path": "/assets/tide-bg-02.23ea99cd.1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 900,
+          "bytes": 84507,
+          "sha256": "23ea99cd4d6a5da34291cdfa451c9c3129090cd1ed3b2d0a4a3c01e8babf0941"
+        },
+        {
+          "path": "/assets/tide-bg-02.9bdd5b3d.1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 900,
+          "bytes": 142790,
+          "sha256": "9bdd5b3d5e512bb35db9179508fedc97268adc1026df17f1b7d051fc0e909ebb"
+        }
+      ],
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "tide-bg-03",
+      "role": "background",
+      "sourceSha256": "64e75fdaa2b073b9bcb836755b078c2a1e5483424c4a935b06e6d7e22b52487e",
+      "generationId": "b0befa03-aa0b-4f7a-a4ea-f102883d2df4",
+      "alt": "",
+      "decorative": true,
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 10,
+        "notes": "Observed dry blue-tiled service corridor, parallel copper conduits leading to a central round perforated acoustic hatch, pale cyan waveform-like reflected light and one portable orange lantern. No actual water, platform remake, people, letters/numerals, logos or watermark. Central hatch and floor motif survive responsive view; consistent painterly architecture. Rubric2/2/2/2/2."
+      },
+      "variants": [
+        {
+          "path": "/assets/tide-bg-03.219d480e.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 300,
+          "bytes": 10732,
+          "sha256": "219d480eac3337494274af9a61b256adfc7f3d5e099029fbb579f6050328e069"
+        },
+        {
+          "path": "/assets/tide-bg-03.db0a26f1.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 300,
+          "bytes": 18670,
+          "sha256": "db0a26f1345c82e6995666f5e41370655a7d0d7af831d6fc5fa3491128ae7135"
+        },
+        {
+          "path": "/assets/tide-bg-03.7709e7df.960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 600,
+          "bytes": 44573,
+          "sha256": "7709e7dfcd53bb0ebe45addfb4018a09f656b49b5fd3551ab085991e02a06fe1"
+        },
+        {
+          "path": "/assets/tide-bg-03.23345ce4.960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 600,
+          "bytes": 83144,
+          "sha256": "23345ce47a4a4141dea4053f667d053d116e726b187c2f90b3d6f9c153182c94"
+        },
+        {
+          "path": "/assets/tide-bg-03.ecdcf177.1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 900,
+          "bytes": 95438,
+          "sha256": "ecdcf177350b09497fe49c72bc12ab3fa3040ee4bbea5a9e456ffff0b6e4ccab"
+        },
+        {
+          "path": "/assets/tide-bg-03.8a98f409.1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 900,
+          "bytes": 173514,
+          "sha256": "8a98f409a503012bdf3c62c776d195cb2147c8c62b054b56f6bd51f96eabd1ff"
+        }
+      ],
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "tide-bg-04",
+      "role": "background",
+      "sourceSha256": "4a096e05bd9d9f0a8e5137083d5c480ab5671a4d829c8caa4fefbc75c91c0ec0",
+      "generationId": "af866ed6-7785-419b-a47e-9d67b319ada5",
+      "alt": "",
+      "decorative": true,
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 10,
+        "notes": "Observed circular blue-tiled acoustic archive chamber with central glass cylinder containing only abstract cyan sound/light waves, thin copper rings and one small orange lamp. Solid dry gridded floor, no fluid surface or rain/flooding. Distinct climax composition, canonical palette and clean geometry, no people, text, numerals, logos or watermark. Rubric2/2/2/2/2."
+      },
+      "variants": [
+        {
+          "path": "/assets/tide-bg-04.2750befd.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 300,
+          "bytes": 10589,
+          "sha256": "2750befd89673435a803e7b4ccc4754a9e8a3d4fa90be6165f978f9de4f2b58f"
+        },
+        {
+          "path": "/assets/tide-bg-04.9c98bee8.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 300,
+          "bytes": 18378,
+          "sha256": "9c98bee89f74cc3918d13c9472d4afd51db9a98e7ed7afc84a50a7c7c6541f78"
+        },
+        {
+          "path": "/assets/tide-bg-04.ac84a190.960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 600,
+          "bytes": 41150,
+          "sha256": "ac84a190611f786706ad78cdbc0533e827745d9a7318a287c1f9919f5ba447cc"
+        },
+        {
+          "path": "/assets/tide-bg-04.f0d0b13b.960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 600,
+          "bytes": 77180,
+          "sha256": "f0d0b13b954a49003c5ba39122a80572bb52b14d40090d201abbb393a50e7a6c"
+        },
+        {
+          "path": "/assets/tide-bg-04.a7607cc4.1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 900,
+          "bytes": 92511,
+          "sha256": "a7607cc4a7913405e2db814f05b2835d17e877b4be42adf76fee3800b33257d2"
+        },
+        {
+          "path": "/assets/tide-bg-04.b39e5f3c.1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 900,
+          "bytes": 173298,
+          "sha256": "b39e5f3cee8ca849edeb19bd9e4139d7e4b1245914d125240c777cc9e907a258"
+        }
+      ],
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "tide-bg-05",
+      "role": "background",
+      "sourceSha256": "ad5fca82386d93cd76e9d23fa72df143c6aceadf9fde0b6d1fa9452943add3fd",
+      "generationId": "7b1b264a-33b6-468c-b925-09d63692ca19",
+      "alt": "",
+      "decorative": true,
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 9,
+        "notes": "Observed calm wider return to blue-tiled ticket counter, resting copper gauge without readable numerals, steady orange indicator and open service door revealing warm lit stairs. Dry visible tile grid, no water/people/text/logos/watermark. Counter framing is wider than scene02 and warm desk/stair light is stronger, but recurring station motifs and relief meaning remain consistent/crop-safe. Rubric meaning2 motifs2 composition2 lighting1 artifacts2."
+      },
+      "variants": [
+        {
+          "path": "/assets/tide-bg-05.8d675819.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 300,
+          "bytes": 9153,
+          "sha256": "8d675819d8ff026f3b21418bdc7efa9ad536adaf1c31ed734c03d5c28a75750c"
+        },
+        {
+          "path": "/assets/tide-bg-05.810ca0a3.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 300,
+          "bytes": 15646,
+          "sha256": "810ca0a363d1a818acc49567cf27e45999fc95652110d485c7a6fd4b8afc7bda"
+        },
+        {
+          "path": "/assets/tide-bg-05.f8ce92d0.960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 600,
+          "bytes": 36709,
+          "sha256": "f8ce92d00a11a49dacc805fd14afbf41afc91983a47c80b3d49230bb5d7cccb6"
+        },
+        {
+          "path": "/assets/tide-bg-05.9b75fa37.960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 600,
+          "bytes": 67072,
+          "sha256": "9b75fa37a47a34fad10c287676c2b06842d0f467b3b6ea1760d814e23a51196d"
+        },
+        {
+          "path": "/assets/tide-bg-05.ebfb3768.1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 900,
+          "bytes": 81745,
+          "sha256": "ebfb3768577476f794d60da3d1a8025ca57ac7f017a687070910c3fcbd445cf1"
+        },
+        {
+          "path": "/assets/tide-bg-05.b95890d2.1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 900,
+          "bytes": 142134,
+          "sha256": "b95890d22dc09bc61691fda49de458611f5339d6d04adf51d8bb2eaa571ac73f"
+        }
+      ],
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "tide-bg-06",
+      "role": "background",
+      "sourceSha256": "224097aedc26bd76e7ed1769b6673a8b5238f0a327e6d67cee5ff3c2bd5946e0",
+      "generationId": "f99e7a32-1c01-4a70-8330-aa7b394c0c41",
+      "alt": "",
+      "decorative": true,
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 10,
+        "notes": "Observed empty fictional morning street, small listening kiosk with blank circular grille, one newly planted supported tree, closed underground stair shutter in distance, pale cyan daylight and small orange light. Distinct outdoor epilogue, dry solid pavement, no people, readable writing/numerals, real transit branding, logos or watermark. Primary kiosk/tree clear and crop-safe. Rubric2/2/2/2/2."
+      },
+      "variants": [
+        {
+          "path": "/assets/tide-bg-06.9feffac1.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 300,
+          "bytes": 13637,
+          "sha256": "9feffac19a59fe8b66c6364f32ccc42432684b6881a3a181a5d76f9d39d0c816"
+        },
+        {
+          "path": "/assets/tide-bg-06.91871df8.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 300,
+          "bytes": 27692,
+          "sha256": "91871df8ac3cd47ad982334600fd7d89368919a8f61160ec87692ad9449da0db"
+        },
+        {
+          "path": "/assets/tide-bg-06.0e11d4c6.960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 600,
+          "bytes": 49071,
+          "sha256": "0e11d4c637e9e805e66eb33c681f5feb7482437731073dd3cb4290edfb4a439d"
+        },
+        {
+          "path": "/assets/tide-bg-06.56a31784.960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 600,
+          "bytes": 102750,
+          "sha256": "56a31784e58604bfbd3ef37fc2d19277d5f51f587c0314de6b1a8adc5dd807a5"
+        },
+        {
+          "path": "/assets/tide-bg-06.c77404f3.1440.avif",
+          "format": "avif",
+          "width": 1440,
+          "height": 900,
+          "bytes": 100436,
+          "sha256": "c77404f3761f275f254fde9e308a210a986b86b55dd24892f63d821f647d40da"
+        },
+        {
+          "path": "/assets/tide-bg-06.5379239f.1440.webp",
+          "format": "webp",
+          "width": 1440,
+          "height": 900,
+          "bytes": 207076,
+          "sha256": "5379239f97fc5691e045009a35c6b95ad8f799fdbd3fb345aaae48f248dc6057"
+        }
+      ],
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "tide-cover",
+      "role": "cover",
+      "sourceSha256": "b05eb4a3e89eb22d3757064e9bac92cc1a6559fd3075ce9c10359ca9a78e406a",
+      "generationId": "a6b270bd-6e96-453a-8f32-ed752211312a",
+      "alt": "수심 없는 역의 오리지널 표지",
+      "decorative": false,
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 9,
+        "notes": "Observed empty fictional blue-tiled station, copper gauge, single warm orange indicator, dry visible tile grid and rails; pale cyan reflected light suggests sound. No people, branding, readable labels or watermark. Centered architecture reads at thumbnail; wide crops should retain gauge and signal. Rubric meaning2 motifs2 composition1 lighting2 artifacts2."
+      },
+      "variants": [
+        {
+          "path": "/assets/tide-cover.a64c6bba.320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 427,
+          "bytes": 8740,
+          "sha256": "a64c6bba2c90b7a929e5b1e2b68561c3206fdbf0747ee63c2aeef22bc2e77ab8"
+        },
+        {
+          "path": "/assets/tide-cover.a1d07b04.320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 427,
+          "bytes": 15332,
+          "sha256": "a1d07b04e822f03fe9acecfb78b6817ccb6fbea64117de34161e9fbd690a57e8"
+        },
+        {
+          "path": "/assets/tide-cover.e5524a18.640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 853,
+          "bytes": 35816,
+          "sha256": "e5524a188434b0c191d426c78114e531306d493f8de8672312c621872fe2ef28"
+        },
+        {
+          "path": "/assets/tide-cover.4828f6aa.640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 853,
+          "bytes": 67454,
+          "sha256": "4828f6aaa4269a54bdc15a08d8c7068de1ee37c089af09661404359f74249edc"
+        },
+        {
+          "path": "/assets/tide-cover.d7899a5a.960.avif",
+          "format": "avif",
+          "width": 960,
+          "height": 1280,
+          "bytes": 81430,
+          "sha256": "d7899a5a8107699890f684f554429b05190e83902ceba96d7cba3e95d01b03b0"
+        },
+        {
+          "path": "/assets/tide-cover.75bed101.960.webp",
+          "format": "webp",
+          "width": 960,
+          "height": 1280,
+          "bytes": 151038,
+          "sha256": "75bed101d1d6a0040f54da1dae18d1f4ab9c1da5f9ac924e48cfeda3cb69cbc8"
+        }
+      ],
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    {
+      "id": "tide-portrait",
+      "role": "portrait",
+      "sourceSha256": "daaf21aa780997e7b586e172e8fbf7280fd35d6f9aabf59c0b404498c8080f82",
+      "generationId": "339a2a00-0ed4-4ee1-9126-976de77a46e6",
+      "alt": "정하의 캐릭터 일러스트",
+      "decorative": false,
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 10,
+        "notes": "Opened actual optimized640WebP portrait. Face/ponytail, navy jacket, olive bag and orange analog watch retained; head is not clipped, no upscaling or invented alpha. Opaque blue panel and caption Jeongha match approved reference, no new artifacts/text. Source hash/derivation recorded. Rubric2/2/2/2/2."
+      },
+      "variants": [
+        {
+          "path": "/assets/tide-portrait.fbc84f12.320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 480,
+          "bytes": 6588,
+          "sha256": "fbc84f1210a1e6d0cbd1ac975c4cae70e0af31ba6a3f57964aac6bae9f0c6d99"
+        },
+        {
+          "path": "/assets/tide-portrait.7a3a411b.320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 480,
+          "bytes": 9616,
+          "sha256": "7a3a411b19463258024a17eeee5f7bb0825f0b0b470f3ea2917549db6a5b836c"
+        },
+        {
+          "path": "/assets/tide-portrait.631e6aa7.640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 960,
+          "bytes": 19098,
+          "sha256": "631e6aa7f0c0909092a426d92c13c8d65e661547cab6792e0cc3bc94d56d9248"
+        },
+        {
+          "path": "/assets/tide-portrait.dad3a465.640.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 960,
+          "bytes": 30536,
+          "sha256": "dad3a465486a266dba231ea5961d070f44f2efdd058af57aefbb1f032a274eef"
+        }
+      ],
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.38
+      }
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "observedAt": "2026-11-18T04:35:53.352Z",
+  "checks": [
+    {
+      "name": "public HTTP error logs redact known credentials",
+      "passed": true
+    },
+    {
+      "name": "actual Next startup rejects public HTTP",
+      "passed": true
+    },
+    {
+      "name": "owner credentials error logs redact known credentials",
+      "passed": true
+    },
+    {
+      "name": "actual Next startup rejects owner credentials",
+      "passed": true
+    },
+    {
+      "name": "client-exposed secret error logs redact known credentials",
+      "passed": true
+    },
+    {
+      "name": "actual Next startup rejects client-exposed secret",
+      "passed": true
+    },
+    {
+      "name": "missing rate secret error logs redact known credentials",
+      "passed": true
+    },
+    {
+      "name": "actual Next startup rejects missing rate secret",
+      "passed": true
+    },
+    {
+      "name": "syntactically valid configuration starts while DB is unavailable",
+      "passed": true
+    },
+    {
+      "name": "cold unavailable DB produces readiness503",
+      "passed": true
+    },
+    {
+      "name": "cold unavailable DB preserves complete public manuscript SSR",
+      "passed": true
+    },
+    {
+      "name": "startup/outage logs contain no known credential",
+      "passed": true
+    }
+  ],
+  "releaseReady": false,
+  "finishedAt": "2026-11-18T04:35:54.376Z"
+}

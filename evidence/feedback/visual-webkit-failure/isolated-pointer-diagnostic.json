@@ -1,0 +1,131 @@
+{
+  "observedAt": "2026-11-18T07:47:14.699Z",
+  "status": "REPRODUCED",
+  "samples": [
+    {
+      "label": "first-save",
+      "button": {
+        "x": 330.046875,
+        "y": 6,
+        "w": 47.953125,
+        "h": 44
+      },
+      "hit": {
+        "tag": "BUTTON",
+        "class": "fs-button fs-ghost fs-md "
+      },
+      "hittable": true,
+      "pointerEvents": {
+        "body": "auto",
+        "html": "auto",
+        "button": "auto"
+      },
+      "scroll": {
+        "x": 0,
+        "y": 131
+      },
+      "viewport": {
+        "w": 390,
+        "h": 844,
+        "pageTop": 131,
+        "offsetTop": 0,
+        "scale": 1
+      },
+      "status": "서버에 저장됨"
+    },
+    {
+      "label": "stable-save",
+      "button": {
+        "x": 330.046875,
+        "y": 6,
+        "w": 47.953125,
+        "h": 44
+      },
+      "hit": {
+        "tag": "BUTTON",
+        "class": "fs-button fs-ghost fs-md "
+      },
+      "hittable": true,
+      "pointerEvents": {
+        "body": "auto",
+        "html": "auto",
+        "button": "auto"
+      },
+      "scroll": {
+        "x": 0,
+        "y": 131
+      },
+      "viewport": {
+        "w": 390,
+        "h": 844,
+        "pageTop": 131,
+        "offsetTop": 0,
+        "scale": 1
+      },
+      "status": "서버에 저장됨"
+    },
+    {
+      "label": "after-screenshot",
+      "button": {
+        "x": 330.046875,
+        "y": 6,
+        "w": 47.953125,
+        "h": 44
+      },
+      "hit": {
+        "tag": "BUTTON",
+        "class": "fs-button fs-ghost fs-md "
+      },
+      "hittable": true,
+      "pointerEvents": {
+        "body": "auto",
+        "html": "auto",
+        "button": "auto"
+      },
+      "scroll": {
+        "x": 0,
+        "y": 131
+      },
+      "viewport": {
+        "w": 390,
+        "h": 844,
+        "pageTop": 131,
+        "offsetTop": 0,
+        "scale": 1
+      },
+      "status": "서버에 저장됨"
+    },
+    {
+      "label": "after-click",
+      "button": {
+        "x": 330.046875,
+        "y": 6,
+        "w": 47.953125,
+        "h": 44
+      },
+      "hit": {
+        "tag": "BUTTON",
+        "class": "fs-button fs-ghost fs-md "
+      },
+      "hittable": true,
+      "pointerEvents": {
+        "body": "auto",
+        "html": "auto",
+        "button": "auto"
+      },
+      "scroll": {
+        "x": 0,
+        "y": 131
+      },
+      "viewport": {
+        "w": 390,
+        "h": 844,
+        "pageTop": 131,
+        "offsetTop": 0,
+        "scale": 1
+      },
+      "status": "서버에 저장됨"
+    }
+  ],
+  "error": "locator.waitFor: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('dialog') to be visible\u001b[22m\n"
+}

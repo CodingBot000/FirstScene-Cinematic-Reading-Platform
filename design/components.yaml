@@ -1,0 +1,180 @@
+schemaVersion: 1
+package: '@firstscene/ui'
+components:
+- name: Button
+  props: 'variant: primary|secondary|ghost|destructive; size:md|lg; loading:boolean;
+    disabled:boolean; type'
+  a11y: native button; loading blocks double activation; accessible label retained
+  states:
+  - default
+  - hover
+  - focus-visible
+  - disabled
+  - loading
+  - error
+  storybookRequired: true
+- name: IconButton
+  props: label:string; icon:ReactNode; pressed?:boolean
+  a11y: 44px target; aria-label required; visible tooltip on focus
+  states:
+  - default
+  - hover
+  - focus-visible
+  - disabled
+  - loading
+  - error
+  storybookRequired: true
+- name: Typography
+  props: as:p|h1|h2|h3|span; variant:display|title|reading|ui|caption
+  a11y: semantic element independent from visual variant; no arbitrary HTML
+  states:
+  - default
+  - hover
+  - focus-visible
+  - disabled
+  - loading
+  - error
+  storybookRequired: true
+- name: StoryCard
+  props: id,title,summary,cover,href,tags,progress?
+  a11y: no nested buttons in anchor; alt and heading hierarchy
+  states:
+  - default
+  - hover
+  - focus-visible
+  - disabled
+  - loading
+  - error
+  storybookRequired: true
+- name: Tag
+  props: children; tone:neutral|accent
+  a11y: not interactive unless explicit button variant
+  states:
+  - default
+  - hover
+  - focus-visible
+  - disabled
+  - loading
+  - error
+  storybookRequired: true
+- name: Dialog
+  props: open,onOpenChange,title,description,children
+  a11y: focus trap, Escape close, restore trigger focus
+  states:
+  - default
+  - hover
+  - focus-visible
+  - disabled
+  - loading
+  - error
+  storybookRequired: true
+- name: Sheet
+  props: open,onOpenChange,title,children; side:bottom|right
+  a11y: same dialog semantics; no drag-only dismiss
+  states:
+  - default
+  - hover
+  - focus-visible
+  - disabled
+  - loading
+  - error
+  storybookRequired: true
+- name: Tabs
+  props: value,onValueChange,items
+  a11y: keyboard arrows/Home/End and roving focus
+  states:
+  - default
+  - hover
+  - focus-visible
+  - disabled
+  - loading
+  - error
+  storybookRequired: true
+- name: ToggleGroup
+  props: value,onValueChange,options,label
+  a11y: radio semantics for exclusive selection
+  states:
+  - default
+  - hover
+  - focus-visible
+  - disabled
+  - loading
+  - error
+  storybookRequired: true
+- name: Slider
+  props: value,onChange,min,max,step,label,valueText
+  a11y: keyboard increments; do not use for discrete font size if buttons clearer
+  states:
+  - default
+  - hover
+  - focus-visible
+  - disabled
+  - loading
+  - error
+  storybookRequired: true
+- name: Progress
+  props: value,max,label
+  a11y: semantic progressbar, avoid constant live announcement
+  states:
+  - default
+  - hover
+  - focus-visible
+  - disabled
+  - loading
+  - error
+  storybookRequired: true
+- name: Toast
+  props: message,tone:info|error|success,onDismiss
+  a11y: polite only for meaningful actions; no reading interruption
+  states:
+  - default
+  - hover
+  - focus-visible
+  - disabled
+  - loading
+  - error
+  storybookRequired: true
+- name: EmptyState
+  props: title,description,action?
+  a11y: no fabricated data; usable recovery CTA
+  states:
+  - default
+  - hover
+  - focus-visible
+  - disabled
+  - loading
+  - error
+  storybookRequired: true
+- name: ErrorState
+  props: title,message,onRetry?
+  a11y: safe message, no stack or secrets
+  states:
+  - default
+  - hover
+  - focus-visible
+  - disabled
+  - loading
+  - error
+  storybookRequired: true
+- name: ResponsiveAsset
+  props: variants,alt,decorative,priority,aspectRatio,focalPoint?
+  a11y: local allowlisted paths; picture AVIF/WebP; width/height stable
+  states:
+  - default
+  - hover
+  - focus-visible
+  - disabled
+  - loading
+  - error
+  storybookRequired: true
+- name: ReadingToolbar
+  props: title,sceneIndex,sceneCount,saveStatus,onBack,onSettings,onToc
+  a11y: presentational; no Next/router/cookie dependency
+  states:
+  - default
+  - hover
+  - focus-visible
+  - disabled
+  - loading
+  - error
+  storybookRequired: true

@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "observedAt": "2026-11-18T09:31:38.856Z",
+  "sourceCommit": "4f7aac271235826998bc3a07bd05d65a75519c62",
+  "scope": "Owned local Docker deployment with real disposable PostgreSQL; no public release/rollback claim",
+  "checks": [
+    {
+      "name": "runtime image uses the unprivileged node user",
+      "passed": true
+    },
+    {
+      "name": "no environment files, private source material or Git history are baked into runtime",
+      "passed": true
+    },
+    {
+      "name": "missing configuration exits before serving",
+      "passed": true
+    },
+    {
+      "name": "public HTTP configuration fails closed",
+      "passed": true
+    },
+    {
+      "name": "liveness and real database readiness return200",
+      "passed": true
+    },
+    {
+      "name": "application receives runtime credentials without owner/test bypass",
+      "passed": true
+    },
+    {
+      "name": "browserA writes preferences through API to PostgreSQL",
+      "passed": true
+    },
+    {
+      "name": "fresh browserB cannot read browserA records",
+      "passed": true
+    },
+    {
+      "name": "browserB has a distinct real anonymous session",
+      "passed": true
+    },
+    {
+      "name": "exactly two new session rows exist in the real database",
+      "passed": true
+    },
+    {
+      "name": "authentication cookie stays HttpOnly",
+      "passed": true
+    },
+    {
+      "name": "process restart preserves actual session expiry and saved preferences",
+      "passed": true
+    },
+    {
+      "name": "browserB state survives independently",
+      "passed": true
+    }
+  ],
+  "releaseReady": false,
+  "imageId": "sha256:5782ebda127595d523b27a2922ca6eb003e8921aa2a7b24f98a58406a2bc7db0",
+  "runtime": {
+    "node": "v24.22.3",
+    "uid": 1000,
+    "envFiles": [],
+    "privateBriefing": false,
+    "gitHistory": false
+  },
+  "origin": "http://127.0.0.1:60238",
+  "ownedApplicationRemoved": true,
+  "finishedAt": "2026-11-18T09:31:44.229Z"
+}

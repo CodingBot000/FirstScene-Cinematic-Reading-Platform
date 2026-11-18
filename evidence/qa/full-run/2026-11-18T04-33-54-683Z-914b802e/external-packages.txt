@@ -1,0 +1,41 @@
+
+> firstscene-workspace@0.1.0 pack:smoke /Users/switch/Development/Web/FirstScene
+> pnpm build:packages && node tools/pack-smoke.mjs
+
+
+> firstscene-workspace@0.1.0 build:packages /Users/switch/Development/Web/FirstScene
+> node tools/build-packages.mjs
+
+apps/web/features/reading-sync/transport.generated.ts 36ms
+
+> @firstscene/tokens@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/tokens
+> cd ../.. && node tools/generate-tokens.mjs && pnpm exec prettier --write packages/tokens/src/index.ts && pnpm exec tsc -p packages/tokens/tsconfig.json
+
+packages/tokens/src/index.ts 24ms
+
+> @firstscene/story-schema@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/story-schema
+> cd ../.. && node tools/generate-schema.mjs && pnpm exec prettier --write packages/story-schema/src/schema.ts && pnpm exec tsc -p packages/story-schema/tsconfig.json
+
+packages/story-schema/src/schema.ts 25ms
+
+> @firstscene/ui@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/ui
+> tsc -p tsconfig.json && cp src/styles.css dist/styles.css && cp src/css.d.ts dist/css.d.ts
+
+
+> @firstscene/reader-core@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/reader-core
+> tsc -p tsconfig.json
+
+
+> @firstscene/reader-react@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/reader-react
+> tsc -p tsconfig.json
+
+
+> @firstscene/content-compiler@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/content-compiler
+> tsc -p tsconfig.json
+
+
+> @firstscene/server-data@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/server-data
+> cd ../.. && node tools/generate-api-schema.mjs && pnpm exec prettier --write packages/server-data/src/api-schema.ts && pnpm exec tsc -p packages/server-data/tsconfig.json
+
+packages/server-data/src/api-schema.ts 30ms
+{"status":"PASS","packages":5,"externalConsumer":true,"nextOrDatabaseDependencies":false,"publication":false,"evidence":"evidence/package-consumer/result.json"}

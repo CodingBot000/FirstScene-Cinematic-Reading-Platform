@@ -1,0 +1,14 @@
+{
+  "observedAt": "2026-11-17T22:18:55.560284+00:00",
+  "status": "FORBIDDEN",
+  "httpStatus": 403,
+  "operation": "Vercel list_projects(search=firstscene,limit=20)",
+  "accessibleTeamListCount": 0,
+  "authorizationVerified": false,
+  "projectExists": "unknown",
+  "costTier": "unknown",
+  "externalDatabase": "unknown",
+  "mutations": [],
+  "scopeIdentifiersRedacted": true,
+  "recovery": "User-managed authorization for an explicitly approved target is required before a fresh provider lookup; no auth/global account change attempted."
+}

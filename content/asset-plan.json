@@ -1,0 +1,487 @@
+{
+  "schemaVersion": 1,
+  "providerPreference": "codex-native",
+  "requestedModel": "gpt-image-2",
+  "apiBudgetUsd": 0,
+  "maxGenerationAttempts": 22,
+  "assets": [
+    {
+      "id": "mail-bg-01",
+      "storyId": "post-office",
+      "sceneId": "mail-s01",
+      "role": "background",
+      "method": "generate",
+      "status": "PLANNED",
+      "aspectRatio": "16:10",
+      "referenceIds": [
+        "mail-cover"
+      ],
+      "derivedFrom": null,
+      "prompt": "Original cinematic editorial illustration. An empty tiny post office on a fictional seaside hill at blue hour. Wooden counter, brass balance scale, shallow drawers, one translucent folded envelope emitting a narrow honey-gold seam. Window to a dark teal sea. No people, no letters, no signage. Consistent palette: warm parchment, muted rust, midnight teal, narrow honey-gold light; seaside hillside town without real landmarks. Subtle painterly texture, precise spatial relationships, legible forms, no text, no logos, no watermark. Keep meaningful objects within central 60 percent for responsive crops. This is a fictional scene, not a real location.",
+      "alt": "",
+      "decorative": true,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "acceptance": [
+        "scene meaning matches storyboard",
+        "no identifiable real people or brands",
+        "no readable lettering",
+        "central subject survives 390px crop",
+        "consistent palette and recurring objects"
+      ]
+    },
+    {
+      "id": "mail-bg-02",
+      "storyId": "post-office",
+      "sceneId": "mail-s02",
+      "role": "background",
+      "method": "generate",
+      "status": "PLANNED",
+      "aspectRatio": "16:10",
+      "referenceIds": [
+        "mail-cover"
+      ],
+      "derivedFrom": null,
+      "prompt": "Original cinematic editorial illustration. Interior of the same small post office, close-up on a translucent envelope opened beside a brass scale. A small soft golden reflection suggesting a kitchen window falls across the wooden counter, but no literal ghosts or faces. Muted rust and parchment texture, no people or text. Consistent palette: warm parchment, muted rust, midnight teal, narrow honey-gold light; seaside hillside town without real landmarks. Subtle painterly texture, precise spatial relationships, legible forms, no text, no logos, no watermark. Keep meaningful objects within central 60 percent for responsive crops. This is a fictional scene, not a real location.",
+      "alt": "",
+      "decorative": true,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "acceptance": [
+        "scene meaning matches storyboard",
+        "no identifiable real people or brands",
+        "no readable lettering",
+        "central subject survives 390px crop",
+        "consistent palette and recurring objects"
+      ]
+    },
+    {
+      "id": "mail-bg-03",
+      "storyId": "post-office",
+      "sceneId": "mail-s03",
+      "role": "background",
+      "method": "generate",
+      "status": "PLANNED",
+      "aspectRatio": "16:10",
+      "referenceIds": [
+        "mail-cover"
+      ],
+      "derivedFrom": null,
+      "prompt": "Original cinematic editorial illustration. A quiet fictional hillside alley at night where an old house used to stand. A rectangular pale mark on a retaining wall, a lone empty mailbox post, distant sea. Warm narrow light from an envelope reflected on wet paving, no visible person. Restrained mystery, no horror. Consistent palette: warm parchment, muted rust, midnight teal, narrow honey-gold light; seaside hillside town without real landmarks. Subtle painterly texture, precise spatial relationships, legible forms, no text, no logos, no watermark. Keep meaningful objects within central 60 percent for responsive crops. This is a fictional scene, not a real location.",
+      "alt": "",
+      "decorative": true,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "acceptance": [
+        "scene meaning matches storyboard",
+        "no identifiable real people or brands",
+        "no readable lettering",
+        "central subject survives 390px crop",
+        "consistent palette and recurring objects"
+      ]
+    },
+    {
+      "id": "mail-bg-04",
+      "storyId": "post-office",
+      "sceneId": "mail-s04",
+      "role": "background",
+      "method": "generate",
+      "status": "PLANNED",
+      "aspectRatio": "16:10",
+      "referenceIds": [
+        "mail-cover"
+      ],
+      "derivedFrom": null,
+      "prompt": "Original cinematic editorial illustration. Same post office counter near dawn, two hands deliberately absent, a blank address card and a fountain pen next to the open light envelope, brass scale now balanced. Golden light through a small round opening, midnight teal surroundings, no readable text. Consistent palette: warm parchment, muted rust, midnight teal, narrow honey-gold light; seaside hillside town without real landmarks. Subtle painterly texture, precise spatial relationships, legible forms, no text, no logos, no watermark. Keep meaningful objects within central 60 percent for responsive crops. This is a fictional scene, not a real location.",
+      "alt": "",
+      "decorative": true,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "acceptance": [
+        "scene meaning matches storyboard",
+        "no identifiable real people or brands",
+        "no readable lettering",
+        "central subject survives 390px crop",
+        "consistent palette and recurring objects"
+      ]
+    },
+    {
+      "id": "mail-bg-05",
+      "storyId": "post-office",
+      "sceneId": "mail-s05",
+      "role": "background",
+      "method": "generate",
+      "status": "PLANNED",
+      "aspectRatio": "16:10",
+      "referenceIds": [
+        "mail-cover"
+      ],
+      "derivedFrom": null,
+      "prompt": "Original cinematic editorial illustration. Exterior of the same hill post office at first dawn, wooden shutters closing, pale peach light over teal sea, a small single golden paper shape carried gently toward the town. No people, no floating text, subtle grounded magical realism. Consistent palette: warm parchment, muted rust, midnight teal, narrow honey-gold light; seaside hillside town without real landmarks. Subtle painterly texture, precise spatial relationships, legible forms, no text, no logos, no watermark. Keep meaningful objects within central 60 percent for responsive crops. This is a fictional scene, not a real location.",
+      "alt": "",
+      "decorative": true,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "acceptance": [
+        "scene meaning matches storyboard",
+        "no identifiable real people or brands",
+        "no readable lettering",
+        "central subject survives 390px crop",
+        "consistent palette and recurring objects"
+      ]
+    },
+    {
+      "id": "mail-bg-06",
+      "storyId": "post-office",
+      "sceneId": "mail-s06",
+      "role": "background",
+      "method": "generate",
+      "status": "PLANNED",
+      "aspectRatio": "16:10",
+      "referenceIds": [
+        "mail-cover"
+      ],
+      "derivedFrom": null,
+      "prompt": "Original cinematic editorial illustration. A small new apartment kitchen in morning light, two mismatched ceramic cups on a wooden windowsill, one healthy small green plant, a simple moving box partly unpacked. Warm parchment and soft teal, a subtle round pool of sunlight, no people or text. Consistent palette: warm parchment, muted rust, midnight teal, narrow honey-gold light; seaside hillside town without real landmarks. Subtle painterly texture, precise spatial relationships, legible forms, no text, no logos, no watermark. Keep meaningful objects within central 60 percent for responsive crops. This is a fictional scene, not a real location.",
+      "alt": "",
+      "decorative": true,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "acceptance": [
+        "scene meaning matches storyboard",
+        "no identifiable real people or brands",
+        "no readable lettering",
+        "central subject survives 390px crop",
+        "consistent palette and recurring objects"
+      ]
+    },
+    {
+      "id": "mail-character-ref",
+      "storyId": "post-office",
+      "sceneId": null,
+      "role": "reference",
+      "method": "generate",
+      "status": "PLANNED",
+      "aspectRatio": "2:3",
+      "referenceIds": [],
+      "derivedFrom": null,
+      "prompt": "Create an original editorial character reference portrait, one adult person only, waist-up, three-quarter view, neutral plain background with generous margins. Yunseo, a fictional Korean woman aged 32, chin-length straight black bob, ivory blouse, muted rust cardigan, simple brass crescent pin on the left chest, calm observant expression. Keep the outfit and crescent pin identical. Restrained painterly texture, palette: warm parchment, muted rust, midnight teal, narrow honey-gold light; seaside hillside town without real landmarks. No text, labels, logos, famous resemblance or extra figures. Clear face and outfit. This image will become the canonical reference and a cropped portrait layer.",
+      "alt": "캐릭터 스타일 기준 이미지",
+      "decorative": false,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.38
+      },
+      "acceptance": [
+        "adult fictional single character",
+        "correct outfit and identifying accessory",
+        "face and torso inside safe area",
+        "no in-image text",
+        "consistent editorial style"
+      ]
+    },
+    {
+      "id": "mail-cover",
+      "storyId": "post-office",
+      "sceneId": null,
+      "role": "cover",
+      "method": "generate",
+      "status": "PLANNED",
+      "aspectRatio": "3:4",
+      "referenceIds": [
+        "mail-character-ref"
+      ],
+      "derivedFrom": null,
+      "prompt": "Original book-cover artwork without any title or lettering for the fictional story 빛을 접어 보내는 우체국. A tiny wooden post office on a seaside hill, one folded translucent golden envelope in the foreground, distant teal sea at dusk. Use the reference only for painterly style and palette, no character required. Palette: warm parchment, muted rust, midnight teal, narrow honey-gold light; seaside hillside town without real landmarks. Strong centered composition, readable thumbnail, central 60 percent crop-safe, no logo or text.",
+      "alt": "빛을 접어 보내는 우체국의 오리지널 표지",
+      "decorative": false,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "acceptance": [
+        "recognizable thumbnail",
+        "matches story motifs",
+        "no spoilers or text",
+        "safe 3:4 and 16:10 crop",
+        "same visual family as scene images"
+      ]
+    },
+    {
+      "id": "mail-portrait",
+      "storyId": "post-office",
+      "sceneId": null,
+      "role": "portrait",
+      "method": "derive",
+      "status": "PLANNED",
+      "aspectRatio": "2:3",
+      "referenceIds": [],
+      "derivedFrom": "mail-character-ref",
+      "prompt": "Derive a crop of the approved single-character reference. Preserve face, clothing and accessory. Use an opaque portrait panel; no generation or invented transparency.",
+      "alt": "윤서의 캐릭터 일러스트",
+      "decorative": false,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.38
+      },
+      "acceptance": [
+        "source hash is approved reference",
+        "face not clipped",
+        "no upscaling",
+        "matches caption",
+        "fits reader portrait panel"
+      ]
+    },
+    {
+      "id": "tide-bg-01",
+      "storyId": "tide-station",
+      "sceneId": "tide-s01",
+      "role": "background",
+      "method": "generate",
+      "status": "PLANNED",
+      "aspectRatio": "16:10",
+      "referenceIds": [
+        "tide-cover"
+      ],
+      "derivedFrom": null,
+      "prompt": "Original cinematic editorial illustration. An abandoned fictional underground station with perfectly dry stone platform and dark rails, deep mineral blue tiles, old oxidized copper water gauge with no readable markings, one tiny warm orange indicator. No water, no people, no real transit logos or text. Consistent palette: deep mineral blue, oxidized copper, pale cyan reflections, one small warm orange accent; entirely fictional underground civic station. Subtle painterly texture, precise spatial relationships, legible forms, no text, no logos, no watermark. Keep meaningful objects within central 60 percent for responsive crops. This is a fictional scene, not a real location.",
+      "alt": "",
+      "decorative": true,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "acceptance": [
+        "scene meaning matches storyboard",
+        "no identifiable real people or brands",
+        "no readable lettering",
+        "central subject survives 390px crop",
+        "consistent palette and recurring objects"
+      ]
+    },
+    {
+      "id": "tide-bg-02",
+      "storyId": "tide-station",
+      "sceneId": "tide-s02",
+      "role": "background",
+      "method": "generate",
+      "status": "PLANNED",
+      "aspectRatio": "16:10",
+      "referenceIds": [
+        "tide-cover"
+      ],
+      "derivedFrom": null,
+      "prompt": "Original cinematic editorial illustration. Close view of an old ticket counter in the same dry blue-tiled station, blank pale ticket on copper tray, wall cabinet holding a faded schematic rendered as abstract lines without readable text. A small pool of warm indicator light, no people. Consistent palette: deep mineral blue, oxidized copper, pale cyan reflections, one small warm orange accent; entirely fictional underground civic station. Subtle painterly texture, precise spatial relationships, legible forms, no text, no logos, no watermark. Keep meaningful objects within central 60 percent for responsive crops. This is a fictional scene, not a real location.",
+      "alt": "",
+      "decorative": true,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "acceptance": [
+        "scene meaning matches storyboard",
+        "no identifiable real people or brands",
+        "no readable lettering",
+        "central subject survives 390px crop",
+        "consistent palette and recurring objects"
+      ]
+    },
+    {
+      "id": "tide-bg-03",
+      "storyId": "tide-station",
+      "sceneId": "tide-s03",
+      "role": "background",
+      "method": "generate",
+      "status": "PLANNED",
+      "aspectRatio": "16:10",
+      "referenceIds": [
+        "tide-cover"
+      ],
+      "derivedFrom": null,
+      "prompt": "Original cinematic editorial illustration. Service corridor under the fictional station, old copper conduit lines along dark blue walls leading to a round acoustic hatch. Reflected pale cyan waveform-like light on dry floor, not holographic text. One portable warm lantern, no people. Consistent palette: deep mineral blue, oxidized copper, pale cyan reflections, one small warm orange accent; entirely fictional underground civic station. Subtle painterly texture, precise spatial relationships, legible forms, no text, no logos, no watermark. Keep meaningful objects within central 60 percent for responsive crops. This is a fictional scene, not a real location.",
+      "alt": "",
+      "decorative": true,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "acceptance": [
+        "scene meaning matches storyboard",
+        "no identifiable real people or brands",
+        "no readable lettering",
+        "central subject survives 390px crop",
+        "consistent palette and recurring objects"
+      ]
+    },
+    {
+      "id": "tide-bg-04",
+      "storyId": "tide-station",
+      "sceneId": "tide-s04",
+      "role": "background",
+      "method": "generate",
+      "status": "PLANNED",
+      "aspectRatio": "16:10",
+      "referenceIds": [
+        "tide-cover"
+      ],
+      "derivedFrom": null,
+      "prompt": "Original cinematic editorial illustration. A circular underground acoustic archive chamber, dry reflective floor, thin copper rings and a central glass cylinder containing abstract pale cyan ripples of light, no actual water, one small orange lamp. Quiet cinematic mystery, no text, no people. Consistent palette: deep mineral blue, oxidized copper, pale cyan reflections, one small warm orange accent; entirely fictional underground civic station. Subtle painterly texture, precise spatial relationships, legible forms, no text, no logos, no watermark. Keep meaningful objects within central 60 percent for responsive crops. This is a fictional scene, not a real location.",
+      "alt": "",
+      "decorative": true,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "acceptance": [
+        "scene meaning matches storyboard",
+        "no identifiable real people or brands",
+        "no readable lettering",
+        "central subject survives 390px crop",
+        "consistent palette and recurring objects"
+      ]
+    },
+    {
+      "id": "tide-bg-05",
+      "storyId": "tide-station",
+      "sceneId": "tide-s05",
+      "role": "background",
+      "method": "generate",
+      "status": "PLANNED",
+      "aspectRatio": "16:10",
+      "referenceIds": [
+        "tide-cover"
+      ],
+      "derivedFrom": null,
+      "prompt": "Original cinematic editorial illustration. Return view of the empty station ticket counter at pre-dawn, copper gauge at rest, a single warm steady indicator instead of blinking, open service door revealing a softly lit stairway. Dry floor, mineral blue softened by amber, no people or text. Consistent palette: deep mineral blue, oxidized copper, pale cyan reflections, one small warm orange accent; entirely fictional underground civic station. Subtle painterly texture, precise spatial relationships, legible forms, no text, no logos, no watermark. Keep meaningful objects within central 60 percent for responsive crops. This is a fictional scene, not a real location.",
+      "alt": "",
+      "decorative": true,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "acceptance": [
+        "scene meaning matches storyboard",
+        "no identifiable real people or brands",
+        "no readable lettering",
+        "central subject survives 390px crop",
+        "consistent palette and recurring objects"
+      ]
+    },
+    {
+      "id": "tide-bg-06",
+      "storyId": "tide-station",
+      "sceneId": "tide-s06",
+      "role": "background",
+      "method": "generate",
+      "status": "PLANNED",
+      "aspectRatio": "16:10",
+      "referenceIds": [
+        "tide-cover"
+      ],
+      "derivedFrom": null,
+      "prompt": "Original cinematic editorial illustration. Fictional city street at early morning after the night shift, small civic listening kiosk with simple blank circular speaker grille beside a newly planted tree, closed underground stair entrance in the distance. Soft pale cyan daylight and warm orange accents, no people or text. Consistent palette: deep mineral blue, oxidized copper, pale cyan reflections, one small warm orange accent; entirely fictional underground civic station. Subtle painterly texture, precise spatial relationships, legible forms, no text, no logos, no watermark. Keep meaningful objects within central 60 percent for responsive crops. This is a fictional scene, not a real location.",
+      "alt": "",
+      "decorative": true,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "acceptance": [
+        "scene meaning matches storyboard",
+        "no identifiable real people or brands",
+        "no readable lettering",
+        "central subject survives 390px crop",
+        "consistent palette and recurring objects"
+      ]
+    },
+    {
+      "id": "tide-character-ref",
+      "storyId": "tide-station",
+      "sceneId": null,
+      "role": "reference",
+      "method": "generate",
+      "status": "PLANNED",
+      "aspectRatio": "2:3",
+      "referenceIds": [],
+      "derivedFrom": null,
+      "prompt": "Create an original editorial character reference portrait, one adult person only, waist-up, three-quarter view, neutral plain background with generous margins. Jeongha, a fictional Korean woman aged 34, black hair tied in a low practical ponytail, dark navy waterproof work jacket, olive canvas shoulder tool bag, a small orange analog wristwatch, no uniform insignia. Keep the jacket, bag and watch identical. Restrained painterly texture, palette: deep mineral blue, oxidized copper, pale cyan reflections, one small warm orange accent; entirely fictional underground civic station. No text, labels, logos, famous resemblance or extra figures. Clear face and outfit. This image will become the canonical reference and a cropped portrait layer.",
+      "alt": "캐릭터 스타일 기준 이미지",
+      "decorative": false,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.38
+      },
+      "acceptance": [
+        "adult fictional single character",
+        "correct outfit and identifying accessory",
+        "face and torso inside safe area",
+        "no in-image text",
+        "consistent editorial style"
+      ]
+    },
+    {
+      "id": "tide-cover",
+      "storyId": "tide-station",
+      "sceneId": null,
+      "role": "cover",
+      "method": "generate",
+      "status": "PLANNED",
+      "aspectRatio": "3:4",
+      "referenceIds": [
+        "tide-character-ref"
+      ],
+      "derivedFrom": null,
+      "prompt": "Original book-cover artwork without any title or lettering for the fictional story 수심 없는 역. An empty dry underground blue-tiled station, a copper gauge and a small warm orange signal, pale cyan reflections that suggest sound rather than water. Use the reference only for painterly style and palette, no character required. Palette: deep mineral blue, oxidized copper, pale cyan reflections, one small warm orange accent; entirely fictional underground civic station. Strong centered composition, readable thumbnail, central 60 percent crop-safe, no logo or text.",
+      "alt": "수심 없는 역의 오리지널 표지",
+      "decorative": false,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "acceptance": [
+        "recognizable thumbnail",
+        "matches story motifs",
+        "no spoilers or text",
+        "safe 3:4 and 16:10 crop",
+        "same visual family as scene images"
+      ]
+    },
+    {
+      "id": "tide-portrait",
+      "storyId": "tide-station",
+      "sceneId": null,
+      "role": "portrait",
+      "method": "derive",
+      "status": "PLANNED",
+      "aspectRatio": "2:3",
+      "referenceIds": [],
+      "derivedFrom": "tide-character-ref",
+      "prompt": "Derive a crop of the approved single-character reference. Preserve face, clothing and accessory. Use an opaque portrait panel; no generation or invented transparency.",
+      "alt": "정하의 캐릭터 일러스트",
+      "decorative": false,
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.38
+      },
+      "acceptance": [
+        "source hash is approved reference",
+        "face not clipped",
+        "no upscaling",
+        "matches caption",
+        "fits reader portrait panel"
+      ]
+    }
+  ]
+}

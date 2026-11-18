@@ -1,0 +1,29 @@
+{
+  "observedAt": "2026-11-18T06:43:53.531086+00:00",
+  "codeCommit": "d1247234277cec4332a0e579f72889dc272a2446",
+  "status": "BACKEND_FEEDBACK_VERIFIED",
+  "decision": "Asia/Seoul calendar midnight explicitly approved by user",
+  "databaseTests": 21,
+  "apiTests": 25,
+  "concurrentRequests": 12,
+  "acceptedNewPerStorySessionDay": 5,
+  "productionClockOverride": false,
+  "artifacts": [
+    {
+      "path": "evidence/feedback/backend/api-environment.json",
+      "sha256": "ecd9c21bea9fb25e9268615455d1208e687409d1d950c46fa43e9181b8cebd99"
+    },
+    {
+      "path": "evidence/feedback/backend/database-results.json",
+      "sha256": "e3c88c06a37942e27eb4e81dfa8339689a48728fde8f1a547f5969dfbd7aa200"
+    },
+    {
+      "path": "evidence/feedback/backend/cleanup.json",
+      "sha256": "8368d5e257d7d02d42b662fecbe02df5b169ecdcd66889c7f2006ab423e62bae"
+    },
+    {
+      "path": "evidence/feedback/backend/api-results.json",
+      "sha256": "08072839a7df174be23d833b6680793ab27cfab085cac343ce16aad701934144"
+    }
+  ]
+}

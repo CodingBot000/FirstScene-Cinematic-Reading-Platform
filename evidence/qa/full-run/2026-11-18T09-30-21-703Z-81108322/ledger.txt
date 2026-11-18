@@ -1,0 +1,5 @@
+
+> firstscene-workspace@0.1.0 check:state /Users/switch/Development/Web/FirstScene
+> node tools/check-state.mjs
+
+Execution DAG and evidence references passed: 24/33. Product readiness not implied.

@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "observedAt": "2026-11-18T09:25:21.630Z",
+  "plainGsapChunks": [],
+  "cinematicInitialSceneAssets": [
+    "mail-bg-01",
+    "mail-bg-02"
+  ],
+  "availableGsapChunkCount": 1
+}

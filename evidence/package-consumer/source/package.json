@@ -1,0 +1,31 @@
+{
+  "name": "firstscene-external-consumer",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "packageManager": "pnpm@10.14.0",
+  "dependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "@firstscene/tokens": "file:./tarballs/firstscene-tokens-0.1.0.tgz",
+    "@firstscene/story-schema": "file:./tarballs/firstscene-story-schema-0.1.0.tgz",
+    "@firstscene/ui": "file:./tarballs/firstscene-ui-0.1.0.tgz",
+    "@firstscene/reader-core": "file:./tarballs/firstscene-reader-core-0.1.0.tgz",
+    "@firstscene/reader-react": "file:./tarballs/firstscene-reader-react-0.1.0.tgz"
+  },
+  "devDependencies": {
+    "vite": "8.3.8",
+    "typescript": "6.0.3",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@firstscene/tokens": "file:./tarballs/firstscene-tokens-0.1.0.tgz",
+      "@firstscene/story-schema": "file:./tarballs/firstscene-story-schema-0.1.0.tgz",
+      "@firstscene/ui": "file:./tarballs/firstscene-ui-0.1.0.tgz",
+      "@firstscene/reader-core": "file:./tarballs/firstscene-reader-core-0.1.0.tgz",
+      "@firstscene/reader-react": "file:./tarballs/firstscene-reader-react-0.1.0.tgz"
+    }
+  }
+}

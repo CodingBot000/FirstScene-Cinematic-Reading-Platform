@@ -1,0 +1,187 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Asset plan v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "providerPreference",
+    "requestedModel",
+    "apiBudgetUsd",
+    "maxGenerationAttempts",
+    "assets"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "providerPreference": {
+      "const": "codex-native"
+    },
+    "requestedModel": {
+      "const": "gpt-image-2"
+    },
+    "apiBudgetUsd": {
+      "type": "number",
+      "minimum": 0
+    },
+    "maxGenerationAttempts": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 22
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "storyId",
+          "sceneId",
+          "role",
+          "method",
+          "status",
+          "aspectRatio",
+          "referenceIds",
+          "derivedFrom",
+          "prompt",
+          "alt",
+          "decorative",
+          "focalPoint",
+          "acceptance"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]{1,63}$"
+          },
+          "storyId": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]{1,63}$"
+          },
+          "sceneId": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]{1,63}$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "role": {
+            "enum": [
+              "background",
+              "cover",
+              "reference",
+              "portrait"
+            ]
+          },
+          "method": {
+            "enum": [
+              "generate",
+              "derive"
+            ]
+          },
+          "status": {
+            "const": "PLANNED"
+          },
+          "aspectRatio": {
+            "enum": [
+              "16:10",
+              "3:4",
+              "2:3"
+            ]
+          },
+          "referenceIds": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9-]{1,63}$"
+            }
+          },
+          "derivedFrom": {
+            "anyOf": [
+              {
+                "type": "string",
+                "pattern": "^[a-z][a-z0-9-]{1,63}$"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 50
+          },
+          "alt": {
+            "type": "string"
+          },
+          "decorative": {
+            "type": "boolean"
+          },
+          "focalPoint": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "x",
+              "y"
+            ],
+            "properties": {
+              "x": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "y": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            }
+          },
+          "acceptance": {
+            "type": "array",
+            "minItems": 3,
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "decorative": {
+                  "const": true
+                }
+              },
+              "required": [
+                "decorative"
+              ]
+            },
+            "then": {
+              "properties": {
+                "alt": {
+                  "const": ""
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "alt": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,260 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/24.5.0/bin/node",
+      "/Users/switch/Development/Web/FirstScene/node_modules/@playwright/test/cli.js",
+      "test",
+      "--project=chromium",
+      "tests/e2e/completion.spec.ts"
+    ],
+    "configFile": "/Users/switch/Development/Web/FirstScene/playwright.config.ts",
+    "rootDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/switch/Development/Web/FirstScene/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/switch/Development/Web/FirstScene/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/switch/Development/Web/FirstScene/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "api",
+        "name": "api",
+        "testDir": "/Users/switch/Development/Web/FirstScene/tests/api",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/switch/Development/Web/FirstScene/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+        "snapshotDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:3110",
+          "locale": "ko-KR",
+          "timezoneId": "Asia/Seoul",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure",
+          "browserName": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "evidence/qa/playwright-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.1",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "completion.spec.ts",
+      "file": "completion.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "P05 completion is an explicit last CTA and a delayed acknowledgement preserves a newer reread anchor",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2658,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T00:47:30.707Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "222eb7ebef88c56bfdae-ac6b227538c8f7607dcd",
+          "file": "completion.spec.ts",
+          "line": 20,
+          "column": 1
+        },
+        {
+          "title": "P05 offline completion stays temporary and reconnect confirms completion before saving the latest anchor",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 8080,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"mail-s0\u001b[7m1\u001b[27m-b0\u001b[7m2\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"mail-s0\u001b[7m4\u001b[27m-b0\u001b[7m1\u001b[27m\"\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"mail-s0\u001b[7m1\u001b[27m-b0\u001b[7m2\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"mail-s0\u001b[7m4\u001b[27m-b0\u001b[7m1\u001b[27m\"\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n    at /Users/switch/Development/Web/FirstScene/tests/e2e/completion.spec.ts:118:62",
+                    "location": {
+                      "file": "/Users/switch/Development/Web/FirstScene/tests/e2e/completion.spec.ts",
+                      "column": 62,
+                      "line": 118
+                    },
+                    "snippet": " \u001b[90m 116 |\u001b[39m   \u001b[36mawait\u001b[39m context\u001b[33m.\u001b[39msetOffline(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 117 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m\"서버에 저장됨\"\u001b[39m\u001b[33m,\u001b[39m { exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m }))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 118 |\u001b[39m   \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39mpoll(\u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m (\u001b[36mawait\u001b[39m record(page))\u001b[33m.\u001b[39mbeatId)\u001b[33m.\u001b[39mtoBe(beat)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 119 |\u001b[39m   expect(\u001b[36mawait\u001b[39m record(page))\u001b[33m.\u001b[39mtoMatchObject({\n \u001b[90m 120 |\u001b[39m     completed\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 121 |\u001b[39m     furthestOrdinal\u001b[33m:\u001b[39m \u001b[35m35\u001b[39m\u001b[33m,\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/switch/Development/Web/FirstScene/tests/e2e/completion.spec.ts",
+                        "column": 62,
+                        "line": 118
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m\"mail-s0\u001b[7m1\u001b[27m-b0\u001b[7m2\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"mail-s0\u001b[7m4\u001b[27m-b0\u001b[7m1\u001b[27m\"\u001b[39m\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate\n\n  116 |   await context.setOffline(false);\n  117 |   await expect(page.getByText(\"서버에 저장됨\", { exact: true })).toBeVisible();\n> 118 |   await expect.poll(async () => (await record(page)).beatId).toBe(beat);\n      |                                                              ^\n  119 |   expect(await record(page)).toMatchObject({\n  120 |     completed: true,\n  121 |     furthestOrdinal: 35,\n    at /Users/switch/Development/Web/FirstScene/tests/e2e/completion.spec.ts:118:62"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-18T00:47:33.581Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/switch/Development/Web/FirstScene/test-results/completion-P05-offline-com-78465-re-saving-the-latest-anchor-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/switch/Development/Web/FirstScene/test-results/completion-P05-offline-com-78465-re-saving-the-latest-anchor-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/switch/Development/Web/FirstScene/test-results/completion-P05-offline-com-78465-re-saving-the-latest-anchor-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/switch/Development/Web/FirstScene/tests/e2e/completion.spec.ts",
+                    "column": 62,
+                    "line": 118
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "222eb7ebef88c56bfdae-e877249f4512255b873c",
+          "file": "completion.spec.ts",
+          "line": 94,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-18T00:47:29.862Z",
+    "duration": 11943.197,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

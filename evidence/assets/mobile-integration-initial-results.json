@@ -1,0 +1,260 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/24.5.0/bin/node",
+      "/Users/switch/Development/Web/FirstScene/node_modules/@playwright/test/cli.js",
+      "test",
+      "--project=chromium",
+      "tests/e2e/assets.spec.ts"
+    ],
+    "configFile": "/Users/switch/Development/Web/FirstScene/playwright.config.ts",
+    "rootDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/switch/Development/Web/FirstScene/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/switch/Development/Web/FirstScene/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/switch/Development/Web/FirstScene/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "api",
+        "name": "api",
+        "testDir": "/Users/switch/Development/Web/FirstScene/tests/api",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/switch/Development/Web/FirstScene/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+        "snapshotDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:3110",
+          "locale": "ko-KR",
+          "timezoneId": "Asia/Seoul",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure",
+          "browserName": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "evidence/qa/playwright-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.1",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "assets.spec.ts",
+      "file": "assets.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "P02 actual public assets are16approved and bothformats serve correctMIME",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 79,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T19:54:50.694Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "381c53c131d04f5e8243-1a06c34f1c836e4aae4a",
+          "file": "assets.spec.ts",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "P02 mobile portrait scene keeps a stable anchor rather than oscillating afterimage/portraitmount",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 817,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"mail-s02-b01\",\u001b[39m\n\u001b[31m+   \"mail-s01-b06\",\u001b[39m\n\u001b[2m  ]\u001b[22m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"mail-s02-b01\",\u001b[39m\n\u001b[31m+   \"mail-s01-b06\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n    at /Users/switch/Development/Web/FirstScene/tests/e2e/assets.spec.ts:48:50",
+                    "location": {
+                      "file": "/Users/switch/Development/Web/FirstScene/tests/e2e/assets.spec.ts",
+                      "column": 50,
+                      "line": 48
+                    },
+                    "snippet": " \u001b[90m 46 |\u001b[39m     \u001b[36mreturn\u001b[39m values\u001b[33m;\u001b[39m\n \u001b[90m 47 |\u001b[39m   })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 48 |\u001b[39m   expect(\u001b[33mArray\u001b[39m\u001b[33m.\u001b[39mfrom(\u001b[36mnew\u001b[39m \u001b[33mSet\u001b[39m(states\u001b[33m.\u001b[39mslice(\u001b[33m-\u001b[39m\u001b[35m10\u001b[39m))))\u001b[33m.\u001b[39mtoEqual([\u001b[32m\"mail-s02-b01\"\u001b[39m])\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 49 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mscreenshot({\n \u001b[90m 50 |\u001b[39m     path\u001b[33m:\u001b[39m \u001b[32m\"evidence/assets/mobile-portrait-current.png\"\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 51 |\u001b[39m     fullPage\u001b[33m:\u001b[39m \u001b[36mfalse\u001b[39m\u001b[33m,\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/switch/Development/Web/FirstScene/tests/e2e/assets.spec.ts",
+                        "column": 50,
+                        "line": 48
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // deep equality\u001b[22m\n\n\u001b[32m- Expected  - 1\u001b[39m\n\u001b[31m+ Received  + 1\u001b[39m\n\n\u001b[2m  Array [\u001b[22m\n\u001b[32m-   \"mail-s02-b01\",\u001b[39m\n\u001b[31m+   \"mail-s01-b06\",\u001b[39m\n\u001b[2m  ]\u001b[22m\n\n  46 |     return values;\n  47 |   });\n> 48 |   expect(Array.from(new Set(states.slice(-10)))).toEqual([\"mail-s02-b01\"]);\n     |                                                  ^\n  49 |   await page.screenshot({\n  50 |     path: \"evidence/assets/mobile-portrait-current.png\",\n  51 |     fullPage: false,\n    at /Users/switch/Development/Web/FirstScene/tests/e2e/assets.spec.ts:48:50"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T19:54:50.789Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/switch/Development/Web/FirstScene/test-results/assets-P02-mobile-portrait-98694-ng-afterimage-portraitmount-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/switch/Development/Web/FirstScene/test-results/assets-P02-mobile-portrait-98694-ng-afterimage-portraitmount-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/switch/Development/Web/FirstScene/test-results/assets-P02-mobile-portrait-98694-ng-afterimage-portraitmount-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/switch/Development/Web/FirstScene/tests/e2e/assets.spec.ts",
+                    "column": 50,
+                    "line": 48
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "381c53c131d04f5e8243-287b6908dad13cb5448c",
+          "file": "assets.spec.ts",
+          "line": 25,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-17T19:54:49.932Z",
+    "duration": 1963.9270000000001,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

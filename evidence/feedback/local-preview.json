@@ -1,0 +1,42 @@
+{
+  "observedAt": "2026-11-18T09:32:48.226562+00:00",
+  "origin": "http://127.0.0.1:3100",
+  "publicDeployment": false,
+  "checks": [
+    {
+      "route": "/health/live",
+      "status": 200,
+      "bytes": 15,
+      "sha256": "a29ee2b15c494311c52521766e44af56a3ad2248e7a8ab465e5206463c13d288",
+      "beatCount": null
+    },
+    {
+      "route": "/health/ready",
+      "status": 200,
+      "bytes": 15,
+      "sha256": "a29ee2b15c494311c52521766e44af56a3ad2248e7a8ab465e5206463c13d288",
+      "beatCount": null
+    },
+    {
+      "route": "/",
+      "status": 200,
+      "bytes": 20390,
+      "sha256": "9991fcb11f639390f112042cdf44e3d70d2e840338c4607efc7a3f65d640348e",
+      "beatCount": null
+    },
+    {
+      "route": "/read/post-office",
+      "status": 200,
+      "bytes": 62754,
+      "sha256": "4d29166f6c3c866e5e93475f57bef96c5f60773536656e6085761039fbc2a3a0",
+      "beatCount": 36
+    },
+    {
+      "route": "/read/tide-station",
+      "status": 200,
+      "bytes": 63341,
+      "sha256": "9e9314b193e827cf24a930d287882a1832961f59ba57cbfa0d3d75f0b0335292",
+      "beatCount": 36
+    }
+  ]
+}

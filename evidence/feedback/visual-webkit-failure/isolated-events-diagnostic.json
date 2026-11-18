@@ -1,0 +1,234 @@
+{
+  "observedAt": "2026-11-18T07:53:17.865Z",
+  "status": "REPRODUCED",
+  "samples": [
+    {
+      "label": "first-save",
+      "button": {
+        "x": 330.046875,
+        "y": 6,
+        "w": 47.953125,
+        "h": 44
+      },
+      "hit": {
+        "tag": "BUTTON",
+        "class": "fs-button fs-ghost fs-md "
+      },
+      "hittable": true,
+      "pointerEvents": {
+        "body": "auto",
+        "html": "auto",
+        "button": "auto"
+      },
+      "scroll": {
+        "x": 0,
+        "y": 131
+      },
+      "viewport": {
+        "w": 390,
+        "h": 844,
+        "pageTop": 131,
+        "offsetTop": 0,
+        "scale": 1
+      },
+      "status": "서버에 저장됨",
+      "focused": true,
+      "events": [],
+      "pageStyle": {
+        "overflow": "visible",
+        "position": "static"
+      },
+      "screen": {
+        "w": 390,
+        "h": 844,
+        "dpr": 1,
+        "outerW": 390,
+        "outerH": 844
+      }
+    },
+    {
+      "label": "stable-save",
+      "button": {
+        "x": 330.046875,
+        "y": 6,
+        "w": 47.953125,
+        "h": 44
+      },
+      "hit": {
+        "tag": "BUTTON",
+        "class": "fs-button fs-ghost fs-md "
+      },
+      "hittable": true,
+      "pointerEvents": {
+        "body": "auto",
+        "html": "auto",
+        "button": "auto"
+      },
+      "scroll": {
+        "x": 0,
+        "y": 131
+      },
+      "viewport": {
+        "w": 390,
+        "h": 844,
+        "pageTop": 131,
+        "offsetTop": 0,
+        "scale": 1
+      },
+      "status": "서버에 저장됨",
+      "focused": true,
+      "events": [],
+      "pageStyle": {
+        "overflow": "visible",
+        "position": "static"
+      },
+      "screen": {
+        "w": 390,
+        "h": 844,
+        "dpr": 1,
+        "outerW": 390,
+        "outerH": 844
+      }
+    },
+    {
+      "label": "after-screenshot",
+      "button": {
+        "x": 330.046875,
+        "y": 6,
+        "w": 47.953125,
+        "h": 44
+      },
+      "hit": {
+        "tag": "BUTTON",
+        "class": "fs-button fs-ghost fs-md "
+      },
+      "hittable": true,
+      "pointerEvents": {
+        "body": "auto",
+        "html": "auto",
+        "button": "auto"
+      },
+      "scroll": {
+        "x": 0,
+        "y": 131
+      },
+      "viewport": {
+        "w": 390,
+        "h": 844,
+        "pageTop": 131,
+        "offsetTop": 0,
+        "scale": 1
+      },
+      "status": "서버에 저장됨",
+      "focused": true,
+      "events": [],
+      "pageStyle": {
+        "overflow": "visible",
+        "position": "static"
+      },
+      "screen": {
+        "w": 390,
+        "h": 844,
+        "dpr": 1,
+        "outerW": 390,
+        "outerH": 844
+      }
+    },
+    {
+      "label": "after-click",
+      "button": {
+        "x": 330.046875,
+        "y": 6,
+        "w": 47.953125,
+        "h": 44
+      },
+      "hit": {
+        "tag": "BUTTON",
+        "class": "fs-button fs-ghost fs-md "
+      },
+      "hittable": true,
+      "pointerEvents": {
+        "body": "auto",
+        "html": "auto",
+        "button": "auto"
+      },
+      "scroll": {
+        "x": 0,
+        "y": 131
+      },
+      "viewport": {
+        "w": 390,
+        "h": 844,
+        "pageTop": 131,
+        "offsetTop": 0,
+        "scale": 1
+      },
+      "status": "서버에 저장됨",
+      "focused": true,
+      "events": [
+        {
+          "type": "pointerdown",
+          "target": "HTML",
+          "className": "",
+          "x": -801.7782888412476,
+          "y": 1116.7783794403076,
+          "pageY": 1247.7783794403076,
+          "scrollY": 131,
+          "isTrusted": true
+        },
+        {
+          "type": "mousedown",
+          "target": "HTML",
+          "className": "",
+          "x": -802,
+          "y": 1116,
+          "pageY": 1247,
+          "scrollY": 131,
+          "isTrusted": true
+        },
+        {
+          "type": "pointerup",
+          "target": "HTML",
+          "className": "",
+          "x": -801.7782888412476,
+          "y": 1116.7783794403076,
+          "pageY": 1247.7783794403076,
+          "scrollY": 131,
+          "isTrusted": true
+        },
+        {
+          "type": "mouseup",
+          "target": "HTML",
+          "className": "",
+          "x": -802,
+          "y": 1116,
+          "pageY": 1247,
+          "scrollY": 131,
+          "isTrusted": true
+        },
+        {
+          "type": "click",
+          "target": "HTML",
+          "className": "",
+          "x": -802,
+          "y": 1116,
+          "pageY": 1247,
+          "scrollY": 131,
+          "isTrusted": true
+        }
+      ],
+      "pageStyle": {
+        "overflow": "visible",
+        "position": "static"
+      },
+      "screen": {
+        "w": 390,
+        "h": 844,
+        "dpr": 1,
+        "outerW": 390,
+        "outerH": 844
+      }
+    }
+  ],
+  "error": "locator.waitFor: Timeout 3000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('dialog') to be visible\u001b[22m\n"
+}

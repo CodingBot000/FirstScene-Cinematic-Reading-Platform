@@ -1,0 +1,9 @@
+{
+  "observedAt": "2026-11-18T10:06:09.051391+00:00",
+  "status": "PRIVATE_SOURCE_NAMES_ABSENT",
+  "privateTermsPrinted": false,
+  "sourceFingerprint": {
+    "files": 338,
+    "sha256": "7528adef761eb0dc7d3c0828dc98b154e84a6e3281855ea33167529afcf86c12"
+  }
+}

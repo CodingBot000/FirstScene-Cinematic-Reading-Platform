@@ -1,0 +1,5 @@
+
+> firstscene-workspace@0.1.0 test:startup /Users/switch/Development/Web/FirstScene
+> node tools/startup-smoke.mjs
+
+{"status":"PASS","checks":12,"report":"evidence/container/startup.json","releaseReady":false}

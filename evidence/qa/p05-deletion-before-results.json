@@ -1,0 +1,226 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/24.5.0/bin/node",
+      "/Users/switch/Development/Web/FirstScene/node_modules/@playwright/test/cli.js",
+      "test",
+      "--project=chromium",
+      "tests/e2e/deletion.spec.ts"
+    ],
+    "configFile": "/Users/switch/Development/Web/FirstScene/playwright.config.ts",
+    "rootDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/switch/Development/Web/FirstScene/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/switch/Development/Web/FirstScene/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/switch/Development/Web/FirstScene/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "api",
+        "name": "api",
+        "testDir": "/Users/switch/Development/Web/FirstScene/tests/api",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/switch/Development/Web/FirstScene/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+        "snapshotDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:3110",
+          "locale": "ko-KR",
+          "timezoneId": "Asia/Seoul",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure",
+          "browserName": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "evidence/qa/playwright-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.1",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "deletion.spec.ts",
+      "file": "deletion.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "P05 pending or failed deletion never claims erasure in another tab; retry clears actual rows and retained queue",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 6065,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.reading-note[role=\"status\"]')\nExpected substring: \u001b[32m\"삭제 요청\"\u001b[39m\nReceived string:    \u001b[31m\"다른 탭에서 독서 기록을 삭제했어요. 새로 읽으면 새 기록이 시작돼요.\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('.reading-note[role=\"status\"]') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.reading-note[role=\"status\"]')\u001b[22m\n\u001b[2m    14 × locator resolved to <p role=\"status\" tabindex=\"-1\" class=\"reading-note\">다른 탭에서 독서 기록을 삭제했어요. 새로 읽으면 새 기록이 시작돼요.</p>\u001b[22m\n\u001b[2m       - unexpected value \"다른 탭에서 독서 기록을 삭제했어요. 새로 읽으면 새 기록이 시작돼요.\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.reading-note[role=\"status\"]')\nExpected substring: \u001b[32m\"삭제 요청\"\u001b[39m\nReceived string:    \u001b[31m\"다른 탭에서 독서 기록을 삭제했어요. 새로 읽으면 새 기록이 시작돼요.\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('.reading-note[role=\"status\"]') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.reading-note[role=\"status\"]')\u001b[22m\n\u001b[2m    14 × locator resolved to <p role=\"status\" tabindex=\"-1\" class=\"reading-note\">다른 탭에서 독서 기록을 삭제했어요. 새로 읽으면 새 기록이 시작돼요.</p>\u001b[22m\n\u001b[2m       - unexpected value \"다른 탭에서 독서 기록을 삭제했어요. 새로 읽으면 새 기록이 시작돼요.\"\u001b[22m\n\n    at /Users/switch/Development/Web/FirstScene/tests/e2e/deletion.spec.ts:51:64",
+                    "location": {
+                      "file": "/Users/switch/Development/Web/FirstScene/tests/e2e/deletion.spec.ts",
+                      "column": 64,
+                      "line": 51
+                    },
+                    "snippet": " \u001b[90m 49 |\u001b[39m       \u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 50 |\u001b[39m     \u001b[36mawait\u001b[39m expect\u001b[33m.\u001b[39mpoll(() \u001b[33m=>\u001b[39m \u001b[33mBoolean\u001b[39m(release))\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 51 |\u001b[39m     \u001b[36mawait\u001b[39m expect(peer\u001b[33m.\u001b[39mlocator(\u001b[32m'.reading-note[role=\"status\"]'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\n \u001b[90m    |\u001b[39m                                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 52 |\u001b[39m       \u001b[32m\"삭제 요청\"\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 53 |\u001b[39m     )\u001b[33m;\u001b[39m\n \u001b[90m 54 |\u001b[39m     \u001b[36mawait\u001b[39m expect("
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/switch/Development/Web/FirstScene/tests/e2e/deletion.spec.ts",
+                        "column": 64,
+                        "line": 51
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.reading-note[role=\"status\"]')\nExpected substring: \u001b[32m\"삭제 요청\"\u001b[39m\nReceived string:    \u001b[31m\"다른 탭에서 독서 기록을 삭제했어요. 새로 읽으면 새 기록이 시작돼요.\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('.reading-note[role=\"status\"]') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.reading-note[role=\"status\"]')\u001b[22m\n\u001b[2m    14 × locator resolved to <p role=\"status\" tabindex=\"-1\" class=\"reading-note\">다른 탭에서 독서 기록을 삭제했어요. 새로 읽으면 새 기록이 시작돼요.</p>\u001b[22m\n\u001b[2m       - unexpected value \"다른 탭에서 독서 기록을 삭제했어요. 새로 읽으면 새 기록이 시작돼요.\"\u001b[22m\n\n\n  49 |       .click();\n  50 |     await expect.poll(() => Boolean(release)).toBe(true);\n> 51 |     await expect(peer.locator('.reading-note[role=\"status\"]')).toContainText(\n     |                                                                ^\n  52 |       \"삭제 요청\",\n  53 |     );\n  54 |     await expect(\n    at /Users/switch/Development/Web/FirstScene/tests/e2e/deletion.spec.ts:51:64"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T22:22:25.497Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/switch/Development/Web/FirstScene/test-results/deletion-P05-pending-or-fa-ba4f3-ual-rows-and-retained-queue-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/switch/Development/Web/FirstScene/test-results/deletion-P05-pending-or-fa-ba4f3-ual-rows-and-retained-queue-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/switch/Development/Web/FirstScene/test-results/deletion-P05-pending-or-fa-ba4f3-ual-rows-and-retained-queue-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/switch/Development/Web/FirstScene/tests/e2e/deletion.spec.ts",
+                    "column": 64,
+                    "line": 51
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "5e41bb235fd50df9e5ba-4368d7669073c5c509db",
+          "file": "deletion.spec.ts",
+          "line": 4,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-17T22:22:24.717Z",
+    "duration": 7145.986,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

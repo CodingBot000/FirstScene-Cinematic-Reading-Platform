@@ -1,0 +1,137 @@
+{
+  "observedAt": "2026-11-18T01:50:52.376043+00:00",
+  "codeCommit": "8c498ed1b093f10e8b99d947d55e849362ec2082",
+  "status": "PASS_FOR_TOOLBAR_GAP_REPAIR_ONLY",
+  "before": [
+    "evidence/visual/16a7018fdd5d56536e59d83859cf8092b343fbe2/reader-390x844-plain-font24.png",
+    "evidence/visual/16a7018fdd5d56536e59d83859cf8092b343fbe2/reader-390x844-cinematic-os-reduced.png"
+  ],
+  "after": [
+    {
+      "path": "evidence/visual/8c498ed1b093f10e8b99d947d55e849362ec2082/reader-390x844-plain-font24.png",
+      "name": "reader",
+      "mode": "plain",
+      "state": "font24",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "fd4e303ae5084c073ce8eed1b3db4c3d1dd7a7749ac1b0a181fe4f69be4ce465",
+      "opened": true,
+      "reviewer": "agent",
+      "reviewedAt": "2026-11-18T01:50:52.376043+00:00",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened after mobile gap fix: focus outline and save-status text now have clear vertical separation. Body remains readable and header fits. At320 the initial dialog is vertically scrollable; actual8-key traversal reaches visible close and traps focus without global OS preference changes."
+    },
+    {
+      "path": "evidence/visual/8c498ed1b093f10e8b99d947d55e849362ec2082/reader-390x844-cinematic-os-reduced.png",
+      "name": "reader",
+      "mode": "cinematic",
+      "state": "os-reduced",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "042109d7ca21524e5182099ed22f2c9b3910f8598183ea4156cc328d6db49b40",
+      "opened": true,
+      "reviewer": "agent",
+      "reviewedAt": "2026-11-18T01:50:52.376043+00:00",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened after mobile gap fix: focus outline and save-status text now have clear vertical separation. Body remains readable and header fits. At320 the initial dialog is vertically scrollable; actual8-key traversal reaches visible close and traps focus without global OS preference changes."
+    },
+    {
+      "path": "evidence/visual/8c498ed1b093f10e8b99d947d55e849362ec2082/reader-reflow-320x740-cinematic-first.png",
+      "name": "reader-reflow",
+      "mode": "cinematic",
+      "state": "first",
+      "layout": {
+        "width": 320,
+        "height": 740,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "2d5f47ec374768516e688b116a44cd9aa085ef9826fe0872277dc3e27c659f89",
+      "opened": true,
+      "reviewer": "agent",
+      "reviewedAt": "2026-11-18T01:50:52.376043+00:00",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened after mobile gap fix: focus outline and save-status text now have clear vertical separation. Body remains readable and header fits. At320 the initial dialog is vertically scrollable; actual8-key traversal reaches visible close and traps focus without global OS preference changes."
+    },
+    {
+      "path": "evidence/visual/8c498ed1b093f10e8b99d947d55e849362ec2082/reader-reflow-settings-320x740-cinematic-initial.png",
+      "name": "reader-reflow-settings",
+      "mode": "cinematic",
+      "state": "initial",
+      "layout": {
+        "width": 320,
+        "height": 740,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "d4dcbb204769cf2610df51c04ad607f5c48f47d88193c1f7b18d1443d9c07aae",
+      "opened": true,
+      "reviewer": "agent",
+      "reviewedAt": "2026-11-18T01:50:52.376043+00:00",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 1,
+        "mobile": 2
+      },
+      "total": 11,
+      "observation": "Actually opened after mobile gap fix: focus outline and save-status text now have clear vertical separation. Body remains readable and header fits. At320 the initial dialog is vertically scrollable; actual8-key traversal reaches visible close and traps focus without global OS preference changes."
+    }
+  ],
+  "verification": [
+    "newvisual14/14 (actualfocusedoutlinebottom<=savestatustop; all4widths+WebKit; focus-trap/closevisibility/Escape)",
+    "fullChromium44/44",
+    "fullWebKit44/44",
+    "unit83/83",
+    "strict typecheck/build/lint/Storybook",
+    "externaltarballconsumer Chromium/WebKit2/2"
+  ],
+  "reports": [
+    "evidence/qa/p06-gap-chromium-results.json",
+    "evidence/qa/p06-gap-webkit-results.json",
+    "evidence/visual/8c498ed1b093f10e8b99d947d55e849362ec2082/browser-results.json"
+  ],
+  "nativeZoom": "Still BLOCKED_EXTERNAL; not inferred from viewport size."
+}

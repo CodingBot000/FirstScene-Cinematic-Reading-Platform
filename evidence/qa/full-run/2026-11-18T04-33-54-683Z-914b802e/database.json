@@ -1,0 +1,232 @@
+{
+  "numTotalTestSuites": 4,
+  "numPassedTestSuites": 4,
+  "numFailedTestSuites": 0,
+  "numPendingTestSuites": 0,
+  "numTotalTests": 15,
+  "numPassedTests": 15,
+  "numFailedTests": 0,
+  "numPendingTests": 0,
+  "numTodoTests": 0,
+  "snapshot": {
+    "added": 0,
+    "failure": false,
+    "filesAdded": 0,
+    "filesRemoved": 0,
+    "filesRemovedList": [],
+    "filesUnmatched": 0,
+    "filesUpdated": 0,
+    "matched": 0,
+    "total": 0,
+    "unchecked": 0,
+    "uncheckedKeysByFile": [],
+    "unmatched": 0,
+    "updated": 0,
+    "didUpdate": false
+  },
+  "startTime": 1794976450039,
+  "success": true,
+  "testResults": [
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 delete cascades all owned rows and write bucket; repeated and expired-token deletion is safe",
+          "status": "passed",
+          "title": "P04 delete cascades all owned rows and write bucket; repeated and expired-token deletion is safe",
+          "duration": 42.988417,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 cleanup bounds each table, skips locked rows and preserves live sessions/receipts/buckets",
+          "status": "passed",
+          "title": "P04 cleanup bounds each table, skips locked rows and preserves live sessions/receipts/buckets",
+          "duration": 12.052542000000017,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        }
+      ],
+      "startTime": 1794976450734,
+      "endTime": 1794976450790.0525,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/switch/Development/Web/FirstScene/tests/db/maintenance.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 QA-D01 fresh realPostgreSQL17 has exactly8private tables with owner tracking",
+          "status": "passed",
+          "title": "P04 QA-D01 fresh realPostgreSQL17 has exactly8private tables with owner tracking",
+          "duration": 3.0601249999999993,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 QA-D01 rerun is safe and altered checksum is rejected without changing source/schema",
+          "status": "passed",
+          "title": "P04 QA-D01 rerun is safe and altered checksum is rejected without changing source/schema",
+          "duration": 9.783417000000014,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 runtime role has no DDL, superuser, membership, publicschema or migration-table privileges",
+          "status": "passed",
+          "title": "P04 runtime role has no DDL, superuser, membership, publicschema or migration-table privileges",
+          "duration": 24.298208000000017,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 runtime CRUD is allowed on app tables, foreign keys cascade only the owned session",
+          "status": "passed",
+          "title": "P04 runtime CRUD is allowed on app tables, foreign keys cascade only the owned session",
+          "duration": 7.046582999999998,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 database rejects overlong absolute expiry and invalidfont at constraint boundary",
+          "status": "passed",
+          "title": "P04 database rejects overlong absolute expiry and invalidfont at constraint boundary",
+          "duration": 12.28400000000002,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 server indexes cover expiry and session-child access without orphan writes",
+          "status": "passed",
+          "title": "P04 server indexes cover expiry and session-child access without orphan writes",
+          "duration": 2.392832999999996,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        }
+      ],
+      "startTime": 1794976450265,
+      "endTime": 1794976450324.3928,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/switch/Development/Web/FirstScene/tests/db/migrations.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 mutationandreceipt rollbacktogether whenactualreceiptSQLfails afterprogresswrite",
+          "status": "passed",
+          "title": "P04 mutationandreceipt rollbacktogether whenactualreceiptSQLfails afterprogresswrite",
+          "duration": 32.86316600000001,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 sessionrowlocks serializeownwrites withoutblocking anotherbrowser session",
+          "status": "passed",
+          "title": "P04 sessionrowlocks serializeownwrites withoutblocking anotherbrowser session",
+          "duration": 14.782583999999986,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 staleauthenticatedcontext cannotrecreateprogress aftersessiondeletion",
+          "status": "passed",
+          "title": "P04 staleauthenticatedcontext cannotrecreateprogress aftersessiondeletion",
+          "duration": 4.627167000000014,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        }
+      ],
+      "startTime": 1794976450503,
+      "endTime": 1794976450555.6272,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/switch/Development/Web/FirstScene/tests/db/repository.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 real sessions use32randombytes, storeonlySHA256 and return a safeEpoch DTO",
+          "status": "passed",
+          "title": "P04 real sessions use32randombytes, storeonlySHA256 and return a safeEpoch DTO",
+          "duration": 15.614249999999998,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 validcookie reuses sameabsoluteexpiry and another session gets a differentepoch",
+          "status": "passed",
+          "title": "P04 validcookie reuses sameabsoluteexpiry and another session gets a differentepoch",
+          "duration": 6.178957999999994,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 expired or malformed tokens never authenticate or fixate issuance",
+          "status": "passed",
+          "title": "P04 expired or malformed tokens never authenticate or fixate issuance",
+          "duration": 6.88291700000002,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 atomic ratebucket caps concurrentrequests and providesretryafter without rawnetworkidentifiers",
+          "status": "passed",
+          "title": "P04 atomic ratebucket caps concurrentrequests and providesretryafter without rawnetworkidentifiers",
+          "duration": 10.366167000000019,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        }
+      ],
+      "startTime": 1794976450965,
+      "endTime": 1794976451004.3662,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/switch/Development/Web/FirstScene/tests/db/session.test.ts"
+    }
+  ]
+}

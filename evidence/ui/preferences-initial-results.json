@@ -1,0 +1,969 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/24.5.0/bin/node",
+      "/Users/switch/Development/Web/FirstScene/node_modules/@playwright/test/cli.js",
+      "test",
+      "--project=chromium",
+      "--",
+      "tests/e2e/preferences.spec.ts",
+      "tests/e2e/renderer.spec.ts",
+      "tests/e2e/public.spec.ts",
+      "tests/e2e/a11y.spec.ts"
+    ],
+    "configFile": "/Users/switch/Development/Web/FirstScene/playwright.config.ts",
+    "rootDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/switch/Development/Web/FirstScene/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/switch/Development/Web/FirstScene/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/switch/Development/Web/FirstScene/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "name": "chromium",
+        "testDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+        "snapshotDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:3100",
+          "locale": "ko-KR",
+          "timezoneId": "Asia/Seoul",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure",
+          "browserName": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "evidence/qa/playwright-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.1",
+    "workers": 2,
+    "webServer": {
+      "command": "pnpm --filter @firstscene/web start",
+      "url": "http://127.0.0.1:3100",
+      "reuseExistingServer": true,
+      "timeout": 30000
+    }
+  },
+  "suites": [
+    {
+      "title": "a11y.spec.ts",
+      "file": "a11y.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "P03 axe reader and settings have no detected AA violations",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1070,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T17:53:15.438Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa3ad05f8c0e05077efb-2899b844aad8050fcdba",
+          "file": "a11y.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "P03 capture renderer composition at desktop and mobile",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 276,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T17:53:16.698Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "aa3ad05f8c0e05077efb-64c4021e667e75da30a0",
+          "file": "a11y.spec.ts",
+          "line": 18,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "preferences.spec.ts",
+      "file": "preferences.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "P03 QA-R05 local font/mode/theme preferences and anchor survive actual reload",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 5584,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.fs-reader')\nExpected: \u001b[32m\"mail-s0\u001b[7m3\u001b[27m-b0\u001b[7m2\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"mail-s0\u001b[7m2\u001b[27m-b0\u001b[7m3\u001b[27m\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('.fs-reader') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.fs-reader')\u001b[22m\n\u001b[2m    - locator resolved to <div data-theme=\"light\" data-mood=\"memory\" data-motion=\"full\" data-active-scene=\"mail-s02\" data-active-beat=\"mail-s02-b05\" class=\"fs-reader fs-reader-plain\">…</div>\u001b[22m\n\u001b[2m    - unexpected value \"mail-s02-b05\"\u001b[22m\n\u001b[2m    13 × locator resolved to <div data-theme=\"light\" data-mood=\"memory\" data-motion=\"full\" data-active-scene=\"mail-s02\" data-active-beat=\"mail-s02-b03\" class=\"fs-reader fs-reader-plain\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"mail-s02-b03\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.fs-reader')\nExpected: \u001b[32m\"mail-s0\u001b[7m3\u001b[27m-b0\u001b[7m2\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"mail-s0\u001b[7m2\u001b[27m-b0\u001b[7m3\u001b[27m\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('.fs-reader') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.fs-reader')\u001b[22m\n\u001b[2m    - locator resolved to <div data-theme=\"light\" data-mood=\"memory\" data-motion=\"full\" data-active-scene=\"mail-s02\" data-active-beat=\"mail-s02-b05\" class=\"fs-reader fs-reader-plain\">…</div>\u001b[22m\n\u001b[2m    - unexpected value \"mail-s02-b05\"\u001b[22m\n\u001b[2m    13 × locator resolved to <div data-theme=\"light\" data-mood=\"memory\" data-motion=\"full\" data-active-scene=\"mail-s02\" data-active-beat=\"mail-s02-b03\" class=\"fs-reader fs-reader-plain\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"mail-s02-b03\"\u001b[22m\n\n    at /Users/switch/Development/Web/FirstScene/tests/e2e/preferences.spec.ts:76:44",
+                    "location": {
+                      "file": "/Users/switch/Development/Web/FirstScene/tests/e2e/preferences.spec.ts",
+                      "column": 44,
+                      "line": 76
+                    },
+                    "snippet": " \u001b[90m 74 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mkeyboard\u001b[33m.\u001b[39mpress(\u001b[32m\"Escape\"\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 75 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\"#\"\u001b[39m \u001b[33m+\u001b[39m saved\u001b[33m.\u001b[39mbeatId))\u001b[33m.\u001b[39mtoHaveCSS(\u001b[32m\"font-size\"\u001b[39m\u001b[33m,\u001b[39m \u001b[32m\"24px\"\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 76 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\".fs-reader\"\u001b[39m))\u001b[33m.\u001b[39mtoHaveAttribute(\n \u001b[90m    |\u001b[39m                                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 77 |\u001b[39m     \u001b[32m\"data-active-beat\"\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 78 |\u001b[39m     saved\u001b[33m.\u001b[39mbeatId\u001b[33m,\u001b[39m\n \u001b[90m 79 |\u001b[39m   )\u001b[33m;\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/switch/Development/Web/FirstScene/tests/e2e/preferences.spec.ts",
+                        "column": 44,
+                        "line": 76
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveAttribute\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.fs-reader')\nExpected: \u001b[32m\"mail-s0\u001b[7m3\u001b[27m-b0\u001b[7m2\u001b[27m\"\u001b[39m\nReceived: \u001b[31m\"mail-s0\u001b[7m2\u001b[27m-b0\u001b[7m3\u001b[27m\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveAttribute\" locator('.fs-reader') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.fs-reader')\u001b[22m\n\u001b[2m    - locator resolved to <div data-theme=\"light\" data-mood=\"memory\" data-motion=\"full\" data-active-scene=\"mail-s02\" data-active-beat=\"mail-s02-b05\" class=\"fs-reader fs-reader-plain\">…</div>\u001b[22m\n\u001b[2m    - unexpected value \"mail-s02-b05\"\u001b[22m\n\u001b[2m    13 × locator resolved to <div data-theme=\"light\" data-mood=\"memory\" data-motion=\"full\" data-active-scene=\"mail-s02\" data-active-beat=\"mail-s02-b03\" class=\"fs-reader fs-reader-plain\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"mail-s02-b03\"\u001b[22m\n\n\n  74 |   await page.keyboard.press(\"Escape\");\n  75 |   await expect(page.locator(\"#\" + saved.beatId)).toHaveCSS(\"font-size\", \"24px\");\n> 76 |   await expect(page.locator(\".fs-reader\")).toHaveAttribute(\n     |                                            ^\n  77 |     \"data-active-beat\",\n  78 |     saved.beatId,\n  79 |   );\n    at /Users/switch/Development/Web/FirstScene/tests/e2e/preferences.spec.ts:76:44"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T17:53:15.406Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/switch/Development/Web/FirstScene/test-results/preferences-P03-QA-R05-loc-d0db8-nchor-survive-actual-reload-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/switch/Development/Web/FirstScene/test-results/preferences-P03-QA-R05-loc-d0db8-nchor-survive-actual-reload-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/switch/Development/Web/FirstScene/test-results/preferences-P03-QA-R05-loc-d0db8-nchor-survive-actual-reload-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/switch/Development/Web/FirstScene/tests/e2e/preferences.spec.ts",
+                    "column": 44,
+                    "line": 76
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "14778efd97370ce75a77-832fe7684fd367d88bc6",
+          "file": "preferences.spec.ts",
+          "line": 64,
+          "column": 1
+        },
+        {
+          "title": "P03 QA-R06 explicit hash beats saved anchor; unknown/malformed hash is neutral first-scene fallback",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 1,
+                  "status": "failed",
+                  "duration": 5195,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('이 문장 위치를 찾지 못해 첫 장면을 표시해요.', { exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('이 문장 위치를 찾지 못해 첫 장면을 표시해요.', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('이 문장 위치를 찾지 못해 첫 장면을 표시해요.', { exact: true })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('이 문장 위치를 찾지 못해 첫 장면을 표시해요.', { exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('이 문장 위치를 찾지 못해 첫 장면을 표시해요.', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('이 문장 위치를 찾지 못해 첫 장면을 표시해요.', { exact: true })\u001b[22m\n\n    at /Users/switch/Development/Web/FirstScene/tests/e2e/preferences.spec.ts:109:5",
+                    "location": {
+                      "file": "/Users/switch/Development/Web/FirstScene/tests/e2e/preferences.spec.ts",
+                      "column": 5,
+                      "line": 109
+                    },
+                    "snippet": " \u001b[90m 107 |\u001b[39m       exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 108 |\u001b[39m     })\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 109 |\u001b[39m   )\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 110 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\".fs-reader\"\u001b[39m))\u001b[33m.\u001b[39mtoHaveAttribute(\n \u001b[90m 111 |\u001b[39m     \u001b[32m\"data-active-scene\"\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 112 |\u001b[39m     \u001b[32m\"mail-s01\"\u001b[39m\u001b[33m,\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/switch/Development/Web/FirstScene/tests/e2e/preferences.spec.ts",
+                        "column": 5,
+                        "line": 109
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('이 문장 위치를 찾지 못해 첫 장면을 표시해요.', { exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('이 문장 위치를 찾지 못해 첫 장면을 표시해요.', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('이 문장 위치를 찾지 못해 첫 장면을 표시해요.', { exact: true })\u001b[22m\n\n\n  107 |       exact: true,\n  108 |     }),\n> 109 |   ).toBeVisible();\n      |     ^\n  110 |   await expect(page.locator(\".fs-reader\")).toHaveAttribute(\n  111 |     \"data-active-scene\",\n  112 |     \"mail-s01\",\n    at /Users/switch/Development/Web/FirstScene/tests/e2e/preferences.spec.ts:109:5"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T17:53:21.585Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/switch/Development/Web/FirstScene/test-results/preferences-P03-QA-R06-exp-5c055-eutral-first-scene-fallback-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/switch/Development/Web/FirstScene/test-results/preferences-P03-QA-R06-exp-5c055-eutral-first-scene-fallback-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/switch/Development/Web/FirstScene/test-results/preferences-P03-QA-R06-exp-5c055-eutral-first-scene-fallback-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/switch/Development/Web/FirstScene/tests/e2e/preferences.spec.ts",
+                    "column": 5,
+                    "line": 109
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "14778efd97370ce75a77-18cbb280368ff3fa7fa9",
+          "file": "preferences.spec.ts",
+          "line": 93,
+          "column": 1
+        },
+        {
+          "title": "P03 QA-R07 trusted user scroll wins over delayed font-ready restoration",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1129,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T17:53:27.202Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "14778efd97370ce75a77-16b4496973a95e20b8a7",
+          "file": "preferences.spec.ts",
+          "line": 115,
+          "column": 1
+        },
+        {
+          "title": "P03 plain entry requests zero actual GSAP-containing chunks",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 171,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T17:53:28.436Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "14778efd97370ce75a77-6f832979703719e4d5f7",
+          "file": "preferences.spec.ts",
+          "line": 141,
+          "column": 1
+        },
+        {
+          "title": "P03 storage denied keeps text and current preference choice with honest status",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 254,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T17:53:28.614Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "14778efd97370ce75a77-7e756868a6a85762c94b",
+          "file": "preferences.spec.ts",
+          "line": 171,
+          "column": 1
+        },
+        {
+          "title": "P03 TOC moves focus to the selected scene heading and leaves one document scroll",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5288,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#mail-s03')\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" locator('#mail-s03') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#mail-s03')\u001b[22m\n\u001b[2m    14 × locator resolved to <h2 id=\"mail-s03\" tabindex=\"-1\">…</h2>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#mail-s03')\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" locator('#mail-s03') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#mail-s03')\u001b[22m\n\u001b[2m    14 × locator resolved to <h2 id=\"mail-s03\" tabindex=\"-1\">…</h2>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n\n    at /Users/switch/Development/Web/FirstScene/tests/e2e/preferences.spec.ts:198:43",
+                    "location": {
+                      "file": "/Users/switch/Development/Web/FirstScene/tests/e2e/preferences.spec.ts",
+                      "column": 43,
+                      "line": 198
+                    },
+                    "snippet": " \u001b[90m 196 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m\"button\"\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m\"목차\"\u001b[39m\u001b[33m,\u001b[39m exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m 197 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m\"link\"\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m\"03 사라진 주소\"\u001b[39m\u001b[33m,\u001b[39m exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 198 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\"#mail-s03\"\u001b[39m))\u001b[33m.\u001b[39mtoBeFocused()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 199 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m\".fs-reader\"\u001b[39m))\u001b[33m.\u001b[39mtoHaveAttribute(\n \u001b[90m 200 |\u001b[39m     \u001b[32m\"data-active-scene\"\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 201 |\u001b[39m     \u001b[32m\"mail-s03\"\u001b[39m\u001b[33m,\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/switch/Development/Web/FirstScene/tests/e2e/preferences.spec.ts",
+                        "column": 43,
+                        "line": 198
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeFocused\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#mail-s03')\nExpected: focused\nReceived: inactive\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeFocused\" locator('#mail-s03') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#mail-s03')\u001b[22m\n\u001b[2m    14 × locator resolved to <h2 id=\"mail-s03\" tabindex=\"-1\">…</h2>\u001b[22m\n\u001b[2m       - unexpected value \"inactive\"\u001b[22m\n\n\n  196 |   await page.getByRole(\"button\", { name: \"목차\", exact: true }).click();\n  197 |   await page.getByRole(\"link\", { name: \"03 사라진 주소\", exact: true }).click();\n> 198 |   await expect(page.locator(\"#mail-s03\")).toBeFocused();\n      |                                           ^\n  199 |   await expect(page.locator(\".fs-reader\")).toHaveAttribute(\n  200 |     \"data-active-scene\",\n  201 |     \"mail-s03\",\n    at /Users/switch/Development/Web/FirstScene/tests/e2e/preferences.spec.ts:198:43"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T17:53:28.872Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/switch/Development/Web/FirstScene/test-results/preferences-P03-TOC-moves--5957b--leaves-one-document-scroll-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/switch/Development/Web/FirstScene/test-results/preferences-P03-TOC-moves--5957b--leaves-one-document-scroll-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/switch/Development/Web/FirstScene/test-results/preferences-P03-TOC-moves--5957b--leaves-one-document-scroll-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/switch/Development/Web/FirstScene/tests/e2e/preferences.spec.ts",
+                    "column": 43,
+                    "line": 198
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "14778efd97370ce75a77-f7053edd1637682998bc",
+          "file": "preferences.spec.ts",
+          "line": 191,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "public.spec.ts",
+      "file": "public.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "P03 QA-U01 home -> introduction -> complete real first chapter without signup",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 357,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T17:53:16.983Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "349fc90c6061c792a808-f2d49ed3141c0aab9a4f",
+          "file": "public.spec.ts",
+          "line": 3,
+          "column": 1
+        },
+        {
+          "title": "P03 QA-U02 title/mood search, accurate empty state and reset preserve real catalog",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 538,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T17:53:17.344Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "349fc90c6061c792a808-323b44f81a9cb2ef287d",
+          "file": "public.spec.ts",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "P03 QA-U06 complete SSR manuscript remains readable with JS disabled and no database dependency",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 256,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T17:53:17.886Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "349fc90c6061c792a808-30f6cd8fd7495d052e46",
+          "file": "public.spec.ts",
+          "line": 39,
+          "column": 1
+        },
+        {
+          "title": "P03 responsive public surfaces fit320px and missing stories return404",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 336,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T17:53:18.146Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "349fc90c6061c792a808-143c8fbcccd6a83afb09",
+          "file": "public.spec.ts",
+          "line": 62,
+          "column": 1
+        },
+        {
+          "title": "P03 capture initial desktop and mobile screenshots",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 343,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T17:53:18.486Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "349fc90c6061c792a808-3019f041561de9f6fd25",
+          "file": "public.spec.ts",
+          "line": 87,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "renderer.spec.ts",
+      "file": "renderer.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "P03 QA-R02/R03 jump/reverse resolves scene and local mood with at most2stage layers",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 240,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T17:53:18.837Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2554cc55ec191e6d66a6-009619d2d7f32dec916f",
+          "file": "renderer.spec.ts",
+          "line": 21,
+          "column": 1
+        },
+        {
+          "title": "P03 QA-R03/U05 decorative text clone is hidden from accessibility and never replays on reverse",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1059,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T17:53:19.080Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2554cc55ec191e6d66a6-4ad401310bacf967874e",
+          "file": "renderer.spec.ts",
+          "line": 39,
+          "column": 1
+        },
+        {
+          "title": "P03 QA-R09 typewriter supports immediate show and Escape without leaving hidden text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 325,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T17:53:20.143Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2554cc55ec191e6d66a6-e4d82dc3daf964de3dd1",
+          "file": "renderer.spec.ts",
+          "line": 55,
+          "column": 1
+        },
+        {
+          "title": "P03 QA-R10 missing Segmenter retains full original text without effects",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 189,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T17:53:20.472Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2554cc55ec191e6d66a6-8d7ae82c20cdf253ff92",
+          "file": "renderer.spec.ts",
+          "line": 78,
+          "column": 1
+        },
+        {
+          "title": "P03 QA-R11 actual broken image URLs in framework-neutral consumer preserve dimensions and all text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 229,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T17:53:20.665Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2554cc55ec191e6d66a6-c049fdd77119b54e338b",
+          "file": "renderer.spec.ts",
+          "line": 94,
+          "column": 1
+        },
+        {
+          "title": "P03 QA-R11 GSAP chunk failure leaves original paragraph available",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 283,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T17:53:20.898Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2554cc55ec191e6d66a6-269c6833651c96a51fdf",
+          "file": "renderer.spec.ts",
+          "line": 118,
+          "column": 1
+        },
+        {
+          "title": "P03 OS reduced motion changes stop effects immediately and settings keep text readable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 289,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T17:53:21.187Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2554cc55ec191e6d66a6-446208783c706ffa5f8c",
+          "file": "renderer.spec.ts",
+          "line": 136,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-17T17:53:14.583Z",
+    "duration": 19697.535,
+    "expected": 17,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  }
+}

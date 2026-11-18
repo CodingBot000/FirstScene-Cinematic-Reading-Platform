@@ -1,0 +1,44 @@
+{
+  "observedAt": "2026-11-18T04:40:55.032Z",
+  "status": "PASS",
+  "checks": [
+    {
+      "args": [],
+      "exitCode": 2,
+      "status": "BLOCKED_EXTERNAL",
+      "reason": "VERIFIED_BASE_URL_REQUIRED",
+      "mutationPerformed": false
+    },
+    {
+      "args": [
+        "--base-url",
+        "http://127.0.0.1:3100"
+      ],
+      "exitCode": 2,
+      "status": "BLOCKED_EXTERNAL",
+      "reason": "CANONICAL_PUBLIC_HTTPS_REQUIRED",
+      "mutationPerformed": false
+    },
+    {
+      "args": [
+        "--base-url",
+        "https://firstscene.invalid/path"
+      ],
+      "exitCode": 2,
+      "status": "BLOCKED_EXTERNAL",
+      "reason": "CANONICAL_PUBLIC_HTTPS_REQUIRED",
+      "mutationPerformed": false
+    },
+    {
+      "args": [
+        "--base-url",
+        "https://firstscene.invalid"
+      ],
+      "exitCode": 2,
+      "status": "BLOCKED_EXTERNAL",
+      "reason": "APPROVED_DEPLOYMENT_EVIDENCE_REQUIRED",
+      "mutationPerformed": false
+    }
+  ],
+  "publicDeploymentExecuted": false
+}

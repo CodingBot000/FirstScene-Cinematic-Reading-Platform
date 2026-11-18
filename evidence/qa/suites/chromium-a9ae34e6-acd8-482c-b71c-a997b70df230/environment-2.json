@@ -1,0 +1,9 @@
+{
+  "observedAt": "2026-11-18T09:21:22.929Z",
+  "database": "firstscene_test_14bd04a9d0dd40beb872af41dd640b33",
+  "postgresVersion": "17.12 (Debian 17.12-1.pgdg13+1)",
+  "origin": "http://127.0.0.1:3110",
+  "realDatabase": true,
+  "authBypass": false,
+  "ownerCredentialsRemovedFromWebServer": true
+}

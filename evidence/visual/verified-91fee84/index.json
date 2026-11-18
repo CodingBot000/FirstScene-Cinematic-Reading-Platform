@@ -1,0 +1,38 @@
+{
+  "observedAt": "2026-11-18T02:39:51.063167+00:00",
+  "checkerCommit": "2e4f2df31a98c094e0a305fd6bed30d22fed6cfd",
+  "applicationCommit": "91fee84a58483b97c72e5964c1ec498e9bc0e9eb",
+  "status": "VISUAL_CHECKS_PASSED",
+  "command": "pnpm test:visual; pnpm test:visual -- --verify-review; node tools/visual-self-check.mjs",
+  "exitCode": 0,
+  "reviewer": "agent",
+  "humanReviews": 0,
+  "nativeZoom": "BLOCKED_EXTERNAL",
+  "releaseReady": false,
+  "artifacts": [
+    {
+      "path": "evidence/visual/verified-91fee84/result.json",
+      "sha256": "450891332cb6a846f601f0807c88b0ecf58952e4458909d5d1844d81e73f7a50"
+    },
+    {
+      "path": "evidence/visual/verified-91fee84/browser-results.json",
+      "sha256": "70339a63299b5d2b7d7851215cec7efb1597e5159a96c567f051449d9549cb0b"
+    },
+    {
+      "path": "evidence/visual/verified-91fee84/negative-cases.json",
+      "sha256": "1656cd6a07413f05380ba615d9c103ae9da012d21b14bac496f823f471847f79"
+    },
+    {
+      "path": "evidence/visual/verified-91fee84/captures.json",
+      "sha256": "141e1367596f426fba591395a8a9eb2377f37a20a7d6015ca08d6b22fe7fb603"
+    },
+    {
+      "path": "evidence/visual/review.json",
+      "sha256": "db811c715941f77d529414cde31c219b1d1fd5ff0549efdb738604133f303235"
+    },
+    {
+      "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/index.json",
+      "sha256": "2fca3dced1c2721598e17257803c36c62cb7bca77b97a499306494954da519e0"
+    }
+  ]
+}

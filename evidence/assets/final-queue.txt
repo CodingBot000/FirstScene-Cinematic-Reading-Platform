@@ -1,0 +1,10 @@
+
+> firstscene-workspace@0.1.0 assets:plan /Users/switch/Development/Web/FirstScene
+> node tools/image-pipeline/cli.mjs plan
+
+{
+  "attemptsUsed": 21,
+  "maxAttempts": 22,
+  "apiBudgetUsd": 0,
+  "queue": []
+}

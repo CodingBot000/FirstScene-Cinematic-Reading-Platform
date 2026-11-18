@@ -1,0 +1,54 @@
+
+> firstscene-workspace@0.1.0 pack:smoke /Users/switch/Development/Web/FirstScene
+> pnpm build:packages && node tools/pack-smoke.mjs
+
+
+> firstscene-workspace@0.1.0 build:packages /Users/switch/Development/Web/FirstScene
+> node tools/build-packages.mjs
+
+apps/web/features/reading-sync/transport.generated.ts 39ms
+
+> @firstscene/tokens@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/tokens
+> cd ../.. && node tools/generate-tokens.mjs && pnpm exec prettier --write packages/tokens/src/index.ts && pnpm exec tsc -p packages/tokens/tsconfig.json
+
+packages/tokens/src/index.ts 25ms
+
+> @firstscene/story-schema@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/story-schema
+> cd ../.. && node tools/generate-schema.mjs && pnpm exec prettier --write packages/story-schema/src/schema.ts && pnpm exec tsc -p packages/story-schema/tsconfig.json
+
+packages/story-schema/src/schema.ts 26ms
+
+> @firstscene/ui@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/ui
+> tsc -p tsconfig.json && cp src/styles.css dist/styles.css && cp src/css.d.ts dist/css.d.ts
+
+
+> @firstscene/reader-core@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/reader-core
+> tsc -p tsconfig.json
+
+
+> @firstscene/reader-react@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/reader-react
+> tsc -p tsconfig.json
+
+
+> @firstscene/content-compiler@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/content-compiler
+> tsc -p tsconfig.json
+
+
+> @firstscene/server-data@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/server-data
+> cd ../.. && node tools/generate-api-schema.mjs && pnpm exec prettier --write packages/server-data/src/api-schema.ts && pnpm exec tsc -p packages/server-data/tsconfig.json
+
+packages/server-data/src/api-schema.ts 31ms
+
+Running 1 test using 1 worker
+
+  ✓  1 [consumer-webkit] › tests/consumer/packages.spec.ts:2:1 › P06 five tarballs render real tokens/schema/core/UI/reader without Next or API (1.3s)
+
+  1 passed (1.8s)
+[WebServer] 127.0.0.1 - - [18/Nov/2026 09:22:23] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 09:22:23] "GET / HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 09:22:23] "GET /assets/index-CbTo1_xk.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 09:22:23] "GET /assets/index-CAHVCLak.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 09:22:24] "GET /assets/mail-bg-01.22451140.1440.webp HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 09:22:24] "GET /assets/mail-bg-01.cbbc11b1.480.avif HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 09:22:24] "GET /assets/mail-bg-02.4b5cbebb.480.avif HTTP/1.1" 200 -
+{"status":"PASS","packages":5,"externalConsumer":true,"nextOrDatabaseDependencies":false,"publication":false,"evidence":"evidence/package-consumer/result.json"}

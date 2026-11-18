@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "implementationStatus": "product commands planned; CMD-DOCS provided",
+  "commands": [
+    {
+      "id": "CMD-ENV",
+      "purpose": "environment probes",
+      "command": "node --version; pnpm --version; git status --short; docker version",
+      "acceptance": "Record capability availability without secrets. Missing tools are explicit facts, not fabricated success."
+    },
+    {
+      "id": "CMD-INSTALL",
+      "purpose": "workspace install",
+      "command": "pnpm install --frozen-lockfile",
+      "acceptance": "Reproducible install after initial lock is created; no canary or implicit major update."
+    },
+    {
+      "id": "CMD-LINT",
+      "purpose": "static style",
+      "command": "pnpm lint",
+      "acceptance": "ESLint and format checks; failure nonzero."
+    },
+    {
+      "id": "CMD-TYPE",
+      "purpose": "type contracts",
+      "command": "pnpm typecheck",
+      "acceptance": "TS strict all packages and applications."
+    },
+    {
+      "id": "CMD-BOUNDARY",
+      "purpose": "package isolation",
+      "command": "pnpm check:boundaries",
+      "acceptance": "Check contracts/package-boundaries.json and no src deep imports."
+    },
+    {
+      "id": "CMD-CONTENT",
+      "purpose": "content compiler",
+      "command": "pnpm content:check",
+      "acceptance": "Compile canonical Markdown; schema, semantic and fixture hash parity; bad fixtures must fail."
+    },
+    {
+      "id": "CMD-UNIT",
+      "purpose": "pure logic",
+      "command": "pnpm test:unit",
+      "acceptance": "Vitest unit and component tests; no live paid endpoints."
+    },
+    {
+      "id": "CMD-STORYBOOK",
+      "purpose": "component showcase",
+      "command": "pnpm storybook:build",
+      "acceptance": "Build Next-free React/Vite UI lab with all declared component states."
+    },
+    {
+      "id": "CMD-DB-UP",
+      "purpose": "local database",
+      "command": "pnpm db:up",
+      "acceptance": "Start owned loopback container only, no volume deletion or other project actions."
+    },
+    {
+      "id": "CMD-MIGRATE",
+      "purpose": "schema migration",
+      "command": "pnpm db:migrate",
+      "acceptance": "Owner connection, advisory lock and checksum tracking; fail on checksum drift."
+    },
+    {
+      "id": "CMD-DB-TEST",
+      "purpose": "database integration",
+      "command": "pnpm test:db",
+      "acceptance": "Fresh isolated PostgreSQL namespace/DB, migration/CAS/quota/isolation/cleanup; never production reset."
+    },
+    {
+      "id": "CMD-API",
+      "purpose": "API contracts",
+      "command": "pnpm test:api",
+      "acceptance": "OpenAPI responses, security and actual PostgreSQL persistence."
+    },
+    {
+      "id": "CMD-BUILD",
+      "purpose": "production build",
+      "command": "pnpm build",
+      "acceptance": "Packages then web production output; public source/generated parity."
+    },
+    {
+      "id": "CMD-DEV",
+      "purpose": "development run",
+      "command": "pnpm dev",
+      "acceptance": "Local server; startup prints safe URLs only."
+    },
+    {
+      "id": "CMD-E2E",
+      "purpose": "browser flows",
+      "command": "pnpm test:e2e",
+      "acceptance": "Production build server and real DB, Chromium full journeys."
+    },
+    {
+      "id": "CMD-WEBKIT",
+      "purpose": "mobile browser",
+      "command": "pnpm test:e2e:webkit",
+      "acceptance": "WebKit core reading/restore/bookmark/reduced journey."
+    },
+    {
+      "id": "CMD-A11Y",
+      "purpose": "accessibility",
+      "command": "pnpm test:a11y",
+      "acceptance": "Axe plus automated keyboard/reduced/zoom checks; manual semantic review remains required."
+    },
+    {
+      "id": "CMD-VISUAL",
+      "purpose": "visual artifacts",
+      "command": "pnpm test:visual",
+      "acceptance": "Capture stable viewport states; do not auto-approve new baselines."
+    },
+    {
+      "id": "CMD-PERF",
+      "purpose": "performance",
+      "command": "pnpm test:perf",
+      "acceptance": "3 cold lab runs, environment/profile, median LCP/CLS/TBT and transfer budget; no field claims."
+    },
+    {
+      "id": "CMD-PACK",
+      "purpose": "independent consumption",
+      "command": "pnpm pack:smoke",
+      "acceptance": "Tarball install into external temporary React/Vite consumer; no Next/pg."
+    },
+    {
+      "id": "CMD-SECURITY",
+      "purpose": "security",
+      "command": "pnpm test:security",
+      "acceptance": "Ownership/CSRF/limits/XSS + secret/public-name scan; no false audit claims."
+    },
+    {
+      "id": "CMD-ASSET-PLAN",
+      "purpose": "generation queue",
+      "command": "pnpm assets:plan",
+      "acceptance": "Validate asset dependency DAG, prompts and unfinished work. Zero generation calls."
+    },
+    {
+      "id": "CMD-ASSET-IMPORT",
+      "purpose": "import native result",
+      "command": "pnpm assets:import -- --id ASSET_ID --file ACTUAL_PATH --provider codex-native",
+      "acceptance": "ASSET_ID and ACTUAL_PATH are runtime arguments from actual tool results, not literal strings to execute."
+    },
+    {
+      "id": "CMD-ASSET-OPT",
+      "purpose": "optimize approved assets",
+      "command": "pnpm assets:optimize",
+      "acceptance": "Approved sources only; derive portraits, generate AVIF/WebP variants and manifest."
+    },
+    {
+      "id": "CMD-ASSET-VERIFY",
+      "purpose": "release asset audit",
+      "command": "pnpm assets:verify -- --release",
+      "acceptance": "Require 16 approved real public assets and hashes, no temporary backgrounds."
+    },
+    {
+      "id": "CMD-ASSET-API",
+      "purpose": "optional paid adapter",
+      "command": "pnpm assets:generate:api -- --budget-file AUTHORIZED_BUDGET_FILE",
+      "acceptance": "Default denied; explicit preauthorized finite budget and key needed. No paid call in CI."
+    },
+    {
+      "id": "CMD-FULL",
+      "purpose": "release local gate",
+      "command": "pnpm check:full",
+      "acceptance": "Serial orchestration lint/type/boundaries/content/unit/DB/API/build/E2E/WebKit/a11y/assets/security/pack/perf, plus reviewed visual artifact references."
+    },
+    {
+      "id": "CMD-STATE",
+      "purpose": "execution ledger",
+      "command": "pnpm check:state",
+      "acceptance": "Tasks DAG, DONE evidence/commit, progress reconciliation, no unsupported completion."
+    },
+    {
+      "id": "CMD-CLEANUP",
+      "purpose": "bounded maintenance",
+      "command": "pnpm db:cleanup",
+      "acceptance": "Delete expired session/receipt/rate data in bounded batches, redacted counts only."
+    },
+    {
+      "id": "CMD-DEPLOY-PREFLIGHT",
+      "purpose": "remote capability",
+      "command": "pnpm deploy:preflight",
+      "acceptance": "Read-only target/auth/cost/version checks. Never auto-create paid resources."
+    },
+    {
+      "id": "CMD-DEPLOY-SMOKE",
+      "purpose": "public validation",
+      "command": "pnpm deploy:smoke -- --base-url VERIFIED_URL",
+      "acceptance": "Verify actual production session/TLS/DB/isolation/assets; same-origin headers correctly set."
+    },
+    {
+      "id": "CMD-DOCS",
+      "purpose": "package docs check",
+      "command": "python tools/validate_package.py",
+      "acceptance": "This command is provided now. Checks documentation contracts/examples and reports scope separately from product tests."
+    },
+    {
+      "id": "CMD-DB-PREPARE",
+      "purpose": "isolated CI runtime role",
+      "command": "pnpm db:prepare-test",
+      "acceptance": "Use DIRECT_DATABASE_URL only for isolated CI DB. Create dedicated non-owner runtime role with random masked password, apply migration, export DATABASE_URL/RATE_LIMIT_HMAC_SECRET through GITHUB_ENV without printing them. Fail if target is not an explicitly marked test DB."
+    },
+    {
+      "id": "CMD-QA-COLLECT",
+      "purpose": "complete regression collection before repair",
+      "command": "pnpm check:full -- --collect",
+      "acceptance": "Run every required suite and preserve its real exit code. Return zero only when collection is complete, even if individual suites fail. Report RESULTS_COLLECTED and releaseReady=false; never PASS. Missing or unexecuted suites fail collection. CMD-FULL remains the strict release gate."
+    }
+  ]
+}

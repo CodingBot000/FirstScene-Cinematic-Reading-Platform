@@ -1,0 +1,350 @@
+{
+  "status": "NAVIGATION_BUDGETS_PASSED",
+  "coverage": "navigation-only; interaction and leak gates are separate and still required",
+  "releaseReady": false,
+  "observedAt": "2026-11-18T04:36:01.577Z",
+  "sourceCommit": "dacef08e483dffc604530d7b9931b668ab558462",
+  "productionBuildId": "nT1k9Fful06C_m836c87I",
+  "environment": {
+    "platform": "darwin",
+    "release": "25.5.0",
+    "arch": "arm64",
+    "cpu": "Apple M4 Max",
+    "node": "v24.5.0"
+  },
+  "config": {
+    "extends": "lighthouse:default",
+    "settings": {
+      "onlyCategories": [
+        "performance"
+      ],
+      "locale": "ko-KR",
+      "formFactor": "mobile",
+      "screenEmulation": {
+        "mobile": true,
+        "width": 390,
+        "height": 844,
+        "deviceScaleFactor": 1,
+        "disabled": false
+      },
+      "throttlingMethod": "devtools",
+      "throttling": {
+        "rttMs": 150,
+        "throughputKbps": 1638.4,
+        "requestLatencyMs": 150,
+        "downloadThroughputKbps": 1638.4,
+        "uploadThroughputKbps": 750,
+        "cpuSlowdownMultiplier": 4
+      },
+      "disableFullPageScreenshot": true
+    }
+  },
+  "runs": [
+    {
+      "route": "home",
+      "pathname": "/",
+      "index": 1,
+      "metrics": {
+        "largest-contentful-paint": 988.524,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 56.695000000000164,
+        "first-contentful-paint": 606.466,
+        "speed-index": 734,
+        "total-byte-weight": 243919
+      },
+      "jsGzipBytes": 153575,
+      "fontsTransferBytes": 0,
+      "scriptPaths": [
+        "/_next/static/chunks/0untxnaj7j154.js",
+        "/_next/static/chunks/09ae_9rbs4hnc.js",
+        "/_next/static/chunks/07wcfnernwe42.js",
+        "/_next/static/chunks/0tf7rt4h214g4.js",
+        "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+        "/_next/static/chunks/0h146eg66i-ld.js",
+        "/_next/static/chunks/1x8bufyelvlqv.js",
+        "/_next/static/chunks/4367u6hk_029l.js"
+      ],
+      "rawSha256": "46374e37187be50f42a1160e98548b0aaa8375e2e921893595f1dfb541599231",
+      "audit": "evidence/performance/current/home-1.json",
+      "auditSha256": "8f57acc809399273a33b7119ad90dba02eb774fa3c4eb0e160dc1f3a5f061a88"
+    },
+    {
+      "route": "home",
+      "pathname": "/",
+      "index": 2,
+      "metrics": {
+        "largest-contentful-paint": 952.272,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 44.259000000000015,
+        "first-contentful-paint": 598.497,
+        "speed-index": 717,
+        "total-byte-weight": 243920
+      },
+      "jsGzipBytes": 153575,
+      "fontsTransferBytes": 0,
+      "scriptPaths": [
+        "/_next/static/chunks/0untxnaj7j154.js",
+        "/_next/static/chunks/09ae_9rbs4hnc.js",
+        "/_next/static/chunks/07wcfnernwe42.js",
+        "/_next/static/chunks/0tf7rt4h214g4.js",
+        "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+        "/_next/static/chunks/0h146eg66i-ld.js",
+        "/_next/static/chunks/1x8bufyelvlqv.js",
+        "/_next/static/chunks/4367u6hk_029l.js"
+      ],
+      "rawSha256": "806a7bc9be6809536348821a0559b9deaa57e327070e294a4bea2e03c8e64ca2",
+      "audit": "evidence/performance/current/home-2.json",
+      "auditSha256": "a97be780de95ad622c9dbe5ad912fcfb2d35003f3fd7b842d9515aefe7090e36"
+    },
+    {
+      "route": "home",
+      "pathname": "/",
+      "index": 3,
+      "metrics": {
+        "largest-contentful-paint": 951.186,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 32.812000000000126,
+        "first-contentful-paint": 562.551,
+        "speed-index": 692,
+        "total-byte-weight": 243926
+      },
+      "jsGzipBytes": 153575,
+      "fontsTransferBytes": 0,
+      "scriptPaths": [
+        "/_next/static/chunks/0untxnaj7j154.js",
+        "/_next/static/chunks/09ae_9rbs4hnc.js",
+        "/_next/static/chunks/07wcfnernwe42.js",
+        "/_next/static/chunks/0tf7rt4h214g4.js",
+        "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+        "/_next/static/chunks/0h146eg66i-ld.js",
+        "/_next/static/chunks/1x8bufyelvlqv.js",
+        "/_next/static/chunks/4367u6hk_029l.js"
+      ],
+      "rawSha256": "572136bb443e617f9ff3eb2cb922ecfe8111aa52a796a863fba7fe7a17ceea62",
+      "audit": "evidence/performance/current/home-3.json",
+      "auditSha256": "3138b8e8e05fcc27a0f9a02a9aaa14b175e3a943fa74dc01d60d47e5614f8ce5"
+    },
+    {
+      "route": "introduction",
+      "pathname": "/stories/post-office",
+      "index": 1,
+      "metrics": {
+        "largest-contentful-paint": 953.703,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 41.414999999999964,
+        "first-contentful-paint": 596.443,
+        "speed-index": 706,
+        "total-byte-weight": 220310
+      },
+      "jsGzipBytes": 165728,
+      "fontsTransferBytes": 0,
+      "scriptPaths": [
+        "/_next/static/chunks/0untxnaj7j154.js",
+        "/_next/static/chunks/09ae_9rbs4hnc.js",
+        "/_next/static/chunks/07wcfnernwe42.js",
+        "/_next/static/chunks/0tf7rt4h214g4.js",
+        "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+        "/_next/static/chunks/0h146eg66i-ld.js",
+        "/_next/static/chunks/40_5escjlwx2t.js",
+        "/_next/static/chunks/4367u6hk_029l.js",
+        "/_next/static/chunks/1ck0bs1-kula9.js"
+      ],
+      "rawSha256": "633795686fdc8fe13ebc6d81d1701069650eb6db4096317f10c30c006d618570",
+      "audit": "evidence/performance/current/introduction-1.json",
+      "auditSha256": "ff3e4b0d94069ca730e22f523eb32f07f2685108194e11748c23822bebdce4db"
+    },
+    {
+      "route": "introduction",
+      "pathname": "/stories/post-office",
+      "index": 2,
+      "metrics": {
+        "largest-contentful-paint": 928.46,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 42.690000000000055,
+        "first-contentful-paint": 571.365,
+        "speed-index": 681,
+        "total-byte-weight": 220304
+      },
+      "jsGzipBytes": 165728,
+      "fontsTransferBytes": 0,
+      "scriptPaths": [
+        "/_next/static/chunks/0untxnaj7j154.js",
+        "/_next/static/chunks/09ae_9rbs4hnc.js",
+        "/_next/static/chunks/07wcfnernwe42.js",
+        "/_next/static/chunks/0tf7rt4h214g4.js",
+        "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+        "/_next/static/chunks/0h146eg66i-ld.js",
+        "/_next/static/chunks/40_5escjlwx2t.js",
+        "/_next/static/chunks/4367u6hk_029l.js",
+        "/_next/static/chunks/1ck0bs1-kula9.js"
+      ],
+      "rawSha256": "d736bc908bc2c7cbb4f978748b219b6758ec18d526600b3a265b78587c405ff1",
+      "audit": "evidence/performance/current/introduction-2.json",
+      "auditSha256": "6055648fe4bc4b68f9d3aa0921e4c86d506b707df3a085f52e0e4be7b027ee2f"
+    },
+    {
+      "route": "introduction",
+      "pathname": "/stories/post-office",
+      "index": 3,
+      "metrics": {
+        "largest-contentful-paint": 929.885,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 28.797000000000025,
+        "first-contentful-paint": 553.572,
+        "speed-index": 668,
+        "total-byte-weight": 220311
+      },
+      "jsGzipBytes": 165728,
+      "fontsTransferBytes": 0,
+      "scriptPaths": [
+        "/_next/static/chunks/0untxnaj7j154.js",
+        "/_next/static/chunks/09ae_9rbs4hnc.js",
+        "/_next/static/chunks/07wcfnernwe42.js",
+        "/_next/static/chunks/0tf7rt4h214g4.js",
+        "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+        "/_next/static/chunks/0h146eg66i-ld.js",
+        "/_next/static/chunks/40_5escjlwx2t.js",
+        "/_next/static/chunks/4367u6hk_029l.js",
+        "/_next/static/chunks/1ck0bs1-kula9.js"
+      ],
+      "rawSha256": "9c4f2626ddc0fba146d8a4ae180ab464d4a4e34cd80982618d2e0cee9cc85b35",
+      "audit": "evidence/performance/current/introduction-3.json",
+      "auditSha256": "97fcd55eabe06de863f5eb8bb890b17b006285fbaba803a8573fe26d65c82ef9"
+    },
+    {
+      "route": "reader",
+      "pathname": "/read/post-office",
+      "index": 1,
+      "metrics": {
+        "largest-contentful-paint": 593.754,
+        "cumulative-layout-shift": 0.0005879291865074908,
+        "total-blocking-time": 41.60100000000011,
+        "first-contentful-paint": 593.754,
+        "speed-index": 801,
+        "total-byte-weight": 216752
+      },
+      "jsGzipBytes": 171779,
+      "fontsTransferBytes": 0,
+      "scriptPaths": [
+        "/_next/static/chunks/0untxnaj7j154.js",
+        "/_next/static/chunks/09ae_9rbs4hnc.js",
+        "/_next/static/chunks/07wcfnernwe42.js",
+        "/_next/static/chunks/0tf7rt4h214g4.js",
+        "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+        "/_next/static/chunks/0h146eg66i-ld.js",
+        "/_next/static/chunks/1x8bufyelvlqv.js",
+        "/_next/static/chunks/2fch6qu1wf727.js",
+        "/_next/static/chunks/4367u6hk_029l.js",
+        "/_next/static/chunks/3l1jszq4dlmnh.js"
+      ],
+      "rawSha256": "f7dd09774996014fcd5d841e5c1e4ba848b2d7832c1937c9f8bf747a06d623fe",
+      "audit": "evidence/performance/current/reader-1.json",
+      "auditSha256": "88322f412ad22b777572e2bdadd3b10bed40d8ffdb08cfab2255ed4b68f51d2d"
+    },
+    {
+      "route": "reader",
+      "pathname": "/read/post-office",
+      "index": 2,
+      "metrics": {
+        "largest-contentful-paint": 621.81,
+        "cumulative-layout-shift": 0.0005879291865074908,
+        "total-blocking-time": 41.2650000000001,
+        "first-contentful-paint": 621.81,
+        "speed-index": 829,
+        "total-byte-weight": 216752
+      },
+      "jsGzipBytes": 171779,
+      "fontsTransferBytes": 0,
+      "scriptPaths": [
+        "/_next/static/chunks/0untxnaj7j154.js",
+        "/_next/static/chunks/09ae_9rbs4hnc.js",
+        "/_next/static/chunks/07wcfnernwe42.js",
+        "/_next/static/chunks/0tf7rt4h214g4.js",
+        "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+        "/_next/static/chunks/0h146eg66i-ld.js",
+        "/_next/static/chunks/1x8bufyelvlqv.js",
+        "/_next/static/chunks/2fch6qu1wf727.js",
+        "/_next/static/chunks/4367u6hk_029l.js",
+        "/_next/static/chunks/3l1jszq4dlmnh.js"
+      ],
+      "rawSha256": "9414fd4cb0808bd3ff0b5316b0da0e222d3544083fc12bb8c08e08c6851f18bc",
+      "audit": "evidence/performance/current/reader-2.json",
+      "auditSha256": "c1ffa99196806991e3c72836461ac50858e1caadf004e705bf91cfc028d111e6"
+    },
+    {
+      "route": "reader",
+      "pathname": "/read/post-office",
+      "index": 3,
+      "metrics": {
+        "largest-contentful-paint": 600.34,
+        "cumulative-layout-shift": 0.0005879291865074908,
+        "total-blocking-time": 42.13599951171864,
+        "first-contentful-paint": 600.34,
+        "speed-index": 806,
+        "total-byte-weight": 216758
+      },
+      "jsGzipBytes": 171779,
+      "fontsTransferBytes": 0,
+      "scriptPaths": [
+        "/_next/static/chunks/0untxnaj7j154.js",
+        "/_next/static/chunks/09ae_9rbs4hnc.js",
+        "/_next/static/chunks/07wcfnernwe42.js",
+        "/_next/static/chunks/0tf7rt4h214g4.js",
+        "/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+        "/_next/static/chunks/0h146eg66i-ld.js",
+        "/_next/static/chunks/1x8bufyelvlqv.js",
+        "/_next/static/chunks/2fch6qu1wf727.js",
+        "/_next/static/chunks/4367u6hk_029l.js",
+        "/_next/static/chunks/3l1jszq4dlmnh.js"
+      ],
+      "rawSha256": "5e95e95ebfa6ed639777626a1650ea579d553466564523527ff539089c9ef807",
+      "audit": "evidence/performance/current/reader-3.json",
+      "auditSha256": "2b63910cdeb19e77ab6941d00180506dcb1e415cdab8311ffd0b5915b7979915"
+    }
+  ],
+  "summary": [
+    {
+      "route": "home",
+      "median": {
+        "largest-contentful-paint": 952.272,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 44.259000000000015,
+        "first-contentful-paint": 598.497,
+        "speed-index": 717,
+        "total-byte-weight": 243920
+      },
+      "violations": []
+    },
+    {
+      "route": "introduction",
+      "median": {
+        "largest-contentful-paint": 929.885,
+        "cumulative-layout-shift": 0,
+        "total-blocking-time": 41.414999999999964,
+        "first-contentful-paint": 571.365,
+        "speed-index": 681,
+        "total-byte-weight": 220310
+      },
+      "violations": []
+    },
+    {
+      "route": "reader",
+      "median": {
+        "largest-contentful-paint": 600.34,
+        "cumulative-layout-shift": 0.0005879291865074908,
+        "total-blocking-time": 41.60100000000011,
+        "first-contentful-paint": 600.34,
+        "speed-index": 806,
+        "total-byte-weight": 216752
+      },
+      "violations": []
+    }
+  ],
+  "database": {
+    "name": "firstscene_test_3d0c06fe372c4ba2afae29037a3eafb1",
+    "real": true,
+    "fresh": true,
+    "authBypass": false
+  },
+  "finishedAt": "2026-11-18T04:38:30.894Z"
+}

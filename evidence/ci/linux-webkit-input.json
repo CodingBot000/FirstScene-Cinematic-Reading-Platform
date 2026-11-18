@@ -1,0 +1,14 @@
+{
+  "observedAt": "2026-11-18T09:37:36.530Z",
+  "status": "PASS",
+  "platform": "linux",
+  "arch": "arm64",
+  "node": "v24.22.3",
+  "browserVersion": "27.2",
+  "pointer": {
+    "x": 70,
+    "y": 42,
+    "target": "BUTTON"
+  },
+  "productionApplicationProof": false
+}

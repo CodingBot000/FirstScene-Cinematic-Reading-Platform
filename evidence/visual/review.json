@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "indexPath": "evidence/visual/4f7aac271235826998bc3a07bd05d65a75519c62/index.json",
+  "indexSha256": "28a8fb4102404e11ff471b98565c7238d1824daa829195d7f9b6e3753aa96200",
+  "reviewer": "agent",
+  "humanReviews": 0,
+  "nativeZoom": "PASS",
+  "releaseReady": false,
+  "observedAt": "2026-11-18T09:39:19.819388+00:00",
+  "codeCommit": "4f7aac271235826998bc3a07bd05d65a75519c62"
+}

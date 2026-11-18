@@ -1,0 +1,927 @@
+{
+  "lighthouseVersion": "13.6.0",
+  "fetchTime": "2026-11-18T01:11:34.978Z",
+  "requestedUrl": "http://127.0.0.1:61002/",
+  "finalDisplayedUrl": "http://127.0.0.1:61002/",
+  "environment": {
+    "networkUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/159.0.0.0 Mobile Safari/537.36",
+    "hostUserAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/159.0.0.0 Safari/537.36",
+    "benchmarkIndex": 3855,
+    "credits": {}
+  },
+  "configSettings": {
+    "output": [
+      "json"
+    ],
+    "maxWaitForFcp": 30000,
+    "maxWaitForLoad": 45000,
+    "pauseAfterFcpMs": 5250,
+    "pauseAfterLoadMs": 5250,
+    "networkQuietThresholdMs": 5250,
+    "cpuQuietThresholdMs": 5250,
+    "formFactor": "mobile",
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 150,
+      "downloadThroughputKbps": 1638.4,
+      "uploadThroughputKbps": 750,
+      "cpuSlowdownMultiplier": 4
+    },
+    "throttlingMethod": "devtools",
+    "screenEmulation": {
+      "mobile": true,
+      "width": 390,
+      "height": 844,
+      "deviceScaleFactor": 1,
+      "disabled": false
+    },
+    "emulatedUserAgent": "Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Mobile Safari/537.36",
+    "auditMode": false,
+    "gatherMode": false,
+    "clearStorageTypes": [
+      "file_systems",
+      "shader_cache",
+      "service_workers",
+      "cache_storage"
+    ],
+    "disableStorageReset": false,
+    "debugNavigation": false,
+    "channel": "cli",
+    "usePassiveGathering": false,
+    "disableFullPageScreenshot": true,
+    "skipAboutBlank": false,
+    "blankPage": "about:blank",
+    "ignoreStatusCode": false,
+    "locale": "ko",
+    "blockedUrlPatterns": null,
+    "additionalTraceCategories": null,
+    "extraHeaders": null,
+    "precomputedLanternData": null,
+    "onlyAudits": null,
+    "onlyCategories": [
+      "performance"
+    ],
+    "skipAudits": null
+  },
+  "runWarnings": [],
+  "audits": {
+    "largest-contentful-paint": {
+      "id": "largest-contentful-paint",
+      "title": "Largest Contentful Paint",
+      "description": "최대 콘텐츠 렌더링 시간은 최대 텍스트 또는 이미지가 표시되는 시간을 나타냅니다. [최대 콘텐츠 렌더링 시간 측정항목 자세히 알아보기](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)",
+      "score": 1,
+      "scoreDisplayMode": "numeric",
+      "numericValue": 951.329,
+      "numericUnit": "millisecond",
+      "displayValue": "1.0 초",
+      "scoringOptions": {
+        "p10": 2500,
+        "median": 4000
+      }
+    },
+    "cumulative-layout-shift": {
+      "id": "cumulative-layout-shift",
+      "title": "Cumulative Layout Shift",
+      "description": "레이아웃 변경 횟수는 표시 영역 안에 보이는 요소의 이동을 측정합니다. [레이아웃 변경 횟수 측정항목에 관해 자세히 알아보기](https://web.dev/articles/cls)",
+      "score": 1,
+      "scoreDisplayMode": "numeric",
+      "numericValue": 0,
+      "numericUnit": "unitless",
+      "displayValue": "0",
+      "scoringOptions": {
+        "p10": 0.1,
+        "median": 0.25
+      },
+      "details": {
+        "type": "debugdata",
+        "items": [
+          {
+            "cumulativeLayoutShiftMainFrame": 0,
+            "newEngineResult": {
+              "cumulativeLayoutShift": 0,
+              "cumulativeLayoutShiftMainFrame": 0
+            },
+            "newEngineResultDiffered": false
+          }
+        ]
+      }
+    },
+    "total-blocking-time": {
+      "id": "total-blocking-time",
+      "title": "Total Blocking Time",
+      "description": "FCP와 상호작용 시간 사이의 모든 시간의 합으로, 작업 지속 시간이 50ms를 넘으면 밀리초 단위로 표현됩니다. [총 차단 시간 측정항목에 관해 자세히 알아보기](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/)",
+      "score": 1,
+      "scoreDisplayMode": "numeric",
+      "numericValue": 41.05199999999991,
+      "numericUnit": "millisecond",
+      "displayValue": "40 밀리초",
+      "scoringOptions": {
+        "p10": 200,
+        "median": 600
+      }
+    },
+    "first-contentful-paint": {
+      "id": "first-contentful-paint",
+      "title": "First Contentful Paint",
+      "description": "콘텐츠가 포함된 첫 페인트는 첫 번째 텍스트 또는 이미지가 표시되는 시간을 나타냅니다. [콘텐츠가 포함된 첫 페인트 측정항목에 관해 자세히 알아보기](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)",
+      "score": 1,
+      "scoreDisplayMode": "numeric",
+      "numericValue": 574.246,
+      "numericUnit": "millisecond",
+      "displayValue": "0.6 초",
+      "scoringOptions": {
+        "p10": 1800,
+        "median": 3000
+      }
+    },
+    "speed-index": {
+      "id": "speed-index",
+      "title": "Speed Index",
+      "description": "Speed Index는 페이지 콘텐츠가 얼마나 빨리 표시되는지 보여줍니다. [Speed Index 측정항목에 관해 자세히 알아보기](https://developer.chrome.com/docs/lighthouse/performance/speed-index/)",
+      "score": 1,
+      "scoreDisplayMode": "numeric",
+      "numericValue": 699,
+      "numericUnit": "millisecond",
+      "displayValue": "0.7 초",
+      "scoringOptions": {
+        "p10": 3387,
+        "median": 5800
+      }
+    },
+    "total-byte-weight": {
+      "id": "total-byte-weight",
+      "title": "대규모 네트워크 페이로드 방지하기",
+      "description": "네트워크 페이로드가 커지면 사용자에게 실제 비용 부담이 되며 로드 시간이 길어질 수 있습니다. [페이로드 크기를 줄이는 방법 알아보기](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)",
+      "score": 1,
+      "scoreDisplayMode": "metricSavings",
+      "numericValue": 243877,
+      "numericUnit": "byte",
+      "displayValue": "총 크기: 238KiB",
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "url",
+            "valueType": "url",
+            "label": "URL"
+          },
+          {
+            "key": "totalBytes",
+            "valueType": "bytes",
+            "label": "전송 크기"
+          }
+        ],
+        "items": [
+          {
+            "url": "http://127.0.0.1:61002/_next/static/chunks/0nyglps4d52rh.js",
+            "totalBytes": 72207
+          },
+          {
+            "url": "http://127.0.0.1:61002/_next/static/chunks/2cylvi2rjac4f.js",
+            "totalBytes": 45856
+          },
+          {
+            "url": "http://127.0.0.1:61002/assets/tide-cover.e5524a18.640.avif",
+            "totalBytes": 36149
+          },
+          {
+            "url": "http://127.0.0.1:61002/assets/mail-cover.9b446423.640.avif",
+            "totalBytes": 27676
+          },
+          {
+            "url": "http://127.0.0.1:61002/_next/static/chunks/16_b_el7sqhd1.js",
+            "totalBytes": 15230
+          },
+          {
+            "url": "http://127.0.0.1:61002/_next/static/chunks/2lud40ii5cy6e.js",
+            "totalBytes": 9132
+          },
+          {
+            "url": "http://127.0.0.1:61002/",
+            "totalBytes": 6761
+          },
+          {
+            "url": "http://127.0.0.1:61002/_next/static/chunks/2micqcep1gujq.css",
+            "totalBytes": 5855
+          },
+          {
+            "url": "http://127.0.0.1:61002/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+            "totalBytes": 4752
+          },
+          {
+            "url": "http://127.0.0.1:61002/_next/static/chunks/2_g8ybmdouoqu.js",
+            "totalBytes": 3923
+          }
+        ],
+        "sortedBy": [
+          "totalBytes"
+        ]
+      },
+      "guidanceLevel": 1
+    },
+    "layout-shifts": {
+      "id": "layout-shifts",
+      "title": "대규모 레이아웃 변경 피하기",
+      "description": "페이지에서 관찰된 가장 큰 레이아웃 변화입니다. 각 표 항목은 단일 레이아웃 변경을 나타내며 가장 많이 변경된 요소를 표시합니다. 각 항목 아래에는 레이아웃이 변경된 예상 근본 원인이 나와 있습니다. [윈도잉](https://web.dev/articles/cls#what_is_cls)으로 인해 일부 레이아웃 변경은 CLS 측정항목 값에 포함되지 않을 수 있습니다. [CLS 개선 방법 알아보기](https://web.dev/articles/optimize-cls)",
+      "score": null,
+      "scoreDisplayMode": "notApplicable",
+      "metricSavings": {
+        "CLS": 0
+      },
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "node",
+            "valueType": "node",
+            "subItemsHeading": {
+              "key": "extra"
+            },
+            "label": "요소"
+          },
+          {
+            "key": "score",
+            "valueType": "numeric",
+            "subItemsHeading": {
+              "key": "cause",
+              "valueType": "text"
+            },
+            "granularity": 0.001,
+            "label": "레이아웃 변경 점수"
+          }
+        ],
+        "items": []
+      },
+      "guidanceLevel": 2
+    },
+    "network-requests": {
+      "id": "network-requests",
+      "title": "Network Requests",
+      "description": "Lists the network requests that were made during page load.",
+      "score": 1,
+      "scoreDisplayMode": "informative",
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "url",
+            "valueType": "url",
+            "label": "URL"
+          },
+          {
+            "key": "protocol",
+            "valueType": "text",
+            "label": "Protocol"
+          },
+          {
+            "key": "networkRequestTime",
+            "valueType": "ms",
+            "granularity": 1,
+            "label": "Network Request Time"
+          },
+          {
+            "key": "networkEndTime",
+            "valueType": "ms",
+            "granularity": 1,
+            "label": "Network End Time"
+          },
+          {
+            "key": "transferSize",
+            "valueType": "bytes",
+            "displayUnit": "kb",
+            "granularity": 1,
+            "label": "Transfer Size"
+          },
+          {
+            "key": "resourceSize",
+            "valueType": "bytes",
+            "displayUnit": "kb",
+            "granularity": 1,
+            "label": "Resource Size"
+          },
+          {
+            "key": "statusCode",
+            "valueType": "text",
+            "label": "Status Code"
+          },
+          {
+            "key": "mimeType",
+            "valueType": "text",
+            "label": "MIME Type"
+          },
+          {
+            "key": "resourceType",
+            "valueType": "text",
+            "label": "Resource Type"
+          }
+        ],
+        "items": [
+          {
+            "url": "http://127.0.0.1:61002/",
+            "sessionTargetType": "page",
+            "protocol": "http/1.1",
+            "cache": "none",
+            "rendererStartTime": 0,
+            "networkRequestTime": 0.40199947357177734,
+            "networkEndTime": 184.97399950027466,
+            "finished": true,
+            "transferSize": 6761,
+            "resourceSize": 20390,
+            "statusCode": 200,
+            "mimeType": "text/html",
+            "resourceType": "Document",
+            "priority": "VeryHigh",
+            "experimentalFromMainFrame": true,
+            "entity": "127.0.0.1"
+          },
+          {
+            "url": "http://127.0.0.1:61002/_next/static/chunks/2micqcep1gujq.css",
+            "sessionTargetType": "page",
+            "protocol": "http/1.1",
+            "cache": "none",
+            "rendererStartTime": 190.1399998664856,
+            "networkRequestTime": 192.2039999961853,
+            "networkEndTime": 485.5999994277954,
+            "finished": true,
+            "transferSize": 5855,
+            "resourceSize": 23910,
+            "statusCode": 200,
+            "mimeType": "text/css",
+            "resourceType": "Stylesheet",
+            "priority": "VeryHigh",
+            "experimentalFromMainFrame": true,
+            "entity": "127.0.0.1"
+          },
+          {
+            "url": "http://127.0.0.1:61002/_next/static/chunks/1gb_0krqjh5k2.js",
+            "sessionTargetType": "page",
+            "protocol": "http/1.1",
+            "cache": "none",
+            "rendererStartTime": 190.29099988937378,
+            "networkRequestTime": 192.35599946975708,
+            "networkEndTime": 407.1419997215271,
+            "finished": true,
+            "transferSize": 2352,
+            "resourceSize": 5364,
+            "statusCode": 200,
+            "mimeType": "application/javascript",
+            "resourceType": "Script",
+            "priority": "Low",
+            "isLinkPreload": true,
+            "experimentalFromMainFrame": true,
+            "entity": "127.0.0.1"
+          },
+          {
+            "url": "http://127.0.0.1:61002/_next/static/chunks/2lud40ii5cy6e.js",
+            "sessionTargetType": "page",
+            "protocol": "http/1.1",
+            "cache": "none",
+            "rendererStartTime": 190.32899951934814,
+            "networkRequestTime": 195.82200002670288,
+            "networkEndTime": 578.4990000724792,
+            "finished": true,
+            "transferSize": 9132,
+            "resourceSize": 33121,
+            "statusCode": 200,
+            "mimeType": "application/javascript",
+            "resourceType": "Script",
+            "priority": "Low",
+            "experimentalFromMainFrame": true,
+            "entity": "127.0.0.1"
+          },
+          {
+            "url": "http://127.0.0.1:61002/_next/static/chunks/0nyglps4d52rh.js",
+            "sessionTargetType": "page",
+            "protocol": "http/1.1",
+            "cache": "none",
+            "rendererStartTime": 190.36899948120117,
+            "networkRequestTime": 195.9119997024536,
+            "networkEndTime": 1480.5959997177124,
+            "finished": true,
+            "transferSize": 72207,
+            "resourceSize": 229286,
+            "statusCode": 200,
+            "mimeType": "application/javascript",
+            "resourceType": "Script",
+            "priority": "Low",
+            "experimentalFromMainFrame": true,
+            "entity": "127.0.0.1"
+          },
+          {
+            "url": "http://127.0.0.1:61002/_next/static/chunks/2cylvi2rjac4f.js",
+            "sessionTargetType": "page",
+            "protocol": "http/1.1",
+            "cache": "none",
+            "rendererStartTime": 190.3899998664856,
+            "networkRequestTime": 195.9670000076294,
+            "networkEndTime": 1266.5339994430542,
+            "finished": true,
+            "transferSize": 45856,
+            "resourceSize": 165585,
+            "statusCode": 200,
+            "mimeType": "application/javascript",
+            "resourceType": "Script",
+            "priority": "Low",
+            "experimentalFromMainFrame": true,
+            "entity": "127.0.0.1"
+          },
+          {
+            "url": "http://127.0.0.1:61002/_next/static/chunks/turbopack-077hmtqrhcoji.js",
+            "sessionTargetType": "page",
+            "protocol": "http/1.1",
+            "cache": "none",
+            "rendererStartTime": 191.28799962997437,
+            "networkRequestTime": 407.22199964523315,
+            "networkEndTime": 678.8649997711182,
+            "finished": true,
+            "transferSize": 4752,
+            "resourceSize": 11199,
+            "statusCode": 200,
+            "mimeType": "application/javascript",
+            "resourceType": "Script",
+            "priority": "Low",
+            "experimentalFromMainFrame": true,
+            "entity": "127.0.0.1"
+          },
+          {
+            "url": "http://127.0.0.1:61002/_next/static/chunks/2_g8ybmdouoqu.js",
+            "sessionTargetType": "page",
+            "protocol": "http/1.1",
+            "cache": "none",
+            "rendererStartTime": 191.30800008773804,
+            "networkRequestTime": 485.6849994659424,
+            "networkEndTime": 729.9319996833801,
+            "finished": true,
+            "transferSize": 3923,
+            "resourceSize": 14001,
+            "statusCode": 200,
+            "mimeType": "application/javascript",
+            "resourceType": "Script",
+            "priority": "Low",
+            "experimentalFromMainFrame": true,
+            "entity": "127.0.0.1"
+          },
+          {
+            "url": "http://127.0.0.1:61002/_next/static/chunks/0ewucs9gb_p-h.js",
+            "sessionTargetType": "page",
+            "protocol": "http/1.1",
+            "cache": "none",
+            "rendererStartTime": 191.56399965286255,
+            "networkRequestTime": 578.566999912262,
+            "networkEndTime": 815.8939995765686,
+            "finished": true,
+            "transferSize": 3675,
+            "resourceSize": 7865,
+            "statusCode": 200,
+            "mimeType": "application/javascript",
+            "resourceType": "Script",
+            "priority": "Low",
+            "experimentalFromMainFrame": true,
+            "entity": "127.0.0.1"
+          },
+          {
+            "url": "http://127.0.0.1:61002/_next/static/chunks/16_b_el7sqhd1.js",
+            "sessionTargetType": "page",
+            "protocol": "http/1.1",
+            "cache": "none",
+            "rendererStartTime": 191.58699989318848,
+            "networkRequestTime": 678.9489998817444,
+            "networkEndTime": 1160.9409999847412,
+            "finished": true,
+            "transferSize": 15230,
+            "resourceSize": 44498,
+            "statusCode": 200,
+            "mimeType": "application/javascript",
+            "resourceType": "Script",
+            "priority": "Low",
+            "experimentalFromMainFrame": true,
+            "entity": "127.0.0.1"
+          },
+          {
+            "url": "http://127.0.0.1:61002/assets/mail-cover.9b446423.640.avif",
+            "sessionTargetType": "page",
+            "protocol": "http/1.1",
+            "cache": "none",
+            "rendererStartTime": 191.610999584198,
+            "networkRequestTime": 192.4029998779297,
+            "networkEndTime": 937.808000087738,
+            "finished": true,
+            "transferSize": 27676,
+            "resourceSize": 27343,
+            "statusCode": 200,
+            "mimeType": "image/avif",
+            "resourceType": "Image",
+            "priority": "High",
+            "experimentalFromMainFrame": true,
+            "entity": "127.0.0.1"
+          },
+          {
+            "url": "http://127.0.0.1:61002/assets/tide-cover.e5524a18.640.avif",
+            "sessionTargetType": "page",
+            "protocol": "http/1.1",
+            "cache": "none",
+            "rendererStartTime": 554.7129998207092,
+            "networkRequestTime": 730.0009994506836,
+            "networkEndTime": 1422.8199996948242,
+            "finished": true,
+            "transferSize": 36149,
+            "resourceSize": 35816,
+            "statusCode": 200,
+            "mimeType": "image/avif",
+            "resourceType": "Image",
+            "priority": "Low",
+            "experimentalFromMainFrame": true,
+            "entity": "127.0.0.1"
+          },
+          {
+            "url": "http://127.0.0.1:61002/favicon.ico",
+            "sessionTargetType": "page",
+            "protocol": "http/1.1",
+            "cache": "none",
+            "rendererStartTime": 1597.4530000686646,
+            "networkRequestTime": 1597.6449999809265,
+            "networkEndTime": 1759.8889999389648,
+            "finished": true,
+            "transferSize": 293,
+            "resourceSize": 9,
+            "statusCode": 404,
+            "mimeType": "text/plain",
+            "resourceType": "Other",
+            "priority": "High",
+            "experimentalFromMainFrame": true,
+            "entity": "127.0.0.1"
+          },
+          {
+            "url": "http://127.0.0.1:61002/discover?_rsc=5CB68i4pnAekjehf",
+            "sessionTargetType": "page",
+            "protocol": "http/1.1",
+            "cache": "none",
+            "rendererStartTime": 1634.9679999351501,
+            "networkRequestTime": 1635.365999698639,
+            "networkEndTime": 1803.4159994125366,
+            "finished": true,
+            "transferSize": 964,
+            "resourceSize": 230,
+            "statusCode": 200,
+            "mimeType": "text/x-component",
+            "resourceType": "Fetch",
+            "priority": "Low",
+            "experimentalFromMainFrame": true,
+            "entity": "127.0.0.1"
+          },
+          {
+            "url": "http://127.0.0.1:61002/library?_rsc=5CB68i4pnAekjehf",
+            "sessionTargetType": "page",
+            "protocol": "http/1.1",
+            "cache": "none",
+            "rendererStartTime": 1635.2659997940063,
+            "networkRequestTime": 1635.77099943161,
+            "networkEndTime": 1816.4889998435974,
+            "finished": true,
+            "transferSize": 963,
+            "resourceSize": 229,
+            "statusCode": 200,
+            "mimeType": "text/x-component",
+            "resourceType": "Fetch",
+            "priority": "Low",
+            "experimentalFromMainFrame": true,
+            "entity": "127.0.0.1"
+          },
+          {
+            "url": "http://127.0.0.1:61002/settings?_rsc=5CB68i4pnAekjehf",
+            "sessionTargetType": "page",
+            "protocol": "http/1.1",
+            "cache": "none",
+            "rendererStartTime": 1635.7169995307922,
+            "networkRequestTime": 1635.8610000610352,
+            "networkEndTime": 1809.8809995651245,
+            "finished": true,
+            "transferSize": 963,
+            "resourceSize": 230,
+            "statusCode": 200,
+            "mimeType": "text/x-component",
+            "resourceType": "Fetch",
+            "priority": "Low",
+            "experimentalFromMainFrame": true,
+            "entity": "127.0.0.1"
+          },
+          {
+            "url": "http://127.0.0.1:61002/read/post-office?_rsc=5CB68i4pnAekjehf",
+            "sessionTargetType": "page",
+            "protocol": "http/1.1",
+            "cache": "none",
+            "rendererStartTime": 1635.7890000343323,
+            "networkRequestTime": 1635.918999671936,
+            "networkEndTime": 1822.9749999046326,
+            "finished": true,
+            "transferSize": 996,
+            "resourceSize": 308,
+            "statusCode": 200,
+            "mimeType": "text/x-component",
+            "resourceType": "Fetch",
+            "priority": "Low",
+            "experimentalFromMainFrame": true,
+            "entity": "127.0.0.1"
+          },
+          {
+            "url": "http://127.0.0.1:61002/discover?_rsc=tXyZJ52UQVBCVsD3",
+            "sessionTargetType": "page",
+            "protocol": "http/1.1",
+            "cache": "none",
+            "rendererStartTime": 1810.2119994163513,
+            "networkRequestTime": 1810.3829998970032,
+            "networkEndTime": 1973.3819994926453,
+            "finished": true,
+            "transferSize": 1523,
+            "resourceSize": 1020,
+            "statusCode": 200,
+            "mimeType": "text/x-component",
+            "resourceType": "Fetch",
+            "priority": "Low",
+            "experimentalFromMainFrame": true,
+            "entity": "127.0.0.1"
+          },
+          {
+            "url": "http://127.0.0.1:61002/settings?_rsc=tXyZJ52UQVBCVsD3",
+            "sessionTargetType": "page",
+            "protocol": "http/1.1",
+            "cache": "none",
+            "rendererStartTime": 1812.383999824524,
+            "networkRequestTime": 1813.4119997024536,
+            "networkEndTime": 1980.7879996299744,
+            "finished": true,
+            "transferSize": 1520,
+            "resourceSize": 1017,
+            "statusCode": 200,
+            "mimeType": "text/x-component",
+            "resourceType": "Fetch",
+            "priority": "Low",
+            "experimentalFromMainFrame": true,
+            "entity": "127.0.0.1"
+          },
+          {
+            "url": "http://127.0.0.1:61002/library?_rsc=tXyZJ52UQVBCVsD3",
+            "sessionTargetType": "page",
+            "protocol": "http/1.1",
+            "cache": "none",
+            "rendererStartTime": 1819.9399995803833,
+            "networkRequestTime": 1820.1609997749329,
+            "networkEndTime": 1987.8499999046326,
+            "finished": true,
+            "transferSize": 1520,
+            "resourceSize": 1013,
+            "statusCode": 200,
+            "mimeType": "text/x-component",
+            "resourceType": "Fetch",
+            "priority": "Low",
+            "experimentalFromMainFrame": true,
+            "entity": "127.0.0.1"
+          },
+          {
+            "url": "http://127.0.0.1:61002/read/post-office?_rsc=tXyZJ52UQVBCVsD3",
+            "sessionTargetType": "page",
+            "protocol": "http/1.1",
+            "cache": "none",
+            "rendererStartTime": 1825.5969996452332,
+            "networkRequestTime": 1826.6369996070862,
+            "networkEndTime": 2004.6950001716614,
+            "finished": true,
+            "transferSize": 1567,
+            "resourceSize": 1115,
+            "statusCode": 200,
+            "mimeType": "text/x-component",
+            "resourceType": "Fetch",
+            "priority": "Low",
+            "experimentalFromMainFrame": true,
+            "entity": "127.0.0.1"
+          }
+        ],
+        "debugData": {
+          "type": "debugdata",
+          "networkStartTimeTs": 2484018840977,
+          "initiators": [
+            {
+              "type": "parser",
+              "url": "http://127.0.0.1:61002/",
+              "lineNumber": 0,
+              "columnNumber": 263
+            },
+            {
+              "type": "parser",
+              "url": "http://127.0.0.1:61002/",
+              "lineNumber": 0,
+              "columnNumber": 402
+            },
+            {
+              "type": "parser",
+              "url": "http://127.0.0.1:61002/",
+              "lineNumber": 0,
+              "columnNumber": 504
+            },
+            {
+              "type": "parser",
+              "url": "http://127.0.0.1:61002/",
+              "lineNumber": 0,
+              "columnNumber": 615
+            },
+            {
+              "type": "parser",
+              "url": "http://127.0.0.1:61002/",
+              "lineNumber": 0,
+              "columnNumber": 726
+            },
+            {
+              "type": "parser",
+              "url": "http://127.0.0.1:61002/",
+              "lineNumber": 0,
+              "columnNumber": 847
+            },
+            {
+              "type": "parser",
+              "url": "http://127.0.0.1:61002/",
+              "lineNumber": 0,
+              "columnNumber": 958
+            },
+            {
+              "type": "parser",
+              "url": "http://127.0.0.1:61002/",
+              "lineNumber": 0,
+              "columnNumber": 1069
+            },
+            {
+              "type": "parser",
+              "url": "http://127.0.0.1:61002/",
+              "lineNumber": 0,
+              "columnNumber": 1180
+            },
+            {
+              "type": "parser",
+              "url": "http://127.0.0.1:61002/",
+              "lineNumber": 0,
+              "columnNumber": 2761
+            },
+            {
+              "type": "parser",
+              "url": "http://127.0.0.1:61002/",
+              "lineNumber": 0,
+              "columnNumber": 6286
+            }
+          ]
+        }
+      }
+    },
+    "font-display-insight": {
+      "id": "font-display-insight",
+      "title": "글꼴 표시",
+      "description": "[font-display](https://developer.chrome.com/docs/performance/insights/font-display)를 swap 또는 optional로 설정하여 텍스트가 일관되게 표시되도록 하세요. swap은 [글꼴 측정항목 재정의](https://developer.chrome.com/blog/font-fallbacks)를 통해 레이아웃 변화를 완화하도록 추가로 최적화할 수 있습니다.",
+      "score": 1,
+      "scoreDisplayMode": "metricSavings",
+      "numericValue": 0,
+      "numericUnit": "millisecond",
+      "metricSavings": {
+        "INP": 0
+      },
+      "details": {
+        "type": "table",
+        "headings": [
+          {
+            "key": "url",
+            "valueType": "url",
+            "label": "URL"
+          },
+          {
+            "key": "wastedMs",
+            "valueType": "ms",
+            "label": "예상 절감 용량"
+          }
+        ],
+        "items": [],
+        "skipSumming": [
+          "wastedMs"
+        ]
+      },
+      "guidanceLevel": 3
+    },
+    "lcp-discovery-insight": {
+      "id": "lcp-discovery-insight",
+      "title": "LCP 요청 탐색",
+      "description": "HTML에서 LCP 이미지를 즉시 검색할 수 있게 만들고 지연 로드를 방지하여 [LCP를 최적화](https://developer.chrome.com/docs/performance/insights/lcp-discovery)하세요.",
+      "score": 1,
+      "scoreDisplayMode": "numeric",
+      "numericValue": 0,
+      "numericUnit": "millisecond",
+      "metricSavings": {
+        "LCP": 0
+      },
+      "details": {
+        "type": "list",
+        "items": [
+          {
+            "type": "checklist",
+            "items": {
+              "priorityHinted": {
+                "label": "fetchpriority=high 적용됨",
+                "value": true
+              },
+              "requestDiscoverable": {
+                "label": "초기 문서에서 요청을 검색할 수 있습니다",
+                "value": true
+              },
+              "eagerlyLoaded": {
+                "label": "LCP 리소스는 loading=lazy를 사용해서는 안 됩니다",
+                "value": true
+              }
+            }
+          },
+          {
+            "type": "node",
+            "lhId": "page-0-IMG",
+            "path": "1,HTML,1,BODY,3,MAIN,0,SECTION,1,DIV,0,PICTURE,2,IMG",
+            "selector": "section.home-hero > div.hero-art > picture.fs-asset > img",
+            "boundingRect": {
+              "top": 80,
+              "bottom": 299,
+              "left": 20,
+              "right": 370,
+              "width": 350,
+              "height": 219
+            },
+            "snippet": "<img src=\"http://127.0.0.1:61002/assets/mail-cover.9b446423.640.avif\" width=\"960\" height=\"1280\" alt=\"빛을 접어 보내는 우체국의 오리지널 표지\" sizes=\"(max-width:640px) calc(100vw - 40px), 680px\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" style=\"object-position:50% 50%\">",
+            "nodeLabel": "빛을 접어 보내는 우체국의 오리지널 표지"
+          }
+        ]
+      },
+      "guidanceLevel": 3
+    },
+    "lcp-breakdown-insight": {
+      "id": "lcp-breakdown-insight",
+      "title": "LCP 분석",
+      "description": "각 [하위 파트에는 해당 파트에 맞는 개선 전략이 있습니다](https://developer.chrome.com/docs/performance/insights/lcp-breakdown). 이상적으로는 대부분의 LCP 시간이 지연이 아닌 리소스 로드에 소요되어야 합니다.",
+      "score": 1,
+      "scoreDisplayMode": "informative",
+      "metricSavings": {
+        "LCP": 0
+      },
+      "details": {
+        "type": "list",
+        "items": [
+          {
+            "type": "table",
+            "headings": [
+              {
+                "key": "label",
+                "valueType": "text",
+                "label": "하위 파트"
+              },
+              {
+                "key": "duration",
+                "valueType": "ms",
+                "label": "시간"
+              }
+            ],
+            "items": [
+              {
+                "subpart": "timeToFirstByte",
+                "label": "첫 바이트까지의 시간",
+                "duration": 151.27599951171874
+              },
+              {
+                "subpart": "resourceLoadDelay",
+                "label": "리소스 로드 지연",
+                "duration": 40.84300048828125
+              },
+              {
+                "subpart": "resourceLoadDuration",
+                "label": "리소스 로드 시간",
+                "duration": 746.197
+              },
+              {
+                "subpart": "elementRenderDelay",
+                "label": "요소 렌더링 지연",
+                "duration": 13.013
+              }
+            ]
+          },
+          {
+            "type": "node",
+            "lhId": "page-0-IMG",
+            "path": "1,HTML,1,BODY,3,MAIN,0,SECTION,1,DIV,0,PICTURE,2,IMG",
+            "selector": "section.home-hero > div.hero-art > picture.fs-asset > img",
+            "boundingRect": {
+              "top": 80,
+              "bottom": 299,
+              "left": 20,
+              "right": 370,
+              "width": 350,
+              "height": 219
+            },
+            "snippet": "<img src=\"http://127.0.0.1:61002/assets/mail-cover.9b446423.640.avif\" width=\"960\" height=\"1280\" alt=\"빛을 접어 보내는 우체국의 오리지널 표지\" sizes=\"(max-width:640px) calc(100vw - 40px), 680px\" loading=\"eager\" fetchpriority=\"high\" decoding=\"async\" style=\"object-position:50% 50%\">",
+            "nodeLabel": "빛을 접어 보내는 우체국의 오리지널 표지"
+          }
+        ]
+      },
+      "guidanceLevel": 3
+    }
+  }
+}

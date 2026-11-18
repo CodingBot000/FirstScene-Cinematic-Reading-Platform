@@ -1,0 +1,195 @@
+{
+  "scope": "documentation-package-only",
+  "deliveryCheck": false,
+  "productExecuted": false,
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "JSON/YAML syntax",
+      "status": "PASS",
+      "detail": 54
+    },
+    {
+      "name": "JSON Schema meta validation",
+      "status": "PASS",
+      "detail": 4
+    },
+    {
+      "name": "Valid examples against schemas",
+      "status": "PASS",
+      "detail": 5
+    },
+    {
+      "name": "Markdown parity, content hashes, IDs and launch semantics",
+      "status": "PASS",
+      "detail": {
+        "scenes": 12,
+        "beats": 72,
+        "characters": 7955
+      }
+    },
+    {
+      "name": "Intentional negative fixtures rejected",
+      "status": "PASS",
+      "detail": 5
+    },
+    {
+      "name": "Asset plan DAG, prompts and billing default",
+      "status": "PASS",
+      "detail": {
+        "entries": 18,
+        "sources": 16,
+        "public": 16
+      }
+    },
+    {
+      "name": "Task dependency DAG, acceptance, evidence and R01-R13 coverage",
+      "status": "PASS",
+      "detail": {
+        "tasks": 33,
+        "local": 30,
+        "public": 3
+      }
+    },
+    {
+      "name": "Development plan and progress parity",
+      "status": "PASS",
+      "detail": 33
+    },
+    {
+      "name": "QA traceability and coverage",
+      "status": "PASS",
+      "detail": 57
+    },
+    {
+      "name": "Package dependency DAG",
+      "status": "PASS",
+      "detail": 9
+    },
+    {
+      "name": "Design token text contrast calculations",
+      "status": "PASS",
+      "detail": [
+        {
+          "name": "light body",
+          "ratio": 13.671
+        },
+        {
+          "name": "light muted",
+          "ratio": 5.852
+        },
+        {
+          "name": "light CTA",
+          "ratio": 7.369
+        },
+        {
+          "name": "dark body",
+          "ratio": 15.102
+        },
+        {
+          "name": "dark muted",
+          "ratio": 9.796
+        },
+        {
+          "name": "dark CTA",
+          "ratio": 8.259
+        }
+      ]
+    },
+    {
+      "name": "Component public contracts",
+      "status": "PASS",
+      "detail": 16
+    },
+    {
+      "name": "OpenAPI structure, local refs, schemas and request samples",
+      "status": "PASS",
+      "detail": {
+        "paths": 8,
+        "operations": 10,
+        "note": "Structural/ref/schema checks, not full OAS meta-schema validation"
+      }
+    },
+    {
+      "name": "SQL reference inventory and non-destructive baseline",
+      "status": "PASS",
+      "detail": {
+        "tables": 8,
+        "note": "Inventory checks only; no PostgreSQL parser or database execution"
+      }
+    },
+    {
+      "name": "Private source document preserved byte-for-byte",
+      "status": "PASS",
+      "detail": "0e986357128f3a02a35b70661d1c306741a45bd4a2b6eb343a3be226ce342c63"
+    },
+    {
+      "name": "Markdown local links",
+      "status": "PASS",
+      "detail": 29
+    },
+    {
+      "name": "Required deliverables, docs-only scope, no font binaries",
+      "status": "PASS",
+      "detail": 24
+    }
+  ],
+  "errors": [],
+  "metrics": {
+    "parsedStructuredFiles": 54,
+    "stories": 2,
+    "scenes": 12,
+    "beats": 72,
+    "storyCharacters": 7955,
+    "negativeFixturesRejected": 5,
+    "assetPlanEntries": 18,
+    "generationSources": 16,
+    "publicAssetsRequired": 16,
+    "tasks": 33,
+    "localTasks": 30,
+    "publicTasks": 3,
+    "qaCases": 57,
+    "contrastPairs": [
+      {
+        "name": "light body",
+        "ratio": 13.671
+      },
+      {
+        "name": "light muted",
+        "ratio": 5.852
+      },
+      {
+        "name": "light CTA",
+        "ratio": 7.369
+      },
+      {
+        "name": "dark body",
+        "ratio": 15.102
+      },
+      {
+        "name": "dark muted",
+        "ratio": 9.796
+      },
+      {
+        "name": "dark CTA",
+        "ratio": 8.259
+      }
+    ],
+    "components": 16,
+    "apiPaths": 8,
+    "apiOperations": 10,
+    "sqlTables": 8,
+    "localLinks": 29,
+    "fileCountAtValidation": 144
+  },
+  "notExecuted": [
+    "Web application build/tests",
+    "PostgreSQL migration execution",
+    "Image generation/optimization",
+    "Browser visual/a11y/performance QA",
+    "Public deployment",
+    "Full OpenAPI meta-schema validator",
+    "PostgreSQL SQL parser"
+  ],
+  "dependencyNote": "PyYAML/jsonschema were available. Additional OpenAPI/SQL validator installation failed due to network name resolution; no success is claimed for those tools."
+}

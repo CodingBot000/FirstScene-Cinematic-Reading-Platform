@@ -1,0 +1,48 @@
+{
+  "sourceHash": "48d6482b87e88a426c77a933f941c9a85661af1c1a99cbd919fb1d7e4164edc1",
+  "scope": "opaque token pairs only; browser intermediate frames require visual QA",
+  "pairs": [
+    {
+      "name": "light body",
+      "fg": "#242522",
+      "bg": "#F5F1E8",
+      "minimum": 4.5,
+      "ratio": 13.670884890211287
+    },
+    {
+      "name": "light muted",
+      "fg": "#5B5E57",
+      "bg": "#F5F1E8",
+      "minimum": 4.5,
+      "ratio": 5.8519397246839455
+    },
+    {
+      "name": "light CTA",
+      "fg": "#FFFFFF",
+      "bg": "#8B3F2F",
+      "minimum": 4.5,
+      "ratio": 7.368825920480152
+    },
+    {
+      "name": "dark body",
+      "fg": "#F4F0E8",
+      "bg": "#171C20",
+      "minimum": 4.5,
+      "ratio": 15.102209109764948
+    },
+    {
+      "name": "dark muted",
+      "fg": "#BDC5C8",
+      "bg": "#171C20",
+      "minimum": 4.5,
+      "ratio": 9.795967876047506
+    },
+    {
+      "name": "dark CTA",
+      "fg": "#242522",
+      "bg": "#E3B58C",
+      "minimum": 4.5,
+      "ratio": 8.25867230335385
+    }
+  ]
+}

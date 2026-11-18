@@ -1,0 +1,12 @@
+{
+  "observedAt": "2026-11-18T09:32:06.952240+00:00",
+  "status": "BUILD_PASSED",
+  "sourceCommit": "4f7aac271235826998bc3a07bd05d65a75519c62",
+  "imageId": "sha256:5782ebda127595d523b27a2922ca6eb003e8921aa2a7b24f98a58406a2bc7db0",
+  "nodeUser": "node",
+  "buildCommand": "pnpm container:build",
+  "exitCode": 0,
+  "privateLog": "artifacts/private/container-build-20261118.log",
+  "logSha256": "b487f21355bd1e550835bce11d4b2b4e8a98b6cd5c7cc55be4b93cb9c31a5d39",
+  "publicRelease": false
+}

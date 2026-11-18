@@ -1,0 +1,45 @@
+{
+  "observedAt": "2026-11-18T04:53:51.460079+00:00",
+  "status": "TARGETED_POST_FULL_CHECKS_PASSED",
+  "fullSweepCommit": "dacef08e483dffc604530d7b9931b668ab558462",
+  "acceptedCodeCommit": "f90d32ec82f805da7c00b43bc2adbe555c38a712",
+  "changedFilesSinceFull": [
+    "tools/deploy-smoke.mjs",
+    "tools/security-check.mjs",
+    "tools/visual-self-check.mjs"
+  ],
+  "applicationSourceUnchanged": true,
+  "scope": "Three tooling-only followups; full sweep was not repeated after these changes. App/reader/content fingerprint unchanged; targeted lint/security/negative checks passed. No product readiness declaration.",
+  "checks": [
+    {
+      "command": "pnpm lint",
+      "exitCode": 0,
+      "artifact": "evidence/qa/post-full-lint.txt"
+    },
+    {
+      "command": "node tools/visual-self-check.mjs",
+      "exitCode": 0,
+      "artifact": "evidence/qa/post-full-visual-guards.txt"
+    },
+    {
+      "command": "pnpm test:security",
+      "exitCode": 0,
+      "artifact": "evidence/security/verified-f90d32e/result.json"
+    },
+    {
+      "command": "deploy:smoke input guards",
+      "exitCode": 0,
+      "artifact": "evidence/deploy/input-guards.json"
+    },
+    {
+      "command": "pnpm container:build",
+      "exitCode": 0,
+      "artifact": "evidence/container/build-final.json"
+    },
+    {
+      "command": "pnpm container:smoke",
+      "exitCode": 0,
+      "artifact": "evidence/container/smoke.json"
+    }
+  ]
+}

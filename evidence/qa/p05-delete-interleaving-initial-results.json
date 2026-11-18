@@ -1,0 +1,532 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node/24.5.0/bin/node",
+      "/Users/switch/Development/Web/FirstScene/node_modules/@playwright/test/cli.js",
+      "test",
+      "--project=chromium",
+      "tests/e2e/sync.spec.ts"
+    ],
+    "configFile": "/Users/switch/Development/Web/FirstScene/playwright.config.ts",
+    "rootDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/switch/Development/Web/FirstScene/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/switch/Development/Web/FirstScene/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/switch/Development/Web/FirstScene/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "api",
+        "name": "api",
+        "testDir": "/Users/switch/Development/Web/FirstScene/tests/api",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/Users/switch/Development/Web/FirstScene/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+        "snapshotDir": "/Users/switch/Development/Web/FirstScene/tests/e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:3110",
+          "locale": "ko-KR",
+          "timezoneId": "Asia/Seoul",
+          "viewport": {
+            "width": 1440,
+            "height": 1000
+          },
+          "screenshot": "only-on-failure",
+          "trace": "retain-on-failure",
+          "browserName": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "evidence/qa/playwright-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.65.1",
+    "workers": 2,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "sync.spec.ts",
+      "file": "sync.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "P05 actual DB settings ack persists across reload with safe browser-only queue",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 545,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T21:17:43.174Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0cc518b4e81cfdbffc61-5c9db588f47ce038738c",
+          "file": "sync.spec.ts",
+          "line": 12,
+          "column": 1
+        },
+        {
+          "title": "P05 offline latest intent is bounded, honestly marked, and converges to PostgreSQL on reconnect",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1263,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T21:17:43.911Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0cc518b4e81cfdbffc61-2aa3db3d8e490d256919",
+          "file": "sync.spec.ts",
+          "line": 37,
+          "column": 1
+        },
+        {
+          "title": "P05 delayed real server ack never reverses a newer visible preference",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 375,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T21:17:45.179Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0cc518b4e81cfdbffc61-d987f332ab34dfad7c4d",
+          "file": "sync.spec.ts",
+          "line": 70,
+          "column": 1
+        },
+        {
+          "title": "P05 two actual tabs converge through storage events without BroadcastChannel",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 557,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T21:17:45.559Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0cc518b4e81cfdbffc61-82fe4f1028cf03f35b4d",
+          "file": "sync.spec.ts",
+          "line": 96,
+          "column": 1
+        },
+        {
+          "title": "P05 expired cookie blocks old epoch queue without silently creating another session",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 482,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T21:17:46.120Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0cc518b4e81cfdbffc61-2d71e38b9732eaa0f687",
+          "file": "sync.spec.ts",
+          "line": 127,
+          "column": 1
+        },
+        {
+          "title": "P05 deletion drains a delayed real Set-Cookie then removes cookie/cache/outbox without resurrection",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 359,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('이 브라우저의 독서 기록을 삭제했어요.', { exact: true })\nExpected: visible\nError: strict mode violation: getByText('이 브라우저의 독서 기록을 삭제했어요.', { exact: true }) resolved to 2 elements:\n    1) <p role=\"status\" class=\"reading-note\">이 브라우저의 독서 기록을 삭제했어요.</p> aka locator('#main').getByText('이 브라우저의 독서 기록을 삭제했어요')\n    2) <p role=\"status\">이 브라우저의 독서 기록을 삭제했어요.</p> aka getByRole('status')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('이 브라우저의 독서 기록을 삭제했어요.', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('이 브라우저의 독서 기록을 삭제했어요.', { exact: true })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('이 브라우저의 독서 기록을 삭제했어요.', { exact: true })\nExpected: visible\nError: strict mode violation: getByText('이 브라우저의 독서 기록을 삭제했어요.', { exact: true }) resolved to 2 elements:\n    1) <p role=\"status\" class=\"reading-note\">이 브라우저의 독서 기록을 삭제했어요.</p> aka locator('#main').getByText('이 브라우저의 독서 기록을 삭제했어요')\n    2) <p role=\"status\">이 브라우저의 독서 기록을 삭제했어요.</p> aka getByRole('status')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('이 브라우저의 독서 기록을 삭제했어요.', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('이 브라우저의 독서 기록을 삭제했어요.', { exact: true })\u001b[22m\n\n    at /Users/switch/Development/Web/FirstScene/tests/e2e/sync.spec.ts:193:5",
+                    "location": {
+                      "file": "/Users/switch/Development/Web/FirstScene/tests/e2e/sync.spec.ts",
+                      "column": 5,
+                      "line": 193
+                    },
+                    "snippet": " \u001b[90m 191 |\u001b[39m   \u001b[36mawait\u001b[39m expect(\n \u001b[90m 192 |\u001b[39m     page\u001b[33m.\u001b[39mgetByText(\u001b[32m\"이 브라우저의 독서 기록을 삭제했어요.\"\u001b[39m\u001b[33m,\u001b[39m { exact\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m })\u001b[33m,\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 193 |\u001b[39m   )\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 194 |\u001b[39m   expect((\u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mrequest\u001b[33m.\u001b[39mget(\u001b[32m\"/api/v1/me\"\u001b[39m))\u001b[33m.\u001b[39mstatus())\u001b[33m.\u001b[39mtoBe(\u001b[35m401\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 195 |\u001b[39m   expect(\n \u001b[90m 196 |\u001b[39m     (\u001b[36mawait\u001b[39m context\u001b[33m.\u001b[39mcookies())\u001b[33m.\u001b[39msome((c) \u001b[33m=>\u001b[39m c\u001b[33m.\u001b[39mname \u001b[33m===\u001b[39m \u001b[32m\"firstscene_dev\"\u001b[39m)\u001b[33m,\u001b[39m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/switch/Development/Web/FirstScene/tests/e2e/sync.spec.ts",
+                        "column": 5,
+                        "line": 193
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('이 브라우저의 독서 기록을 삭제했어요.', { exact: true })\nExpected: visible\nError: strict mode violation: getByText('이 브라우저의 독서 기록을 삭제했어요.', { exact: true }) resolved to 2 elements:\n    1) <p role=\"status\" class=\"reading-note\">이 브라우저의 독서 기록을 삭제했어요.</p> aka locator('#main').getByText('이 브라우저의 독서 기록을 삭제했어요')\n    2) <p role=\"status\">이 브라우저의 독서 기록을 삭제했어요.</p> aka getByRole('status')\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('이 브라우저의 독서 기록을 삭제했어요.', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('이 브라우저의 독서 기록을 삭제했어요.', { exact: true })\u001b[22m\n\n\n  191 |   await expect(\n  192 |     page.getByText(\"이 브라우저의 독서 기록을 삭제했어요.\", { exact: true }),\n> 193 |   ).toBeVisible();\n      |     ^\n  194 |   expect((await page.request.get(\"/api/v1/me\")).status()).toBe(401);\n  195 |   expect(\n  196 |     (await context.cookies()).some((c) => c.name === \"firstscene_dev\"),\n    at /Users/switch/Development/Web/FirstScene/tests/e2e/sync.spec.ts:193:5"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T21:17:46.607Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "/Users/switch/Development/Web/FirstScene/test-results/sync-P05-deletion-drains-a-05c39-outbox-without-resurrection-chromium/test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/switch/Development/Web/FirstScene/test-results/sync-P05-deletion-drains-a-05c39-outbox-without-resurrection-chromium/error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "/Users/switch/Development/Web/FirstScene/test-results/sync-P05-deletion-drains-a-05c39-outbox-without-resurrection-chromium/trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/switch/Development/Web/FirstScene/tests/e2e/sync.spec.ts",
+                    "column": 5,
+                    "line": 193
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "0cc518b4e81cfdbffc61-335ce056f3cd0905124f",
+          "file": "sync.spec.ts",
+          "line": 167,
+          "column": 1
+        },
+        {
+          "title": "P05 blocked localStorage reports temporary-save failure while current controls and actual server save still work",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 317,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T21:17:47.305Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0cc518b4e81cfdbffc61-d2617bfcf5e42e1a8e47",
+          "file": "sync.spec.ts",
+          "line": 208,
+          "column": 1
+        },
+        {
+          "title": "P05 real server progress restores after local caches are cleared; explicit hash and trusted input retain priority",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1911,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T21:17:47.707Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0cc518b4e81cfdbffc61-e61aa8b391cadd86e05b",
+          "file": "sync.spec.ts",
+          "line": 236,
+          "column": 1
+        },
+        {
+          "title": "P05 pagehide flush sends a real keepalive write without claiming unload delivery is guaranteed",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1145,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T21:17:49.623Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0cc518b4e81cfdbffc61-d25d6e34fe17cc73861c",
+          "file": "sync.spec.ts",
+          "line": 280,
+          "column": 1
+        },
+        {
+          "title": "P05 trusted scroll wins over a delayed initial server-only restoration",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2083,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-17T21:17:50.773Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0cc518b4e81cfdbffc61-4df3fb9de3165a03d6d5",
+          "file": "sync.spec.ts",
+          "line": 310,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-17T21:17:42.408Z",
+    "duration": 10492.014000000001,
+    "expected": 9,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

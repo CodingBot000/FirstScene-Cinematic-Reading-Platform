@@ -1,0 +1,927 @@
+openapi: 3.1.0
+info:
+  title: FirstScene BFF
+  version: 1.0.0
+  description: Planned implementation contract. Anonymous HttpOnly cookie ownership.
+    All writes require exact APP_ORIGIN and application/json. Cookies are not exposed
+    in response bodies. No endpoints are implemented by this documentation package.
+servers:
+- url: http://localhost:3000
+  description: Local development only
+paths:
+  /health/live:
+    get:
+      operationId: live
+      summary: Process health
+      security: []
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Health'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: No valid session
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Origin or content type refused
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Unknown content
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Revision/content/idempotency conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '413':
+          description: Body too large
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Rate limited
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '503':
+          description: Storage unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /health/ready:
+    get:
+      operationId: ready
+      summary: Database readiness without secrets
+      security: []
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Health'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: No valid session
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Origin or content type refused
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Unknown content
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Revision/content/idempotency conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '413':
+          description: Body too large
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Rate limited
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '503':
+          description: Storage unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /api/v1/session:
+    post:
+      operationId: createSession
+      summary: Issue or reuse anonymous browser session
+      security: []
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: No valid session
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Origin or content type refused
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Unknown content
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Revision/content/idempotency conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '413':
+          description: Body too large
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Rate limited
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '503':
+          description: Storage unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Empty'
+  /api/v1/me:
+    get:
+      operationId: getMe
+      summary: Get private session-owned state
+      security:
+      - sessionCookie: []
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Me'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: No valid session
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Origin or content type refused
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Unknown content
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Revision/content/idempotency conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '413':
+          description: Body too large
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Rate limited
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '503':
+          description: Storage unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+    delete:
+      operationId: deleteMe
+      summary: Delete own records and expire cookie
+      security: []
+      responses:
+        '204':
+          description: No content
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: No valid session
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Origin or content type refused
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Unknown content
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Revision/content/idempotency conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '413':
+          description: Body too large
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Rate limited
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '503':
+          description: Storage unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Empty'
+  /api/v1/preferences:
+    put:
+      operationId: putPreferences
+      summary: CAS preferences update
+      security:
+      - sessionCookie: []
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Preferences'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: No valid session
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Origin or content type refused
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Unknown content
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Revision/content/idempotency conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '413':
+          description: Body too large
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Rate limited
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '503':
+          description: Storage unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PreferencesWrite'
+  /api/v1/progress/{storyId}:
+    put:
+      operationId: putProgress
+      summary: CAS reading position update
+      security:
+      - sessionCookie: []
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Progress'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: No valid session
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Origin or content type refused
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Unknown content
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Revision/content/idempotency conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '413':
+          description: Body too large
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Rate limited
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '503':
+          description: Storage unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProgressWrite'
+      parameters:
+      - in: path
+        name: storyId
+        required: true
+        schema:
+          type: string
+  /api/v1/bookmarks/{storyId}/{targetId}:
+    put:
+      operationId: putBookmark
+      summary: Idempotently save story or beat
+      security:
+      - sessionCookie: []
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Bookmark'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: No valid session
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Origin or content type refused
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Unknown content
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Revision/content/idempotency conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '413':
+          description: Body too large
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Rate limited
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '503':
+          description: Storage unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BookmarkWrite'
+      parameters:
+      - in: path
+        name: storyId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: targetId
+        required: true
+        schema:
+          type: string
+    delete:
+      operationId: deleteBookmark
+      summary: Idempotently remove story or beat
+      security:
+      - sessionCookie: []
+      responses:
+        '204':
+          description: No content
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: No valid session
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Origin or content type refused
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Unknown content
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Revision/content/idempotency conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '413':
+          description: Body too large
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Rate limited
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '503':
+          description: Storage unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Mutation'
+      parameters:
+      - in: path
+        name: storyId
+        required: true
+        schema:
+          type: string
+      - in: path
+        name: targetId
+        required: true
+        schema:
+          type: string
+  /api/v1/feedback:
+    post:
+      operationId: submitFeedback
+      summary: Store predefined non-PII feedback
+      description: Maximum5new submissions per session/story per Asia/Seoul calendar day; resets at00:00KST. Exact operation replay consumes no additional allowance. FEEDBACK_LIMIT429 includes Retry-After until the next Korean midnight.
+      security:
+      - sessionCookie: []
+      responses:
+        '201':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FeedbackAccepted'
+        '400':
+          description: Invalid input
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '401':
+          description: No valid session
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '403':
+          description: Origin or content type refused
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Unknown content
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '409':
+          description: Revision/content/idempotency conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '413':
+          description: Body too large
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Rate limited
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '503':
+          description: Storage unavailable
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/FeedbackWrite'
+components:
+  securitySchemes:
+    sessionCookie:
+      type: apiKey
+      in: cookie
+      name: __Host-firstscene
+      description: Local HTTP uses firstscene_dev; production MUST use Secure __Host-firstscene.
+  schemas:
+    Empty:
+      type: object
+      additionalProperties: false
+      properties: {}
+      required: []
+    Session:
+      type: object
+      additionalProperties: false
+      properties:
+        epoch: &id006
+          type: string
+          format: uuid
+        expiresAt: &id008
+          type: string
+          format: date-time
+      required:
+      - epoch
+      - expiresAt
+    Preferences:
+      type: object
+      additionalProperties: false
+      properties:
+        mode: &id001
+          enum:
+          - cinematic
+          - plain
+        effects: &id002
+          enum:
+          - full
+          - reduced
+        fontSize: &id003
+          enum:
+          - 18
+          - 20
+          - 22
+          - 24
+        theme: &id004
+          enum:
+          - dark
+          - light
+        revision: &id005
+          type: integer
+          minimum: 0
+      required:
+      - mode
+      - effects
+      - fontSize
+      - theme
+      - revision
+    PreferencesWrite:
+      type: object
+      additionalProperties: false
+      properties:
+        mode: *id001
+        effects: *id002
+        fontSize: *id003
+        theme: *id004
+        expectedRevision: *id005
+        operationId: *id006
+      required:
+      - mode
+      - effects
+      - fontSize
+      - theme
+      - expectedRevision
+      - operationId
+    Progress:
+      type: object
+      additionalProperties: false
+      properties:
+        storyId: &id007
+          type: string
+          pattern: ^[a-z][a-z0-9-]{1,63}$
+        contentVersion: &id009
+          type: integer
+          minimum: 1
+        contentHash: &id010
+          type: string
+          pattern: ^[a-f0-9]{64}$
+        sceneId: *id007
+        beatId: *id007
+        fraction: &id011
+          type: number
+          minimum: 0
+          maximum: 1
+        furthestOrdinal:
+          type: integer
+          minimum: 0
+        completed: &id012
+          type: boolean
+        revision: *id005
+        updatedAt: *id008
+      required:
+      - storyId
+      - contentVersion
+      - contentHash
+      - sceneId
+      - beatId
+      - fraction
+      - furthestOrdinal
+      - completed
+      - revision
+      - updatedAt
+    ProgressWrite:
+      type: object
+      additionalProperties: false
+      properties:
+        contentVersion: *id009
+        contentHash: *id010
+        sceneId: *id007
+        beatId: *id007
+        fraction: *id011
+        completed: *id012
+        expectedRevision: *id005
+        operationId: *id006
+      required:
+      - contentVersion
+      - contentHash
+      - sceneId
+      - beatId
+      - fraction
+      - completed
+      - expectedRevision
+      - operationId
+    Bookmark:
+      type: object
+      additionalProperties: false
+      properties:
+        storyId: *id007
+        targetId:
+          type: string
+          pattern: ^(__story__|[a-z][a-z0-9-]{1,63})$
+        contentVersion: *id009
+        createdAt: *id008
+      required:
+      - storyId
+      - targetId
+      - contentVersion
+      - createdAt
+    BookmarkWrite:
+      type: object
+      additionalProperties: false
+      properties:
+        contentVersion: *id009
+        operationId: *id006
+      required:
+      - contentVersion
+      - operationId
+    Mutation:
+      type: object
+      additionalProperties: false
+      properties:
+        operationId: *id006
+      required:
+      - operationId
+    FeedbackWrite:
+      type: object
+      additionalProperties: false
+      properties:
+        storyId: *id007
+        operationId: *id006
+        code:
+          enum:
+          - helpful
+          - distracting
+          - too_fast
+          - comfortable
+      required:
+      - storyId
+      - operationId
+      - code
+    FeedbackAccepted:
+      type: object
+      additionalProperties: false
+      properties:
+        accepted:
+          const: true
+      required:
+      - accepted
+    Health:
+      type: object
+      additionalProperties: false
+      properties:
+        status:
+          enum:
+          - ok
+          - unavailable
+      required:
+      - status
+    Me:
+      type: object
+      additionalProperties: false
+      properties:
+        session:
+          $ref: '#/components/schemas/Session'
+        preferences:
+          $ref: '#/components/schemas/Preferences'
+        progress:
+          type: array
+          items:
+            $ref: '#/components/schemas/Progress'
+        bookmarks:
+          type: array
+          items:
+            $ref: '#/components/schemas/Bookmark'
+        serverPersistence:
+          const: true
+      required:
+      - session
+      - preferences
+      - progress
+      - bookmarks
+      - serverPersistence
+    Error:
+      type: object
+      additionalProperties: false
+      properties:
+        error:
+          type: object
+          additionalProperties: false
+          properties:
+            code:
+              type: string
+              pattern: ^[A-Z_]+$
+            message:
+              type: string
+            requestId: *id006
+            details:
+              type: object
+              additionalProperties: false
+              properties:
+                currentRevision: *id005
+                currentProgress:
+                  $ref: '#/components/schemas/Progress'
+              required: []
+          required:
+          - code
+          - message
+          - requestId
+      required:
+      - error

@@ -1,0 +1,366 @@
+{
+  "QA-C01": {
+    "suites": [
+      "content"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-C02": {
+    "suites": [
+      "content"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-C03": {
+    "suites": [
+      "content"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-C04": {
+    "suites": [
+      "content"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-C05": {
+    "suites": [
+      "content"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-C06": {
+    "suites": [
+      "content"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-C07": {
+    "suites": [
+      "unit"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-R01": {
+    "suites": [
+      "unit"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-R04": {
+    "suites": [
+      "unit"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-R10": {
+    "suites": [
+      "unit"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-X03": {
+    "suites": [
+      "unit",
+      "ledger"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-R02": {
+    "suites": [
+      "chromium"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-R03": {
+    "suites": [
+      "chromium"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-R05": {
+    "suites": [
+      "chromium"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-R06": {
+    "suites": [
+      "chromium"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-R07": {
+    "suites": [
+      "chromium"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-R08": {
+    "suites": [
+      "chromium"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-R09": {
+    "suites": [
+      "chromium"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-R11": {
+    "suites": [
+      "chromium"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-D08": {
+    "suites": [
+      "chromium"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-D09": {
+    "suites": [
+      "chromium"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-D10": {
+    "suites": [
+      "chromium"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-U01": {
+    "suites": [
+      "chromium"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-U02": {
+    "suites": [
+      "chromium"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-U03": {
+    "suites": [
+      "chromium"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-U04": {
+    "suites": [
+      "chromium",
+      "visual"
+    ],
+    "status": "AGENT_REVIEWED",
+    "note": "Four actual viewport profiles, WebKit reflow/keyboard and native200% browser zoom verified;100% restoration observed. Agent observation, not human usability evaluation.",
+    "artifacts": [
+      "evidence/responsive/native-zoom-blocker.json"
+    ]
+  },
+  "QA-U05": {
+    "suites": [
+      "chromium"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-U06": {
+    "suites": [
+      "chromium"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-U07": {
+    "suites": [
+      "chromium"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-U09": {
+    "suites": [
+      "chromium"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-D02": {
+    "suites": [
+      "api"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-D03": {
+    "suites": [
+      "api"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-D04": {
+    "suites": [
+      "api"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-D05": {
+    "suites": [
+      "api"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-D06": {
+    "suites": [
+      "api"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-D07": {
+    "suites": [
+      "api"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-D11": {
+    "suites": [
+      "api"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-S01": {
+    "suites": [
+      "api"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-S02": {
+    "suites": [
+      "api",
+      "security-negatives",
+      "unit"
+    ],
+    "status": "PARTIAL",
+    "note": "Local HttpOnly cookie/runtime-policy unit/client-bundle checks passed; actual HTTPS __Host cookie requires approved deployment.",
+    "artifacts": [
+      "evidence/deploy/final-smoke.json"
+    ]
+  },
+  "QA-S03": {
+    "suites": [
+      "api",
+      "database",
+      "unit"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED",
+    "note": "Network-scoped30/15min session creation,120/min writes,64bookmarks,16KiB and concurrency checks; approved5/story/session/AsiaSeoul-calendar-day quota, boundaries/replays/rollback tested. Actual public ingress configuration remains unverified."
+  },
+  "QA-S04": {
+    "suites": [
+      "api"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-D01": {
+    "suites": [
+      "database"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-D12": {
+    "suites": [
+      "database"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-S05": {
+    "suites": [
+      "security-negatives"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-U08": {
+    "suites": [
+      "visual"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-R12": {
+    "suites": [
+      "performance"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-P01": {
+    "suites": [
+      "performance"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-P02": {
+    "suites": [
+      "performance"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-P03": {
+    "suites": [
+      "external-packages"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-A04": {
+    "suites": [
+      "assets"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-C08": {
+    "status": "AGENT_REVIEWED",
+    "artifacts": [
+      "evidence/content/editorial-review.md"
+    ]
+  },
+  "QA-A01": {
+    "suites": [
+      "unit"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED",
+    "note": "Budget-zero adapter denial; no paid call performed."
+  },
+  "QA-A02": {
+    "status": "AGENT_REVIEWED",
+    "artifacts": [
+      "evidence/assets/generation-review.json",
+      "evidence/assets/optimization-review.json"
+    ]
+  },
+  "QA-A03": {
+    "suites": [
+      "unit"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED",
+    "note": "Unknown outcome/duplicate-call refusal and resume ledger tests; no new generation call."
+  },
+  "QA-A05": {
+    "suites": [
+      "unit"
+    ],
+    "status": "AUTOMATED_SCOPE_PASSED"
+  },
+  "QA-X01": {
+    "status": "BLOCKED_EXTERNAL",
+    "artifacts": [
+      "evidence/deploy/preflight.json",
+      "evidence/deploy/final-smoke.json"
+    ],
+    "note": "No approved public HTTPS deployment; provider403."
+  },
+  "QA-X02": {
+    "status": "BLOCKED_EXTERNAL",
+    "artifacts": [
+      "evidence/deploy/preflight.json",
+      "evidence/deploy/final-smoke.json"
+    ],
+    "note": "No approved preview rollback rehearsal; local container restart is separate evidence."
+  }
+}

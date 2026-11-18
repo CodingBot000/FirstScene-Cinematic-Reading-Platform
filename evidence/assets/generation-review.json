@@ -1,0 +1,226 @@
+{
+  "observedAt": "2026-11-17T19:39:52.125837+00:00",
+  "reviewerType": "agent_visual",
+  "humanReviews": 0,
+  "approvedSourceCount": 16,
+  "requiredSourceCount": 16,
+  "generationAttemptsIncludingConcepts": 21,
+  "attemptCap": 22,
+  "separateApiSpendUsd": 0,
+  "actualModel": "unknown",
+  "sourceFiles": [
+    {
+      "id": "mail-character-ref",
+      "sourceSha256": "00a0faecba48a4a756b652589de844ef52890b2278d41eba7834c4d01463aa5e",
+      "width": 1024,
+      "height": 1536,
+      "generationId": "a014aeaf-877d-4133-ac6e-464ae4e19327",
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 9,
+        "notes": "Observed adult single fictional woman, chin-length dark bob, ivory blouse, rust cardigan and brass crescent on left chest; face and torso crop-safe, restrained painterly texture, no text/logo/watermark. Coastal backdrop differs from neutral-plain brief but is safe for opaque portrait panel. Rubric meaning2 identity2 composition1 style2 artifacts2."
+      }
+    },
+    {
+      "id": "tide-character-ref",
+      "sourceSha256": "daaf21aa780997e7b586e172e8fbf7280fd35d6f9aabf59c0b404498c8080f82",
+      "width": 1024,
+      "height": 1536,
+      "generationId": "339a2a00-0ed4-4ee1-9126-976de77a46e6",
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 9,
+        "notes": "Observed one adult fictional woman with low ponytail, navy waterproof jacket, olive canvas tool bag and orange analog wristwatch. Neutral blue background; face and outfit clear, no insignia, text, logo or watermark. Top head margin narrow but not clipped, retain full2:3crop. Rubric meaning2 identity2 composition1 style2 artifacts2."
+      }
+    },
+    {
+      "id": "mail-cover",
+      "sourceSha256": "e0c89a38f08d22555b984429dfc0ab367dac24a403c0ec5423994a2eb6182add",
+      "width": 1086,
+      "height": 1448,
+      "generationId": "cd6d84c4-b04d-4d20-ba5b-be8fecdb0eae",
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 9,
+        "notes": "Observed original warm painterly seaside post office, teal sea, gold folded envelope at doorway; no people, lettering, logos or watermark. Wider camera brings full building and envelope into central horizontal crop; envelope is small but readable at cover size. Reference palette matches, no spoilers. Rubric meaning2 motifs2 composition1 lighting2 artifacts2."
+      }
+    },
+    {
+      "id": "tide-cover",
+      "sourceSha256": "b05eb4a3e89eb22d3757064e9bac92cc1a6559fd3075ce9c10359ca9a78e406a",
+      "width": 1086,
+      "height": 1448,
+      "generationId": "a6b270bd-6e96-453a-8f32-ed752211312a",
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 9,
+        "notes": "Observed empty fictional blue-tiled station, copper gauge, single warm orange indicator, dry visible tile grid and rails; pale cyan reflected light suggests sound. No people, branding, readable labels or watermark. Centered architecture reads at thumbnail; wide crops should retain gauge and signal. Rubric meaning2 motifs2 composition1 lighting2 artifacts2."
+      }
+    },
+    {
+      "id": "mail-bg-01",
+      "sourceSha256": "398ac742ca4244b56f7de1b2d6decb7d3db041566a74d1572658c3e294876fd1",
+      "width": 1586,
+      "height": 992,
+      "generationId": "2d2a4ca0-95e8-495f-91fe-f2eac7264d2b",
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 10,
+        "notes": "Observed empty post office INTERIOR: wooden counter, brass balance scale, shallow drawer wall, central translucent golden envelope with narrow glowing seam; window to dark teal sea at blue hour. Correct scene meaning and recurring motifs, responsive-safe central envelope/scale, restrained painterly family, no people/readable text/logo/watermark. Rubric2/2/2/2/2."
+      }
+    },
+    {
+      "id": "tide-bg-01",
+      "sourceSha256": "b9d68fe1c823d97865c728da6e057996633a09aa39e1f7c891b13bbaddba759b",
+      "width": 1586,
+      "height": 992,
+      "generationId": "7e341c8a-521c-4e17-ab9d-6ae7c49e42fa",
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 9,
+        "notes": "Observed a distinct wide establishing view of empty fictional blue-tiled station, dry gridded platform and rails, copper gauge with illegible ticks and one orange indicator. Cyan bands are reflected light, with no visible fluid or flooding. Central station geometry and recurring objects survive mobile crop. Painterly style consistent, no people/logo/text/watermark. Rubric meaning2 motifs2 crop2 lighting1 artifacts2."
+      }
+    },
+    {
+      "id": "mail-bg-02",
+      "sourceSha256": "4cc7e735df7df905d61023b4d373f58ba0c22aa16edb02d9cb7915375ec49193",
+      "width": 1586,
+      "height": 992,
+      "generationId": "9c09d45a-388c-4274-aee6-44580c9e04d3",
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 10,
+        "notes": "Observed interior close-up with open translucent envelope, unmarked two-pan brass balance consistent with scene01, and soft rectangular golden window reflection across wood. Palette/materials match approved family; no people, ghosts, faces, numbers, readable text, logos or watermark. Envelope/scale remain central and crop-safe. Rubric2/2/2/2/2."
+      }
+    },
+    {
+      "id": "tide-bg-02",
+      "sourceSha256": "9e85cf53108a3aa289f196aac55058026debe4b26132495703a28522656a74c1",
+      "width": 1586,
+      "height": 992,
+      "generationId": "5222eab6-bddf-4f0e-9e6e-3a29f7c1c651",
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 9,
+        "notes": "Observed distinct ticket counter in blue-tiled dry station: central blank pale ticket on copper tray, cabinet holding abstract schematic lines without labels, warm orange indicator and restrained cyan reflections. Primary ticket crop-safe; schematic is secondary on right. No people, numbers, readable text, logos, watermark or actual water. Rubric meaning2 motifs2 composition1 lighting2 artifacts2."
+      }
+    },
+    {
+      "id": "mail-bg-03",
+      "sourceSha256": "93d8c29b35210b4bb015bd720212308c545d0e2d4500f87f5072a778b863948f",
+      "width": 1586,
+      "height": 992,
+      "generationId": "2d2423c1-b142-4d62-a27b-28c9ac70a923",
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 10,
+        "notes": "Observed quiet fictional hillside night alley, large pale rectangular absence-mark on retaining wall, lone open empty mailbox post, distant teal sea, and narrow warm reflection on wet paving from unseen envelope. No intact old house, visible people/ghosts, horror, text, logo or watermark. Wall mark and light central/crop-safe, consistent painterly palette. Rubric2/2/2/2/2."
+      }
+    },
+    {
+      "id": "tide-bg-03",
+      "sourceSha256": "64e75fdaa2b073b9bcb836755b078c2a1e5483424c4a935b06e6d7e22b52487e",
+      "width": 1586,
+      "height": 992,
+      "generationId": "b0befa03-aa0b-4f7a-a4ea-f102883d2df4",
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 10,
+        "notes": "Observed dry blue-tiled service corridor, parallel copper conduits leading to a central round perforated acoustic hatch, pale cyan waveform-like reflected light and one portable orange lantern. No actual water, platform remake, people, letters/numerals, logos or watermark. Central hatch and floor motif survive responsive view; consistent painterly architecture. Rubric2/2/2/2/2."
+      }
+    },
+    {
+      "id": "mail-bg-04",
+      "sourceSha256": "c4cbf59adc5ed0352eae499760cb953fa321ec75f9acce841c92591517a8daff",
+      "width": 1586,
+      "height": 992,
+      "generationId": "e41f1853-7fef-47d4-b1e7-c8c195c5f7f7",
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 9,
+        "notes": "Observed near-dawn counter with central blank address card, unbranded fountain pen, open envelope, balanced unmarked two-pan brass scale and golden light through round opening against teal. No hands/people, text, numbers, logo or watermark. Envelope glow is subdued compared with earlier scene but scene meaning and key objects remain clear and crop-safe. Rubric meaning2 motifs1 composition2 style2 artifacts2."
+      }
+    },
+    {
+      "id": "tide-bg-04",
+      "sourceSha256": "4a096e05bd9d9f0a8e5137083d5c480ab5671a4d829c8caa4fefbc75c91c0ec0",
+      "width": 1586,
+      "height": 992,
+      "generationId": "af866ed6-7785-419b-a47e-9d67b319ada5",
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 10,
+        "notes": "Observed circular blue-tiled acoustic archive chamber with central glass cylinder containing only abstract cyan sound/light waves, thin copper rings and one small orange lamp. Solid dry gridded floor, no fluid surface or rain/flooding. Distinct climax composition, canonical palette and clean geometry, no people, text, numerals, logos or watermark. Rubric2/2/2/2/2."
+      }
+    },
+    {
+      "id": "mail-bg-05",
+      "sourceSha256": "c720cfeb1ecc18a8902084f8abdc43f5e1f4d0e2c7af0c42fa18fa9bab1bc5ac",
+      "width": 1586,
+      "height": 992,
+      "generationId": "9135f85d-efac-4975-80c1-5ef200af41e3",
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 10,
+        "notes": "Observed recurring hill post office at first dawn: closed wooden shutters, pale peach sky over teal sea, and one small golden paper form drifting toward town. No people/hands, readable lettering/numbers, logos or watermark. Facade/roof/chimney family recognizable from approved cover; main scene and paper visible in responsive framing, gentle grounded magical realism. Rubric2/2/2/2/2."
+      }
+    },
+    {
+      "id": "tide-bg-05",
+      "sourceSha256": "ad5fca82386d93cd76e9d23fa72df143c6aceadf9fde0b6d1fa9452943add3fd",
+      "width": 1586,
+      "height": 992,
+      "generationId": "7b1b264a-33b6-468c-b925-09d63692ca19",
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 9,
+        "notes": "Observed calm wider return to blue-tiled ticket counter, resting copper gauge without readable numerals, steady orange indicator and open service door revealing warm lit stairs. Dry visible tile grid, no water/people/text/logos/watermark. Counter framing is wider than scene02 and warm desk/stair light is stronger, but recurring station motifs and relief meaning remain consistent/crop-safe. Rubric meaning2 motifs2 composition2 lighting1 artifacts2."
+      }
+    },
+    {
+      "id": "mail-bg-06",
+      "sourceSha256": "2992494e8850f71e1eecb0ce855184d4dd4dcd1ace5c41646886ba5a73134e8f",
+      "width": 1586,
+      "height": 992,
+      "generationId": "2f4a9d75-017e-442d-915f-fa823b6c76b0",
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 9,
+        "notes": "Observed new apartment kitchen in morning light, exactly two mismatched handled ceramic cups on windowsill, one primary healthy potted plant, partly unpacked moving box and soft sun pool. A secondary decorative trailing vine appears at upper-left shelf; primary narrative plant/cups are clear and central. No post-office scale/mailbox, people, readable text/numbers, logos or watermark. Rubric meaning2 motifs1 composition2 lighting2 artifacts2."
+      }
+    },
+    {
+      "id": "tide-bg-06",
+      "sourceSha256": "224097aedc26bd76e7ed1769b6673a8b5238f0a327e6d67cee5ff3c2bd5946e0",
+      "width": 1586,
+      "height": 992,
+      "generationId": "f99e7a32-1c01-4a70-8330-aa7b394c0c41",
+      "review": {
+        "status": "approved",
+        "reviewerType": "agent_visual",
+        "score": 10,
+        "notes": "Observed empty fictional morning street, small listening kiosk with blank circular grille, one newly planted supported tree, closed underground stair shutter in distance, pale cyan daylight and small orange light. Distinct outdoor epilogue, dry solid pavement, no people, readable writing/numerals, real transit branding, logos or watermark. Primary kiosk/tree clear and crop-safe. Rubric2/2/2/2/2."
+      }
+    }
+  ],
+  "notYetCompleted": [
+    "finalportraitcropreview",
+    "fullpublic16optimizationandverification",
+    "12sceneproductvisualreview"
+  ]
+}

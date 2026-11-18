@@ -1,0 +1,79 @@
+{
+  "observedAt": "2026-11-18T02:02:12.961971+00:00",
+  "codeCommit": "91fee84a58483b97c72e5964c1ec498e9bc0e9eb",
+  "status": "PASS_FOR_PROGRESS_UNIT_REPAIR_ONLY",
+  "before": "evidence/visual/progress-bar-before.png",
+  "negativeReproduction": "evidence/qa/p06-progress-before-results.json",
+  "actualFailure": "Native progress.position was1while visible percentage was36% (expected .36).",
+  "repair": "Library percentage call now uses max100; public Progress default0..1 remains unchanged.",
+  "after": [
+    {
+      "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/library-1440x1000-paper-full.png",
+      "name": "library",
+      "mode": "paper",
+      "state": "full",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "4d1b2c666f39e361abb069687ab75cf1d1d12288482ac8ccaa129b2464f2c349",
+      "opened": true,
+      "reviewedAt": "2026-11-18T02:02:12.961971+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened new1440/390 after max100 correction:3% label now corresponds to short rust fill with grey remaining track. Real native progress.position matched36% in the negative-reproduction journey after fix and3% in the visual flow. Recent/saved/quote sections and controls remain readable, with no overlap."
+    },
+    {
+      "path": "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/library-390x844-paper-full.png",
+      "name": "library",
+      "mode": "paper",
+      "state": "full",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "eca691aad6ff746ebd2e996022fcd0c899c990f9835b99511393995aaec79323",
+      "opened": true,
+      "reviewedAt": "2026-11-18T02:02:12.961971+00:00",
+      "reviewer": "agent",
+      "scores": {
+        "hierarchy": 2,
+        "typography": 2,
+        "colorContrast": 2,
+        "alignmentSpacing": 2,
+        "interaction": 2,
+        "mobile": 2
+      },
+      "total": 12,
+      "observation": "Actually opened new1440/390 after max100 correction:3% label now corresponds to short rust fill with grey remaining track. Real native progress.position matched36% in the negative-reproduction journey after fix and3% in the visual flow. Recent/saved/quote sections and controls remain readable, with no overlap."
+    }
+  ],
+  "verification": [
+    "production build/strict TypeScript",
+    "lint",
+    "actual library5/5Chromium and5/5WebKit",
+    "visual14/14 including native ratio vs visible label"
+  ],
+  "reports": [
+    "evidence/qa/p06-progress-chromium-results.json",
+    "evidence/qa/p06-progress-webkit-results.json",
+    "evidence/visual/91fee84a58483b97c72e5964c1ec498e9bc0e9eb/browser-results.json"
+  ],
+  "wholeVisualReview": "Still IN_PROGRESS; no full visual/product readiness claim."
+}

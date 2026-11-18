@@ -1,0 +1,38 @@
+{
+  "observedAt": "2026-11-17T21:20:53.622278+00:00",
+  "reviewer": "agent",
+  "humanReviews": 0,
+  "task": "P05-T01",
+  "artifacts": [
+    {
+      "path": "evidence/qa/p05-sync-chromium-results.json",
+      "sha256": "aa96b188adebbe560360d2e3183ac7d9c9e85a05a538615c74ddb9fee23514cd",
+      "opened": false
+    },
+    {
+      "path": "evidence/qa/p05-sync-webkit-results.json",
+      "sha256": "68c84dd51e2db0bd9956fd489cf9e10bf89895d2b8e018981f7bdc21ca6666cf",
+      "opened": false
+    },
+    {
+      "path": "evidence/ui/p05-settings-server-ack-1440.png",
+      "sha256": "10d3c8af51f9520138e4c0a1b2cba7c6d71f7b3108bcb098ec83286ec71b2af3",
+      "opened": true
+    },
+    {
+      "path": "evidence/ui/p05-settings-server-ack-390.png",
+      "sha256": "ac011f315292a02b7db0736ad99d487b738daf1616215b1614359e1561047c4a",
+      "opened": true
+    },
+    {
+      "path": "evidence/ui/p05-reader-offline-1440.png",
+      "sha256": "40f4051b54c298a1a430a5e52c8be32361860b37bae9986e75027e8c17c2f9f6",
+      "opened": true
+    },
+    {
+      "path": "evidence/ui/p05-reader-offline-390.png",
+      "sha256": "94abc2a33f4a9f0250568f1ec0cb528a9cc0137e6d4403fa3d3a7e8ecc3b9392",
+      "opened": true
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "status": "AUTOMATED_SECURITY_NEGATIVES_PASSED",
+  "startedAt": "2026-11-18T04:35:29.485Z",
+  "sourceCommit": "dacef08e483dffc604530d7b9931b668ab558462",
+  "releaseReady": false,
+  "managedSourceAudit": "NOT_PERFORMED_TOOL_BLOCKED",
+  "commands": [
+    {
+      "command": "pnpm exec vitest run tests/unit/compiler.test.ts tests/unit/http.test.ts tests/unit/runtime-environment.test.ts --reporter=json --outputFile=evidence/security/current/unit-results.json",
+      "startedAt": "2026-11-18T04:35:29.505Z",
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T04:35:30.208Z"
+    },
+    {
+      "command": "pnpm test:api",
+      "startedAt": "2026-11-18T04:35:30.209Z",
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T04:35:38.900Z"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "evidence/security/current/unit-results.json",
+      "sha256": "2282dc93a7ff5b21f932e4e78c9eabade966c902bd21632d06b1c3c2bba1ce86"
+    },
+    {
+      "path": "evidence/security/current/test-results.json",
+      "sha256": "31ee3bf24913a30f6c6e30e0503fb97b0bb33b4d9cf3bdbb0eaf206cdf96e567"
+    },
+    {
+      "path": "evidence/security/public-source-review.json",
+      "sha256": "453abe8ab7f33007012c5723d4274b2765df0127041c5e5c88b37f49afcdc57a"
+    }
+  ],
+  "checks": [
+    {
+      "name": "ACTUAL_NEGATIVE_REPORTS",
+      "status": "PASS",
+      "compilerHttpEnvironmentTests": 27,
+      "apiTests": 22,
+      "coverage": [
+        "CSRF",
+        "opaque-cookie",
+        "IDOR",
+        "concurrent-rate",
+        "16KiB",
+        "malformed-input",
+        "nonce-CSP",
+        "SQL-CAS",
+        "receipt-replay",
+        "session-expiry",
+        "deletion"
+      ]
+    },
+    {
+      "name": "TRACKED_CREDENTIAL_AND_PATH_SCAN",
+      "status": "PASS",
+      "files": 1015,
+      "credentialValuesPrinted": false
+    },
+    {
+      "name": "PUBLIC_PRIVATE_SOURCE_NAME_SCAN",
+      "status": "PASS",
+      "files": 321,
+      "privateTermsPrinted": false,
+      "sourceFingerprint": {
+        "files": 321,
+        "sha256": "83c7cfa1287a6bfd6f11ef813340494feb3cfa7a7ef36e59c9fbb0a907133673"
+      }
+    },
+    {
+      "name": "PRODUCTION_CLIENT_BUNDLE_SCAN",
+      "status": "PASS",
+      "javascriptChunks": 17
+    },
+    {
+      "name": "NO_RUNTIME_AUTH_OR_MOCK_TEST_BYPASS",
+      "status": "PASS",
+      "runtimeSources": 30,
+      "method": "Bounded forbidden-pattern regression; not exhaustive source audit"
+    }
+  ],
+  "errors": [],
+  "finishedAt": "2026-11-18T04:35:39.196Z"
+}

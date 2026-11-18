@@ -1,0 +1,1359 @@
+{
+  "numTotalTestSuites": 16,
+  "numPassedTestSuites": 16,
+  "numFailedTestSuites": 0,
+  "numPendingTestSuites": 0,
+  "numTotalTests": 105,
+  "numPassedTests": 105,
+  "numFailedTests": 0,
+  "numPendingTests": 0,
+  "numTodoTests": 0,
+  "snapshot": {
+    "added": 0,
+    "failure": false,
+    "filesAdded": 0,
+    "filesRemoved": 0,
+    "filesRemovedList": [],
+    "filesUnmatched": 0,
+    "filesUpdated": 0,
+    "matched": 0,
+    "total": 0,
+    "unchecked": 0,
+    "uncheckedKeysByFile": [],
+    "unmatched": 0,
+    "updated": 0,
+    "didUpdate": false
+  },
+  "startTime": 1794993646386,
+  "success": true,
+  "testResults": [
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [],
+          "fullName": "P02 queue is read-only and requires reference approvals",
+          "status": "passed",
+          "title": "P02 queue is read-only and requires reference approvals",
+          "duration": 32.173708000000005,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P02 budget0 denies all paid execution and uses no API credentials",
+          "status": "passed",
+          "title": "P02 budget0 denies all paid execution and uses no API credentials",
+          "duration": 2.4209999999999923,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P02 unresolved/unknown outcomes block duplicate native calls",
+          "status": "passed",
+          "title": "P02 unresolved/unknown outcomes block duplicate native calls",
+          "duration": 3.6737500000000125,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P02 total22attempt limit includes design concepts",
+          "status": "passed",
+          "title": "P02 total22attempt limit includes design concepts",
+          "duration": 2.430250000000001,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P02 import sniffs bytes, preserves raw hash and requires a distinct visual review",
+          "status": "passed",
+          "title": "P02 import sniffs bytes, preserves raw hash and requires a distinct visual review",
+          "duration": 9.963583,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P02 import rejects symlinks, executable/vector bytes, excessive dimensions and oversized files",
+          "status": "passed",
+          "title": "P02 import rejects symlinks, executable/vector bytes, excessive dimensions and oversized files",
+          "duration": 12.135041999999999,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P02 source regeneration and optimization cannot bypass approval",
+          "status": "passed",
+          "title": "P02 source regeneration and optimization cannot bypass approval",
+          "duration": 2.4977910000000065,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P02 partial preview never promotes an incomplete manifest through release verification",
+          "status": "passed",
+          "title": "P02 partial preview never promotes an incomplete manifest through release verification",
+          "duration": 15.07654199999999,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P02 releasevariant inspection checks actualcodec/bytes/hash/dimensions, not only extension",
+          "status": "passed",
+          "title": "P02 releasevariant inspection checks actualcodec/bytes/hash/dimensions, not only extension",
+          "duration": 5.48599999999999,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P02 reviewer cannot mark an unknown/prototype asset approved",
+          "status": "passed",
+          "title": "P02 reviewer cannot mark an unknown/prototype asset approved",
+          "duration": 2.2502910000000043,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        }
+      ],
+      "startTime": 1794993646588,
+      "endTime": 1794993646676.2502,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/switch/Development/Web/FirstScene/tests/unit/assets.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [],
+          "fullName": "batch aggregation preserves failing and skipped results instead of turning collection into a pass",
+          "status": "passed",
+          "title": "batch aggregation preserves failing and skipped results instead of turning collection into a pass",
+          "duration": 1.6536660000000012,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "missing or partial browser statistics cannot satisfy execution proof throughNaN comparisons",
+          "status": "passed",
+          "title": "missing or partial browser statistics cannot satisfy execution proof throughNaN comparisons",
+          "duration": 0.20624999999999716,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        }
+      ],
+      "startTime": 1794993646526,
+      "endTime": 1794993646528.2063,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/switch/Development/Web/FirstScene/tests/unit/browser-reports.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "P02 canonical safe compiler"
+          ],
+          "fullName": "P02 canonical safe compiler matches the full fixture rather than only counts",
+          "status": "passed",
+          "title": "matches the full fixture rather than only counts",
+          "duration": 29.416665999999992,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [
+            "P02 canonical safe compiler"
+          ],
+          "fullName": "P02 canonical safe compiler normalizes BOM, CRLF and decomposed Unicode deterministically",
+          "status": "passed",
+          "title": "normalizes BOM, CRLF and decomposed Unicode deterministically",
+          "duration": 14.039708000000019,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [
+            "P02 canonical safe compiler"
+          ],
+          "fullName": "P02 canonical safe compiler rejects unsupported inline AST <script>alert(1)</script>",
+          "status": "passed",
+          "title": "rejects unsupported inline AST <script>alert(1)</script>",
+          "duration": 5.673999999999978,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [
+            "P02 canonical safe compiler"
+          ],
+          "fullName": "P02 canonical safe compiler rejects unsupported inline AST [링크](javascript:alert(1))",
+          "status": "passed",
+          "title": "rejects unsupported inline AST [링크](javascript:alert(1))",
+          "duration": 5.924374999999998,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [
+            "P02 canonical safe compiler"
+          ],
+          "fullName": "P02 canonical safe compiler rejects unsupported inline AST ![이미지](x.png)",
+          "status": "passed",
+          "title": "rejects unsupported inline AST ![이미지](x.png)",
+          "duration": 5.59862499999997,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [
+            "P02 canonical safe compiler"
+          ],
+          "fullName": "P02 canonical safe compiler rejects unsupported inline AST `code`",
+          "status": "passed",
+          "title": "rejects unsupported inline AST `code`",
+          "duration": 5.400041999999985,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [
+            "P02 canonical safe compiler"
+          ],
+          "fullName": "P02 canonical safe compiler rejects unsupported inline AST **숨은 강조**",
+          "status": "passed",
+          "title": "rejects unsupported inline AST **숨은 강조**",
+          "duration": 5.3915419999999585,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [
+            "P02 canonical safe compiler"
+          ],
+          "fullName": "P02 canonical safe compiler rejects unsupported inline AST :unknown[x]",
+          "status": "passed",
+          "title": "rejects unsupported inline AST :unknown[x]",
+          "duration": 4.372042000000022,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [
+            "P02 canonical safe compiler"
+          ],
+          "fullName": "P02 canonical safe compiler rejects unsafe YAML title: &ref 빛을 접어 보내는 우체국",
+          "status": "passed",
+          "title": "rejects unsafe YAML title: &ref 빛을 접어 보내는 우체국",
+          "duration": 4.856167000000028,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [
+            "P02 canonical safe compiler"
+          ],
+          "fullName": "P02 canonical safe compiler rejects unsafe YAML title: !!str 빛을 접어 보내는 우체국",
+          "status": "passed",
+          "title": "rejects unsafe YAML title: !!str 빛을 접어 보내는 우체국",
+          "duration": 4.640458000000024,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [
+            "P02 canonical safe compiler"
+          ],
+          "fullName": "P02 canonical safe compiler rejects unsafe YAML title: 빛을 접어 보내는 우체국\ntitle: 중복",
+          "status": "passed",
+          "title": "rejects unsafe YAML title: 빛을 접어 보내는 우체국\ntitle: 중복",
+          "duration": 3.960125000000005,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [
+            "P02 canonical safe compiler"
+          ],
+          "fullName": "P02 canonical safe compiler rejects unknown, duplicate attributes and implicit EOF closing",
+          "status": "passed",
+          "title": "rejects unknown, duplicate attributes and implicit EOF closing",
+          "duration": 12.221208000000047,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [
+            "P02 canonical safe compiler"
+          ],
+          "fullName": "P02 canonical safe compiler applies mood overrides to only their own beat",
+          "status": "passed",
+          "title": "applies mood overrides to only their own beat",
+          "duration": 4.1906249999999545,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [
+            "P02 canonical safe compiler"
+          ],
+          "fullName": "P02 canonical safe compiler rejects hash tampering independently of shape",
+          "status": "passed",
+          "title": "rejects hash tampering independently of shape",
+          "duration": 4.247749999999996,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [
+            "P02 canonical safe compiler"
+          ],
+          "fullName": "P02 canonical safe compiler accepts four emphasis beats and rejects a fifth even when every emphasized sentence is short",
+          "status": "passed",
+          "title": "accepts four emphasis beats and rejects a fifth even when every emphasized sentence is short",
+          "duration": 9.542332999999985,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [
+            "P02 canonical safe compiler"
+          ],
+          "fullName": "P02 canonical safe compiler rejects oversized emphasis and nonexistent speakers/assets",
+          "status": "passed",
+          "title": "rejects oversized emphasis and nonexistent speakers/assets",
+          "duration": 12.75441699999999,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        }
+      ],
+      "startTime": 1794993646637,
+      "endTime": 1794993646769.7544,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/switch/Development/Web/FirstScene/tests/unit/compiler.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [],
+          "fullName": "refuses local readiness when a required decision/task is pending and preserves the denominator",
+          "status": "passed",
+          "title": "refuses local readiness when a required decision/task is pending and preserves the denominator",
+          "duration": 1.2503750000000053,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "refuses public readiness despite all local tasks completing while provider access is blocked",
+          "status": "passed",
+          "title": "refuses public readiness despite all local tasks completing while provider access is blocked",
+          "duration": 0.24666699999998798,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "refuses duplicate task IDs which could conceal an incomplete task",
+          "status": "passed",
+          "title": "refuses duplicate task IDs which could conceal an incomplete task",
+          "duration": 0.18529100000000653,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        }
+      ],
+      "startTime": 1794993646515,
+      "endTime": 1794993646516.2505,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/switch/Development/Web/FirstScene/tests/unit/execution-readiness.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [],
+          "fullName": "CI without private input requires an exact locally scanned source receipt",
+          "status": "passed",
+          "title": "CI without private input requires an exact locally scanned source receipt",
+          "duration": 1.1670000000000016,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "an empty or unreviewed privacy scope cannot produce a CI pass",
+          "status": "passed",
+          "title": "an empty or unreviewed privacy scope cannot produce a CI pass",
+          "duration": 0.13783300000000054,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "nine successful navigation audits cannot hide an unstarted browser performance suite",
+          "status": "passed",
+          "title": "nine successful navigation audits cannot hide an unstarted browser performance suite",
+          "duration": 0.19200000000000728,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "executed failing performance tests remain collectable while missing navigation runs do not",
+          "status": "passed",
+          "title": "executed failing performance tests remain collectable while missing navigation runs do not",
+          "duration": 0.1517079999999993,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        }
+      ],
+      "startTime": 1794993646515,
+      "endTime": 1794993646517.1516,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/switch/Development/Web/FirstScene/tests/unit/gate-evidence.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 cookie policy distinguishes scoped local productionbuild from public HTTPS without Domain",
+          "status": "passed",
+          "title": "P04 cookie policy distinguishes scoped local productionbuild from public HTTPS without Domain",
+          "duration": 1.978166999999985,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 exactOrigin/fetchmetadata/JSON checks precede parsing and storage",
+          "status": "passed",
+          "title": "P04 exactOrigin/fetchmetadata/JSON checks precede parsing and storage",
+          "duration": 13.193457999999993,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 reads at most16KiB UTF8 and rejects unknown fields/malformedJSON",
+          "status": "passed",
+          "title": "P04 reads at most16KiB UTF8 and rejects unknown fields/malformedJSON",
+          "duration": 0.7537920000000042,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 unexpected server errors return redacted no-store envelope and server-generated requestId",
+          "status": "passed",
+          "title": "P04 unexpected server errors return redacted no-store envelope and server-generated requestId",
+          "duration": 1.3968749999999943,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 response privacy cannot be overridden by a caller header",
+          "status": "passed",
+          "title": "P04 response privacy cannot be overridden by a caller header",
+          "duration": 0.1291659999999979,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 server response contract rejects accidental private fields without exposing them",
+          "status": "passed",
+          "title": "P04 server response contract rejects accidental private fields without exposing them",
+          "duration": 1.0764160000000231,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 whole-request deadline returns503 rather than hanging past10seconds",
+          "status": "passed",
+          "title": "P04 whole-request deadline returns503 rather than hanging past10seconds",
+          "duration": 1.4762499999999932,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        }
+      ],
+      "startTime": 1794993646590,
+      "endTime": 1794993646610.4763,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/switch/Development/Web/FirstScene/tests/unit/http.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [],
+          "fullName": "P03 preference store keeps SSR deterministic, loads once and persists real local choices",
+          "status": "passed",
+          "title": "P03 preference store keeps SSR deterministic, loads once and persists real local choices",
+          "duration": 3.4579590000000024,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P03 anchor cache restores IDs/fractions and preserves furthest when going backward",
+          "status": "passed",
+          "title": "P03 anchor cache restores IDs/fractions and preserves furthest when going backward",
+          "duration": 1.488874999999993,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P03 an absolute expired record is reset with an honest notice",
+          "status": "passed",
+          "title": "P03 an absolute expired record is reset with an honest notice",
+          "duration": 0.19129099999999255,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P03 corrupted/oversized/unknown preferences are rejected rather than cast into the reader",
+          "status": "passed",
+          "title": "P03 corrupted/oversized/unknown preferences are rejected rather than cast into the reader",
+          "duration": 0.5430410000000023,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P03 denied storage preserves current UI preferences and never reports saved",
+          "status": "passed",
+          "title": "P03 denied storage preserves current UI preferences and never reports saved",
+          "duration": 0.13270799999999383,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P03 content revision fallback preserves reading without pretending to restore a removed beat",
+          "status": "passed",
+          "title": "P03 content revision fallback preserves reading without pretending to restore a removed beat",
+          "duration": 0.13062499999999488,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P05 write-only storage denial keeps in-memory preferences across subsequent anchor flushes",
+          "status": "passed",
+          "title": "P05 write-only storage denial keeps in-memory preferences across subsequent anchor flushes",
+          "duration": 0.16158400000000483,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P05 a hidden reader cannot overwrite the newer foreground anchor in the shared cache",
+          "status": "passed",
+          "title": "P05 a hidden reader cannot overwrite the newer foreground anchor in the shared cache",
+          "duration": 0.20250000000000057,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        }
+      ],
+      "startTime": 1794993646529,
+      "endTime": 1794993646535.2024,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/switch/Development/Web/FirstScene/tests/unit/local-preferences.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "P03 QA-R01/R04 stateless reader core"
+          ],
+          "fullName": "P03 QA-R01/R04 stateless reader core resolves42percent crossing boundaries, gaps, first and final positions",
+          "status": "passed",
+          "title": "resolves42percent crossing boundaries, gaps, first and final positions",
+          "duration": 0.8695410000000123,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [
+            "P03 QA-R01/R04 stateless reader core"
+          ],
+          "fullName": "P03 QA-R01/R04 stateless reader core returnsnull for empty or invalid measurements",
+          "status": "passed",
+          "title": "returnsnull for empty or invalid measurements",
+          "duration": 0.1042500000000075,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [
+            "P03 QA-R01/R04 stateless reader core"
+          ],
+          "fullName": "P03 QA-R01/R04 stateless reader core jumps forward and backward without retained scene/mood state",
+          "status": "passed",
+          "title": "jumps forward and backward without retained scene/mood state",
+          "duration": 0.14837500000000148,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [
+            "P03 QA-R01/R04 stateless reader core"
+          ],
+          "fullName": "P03 QA-R01/R04 stateless reader core plain mode has no image/effect while reduced mode retains static images",
+          "status": "passed",
+          "title": "plain mode has no image/effect while reduced mode retains static images",
+          "duration": 0.4895840000000078,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [
+            "P03 QA-R01/R04 stateless reader core"
+          ],
+          "fullName": "P03 QA-R01/R04 stateless reader core restores retained IDs, scene fallback, first beat fallback and invalid fractions",
+          "status": "passed",
+          "title": "restores retained IDs, scene fallback, first beat fallback and invalid fractions",
+          "duration": 0.27558400000000915,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [
+            "P03 QA-R01/R04 stateless reader core"
+          ],
+          "fullName": "P03 QA-R01/R04 stateless reader core stores beat-local fractions and never reduces furthest while reversing",
+          "status": "passed",
+          "title": "stores beat-local fractions and never reduces furthest while reversing",
+          "duration": 0.15175000000000693,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [
+            "P03 QA-R01/R04 stateless reader core"
+          ],
+          "fullName": "P03 QA-R01/R04 stateless reader core graphemes remain whole with combining text and emoji, bounded plan durations",
+          "status": "passed",
+          "title": "graphemes remain whole with combining text and emoji, bounded plan durations",
+          "duration": 9.352874999999997,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [
+            "P03 QA-R01/R04 stateless reader core"
+          ],
+          "fullName": "P03 QA-R01/R04 stateless reader core reduces to full static text under policy {\"mode\":\"plain\",\"reduced\":false}",
+          "status": "passed",
+          "title": "reduces to full static text under policy {\"mode\":\"plain\",\"reduced\":false}",
+          "duration": 0.20120799999999406,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [
+            "P03 QA-R01/R04 stateless reader core"
+          ],
+          "fullName": "P03 QA-R01/R04 stateless reader core reduces to full static text under policy {\"mode\":\"cinematic\",\"reduced\":true}",
+          "status": "passed",
+          "title": "reduces to full static text under policy {\"mode\":\"cinematic\",\"reduced\":true}",
+          "duration": 0.08116700000000776,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [
+            "P03 QA-R01/R04 stateless reader core"
+          ],
+          "fullName": "P03 QA-R01/R04 stateless reader core reduces to full static text under policy {\"mode\":\"cinematic\",\"reduced\":false,\"segmenterAvailable\":false}",
+          "status": "passed",
+          "title": "reduces to full static text under policy {\"mode\":\"cinematic\",\"reduced\":false,\"segmenterAvailable\":false}",
+          "duration": 0.08958300000000463,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P02 fractional direct-link restoration stays inside the intended beat after browser pixel rounding",
+          "status": "passed",
+          "title": "P02 fractional direct-link restoration stays inside the intended beat after browser pixel rounding",
+          "duration": 0.5487919999999917,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        }
+      ],
+      "startTime": 1794993646511,
+      "endTime": 1794993646523.5488,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/switch/Development/Web/FirstScene/tests/unit/reader-core.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [],
+          "fullName": "P05 outbox replaces per-key intent and rejects quota, duplicates, malformed body and UTF8 excess",
+          "status": "passed",
+          "title": "P05 outbox replaces per-key intent and rejects quota, duplicates, malformed body and UTF8 excess",
+          "duration": 2.4425840000000107,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P05 offline changes persist one latest preference; no network until explicit reconnect/flush and ack",
+          "status": "passed",
+          "title": "P05 offline changes persist one latest preference; no network until explicit reconnect/flush and ack",
+          "duration": 13.712084000000004,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P05 late ack cannot remove/overwrite a newer preference intent; next write uses confirmed revision",
+          "status": "passed",
+          "title": "P05 late ack cannot remove/overwrite a newer preference intent; next write uses confirmed revision",
+          "duration": 53.343582999999995,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P05 uncertain-outcome retries preserve exact operationId and payload instead of changing CAS input",
+          "status": "passed",
+          "title": "P05 uncertain-outcome retries preserve exact operationId and payload instead of changing CAS input",
+          "duration": 2.001833000000005,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P05 a pre-cookie intent binds to its first epoch before an uncertain mutation and cannot migrate",
+          "status": "passed",
+          "title": "P05 a pre-cookie intent binds to its first epoch before an uncertain mutation and cannot migrate",
+          "duration": 0.682124999999985,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P05 conflict refresh merges safe current state and retries once with new id; repeated conflict stops",
+          "status": "passed",
+          "title": "P05 conflict refresh merges safe current state and retries once with new id; repeated conflict stops",
+          "duration": 0.6354169999999897,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P05 existing epoch401 never creates a new cookie or applies its queued intents to another epoch",
+          "status": "passed",
+          "title": "P05 existing epoch401 never creates a new cookie or applies its queued intents to another epoch",
+          "duration": 51.16187500000001,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P05 new-session creation is single-flight; deletion waits for late cookie issuance before DELETE",
+          "status": "passed",
+          "title": "P05 new-session creation is single-flight; deletion waits for late cookie issuance before DELETE",
+          "duration": 51.597624999999994,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P05 progress debounce750ms/max5s and offline timer pause preserve latest intent",
+          "status": "passed",
+          "title": "P05 progress debounce750ms/max5s and offline timer pause preserve latest intent",
+          "duration": 3.0383749999999736,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P05 an old epoch retained only in local cache still blocks silent queue import after cookie expiry",
+          "status": "passed",
+          "title": "P05 an old epoch retained only in local cache still blocks silent queue import after cookie expiry",
+          "duration": 0.36549999999999727,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P05 two loaded stores share durable queue keys and acknowledgements prevent stale queue resurrection",
+          "status": "passed",
+          "title": "P05 two loaded stores share durable queue keys and acknowledgements prevent stale queue resurrection",
+          "duration": 1.0399170000000026,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P05 transient hydration retries follow1/2/4/8/16/30s and timers stop offline even without a queued write",
+          "status": "passed",
+          "title": "P05 transient hydration retries follow1/2/4/8/16/30s and timers stop offline even without a queued write",
+          "duration": 1.6990840000000276,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P05 a bookmark receipt replay reconciles current GET state instead of displaying a later-deleted bookmark",
+          "status": "passed",
+          "title": "P05 a bookmark receipt replay reconciles current GET state instead of displaying a later-deleted bookmark",
+          "duration": 0.631416999999999,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P05 failed erasure preserves the durable queue across reload and only confirmed retry releases a new generation",
+          "status": "passed",
+          "title": "P05 failed erasure preserves the durable queue across reload and only confirmed retry releases a new generation",
+          "duration": 0.7346249999999941,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P05 legacy or incomplete reset markers pause writes without assuming deletion succeeded",
+          "status": "passed",
+          "title": "P05 legacy or incomplete reset markers pause writes without assuming deletion succeeded",
+          "duration": 0.09533299999998235,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P05 HTTP200 is not a deletion acknowledgement and cannot clear local records",
+          "status": "passed",
+          "title": "P05 HTTP200 is not a deletion acknowledgement and cannot clear local records",
+          "duration": 0.13445799999999508,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P05 local erasure denial after acknowledged204 is reported separately and never marked fully deleted",
+          "status": "passed",
+          "title": "P05 local erasure denial after acknowledged204 is reported separately and never marked fully deleted",
+          "duration": 0.22729199999997718,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P05 a corrupted sync document cannot discard the old cache epoch and adopt another cookie's state",
+          "status": "passed",
+          "title": "P05 a corrupted sync document cannot discard the old cache epoch and adopt another cookie's state",
+          "duration": 51.88704200000001,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P05 cancelling a failed deletion resumes only the same live epoch and preserves its original expiry",
+          "status": "passed",
+          "title": "P05 cancelling a failed deletion resumes only the same live epoch and preserves its original expiry",
+          "duration": 1.2289579999999773,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P05 failed-deletion cancellation never imports a pending old queue into another epoch",
+          "status": "passed",
+          "title": "P05 failed-deletion cancellation never imports a pending old queue into another epoch",
+          "duration": 0.4981660000000261,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P05 local-write permission reads a new generation before any cache mutation despite delayed notifications",
+          "status": "passed",
+          "title": "P05 local-write permission reads a new generation before any cache mutation despite delayed notifications",
+          "duration": 0.08041700000001129,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P05 a valid new sync snapshot cannot silently absorb a cache belonging to another epoch",
+          "status": "passed",
+          "title": "P05 a valid new sync snapshot cannot silently absorb a cache belonging to another epoch",
+          "duration": 0.10749999999995907,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P05 explicit completion remains the single progress intent while a newer reread anchor waits in the existing cache",
+          "status": "passed",
+          "title": "P05 explicit completion remains the single progress intent while a newer reread anchor waits in the existing cache",
+          "duration": 1.032083,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P05 a superseded delayed409 refreshes the revision without blocking the newer desired choice",
+          "status": "passed",
+          "title": "P05 a superseded delayed409 refreshes the revision without blocking the newer desired choice",
+          "duration": 51.720124999999996,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P05 a synchronous preference intent survives document loss before the state lock runs",
+          "status": "passed",
+          "title": "P05 a synchronous preference intent survives document loss before the state lock runs",
+          "duration": 0.581875000000025,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P05 new choices cannot bypass Retry-After on an already rejected write",
+          "status": "passed",
+          "title": "P05 new choices cannot bypass Retry-After on an already rejected write",
+          "duration": 1.4596670000000245,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "feedback is sent only online in its original epoch and never enters the progress/preferences outbox",
+          "status": "passed",
+          "title": "feedback is sent only online in its original epoch and never enters the progress/preferences outbox",
+          "duration": 0.41204199999998536,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "feedback accepts only201withthecontractbody; uncertain responses do not claim success",
+          "status": "passed",
+          "title": "feedback accepts only201withthecontractbody; uncertain responses do not claim success",
+          "duration": 1.7313329999999496,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "feedback honors RetryAfter across new operation ids without blocking another story",
+          "status": "passed",
+          "title": "feedback honors RetryAfter across new operation ids without blocking another story",
+          "duration": 0.6835419999999885,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "a late feedback acknowledgement after deletion cannot report accepted or recreate old state",
+          "status": "passed",
+          "title": "a late feedback acknowledgement after deletion cannot report accepted or recreate old state",
+          "duration": 0.4167089999999689,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        }
+      ],
+      "startTime": 1794993646534,
+      "endTime": 1794993646829.4167,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/switch/Development/Web/FirstScene/tests/unit/reading-sync.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [],
+          "fullName": "untrusted ingress never gets a public bucket merely by supplying forwarded headers or partial metadata",
+          "status": "passed",
+          "title": "untrusted ingress never gets a public bucket merely by supplying forwarded headers or partial metadata",
+          "duration": 11.311041000000003,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "verified ingress uses only its single protected address, not spoofable XFF or malformed lists",
+          "status": "passed",
+          "title": "verified ingress uses only its single protected address, not spoofable XFF or malformed lists",
+          "duration": 4.949874999999992,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "loopback keeps one explicit local network and cannot be split by client XFF or Vercel-looking headers",
+          "status": "passed",
+          "title": "loopback keeps one explicit local network and cannot be split by client XFF or Vercel-looking headers",
+          "duration": 0.18820900000000051,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "public startup requires actual platform metadata and explicit ingress opt-in",
+          "status": "passed",
+          "title": "public startup requires actual platform metadata and explicit ingress opt-in",
+          "duration": 1.1605830000000026,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        }
+      ],
+      "startTime": 1794993646512,
+      "endTime": 1794993646530.1606,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/switch/Development/Web/FirstScene/tests/unit/request-network.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [],
+          "fullName": "runtime validation permits actual optimized loopback artifacts and chooses public host cookies only for HTTPS",
+          "status": "passed",
+          "title": "runtime validation permits actual optimized loopback artifacts and chooses public host cookies only for HTTPS",
+          "duration": 1.732875000000007,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "runtime rejects owner credentials, public secrets, insecure public origin, unsafe TLS and missing rate secrets",
+          "status": "passed",
+          "title": "runtime rejects owner credentials, public secrets, insecure public origin, unsafe TLS and missing rate secrets",
+          "duration": 1.3759999999999906,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "configuration errors never retain or serialize the malformed credential input",
+          "status": "passed",
+          "title": "configuration errors never retain or serialize the malformed credential input",
+          "duration": 3.5640420000000006,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "pure startup validation does not connect to a temporarily unavailable loopback database",
+          "status": "passed",
+          "title": "pure startup validation does not connect to a temporarily unavailable loopback database",
+          "duration": 0.14104199999999878,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        }
+      ],
+      "startTime": 1794993646513,
+      "endTime": 1794993646519.564,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/switch/Development/Web/FirstScene/tests/unit/runtime-environment.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "P01 token contract"
+          ],
+          "fullName": "P01 token contract exports the exact canonical source and six independently evaluated contrasts",
+          "status": "passed",
+          "title": "exports the exact canonical source and six independently evaluated contrasts",
+          "duration": 2.6672909999999916,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [
+            "P01 token contract"
+          ],
+          "fullName": "P01 token contract preserves readable mobile type and OS-reduction policy",
+          "status": "passed",
+          "title": "preserves readable mobile type and OS-reduction policy",
+          "duration": 0.14458399999999472,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        }
+      ],
+      "startTime": 1794993646517,
+      "endTime": 1794993646520.1445,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/switch/Development/Web/FirstScene/tests/unit/tokens.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [],
+          "fullName": "P01 loading prevents repeated native button activation without removing label",
+          "status": "passed",
+          "title": "P01 loading prevents repeated native button activation without removing label",
+          "duration": 4.56887500000002,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P01 icon buttons retain accessible label and pressed semantics",
+          "status": "passed",
+          "title": "P01 icon buttons retain accessible label and pressed semantics",
+          "duration": 0.3410829999999976,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P01 assets reject remote URLs and traversal while retaining a stable fallback",
+          "status": "passed",
+          "title": "P01 assets reject remote URLs and traversal while retaining a stable fallback",
+          "duration": 1.1552499999999952,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P01 story card uses independent sibling action rather than nesting buttons in links",
+          "status": "passed",
+          "title": "P01 story card uses independent sibling action rather than nesting buttons in links",
+          "duration": 0.6591249999999889,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        }
+      ],
+      "startTime": 1794993646591,
+      "endTime": 1794993646597.6592,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/switch/Development/Web/FirstScene/tests/unit/ui.test.ts"
+    }
+  ]
+}

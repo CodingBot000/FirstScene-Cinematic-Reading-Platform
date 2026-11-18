@@ -1,0 +1,122 @@
+{
+  "status": "PERFORMANCE_GATES_PASSED",
+  "releaseReady": false,
+  "startedAt": "2026-11-18T04:35:59.555Z",
+  "sourceCommit": "dacef08e483dffc604530d7b9931b668ab558462",
+  "commands": [
+    {
+      "command": "pnpm storybook:build",
+      "startedAt": "2026-11-18T04:35:59.567Z",
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T04:36:01.071Z"
+    },
+    {
+      "command": "pnpm assets:verify",
+      "startedAt": "2026-11-18T04:36:01.071Z",
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T04:36:01.365Z"
+    },
+    {
+      "command": "node tools/performance/collect-lighthouse.mjs",
+      "startedAt": "2026-11-18T04:36:01.366Z",
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T04:38:35.872Z"
+    },
+    {
+      "command": "node tools/performance/collect-browser.mjs",
+      "startedAt": "2026-11-18T04:38:35.873Z",
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T04:38:56.890Z"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "evidence/performance/current/navigation.json",
+      "sha256": "3e2902083a76bd9986c27b1e21c74c0b80f71b15197e958e7d0c787dae5345df"
+    },
+    {
+      "path": "evidence/performance/current/home-1.json",
+      "sha256": "8f57acc809399273a33b7119ad90dba02eb774fa3c4eb0e160dc1f3a5f061a88"
+    },
+    {
+      "path": "evidence/performance/current/home-2.json",
+      "sha256": "a97be780de95ad622c9dbe5ad912fcfb2d35003f3fd7b842d9515aefe7090e36"
+    },
+    {
+      "path": "evidence/performance/current/home-3.json",
+      "sha256": "3138b8e8e05fcc27a0f9a02a9aaa14b175e3a943fa74dc01d60d47e5614f8ce5"
+    },
+    {
+      "path": "evidence/performance/current/introduction-1.json",
+      "sha256": "ff3e4b0d94069ca730e22f523eb32f07f2685108194e11748c23822bebdce4db"
+    },
+    {
+      "path": "evidence/performance/current/introduction-2.json",
+      "sha256": "6055648fe4bc4b68f9d3aa0921e4c86d506b707df3a085f52e0e4be7b027ee2f"
+    },
+    {
+      "path": "evidence/performance/current/introduction-3.json",
+      "sha256": "97fcd55eabe06de863f5eb8bb890b17b006285fbaba803a8573fe26d65c82ef9"
+    },
+    {
+      "path": "evidence/performance/current/reader-1.json",
+      "sha256": "88322f412ad22b777572e2bdadd3b10bed40d8ffdb08cfab2255ed4b68f51d2d"
+    },
+    {
+      "path": "evidence/performance/current/reader-2.json",
+      "sha256": "c1ffa99196806991e3c72836461ac50858e1caadf004e705bf91cfc028d111e6"
+    },
+    {
+      "path": "evidence/performance/current/reader-3.json",
+      "sha256": "2b63910cdeb19e77ab6941d00180506dcb1e415cdab8311ffd0b5915b7979915"
+    },
+    {
+      "path": "evidence/performance/current/browser-results.json",
+      "sha256": "301ec779293e9d201c5cbdbd31cb23febd6726eceb3d103c33fb6fe6500508e3"
+    },
+    {
+      "path": "evidence/performance/current/lifecycle-perf-chromium.json",
+      "sha256": "25863d1ecc687502cbd615134f8c8ba8a29740ebd9fba24ae6a14473f9fc117e"
+    },
+    {
+      "path": "evidence/performance/current/lifecycle-perf-webkit.json",
+      "sha256": "a4c749d07ace0c2fd2ac565d517a0a6653ac81e041296533e8e12745df821c4f"
+    },
+    {
+      "path": "evidence/performance/current/interactions.json",
+      "sha256": "b45917da4022b1d137bee7cbc62db595565880d1771fa3a97e3f9d1524709472"
+    },
+    {
+      "path": "evidence/performance/current/resources.json",
+      "sha256": "fc22d911a2f4a2b0ef6e80b345e834eeafa92e5515a2e9a4df3ebf7114928dd3"
+    }
+  ],
+  "firstImages960": [
+    {
+      "id": "mail-bg-01",
+      "path": "apps/web/public/assets/mail-bg-01.93c0bc1d.960.avif",
+      "bytes": 34127,
+      "sha256": "93c0bc1d7fa17e410b30d9f0a317c01cafd8f9bf3bb61818f4fcb81034653771"
+    },
+    {
+      "id": "mail-bg-01",
+      "path": "apps/web/public/assets/mail-bg-01.e2856b9b.960.webp",
+      "bytes": 71040,
+      "sha256": "e2856b9b41b7364561fb2b97b3fb140a84edfa1f2771886b21706699ba6c6c3a"
+    },
+    {
+      "id": "tide-bg-01",
+      "path": "apps/web/public/assets/tide-bg-01.6ba7d608.960.avif",
+      "bytes": 38054,
+      "sha256": "6ba7d6081b86b88a7ed5dbe7cfe02600234d208c97bb00e8fc61c5df5416304a"
+    },
+    {
+      "id": "tide-bg-01",
+      "path": "apps/web/public/assets/tide-bg-01.ab45e2a5.960.webp",
+      "bytes": 70128,
+      "sha256": "ab45e2a570f6e4a28e3fbcc87501341b31f049c9822eab79c96b42d1469bf2e9"
+    }
+  ],
+  "errors": [],
+  "finishedAt": "2026-11-18T04:38:56.897Z"
+}

@@ -1,0 +1,45 @@
+{
+  "observedAt": "2026-11-18T09:19:30.330141+00:00",
+  "status": "PASS",
+  "completed": true,
+  "check": "Native 200% browser zoom",
+  "sourceCommit": "f415ffa792b8d106f10040834e93cf00f2d2ad2b",
+  "method": "CUA native Google Chrome for Testing isolated incognito window; actual View zoom controls, native toolbar AX observed 200%, then Cmd+0 observed 100%.",
+  "observations": [
+    "Reader single-column text, sticky toolbar and save status legible at actual 200%.",
+    "Settings keyboard Tab reached every option and close; Escape restored Settings focus.",
+    "24px font selected in settings at 200%; reader reflow remained legible.",
+    "Feedback four radio choices remained distinct; choosing one then Tab reached enabled send button. No feedback submitted during native check.",
+    "Zoom restored to 100%, explicitly observed in native AX. Own incognito window closed. Dedicated Testing app quit requested; inventory still reported running so process shutdown is not asserted. Existing user Chrome tabs untouched."
+  ],
+  "cssZoomUsed": false,
+  "deviceScaleOrViewportPassedAsZoom": false,
+  "otherUserTabsModified": false,
+  "humanReviews": 0,
+  "artifacts": [
+    {
+      "path": "evidence/responsive/native-dialog-keyboard-200.png",
+      "sha256": "461c923940f8fb4724078e02b416aba7fe89453b1ab8be4fc54d6433a482edb8"
+    },
+    {
+      "path": "evidence/responsive/native-feedback-200.png",
+      "sha256": "a0671ff16de9a896369468d1270eef8528cc2bb1252530ed42eb038c13cb8126"
+    },
+    {
+      "path": "evidence/responsive/native-feedback-keyboard-200.png",
+      "sha256": "083c31dc2c8d2bfdcf76afcb6f4500fc5e4190c0b479893caf22b1409478d8ce"
+    },
+    {
+      "path": "evidence/responsive/native-reader-200.png",
+      "sha256": "2154252036da8772f1498a2b5404255cb31f0f5ed1b45c9cd54a19492336d4e4"
+    },
+    {
+      "path": "evidence/responsive/native-reader-font24-200.png",
+      "sha256": "442aedb57d1218c2dcda91fb89fe5e65c9df88a048f4776486bacc30b046e1c6"
+    },
+    {
+      "path": "evidence/responsive/native-zoom-restored-100-ax.txt",
+      "sha256": "255498980c8e2d83e4076fa64b17b4ef245cbb2a7f329963bb7812ab6d1e4bf1"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "observedAt": "2026-11-18T04:18:37.052984+00:00",
+  "status": "REPRODUCED_AND_REMOVED",
+  "method": "Read historical Git blobs and current files; private terms never printed",
+  "artifacts": [
+    {
+      "path": "tools/validate_package.py",
+      "beforeCommit": "675d1c28687f15491047a161205359ebb8f2db16",
+      "beforeSha256": "2499cb08d5c900798326ad477a03791cb47512b4c7a024c056ecfd73aca05ee4",
+      "beforePrivateNameFound": true,
+      "afterSha256": "c098b935d46e8855018f1ac7b5ded18ebbbf470b69d97464e619f2f2c64da29a",
+      "afterPrivateNameFound": false
+    },
+    {
+      "path": "tools/test_validate_package.py",
+      "beforeCommit": "675d1c28687f15491047a161205359ebb8f2db16",
+      "beforeSha256": "a9396237315d37f8a6b6b6e000ef508f4118dfe37dd7db408cf4a870f13d33f1",
+      "beforePrivateNameFound": true,
+      "afterSha256": "086f09c5f4ad7de82a59e3e0b3bd6d5c317cd4a14645a2bd91747d208209a4c7",
+      "afterPrivateNameFound": false
+    }
+  ],
+  "gitHistoryPublished": false,
+  "privateOriginalPreserved": true
+}

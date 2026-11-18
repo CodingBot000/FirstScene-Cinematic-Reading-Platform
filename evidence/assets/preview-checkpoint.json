@@ -1,0 +1,11 @@
+{
+  "observedAt": "2026-11-17T17:40:24.003524+00:00",
+  "scope": "development-preview-only",
+  "productionSourcesApproved": 6,
+  "requiredSources": 16,
+  "publicPreviewAssets": 5,
+  "requiredPublicAssets": 16,
+  "releaseEligible": false,
+  "manifestSha256": "85cf0cbf53bfd27436ab58b648cb86837d8f0d7fe2981a09e97b9053682b92f9",
+  "note": "Only approved available sources optimized for renderer QA. Normal assets:optimize requires all16sources; assets:verify still rejects incomplete public count. Portrait crops need final visual review beforeP02-T05completion."
+}

@@ -1,0 +1,39 @@
+{
+  "executedAt": "2026-11-18T09:20:45.979Z",
+  "stories": [
+    {
+      "id": "post-office",
+      "contentHash": "f60bc06871513809ccb302d950cf98faf59ec7f3a671a5f2c1b0fc2756648d65",
+      "scenes": 6,
+      "beats": 36
+    },
+    {
+      "id": "tide-station",
+      "contentHash": "cabf9b98c0def39935378bea4dd467b34c93bf73b17796e6d9a68475c0b04e62",
+      "scenes": 6,
+      "beats": 36
+    }
+  ],
+  "negativeFixtures": [
+    {
+      "file": "unknown-effect.json",
+      "error": "STORY_SCHEMA: data/scenes/0/beats/0/effect must be equal to one of the allowed values"
+    },
+    {
+      "file": "duplicate-beat.json",
+      "error": "DUPLICATE_ID: mail-s01-b01"
+    },
+    {
+      "file": "missing-asset.json",
+      "error": "ASSET_REFERENCE: missing-background"
+    },
+    {
+      "file": "hash-tampered.json",
+      "error": "CONTENT_HASH_MISMATCH"
+    },
+    {
+      "file": "unsafe-story.md",
+      "error": "unsafe-story.md:1:1 FRONTMATTER_REQUIRED"
+    }
+  ]
+}

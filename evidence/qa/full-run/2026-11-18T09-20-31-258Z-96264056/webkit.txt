@@ -1,0 +1,26 @@
+
+> firstscene-workspace@0.1.0 test:e2e:webkit /Users/switch/Development/Web/FirstScene
+> node tools/run-browser-tests.mjs --project=webkit
+
+Error: OWNED_LINUX_REPORT_REQUIRED
+    at linuxWebkitConfig (file:///Users/switch/Development/Web/FirstScene/tools/linux-webkit-config.ts:16:11)
+    at file:///Users/switch/Development/Web/FirstScene/tools/linux-e2e-playwright.config.ts:3:16
+    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at node:internal/modules/esm/loader:647:26
+    at requireOrImport (/Users/switch/Development/Web/FirstScene/node_modules/.pnpm/playwright@1.65.1/node_modules/playwright/lib/common/index.js:1155:12)
+    at loadUserConfig (/Users/switch/Development/Web/FirstScene/node_modules/.pnpm/playwright@1.65.1/node_modules/playwright/lib/common/index.js:1361:46)
+    at loadConfig (/Users/switch/Development/Web/FirstScene/node_modules/.pnpm/playwright@1.65.1/node_modules/playwright/lib/common/index.js:1368:22)
+    at Object.loadConfigFromFile (/Users/switch/Development/Web/FirstScene/node_modules/.pnpm/playwright@1.65.1/node_modules/playwright/lib/common/index.js:1586:10)
+    at runTests (/Users/switch/Development/Web/FirstScene/node_modules/.pnpm/playwright@1.65.1/node_modules/playwright/lib/cli/testActions.js:44:18)
+    at _Command.<anonymous> (/Users/switch/Development/Web/FirstScene/node_modules/.pnpm/playwright@1.65.1/node_modules/playwright/lib/program.js:55:7)
+file:///Users/switch/Development/Web/FirstScene/tools/run-browser-tests.mjs:74
+      throw new Error("BROWSER_BATCH_REPORT_MISSING");
+            ^
+
+Error: BROWSER_BATCH_REPORT_MISSING
+    at file:///Users/switch/Development/Web/FirstScene/tools/run-browser-tests.mjs:74:13
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+
+Node.js v24.22.3
+ ELIFECYCLE  Command failed with exit code 1.

@@ -1,0 +1,486 @@
+[
+  {
+    "type": "scrollTo",
+    "args": [
+      {
+        "top": 5084.154375,
+        "behavior": "instant"
+      }
+    ],
+    "time": 118,
+    "y": 0,
+    "top": 5370.234375,
+    "height": 228,
+    "beat": "mail-s01-b01",
+    "locked": null,
+    "width": 390,
+    "activeTag": "BODY",
+    "activeText": "본문 바로가기← 작품 소개빛을 접어 보내는 우체국1/6",
+    "dialog": false,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s01-b01",
+      "fraction": 0
+    }
+  },
+  {
+    "type": "scroll",
+    "time": 119,
+    "y": 5084,
+    "top": 286.234375,
+    "height": 228,
+    "beat": "mail-s01-b01",
+    "locked": null,
+    "width": 390,
+    "activeTag": "BODY",
+    "activeText": "본문 바로가기← 작품 소개빛을 접어 보내는 우체국1/6",
+    "dialog": false,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s01-b01",
+      "fraction": 0
+    }
+  },
+  {
+    "type": "scroll",
+    "time": 170,
+    "y": 4994,
+    "top": 376.234375,
+    "height": 228,
+    "beat": "mail-s03-b02",
+    "locked": null,
+    "width": 390,
+    "activeTag": "BODY",
+    "activeText": "본문 바로가기← 작품 소개빛을 접어 보내는 우체국3/6",
+    "dialog": false,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b02",
+      "fraction": 0.2993229166666648
+    }
+  },
+  {
+    "type": "pointerdown",
+    "time": 174,
+    "y": 4994,
+    "top": 376.234375,
+    "height": 228,
+    "beat": "mail-s03-b01",
+    "locked": null,
+    "width": 390,
+    "activeTag": "BODY",
+    "activeText": "본문 바로가기← 작품 소개빛을 접어 보내는 우체국3/6",
+    "dialog": false,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b01",
+      "fraction": 1
+    }
+  },
+  {
+    "type": "pointerup",
+    "time": 174,
+    "y": 4994,
+    "top": 376.234375,
+    "height": 228,
+    "beat": "mail-s03-b01",
+    "locked": null,
+    "width": 390,
+    "activeTag": "BODY",
+    "activeText": "본문 바로가기← 작품 소개빛을 접어 보내는 우체국3/6",
+    "dialog": false,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b01",
+      "fraction": 1
+    }
+  },
+  {
+    "type": "click",
+    "time": 174,
+    "y": 4994,
+    "top": 376.234375,
+    "height": 228,
+    "beat": "mail-s03-b01",
+    "locked": null,
+    "width": 390,
+    "activeTag": "BODY",
+    "activeText": "본문 바로가기← 작품 소개빛을 접어 보내는 우체국3/6",
+    "dialog": false,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b01",
+      "fraction": 1
+    }
+  },
+  {
+    "type": "focusin",
+    "time": 182,
+    "y": 4994,
+    "top": 376.234375,
+    "height": 228,
+    "beat": "mail-s03-b01",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "INPUT",
+    "activeText": "",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b01",
+      "fraction": 1
+    }
+  },
+  {
+    "type": "pointerdown",
+    "time": 222,
+    "y": 4994,
+    "top": 376.234375,
+    "height": 228,
+    "beat": "mail-s03-b01",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "INPUT",
+    "activeText": "",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b01",
+      "fraction": 1
+    }
+  },
+  {
+    "type": "focusin",
+    "time": 223,
+    "y": 4994,
+    "top": 376.234375,
+    "height": 228,
+    "beat": "mail-s03-b01",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "DIV",
+    "activeText": "읽기 설정설정은 바로 반영되고 이 기기에 임시 저장돼요",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b01",
+      "fraction": 1
+    }
+  },
+  {
+    "type": "pointerup",
+    "time": 223,
+    "y": 4994,
+    "top": 376.234375,
+    "height": 228,
+    "beat": "mail-s03-b01",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "DIV",
+    "activeText": "읽기 설정설정은 바로 반영되고 이 기기에 임시 저장돼요",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b01",
+      "fraction": 1
+    }
+  },
+  {
+    "type": "click",
+    "time": 223,
+    "y": 4994,
+    "top": 376.234375,
+    "height": 228,
+    "beat": "mail-s03-b01",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "DIV",
+    "activeText": "읽기 설정설정은 바로 반영되고 이 기기에 임시 저장돼요",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b01",
+      "fraction": 1
+    }
+  },
+  {
+    "type": "scrollTo",
+    "args": [
+      {
+        "top": 6147,
+        "behavior": "instant"
+      }
+    ],
+    "time": 236,
+    "y": 4994,
+    "top": 1599.265625,
+    "height": 364.75,
+    "beat": "mail-s03-b01",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "DIV",
+    "activeText": "읽기 설정설정은 바로 반영되고 이 기기에 임시 저장돼요",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b01",
+      "fraction": 1
+    }
+  },
+  {
+    "type": "scroll",
+    "time": 251,
+    "y": 6147,
+    "top": 446.265625,
+    "height": 364.75,
+    "beat": "mail-s03-b01",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "DIV",
+    "activeText": "읽기 설정설정은 바로 반영되고 이 기기에 임시 저장돼요",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b01",
+      "fraction": 1
+    }
+  },
+  {
+    "type": "pointerdown",
+    "time": 256,
+    "y": 6147,
+    "top": 446.265625,
+    "height": 364.75,
+    "beat": "mail-s03-b01",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "DIV",
+    "activeText": "읽기 설정설정은 바로 반영되고 이 기기에 임시 저장돼요",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b01",
+      "fraction": 1
+    }
+  },
+  {
+    "type": "pointerup",
+    "time": 256,
+    "y": 6147,
+    "top": 446.265625,
+    "height": 364.75,
+    "beat": "mail-s03-b01",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "DIV",
+    "activeText": "읽기 설정설정은 바로 반영되고 이 기기에 임시 저장돼요",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b01",
+      "fraction": 1
+    }
+  },
+  {
+    "type": "click",
+    "time": 257,
+    "y": 6147,
+    "top": 446.265625,
+    "height": 364.75,
+    "beat": "mail-s03-b01",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "DIV",
+    "activeText": "읽기 설정설정은 바로 반영되고 이 기기에 임시 저장돼요",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b01",
+      "fraction": 1
+    }
+  },
+  {
+    "type": "scrollTo",
+    "args": [
+      {
+        "top": 5291,
+        "behavior": "instant"
+      }
+    ],
+    "time": 269,
+    "y": 6147,
+    "top": -409.984375,
+    "height": 364.75,
+    "beat": "mail-s03-b01",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "DIV",
+    "activeText": "읽기 설정설정은 바로 반영되고 이 기기에 임시 저장돼요",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b01",
+      "fraction": 1
+    }
+  },
+  {
+    "type": "scroll",
+    "time": 291,
+    "y": 5291,
+    "top": 446.015625,
+    "height": 364.75,
+    "beat": "mail-s03-b01",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "DIV",
+    "activeText": "읽기 설정설정은 바로 반영되고 이 기기에 임시 저장돼요",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b01",
+      "fraction": 1
+    }
+  },
+  {
+    "type": "pointerdown",
+    "time": 296,
+    "y": 5291,
+    "top": 446.015625,
+    "height": 364.75,
+    "beat": "mail-s03-b01",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "DIV",
+    "activeText": "읽기 설정설정은 바로 반영되고 이 기기에 임시 저장돼요",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b01",
+      "fraction": 1
+    }
+  },
+  {
+    "type": "pointerup",
+    "time": 296,
+    "y": 5291,
+    "top": 446.015625,
+    "height": 364.75,
+    "beat": "mail-s03-b01",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "DIV",
+    "activeText": "읽기 설정설정은 바로 반영되고 이 기기에 임시 저장돼요",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b01",
+      "fraction": 1
+    }
+  },
+  {
+    "type": "click",
+    "time": 297,
+    "y": 5291,
+    "top": 446.015625,
+    "height": 364.75,
+    "beat": "mail-s03-b01",
+    "locked": "1",
+    "width": 390,
+    "activeTag": "DIV",
+    "activeText": "읽기 설정설정은 바로 반영되고 이 기기에 임시 저장돼요",
+    "dialog": true,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b01",
+      "fraction": 1
+    }
+  },
+  {
+    "type": "focusin",
+    "time": 308,
+    "y": 5291,
+    "top": 446.015625,
+    "height": 364.75,
+    "beat": "mail-s03-b01",
+    "locked": null,
+    "width": 390,
+    "activeTag": "BUTTON",
+    "activeText": "설정",
+    "dialog": false,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b01",
+      "fraction": 1
+    }
+  },
+  {
+    "type": "scrollTo",
+    "args": [
+      {
+        "top": 5291,
+        "behavior": "instant"
+      }
+    ],
+    "time": 318,
+    "y": 5291,
+    "top": 446.015625,
+    "height": 364.75,
+    "beat": "mail-s03-b01",
+    "locked": null,
+    "width": 390,
+    "activeTag": "BUTTON",
+    "activeText": "설정",
+    "dialog": false,
+    "toolbar": 0,
+    "viewportHeight": 844,
+    "visualOffset": 0,
+    "anchor": {
+      "beatId": "mail-s03-b01",
+      "fraction": 1
+    }
+  }
+]

@@ -1,0 +1,46 @@
+
+> firstscene-workspace@0.1.0 test:security /Users/switch/Development/Web/FirstScene
+> node tools/security-check.mjs
+
+JSON report written to /Users/switch/Development/Web/FirstScene/evidence/security/current/unit-results.json
+
+> firstscene-workspace@0.1.0 test:api /Users/switch/Development/Web/FirstScene
+> node tools/run-browser-tests.mjs --api
+
+[WebServer] (node:10635) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:10636) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 25 tests using 1 worker
+
+(node:10638) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [api] › tests/api/feedback.spec.ts:27:1 › feedback rejects missing cookies, foreign origins, arbitrary text/time/session fields and unknown stories without rows (136ms)
+  ✓   2 [api] › tests/api/feedback.spec.ts:73:1 › 12parallel feedback requests accept5 with nextKSTmidnight RetryAfter, replay201 and cookieA/B/story isolation (247ms)
+  ✓   3 [api] › tests/api/feedback.spec.ts:148:1 › feedback respects body16KiB, shared operation routes, deletion cascade and stale cookie denial (62ms)
+  ✓   4 [api] › tests/api/maintenance.spec.ts:21:1 › P04 QA-D07 delete owns cascades/expiry and repeat204 while another browser remains intact (90ms)
+  ✓   5 [api] › tests/api/maintenance.spec.ts:73:1 › P04 deletion validates same-origin JSON even without a cookie (18ms)
+  ✓   6 [api] › tests/api/maintenance.spec.ts:99:1 › P04 real owned DB outage makes readiness/deletion503 but public story remains readable; recovery works (91ms)
+  ✓   7 [api] › tests/api/session.spec.ts:22:1 › P04 no-cookie private GET401 and actual process/database health200 (18ms)
+  ✓   8 [api] › tests/api/session.spec.ts:35:1 › P04 issue/reuse opaque HttpOnlycookie with safeDTO and actualhash-onlySQLstorage (31ms)
+  ✓   9 [api] › tests/api/session.spec.ts:75:1 › P04 exactOrigin/JSON/FetchMetadata/unknownfield failures write no sessions (28ms)
+  ✓  10 [api] › tests/api/session.spec.ts:118:1 › P04 actualHTTP16KiB inclusive boundary, oversize413 and malformedJSON400 (17ms)
+  ✓  11 [api] › tests/api/session.spec.ts:141:1 › P04 realCookieA/B ownedread ignores requested foreignsession IDs (42ms)
+  ✓  12 [api] › tests/api/session.spec.ts:178:1 › P04 expiredcookie cannot authenticate and receives a newepoch only byPOST (28ms)
+  ✓  13 [api] › tests/api/session.spec.ts:196:1 › P04 concurrent61newcookie-lessHTTPcalls obey30perfixednetworkwindow despite spoofedXFF (177ms)
+  ✓  14 [api] › tests/api/session.spec.ts:232:1 › P04 per-requestnonce dynamicSSR stays readable and productionpolicy excludes unsafe-eval (22ms)
+  ✓  15 [api] › tests/api/session.spec.ts:252:1 › P04 unsafe GET/session is405 and creates no record/cookie (6ms)
+  ✓  16 [api] › tests/api/state.spec.ts:54:1 › P04 QA-D03/D04 preferences CAS and same-id replay/conflict are realSQLtransactions (49ms)
+  ✓  17 [api] › tests/api/state.spec.ts:87:1 › P04 QA-D03/D06 progress moves back whilefurthest/completed staymonotonic; duplicateack staysoriginal (77ms)
+  ✓  18 [api] › tests/api/state.spec.ts:149:1 › P04 QA-D05 concurrentinitial writes serialize bysession and onlyone winsCAS (30ms)
+  ✓  19 [api] › tests/api/state.spec.ts:167:1 › P04 operation IDs cannot be reused on differentroutes; failedCAS has no receipt (32ms)
+  ✓  20 [api] › tests/api/state.spec.ts:198:1 › P04 content/anchor/version/input guards rejectbeforestoreddata changes (39ms)
+  ✓  21 [api] › tests/api/state.spec.ts:240:1 › P04 realA/Bwrites and deletes remaincookieowned; bookmark204replay/staletargetcleanup works (96ms)
+  ✓  22 [api] › tests/api/state.spec.ts:305:1 › P04 quota64 staysatomic under65concurrent distincttargets and canrecoverafterdelete (355ms)
+  ✓  23 [api] › tests/api/state.spec.ts:358:1 › P04 expiredreceipt canbereused withfreshCAS ratherthanunique-keyfailure (29ms)
+  ✓  24 [api] › tests/api/state.spec.ts:381:1 › P04 realSQLlocktimeout rollsback dataandreceipt andsameoperationcanretry (5.0s)
+  ✓  25 [api] › tests/api/state.spec.ts:424:1 › P04 generalwrite120perminute applies even to idempotent replays (699ms)
+
+  25 passed (8.6s)
+{"status":"AUTOMATED_SECURITY_NEGATIVES_PASSED","checks":5,"report":"evidence/security/current/result.json","managedSourceAudit":"SOURCE_REVIEW_PERFORMED_UNSEALED","releaseReady":false}

@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "observedAt": "2026-11-18T04:43:20.881Z",
+  "command": "node tools/visual-self-check.mjs",
+  "baseline": {
+    "status": "VISUAL_CHECKS_PASSED",
+    "reviewer": "agent",
+    "humanReviews": 0,
+    "captures": 96,
+    "minimumRubric": 11,
+    "nativeZoom": "BLOCKED_EXTERNAL",
+    "releaseReady": false,
+    "indexPath": "evidence/visual/6f82f1c1e2261420a322e9257bc3c319a4592c31/index.json",
+    "indexSha256": "6cd74d50a4b772caca33475a137f6e9504fb645a7ce126e6f4d9716295d46fdf"
+  },
+  "checks": [
+    {
+      "name": "missing frame",
+      "expected": "VISUAL_COVERAGE_INCOMPLETE",
+      "actual": "VISUAL_COVERAGE_INCOMPLETE",
+      "passed": true
+    },
+    {
+      "name": "changed captured hash",
+      "expected": "VISUAL_PIXEL_REVIEW_REQUIRED",
+      "actual": "VISUAL_PIXEL_REVIEW_REQUIRED",
+      "passed": true
+    },
+    {
+      "name": "changed review hash",
+      "expected": "VISUAL_REVIEW_STALE_OR_INCOMPLETE",
+      "actual": "VISUAL_REVIEW_STALE_OR_INCOMPLETE",
+      "passed": true
+    },
+    {
+      "name": "stale source",
+      "expected": "VISUAL_RECOLLECTION_REQUIRED",
+      "actual": "VISUAL_RECOLLECTION_REQUIRED",
+      "passed": true
+    },
+    {
+      "name": "unverified collection",
+      "expected": "VISUAL_RECOLLECTION_REQUIRED",
+      "actual": "VISUAL_RECOLLECTION_REQUIRED",
+      "passed": true
+    },
+    {
+      "name": "different production build",
+      "expected": "VISUAL_RECOLLECTION_REQUIRED",
+      "actual": "VISUAL_RECOLLECTION_REQUIRED",
+      "passed": true
+    },
+    {
+      "name": "zero rubric dimension despite total10",
+      "expected": "VISUAL_RUBRIC_FAILED",
+      "actual": "VISUAL_RUBRIC_FAILED",
+      "passed": true
+    },
+    {
+      "name": "rubric total below10",
+      "expected": "VISUAL_RUBRIC_FAILED",
+      "actual": "VISUAL_RUBRIC_FAILED",
+      "passed": true
+    },
+    {
+      "name": "unopened alternative is never an approved baseline",
+      "expected": "VISUAL_OBSERVATION_MISSING",
+      "actual": "VISUAL_OBSERVATION_MISSING",
+      "passed": true
+    },
+    {
+      "name": "alternative bytes must match their recorded hash",
+      "expected": "VISUAL_PIXEL_REVIEW_REQUIRED",
+      "actual": "VISUAL_PIXEL_REVIEW_REQUIRED",
+      "passed": true
+    }
+  ],
+  "sourceFilesMutated": false,
+  "approvedIndexMutated": false,
+  "imagesMutated": false
+}

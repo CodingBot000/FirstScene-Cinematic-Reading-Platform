@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "playwrightVersion": "1.65.1",
+  "browserImage": "mcr.microsoft.com/playwright:v1.65.1-noble@sha256:1507cbfc550a63a6b7396791ca4f00df17beb56342d2447b3f106c306f525579",
+  "nodeImage": "node:24-bookworm-slim@sha256:dc26ae92c9fb15cf6b1d63e20f0944b2efe0f115b20e00be48fb23fceb061c54",
+  "qaImageTag": "firstscene-playwright-qa:1.65.1-node24",
+  "pnpmVersion": "10.14.0",
+  "activation": "Explicit FIRSTSCENE_LINUX_WEBKIT=1 on darwin only; Linux hosts keep their configured native engine",
+  "sources": ["https://playwright.dev/docs/docker", "https://mcr.microsoft.com/v2/playwright/manifests/v1.65.1-noble"],
+  "registryVerifiedBy": "docker buildx imagetools inspect actual multiarch digest"
+}

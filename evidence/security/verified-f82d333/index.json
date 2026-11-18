@@ -1,0 +1,21 @@
+{
+  "observedAt": "2026-11-18T04:44:50.260065+00:00",
+  "acceptedCodeCommit": "f82d333c2b41059278014c8284e313b8e05b51ea",
+  "status": "AUTOMATED_SECURITY_NEGATIVES_PASSED",
+  "managedSourceAudit": "BLOCKED_EXTERNAL",
+  "artifacts": [
+    {
+      "path": "evidence/security/verified-f82d333/test-results.json",
+      "sha256": "a2423b903a5b6412ae1fbaec57dd58de3516dc9e4054daaab091cb2ba7586baf"
+    },
+    {
+      "path": "evidence/security/verified-f82d333/result.json",
+      "sha256": "c06b0c0963b972c79b8760067c21e0e5c26ab1a46092e807abb494fc30634a27"
+    },
+    {
+      "path": "evidence/security/verified-f82d333/unit-results.json",
+      "sha256": "7eea15a70c380c05cec0b476ccda9d29b4ea4196b0188a46fe4ceb2267557c61"
+    }
+  ],
+  "releaseReady": false
+}

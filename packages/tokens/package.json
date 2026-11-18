@@ -1,0 +1,29 @@
+{
+  "name": "@firstscene/tokens",
+  "version": "0.1.0",
+  "type": "module",
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./css": {
+      "types": "./dist/css.d.ts",
+      "default": "./dist/tokens.css"
+    },
+    "./json": "./dist/tokens.json"
+  },
+  "types": "./dist/index.d.ts",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "build": "cd ../.. && node tools/generate-tokens.mjs && pnpm exec prettier --write packages/tokens/src/index.ts && pnpm exec tsc -p packages/tokens/tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {}
+}

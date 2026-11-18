@@ -1,0 +1,19 @@
+{
+  "observedAt": "2026-11-18T07:22:08.604392+00:00",
+  "status": "BLOCKED_EXTERNAL",
+  "code": "CANONICAL_IDENTITY_CONFLICT",
+  "targetRevision": "3eda7775cf4026447452c812cc12c249da92e655",
+  "scanCreated": true,
+  "sourceReviewPerformed": true,
+  "independentReviewer": false,
+  "distinctValidatedIssues": 1,
+  "canonicalFindingEntries": 2,
+  "finalDraftAccepted": true,
+  "sealed": false,
+  "reportAvailable": false,
+  "completionCalled": false,
+  "recordType": "REDACTED_STATUS_SUMMARY",
+  "diagnostic": "One source-backed issue remains under two canonical identities in the same scan. The accepted draft is unsealed and the final report is unavailable.",
+  "requiredCondition": "Resolve the duplicate identities through the managed scan host before sealing the original scan.",
+  "independentRemediation": "evidence/security/network-isolation-repair/index.json"
+}

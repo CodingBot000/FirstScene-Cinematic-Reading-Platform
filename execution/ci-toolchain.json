@@ -1,0 +1,38 @@
+{
+  "observedAt": "2026-11-18T03:36:06.977602+00:00",
+  "localNode": "24.5.0",
+  "containerNode": "24.22.3",
+  "pnpm": "10.14.0",
+  "nodeImage": {
+    "reference": "node:24-bookworm-slim@sha256:dc26ae92c9fb15cf6b1d63e20f0944b2efe0f115b20e00be48fb23fceb061c54",
+    "arm64Manifest": "sha256:5f8fabfed57b75127de2f584593d67a9e8c90e6b0f65652871f9ef0f759c0299",
+    "verifiedBy": "docker buildx imagetools inspect; docker pull; docker run --rm node --version"
+  },
+  "actions": [
+    {
+      "name": "actions/checkout",
+      "version": "v7.0.1",
+      "sha": "3d3c42e5aac5ba805825da76410c181273ba90b1"
+    },
+    {
+      "name": "actions/setup-node",
+      "version": "v7.1.0",
+      "sha": "949feb2413d6458794dcd2491c4babbbce0c15c1"
+    },
+    {
+      "name": "actions/upload-artifact",
+      "version": "v7.0.2",
+      "sha": "cf430e030ddbb5b0abf93d22962f4752f3646cd9"
+    }
+  ],
+  "actionVerification": "Official releases/latest pages and git ls-remote exact version tags; no hosted workflow run",
+  "sources": [
+    "https://hub.docker.com/_/node",
+    "https://github.com/actions/checkout/releases/tag/v7.0.1",
+    "https://github.com/actions/setup-node/releases/tag/v7.1.0",
+    "https://github.com/actions/upload-artifact/releases/tag/v7.0.2",
+    "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-commands"
+  ],
+  "hostedWorkflowExecuted": false,
+  "hostGlobalNodeOrPermissionsChanged": false
+}

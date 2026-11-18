@@ -1,0 +1,25 @@
+{
+  "observedAt": "2026-11-18T04:48:53.175012+00:00",
+  "acceptedCodeCommit": "453bdd7df1d73f424bca9051e62d798664488adf",
+  "status": "AUTOMATED_SECURITY_NEGATIVES_PASSED",
+  "managedSourceAudit": "BLOCKED_EXTERNAL",
+  "artifacts": [
+    {
+      "path": "evidence/security/verified-453bdd7/public-source-review.json",
+      "sha256": "7fb9bb531fe1d3820a82ffa24a5654dedb361bd8beb6b2dfffac605badad8c62"
+    },
+    {
+      "path": "evidence/security/verified-453bdd7/test-results.json",
+      "sha256": "499d78bd2b1adf42c78ae2abbe55bc3b120dbc6e9d115c784abf3c79d588f37b"
+    },
+    {
+      "path": "evidence/security/verified-453bdd7/result.json",
+      "sha256": "5618c13447074f817ad6b1d8618560899fe8b389faf6c803669acdfcf115ec40"
+    },
+    {
+      "path": "evidence/security/verified-453bdd7/unit-results.json",
+      "sha256": "609f395e14893e2e26569ce2ef7d253feb40b0092c0fac7f9e7c2e4842fc2973"
+    }
+  ],
+  "releaseReady": false
+}

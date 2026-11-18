@@ -1,0 +1,9 @@
+{
+  "observedAt": "2026-11-18T04:43:21.047Z",
+  "command": "pnpm container:build",
+  "exitCode": 0,
+  "sourceCommit": "f82d333c2b41059278014c8284e313b8e05b51ea",
+  "imageId": "sha256:98b423651f0b62a1658e16f18750288e921f517c0edbfd0a01a5a27f6f980147",
+  "tag": "firstscene:local-validated",
+  "publication": false
+}

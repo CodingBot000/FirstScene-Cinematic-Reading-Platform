@@ -1,0 +1,103 @@
+
+> firstscene-workspace@0.1.0 build /Users/switch/Development/Web/FirstScene
+> pnpm build:packages && pnpm content:check && pnpm --filter @firstscene/web build && node tools/prepare-standalone.mjs
+
+
+> firstscene-workspace@0.1.0 build:packages /Users/switch/Development/Web/FirstScene
+> node tools/build-packages.mjs
+
+apps/web/features/reading-sync/transport.generated.ts 37ms
+
+> @firstscene/tokens@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/tokens
+> cd ../.. && node tools/generate-tokens.mjs && pnpm exec prettier --write packages/tokens/src/index.ts && pnpm exec tsc -p packages/tokens/tsconfig.json
+
+packages/tokens/src/index.ts 24ms
+
+> @firstscene/story-schema@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/story-schema
+> cd ../.. && node tools/generate-schema.mjs && pnpm exec prettier --write packages/story-schema/src/schema.ts && pnpm exec tsc -p packages/story-schema/tsconfig.json
+
+packages/story-schema/src/schema.ts 25ms
+
+> @firstscene/ui@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/ui
+> tsc -p tsconfig.json && cp src/styles.css dist/styles.css && cp src/css.d.ts dist/css.d.ts
+
+
+> @firstscene/reader-core@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/reader-core
+> tsc -p tsconfig.json
+
+
+> @firstscene/reader-react@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/reader-react
+> tsc -p tsconfig.json
+
+
+> @firstscene/content-compiler@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/content-compiler
+> tsc -p tsconfig.json
+
+
+> @firstscene/server-data@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/server-data
+> cd ../.. && node tools/generate-api-schema.mjs && pnpm exec prettier --write packages/server-data/src/api-schema.ts && pnpm exec tsc -p packages/server-data/tsconfig.json
+
+packages/server-data/src/api-schema.ts 29ms
+
+> firstscene-workspace@0.1.0 content:check /Users/switch/Development/Web/FirstScene
+> pnpm --filter @firstscene/story-schema build && pnpm --filter @firstscene/content-compiler build && node tools/content-check.mjs
+
+
+> @firstscene/story-schema@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/story-schema
+> cd ../.. && node tools/generate-schema.mjs && pnpm exec prettier --write packages/story-schema/src/schema.ts && pnpm exec tsc -p packages/story-schema/tsconfig.json
+
+packages/story-schema/src/schema.ts 26ms
+
+> @firstscene/content-compiler@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/content-compiler
+> tsc -p tsconfig.json
+
+Canonical manuscripts compiled:2 stories,12 scenes,72 beats;5 invalid fixtures rejected.
+
+> @firstscene/web@0.1.0 build /Users/switch/Development/Web/FirstScene/apps/web
+> next build
+
+▲ Next.js 16.4.6 (Turbopack)
+- Environments: .env.local
+✓ Running next.config.ts took 48ms
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 461ms
+  Running TypeScript ...
+  Finished TypeScript in 1019ms ...
+  Collecting page data using 15 workers ...
+  Generating static pages using 15 workers (0/17) ...
+  Generating static pages using 15 workers (4/17) 
+  Generating static pages using 15 workers (8/17) 
+  Generating static pages using 15 workers (12/17) 
+✓ Generating static pages using 15 workers (17/17) in 99ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ƒ /
+├ ƒ /_not-found
+├ ƒ /about
+├ ƒ /api/v1/bookmarks/[storyId]/[targetId]
+├ ƒ /api/v1/me
+├ ƒ /api/v1/preferences
+├ ƒ /api/v1/progress/[storyId]
+├ ƒ /api/v1/session
+├ ƒ /design-system
+├ ƒ /discover
+├ ƒ /health/live
+├ ƒ /health/ready
+├ ƒ /library
+├ ƒ /read/[storyId]
+├ ƒ /settings
+└ ƒ /stories/[storyId]
+
+
+ƒ Proxy (Middleware)
+
+ƒ  (Dynamic)  server-rendered on demand
+
+Standalone artifact prepared with public/static assets; environment files excluded.

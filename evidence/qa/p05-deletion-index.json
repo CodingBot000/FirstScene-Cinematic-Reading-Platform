@@ -1,0 +1,58 @@
+{
+  "observedAt": "2026-11-17T23:20:07.914003+00:00",
+  "reviewer": "agent",
+  "humanReviews": 0,
+  "artifacts": [
+    {
+      "path": "evidence/qa/p05-deletion-final-chromium-results.json",
+      "sha256": "0a8fb452ca6a633acd114a549e92cd644071705ec2b528a9a8f80056015841ec",
+      "opened": false
+    },
+    {
+      "path": "evidence/qa/p05-deletion-final-webkit-results.json",
+      "sha256": "5939f38ee041a3a93ef95266aeebca721dc401f8e7cca1468df627bca93750ed",
+      "opened": false
+    },
+    {
+      "path": "evidence/qa/p05-deletion-before-results.json",
+      "sha256": "b95f37f0db3f8b06094f28332caddae33bd5f479a0cf19e8aab719f45f1472ef",
+      "opened": false
+    },
+    {
+      "path": "evidence/qa/p05-stale-cache-before-results.json",
+      "sha256": "0c6aeb1a27e187413a3faefea9f9395bcc61602cd170eb3faee25d95fe901e6d",
+      "opened": false
+    },
+    {
+      "path": "evidence/ui/p05-deletion-peer-before.jpg",
+      "sha256": "7a3c233ab901039ba34c5c7493f2037ed65f2d5f17e60c1ac05e019eb3a14202",
+      "opened": true
+    },
+    {
+      "path": "evidence/ui/p05-deletion-actor-failed-before.jpg",
+      "sha256": "930c8bb79b08dfac748d5ea1f7654b6cd40bb0d26b925983a1f10167e74e72ec",
+      "opened": true
+    },
+    {
+      "path": "evidence/ui/p05-deletion-peer-pending-1440.png",
+      "sha256": "86a66740d96b414fe8722e0fb5c160bef71fb9582aac5edf8cb88845a1eec0a9",
+      "opened": true
+    },
+    {
+      "path": "evidence/ui/p05-deletion-peer-pending-390.png",
+      "sha256": "5cea23f1ab113beb5be9c75858547cf36353761a447a8d6364998e393eda86da",
+      "opened": true
+    },
+    {
+      "path": "evidence/ui/p05-deletion-peer-failed-1440.png",
+      "sha256": "36dfb28b93321033b68e89e3ebbaea1e4f947e41b5b463b792589a8fddacbfeb",
+      "opened": true
+    },
+    {
+      "path": "evidence/ui/p05-deletion-peer-failed-390.png",
+      "sha256": "3b4ac9482efdb4ccb6d3654ba5579b6b0255def27513856dd7b23f1307209ef0",
+      "opened": true
+    }
+  ],
+  "codeCommit": "4e1df9e917b646ba2fd6342fba828d38e061adc7"
+}

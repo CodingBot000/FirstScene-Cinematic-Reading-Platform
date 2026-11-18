@@ -1,0 +1,1361 @@
+{
+  "schemaVersion": 1,
+  "project": "FirstScene",
+  "specVersion": "1.0.0",
+  "createdAt": "2026-11-18",
+  "status": "IN_PROGRESS",
+  "tasks": [
+    {
+      "id": "P00-T01",
+      "phase": "P00",
+      "title": "환경·기존 변경·이미지 기능 확인",
+      "dependencies": [],
+      "outputs": [
+        "execution/capabilities.json",
+        "evidence/preflight.md"
+      ],
+      "commandIds": [
+        "CMD-ENV"
+      ],
+      "acceptance": [
+        "원래 git 변경을 보존하고 사용할 project root를 확정한다.",
+        "native image tool/모델/브라우저/Docker 가용성을 실제로 확인한다.",
+        "없어진 권한·한도를 우회하지 않고 소비 작업에 blocker를 연결한다."
+      ],
+      "requirementIds": [
+        "R12",
+        "R13"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "DONE",
+      "attempts": 1,
+      "blockers": [],
+      "evidence": [
+        "evidence/preflight.md",
+        "execution/capabilities.json"
+      ],
+      "commit": "1822e7aaa4916552821bfc66e70b06e4a92b6086",
+      "startedAt": "2026-11-17T16:39:35.420981+00:00",
+      "updatedAt": "2026-11-17T16:40:38.339133+00:00",
+      "branch": "main",
+      "actorType": "agent"
+    },
+    {
+      "id": "P00-T02",
+      "phase": "P00",
+      "title": "워크스페이스와 재현 가능한 툴체인",
+      "dependencies": [
+        "P00-T01"
+      ],
+      "outputs": [
+        "pnpm-workspace.yaml",
+        "pnpm-lock.yaml",
+        "execution/toolchain-lock.json"
+      ],
+      "commandIds": [
+        "CMD-INSTALL",
+        "CMD-LINT",
+        "CMD-TYPE"
+      ],
+      "acceptance": [
+        "Node24/pnpm10과 호환되는 stable Next/React peer를 확인하고 exact version을 고정한다.",
+        "7개 package의 exports/build/types와 apps/web,apps/ui-lab skeleton을 만든다.",
+        "모든 root command를 실구현하거나 명확한 미완료 실패로 두고 echo 성공 stub을 금지한다."
+      ],
+      "requirementIds": [
+        "R11",
+        "R12"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "DONE",
+      "attempts": 1,
+      "blockers": [],
+      "evidence": [
+        "evidence/toolchain.md",
+        "execution/toolchain-lock.json"
+      ],
+      "commit": "68135c9f9e61ec6a823aba564bdbcec268312510",
+      "startedAt": "2026-11-17T16:40:38.339133+00:00",
+      "updatedAt": "2026-11-17T16:43:42.780224+00:00",
+      "branch": "main",
+      "actorType": "agent"
+    },
+    {
+      "id": "P01-T01",
+      "phase": "P01",
+      "title": "UX와 레이아웃 결정 기록",
+      "dependencies": [
+        "P00-T01"
+      ],
+      "outputs": [
+        "evidence/design/initial-decisions.md"
+      ],
+      "commandIds": [
+        "CMD-DOCS"
+      ],
+      "acceptance": [
+        "docs01/16의 핵심 흐름과 2개 내부 대안을 비교하고 고정 방향을 선택한다.",
+        "4 viewport와 empty/error/loading 상태를 빠짐없이 다룬다.",
+        "사용자 연구로 확인하지 않은 가설을 사실처럼 쓰지 않는다."
+      ],
+      "requirementIds": [
+        "R01",
+        "R06",
+        "R13"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "DONE",
+      "attempts": 1,
+      "blockers": [],
+      "evidence": [
+        "evidence/design/initial-decisions.md",
+        "evidence/design/package-validation.json"
+      ],
+      "commit": "92e0747aca51a1e46cf2db27c9bd5b1214534003",
+      "startedAt": "2026-11-17T16:43:42.780224+00:00",
+      "updatedAt": "2026-11-17T16:47:43.578Z",
+      "branch": "main",
+      "actorType": "agent"
+    },
+    {
+      "id": "P01-T02",
+      "phase": "P01",
+      "title": "토큰·타이포그래피 생성기",
+      "dependencies": [
+        "P00-T02",
+        "P01-T01"
+      ],
+      "outputs": [
+        "packages/tokens",
+        "evidence/design/contrast.json"
+      ],
+      "commandIds": [
+        "CMD-UNIT",
+        "CMD-TYPE"
+      ],
+      "acceptance": [
+        "design/tokens.json에서 CSS/TS/JSON exports를 생성한다.",
+        "명조/산세리프/시스템 fallback, contrast pairs, mobile type를 검증한다.",
+        "폰트 라이선스·크기·출처를 기록하고 바이너리를 무단 공유하지 않는다."
+      ],
+      "requirementIds": [
+        "R11",
+        "R12"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "DONE",
+      "attempts": 1,
+      "blockers": [],
+      "evidence": [
+        "evidence/design/contrast.json",
+        "evidence/design/fonts.md",
+        "tests/unit/tokens.test.ts"
+      ],
+      "commit": "882a09dd45d537415fe85e48000d826c9e9c522d",
+      "startedAt": "2026-11-17T16:47:43.625Z",
+      "updatedAt": "2026-11-17T16:49:02.396Z",
+      "branch": "main",
+      "actorType": "agent"
+    },
+    {
+      "id": "P01-T03",
+      "phase": "P01",
+      "title": "공유 컴포넌트와 UI Lab",
+      "dependencies": [
+        "P01-T02"
+      ],
+      "outputs": [
+        "packages/ui",
+        "apps/ui-lab"
+      ],
+      "commandIds": [
+        "CMD-STORYBOOK",
+        "CMD-UNIT",
+        "CMD-BOUNDARY"
+      ],
+      "acceptance": [
+        "16개 선언 컴포넌트 상태·keyboard/focus/disabled를 문서화한다.",
+        "UI가 Next/DB/작품원고를 import하지 않는다.",
+        "기본 shadcn 테마를 복제하는 대신 확정 tokens를 적용한다."
+      ],
+      "requirementIds": [
+        "R01",
+        "R06",
+        "R11"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "DONE",
+      "attempts": 1,
+      "blockers": [],
+      "evidence": [
+        "evidence/visual/card-summary-repair.json",
+        "evidence/visual/toolbar-gap-repair.json",
+        "evidence/package-consumer/index.json"
+      ],
+      "commit": "8c498ed1b093f10e8b99d947d55e849362ec2082",
+      "startedAt": "2026-11-17T16:49:02.437Z",
+      "updatedAt": "2026-11-18T01:50:52.549Z",
+      "branch": "main",
+      "actorType": "agent"
+    },
+    {
+      "id": "P02-T01",
+      "phase": "P02",
+      "title": "Story 계약과 Markdown 컴파일러",
+      "dependencies": [
+        "P00-T02"
+      ],
+      "outputs": [
+        "packages/story-schema",
+        "packages/content-compiler"
+      ],
+      "commandIds": [
+        "CMD-CONTENT",
+        "CMD-UNIT"
+      ],
+      "acceptance": [
+        "실제 AST 파서로 whitelist directive를 처리한다.",
+        "2개 expected JSON/hash와 일치하고 악성/오류 fixture를 거절한다.",
+        "JSON 해시/기본값/Unicode 정규화가 계약과 일치한다."
+      ],
+      "requirementIds": [
+        "R02",
+        "R03"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "DONE",
+      "attempts": 1,
+      "blockers": [],
+      "evidence": [
+        "evidence/content/compiler.json",
+        "evidence/content/compiler-notes.md",
+        "tests/unit/compiler.test.ts"
+      ],
+      "commit": "c0bd24049f48f2efea98121e37f7a6d4f3f99c36",
+      "startedAt": "2026-11-17T16:54:45.241Z",
+      "updatedAt": "2026-11-17T16:58:19.550Z",
+      "branch": "main",
+      "actorType": "agent"
+    },
+    {
+      "id": "P02-T02",
+      "phase": "P02",
+      "title": "두 원고 의미·연출 교정",
+      "dependencies": [
+        "P02-T01"
+      ],
+      "outputs": [
+        "evidence/content/editorial-review.md",
+        "content/generated/stories"
+      ],
+      "commandIds": [
+        "CMD-CONTENT"
+      ],
+      "acceptance": [
+        "12씬72beat가 완결되고 bible의 규칙/시간을 위반하지 않는다.",
+        "강조120grapheme/작품4개 상한과 dialogue speaker를 검증한다.",
+        "AI 교정을 실제 사람 리뷰로 기록하지 않는다."
+      ],
+      "requirementIds": [
+        "R02",
+        "R03",
+        "R13"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "DONE",
+      "attempts": 1,
+      "blockers": [],
+      "evidence": [
+        "evidence/content/editorial-review.md",
+        "evidence/content/compiler.json",
+        "content/generated/stories/post-office.json",
+        "content/generated/stories/tide-station.json"
+      ],
+      "commit": "9cd192361a25540d6f9e2b310906bc23720e92b0",
+      "startedAt": "2026-11-17T16:58:19.591Z",
+      "updatedAt": "2026-11-17T16:58:49.083Z",
+      "branch": "main",
+      "actorType": "agent"
+    },
+    {
+      "id": "P02-T03",
+      "phase": "P02",
+      "title": "이미지 queue·import·최적화 도구",
+      "dependencies": [
+        "P00-T02",
+        "P02-T01"
+      ],
+      "outputs": [
+        "tools/image-pipeline",
+        "execution/assets-ledger.jsonl"
+      ],
+      "commandIds": [
+        "CMD-ASSET-PLAN",
+        "CMD-UNIT"
+      ],
+      "acceptance": [
+        "native tool과 API adapter를 분리하며 가상의 shell image 명령을 만들지 않는다.",
+        "API예산0·call22상한·중복/unknown outcome 보호를 테스트한다.",
+        "file sniff/hash/경로/byte/pixel 제한과 원자적 import를 구현한다."
+      ],
+      "requirementIds": [
+        "R10",
+        "R12"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "DONE",
+      "attempts": 1,
+      "blockers": [],
+      "evidence": [
+        "evidence/content/image-pipeline.md",
+        "evidence/content/asset-queue.txt",
+        "tests/unit/assets.test.ts"
+      ],
+      "commit": "3e7383be3bb0eb6f72299a9c1057e7d15ea55a00",
+      "startedAt": "2026-11-17T16:58:49.123Z",
+      "updatedAt": "2026-11-17T17:03:03.285Z",
+      "branch": "main",
+      "actorType": "agent"
+    },
+    {
+      "id": "P02-T04",
+      "phase": "P02",
+      "title": "GPT Image 2 원본 생성과 검수",
+      "dependencies": [
+        "P00-T01",
+        "P02-T02",
+        "P02-T03"
+      ],
+      "outputs": [
+        "artifacts/raw",
+        "evidence/assets/generation-review.json"
+      ],
+      "commandIds": [
+        "CMD-ASSET-PLAN",
+        "CMD-ASSET-IMPORT"
+      ],
+      "acceptance": [
+        "reference2+cover2+scene12의 실제 파일을 생성·열람·검수한다.",
+        "asset별 실제 모델/도구/unknown 정보와 원본hash를 기록한다.",
+        "native불가/한도는 BLOCKED_EXTERNAL, 임시색면은 승인 이미지가 아니다."
+      ],
+      "requirementIds": [
+        "R10",
+        "R13"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "DONE",
+      "attempts": 1,
+      "blockers": [],
+      "evidence": [
+        "evidence/assets/generation-review.json",
+        "execution/assets-state.json",
+        "execution/assets-ledger.jsonl"
+      ],
+      "commit": "c15b7a11123d9833ba18ebacd0871df29161f636",
+      "startedAt": "2026-11-17T17:03:03.325Z",
+      "updatedAt": "2026-11-17T19:39:52.223Z",
+      "branch": "main",
+      "actorType": "agent"
+    },
+    {
+      "id": "P02-T05",
+      "phase": "P02",
+      "title": "반응형 에셋 파생·최적화·연결",
+      "dependencies": [
+        "P02-T04"
+      ],
+      "outputs": [
+        "content/generated/assets.json",
+        "apps/web/public/assets"
+      ],
+      "commandIds": [
+        "CMD-ASSET-OPT",
+        "CMD-ASSET-VERIFY"
+      ],
+      "acceptance": [
+        "portrait2를 reference에서 파생하고 public16개를 완성한다.",
+        "WebP/AVIF 변형·sizes·sha·실제byte가 manifest와 일치한다.",
+        "모바일crop/레이어문맥을 실제 이미지로 검수한다."
+      ],
+      "requirementIds": [
+        "R10",
+        "R12"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "DONE",
+      "attempts": 1,
+      "blockers": [],
+      "evidence": [
+        "evidence/assets/optimization.md",
+        "evidence/assets/optimization-review.json",
+        "evidence/assets/final-verification.txt",
+        "evidence/assets/integration-final-results.json"
+      ],
+      "commit": "6a011cb7ce254d6e41a1d486ef848b958192e60e",
+      "startedAt": "2026-11-17T19:39:52.263Z",
+      "updatedAt": "2026-11-17T20:10:20.789Z",
+      "branch": "main",
+      "actorType": "agent"
+    },
+    {
+      "id": "P03-T01",
+      "phase": "P03",
+      "title": "공개 탐색·소개·본문 SSR",
+      "dependencies": [
+        "P01-T03",
+        "P02-T02"
+      ],
+      "outputs": [
+        "apps/web/app",
+        "evidence/ui/ssr.md"
+      ],
+      "commandIds": [
+        "CMD-BUILD",
+        "CMD-E2E"
+      ],
+      "acceptance": [
+        "홈/탐색/소개/리더/About/404가 실제 원고를 사용한다.",
+        "JS없음·DB없음에서도 본문이 읽힌다.",
+        "개발중 임시이미지는 표시하지만 release통과와 혼동하지 않는다."
+      ],
+      "requirementIds": [
+        "R01",
+        "R02",
+        "R12"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "DONE",
+      "attempts": 2,
+      "blockers": [],
+      "evidence": [
+        "evidence/container/README.md",
+        "evidence/container/index.json",
+        "evidence/ci/startup-chromium-results.json",
+        "evidence/ci/startup-webkit-results.json"
+      ],
+      "commit": "675d1c28687f15491047a161205359ebb8f2db16",
+      "startedAt": "2026-11-17T17:04:47.602Z",
+      "updatedAt": "2026-11-18T04:06:01.422Z",
+      "branch": "main",
+      "actorType": "agent"
+    },
+    {
+      "id": "P03-T02",
+      "phase": "P03",
+      "title": "순수 Reader Core",
+      "dependencies": [
+        "P02-T01"
+      ],
+      "outputs": [
+        "packages/reader-core"
+      ],
+      "commandIds": [
+        "CMD-UNIT",
+        "CMD-BOUNDARY"
+      ],
+      "acceptance": [
+        "고속/역scroll·직접링크·빈레이아웃·마지막beat를 순수함수로 처리한다.",
+        "mood와anchor가 이전animation 상태에 의존하지 않는다.",
+        "core가 React/DOM/GSAP을 import하지 않는다."
+      ],
+      "requirementIds": [
+        "R04",
+        "R07",
+        "R11"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "DONE",
+      "attempts": 1,
+      "blockers": [],
+      "evidence": [
+        "evidence/ui/reader-core.md",
+        "tests/unit/reader-core.test.ts",
+        "evidence/assets/integration-final-results.json"
+      ],
+      "commit": "6a011cb7ce254d6e41a1d486ef848b958192e60e",
+      "startedAt": "2026-11-17T17:12:13.264Z",
+      "updatedAt": "2026-11-17T20:10:20.541Z",
+      "branch": "main",
+      "actorType": "agent"
+    },
+    {
+      "id": "P03-T03",
+      "phase": "P03",
+      "title": "시네마틱 렌더러와 텍스트 효과",
+      "dependencies": [
+        "P03-T01",
+        "P03-T02"
+      ],
+      "outputs": [
+        "packages/reader-react"
+      ],
+      "commandIds": [
+        "CMD-UNIT",
+        "CMD-E2E",
+        "CMD-A11Y"
+      ],
+      "acceptance": [
+        "GSAP을 연출모드에만 load, transition 2layer상한과 cleanup을 보장한다.",
+        "grapheme reveal/typewriter와전체원문접근성을 유지한다.",
+        "이미지/JS/Segmenter 실패는 본문fallback, scroll hijack없음."
+      ],
+      "requirementIds": [
+        "R04",
+        "R05",
+        "R10",
+        "R11"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "DONE",
+      "attempts": 1,
+      "blockers": [],
+      "evidence": [
+        "evidence/qa/p05-library.md",
+        "evidence/qa/p05-library-chromium-results.json",
+        "evidence/qa/p05-library-webkit-results.json"
+      ],
+      "commit": "55cf9330154d0bff40d754c20f37515c8c906ff8",
+      "startedAt": "2026-11-17T17:17:23.571Z",
+      "updatedAt": "2026-11-17T21:58:04.267Z",
+      "branch": "main",
+      "actorType": "agent"
+    },
+    {
+      "id": "P03-T04",
+      "phase": "P03",
+      "title": "설정·모드·위치 복원",
+      "dependencies": [
+        "P03-T03"
+      ],
+      "outputs": [
+        "apps/web/features/reader-preferences"
+      ],
+      "commandIds": [
+        "CMD-E2E",
+        "CMD-A11Y"
+      ],
+      "acceptance": [
+        "일반/연출/reduced/theme/font18~24를 실제 UI로 제어한다.",
+        "모드/폰트변경과새로고침후한문단이내anchor를 복구한다.",
+        "OSreduce변경 즉시효과중지, 사용자scroll이복구보다우선."
+      ],
+      "requirementIds": [
+        "R06",
+        "R07"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "DONE",
+      "attempts": 2,
+      "blockers": [],
+      "evidence": [
+        "evidence/visual/toolbar-gap-repair.json",
+        "evidence/qa/p06-gap-chromium-results.json",
+        "evidence/qa/p06-gap-webkit-results.json"
+      ],
+      "commit": "8c498ed1b093f10e8b99d947d55e849362ec2082",
+      "startedAt": "2026-11-17T17:41:08.125Z",
+      "updatedAt": "2026-11-18T01:50:52.615Z",
+      "branch": "main",
+      "actorType": "agent"
+    },
+    {
+      "id": "P04-T01",
+      "phase": "P04",
+      "title": "로컬 PostgreSQL·migration·역할",
+      "dependencies": [
+        "P00-T02"
+      ],
+      "outputs": [
+        "database/migrations",
+        "packages/server-data/migrations"
+      ],
+      "commandIds": [
+        "CMD-DB-UP",
+        "CMD-MIGRATE",
+        "CMD-DB-TEST"
+      ],
+      "acceptance": [
+        "fresh DB에8table생성하고checksum/재실행을 검증한다.",
+        "owner/runtime권한과private schema를분리한다.",
+        "기존DB/volume을삭제하지않고전용test DB로검증한다."
+      ],
+      "requirementIds": [
+        "R09",
+        "R12"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "DONE",
+      "attempts": 2,
+      "blockers": [],
+      "evidence": [
+        "evidence/container/README.md",
+        "evidence/container/index.json",
+        "evidence/ci/api-results.json",
+        "evidence/ci/prepare-test.json"
+      ],
+      "commit": "675d1c28687f15491047a161205359ebb8f2db16",
+      "startedAt": "2026-11-17T18:16:53.457Z",
+      "updatedAt": "2026-11-18T04:06:01.488Z",
+      "branch": "main",
+      "actorType": "agent"
+    },
+    {
+      "id": "P04-T02",
+      "phase": "P04",
+      "title": "익명 세션·Origin·오류 계약",
+      "dependencies": [
+        "P04-T01"
+      ],
+      "outputs": [
+        "packages/server-data/session",
+        "apps/web/app/api"
+      ],
+      "commandIds": [
+        "CMD-API",
+        "CMD-SECURITY"
+      ],
+      "acceptance": [
+        "32byteopaque token의hash만DB보관,prod/devcookie를분리한다.",
+        "same-originJSON·size·expiry·rate limit을검증한다.",
+        "세션응답/로그/bundle에token과DBsecret이없다."
+      ],
+      "requirementIds": [
+        "R09",
+        "R12"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "DONE",
+      "attempts": 1,
+      "blockers": [],
+      "evidence": [
+        "evidence/security/network-isolation-repair/index.json"
+      ],
+      "commit": "f415ffa792b8d106f10040834e93cf00f2d2ad2b",
+      "startedAt": "2026-11-17T18:39:25.553Z",
+      "updatedAt": "2026-11-18T07:51:56.250Z",
+      "branch": "main",
+      "actorType": "agent"
+    },
+    {
+      "id": "P04-T03",
+      "phase": "P04",
+      "title": "진도·설정·북마크 API",
+      "dependencies": [
+        "P04-T02",
+        "P02-T02"
+      ],
+      "outputs": [
+        "packages/server-data/repositories"
+      ],
+      "commandIds": [
+        "CMD-API",
+        "CMD-DB-TEST"
+      ],
+      "acceptance": [
+        "CAS와receipt를한transaction에서저장한다.",
+        "소유권A/B·duplicate/differentpayload·quota경합을검증한다.",
+        "completed는마지막beat명시행동만허용하고furthest는감소하지않는다."
+      ],
+      "requirementIds": [
+        "R07",
+        "R08",
+        "R09"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "DONE",
+      "attempts": 1,
+      "blockers": [],
+      "evidence": [
+        "evidence/security/network-isolation-repair/index.json",
+        "evidence/feedback/backend/index.json"
+      ],
+      "commit": "f415ffa792b8d106f10040834e93cf00f2d2ad2b",
+      "startedAt": "2026-11-17T19:39:05.783Z",
+      "updatedAt": "2026-11-18T07:51:56.319Z",
+      "branch": "main",
+      "actorType": "agent"
+    },
+    {
+      "id": "P04-T04",
+      "phase": "P04",
+      "title": "삭제·피드백·정리·readiness",
+      "dependencies": [
+        "P04-T03"
+      ],
+      "outputs": [
+        "packages/server-data/maintenance"
+      ],
+      "commandIds": [
+        "CMD-API",
+        "CMD-DB-TEST",
+        "CMD-CLEANUP"
+      ],
+      "acceptance": [
+        "DELETE me의cascades/cookieexpiry와재삭제204를검증한다.",
+        "presetfeedback과세션일일상한을구현한다.",
+        "DB503상태가공개원고가용성을막지않는다."
+      ],
+      "requirementIds": [
+        "R09",
+        "R12",
+        "R13"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "DONE",
+      "attempts": 1,
+      "blockers": [],
+      "evidence": [
+        "evidence/security/network-isolation-repair/index.json",
+        "evidence/feedback/backend/index.json"
+      ],
+      "commit": "f415ffa792b8d106f10040834e93cf00f2d2ad2b",
+      "startedAt": "2026-11-17T20:37:51.186Z",
+      "updatedAt": "2026-11-18T07:51:56.386Z",
+      "branch": "main",
+      "actorType": "agent"
+    },
+    {
+      "id": "P05-T01",
+      "phase": "P05",
+      "title": "리더 저장·outbox·다중탭",
+      "dependencies": [
+        "P03-T04",
+        "P04-T03"
+      ],
+      "outputs": [
+        "apps/web/features/reading-sync"
+      ],
+      "commandIds": [
+        "CMD-E2E",
+        "CMD-UNIT"
+      ],
+      "acceptance": [
+        "로컬즉시저장/서버ack표시/queue상한/재연결을구현한다.",
+        "지연응답·409·다중탭·pagehide·storage오류를검증한다.",
+        "새sessionepoch에옛queue를무단적용하지않는다."
+      ],
+      "requirementIds": [
+        "R07",
+        "R09"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "DONE",
+      "attempts": 1,
+      "blockers": [],
+      "evidence": [
+        "evidence/feedback/verification-index.json",
+        "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/index.json",
+        "evidence/qa/post-full-visual.json"
+      ],
+      "commit": "ffcdf3470be2f0a2a5ae4406fc96ec8d23018346",
+      "startedAt": "2026-11-17T20:50:33.853Z",
+      "updatedAt": "2026-11-18T09:42:42.190770+00:00",
+      "branch": "main",
+      "actorType": "agent"
+    },
+    {
+      "id": "P05-T02",
+      "phase": "P05",
+      "title": "서재·작품/문장 북마크",
+      "dependencies": [
+        "P05-T01"
+      ],
+      "outputs": [
+        "apps/web/features/library"
+      ],
+      "commandIds": [
+        "CMD-E2E",
+        "CMD-A11Y"
+      ],
+      "acceptance": [
+        "빈/로컬/서버/에러상태가완결된UI다.",
+        "story와beat북마크를구분하고직접링크복귀가정확하다.",
+        "keyboard추가/삭제와목록focus가안정적이다."
+      ],
+      "requirementIds": [
+        "R08",
+        "R12"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "DONE",
+      "attempts": 1,
+      "blockers": [],
+      "evidence": [
+        "evidence/feedback/verification-index.json",
+        "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/index.json",
+        "evidence/qa/post-full-visual.json"
+      ],
+      "commit": "ffcdf3470be2f0a2a5ae4406fc96ec8d23018346",
+      "startedAt": "2026-11-17T21:20:53.955Z",
+      "updatedAt": "2026-11-18T09:42:42.190770+00:00",
+      "branch": "main",
+      "actorType": "agent"
+    },
+    {
+      "id": "P05-T03",
+      "phase": "P05",
+      "title": "완독·피드백·설정/삭제 흐름",
+      "dependencies": [
+        "P05-T02",
+        "P04-T04"
+      ],
+      "outputs": [
+        "apps/web/features/completion"
+      ],
+      "commandIds": [
+        "CMD-E2E",
+        "CMD-SECURITY"
+      ],
+      "acceptance": [
+        "마지막CTA로완독을명시저장하고후속작품을안내한다.",
+        "데이터삭제후서버/쿠키/localstorage/outbox가모두정리된다.",
+        "AI표시/저장기간/계정없는범위를정확히설명한다."
+      ],
+      "requirementIds": [
+        "R06",
+        "R09",
+        "R13"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "DONE",
+      "attempts": 1,
+      "blockers": [],
+      "evidence": [
+        "evidence/feedback/verification-index.json",
+        "evidence/feedback/backend/index.json",
+        "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/index.json",
+        "evidence/qa/post-full-visual.json"
+      ],
+      "commit": "ffcdf3470be2f0a2a5ae4406fc96ec8d23018346",
+      "startedAt": "2026-11-18T06:43:53.650Z",
+      "updatedAt": "2026-11-18T09:42:42.190770+00:00",
+      "branch": "main",
+      "actorType": "agent"
+    },
+    {
+      "id": "P06-T01",
+      "phase": "P06",
+      "title": "모바일·키보드·reduced 최종 품질",
+      "dependencies": [
+        "P05-T03"
+      ],
+      "outputs": [
+        "evidence/a11y",
+        "evidence/responsive"
+      ],
+      "commandIds": [
+        "CMD-WEBKIT",
+        "CMD-A11Y",
+        "CMD-VISUAL"
+      ],
+      "acceptance": [
+        "4viewport/200%zoom/reflow에서본문과toolbar가가려지지않는다.",
+        "keyboarddialog/textsemantics·OSreduce를실제브라우저로확인한다.",
+        "axe0과WCAG전체준수를동일시하지않는다."
+      ],
+      "requirementIds": [
+        "R06",
+        "R12"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "DONE",
+      "attempts": 1,
+      "blockers": [],
+      "evidence": [
+        "evidence/feedback/verification-index.json",
+        "evidence/responsive/native-zoom-blocker.json",
+        "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/index.json",
+        "evidence/qa/post-full-visual.json"
+      ],
+      "commit": "ffcdf3470be2f0a2a5ae4406fc96ec8d23018346",
+      "startedAt": "2026-11-18T09:30:20.601Z",
+      "updatedAt": "2026-11-18T09:42:42.190770+00:00",
+      "branch": "main",
+      "actorType": "agent"
+    },
+    {
+      "id": "P06-T02",
+      "phase": "P06",
+      "title": "실제 이미지 통합·성능 최적화",
+      "dependencies": [
+        "P02-T05",
+        "P06-T01"
+      ],
+      "outputs": [
+        "evidence/performance"
+      ],
+      "commandIds": [
+        "CMD-ASSET-VERIFY",
+        "CMD-PERF",
+        "CMD-E2E"
+      ],
+      "acceptance": [
+        "첫이미지/다음씬만적정loading하고일반읽기GSAP요청0을검증한다.",
+        "예산위반의원인을이미지/폰트/JS로나누어수정한다.",
+        "3회lab환경과값을남기며field성과로과장하지않는다."
+      ],
+      "requirementIds": [
+        "R04",
+        "R10",
+        "R12"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "DONE",
+      "attempts": 1,
+      "blockers": [],
+      "evidence": [
+        "evidence/feedback/verification-index.json",
+        "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/index.json",
+        "evidence/qa/post-full-visual.json"
+      ],
+      "commit": "ffcdf3470be2f0a2a5ae4406fc96ec8d23018346",
+      "startedAt": "2026-11-18T09:30:20.714Z",
+      "updatedAt": "2026-11-18T09:42:42.190770+00:00",
+      "branch": "main",
+      "actorType": "agent"
+    },
+    {
+      "id": "P06-T03",
+      "phase": "P06",
+      "title": "패키지 외부 소비·공유 화면",
+      "dependencies": [
+        "P03-T04",
+        "P01-T03"
+      ],
+      "outputs": [
+        "evidence/package-consumer",
+        "apps/web/app/design-system"
+      ],
+      "commandIds": [
+        "CMD-PACK",
+        "CMD-STORYBOOK",
+        "CMD-BOUNDARY"
+      ],
+      "acceptance": [
+        "5개public package tarball을외부Viteconsumer에서사용한다.",
+        "공유타이포/토큰/컴포넌트/reader가Next/DB없이동작한다.",
+        "npm공개배포나유료서비스등록없이공유가능산출물을만든다."
+      ],
+      "requirementIds": [
+        "R11",
+        "R13"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "DONE",
+      "attempts": 1,
+      "blockers": [],
+      "evidence": [
+        "evidence/package-consumer/README.md",
+        "evidence/package-consumer/result.json",
+        "evidence/package-consumer/index.json",
+        "evidence/visual/toolbar-gap-repair.json"
+      ],
+      "commit": "8c498ed1b093f10e8b99d947d55e849362ec2082",
+      "startedAt": "2026-11-17T21:58:04.506Z",
+      "updatedAt": "2026-11-18T01:50:52.684Z",
+      "branch": "main",
+      "actorType": "agent"
+    },
+    {
+      "id": "P06-T04",
+      "phase": "P06",
+      "title": "보안·오류·악성 입력 검수",
+      "dependencies": [
+        "P05-T03"
+      ],
+      "outputs": [
+        "evidence/security"
+      ],
+      "commandIds": [
+        "CMD-SECURITY",
+        "CMD-API"
+      ],
+      "acceptance": [
+        "CSRF/XSS/IDOR/rate/oversize/secret/CSP를negative case로검증한다.",
+        "production에테스트세션우회·mockDB·secret이남지않는다.",
+        "비공개 입력과 민감한 식별자가 Git 추적 파일 및 메타데이터에 포함되지 않는다."
+      ],
+      "requirementIds": [
+        "R09",
+        "R12"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "BLOCKED_EXTERNAL",
+      "attempts": 1,
+      "blockers": [
+        {
+          "code": "CANONICAL_IDENTITY_CONFLICT",
+          "evidence": "evidence/security/managed-scan-review.json",
+          "scope": "Source review found one issue, recorded twice during candidate identity correction; accepted terminal draft remains unsealed per skill. Host reconciliation required."
+        }
+      ],
+      "evidence": [
+        "evidence/security/verified-453bdd7/index.json",
+        "evidence/security/managed-scan-review.json",
+        "evidence/security/verified-f90d32e/index.json",
+        "evidence/security/final-document-check/index.json"
+      ],
+      "commit": null,
+      "startedAt": "2026-11-18T09:30:20.826Z",
+      "updatedAt": "2026-11-18T09:30:20.867Z",
+      "branch": "main",
+      "actorType": "agent"
+    },
+    {
+      "id": "P07-T01",
+      "phase": "P07",
+      "title": "전체 자동 회귀와 결함 수집",
+      "dependencies": [
+        "P06-T01",
+        "P06-T02",
+        "P06-T03",
+        "P06-T04"
+      ],
+      "outputs": [
+        "evidence/qa/full-run",
+        "execution/defects.json"
+      ],
+      "commandIds": [
+        "CMD-QA-COLLECT"
+      ],
+      "acceptance": [
+        "새 DB와 production build에서 모든 필수 자동 suite를 실제 실행하고 종료 코드·증거를 수집한다.",
+        "실패를 숨기거나 skip하지 않고 defect ID·재현 방법·실패 결과를 기록한다.",
+        "이 작업의 DONE은 결과 수집 완료만 뜻하며 테스트 통과나 제품 완료가 아니다. 미실행 suite가 있으면 DONE으로 바꾸지 않는다."
+      ],
+      "requirementIds": [
+        "R12"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "PENDING",
+      "attempts": 0,
+      "blockers": [],
+      "evidence": [
+        "evidence/qa/full-run/2026-11-18T04-33-54-683Z-914b802e/index.json",
+        "evidence/qa/full-run/2026-11-18T04-22-30-498Z-d0c52c4c/erratum.json",
+        "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/index.json",
+        "evidence/qa/post-full-visual.json"
+      ],
+      "commit": null,
+      "startedAt": null,
+      "updatedAt": "2026-11-18T09:42:42.190770+00:00",
+      "branch": null,
+      "actorType": null
+    },
+    {
+      "id": "P07-T02",
+      "phase": "P07",
+      "title": "전 화면·12씬 실제 시각 검수",
+      "dependencies": [
+        "P07-T01"
+      ],
+      "outputs": [
+        "evidence/visual/review.json"
+      ],
+      "commandIds": [
+        "CMD-VISUAL"
+      ],
+      "acceptance": [
+        "실제 스크린샷을 열어 모든 화면과 12개 씬의 타이포그래피·구도·장면 의미를 관찰한다.",
+        "rubric별 관찰·결함·증거를 기록한다. 에이전트 검수를 인간 검수로 표시하지 않는다.",
+        "이 작업의 DONE은 검수 수행 완료다. 발견한 품질 미달은 P07-T03에서 수정하며, 여기서 PASS로 바꾸지 않는다."
+      ],
+      "requirementIds": [
+        "R01",
+        "R04",
+        "R10",
+        "R12"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "PENDING",
+      "attempts": 0,
+      "blockers": [],
+      "evidence": [
+        "evidence/visual/verified-dacef08/index.json",
+        "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/index.json",
+        "evidence/qa/post-full-visual.json"
+      ],
+      "commit": null,
+      "startedAt": null,
+      "updatedAt": "2026-11-18T09:42:42.190770+00:00",
+      "branch": null,
+      "actorType": null
+    },
+    {
+      "id": "P07-T03",
+      "phase": "P07",
+      "title": "결함 자동 보완·회귀 재검증",
+      "dependencies": [
+        "P07-T02"
+      ],
+      "outputs": [
+        "evidence/qa/repair-log",
+        "execution/defects.json"
+      ],
+      "commandIds": [
+        "CMD-FULL",
+        "CMD-VISUAL"
+      ],
+      "acceptance": [
+        "P0/P1과수용기준위반을0으로만든다.",
+        "수정전후화면·원인·commit·동일재현test를연결한다.",
+        "검증값이좋아보이도록기준을임의완화하지않는다."
+      ],
+      "requirementIds": [
+        "R12",
+        "R13"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "PENDING",
+      "attempts": 0,
+      "blockers": [],
+      "evidence": [
+        "evidence/qa/post-full-appendix.json",
+        "execution/defects.json",
+        "evidence/qa/full-run/2026-11-18T09-30-21-703Z-81108322/index.json",
+        "evidence/qa/post-full-visual.json"
+      ],
+      "commit": null,
+      "startedAt": null,
+      "updatedAt": "2026-11-18T09:42:42.190770+00:00",
+      "branch": null,
+      "actorType": null
+    },
+    {
+      "id": "P08-T01",
+      "phase": "P08",
+      "title": "제품 README·사례 연구·운영 가이드",
+      "dependencies": [
+        "P07-T03"
+      ],
+      "outputs": [
+        "README.md",
+        "docs/public/case-study.md",
+        "docs/public/runbook.md"
+      ],
+      "commandIds": [
+        "CMD-SECURITY",
+        "CMD-STATE"
+      ],
+      "acceptance": [
+        "실제구현/생성/검수/미수행을구분하고실제개선근거를기록한다.",
+        "내부 자료를 분리하고 공개 문서에 민감한 식별자가 없는지 확인한다.",
+        "실행/정지/DB복구/제한을타인이따를수있게쓴다."
+      ],
+      "requirementIds": [
+        "R13"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "PENDING",
+      "attempts": 0,
+      "blockers": [],
+      "evidence": [
+        "artifacts/public-documents/index.json",
+        "docs/public/runbook.md",
+        "docs/public/case-study.md"
+      ],
+      "commit": null,
+      "startedAt": null,
+      "updatedAt": "2026-11-18T04:48:53.175012+00:00",
+      "branch": null,
+      "actorType": null
+    },
+    {
+      "id": "P08-T02",
+      "phase": "P08",
+      "title": "로컬 제품 완료 gate·재개 인계",
+      "dependencies": [
+        "P08-T01"
+      ],
+      "outputs": [
+        "RELEASE_REPORT.md",
+        "evidence/final/index.json",
+        "RESUME.md"
+      ],
+      "commandIds": [
+        "CMD-FULL",
+        "CMD-STATE"
+      ],
+      "acceptance": [
+        "현재 작업을 제외한 모든 로컬 필수 작업의 DONE·실제 증거, 16개 공개 에셋, 12개 씬을 확인한다.",
+        "현재 gate 검증까지 통과하면 이 작업을 DONE으로 기록한 뒤 LOCAL_PRODUCT_READY를 계산한다. 공개 배포 상태와 구분한다.",
+        "실제 서비스 URL이 없으면 만들지 않고 로컬 실행 주소와 외부 배포 blocker를 정확히 기록한다."
+      ],
+      "requirementIds": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "R07",
+        "R08",
+        "R09",
+        "R10",
+        "R11",
+        "R12",
+        "R13"
+      ],
+      "gate": "local",
+      "weight": 1,
+      "status": "PENDING",
+      "attempts": 0,
+      "blockers": [],
+      "evidence": [
+        "RELEASE_REPORT.md",
+        "evidence/final/index.json"
+      ],
+      "commit": null,
+      "startedAt": null,
+      "updatedAt": "2026-11-18T04:48:53.175012+00:00",
+      "branch": null,
+      "actorType": null
+    },
+    {
+      "id": "P09-T01",
+      "phase": "P09",
+      "title": "외부 배포 환경·권한·비용 확인",
+      "dependencies": [
+        "P00-T01"
+      ],
+      "outputs": [
+        "evidence/deploy/preflight.json"
+      ],
+      "commandIds": [
+        "CMD-DEPLOY-PREFLIGHT"
+      ],
+      "acceptance": [
+        "기존승인project/현재요금/DBmajor/pooler/secret저장경로를확인한다.",
+        "새유료플랜/권한없는공개게시를하지않는다.",
+        "외부권한없으면이작업만BLOCKED_EXTERNAL,로컬개발계속."
+      ],
+      "requirementIds": [
+        "R12"
+      ],
+      "gate": "public",
+      "weight": 1,
+      "status": "BLOCKED_EXTERNAL",
+      "attempts": 1,
+      "blockers": [
+        {
+          "code": "PROVIDER_SCOPE_FORBIDDEN",
+          "httpStatus": 403,
+          "evidence": "evidence/deploy/provider-access.json",
+          "requires": "Explicit approved deployment target and user-managed provider access; then verify current tier, DBmajor/pooler and secret destination."
+        }
+      ],
+      "evidence": [
+        "evidence/deploy/provider-access.json",
+        "evidence/deploy/preflight.json"
+      ],
+      "commit": null,
+      "startedAt": "2026-11-17T22:17:25.206Z",
+      "updatedAt": "2026-11-17T22:19:59.712Z",
+      "branch": "main",
+      "actorType": "agent"
+    },
+    {
+      "id": "P09-T02",
+      "phase": "P09",
+      "title": "대상 DB·앱 실제 배포",
+      "dependencies": [
+        "P08-T02",
+        "P09-T01"
+      ],
+      "outputs": [
+        "evidence/deploy/deployment.json"
+      ],
+      "commandIds": [
+        "CMD-MIGRATE",
+        "CMD-DEPLOY-SMOKE"
+      ],
+      "acceptance": [
+        "대상에같은migration/roles/env를적용하고app배포한다.",
+        "data이관시count/digest검증,불필요한개인데이터복사금지.",
+        "외부URL/배포ID/commit과실제이미지를확인한다."
+      ],
+      "requirementIds": [
+        "R09",
+        "R10",
+        "R12"
+      ],
+      "gate": "public",
+      "weight": 1,
+      "status": "PENDING",
+      "attempts": 0,
+      "blockers": [],
+      "evidence": [],
+      "commit": null,
+      "startedAt": null,
+      "updatedAt": null,
+      "branch": null,
+      "actorType": null
+    },
+    {
+      "id": "P09-T03",
+      "phase": "P09",
+      "title": "공개 smoke·rollback·최종 인계",
+      "dependencies": [
+        "P09-T02"
+      ],
+      "outputs": [
+        "RELEASE_REPORT.md",
+        "evidence/deploy/final-smoke.json"
+      ],
+      "commandIds": [
+        "CMD-DEPLOY-SMOKE",
+        "CMD-STATE"
+      ],
+      "acceptance": [
+        "HTTPS/session/실제DBwrite/reload/A-B격리/asset을검증한다.",
+        "이전artifact복귀절차를안전한preview에서검증한다.",
+        "PUBLIC_RELEASE_READY는모든publicgate통과시에만기록한다."
+      ],
+      "requirementIds": [
+        "R12",
+        "R13"
+      ],
+      "gate": "public",
+      "weight": 1,
+      "status": "PENDING",
+      "attempts": 0,
+      "blockers": [],
+      "evidence": [],
+      "commit": null,
+      "startedAt": null,
+      "updatedAt": null,
+      "branch": null,
+      "actorType": null
+    }
+  ]
+}

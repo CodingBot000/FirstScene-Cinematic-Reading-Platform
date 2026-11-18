@@ -1,0 +1,32 @@
+{
+  "observedAt": "2026-11-18T04:41:41.664Z",
+  "sourceCommit": "f82d333c2b41059278014c8284e313b8e05b51ea",
+  "baseUrl": "http://127.0.0.1:3100",
+  "status": "PASS",
+  "results": [
+    {
+      "path": "/health/live",
+      "status": 200
+    },
+    {
+      "path": "/health/ready",
+      "status": 200
+    },
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/read/post-office",
+      "status": 200,
+      "beats": 36
+    },
+    {
+      "path": "/read/tide-station",
+      "status": 200,
+      "beats": 36
+    }
+  ],
+  "sessionCreationRequested": false,
+  "publicDeployment": false
+}

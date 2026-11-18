@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "scope": "@firstscene",
+  "allowedInternalDependencies": {
+    "tokens": [],
+    "story-schema": [],
+    "ui": [
+      "tokens"
+    ],
+    "reader-core": [
+      "story-schema"
+    ],
+    "reader-react": [
+      "reader-core",
+      "story-schema",
+      "tokens",
+      "ui"
+    ],
+    "content-compiler": [
+      "story-schema"
+    ],
+    "server-data": [
+      "story-schema"
+    ],
+    "web": [
+      "tokens",
+      "story-schema",
+      "ui",
+      "reader-core",
+      "reader-react",
+      "server-data"
+    ],
+    "ui-lab": [
+      "tokens",
+      "story-schema",
+      "ui",
+      "reader-core",
+      "reader-react"
+    ]
+  },
+  "forbiddenInClient": [
+    "pg",
+    "node:fs",
+    "node:crypto",
+    "server-data"
+  ],
+  "forbiddenInCore": [
+    "react",
+    "next",
+    "gsap",
+    "window",
+    "document"
+  ],
+  "noDeepSourceImports": true,
+  "requireExports": true,
+  "requireExternalTarballSmoke": true
+}

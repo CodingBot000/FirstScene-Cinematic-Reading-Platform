@@ -1,0 +1,14 @@
+{
+  "observedAt": "2026-11-18T06:43:53.531086+00:00",
+  "command": "pnpm db:cleanup",
+  "exitCode": 0,
+  "status": "CLEANUP_COMPLETE",
+  "batches": 1,
+  "deleted": {
+    "receipts": 0,
+    "rateBuckets": 0,
+    "sessions": 0
+  },
+  "bounded": true,
+  "secretsPrinted": false
+}

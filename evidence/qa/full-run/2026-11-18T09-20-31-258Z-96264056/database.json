@@ -1,0 +1,329 @@
+{
+  "numTotalTestSuites": 5,
+  "numPassedTestSuites": 5,
+  "numFailedTestSuites": 0,
+  "numPendingTestSuites": 0,
+  "numTotalTests": 23,
+  "numPassedTests": 23,
+  "numFailedTests": 0,
+  "numPendingTests": 0,
+  "numTodoTests": 0,
+  "snapshot": {
+    "added": 0,
+    "failure": false,
+    "filesAdded": 0,
+    "filesRemoved": 0,
+    "filesRemovedList": [],
+    "filesUnmatched": 0,
+    "filesUpdated": 0,
+    "matched": 0,
+    "total": 0,
+    "unchecked": 0,
+    "uncheckedKeysByFile": [],
+    "unmatched": 0,
+    "updated": 0,
+    "didUpdate": false
+  },
+  "startTime": 1794993648417,
+  "success": true,
+  "testResults": [
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [],
+          "fullName": "KST midnight bounds include00:00 and exclude the prior millisecond regardless of connection timezone",
+          "status": "passed",
+          "title": "KST midnight bounds include00:00 and exclude the prior millisecond regardless of connection timezone",
+          "duration": 11.091999999999985,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "the5allowance uses current KST bounds, not the most recent24hours, and exact midnight counts",
+          "status": "passed",
+          "title": "the5allowance uses current KST bounds, not the most recent24hours, and exact midnight counts",
+          "duration": 63.60304199999999,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "12concurrent distinct feedback writes accept exactly5, independently per story and session",
+          "status": "passed",
+          "title": "12concurrent distinct feedback writes accept exactly5, independently per story and session",
+          "duration": 53.82849999999996,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "exact replay consumes one allowance even after generic receipt expiry; changed code/story conflicts",
+          "status": "passed",
+          "title": "exact replay consumes one allowance even after generic receipt expiry; changed code/story conflicts",
+          "duration": 28.445375000000013,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "feedback and receipt roll back atomically if receipt insertion fails",
+          "status": "passed",
+          "title": "feedback and receipt roll back atomically if receipt insertion fails",
+          "duration": 17.60537499999998,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "quota timestamps are taken after a contended session lock is acquired",
+          "status": "passed",
+          "title": "quota timestamps are taken after a contended session lock is acquired",
+          "duration": 60.72745900000001,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        }
+      ],
+      "startTime": 1794993648667,
+      "endTime": 1794993648902.7275,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/switch/Development/Web/FirstScene/tests/db/feedback.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 delete cascades all owned rows and write bucket; repeated and expired-token deletion is safe",
+          "status": "passed",
+          "title": "P04 delete cascades all owned rows and write bucket; repeated and expired-token deletion is safe",
+          "duration": 50.535083000000014,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 cleanup bounds each table, skips locked rows and preserves live sessions/receipts/buckets",
+          "status": "passed",
+          "title": "P04 cleanup bounds each table, skips locked rows and preserves live sessions/receipts/buckets",
+          "duration": 18.739041000000014,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        }
+      ],
+      "startTime": 1794993649954,
+      "endTime": 1794993650023.739,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/switch/Development/Web/FirstScene/tests/db/maintenance.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 QA-D01 fresh realPostgreSQL17 has exactly8private tables with owner tracking",
+          "status": "passed",
+          "title": "P04 QA-D01 fresh realPostgreSQL17 has exactly8private tables with owner tracking",
+          "duration": 3.5934579999999983,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 QA-D01 rerun is safe and altered checksum is rejected without changing source/schema",
+          "status": "passed",
+          "title": "P04 QA-D01 rerun is safe and altered checksum is rejected without changing source/schema",
+          "duration": 13.432832999999988,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 runtime role has no DDL, superuser, membership, publicschema or migration-table privileges",
+          "status": "passed",
+          "title": "P04 runtime role has no DDL, superuser, membership, publicschema or migration-table privileges",
+          "duration": 28.432124999999985,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 runtime CRUD is allowed on app tables, foreign keys cascade only the owned session",
+          "status": "passed",
+          "title": "P04 runtime CRUD is allowed on app tables, foreign keys cascade only the owned session",
+          "duration": 8.364542,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 database rejects overlong absolute expiry and invalidfont at constraint boundary",
+          "status": "passed",
+          "title": "P04 database rejects overlong absolute expiry and invalidfont at constraint boundary",
+          "duration": 14.96758299999999,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 server indexes cover expiry and session-child access without orphan writes",
+          "status": "passed",
+          "title": "P04 server indexes cover expiry and session-child access without orphan writes",
+          "duration": 3.093208000000004,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        }
+      ],
+      "startTime": 1794993649691,
+      "endTime": 1794993649763.0933,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/switch/Development/Web/FirstScene/tests/db/migrations.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 mutationandreceipt rollbacktogether whenactualreceiptSQLfails afterprogresswrite",
+          "status": "passed",
+          "title": "P04 mutationandreceipt rollbacktogether whenactualreceiptSQLfails afterprogresswrite",
+          "duration": 41.045457999999996,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 sessionrowlocks serializeownwrites withoutblocking anotherbrowser session",
+          "status": "passed",
+          "title": "P04 sessionrowlocks serializeownwrites withoutblocking anotherbrowser session",
+          "duration": 21.951375000000013,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 staleauthenticatedcontext cannotrecreateprogress aftersessiondeletion",
+          "status": "passed",
+          "title": "P04 staleauthenticatedcontext cannotrecreateprogress aftersessiondeletion",
+          "duration": 6.884874999999994,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        }
+      ],
+      "startTime": 1794993649422,
+      "endTime": 1794993649491.8848,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/switch/Development/Web/FirstScene/tests/db/repository.test.ts"
+    },
+    {
+      "assertionResults": [
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 real sessions use32randombytes, storeonlySHA256 and return a safeEpoch DTO",
+          "status": "passed",
+          "title": "P04 real sessions use32randombytes, storeonlySHA256 and return a safeEpoch DTO",
+          "duration": 18.922208000000012,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 validcookie reuses sameabsoluteexpiry and another session gets a differentepoch",
+          "status": "passed",
+          "title": "P04 validcookie reuses sameabsoluteexpiry and another session gets a differentepoch",
+          "duration": 7.580417000000011,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 expired or malformed tokens never authenticate or fixate issuance",
+          "status": "passed",
+          "title": "P04 expired or malformed tokens never authenticate or fixate issuance",
+          "duration": 9.202416999999997,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P04 atomic ratebucket caps concurrentrequests and providesretryafter without rawnetworkidentifiers",
+          "status": "passed",
+          "title": "P04 atomic ratebucket caps concurrentrequests and providesretryafter without rawnetworkidentifiers",
+          "duration": 11.462208000000004,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P06 trustednetworkAexhaustion doesnotconsume networkB's30allowance and stores onlyHMAC keys",
+          "status": "passed",
+          "title": "P06 trustednetworkAexhaustion doesnotconsume networkB's30allowance and stores onlyHMAC keys",
+          "duration": 72.24225000000001,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        },
+        {
+          "ancestorTitles": [],
+          "fullName": "P06 unverifiednetwork cannot create a new session orbucket; validcookie reuse requires no newnetwork allowance",
+          "status": "passed",
+          "title": "P06 unverifiednetwork cannot create a new session orbucket; validcookie reuse requires no newnetwork allowance",
+          "duration": 4.730916999999977,
+          "failureMessages": [],
+          "meta": {},
+          "tags": [],
+          "benchmarks": []
+        }
+      ],
+      "startTime": 1794993649103,
+      "endTime": 1794993649226.731,
+      "status": "passed",
+      "message": "",
+      "name": "/Users/switch/Development/Web/FirstScene/tests/db/session.test.ts"
+    }
+  ]
+}

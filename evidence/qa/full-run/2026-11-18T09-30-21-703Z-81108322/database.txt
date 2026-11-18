@@ -1,0 +1,27 @@
+
+> firstscene-workspace@0.1.0 test:db /Users/switch/Development/Web/FirstScene
+> pnpm --filter @firstscene/server-data build && vitest run --config vitest.db.config.ts
+
+
+> @firstscene/server-data@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/server-data
+> cd ../.. && node tools/generate-api-schema.mjs && pnpm exec prettier --write packages/server-data/src/api-schema.ts && pnpm exec tsc -p packages/server-data/tsconfig.json
+
+packages/server-data/src/api-schema.ts 32ms
+
+ RUN  v5.1.0 /Users/switch/Development/Web/FirstScene
+
+ ✓ tests/db/feedback.test.ts (6 tests) 489ms
+ ✓ tests/db/session.test.ts (6 tests) 229ms
+ ✓ tests/db/migrations.test.ts (6 tests) 157ms
+ ✓ tests/db/repository.test.ts (3 tests) 146ms
+ ✓ tests/db/maintenance.test.ts (2 tests) 138ms
+
+ Test Files  5 passed (5)
+      Tests  23 passed (23)
+   Start at  18:30:38
+   Duration  1.81s (tests 79%, import 18%, transform 2%, worker 1%)
+
+    Isolate  5 workers spawned · ~65ms startup each (spawn + environment, per file)
+             at least ~259ms faster with isolate: false — reuses workers across files instead of one per file
+
+JSON report written to /Users/switch/Development/Web/FirstScene/evidence/database/test-results.json

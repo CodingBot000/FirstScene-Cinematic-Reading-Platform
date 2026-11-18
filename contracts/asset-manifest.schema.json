@@ -1,0 +1,183 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Approved public assets manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "assets"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "role",
+          "sourceSha256",
+          "generationId",
+          "alt",
+          "decorative",
+          "review",
+          "variants",
+          "focalPoint"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9-]{1,63}$"
+          },
+          "role": {
+            "enum": [
+              "cover",
+              "background",
+              "portrait"
+            ]
+          },
+          "sourceSha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "generationId": {
+            "type": "string",
+            "minLength": 1
+          },
+          "alt": {
+            "type": "string"
+          },
+          "decorative": {
+            "type": "boolean"
+          },
+          "review": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "status",
+              "reviewerType",
+              "score",
+              "notes"
+            ],
+            "properties": {
+              "status": {
+                "const": "approved"
+              },
+              "reviewerType": {
+                "enum": [
+                  "agent_visual",
+                  "human"
+                ]
+              },
+              "score": {
+                "type": "integer",
+                "minimum": 8,
+                "maximum": 10
+              },
+              "notes": {
+                "type": "string",
+                "minLength": 10
+              }
+            }
+          },
+          "variants": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "path",
+                "format",
+                "width",
+                "height",
+                "bytes",
+                "sha256"
+              ],
+              "properties": {
+                "path": {
+                  "type": "string",
+                  "pattern": "^/assets/[a-z0-9/._-]+$"
+                },
+                "format": {
+                  "enum": [
+                    "avif",
+                    "webp"
+                  ]
+                },
+                "width": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "height": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "bytes": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              }
+            }
+          },
+          "focalPoint": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "x",
+              "y"
+            ],
+            "properties": {
+              "x": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "y": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              }
+            }
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "decorative": {
+                  "const": true
+                }
+              },
+              "required": [
+                "decorative"
+              ]
+            },
+            "then": {
+              "properties": {
+                "alt": {
+                  "const": ""
+                }
+              }
+            },
+            "else": {
+              "properties": {
+                "alt": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

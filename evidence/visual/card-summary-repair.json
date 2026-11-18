@@ -1,0 +1,76 @@
+{
+  "observedAt": "2026-11-18T01:35:38.904124+00:00",
+  "codeCommit": "16a7018fdd5d56536e59d83859cf8092b343fbe2",
+  "status": "PASS_FOR_CARD_SUMMARY_REPAIR_ONLY",
+  "reviewer": "agent",
+  "humanReviews": 0,
+  "before": "evidence/visual/card-summary-before/index.json",
+  "after": [
+    {
+      "path": "evidence/visual/16a7018fdd5d56536e59d83859cf8092b343fbe2/home-1440x1000-paper-default.png",
+      "name": "home",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "2990049974b6b378f39ee43e176fc1db07125181f2b2a297da70c47cea1267b5",
+      "opened": true
+    },
+    {
+      "path": "evidence/visual/16a7018fdd5d56536e59d83859cf8092b343fbe2/home-1024x768-paper-default.png",
+      "name": "home",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1024,
+        "height": 768,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "f393f2c77a6c65104baa0bb75f546d69bfb06475d6054a1e5b7117422fe67855",
+      "opened": true
+    },
+    {
+      "path": "evidence/visual/16a7018fdd5d56536e59d83859cf8092b343fbe2/home-390x844-paper-default.png",
+      "name": "home",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "93f7ab74a3524ee0ba0e398046314b1c59b5b1f1ccc8ab06f9436467b88dcad1",
+      "opened": true
+    },
+    {
+      "path": "evidence/visual/16a7018fdd5d56536e59d83859cf8092b343fbe2/home-320x740-paper-default.png",
+      "name": "home",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 320,
+        "height": 740,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "6834fa0544a95c32990eed3acbfb352a742232d9dc1ead2fddddbb8943301290",
+      "opened": true
+    }
+  ],
+  "validation": "pnpm build, pnpm lint, pnpm storybook:build, pnpm test:visual -- --collect9/9 including computed two-line summary bounds across4Chromium sizes+WebKit390, pnpm pack:smoke2/2 actual external engines",
+  "observation": "Actually opened all4afterhome captures: summaries now occupy at most2lines with ellipsis, titles/tags/CTA remain visible, full synopsis still available on introduction. No overlapping nav/header/text at320/390/1024/1440. Full visual rubric86screens remains pending."
+}

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-11-17T16:39:35.420981+00:00",
+  "codexModel": {
+    "requested": "gpt-6.1-sol",
+    "actual": "unknown",
+    "reasoningRequested": "high",
+    "actualReasoning": "unknown"
+  },
+  "nativeImage": {
+    "checked": true,
+    "available": true,
+    "requestedModel": "gpt-image-2",
+    "actualModel": "unknown",
+    "tool": "image_gen.imagegen",
+    "generationTestPerformed": true,
+    "observedSourceCount": 16
+  },
+  "node": "v24.5.0",
+  "pnpm": "10.14.0",
+  "docker": {
+    "client": "29.1.3",
+    "server": "29.1.3",
+    "compose": "v2.40.3-desktop.1",
+    "postgres17ImagePresent": true
+  },
+  "browser": {
+    "available": true,
+    "surfaces": [
+      "Chrome extension",
+      "Codex in-app browser"
+    ],
+    "checkedBy": "cua.getState",
+    "renderTestPerformed": false
+  },
+  "apiSpendAuthorizedUsd": 0,
+  "deployment": {
+    "checked": true,
+    "authorized": false,
+    "reason": "No project-linked deployment target or scoped deployment authorization exists in this initial directory."
+  },
+  "note": "Native generation actually used;16approvedsources, modelidentityunknown. SeparatepaidAPIspend0. LocalPostgreSQL17.12running;publicdeploymentunconfirmed."
+}

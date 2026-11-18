@@ -1,0 +1,15 @@
+{
+  "observedAt": "2026-11-17T22:18:55.993Z",
+  "status": "BLOCKED_EXTERNAL",
+  "configuredTargetFiles": [],
+  "gitRemoteCount": 0,
+  "providerAccess": "FORBIDDEN",
+  "providerReceipt": "evidence/deploy/provider-access.json",
+  "approvedReleaseTarget": false,
+  "costTier": "unknown",
+  "externalDatabase": "unverified",
+  "publicUrl": null,
+  "reason": "Connected provider scope returned403; target/billing/database cannot be verified.",
+  "mutationPerformed": false,
+  "secretsPrinted": false
+}

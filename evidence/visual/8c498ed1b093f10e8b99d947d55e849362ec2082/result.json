@@ -1,0 +1,1558 @@
+{
+  "status": "CAPTURES_COLLECTED_REVIEW_REQUIRED",
+  "releaseReady": false,
+  "reviewer": null,
+  "startedAt": "2026-11-18T01:45:51.445Z",
+  "sourceCommit": "5ded63aa926e70b55896e8624c6dfa4189a000e2",
+  "commands": [
+    {
+      "command": "playwright test --config=tools/visual-playwright.config.ts",
+      "exitCode": 0
+    }
+  ],
+  "captures": [
+    {
+      "path": "evidence/visual/current/reader-bookmark-1440x1000-cinematic-saved.png",
+      "name": "reader-bookmark",
+      "mode": "cinematic",
+      "state": "saved",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "719da674a4b70ff84bc98aebbefe4e819d1b6a436024dbcce777209dcf20d55b",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/reader-settings-1440x1000-cinematic-font24.png",
+      "name": "reader-settings",
+      "mode": "cinematic",
+      "state": "font24",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "e1671f09cce3fdebd294f555a161151064f18a15530552c8d8d27c55358639d8",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/reader-1440x1000-plain-font24.png",
+      "name": "reader",
+      "mode": "plain",
+      "state": "font24",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "b641e9459565086ce61e8fb5510e242f4c7c22258fbcb86e97039d28358c08af",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/reader-1440x1000-cinematic-os-reduced.png",
+      "name": "reader",
+      "mode": "cinematic",
+      "state": "os-reduced",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "3c981f69192d9760119443e3132313b00c42e291781c7e9a342fc027164a82cf",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/library-1440x1000-paper-full.png",
+      "name": "library",
+      "mode": "paper",
+      "state": "full",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "222f8711991e70d87e26c70722c810a2b43a93e083318fe6918675acda0f7c1f",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/reader-tide-1440x1000-reduced-image-failure.png",
+      "name": "reader-tide",
+      "mode": "reduced",
+      "state": "image-failure",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "a78307934bf5cbce7f9b6e5b132beecd6ff594972ad5f86c0ccca8fe8fe04790",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/reader-reflow-1440x1000-cinematic-first.png",
+      "name": "reader-reflow",
+      "mode": "cinematic",
+      "state": "first",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "54f685c0be02ebcf9b46762cafff8e0d48b8655c6391f17296d41b8724e3fcdd",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/reader-reflow-settings-1440x1000-cinematic-initial.png",
+      "name": "reader-reflow-settings",
+      "mode": "cinematic",
+      "state": "initial",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "0bc741858186032a0ef8b9b10b81c7dc6849b96efd7c92872fb85578d41d24a8",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/home-1440x1000-paper-default.png",
+      "name": "home",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "2990049974b6b378f39ee43e176fc1db07125181f2b2a297da70c47cea1267b5",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/discover-1440x1000-paper-default.png",
+      "name": "discover",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "6ddf7b836f2fd768e3c28358b5bc4a0dc30d95d391f3d48596bd9c41c4e52847",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/intro-post-office-1440x1000-paper-default.png",
+      "name": "intro-post-office",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "8aea1c33506bcd974bae9b63a07b43aa5c30fa18c819dbcee06709adb4637b80",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/intro-tide-station-1440x1000-paper-default.png",
+      "name": "intro-tide-station",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "4b611880c7fe5e9e140aa4a258c2aea54bdab2f31c227c61da968a0d6a828289",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/library-1440x1000-paper-empty.png",
+      "name": "library",
+      "mode": "paper",
+      "state": "empty",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "d90765f7578d809ea2355dc97daab439dbe5ab9f7a3113153f2359dcfe6ddbbb",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/settings-1440x1000-paper-default.png",
+      "name": "settings",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "774ff5aa82c30a2e8a43642800e07c5a769cffd4a2af541c2477e4836cd546d0",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/about-1440x1000-paper-default.png",
+      "name": "about",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "e6232025986cfea600582674c01608b7c23af00434bff95e67cf6ab5a7e559cc",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/design-system-1440x1000-paper-default.png",
+      "name": "design-system",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "e91e539846d81649bbfac9759e6f2ad2d0c54774b77521b8db06556c9eaf2abd",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/discover-1440x1000-paper-empty.png",
+      "name": "discover",
+      "mode": "paper",
+      "state": "empty",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "af6df173cc5922048bdb916ce275ec0cf12c3c4a4b7b93c9379b0698e2a4ce13",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/missing-story-1440x1000-paper-404.png",
+      "name": "missing-story",
+      "mode": "paper",
+      "state": "404",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "1caf6301268e76a19bb343ba522f976317b176bf35d2b0de15550f97ded19ed7",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/mail-s01-1440x1000-cinematic-calm.png",
+      "name": "mail-s01",
+      "mode": "cinematic",
+      "state": "calm",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "54f685c0be02ebcf9b46762cafff8e0d48b8655c6391f17296d41b8724e3fcdd",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/mail-s02-1440x1000-cinematic-memory.png",
+      "name": "mail-s02",
+      "mode": "cinematic",
+      "state": "memory",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "9aea7e1714c65090a5bf9e629bbd21028f5906ae37dfe9e85cb2a35dc81a5ffd",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/mail-s03-1440x1000-cinematic-tension.png",
+      "name": "mail-s03",
+      "mode": "cinematic",
+      "state": "tension",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "0284bc478c14074056ad414e9913b691388b4e1f370129284a4f6980710231f6",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/mail-s04-1440x1000-cinematic-climax.png",
+      "name": "mail-s04",
+      "mode": "cinematic",
+      "state": "climax",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "61c11c35087da3ea97b6e10916ae665e4e68ce02af35545a0e00eb3e407ab7e9",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/mail-s05-1440x1000-cinematic-relief.png",
+      "name": "mail-s05",
+      "mode": "cinematic",
+      "state": "relief",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "928e33ba460b35fe24f73abb1516f2e960f9a6647d65561df2b7b40a188f777d",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/mail-s06-1440x1000-cinematic-calm.png",
+      "name": "mail-s06",
+      "mode": "cinematic",
+      "state": "calm",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "f8335b04f8244421cea628a8501a984f7488656c170ef5bad3289e38bb743e3e",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/tide-s01-1440x1000-cinematic-tension.png",
+      "name": "tide-s01",
+      "mode": "cinematic",
+      "state": "tension",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "8325767bd2388be6e7005e0c4f2aa13f9444c2261bcd6ebb6e0d0590b7bc6fa0",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/tide-s02-1440x1000-cinematic-memory.png",
+      "name": "tide-s02",
+      "mode": "cinematic",
+      "state": "memory",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "3f805a23bb719443941096dd62cc5d71ed03b4b8405a974a1b8aa54c160cc607",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/tide-s03-1440x1000-cinematic-tension.png",
+      "name": "tide-s03",
+      "mode": "cinematic",
+      "state": "tension",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "fe670e54abcf93ae4312a0c3bff51acb942db2f15f7eca8f04e8b3128c798b4c",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/tide-s04-1440x1000-cinematic-climax.png",
+      "name": "tide-s04",
+      "mode": "cinematic",
+      "state": "climax",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "e7483007804e261fd3af92781e71e50fd00a7d3e1ecbf26d452ec0998676ea80",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/tide-s05-1440x1000-cinematic-relief.png",
+      "name": "tide-s05",
+      "mode": "cinematic",
+      "state": "relief",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "68d7effe999335af07c0f19755156bd34b70e4086c64b3da0c84c7f854d6d2a4",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/tide-s06-1440x1000-cinematic-calm.png",
+      "name": "tide-s06",
+      "mode": "cinematic",
+      "state": "calm",
+      "layout": {
+        "width": 1440,
+        "height": 1000,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "f77a4502f4db1bff4a2b507c64bcdbb2c6a4f212995452ba7785414b07f61b27",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/reader-reflow-1024x768-cinematic-first.png",
+      "name": "reader-reflow",
+      "mode": "cinematic",
+      "state": "first",
+      "layout": {
+        "width": 1024,
+        "height": 768,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "2faac80df659df2aadf3553334d6ebf605a62d7f66b8326b202f011f65dc3873",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/reader-reflow-settings-1024x768-cinematic-initial.png",
+      "name": "reader-reflow-settings",
+      "mode": "cinematic",
+      "state": "initial",
+      "layout": {
+        "width": 1024,
+        "height": 768,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "4b91236553efca1d93df94bad99d8f30cbe31b6b95ead8c6947285a66ecb04ec",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/home-1024x768-paper-default.png",
+      "name": "home",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1024,
+        "height": 768,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "f393f2c77a6c65104baa0bb75f546d69bfb06475d6054a1e5b7117422fe67855",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/discover-1024x768-paper-default.png",
+      "name": "discover",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1024,
+        "height": 768,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "5a0ac7d03e89ecac54afa3f40e18f41538361d122aee9b9b179e0a280a9598a8",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/intro-post-office-1024x768-paper-default.png",
+      "name": "intro-post-office",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1024,
+        "height": 768,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "2f3be12851f5913b14624e6dda5cf8f6e4c8b82bfa9a156baa75821a71bbda69",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/intro-tide-station-1024x768-paper-default.png",
+      "name": "intro-tide-station",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1024,
+        "height": 768,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "7eb5c1ef30423a81e5fe72ba37658f4fe7d61eb7d2d26638021631f2b47522cc",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/library-1024x768-paper-empty.png",
+      "name": "library",
+      "mode": "paper",
+      "state": "empty",
+      "layout": {
+        "width": 1024,
+        "height": 768,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "40f9f0cdd7197ca9e8d17e28877778eefefdeeaa2f914c549ca4b56ea7eeea17",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/settings-1024x768-paper-default.png",
+      "name": "settings",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1024,
+        "height": 768,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "6a057078ddb298407db6826d167e5039b7f82a155a6c080b47e2edca23037a86",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/about-1024x768-paper-default.png",
+      "name": "about",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1024,
+        "height": 768,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "cb2905de1fc280073d3ea1b5d3c30b5965ec320482d1d61f3e925214fdcd9c4a",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/design-system-1024x768-paper-default.png",
+      "name": "design-system",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 1024,
+        "height": 768,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "c50b7539252396b3b87a068d875bd0276d56cbfb3160ff74e44793b83ca375b6",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/discover-1024x768-paper-empty.png",
+      "name": "discover",
+      "mode": "paper",
+      "state": "empty",
+      "layout": {
+        "width": 1024,
+        "height": 768,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "ec1f8e422e8c11c76266d1176606198b3809861124ac8aecf7391583f015e084",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/missing-story-1024x768-paper-404.png",
+      "name": "missing-story",
+      "mode": "paper",
+      "state": "404",
+      "layout": {
+        "width": 1024,
+        "height": 768,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "1340f599c7ee76b93d5deddb5f8db1ece24d1ec292d727ef046d72c44dd05aef",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/reader-bookmark-390x844-cinematic-saved.png",
+      "name": "reader-bookmark",
+      "mode": "cinematic",
+      "state": "saved",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "0a9fdbf3fe5015204713e6d079790094acbad759eaf3ad04efc4b03add834163",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/reader-settings-390x844-cinematic-font24.png",
+      "name": "reader-settings",
+      "mode": "cinematic",
+      "state": "font24",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "abdeb4e6e059e5b0ee2bd2084a15a7e3161a6cea1d99a3c1f93a30945307f1a1",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/reader-390x844-plain-font24.png",
+      "name": "reader",
+      "mode": "plain",
+      "state": "font24",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "fd4e303ae5084c073ce8eed1b3db4c3d1dd7a7749ac1b0a181fe4f69be4ce465",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/reader-390x844-cinematic-os-reduced.png",
+      "name": "reader",
+      "mode": "cinematic",
+      "state": "os-reduced",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "042109d7ca21524e5182099ed22f2c9b3910f8598183ea4156cc328d6db49b40",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/library-390x844-paper-full.png",
+      "name": "library",
+      "mode": "paper",
+      "state": "full",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "6db6531571b1c4db16d10c196621f41892cde5297bb874f192b657d3e27cec3f",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/reader-tide-390x844-reduced-image-failure.png",
+      "name": "reader-tide",
+      "mode": "reduced",
+      "state": "image-failure",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "fa623db6772ce4c171e849d1192334a2dc3c9c644fcd7530012854eea2e7c2fc",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/reader-reflow-390x844-cinematic-first.png",
+      "name": "reader-reflow",
+      "mode": "cinematic",
+      "state": "first",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "c57daae1e4b11cfdcb7d41fcf5f1e9b47bc4c230814a6e2fd8775c4fc358ab40",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/reader-reflow-settings-390x844-cinematic-initial.png",
+      "name": "reader-reflow-settings",
+      "mode": "cinematic",
+      "state": "initial",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "f47cc8bbad77bc7f8faa71339da9fdb3f9662c0f2388dc622d5f345083fde787",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/home-390x844-paper-default.png",
+      "name": "home",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "93f7ab74a3524ee0ba0e398046314b1c59b5b1f1ccc8ab06f9436467b88dcad1",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/discover-390x844-paper-default.png",
+      "name": "discover",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "8eabed73a03ca9761f423b905ee43d862fbb5b7a37230f51ce6e85eb2fc9a322",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/intro-post-office-390x844-paper-default.png",
+      "name": "intro-post-office",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "268607e90ba00c68042e218f20b153f202c38db32f2567e798ae1b00ae877f8e",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/intro-tide-station-390x844-paper-default.png",
+      "name": "intro-tide-station",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "e40aa6526b34deb8a6fa0211c4b15e6f7cfdd5a16cf0e13bcb252a3f6ee0df6f",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/library-390x844-paper-empty.png",
+      "name": "library",
+      "mode": "paper",
+      "state": "empty",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "c7f240eb6e952e60c155d4c7cf0eefd02b12e171ada19fd82067ecc0c734bb59",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/settings-390x844-paper-default.png",
+      "name": "settings",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "c02649916e498f624a4a3e824707701b681b4a9bfd563b45cb5890608af5bf35",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/about-390x844-paper-default.png",
+      "name": "about",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "ea6afc1f19038238a46fca03f2aa3fecc43872cb1d95b0aa1f19d98f0c05c484",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/design-system-390x844-paper-default.png",
+      "name": "design-system",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "c9c2499749d0993a20e5b8d3771d7ad1a1a6e32a8a9d0fae4baf3dda4deb461a",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/discover-390x844-paper-empty.png",
+      "name": "discover",
+      "mode": "paper",
+      "state": "empty",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "041a86815f0865695a9542b22660dc25de64b7c15cc30074ead71fa18b55b7c7",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/missing-story-390x844-paper-404.png",
+      "name": "missing-story",
+      "mode": "paper",
+      "state": "404",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "0e5a0b41bbab8f184e752bba4602fb0a52286a9b483c2fb88eaa22b6016a5d0e",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/mail-s01-390x844-cinematic-calm.png",
+      "name": "mail-s01",
+      "mode": "cinematic",
+      "state": "calm",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "73160d6fb4afbe97193564b2844e42d0b670eee6d43a2f4c2afea849f8510dc7",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/mail-s02-390x844-cinematic-memory.png",
+      "name": "mail-s02",
+      "mode": "cinematic",
+      "state": "memory",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "1a0ad47a3dbe7e79a8ad84810443c85fd32a9fedadecd9cb498e27dc00828cd6",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/mail-s03-390x844-cinematic-tension.png",
+      "name": "mail-s03",
+      "mode": "cinematic",
+      "state": "tension",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "b761a7ebd499e5b6e87b6dc0a13972ae24e77bcd53c81b9e92ee968e8a8e0850",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/mail-s04-390x844-cinematic-climax.png",
+      "name": "mail-s04",
+      "mode": "cinematic",
+      "state": "climax",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "dde64bc19ac2e5d659e403c71207ae5f60b17e441a705318ff183a225f81d762",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/mail-s05-390x844-cinematic-relief.png",
+      "name": "mail-s05",
+      "mode": "cinematic",
+      "state": "relief",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "e1bfafb355477ba24e6fa434f9b1e3a4f2c91eff4cdfa7edcb0c7d7d27b5759d",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/mail-s06-390x844-cinematic-calm.png",
+      "name": "mail-s06",
+      "mode": "cinematic",
+      "state": "calm",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "9c7543f63660fee61a80a220bbc6b85b486f5867000904a5a849a757ca7d5b6a",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/tide-s01-390x844-cinematic-tension.png",
+      "name": "tide-s01",
+      "mode": "cinematic",
+      "state": "tension",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "2f135e72e5179deba650221b035508e29100eb91e29c4da3f815fe6822ab75a8",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/tide-s02-390x844-cinematic-memory.png",
+      "name": "tide-s02",
+      "mode": "cinematic",
+      "state": "memory",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "5840b9a4ee46f99e477e805b10245db1b59cd9130d002b16a208785ef607b448",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/tide-s03-390x844-cinematic-tension.png",
+      "name": "tide-s03",
+      "mode": "cinematic",
+      "state": "tension",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "f86306e3f05a9dcaa5409b0175aadd444726739f603c7cdf7617a7c7058c7e9d",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/tide-s04-390x844-cinematic-climax.png",
+      "name": "tide-s04",
+      "mode": "cinematic",
+      "state": "climax",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "5524ca61b72717f2876e671328dfd10440e17283186f7bea03772326a56e406c",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/tide-s05-390x844-cinematic-relief.png",
+      "name": "tide-s05",
+      "mode": "cinematic",
+      "state": "relief",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "7397673cc9f534c95f74710ad9747cd548c8c1e57b7f9960d03bc9fa3f2a489f",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/tide-s06-390x844-cinematic-calm.png",
+      "name": "tide-s06",
+      "mode": "cinematic",
+      "state": "calm",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "2f290c59289d2b2540bc5b07d9f76afd9f6d804e9dd378e13a6345681d5304fb",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/reader-reflow-320x740-cinematic-first.png",
+      "name": "reader-reflow",
+      "mode": "cinematic",
+      "state": "first",
+      "layout": {
+        "width": 320,
+        "height": 740,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "2d5f47ec374768516e688b116a44cd9aa085ef9826fe0872277dc3e27c659f89",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/reader-reflow-settings-320x740-cinematic-initial.png",
+      "name": "reader-reflow-settings",
+      "mode": "cinematic",
+      "state": "initial",
+      "layout": {
+        "width": 320,
+        "height": 740,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "d4dcbb204769cf2610df51c04ad607f5c48f47d88193c1f7b18d1443d9c07aae",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/home-320x740-paper-default.png",
+      "name": "home",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 320,
+        "height": 740,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "6834fa0544a95c32990eed3acbfb352a742232d9dc1ead2fddddbb8943301290",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/discover-320x740-paper-default.png",
+      "name": "discover",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 320,
+        "height": 740,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "3be93d9036e2207662c2fb8d85477be99ab75913bbcce5fdd42f5314b3441b06",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/intro-post-office-320x740-paper-default.png",
+      "name": "intro-post-office",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 320,
+        "height": 740,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "9696a043c35a559a02f061771ea8661fc30b2bdc0e69444c6ab2b2b4443b7f9c",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/intro-tide-station-320x740-paper-default.png",
+      "name": "intro-tide-station",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 320,
+        "height": 740,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "a093c382367295e4197768ee67629598fef1fa282f25ada3c84c5c1827e94782",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/library-320x740-paper-empty.png",
+      "name": "library",
+      "mode": "paper",
+      "state": "empty",
+      "layout": {
+        "width": 320,
+        "height": 740,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "788b3e389a7bb115ed9c521af830e70a8d2941ca16508a8596a0413840ad0aef",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/settings-320x740-paper-default.png",
+      "name": "settings",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 320,
+        "height": 740,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "edc2ef15579af3163c3aef8ce60122e0aba76b5b77d2e030dc5933475ce0b6d4",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/about-320x740-paper-default.png",
+      "name": "about",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 320,
+        "height": 740,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "f36ebb91c8f6bf6f611f3136260de91e72143d201697ce645b128f93236b9bc4",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/design-system-320x740-paper-default.png",
+      "name": "design-system",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 320,
+        "height": 740,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "3c082c36242c511b367a777bc369b817d5ea17db2cd6c92614b320e3d024cae5",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/discover-320x740-paper-empty.png",
+      "name": "discover",
+      "mode": "paper",
+      "state": "empty",
+      "layout": {
+        "width": 320,
+        "height": 740,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "6fc55df9e4c63fd9f74a79d0d333fc49611b4e1d49e24dcbbced78cc67369521",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/missing-story-320x740-paper-404.png",
+      "name": "missing-story",
+      "mode": "paper",
+      "state": "404",
+      "layout": {
+        "width": 320,
+        "height": 740,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "3f0d2b36e6dcaf84876a3be919d00fbcd3edc46d162c818dd23e698e1aacbc1c",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/reader-reflow-390x844-cinematic-first-webkit.png",
+      "name": "reader-reflow",
+      "mode": "cinematic",
+      "state": "first",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "0d51962d0eb945afe2211249b0b6256a6e55e45349b8b2eb8c455e730bb919ca",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/reader-reflow-settings-390x844-cinematic-initial-webkit.png",
+      "name": "reader-reflow-settings",
+      "mode": "cinematic",
+      "state": "initial",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "59c0fb322a4f8cb3d1dafc8e33b3681068bba09c880337ccaa9d630c27986df4",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/home-390x844-paper-default-webkit.png",
+      "name": "home",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "113a5dcce05b2b75357a6b956ace02095fb84f653e0926a110403713fe4f2413",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/discover-390x844-paper-default-webkit.png",
+      "name": "discover",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "b7ef603d9f0f21b64920e364aea3b4a8f9eaeb2040fa90fd80190325afea8583",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/intro-post-office-390x844-paper-default-webkit.png",
+      "name": "intro-post-office",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "5eb3dcde2a9cbc71e9f69572c0854ea5fb02b57d6f8f35afd46e4dff6723db2a",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/intro-tide-station-390x844-paper-default-webkit.png",
+      "name": "intro-tide-station",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "527985bb502e9e3b2599de48410c429653a3f38339fdd4b66168351463444c42",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/library-390x844-paper-empty-webkit.png",
+      "name": "library",
+      "mode": "paper",
+      "state": "empty",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "d3c3aed72a7b63c21ed0a75bebfdc38711cc24136b05c3a160db13c0f4076bdd",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/settings-390x844-paper-default-webkit.png",
+      "name": "settings",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "6c4253ee5a98dca2d5572d756cf71eadcd2a33b289b983ff920700ed03244488",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/about-390x844-paper-default-webkit.png",
+      "name": "about",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "38cb3116344d2cb1e3b5d5fe91b32ab0fa0cb6ac55a143c30d1a038b94a7b82b",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/design-system-390x844-paper-default-webkit.png",
+      "name": "design-system",
+      "mode": "paper",
+      "state": "default",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "08e8e41ec11a3ece7f6b08be25b12f5d81860bf03d139f4f97cc18b624877599",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/discover-390x844-paper-empty-webkit.png",
+      "name": "discover",
+      "mode": "paper",
+      "state": "empty",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "0dd1cc789464658e61ab6787573dd56100f56027d4e4ceb2cf05804b4aec7475",
+      "opened": false
+    },
+    {
+      "path": "evidence/visual/current/missing-story-390x844-paper-404-webkit.png",
+      "name": "missing-story",
+      "mode": "paper",
+      "state": "404",
+      "layout": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1,
+        "horizontalOverflow": 0,
+        "h1": 1,
+        "main": 1
+      },
+      "sha256": "fdb8f8042a7f3b3be40a06b02eb7f1d095abc2596b1105a8ab410033de7a38ad",
+      "opened": false
+    }
+  ],
+  "database": {
+    "name": "firstscene_test_8391012f952045bfb045f20415173581",
+    "real": true,
+    "fresh": true,
+    "authBypass": false
+  },
+  "finishedAt": "2026-11-18T01:46:46.352Z"
+}

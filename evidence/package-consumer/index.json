@@ -1,0 +1,64 @@
+{
+  "observedAt": "2026-11-18T04:43:50.136Z",
+  "reviewer": "agent",
+  "humanReviews": 0,
+  "artifacts": [
+    {
+      "path": "evidence/package-consumer/result.json",
+      "sha256": "33edcca1ef411b777d168da0ff081c63665786c84ce727859c382e4bfb65e51f",
+      "opened": false
+    },
+    {
+      "path": "evidence/package-consumer/browser-results.json",
+      "sha256": "59ab133a29cc8a006249d777c1ba3d642f3fd5dbeffc332097e7ef1f9f6177f5",
+      "opened": false
+    },
+    {
+      "path": "evidence/package-consumer/gallery-webkit-results.json",
+      "sha256": "c6b50061535ac7203c2f4c5a4f860c4310169411d81c316d3f1630ecd3f6f14a",
+      "opened": false
+    },
+    {
+      "path": "evidence/package-consumer/consumer-chromium.png",
+      "sha256": "f15eec9d17a63d5f7df1fc110be519f6dff23ca00d40e9f0b782e984ce9a3ede",
+      "opened": true
+    },
+    {
+      "path": "evidence/package-consumer/consumer-webkit.png",
+      "sha256": "3aeec5f26242a66e86747bf8642b45fd1eac46022ff0128bf4906de48e6c7caa",
+      "opened": true
+    },
+    {
+      "path": "evidence/package-consumer/design-system-1440.png",
+      "sha256": "e91e539846d81649bbfac9759e6f2ad2d0c54774b77521b8db06556c9eaf2abd",
+      "opened": true
+    },
+    {
+      "path": "evidence/package-consumer/design-system-390.png",
+      "sha256": "c9c2499749d0993a20e5b8d3771d7ad1a1a6e32a8a9d0fae4baf3dda4deb461a",
+      "opened": true
+    },
+    {
+      "path": "evidence/package-consumer/source/pnpm-lock.yaml",
+      "sha256": "7a86a25b437fdfd539cd015a8d9f2d3c04e887037a61617ac09c6e04682e3d80",
+      "opened": false
+    },
+    {
+      "path": "evidence/package-consumer/tarballs/firstscene-ui-0.1.0.tgz",
+      "sha256": "4eaaa28e69b7a023c9a88251402c4c0039054387c2f0b348c93ff21352d2e479",
+      "opened": false
+    },
+    {
+      "path": "evidence/package-consumer/tarballs/firstscene-reader-react-0.1.0.tgz",
+      "sha256": "1a7abb2fcc448b6b6acff94560f842456cff318c8d5200224ae84fb538809962",
+      "opened": false
+    },
+    {
+      "path": "evidence/package-consumer/source/tarballs/firstscene-reader-react-0.1.0.tgz",
+      "sha256": "1a7abb2fcc448b6b6acff94560f842456cff318c8d5200224ae84fb538809962",
+      "opened": false
+    }
+  ],
+  "codeCommit": "dacef08e483dffc604530d7b9931b668ab558462",
+  "note": "Latest real full-run tarball build/browser proof; previous canonical versions remain in local Git. Opened-image observations retained only where PNG hashes are unchanged."
+}

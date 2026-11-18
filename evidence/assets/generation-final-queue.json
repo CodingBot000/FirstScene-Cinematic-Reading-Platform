@@ -1,0 +1,23 @@
+{
+  "attemptsUsed": 21,
+  "maxAttempts": 22,
+  "apiBudgetUsd": 0,
+  "queue": [
+    {
+      "id": "mail-portrait",
+      "method": "derive",
+      "dependencies": [
+        "mail-character-ref"
+      ],
+      "ready": true
+    },
+    {
+      "id": "tide-portrait",
+      "method": "derive",
+      "dependencies": [
+        "tide-character-ref"
+      ],
+      "ready": true
+    }
+  ]
+}

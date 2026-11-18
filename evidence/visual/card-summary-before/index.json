@@ -1,0 +1,31 @@
+{
+  "reviewer": "agent",
+  "humanReviews": 0,
+  "sourceCommit": "87cb42f",
+  "artifacts": [
+    {
+      "path": "evidence/visual/card-summary-before/home-1440x1000-paper-default.png",
+      "sha256": "d747cfc45e79220f2200e61606403b605b4d53d56703e5633788677f7a08746d",
+      "opened": true,
+      "observation": "Story card summaries occupy3-8lines, violating the required maximum2lines; all4viewport captures actually opened."
+    },
+    {
+      "path": "evidence/visual/card-summary-before/home-1024x768-paper-default.png",
+      "sha256": "24d38c007f31a9d6709324fab294af4976820921f010de7c191f4372ff58999a",
+      "opened": true,
+      "observation": "Story card summaries occupy3-8lines, violating the required maximum2lines; all4viewport captures actually opened."
+    },
+    {
+      "path": "evidence/visual/card-summary-before/home-390x844-paper-default.png",
+      "sha256": "1e60cc06187917c1ec989df2f03ec98a51c23edfd8334bdfa8de3ee04781fd5f",
+      "opened": true,
+      "observation": "Story card summaries occupy3-8lines, violating the required maximum2lines; all4viewport captures actually opened."
+    },
+    {
+      "path": "evidence/visual/card-summary-before/home-320x740-paper-default.png",
+      "sha256": "596980aaf23b1421600433d9fa4e85174412655c99bff7acae3103957d643708",
+      "opened": true,
+      "observation": "Story card summaries occupy3-8lines, violating the required maximum2lines; all4viewport captures actually opened."
+    }
+  ]
+}

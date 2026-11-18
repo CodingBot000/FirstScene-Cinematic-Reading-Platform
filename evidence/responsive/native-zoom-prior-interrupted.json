@@ -1,0 +1,20 @@
+{
+  "observedAt": "2026-11-18T06:49:05.743428+00:00",
+  "status": "BLOCKED_EXTERNAL",
+  "check": "Native200%browser zoom",
+  "sourceCommit": "b54ff210c5a664d1f0e755cea029f6572ba0fb84",
+  "method": "CUA native Chrome app + isolated task tab; desktop was accessible, but native input was interrupted by user browser activity.",
+  "observations": [
+    "New own task tab rendered FirstScene title/manuscript/feedback choices and confirmed server-save state.",
+    "Before opening native Window menu, native app reported user control change; menu action did not execute.",
+    "No zoom percentage was changed or observed at200%.",
+    "Only the agent-created task tab was closed; existing user tabs and settings preserved."
+  ],
+  "requires": "A native browser interaction opportunity without concurrent user control, then actual200%UI proof and restored prior zoom.",
+  "cssZoomUsed": false,
+  "deviceScaleOrViewportPassedAsZoom": false,
+  "otherUserTabsModified": false,
+  "cuaPartCompleted": true,
+  "localPreview": "http://127.0.0.1:3100",
+  "priorEvidence": "evidence/responsive/native-zoom-prior-locked.json"
+}

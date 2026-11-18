@@ -1,0 +1,61 @@
+
+> firstscene-workspace@0.1.0 typecheck /Users/switch/Development/Web/FirstScene
+> pnpm build:packages && pnpm -r typecheck
+
+
+> firstscene-workspace@0.1.0 build:packages /Users/switch/Development/Web/FirstScene
+> node tools/build-packages.mjs
+
+apps/web/features/reading-sync/transport.generated.ts 35ms
+
+> @firstscene/tokens@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/tokens
+> cd ../.. && node tools/generate-tokens.mjs && pnpm exec prettier --write packages/tokens/src/index.ts && pnpm exec tsc -p packages/tokens/tsconfig.json
+
+packages/tokens/src/index.ts 25ms
+
+> @firstscene/story-schema@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/story-schema
+> cd ../.. && node tools/generate-schema.mjs && pnpm exec prettier --write packages/story-schema/src/schema.ts && pnpm exec tsc -p packages/story-schema/tsconfig.json
+
+packages/story-schema/src/schema.ts 26ms
+
+> @firstscene/ui@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/ui
+> tsc -p tsconfig.json && cp src/styles.css dist/styles.css && cp src/css.d.ts dist/css.d.ts
+
+
+> @firstscene/reader-core@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/reader-core
+> tsc -p tsconfig.json
+
+
+> @firstscene/reader-react@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/reader-react
+> tsc -p tsconfig.json
+
+
+> @firstscene/content-compiler@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/content-compiler
+> tsc -p tsconfig.json
+
+
+> @firstscene/server-data@0.1.0 build /Users/switch/Development/Web/FirstScene/packages/server-data
+> cd ../.. && node tools/generate-api-schema.mjs && pnpm exec prettier --write packages/server-data/src/api-schema.ts && pnpm exec tsc -p packages/server-data/tsconfig.json
+
+packages/server-data/src/api-schema.ts 30ms
+Scope: 9 of 10 workspace projects
+packages/story-schema typecheck$ tsc -p tsconfig.json --noEmit
+packages/tokens typecheck$ tsc -p tsconfig.json --noEmit
+packages/tokens typecheck: Done
+packages/story-schema typecheck: Done
+packages/content-compiler typecheck$ tsc -p tsconfig.json --noEmit
+packages/ui typecheck$ tsc -p tsconfig.json --noEmit
+packages/server-data typecheck$ tsc -p tsconfig.json --noEmit
+packages/reader-core typecheck$ tsc -p tsconfig.json --noEmit
+packages/reader-core typecheck: Done
+packages/ui typecheck: Done
+packages/content-compiler typecheck: Done
+packages/server-data typecheck: Done
+packages/reader-react typecheck$ tsc -p tsconfig.json --noEmit
+packages/reader-react typecheck: Done
+apps/web typecheck$ next typegen && tsc --noEmit
+apps/ui-lab typecheck$ tsc --noEmit
+apps/web typecheck: Generating route types...
+apps/web typecheck: ✓ Types generated successfully
+apps/ui-lab typecheck: Done
+apps/web typecheck: Done

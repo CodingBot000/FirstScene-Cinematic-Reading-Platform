@@ -1,0 +1,73 @@
+{
+  "observedAt": "2026-11-17T21:58:04.061186+00:00",
+  "reviewer": "agent",
+  "humanReviews": 0,
+  "artifacts": [
+    {
+      "path": "evidence/qa/p05-library-chromium-results.json",
+      "sha256": "fedf9d22ee953cb86d4e296b9215f44efbca093f3d96f75fabe8a1f1e4982a3a",
+      "opened": false
+    },
+    {
+      "path": "evidence/qa/p05-library-webkit-results.json",
+      "sha256": "c675c9b919768a177f51dd5a2974a455a6857e83f26c0b5a2121a4d63e1de222",
+      "opened": false
+    },
+    {
+      "path": "evidence/qa/p05-library-webkit-copy-results.json",
+      "sha256": "1a87b9d94de5e16d59581a046cc897e0b3f5cc50c8537776ef6ff0f8cb8141c9",
+      "opened": false
+    },
+    {
+      "path": "evidence/qa/webkit-anchor-before-fix-trace.json",
+      "sha256": "77dfcc2d583c196f5edb9219634ef76e713c0bcafcb7a2e7d79e84793aef961f",
+      "opened": false
+    },
+    {
+      "path": "evidence/qa/webkit-anchor-after-fix-trace.json",
+      "sha256": "f5263970f80b4cde95fa47dee129b2d507bd3d01f26453cf20e45a3bdd8b555e",
+      "opened": false
+    },
+    {
+      "path": "evidence/qa/webkit-anchor-before-fix-frames.json",
+      "sha256": "0ed17c8b47041291d2bf36fe5c9ff9ac0097022e6c90e31560f6b4c645465c13",
+      "opened": false
+    },
+    {
+      "path": "evidence/qa/webkit-anchor-after-fix-frames.json",
+      "sha256": "92df03fa4d3988b19d6967ffade59c14fb2240c7cec5d6a61a0306e6db37a8c0",
+      "opened": false
+    },
+    {
+      "path": "evidence/ui/p05-library-empty-1440.png",
+      "sha256": "d90765f7578d809ea2355dc97daab439dbe5ab9f7a3113153f2359dcfe6ddbbb",
+      "opened": true
+    },
+    {
+      "path": "evidence/ui/p05-library-full-1440.png",
+      "sha256": "cf546e4034ee2e7a931bf811f24df8274a7e0a7666c1ee2cb9947a83ec0d70d8",
+      "opened": true
+    },
+    {
+      "path": "evidence/ui/p05-reader-bookmark-1440.png",
+      "sha256": "904eabcc58232cf8e8e08db28420da45933da621ce001faba98f93d2acb62fa1",
+      "opened": true
+    },
+    {
+      "path": "evidence/ui/p05-library-empty-390.png",
+      "sha256": "d3c3aed72a7b63c21ed0a75bebfdc38711cc24136b05c3a160db13c0f4076bdd",
+      "opened": true
+    },
+    {
+      "path": "evidence/ui/p05-library-full-390.png",
+      "sha256": "b33c5544643f8208a13c8050e9d88aca47b90c8342cc501abdcd6ebd73234811",
+      "opened": true
+    },
+    {
+      "path": "evidence/ui/p05-reader-bookmark-390.png",
+      "sha256": "6ea186407e04f6c6354af0f0f8f0610cef61f51eb7928ce19cf34aea1be350ef",
+      "opened": true
+    }
+  ],
+  "codeCommit": "55cf9330154d0bff40d754c20f37515c8c906ff8"
+}

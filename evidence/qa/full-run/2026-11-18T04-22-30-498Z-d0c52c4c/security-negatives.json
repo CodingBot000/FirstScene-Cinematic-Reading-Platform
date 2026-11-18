@@ -1,0 +1,77 @@
+{
+  "status": "AUTOMATED_SECURITY_NEGATIVES_PASSED",
+  "startedAt": "2026-11-18T04:24:06.582Z",
+  "sourceCommit": "6f82f1c1e2261420a322e9257bc3c319a4592c31",
+  "releaseReady": false,
+  "managedSourceAudit": "NOT_PERFORMED_TOOL_BLOCKED",
+  "commands": [
+    {
+      "command": "pnpm exec vitest run tests/unit/compiler.test.ts tests/unit/http.test.ts tests/unit/runtime-environment.test.ts --reporter=json --outputFile=evidence/security/current/unit-results.json",
+      "startedAt": "2026-11-18T04:24:06.600Z",
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T04:24:07.265Z"
+    },
+    {
+      "command": "pnpm test:api",
+      "startedAt": "2026-11-18T04:24:07.266Z",
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T04:24:16.109Z"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "evidence/security/current/unit-results.json",
+      "sha256": "b2d2c4a7274894b95a7eb97dafeec086ad8d1cffa3d5e470b23890d84d1e929a"
+    },
+    {
+      "path": "evidence/security/current/test-results.json",
+      "sha256": "320854fbed2691bc7156ba22bd7b3e8b5a29dcd4eba32ebe9cecf67b9404fc33"
+    }
+  ],
+  "checks": [
+    {
+      "name": "ACTUAL_NEGATIVE_REPORTS",
+      "status": "PASS",
+      "compilerHttpEnvironmentTests": 27,
+      "apiTests": 22,
+      "coverage": [
+        "CSRF",
+        "opaque-cookie",
+        "IDOR",
+        "concurrent-rate",
+        "16KiB",
+        "malformed-input",
+        "nonce-CSP",
+        "SQL-CAS",
+        "receipt-replay",
+        "session-expiry",
+        "deletion"
+      ]
+    },
+    {
+      "name": "TRACKED_CREDENTIAL_AND_PATH_SCAN",
+      "status": "PASS",
+      "files": 1010,
+      "credentialValuesPrinted": false
+    },
+    {
+      "name": "PUBLIC_PRIVATE_SOURCE_NAME_SCAN",
+      "status": "PASS",
+      "files": 240,
+      "privateTermsPrinted": false
+    },
+    {
+      "name": "PRODUCTION_CLIENT_BUNDLE_SCAN",
+      "status": "PASS",
+      "javascriptChunks": 17
+    },
+    {
+      "name": "NO_RUNTIME_AUTH_OR_MOCK_TEST_BYPASS",
+      "status": "PASS",
+      "runtimeSources": 30,
+      "method": "Bounded forbidden-pattern regression; not exhaustive source audit"
+    }
+  ],
+  "errors": [],
+  "finishedAt": "2026-11-18T04:24:16.393Z"
+}

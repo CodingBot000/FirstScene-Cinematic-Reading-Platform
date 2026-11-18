@@ -1,0 +1,10 @@
+{
+  "observedAt": "2026-11-18T04:40:55.021Z",
+  "status": "BLOCKED_EXTERNAL",
+  "publicReleaseReady": false,
+  "checks": [],
+  "mutationPerformed": false,
+  "secretsPrinted": false,
+  "reason": "APPROVED_DEPLOYMENT_EVIDENCE_REQUIRED",
+  "finishedAt": "2026-11-18T04:40:55.022Z"
+}

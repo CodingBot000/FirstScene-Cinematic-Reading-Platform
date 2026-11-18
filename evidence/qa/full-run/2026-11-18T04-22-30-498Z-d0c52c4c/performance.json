@@ -1,0 +1,80 @@
+{
+  "status": "FAILED",
+  "releaseReady": false,
+  "startedAt": "2026-11-18T04:24:37.051Z",
+  "sourceCommit": "6f82f1c1e2261420a322e9257bc3c319a4592c31",
+  "commands": [
+    {
+      "command": "pnpm storybook:build",
+      "startedAt": "2026-11-18T04:24:37.062Z",
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T04:24:38.444Z"
+    },
+    {
+      "command": "pnpm assets:verify",
+      "startedAt": "2026-11-18T04:24:38.445Z",
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T04:24:38.731Z"
+    },
+    {
+      "command": "node tools/performance/collect-lighthouse.mjs",
+      "startedAt": "2026-11-18T04:24:38.731Z",
+      "exitCode": 0,
+      "finishedAt": "2026-11-18T04:27:10.230Z"
+    },
+    {
+      "command": "node tools/performance/collect-browser.mjs",
+      "startedAt": "2026-11-18T04:27:10.231Z",
+      "exitCode": 1,
+      "finishedAt": "2026-11-18T04:27:46.309Z"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "evidence/performance/current/navigation.json",
+      "sha256": "32ca8f5a89bddbc1d947925a1671559c40b60e45b3f4379376636a54c9015c09"
+    },
+    {
+      "path": "evidence/performance/current/home-1.json",
+      "sha256": "73da3b8fd23ec91471ed0e66773a6b595fd705dd6b74007118abcd5ff7262273"
+    },
+    {
+      "path": "evidence/performance/current/home-2.json",
+      "sha256": "0128843fea3cdb1d17923b2543609e85e1917173ce93281075b44640925f7c4a"
+    },
+    {
+      "path": "evidence/performance/current/home-3.json",
+      "sha256": "f8c2f1858dfa107ae3b4638f08574d45e924af95b7254cd6b675a86d6be8df1a"
+    },
+    {
+      "path": "evidence/performance/current/introduction-1.json",
+      "sha256": "35898148aa91a50b24cb93f4b5fe262cc112b40a90ac599be886ea7a1ea1e2d9"
+    },
+    {
+      "path": "evidence/performance/current/introduction-2.json",
+      "sha256": "0c49cd58c7717ce815f5ec6e779fe5db3e47d98b71f6b294590891c0d2a3ac6d"
+    },
+    {
+      "path": "evidence/performance/current/introduction-3.json",
+      "sha256": "71a4be20dc5ea36ece8013e0d7daa1a8702c83c66513095aefffacfca4421ad1"
+    },
+    {
+      "path": "evidence/performance/current/reader-1.json",
+      "sha256": "fb1c0dd9aad49099939fd23e1969ca5e053c2bec0ac288da46acc22915df0658"
+    },
+    {
+      "path": "evidence/performance/current/reader-2.json",
+      "sha256": "6125ae5b320e48801c7c21918d727b795bafee6ef6dc8da603366a2e39115537"
+    },
+    {
+      "path": "evidence/performance/current/reader-3.json",
+      "sha256": "600155ff93ab704dbf9676dae116a3036dcec8efc616f2e3b1a56acad5fa14cc"
+    }
+  ],
+  "firstImages960": [],
+  "errors": [
+    "BROWSER_PERFORMANCE_GATE_FAILED",
+    "PERFORMANCE_COMMAND_FAILED"
+  ],
+  "finishedAt": "2026-11-18T04:27:46.314Z"
+}

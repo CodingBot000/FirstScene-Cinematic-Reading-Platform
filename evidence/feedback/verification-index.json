@@ -1,0 +1,74 @@
+{
+  "observedAt": "2026-11-18T09:29:57.636946+00:00",
+  "status": "SCOPED_REVERIFICATION_PASSED",
+  "codeCommit": "e6a58aabee0461d33716bc6ad510023a59474901",
+  "scope": "P05saved-state/library/completion/feedback/deletion; P06responsive/nativezoom/keyboard/reduced and labperformance. Not full product readiness. First full hadWebKitreportpath failure and visualnewpixels; subsequent sameWebKit47 passed and all4newpixels were actually opened and explicitly reviewed. Automatedsecuritynegatives are not sealed managedsourceaudit.",
+  "humanReviews": 0,
+  "unit": 105,
+  "database": 23,
+  "api": 25,
+  "chromium": 47,
+  "linuxWebkit": 47,
+  "a11y": 2,
+  "visualFrames": 104,
+  "native200": "PASS",
+  "performanceColdRuns": 9,
+  "performanceBrowserCases": 4,
+  "artifacts": [
+    {
+      "path": "evidence/qa/full-run/2026-11-18T09-20-31-258Z-96264056/index.json",
+      "sha256": "2c92c029a0bb06fabdcc503bebe8854bd9fa39b3ca2f8b6429ee5ebbd0247a2e"
+    },
+    {
+      "path": "evidence/qa/full-run/2026-11-18T09-20-31-258Z-96264056/chromium.json",
+      "sha256": "7113750602ea370abacfa357ef4d5094052588393c34a4f4ebdd3972d19f6a71"
+    },
+    {
+      "path": "evidence/qa/full-run/2026-11-18T09-20-31-258Z-96264056/unit.json",
+      "sha256": "a645413fc700718315aeb327b553f977c728a46a8dfb29090b2c4011f1d1f07a"
+    },
+    {
+      "path": "evidence/qa/full-run/2026-11-18T09-20-31-258Z-96264056/database.json",
+      "sha256": "4bad7ba44c296698835e2249ecb98febfa763376b2f222bf6c7d6aa302b38ca5"
+    },
+    {
+      "path": "evidence/qa/full-run/2026-11-18T09-20-31-258Z-96264056/api.json",
+      "sha256": "1957380d2f49adb424e3b74905074277d9a244883780451b1c6b65e064b9d72e"
+    },
+    {
+      "path": "evidence/qa/full-run/2026-11-18T09-20-31-258Z-96264056/accessibility.json",
+      "sha256": "88778871158861661dde8f607cc4bec3705d8d0635f1f501445ecab11d045bb6"
+    },
+    {
+      "path": "evidence/qa/full-run/2026-11-18T09-20-31-258Z-96264056/performance.json",
+      "sha256": "2ebabb80699fd2030e45ce43d24e1efa28506d8aeee121b69e18db6b51b946fe"
+    },
+    {
+      "path": "evidence/qa/full-run/2026-11-18T09-20-31-258Z-96264056/security-negatives.json",
+      "sha256": "a7d1401cb0798e16bbc8c0df12e80403d60363e59307e61f3904e978643a009b"
+    },
+    {
+      "path": "evidence/qa/suites/webkit-6f76e40e-19af-4ece-9e0e-0774ceea5ce6/combined.json",
+      "sha256": "01b42ff14220bf33f011d89c5773f081d6972933d6f388632533f90e88931388"
+    },
+    {
+      "path": "evidence/feedback/reverification-20261118/visual-result.json",
+      "sha256": "992dc768b729e8d1dd9c8327c43142de3837abaad936681771066c127b7e418f",
+      "producerPath": "evidence/visual/current/result.json"
+    },
+    {
+      "path": "evidence/feedback/reverification-20261118/visual-negative-cases.json",
+      "sha256": "ff4af202be81e4aad3fcf4f662c2e6aa20ab8ca39971776cf00b9ff0a1ae34c8",
+      "producerPath": "evidence/visual/current/negative-cases.json"
+    },
+    {
+      "path": "evidence/feedback/reverification-20261118/visual-review.json",
+      "sha256": "ea11c5062ac4187a5011e04980fbaa1bedb01c22add72e0d95da6e781c60189d",
+      "producerPath": "evidence/visual/review.json"
+    },
+    {
+      "path": "evidence/responsive/native-zoom-blocker.json",
+      "sha256": "b55fc37d6dc08145b1ab4d89a811730344b925ae9bbf90b4b2a1b55df7792b40"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+test_00_baseline_passes (test_validate_package.PackageValidatorTests.test_00_baseline_passes) ... ok
+test_01_invalid_json_is_rejected (test_validate_package.PackageValidatorTests.test_01_invalid_json_is_rejected) ... ok
+test_02_unrecognized_effect_is_rejected (test_validate_package.PackageValidatorTests.test_02_unrecognized_effect_is_rejected) ... ok
+test_03_duplicate_beat_is_rejected (test_validate_package.PackageValidatorTests.test_03_duplicate_beat_is_rejected) ... ok
+test_04_asset_dependency_cycle_is_rejected (test_validate_package.PackageValidatorTests.test_04_asset_dependency_cycle_is_rejected) ... ok
+test_05_task_dependency_cycle_is_rejected (test_validate_package.PackageValidatorTests.test_05_task_dependency_cycle_is_rejected) ... ok
+test_06_done_without_evidence_is_rejected (test_validate_package.PackageValidatorTests.test_06_done_without_evidence_is_rejected) ... ok
+test_07_inadequate_contrast_is_rejected (test_validate_package.PackageValidatorTests.test_07_inadequate_contrast_is_rejected) ... ok
+test_08_broken_local_link_is_rejected (test_validate_package.PackageValidatorTests.test_08_broken_local_link_is_rejected) ... ok
+test_09_openapi_reference_error_is_rejected (test_validate_package.PackageValidatorTests.test_09_openapi_reference_error_is_rejected) ... ok
+test_10_private_source_mutation_is_rejected (test_validate_package.PackageValidatorTests.test_10_private_source_mutation_is_rejected) ... ok
+test_11_development_plan_drift_is_rejected (test_validate_package.PackageValidatorTests.test_11_development_plan_drift_is_rejected) ... ok
+test_12_missing_requirement_qa_is_rejected (test_validate_package.PackageValidatorTests.test_12_missing_requirement_qa_is_rejected) ... ok
+test_13_story_source_drift_is_rejected (test_validate_package.PackageValidatorTests.test_13_story_source_drift_is_rejected) ... ok
+test_14_decorative_image_nonempty_alt_is_rejected (test_validate_package.PackageValidatorTests.test_14_decorative_image_nonempty_alt_is_rejected) ... ok
+test_15_delivery_mode_rejects_app_but_development_mode_allows_it (test_validate_package.PackageValidatorTests.test_15_delivery_mode_rejects_app_but_development_mode_allows_it) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 3.767s
+
+OK

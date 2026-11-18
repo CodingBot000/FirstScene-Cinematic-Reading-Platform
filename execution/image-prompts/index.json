@@ -1,0 +1,165 @@
+{
+  "observedAt": "2026-11-17T19:49:00.476541+00:00",
+  "scope": "accepted-production-source-invocations",
+  "mode": "codex-native",
+  "actualModel": "unknown",
+  "reconstructedAgainstOriginalPreCallHashes": true,
+  "records": [
+    {
+      "id": "mail-bg-01",
+      "generationId": "2d2a4ca0-95e8-495f-91fe-f2eac7264d2b",
+      "promptPath": "execution/image-prompts/mail-bg-01.txt",
+      "promptSha256": "ffd6496d64a28c5e14cdeec348bd12b2ff5bc3b6658460ae2470ef04d06c41bf",
+      "sourceSha256": "398ac742ca4244b56f7de1b2d6decb7d3db041566a74d1572658c3e294876fd1",
+      "referenceHashes": [
+        "e0c89a38f08d22555b984429dfc0ab367dac24a403c0ec5423994a2eb6182add"
+      ]
+    },
+    {
+      "id": "mail-bg-02",
+      "generationId": "9c09d45a-388c-4274-aee6-44580c9e04d3",
+      "promptPath": "execution/image-prompts/mail-bg-02.txt",
+      "promptSha256": "4d12c0f5afc2f136de842a5bd930fd102fcb351d246a1adf46fd7376d3b7d7b5",
+      "sourceSha256": "4cc7e735df7df905d61023b4d373f58ba0c22aa16edb02d9cb7915375ec49193",
+      "referenceHashes": [
+        "e0c89a38f08d22555b984429dfc0ab367dac24a403c0ec5423994a2eb6182add"
+      ]
+    },
+    {
+      "id": "mail-bg-03",
+      "generationId": "2d2423c1-b142-4d62-a27b-28c9ac70a923",
+      "promptPath": "execution/image-prompts/mail-bg-03.txt",
+      "promptSha256": "7ee71411aeb1449033f26b90489365f370324f467ff718b56fe3c5893c74661a",
+      "sourceSha256": "93d8c29b35210b4bb015bd720212308c545d0e2d4500f87f5072a778b863948f",
+      "referenceHashes": [
+        "e0c89a38f08d22555b984429dfc0ab367dac24a403c0ec5423994a2eb6182add"
+      ]
+    },
+    {
+      "id": "mail-bg-04",
+      "generationId": "e41f1853-7fef-47d4-b1e7-c8c195c5f7f7",
+      "promptPath": "execution/image-prompts/mail-bg-04.txt",
+      "promptSha256": "005fed239288f8422671db66c66774bfc8d168dfca6c7fff9adcad3e2c04417a",
+      "sourceSha256": "c4cbf59adc5ed0352eae499760cb953fa321ec75f9acce841c92591517a8daff",
+      "referenceHashes": [
+        "e0c89a38f08d22555b984429dfc0ab367dac24a403c0ec5423994a2eb6182add"
+      ]
+    },
+    {
+      "id": "mail-bg-05",
+      "generationId": "9135f85d-efac-4975-80c1-5ef200af41e3",
+      "promptPath": "execution/image-prompts/mail-bg-05.txt",
+      "promptSha256": "f0ca497ae225d1d28540ba1279d14ad5fde12bf81e4f7e56aed5e8579fa731d3",
+      "sourceSha256": "c720cfeb1ecc18a8902084f8abdc43f5e1f4d0e2c7af0c42fa18fa9bab1bc5ac",
+      "referenceHashes": [
+        "e0c89a38f08d22555b984429dfc0ab367dac24a403c0ec5423994a2eb6182add"
+      ]
+    },
+    {
+      "id": "mail-bg-06",
+      "generationId": "2f4a9d75-017e-442d-915f-fa823b6c76b0",
+      "promptPath": "execution/image-prompts/mail-bg-06.txt",
+      "promptSha256": "4febd21ab6f33dde1b0922502fcaa66b6f856925139b49e6c2b42f8928428a3f",
+      "sourceSha256": "2992494e8850f71e1eecb0ce855184d4dd4dcd1ace5c41646886ba5a73134e8f",
+      "referenceHashes": [
+        "e0c89a38f08d22555b984429dfc0ab367dac24a403c0ec5423994a2eb6182add"
+      ]
+    },
+    {
+      "id": "mail-character-ref",
+      "generationId": "a014aeaf-877d-4133-ac6e-464ae4e19327",
+      "promptPath": "execution/image-prompts/mail-character-ref.txt",
+      "promptSha256": "6c42f399665a82baf3c434bd393a8f5e63fb3592333e91d00dd67940e69bc7ac",
+      "sourceSha256": "00a0faecba48a4a756b652589de844ef52890b2278d41eba7834c4d01463aa5e",
+      "referenceHashes": []
+    },
+    {
+      "id": "mail-cover",
+      "generationId": "cd6d84c4-b04d-4d20-ba5b-be8fecdb0eae",
+      "promptPath": "execution/image-prompts/mail-cover.txt",
+      "promptSha256": "540843208d978afe5c4257a7a2e2bacd17194206659b6a3214a67380e2cc2a02",
+      "sourceSha256": "e0c89a38f08d22555b984429dfc0ab367dac24a403c0ec5423994a2eb6182add",
+      "referenceHashes": [
+        "00a0faecba48a4a756b652589de844ef52890b2278d41eba7834c4d01463aa5e"
+      ]
+    },
+    {
+      "id": "tide-bg-01",
+      "generationId": "7e341c8a-521c-4e17-ab9d-6ae7c49e42fa",
+      "promptPath": "execution/image-prompts/tide-bg-01.txt",
+      "promptSha256": "64381ca280256c3bba71630a1489d72abcc896ab3f452eb607059e8693c4db14",
+      "sourceSha256": "b9d68fe1c823d97865c728da6e057996633a09aa39e1f7c891b13bbaddba759b",
+      "referenceHashes": [
+        "b05eb4a3e89eb22d3757064e9bac92cc1a6559fd3075ce9c10359ca9a78e406a"
+      ]
+    },
+    {
+      "id": "tide-bg-02",
+      "generationId": "5222eab6-bddf-4f0e-9e6e-3a29f7c1c651",
+      "promptPath": "execution/image-prompts/tide-bg-02.txt",
+      "promptSha256": "17b557c37b47636debdf07aacc0c242f831de1e38af5ce6417d9e8dbdb410558",
+      "sourceSha256": "9e85cf53108a3aa289f196aac55058026debe4b26132495703a28522656a74c1",
+      "referenceHashes": [
+        "b05eb4a3e89eb22d3757064e9bac92cc1a6559fd3075ce9c10359ca9a78e406a"
+      ]
+    },
+    {
+      "id": "tide-bg-03",
+      "generationId": "b0befa03-aa0b-4f7a-a4ea-f102883d2df4",
+      "promptPath": "execution/image-prompts/tide-bg-03.txt",
+      "promptSha256": "70d753519b495bbe443bc3d8df8a8de12150c0221b05fe0c5812fd6d41e22592",
+      "sourceSha256": "64e75fdaa2b073b9bcb836755b078c2a1e5483424c4a935b06e6d7e22b52487e",
+      "referenceHashes": [
+        "b05eb4a3e89eb22d3757064e9bac92cc1a6559fd3075ce9c10359ca9a78e406a"
+      ]
+    },
+    {
+      "id": "tide-bg-04",
+      "generationId": "af866ed6-7785-419b-a47e-9d67b319ada5",
+      "promptPath": "execution/image-prompts/tide-bg-04.txt",
+      "promptSha256": "89c4af05e2a9b595bb3a059ffd4f4878af7ad20145d611f317ae075aa539e22c",
+      "sourceSha256": "4a096e05bd9d9f0a8e5137083d5c480ab5671a4d829c8caa4fefbc75c91c0ec0",
+      "referenceHashes": [
+        "b05eb4a3e89eb22d3757064e9bac92cc1a6559fd3075ce9c10359ca9a78e406a"
+      ]
+    },
+    {
+      "id": "tide-bg-05",
+      "generationId": "7b1b264a-33b6-468c-b925-09d63692ca19",
+      "promptPath": "execution/image-prompts/tide-bg-05.txt",
+      "promptSha256": "0dc29f8a7329b81b3355cc4ed44ea3d8bb99fffb41dea2ff9f6180a083aa6931",
+      "sourceSha256": "ad5fca82386d93cd76e9d23fa72df143c6aceadf9fde0b6d1fa9452943add3fd",
+      "referenceHashes": [
+        "b05eb4a3e89eb22d3757064e9bac92cc1a6559fd3075ce9c10359ca9a78e406a"
+      ]
+    },
+    {
+      "id": "tide-bg-06",
+      "generationId": "f99e7a32-1c01-4a70-8330-aa7b394c0c41",
+      "promptPath": "execution/image-prompts/tide-bg-06.txt",
+      "promptSha256": "7a803c65f81bb845d0606ada141ac79ebe9a50b34aee4df4fffced835d789685",
+      "sourceSha256": "224097aedc26bd76e7ed1769b6673a8b5238f0a327e6d67cee5ff3c2bd5946e0",
+      "referenceHashes": [
+        "b05eb4a3e89eb22d3757064e9bac92cc1a6559fd3075ce9c10359ca9a78e406a"
+      ]
+    },
+    {
+      "id": "tide-character-ref",
+      "generationId": "339a2a00-0ed4-4ee1-9126-976de77a46e6",
+      "promptPath": "execution/image-prompts/tide-character-ref.txt",
+      "promptSha256": "a93c0070dbe86f45e70e6b26b479467b7aa74fb3e1f5266771dce124dff3b234",
+      "sourceSha256": "daaf21aa780997e7b586e172e8fbf7280fd35d6f9aabf59c0b404498c8080f82",
+      "referenceHashes": []
+    },
+    {
+      "id": "tide-cover",
+      "generationId": "a6b270bd-6e96-453a-8f32-ed752211312a",
+      "promptPath": "execution/image-prompts/tide-cover.txt",
+      "promptSha256": "22d2509f77e4dcc55e724027739aea5f03390ae0d20e3916e673de652e018123",
+      "sourceSha256": "b05eb4a3e89eb22d3757064e9bac92cc1a6559fd3075ce9c10359ca9a78e406a",
+      "referenceHashes": [
+        "daaf21aa780997e7b586e172e8fbf7280fd35d6f9aabf59c0b404498c8080f82"
+      ]
+    }
+  ]
+}

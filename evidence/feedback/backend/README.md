@@ -1,0 +1,7 @@
+# Feedback backend verification
+
+Approved policy:5new feedback submissions per story/session per Asia/Seoul calendar day, reset00:00KST. SQL observes clock_timestamp once after the session lock; count uses explicit timestamp bounds and existing(session,story,created_at)index. Same operation replay returns201 without another row, including after the generic receipt expires. Unknown story/time/session/text/preset fields are refused. Next-midnight429Retry-After is server-derived. Real PostgreSQL21tests and actualAPI25tests passed; no clock override or auth/mock bypass in production.
+
+Initial lock-clock test probes failed because the single-connection owner pool was already checked out for the held lock. The final probe uses that same held connection to inspect blocking locks, preserving the original after-lock timestamp assertion and not increasing timeouts/privileges. Initial/second failure JSONs remain in the parent directory; corrected6feedback cases and all21DBtests pass. Unit fixtures now await actual hydration via flush rather than awaiting the void start method. These were fixture fixes, not weakened product assertions.
+
+Official PostgreSQL17 references: https://www.postgresql.org/docs/17/functions-datetime.html and https://www.postgresql.org/docs/17/explicit-locking.html . Browser tests and final visual/whole-app regression are tracked separately. No human evaluation or public release claim.

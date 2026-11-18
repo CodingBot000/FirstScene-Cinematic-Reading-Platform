@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "observedAt": "2026-11-18T03:02:35.199Z",
+  "command": "CI=true FIRSTSCENE_CI_DISPOSABLE=1 node tools/database/verify-ci.mjs",
+  "postgresVersion": "17.12 (Debian 17.12-1.pgdg13+1)",
+  "explicitlyOwnedDisposableService": true,
+  "operatingDatabaseTouched": false,
+  "hostedGithubWorkflowExecuted": false,
+  "maskProtocolTest": "Synthetic receiver; raw protocol stayed in a private parent pipe, never terminal/log output.",
+  "checks": [
+    {
+      "name": "preparation logs contain no known credential",
+      "passed": true
+    },
+    {
+      "name": "marked service prepares idempotently",
+      "passed": true
+    },
+    {
+      "name": "preparation logs contain no known credential",
+      "passed": true
+    },
+    {
+      "name": "non-test URL rejected before connecting",
+      "passed": true
+    },
+    {
+      "name": "preparation logs contain no known credential",
+      "passed": true
+    },
+    {
+      "name": "explicit disposable flag required",
+      "passed": true
+    },
+    {
+      "name": "preparation logs contain no known credential",
+      "passed": true
+    },
+    {
+      "name": "wrong database marker rejected",
+      "passed": true
+    },
+    {
+      "name": "runtime cannot create tables",
+      "passed": true
+    },
+    {
+      "name": "runtime cannot read migrations",
+      "passed": true
+    },
+    {
+      "name": "runtime has no owner capabilities, inheritance or memberships",
+      "passed": true
+    },
+    {
+      "name": "preparation logs contain no known credential",
+      "passed": true
+    },
+    {
+      "name": "GitHub environment export uses generated runtime credentials",
+      "passed": true
+    },
+    {
+      "name": "mask protocol present only in private captured pipe",
+      "passed": true
+    }
+  ],
+  "secretsPrinted": false
+}

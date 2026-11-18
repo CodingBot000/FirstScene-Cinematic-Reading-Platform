@@ -1,0 +1,10 @@
+{
+  "observedAt": "2026-11-18T04:33:06.306427+00:00",
+  "originalReportSha256": "8490085f86973a176513a3b7a57dd1f67a4695b886df3b8b21119253553940d1",
+  "originalExitCode": 0,
+  "originalStatus": "RESULTS_COLLECTED",
+  "effectiveStatus": "COLLECTION_INCOMPLETE",
+  "reason": "Performance browser subsuite never started: Storybook webServer ran from tools directory and served a nonexistent relative path. Original orchestrator checked only outer producer report and incorrectly considered collection complete. No product readiness was declared.",
+  "defectId": "D-P08-003",
+  "correctiveAction": "Explicit repository cwd; require all9cold runs and4actual browser tests, reject skipped/unstarted subsuites; negative regression tests. Original logs/index unchanged."
+}

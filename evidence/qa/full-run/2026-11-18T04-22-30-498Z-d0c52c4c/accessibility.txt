@@ -1,0 +1,18 @@
+
+> firstscene-workspace@0.1.0 test:a11y /Users/switch/Development/Web/FirstScene
+> node tools/run-browser-tests.mjs --project=chromium tests/e2e/a11y.spec.ts
+
+[WebServer] (node:62192) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:62193) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:24:04] "GET /iframe.html HTTP/1.1" 200 -
+
+Running 2 tests using 1 worker
+
+(node:62195) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/e2e/a11y.spec.ts:3:1 › P03 axe reader and settings have no detected AA violations (1.1s)
+  ✓  2 [chromium] › tests/e2e/a11y.spec.ts:22:1 › P03 capture renderer composition at desktop and mobile (317ms)
+
+  2 passed (2.6s)

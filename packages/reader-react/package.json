@@ -1,0 +1,37 @@
+{
+  "name": "@firstscene/reader-react",
+  "version": "0.1.0",
+  "type": "module",
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@firstscene/reader-core": "workspace:*",
+    "@firstscene/story-schema": "workspace:*",
+    "@firstscene/tokens": "workspace:*",
+    "@firstscene/ui": "workspace:*",
+    "gsap": "3.15.1",
+    "@gsap/react": "2.1.2"
+  },
+  "peerDependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  }
+}

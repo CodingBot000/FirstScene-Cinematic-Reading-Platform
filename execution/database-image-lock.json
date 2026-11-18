@@ -1,0 +1,8 @@
+{
+  "observedAt": "2026-11-17T18:24:10.192852+00:00",
+  "postgresMajor": 17,
+  "version": "17.12",
+  "image": "postgres@sha256:0d938e975177bef9f1f61f3f9dbcf2e0aa0a139568f66d3415ed8892eb97f6ac",
+  "previousCachedVersion": "17.9",
+  "note": "Pulled official17.12tag after official release documentation and local version probe. Existing17.9image/tag preserved; no other containers changed."
+}

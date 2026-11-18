@@ -1,0 +1,99 @@
+
+> firstscene-workspace@0.1.0 test:e2e /Users/switch/Development/Web/FirstScene
+> node tools/run-browser-tests.mjs --project=chromium
+
+[WebServer] (node:67456) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:67459) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:33] "GET /iframe.html HTTP/1.1" 200 -
+
+Running 44 tests using 2 workers
+
+(node:67463) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:67462) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › tests/e2e/assets.spec.ts:6:1 › P02 actual public assets are16approved and bothformats serve correctMIME (77ms)
+  ✓   3 [chromium] › tests/e2e/assets.spec.ts:25:1 › P02 mobile portrait scene keeps a stable anchor rather than oscillating afterimage/portraitmount (801ms)
+  ✓   2 [chromium] › tests/e2e/a11y.spec.ts:3:1 › P03 axe reader and settings have no detected AA violations (1.1s)
+  ✓   5 [chromium] › tests/e2e/a11y.spec.ts:22:1 › P03 capture renderer composition at desktop and mobile (316ms)
+  ✓   6 [chromium] › tests/e2e/deletion.spec.ts:4:1 › P05 pending or failed deletion never claims erasure in another tab; retry clears actual rows and retained queue (1.0s)
+  ✓   4 [chromium] › tests/e2e/completion.spec.ts:20:1 › P05 completion is an explicit last CTA and a delayed acknowledgement preserves a newer reread anchor (1.9s)
+  ✓   8 [chromium] › tests/e2e/completion.spec.ts:86:1 › P05 offline completion stays temporary and reconnect confirms completion before saving the latest anchor (1.5s)
+  ✓   7 [chromium] › tests/e2e/deletion.spec.ts:117:1 › P05 a stale tab with delayed notifications cannot recreate erased cache during pagehide after a new session begins (2.1s)
+  ✓   9 [chromium] › tests/e2e/design-system.spec.ts:3:1 › P06 shared gallery shows real type/control states and an accessible reading sample (475ms)
+  ✓  11 [chromium] › tests/e2e/library.spec.ts:18:1 › P05 library is honestly empty without creating an anonymous session or fake records (423ms)
+  ✓  10 [chromium] › tests/e2e/deletion.spec.ts:168:1 › P05 failed deletion can be cancelled explicitly without discarding real records or the retained pending choice (1.4s)
+  ✓  13 [chromium] › tests/e2e/preferences.spec.ts:64:1 › P03 QA-R05 local font/mode/theme preferences and anchor survive actual reload (615ms)
+  ✓  12 [chromium] › tests/e2e/library.spec.ts:46:1 › P05 keyboard story and quote bookmarks persist in actual DB, library opens exact beat and deletion focuses next/title (1.4s)
+  ✓  14 [chromium] › tests/e2e/preferences.spec.ts:219:1 › P03 QA-R06 explicit hash beats saved anchor; unknown/malformed hash is neutral first-scene fallback (166ms)
+  ✓  15 [chromium] › tests/e2e/library.spec.ts:200:1 › P05 offline bookmark desired state persists until reconnect and then appears in the library (1.2s)
+  ✓  16 [chromium] › tests/e2e/preferences.spec.ts:241:1 › P03 QA-R07 trusted user scroll wins over delayed font-ready restoration (1.1s)
+  ✓  18 [chromium] › tests/e2e/preferences.spec.ts:267:1 › P03 plain entry requests zero actual GSAP-containing chunks (984ms)
+  ✓  19 [chromium] › tests/e2e/preferences.spec.ts:298:1 › P03 storage denied keeps text and current preference choice with honest status (258ms)
+  ✓  20 [chromium] › tests/e2e/preferences.spec.ts:318:1 › P03 TOC moves focus to the selected scene heading and leaves one document scroll (271ms)
+  ✓  21 [chromium] › tests/e2e/public.spec.ts:3:1 › P03 QA-U01 home -> introduction -> complete real first chapter without signup (344ms)
+  ✓  22 [chromium] › tests/e2e/public.spec.ts:26:1 › P03 QA-U02 title/mood search, accurate empty state and reset preserve real catalog (484ms)
+  ✓  23 [chromium] › tests/e2e/public.spec.ts:43:1 › P03 QA-U06 complete SSR manuscript remains readable with JS disabled and no database dependency (256ms)
+  ✓  24 [chromium] › tests/e2e/public.spec.ts:80:1 › P03 responsive public surfaces fit320px and missing stories return404 (389ms)
+  ✓  17 [chromium] › tests/e2e/library.spec.ts:220:1 › P05 quota64 rejects a65th UI item with recovery after desired-state deletion (3.4s)
+  ✓  25 [chromium] › tests/e2e/public.spec.ts:105:1 › P03 capture initial desktop and mobile screenshots (326ms)
+  ✓  27 [chromium] › tests/e2e/renderer.spec.ts:21:1 › P03 QA-R02/R03 jump/reverse resolves scene and local mood with at most2stage layers (259ms)
+  ✓  28 [chromium] › tests/e2e/renderer.spec.ts:39:1 › P03 QA-R03/U05 decorative text clone is hidden from accessibility and never replays on reverse (1.1s)
+  ✓  29 [chromium] › tests/e2e/renderer.spec.ts:55:1 › P03 QA-R09 typewriter supports immediate show and Escape without leaving hidden text (399ms)
+  ✓  30 [chromium] › tests/e2e/renderer.spec.ts:78:1 › P03 QA-R10 missing Segmenter retains full original text without effects (235ms)
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /iframe.html?id=firstscene-reader--missing-images&viewMode=story HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /vite-inject-mocker-entry.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /assets/iframe-Bzoixl7u.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /assets/rolldown-runtime-sJBDdmOt.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /assets/iframe-s7lD3JGx.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /assets/preload-helper-Dt5pTa-y.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /assets/iframe-C2PcNkWR.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /index.json HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /assets/Reader.stories-D-KfBsYs.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /assets/jsx-runtime-MKhVqBIO.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /assets/dist-DpDyoqVs.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /assets/post-office-C6VEaR15.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /assets/react-dom-DK_bLv4p.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /assets/react-18-BqpbiW8j.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] code 404, message File not found
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /assets/intentionally-missing.960.webp HTTP/1.1" 404 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] code 404, message File not found
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /assets/intentionally-missing.960.webp HTTP/1.1" 404 -
+  ✓  31 [chromium] › tests/e2e/renderer.spec.ts:94:1 › P03 QA-R11 actual broken image URLs in framework-neutral consumer preserve dimensions and all text (230ms)
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /iframe.html?id=firstscene-reader--missing-images&viewMode=story HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /vite-inject-mocker-entry.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /assets/iframe-s7lD3JGx.css HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /assets/iframe-Bzoixl7u.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /assets/preload-helper-Dt5pTa-y.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /assets/iframe-C2PcNkWR.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /assets/rolldown-runtime-sJBDdmOt.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /index.json HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /assets/Reader.stories-D-KfBsYs.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /assets/jsx-runtime-MKhVqBIO.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /assets/post-office-C6VEaR15.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /assets/dist-DpDyoqVs.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /assets/react-dom-DK_bLv4p.js HTTP/1.1" 200 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /assets/react-18-BqpbiW8j.js HTTP/1.1" 200 -
+  ✓  26 [chromium] › tests/e2e/library.spec.ts:274:1 › P05 library keeps local state during a controlled HTTP503 fault and exposes manual retry (2.4s)
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] code 404, message File not found
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /assets/intentionally-missing.960.webp HTTP/1.1" 404 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] code 404, message File not found
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /assets/intentionally-missing.960.webp HTTP/1.1" 404 -
+[WebServer] 127.0.0.1 - - [18/Nov/2026 13:34:47] "GET /assets/gsap-CwkLPwAn.js HTTP/1.1" 200 -
+  ✓  32 [chromium] › tests/e2e/renderer.spec.ts:118:1 › P03 QA-R11 GSAP chunk failure leaves original paragraph available (311ms)
+  ✓  33 [chromium] › tests/e2e/sync.spec.ts:12:1 › P05 actual DB settings ack persists across reload with safe browser-only queue (377ms)
+  ✓  34 [chromium] › tests/e2e/renderer.spec.ts:136:1 › P03 OS reduced motion changes stop effects immediately and settings keep text readable (299ms)
+  ✓  35 [chromium] › tests/e2e/sync.spec.ts:37:1 › P05 navigation preserves the latest setting while another document holds the outbox storage lock (1.4s)
+  ✓  36 [chromium] › tests/e2e/sync.spec.ts:75:1 › P05 offline latest intent is bounded, honestly marked, and converges to PostgreSQL on reconnect (1.3s)
+  ✓  37 [chromium] › tests/e2e/sync.spec.ts:108:1 › P05 delayed real server ack never reverses a newer visible preference (375ms)
+  ✓  38 [chromium] › tests/e2e/sync.spec.ts:134:1 › P05 two actual tabs converge through storage events without BroadcastChannel (557ms)
+  ✓  39 [chromium] › tests/e2e/sync.spec.ts:165:1 › P05 expired cookie blocks old epoch queue without silently creating another session (468ms)
+  ✓  40 [chromium] › tests/e2e/sync.spec.ts:205:1 › P05 deletion drains a delayed real Set-Cookie then removes cookie/cache/outbox without resurrection (446ms)
+  ✓  41 [chromium] › tests/e2e/sync.spec.ts:250:1 › P05 blocked localStorage reports temporary-save failure while current controls and actual server save still work (288ms)
+  ✓  42 [chromium] › tests/e2e/sync.spec.ts:278:1 › P05 real server progress restores after local caches are cleared; explicit hash and trusted input retain priority (2.0s)
+  ✓  43 [chromium] › tests/e2e/sync.spec.ts:324:1 › P05 pagehide flush sends a real keepalive write without claiming unload delivery is guaranteed (1.1s)
+  ✓  44 [chromium] › tests/e2e/sync.spec.ts:354:1 › P05 trusted scroll wins over a delayed initial server-only restoration (2.1s)
+
+  44 passed (25.2s)

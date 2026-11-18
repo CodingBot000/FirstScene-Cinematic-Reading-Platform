@@ -1,0 +1,6 @@
+
+> firstscene-workspace@0.1.0 lint /Users/switch/Development/Web/FirstScene
+> eslint . && prettier --check "{apps,packages}/**/*.{ts,tsx}" "tools/**/*.mjs"
+
+Checking formatting...
+All matched files use Prettier code style!
