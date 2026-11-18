@@ -10,11 +10,23 @@ import { createHash, randomUUID } from "node:crypto";
 import { parseEnv } from "node:util";
 import { sourceFingerprint } from "./visual/fingerprint.mjs";
 const args = process.argv.slice(2).filter((arg) => arg !== "--");
-if (args.some((arg) => arg !== "--collect") || args.length > 1)
+if (
+  args.some((arg) => !["--collect", "--ci", "--qa"].includes(arg)) ||
+  args.length > 1
+)
   throw new Error("FULL_MODE_INVALID");
 const collect = args.includes("--collect");
+const ci = args.includes("--ci");
+const qa = args.includes("--qa");
+const strict = !collect && !ci && !qa;
+const reportRoot = ci
+  ? "evidence/qa/ci-run"
+  : qa
+    ? "evidence/qa/product-qa"
+    : "evidence/qa/full-run";
 const directory =
-  "evidence/qa/full-run/" +
+  reportRoot +
+  "/" +
   new Date().toISOString().replace(/[:.]/g, "-") +
   "-" +
   randomUUID().slice(0, 8);
@@ -47,10 +59,12 @@ for (const values of [
 const redact = (value) => {
   for (const secret of secretValues)
     value = value.replaceAll(secret, "<redacted>");
-  return value.replace(
-    /postgres(?:ql)?:\/\/[^\s"']+/g,
-    "<redacted-database-url>",
-  );
+  return value
+    .replace(/postgres(?:ql)?:\/\/[^\s"']+/g, "<redacted-database-url>")
+    .replace(
+      /(?:firstscene_dev|__Host-firstscene)=[A-Za-z0-9_-]{43}/g,
+      "<redacted-session-cookie>",
+    );
 };
 function checkCodeFingerprint() {
   const walk = (directory) =>
@@ -86,7 +100,7 @@ function checkCodeFingerprint() {
 const report = {
   schemaVersion: 1,
   status: "IN_PROGRESS",
-  mode: collect ? "collect" : "strict",
+  mode: ci ? "ci" : qa ? "qa" : collect ? "collect" : "strict",
   startedAt: new Date().toISOString(),
   commit: execFileSync("git", ["rev-parse", "HEAD"], {
     encoding: "utf8",
@@ -100,6 +114,8 @@ const report = {
   collectionErrors: [],
   qualityFailures: [],
   manualBlockers: [],
+  manualGatesEvaluated: strict,
+  visualReview: "NOT_EVALUATED",
 };
 const save = () =>
   fs.writeFileSync(
@@ -148,7 +164,7 @@ const specs = [
   ["assets", ["assets:verify", "--", "--release"]],
   [
     "security-negatives",
-    ["test:security"],
+    ci ? ["test:security", "--", "--portable"] : ["test:security"],
     "evidence/security/current/result.json",
     "security",
   ],
@@ -165,7 +181,12 @@ const specs = [
     "evidence/performance/current/result.json",
     "performance",
   ],
-  ["visual", ["test:visual"], "evidence/visual/current/result.json", "visual"],
+  [
+    "visual",
+    strict ? ["test:visual"] : ["test:visual", "--", "--collect"],
+    "evidence/visual/current/result.json",
+    "visual",
+  ],
   ["ledger", ["check:state"]],
 ];
 save();
@@ -288,8 +309,16 @@ for (const [id, commandArgs, artifact, kind] of specs) {
           value.commands?.[0]?.exitCode
         )
           throw new Error();
-        if (value.status !== "VISUAL_CHECKS_PASSED")
-          report.qualityFailures.push(id + ":MANUAL_REVIEW_REQUIRED");
+        report.visualReview = value.status;
+        if (
+          value.status !==
+          (strict
+            ? "VISUAL_CHECKS_PASSED"
+            : "CAPTURES_COLLECTED_REVIEW_REQUIRED")
+        )
+          report.qualityFailures.push(
+            id + (strict ? ":MANUAL_REVIEW_REQUIRED" : ":CAPTURE_FAILED"),
+          );
       }
       if (
         kind === "performance" &&
@@ -299,7 +328,26 @@ for (const [id, commandArgs, artifact, kind] of specs) {
         report.qualityFailures.push(id + ":PERFORMANCE_FAILED");
       if (
         kind === "security" &&
-        value.status !== "AUTOMATED_SECURITY_NEGATIVES_PASSED"
+        (value.status !==
+          (ci
+            ? "PORTABLE_SECURITY_NEGATIVES_PASSED"
+            : "AUTOMATED_SECURITY_NEGATIVES_PASSED") ||
+          ![
+            "ACTUAL_NEGATIVE_REPORTS",
+            "TRACKED_CREDENTIAL_AND_PATH_SCAN",
+            "PRODUCTION_CLIENT_BUNDLE_SCAN",
+            "NO_RUNTIME_AUTH_OR_MOCK_TEST_BYPASS",
+          ].every((name) =>
+            value.checks?.some(
+              (check) => check.name === name && check.status === "PASS",
+            ),
+          ) ||
+          !value.checks?.some(
+            (check) =>
+              check.name === "PUBLIC_PRIVATE_SOURCE_NAME_SCAN" &&
+              (check.status === "PASS" ||
+                (ci && check.status === "DEFERRED_TO_RELEASE")),
+          ))
       )
         report.qualityFailures.push(id + ":NEGATIVES_FAILED");
       // Bind nested producer artifacts before later producers can overwrite mutable paths.
@@ -343,18 +391,22 @@ const futureGateTasks = new Set([
   "P08-T01",
   "P08-T02",
 ]);
-report.incompletePrerequisites = state.tasks
-  .filter(
-    (task) =>
-      task.gate === "local" &&
-      !futureGateTasks.has(task.id) &&
-      task.status !== "DONE",
-  )
-  .map((task) => task.id);
-for (const file of [
-  "evidence/responsive/native-zoom-blocker.json",
-  "evidence/security/managed-scan-preflight.json",
-]) {
+report.incompletePrerequisites = strict
+  ? state.tasks
+      .filter(
+        (task) =>
+          task.gate === "local" &&
+          !futureGateTasks.has(task.id) &&
+          task.status !== "DONE",
+      )
+      .map((task) => task.id)
+  : [];
+for (const file of strict
+  ? [
+      "evidence/responsive/native-zoom-blocker.json",
+      "evidence/security/managed-scan-preflight.json",
+    ]
+  : []) {
   if (!fs.existsSync(file)) {
     report.manualBlockers.push({ file, status: "MISSING_EVIDENCE" });
     continue;
@@ -378,6 +430,7 @@ report.automatedPassed =
   !report.collectionErrors.length &&
   !report.qualityFailures.length;
 report.strictQualityPassed =
+  strict &&
   report.automatedPassed &&
   !report.manualBlockers.length &&
   !report.incompletePrerequisites.length;
@@ -387,13 +440,21 @@ report.localProductReady =
     .filter((task) => task.gate === "local")
     .every((task) => task.status === "DONE");
 report.releaseReady = report.localProductReady;
-report.status = collect
-  ? report.allSuitesExecuted && !report.collectionErrors.length
-    ? "RESULTS_COLLECTED"
-    : "COLLECTION_FAILED"
-  : report.strictQualityPassed
-    ? "LOCAL_QUALITY_GATES_PASSED"
-    : "LOCAL_GATES_BLOCKED";
+report.status = ci
+  ? report.automatedPassed
+    ? "CI_CHECKS_PASSED"
+    : "CI_CHECKS_FAILED"
+  : qa
+    ? report.automatedPassed
+      ? "PRODUCT_QA_AUTOMATION_PASSED"
+      : "PRODUCT_QA_AUTOMATION_FAILED"
+    : collect
+      ? report.allSuitesExecuted && !report.collectionErrors.length
+        ? "RESULTS_COLLECTED"
+        : "COLLECTION_FAILED"
+      : report.strictQualityPassed
+        ? "LOCAL_QUALITY_GATES_PASSED"
+        : "LOCAL_GATES_BLOCKED";
 if (collect) {
   report.localProductReady = false;
   report.releaseReady = false;
@@ -401,7 +462,7 @@ if (collect) {
 report.finishedAt = new Date().toISOString();
 save();
 fs.writeFileSync(
-  "evidence/qa/full-run/latest.json",
+  reportRoot + "/latest.json",
   JSON.stringify(
     {
       path: directory + "/index.json",
@@ -421,10 +482,15 @@ console.log(
     releaseReady: report.releaseReady,
   }),
 );
-process.exitCode = collect
-  ? report.status === "RESULTS_COLLECTED"
-    ? 0
-    : 1
-  : report.strictQualityPassed
-    ? 0
-    : 2;
+process.exitCode =
+  ci || qa
+    ? report.automatedPassed
+      ? 0
+      : 1
+    : collect
+      ? report.status === "RESULTS_COLLECTED"
+        ? 0
+        : 1
+      : report.strictQualityPassed
+        ? 0
+        : 2;

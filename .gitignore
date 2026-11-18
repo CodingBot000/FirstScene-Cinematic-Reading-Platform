@@ -51,6 +51,8 @@ storage-state.json
 storageState.json
 *.har
 /evidence/ui/current/
+/evidence/qa/ci-run/
+/evidence/qa/product-qa/
 /evidence/package-consumer/current/
 /evidence/performance/current/
 /evidence/visual/current/

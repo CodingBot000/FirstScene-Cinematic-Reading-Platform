@@ -1,5 +1,8 @@
 import fs from "node:fs";
-import { assertDeclaredReadiness } from "./execution-readiness.mjs";
+import {
+  assertDeclaredReadiness,
+  assertFirstSceneGateBoundaries,
+} from "./execution-readiness.mjs";
 import { execFileSync } from "node:child_process";
 const state = JSON.parse(fs.readFileSync("execution/tasks.json", "utf8"));
 assertDeclaredReadiness(state);
@@ -48,6 +51,7 @@ function check(id) {
   }
 }
 for (const id of tasks.keys()) check(id);
+assertFirstSceneGateBoundaries(tasks);
 const done = state.tasks.filter((task) => task.status === "DONE").length;
 if (!fs.readFileSync("PROGRESS.md", "utf8").includes(`${done} / ${tasks.size}`))
   throw new Error("Progress summary mismatch");

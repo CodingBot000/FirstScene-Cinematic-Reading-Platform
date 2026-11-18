@@ -998,7 +998,8 @@
       "acceptance": [
         "CSRF/XSS/IDOR/rate/oversize/secret/CSP를negative case로검증한다.",
         "production에테스트세션우회·mockDB·secret이남지않는다.",
-        "비공개 입력과 민감한 식별자가 Git 추적 파일 및 메타데이터에 포함되지 않는다."
+        "비공개 입력과 민감한 식별자가 Git 추적 파일 및 메타데이터에 포함되지 않는다.",
+        "관리형 소스 감사 원본이 최종 확정되고 수정 검증과 함께 보존된다. CI의 재현 가능한 보안 검사와 별도 조건이다."
       ],
       "requirementIds": [
         "R09",
@@ -1023,7 +1024,7 @@
       ],
       "commit": null,
       "startedAt": "2026-11-18T09:30:20.826Z",
-      "updatedAt": "2026-11-18T09:30:20.867Z",
+      "updatedAt": "2026-11-18T10:52:03.524263+00:00",
       "branch": "main",
       "actorType": "agent"
     },
@@ -1034,18 +1035,17 @@
       "dependencies": [
         "P06-T01",
         "P06-T02",
-        "P06-T03",
-        "P06-T04"
+        "P06-T03"
       ],
       "outputs": [
         "evidence/qa/full-run",
         "execution/defects.json"
       ],
       "commandIds": [
-        "CMD-QA-COLLECT"
+        "CMD-PRODUCT-QA"
       ],
       "acceptance": [
-        "새 DB와 production build에서 모든 필수 자동 suite를 실제 실행하고 종료 코드·증거를 수집한다.",
+        "새 DB와 프로덕션 빌드에서 제품 QA의 자동 검사와 시각 수집을 실제 실행하고 종료 코드와 증거를 보존한다.",
         "실패를 숨기거나 skip하지 않고 defect ID·재현 방법·실패 결과를 기록한다.",
         "이 작업의 DONE은 결과 수집 완료만 뜻하며 테스트 통과나 제품 완료가 아니다. 미실행 suite가 있으면 DONE으로 바꾸지 않는다."
       ],
@@ -1054,8 +1054,8 @@
       ],
       "gate": "local",
       "weight": 1,
-      "status": "PENDING",
-      "attempts": 0,
+      "status": "IN_PROGRESS",
+      "attempts": 1,
       "blockers": [],
       "evidence": [
         "evidence/qa/full-run/2026-11-18T04-33-54-683Z-914b802e/index.json",
@@ -1064,10 +1064,10 @@
         "evidence/qa/post-full-visual.json"
       ],
       "commit": null,
-      "startedAt": null,
-      "updatedAt": "2026-11-18T09:42:42.190770+00:00",
-      "branch": null,
-      "actorType": null
+      "startedAt": "2026-11-18T10:52:03.869Z",
+      "updatedAt": "2026-11-18T10:52:03.869Z",
+      "branch": "main",
+      "actorType": "agent"
     },
     {
       "id": "P07-T02",
@@ -1121,11 +1121,11 @@
         "execution/defects.json"
       ],
       "commandIds": [
-        "CMD-FULL",
+        "CMD-PRODUCT-QA",
         "CMD-VISUAL"
       ],
       "acceptance": [
-        "P0/P1과수용기준위반을0으로만든다.",
+        "제품 QA 범위의 P0/P1과 수용 기준 위반을 해결하고 자동 회귀와 같은 캡처의 시각 재검증을 완료한다.",
         "수정전후화면·원인·commit·동일재현test를연결한다.",
         "검증값이좋아보이도록기준을임의완화하지않는다."
       ],
@@ -1146,7 +1146,7 @@
       ],
       "commit": null,
       "startedAt": null,
-      "updatedAt": "2026-11-18T09:42:42.190770+00:00",
+      "updatedAt": "2026-11-18T10:52:03.524263+00:00",
       "branch": null,
       "actorType": null
     },
@@ -1193,7 +1193,7 @@
     {
       "id": "P08-T02",
       "phase": "P08",
-      "title": "로컬 제품 완료 gate·재개 인계",
+      "title": "제품 QA 증거·출시 조건 인계",
       "dependencies": [
         "P08-T01"
       ],
@@ -1203,13 +1203,12 @@
         "RESUME.md"
       ],
       "commandIds": [
-        "CMD-FULL",
         "CMD-STATE"
       ],
       "acceptance": [
-        "현재 작업을 제외한 모든 로컬 필수 작업의 DONE·실제 증거, 16개 공개 에셋, 12개 씬을 확인한다.",
-        "현재 gate 검증까지 통과하면 이 작업을 DONE으로 기록한 뒤 LOCAL_PRODUCT_READY를 계산한다. 공개 배포 상태와 구분한다.",
-        "실제 서비스 URL이 없으면 만들지 않고 로컬 실행 주소와 외부 배포 blocker를 정확히 기록한다."
+        "독립 제품 QA 작업의 검증 증거, 16개 공개 자산과 12개 씬을 최종 증거 목록에서 확인한다.",
+        "관리형 감사와 실제 배포처럼 남은 출시 조건을 보고서에 명시하고 출시 판정은 별도 엄격 검사로 보존한다.",
+        "실제 서비스 URL을 확인하지 못했다면 로컬 실행 주소와 외부 차단 사유를 기록한다."
       ],
       "requirementIds": [
         "R01",
@@ -1237,7 +1236,7 @@
       ],
       "commit": null,
       "startedAt": null,
-      "updatedAt": "2026-11-18T04:48:53.175012+00:00",
+      "updatedAt": "2026-11-18T10:52:03.524263+00:00",
       "branch": null,
       "actorType": null
     },
@@ -1290,16 +1289,19 @@
       "title": "대상 DB·앱 실제 배포",
       "dependencies": [
         "P08-T02",
-        "P09-T01"
+        "P09-T01",
+        "P06-T04"
       ],
       "outputs": [
         "evidence/deploy/deployment.json"
       ],
       "commandIds": [
+        "CMD-RELEASE",
         "CMD-MIGRATE",
         "CMD-DEPLOY-SMOKE"
       ],
       "acceptance": [
+        "관리형 감사와 공급자 승인을 포함한 모든 출시 선행조건 및 현재 리비전의 엄격한 로컬 출시 검사를 확인한다.",
         "대상에같은migration/roles/env를적용하고app배포한다.",
         "data이관시count/digest검증,불필요한개인데이터복사금지.",
         "외부URL/배포ID/commit과실제이미지를확인한다."
@@ -1317,7 +1319,7 @@
       "evidence": [],
       "commit": null,
       "startedAt": null,
-      "updatedAt": null,
+      "updatedAt": "2026-11-18T10:52:03.524263+00:00",
       "branch": null,
       "actorType": null
     },

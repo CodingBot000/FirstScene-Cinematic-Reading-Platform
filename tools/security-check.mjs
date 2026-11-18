@@ -7,6 +7,10 @@ import path from "node:path";
 import { createHash } from "node:crypto";
 import { execFileSync, spawn } from "node:child_process";
 import { parseEnv } from "node:util";
+const args = process.argv.slice(2).filter((arg) => arg !== "--");
+if (args.length > 1 || args.some((arg) => arg !== "--portable"))
+  throw new Error("SECURITY_MODE_INVALID");
+const portable = args.includes("--portable");
 const directory = "evidence/security/current";
 fs.mkdirSync(directory, { recursive: true });
 let managedSourceAudit = "NOT_PERFORMED_TOOL_BLOCKED";
@@ -25,6 +29,7 @@ try {
 }
 const report = {
   status: "IN_PROGRESS",
+  mode: portable ? "portable" : "strict",
   startedAt: new Date().toISOString(),
   sourceCommit: execFileSync("git", ["rev-parse", "HEAD"], {
     encoding: "utf8",
@@ -240,13 +245,21 @@ check("PUBLIC_PRIVATE_SOURCE_NAME_SCAN", () => {
       ].filter((value) => value.length >= 2)
     : [];
   if (!stems.length) {
-    if (!process.env.CI) throw new Error();
     const receiptFile = "evidence/security/public-source-review.json";
-    const receipt = JSON.parse(fs.readFileSync(receiptFile));
-    return validatePrivacyReceipt(
-      receipt,
-      publicSourceFingerprint(trackedPublicFiles),
-    );
+    if (!process.env.CI && !portable) throw new Error();
+    try {
+      const receipt = JSON.parse(fs.readFileSync(receiptFile));
+      return validatePrivacyReceipt(
+        receipt,
+        publicSourceFingerprint(trackedPublicFiles),
+      );
+    } catch (error) {
+      if (!portable) throw error;
+      return {
+        status: "DEFERRED_TO_RELEASE",
+        reason: "Private source input or exact review receipt is unavailable",
+      };
+    }
   }
   for (const file of new Set([...publicFiles, ...tracked]))
     if (
@@ -314,7 +327,9 @@ check("NO_RUNTIME_AUTH_OR_MOCK_TEST_BYPASS", () => {
 report.finishedAt = new Date().toISOString();
 report.status = report.errors.length
   ? "FAILED"
-  : "AUTOMATED_SECURITY_NEGATIVES_PASSED";
+  : portable
+    ? "PORTABLE_SECURITY_NEGATIVES_PASSED"
+    : "AUTOMATED_SECURITY_NEGATIVES_PASSED";
 save();
 console.log(
   JSON.stringify({

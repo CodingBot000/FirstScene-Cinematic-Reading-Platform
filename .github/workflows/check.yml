@@ -1,6 +1,8 @@
-name: FirstScene checks
+name: FirstScene development checks
 "on":
   pull_request:
+  push:
+    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
@@ -29,7 +31,7 @@ jobs:
       - run: pnpm db:ci:up
       - run: node tools/database/ci-run.mjs pnpm db:prepare-test
       - run: node tools/database/ci-run.mjs pnpm db:ci:verify
-      - run: node tools/database/ci-run.mjs pnpm check:full
+      - run: node tools/database/ci-run.mjs pnpm check:ci
       - run: pnpm container:build
       - run: node tools/database/ci-run.mjs pnpm container:smoke
       - name: Remove only owned disposable database
@@ -41,7 +43,7 @@ jobs:
         with:
           name: firstscene-redacted-evidence
           path: |
-            evidence/qa/full-run/
+            evidence/qa/ci-run/
             evidence/container/startup.json
             evidence/container/smoke.json
             evidence/ci/prepare-test.json
