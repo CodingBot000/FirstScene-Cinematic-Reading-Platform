@@ -71,11 +71,11 @@ export function CinematicPrologue({
           try {
             root.classList.add("cinematic-ready");
             context = gsap.context(() => {
-              gsap.set([beats[1], beats[2]], {
+              gsap.set([beats[1]!, beats[2]!], {
                 autoAlpha: 0,
                 y: 58,
               });
-              gsap.set(visuals[1], {
+              gsap.set(visuals[1]!, {
                 autoAlpha: 0,
                 yPercent: 14,
                 scale: 1.11,
@@ -105,55 +105,55 @@ export function CinematicPrologue({
 
               // Beat 01: the opening line and the first finished story.
               timeline
-                .to(visuals[0], {
+                .to(visuals[0]!, {
                   scale: 1.18,
                   xPercent: 9,
                   yPercent: -11,
                   duration: 1.03,
                 }, 0)
-                .to(beats[0], {
+                .to(beats[0]!, {
                   autoAlpha: 0,
                   y: -45,
                   duration: 0.30,
                 }, 0.70)
                 // Beat 02: a second world enters as the first recedes.
-                .to(visuals[0], {
+                .to(visuals[0]!, {
                   autoAlpha: 0,
                   duration: 0.38,
                 }, 0.88)
-                .to(visuals[1], {
+                .to(visuals[1]!, {
                   autoAlpha: 1,
                   scale: 1,
                   yPercent: 0,
                   duration: 0.47,
                 }, 0.87)
-                .to(beats[1], {
+                .to(beats[1]!, {
                   autoAlpha: 1,
                   y: 0,
                   duration: 0.32,
                 }, 1.00)
-                .to(visuals[1], {
+                .to(visuals[1]!, {
                   scale: 1.12,
                   xPercent: -6,
                   yPercent: -8,
                   duration: 1.00,
                 }, 1.42)
-                .to(beats[1], {
+                .to(beats[1]!, {
                   autoAlpha: 0,
                   y: -45,
                   duration: 0.30,
                 }, 1.81)
                 // Beat 03: hand off to the actual catalog, never a fake reader.
-                .to(visuals[1], {
+                .to(visuals[1]!, {
                   autoAlpha: 0.3,
                   duration: 0.40,
                 }, 2.05)
-                .to(beats[2], {
+                .to(beats[2]!, {
                   autoAlpha: 1,
                   y: 0,
                   duration: 0.35,
                 }, 2.09)
-                .to(beats[2], {
+                .to(beats[2]!, {
                   y: -6,
                   duration: 0.65,
                 }, 2.44);
