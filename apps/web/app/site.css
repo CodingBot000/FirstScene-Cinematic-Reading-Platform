@@ -63,8 +63,10 @@ html{scroll-behavior:auto}#main{scroll-margin-top:96px}body{margin:0;background:
 .preview-shelf-description{color:var(--fs-muted);font-size:14px;line-height:1.9;margin:0 0 30px}
 .preview-shelf-count{font-size:10px;color:var(--fs-muted);letter-spacing:.1em}
 .preview-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));column-gap:15px;row-gap:34px}
-.preview-tile{min-width:0;transition:opacity .65s ease,transform .65s cubic-bezier(.2,.7,.2,1)}
-.preview-motion-ready .preview-tile:not(.is-visible){opacity:0;transform:translateY(25px)}
+/* Reveal position, not opacity: fading the card also fades its text and
+   can temporarily violate contrast requirements while scrolling. */
+.preview-tile{min-width:0;transition:transform .65s cubic-bezier(.2,.7,.2,1)}
+.preview-motion-ready .preview-tile:not(.is-visible){transform:translateY(25px)}
 .preview-card{display:block;width:100%;text-align:left;border:0;padding:0;background:none;color:inherit;cursor:pointer;font:inherit}
 .preview-card:focus-visible{outline:3px solid var(--fs-action);outline-offset:4px;border-radius:5px}
 .preview-cover{--cover-start:#33445b;--cover-end:#0f192e;--cover-glow:rgba(182,194,221,.4);position:relative;display:flex;flex-direction:column;justify-content:space-between;aspect-ratio:3/4;width:100%;padding:13px;box-sizing:border-box;overflow:hidden;border-radius:5px;isolation:isolate;color:#fff7ed;background:radial-gradient(circle at 30% 20%,var(--cover-glow),transparent 40%),linear-gradient(155deg,var(--cover-start),var(--cover-end));box-shadow:0 9px 20px rgba(20,29,30,.1);transition:transform .4s cubic-bezier(.2,.8,.2,1),box-shadow .4s}
