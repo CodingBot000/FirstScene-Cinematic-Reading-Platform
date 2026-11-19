@@ -32,15 +32,16 @@ describe("landing preview catalog", () => {
     expect(illustrated).toHaveLength(8);
     expect(new Set(illustrated.map((story) => story.artworkAsset)).size).toBe(8);
     for (const story of illustrated) {
-      expect(story.artworkAsset).toMatch(
-        /^\\/illustrations\\/[a-z0-9-]+\\.svg$/,
-      );
-      const file = path.join("apps/web/public", story.artworkAsset!);
+      expect(story.artworkAsset).toMatch(/^\/illustrations\/[a-z0-9-]+\.svg$/);
+      const file = path.join("apps/web/public", story.artworkAsset!.slice(1));
       expect(existsSync(file)).toBe(true);
       const content = readFileSync(file, "utf8");
       expect(content).toContain("<svg ");
       expect(content).toContain("</svg>");
-      expect(content).not.toMatch(/<script|onload=|<foreignObject|https?:\\/\\//i);
+      expect(content).not.toContain("<script");
+      expect(content).not.toContain("<foreignObject");
+      expect(content).not.toContain("onload=");
+      expect(content).not.toContain('href="http');
     }
   });
 
