@@ -1,4 +1,12 @@
 import { expect, test } from "@playwright/test";
+import type { Page } from "@playwright/test";
+
+async function serverBookmarkCount(page: Page): Promise<number> {
+  const response = await page.request.get("/api/v1/me");
+  if (response.status() !== 200) return 0;
+  const data = (await response.json()) as { bookmarks: unknown[] };
+  return data.bookmarks.length;
+}
 
 /**
  * Mobile product journey, not isolated component unit tests.
@@ -122,13 +130,7 @@ test("mobile: landing → discovery → introduction → reading → library →
   await expect(
     page.getByRole("button", { name: "★ 작품 저장됨", exact: true }),
   ).toHaveAttribute("aria-pressed", "true");
-  await expect
-    .poll(async () => {
-      const response = await page.request.get("/api/v1/me");
-      if (response.status() !== 200) return 0;
-      return (await response.json()).bookmarks.length as number;
-    })
-    .toBe(1);
+  await expect.poll(() => serverBookmarkCount(page)).toBe(1);
 
   await page.getByRole("link", { name: "첫 장면 읽기", exact: true }).click();
   await expect(page).toHaveURL(/\/read\/post-office/);
@@ -190,13 +192,7 @@ test("mobile: removing the final saved story restores focus to the empty library
   const save = page.getByRole("button", { name: "☆ 작품 저장", exact: true });
   await expect(save).toBeEnabled();
   await save.click();
-  await expect
-    .poll(async () => {
-      const response = await page.request.get("/api/v1/me");
-      if (response.status() !== 200) return 0;
-      return (await response.json()).bookmarks.length as number;
-    })
-    .toBe(1);
+  await expect.poll(() => serverBookmarkCount(page)).toBe(1);
 
   await page.goto("/library");
   await expect(page.locator(".library-stories li")).toHaveCount(1);
