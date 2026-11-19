@@ -28,8 +28,18 @@ test("each narrow-screen scene pairs its own art, text, and working destination"
           links: Array.from(copy.querySelectorAll<HTMLAnchorElement>("a")).map(
             (link) => link.getAttribute("href"),
           ),
-          text: { top: text.top, bottom: text.bottom, left: text.left, right: text.right },
-          image: { top: image.top, bottom: image.bottom, left: image.left, right: image.right },
+          text: {
+            top: text.top,
+            bottom: text.bottom,
+            left: text.left,
+            right: text.right,
+          },
+          image: {
+            top: image.top,
+            bottom: image.bottom,
+            left: image.left,
+            right: image.right,
+          },
         };
       }),
     );
@@ -52,9 +62,9 @@ test("each narrow-screen scene pairs its own art, text, and working destination"
     const browser = await page.evaluate(() => ({
       viewport: innerWidth,
       scroll: document.documentElement.scrollWidth,
-      settings: document.querySelector<HTMLElement>(
-        ".site-header nav a[href='/settings']",
-      )!.getBoundingClientRect().right,
+      settings: document
+        .querySelector<HTMLElement>(".site-header nav a[href='/settings']")!
+        .getBoundingClientRect().right,
     }));
     expect(browser.scroll).toBeLessThanOrEqual(browser.viewport + 1);
     expect(browser.settings).toBeLessThanOrEqual(browser.viewport + 1);

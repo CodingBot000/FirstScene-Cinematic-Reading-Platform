@@ -57,7 +57,7 @@ export function mountCinematicScroll(root: HTMLElement): () => void {
 
       // The whole semantic scene moves together: text, cover, and its CTA.
       timeline
-        .to(visuals[0]!, { scale: 1.10, yPercent: -4, duration: 1.0 }, 0)
+        .to(visuals[0]!, { scale: 1.1, yPercent: -4, duration: 1.0 }, 0)
         .to(atmospheres[0]!, { autoAlpha: 0.85, duration: 0.8 }, 0.35)
         .to(scenes[0]!, { autoAlpha: 0, y: -32, duration: 0.32 }, 0.74)
         .to(scenes[1]!, { autoAlpha: 1, y: 0, duration: 0.32 }, 0.92)
@@ -69,8 +69,8 @@ export function mountCinematicScroll(root: HTMLElement): () => void {
           { scale: 1, yPercent: -5, duration: 1.05 },
           1.08,
         )
-        .to(scenes[1]!, { autoAlpha: 0, y: -32, duration: 0.32 }, 1.80)
-        .to(scenes[2]!, { autoAlpha: 1, y: 0, duration: 0.38 }, 2.00)
+        .to(scenes[1]!, { autoAlpha: 0, y: -32, duration: 0.32 }, 1.8)
+        .to(scenes[2]!, { autoAlpha: 1, y: 0, duration: 0.38 }, 2.0)
         .to(atmospheres[1]!, { autoAlpha: 0.24, duration: 0.7 }, 2.03)
         .fromTo(
           visuals[2]!,
