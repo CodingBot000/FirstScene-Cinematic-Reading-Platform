@@ -47,14 +47,14 @@ export default async function StoryPage({
             ))}
           </div>
           <p className="story-summary">{story.summary}</p>
-          <p className="disclosure">
-            AI를 활용해 제작하고 검토한 오리지널 허구 이야기
-          </p>
           <StoryActions
             storyId={story.id}
             version={story.version}
             firstBeatId={story.scenes[0]!.beats[0]!.id}
           />
+          <p className="disclosure">
+            AI를 활용해 제작하고 검토한 오리지널 허구 이야기
+          </p>
           <p className="reading-note">
             장면 연출은 선택입니다. 설정에서 일반 읽기로 바꿀 수 있어요.
           </p>
