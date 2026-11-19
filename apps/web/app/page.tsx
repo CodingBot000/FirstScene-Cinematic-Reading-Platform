@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { ResponsiveAsset, StoryCard } from "@firstscene/ui";
+import { StoryCard } from "@firstscene/ui";
+import { CinematicPrologue } from "../components/CinematicPrologue";
+import { EditorialInterlude } from "../components/EditorialInterlude";
 import { SiteShell } from "../components/SiteShell";
 import {
   PreviewCollection,
@@ -9,28 +11,10 @@ import { stories, storyCard, asset } from "../lib/catalog";
 export default function Home() {
   return (
     <SiteShell>
-      <section className="home-hero" id="top">
-        <div className="hero-copy">
-          <p className="home-hero-kicker">FIRSTSCENE / CINEMATIC READING</p>
-          <h1>
-            문장을 읽고,
-            <br />
-            장면에 머물다.
-          </h1>
-          <p>가입 없이 첫 장면부터 읽어보세요.</p>
-          <Link className="fs-button fs-primary fs-lg" href="/read/post-office">
-            첫 장면 읽기 <span aria-hidden="true">→</span>
-          </Link>
-        </div>
-        <div className="hero-art">
-          <ResponsiveAsset
-            {...asset("mail-cover")}
-            priority
-            aspectRatio="16 / 10"
-            sizes="(max-width:640px) calc(100vw - 40px), 680px"
-          />
-        </div>
-      </section>
+      <CinematicPrologue
+        postCover={asset("mail-cover")}
+        tideCover={asset("tide-cover")}
+      />
       <PreviewTeaser />
       <section className="home-collection" id="read-now">
         <div className="section-heading">
@@ -45,17 +29,7 @@ export default function Home() {
           ))}
         </div>
       </section>
-      <section className="home-editorial" aria-label="컬렉션 소개">
-        <p className="home-editorial-overline">A WORLD BEHIND EVERY SENTENCE</p>
-        <p className="home-editorial-statement">
-          어떤 이야기는 한 문장으로 시작해,
-          <br />
-          하나의 세계가 됩니다.
-        </p>
-        <a href="#coming-soon" className="home-editorial-continue">
-          새로운 장면을 만나러 가기 <span aria-hidden="true">↓</span>
-        </a>
-      </section>
+      <EditorialInterlude />
       <PreviewCollection />
       <section className="reading-intro">
         <h2>연출은 선택할 수 있어요.</h2>

@@ -62,7 +62,10 @@ export function PreviewTeaser() {
           description="이 작품은 현재 공개 준비 중입니다."
         >
           <p className="preview-dialog-summary">{selected.summary}</p>
-          <p>현재 콘셉트만 공개되어 있습니다. 완결된 두 작품은 지금 바로 읽을 수 있습니다.</p>
+          <p>
+            현재 콘셉트만 공개되어 있습니다. 완결된 두 작품은 지금 바로 읽을 수
+            있습니다.
+          </p>
           <a
             href="#read-now"
             className="fs-text-link"
@@ -78,28 +81,34 @@ export function PreviewTeaser() {
 
 export function PreviewCollection() {
   const [selected, setSelected] = useState<PreviewStory | null>(null);
+  const [activeShelf, setActiveShelf] = useState(previewShelves[0]!.id);
   const rootRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const root = rootRef.current;
     if (!root) return;
-    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (media.matches || !("IntersectionObserver" in window)) return;
 
-    const tiles = root.querySelectorAll<HTMLElement>(".preview-tile");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        });
-      },
-      { rootMargin: "0px 0px -40px 0px", threshold: 0.05 },
-    );
-    tiles.forEach((tile) => observer.observe(tile));
-    root.classList.add("preview-motion-ready");
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let observer: IntersectionObserver | undefined;
+    if (!reduced.matches && "IntersectionObserver" in window) {
+      const tiles = root.querySelectorAll<HTMLElement>(".preview-tile");
+      observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            observer?.unobserve(entry.target);
+          });
+        },
+        { rootMargin: "0px 0px -40px 0px", threshold: 0.05 },
+      );
+      tiles.forEach((tile) => observer?.observe(tile));
+      root.classList.add("preview-motion-ready");
+    }
 
+    // Native scroll + a single rAF for all five chapter highlights and
+    // the read-position bar; this also works with reduced motion enabled.
+    const shelves = root.querySelectorAll<HTMLElement>(".preview-shelf");
     let frame = 0;
     const measure = () => {
       if (frame) return;
@@ -109,16 +118,26 @@ export function PreviewCollection() {
         const range = Math.max(1, rect.height - window.innerHeight);
         const progress = Math.min(1, Math.max(0, -rect.top / range));
         root.style.setProperty("--preview-scroll-progress", String(progress));
+
+        let current = previewShelves[0]!.id;
+        for (const shelf of shelves) {
+          if (shelf.getBoundingClientRect().top <= window.innerHeight * 0.45)
+            current = shelf.id.slice("preview-".length);
+        }
+        setActiveShelf((previous) =>
+          previous === current ? previous : current,
+        );
       });
     };
     measure();
     window.addEventListener("scroll", measure, { passive: true });
     window.addEventListener("resize", measure);
     return () => {
-      observer.disconnect();
+      observer?.disconnect();
       if (frame) window.cancelAnimationFrame(frame);
       window.removeEventListener("scroll", measure);
       window.removeEventListener("resize", measure);
+      root.classList.remove("preview-motion-ready");
     };
   }, []);
 
@@ -148,10 +167,17 @@ export function PreviewCollection() {
         </p>
       </div>
 
-      <nav className="preview-jump-nav" aria-label="공개 예정 이야기 장르 바로가기">
+      <nav
+        className="preview-jump-nav"
+        aria-label="공개 예정 이야기 장르 바로가기"
+      >
         <span className="preview-jump-label">SCROLL TO DISCOVER</span>
         {previewShelves.map((shelf) => (
-          <a key={shelf.id} href={`#preview-${shelf.id}`}>
+          <a
+            key={shelf.id}
+            href={`#preview-${shelf.id}`}
+            aria-current={activeShelf === shelf.id ? "location" : undefined}
+          >
             {shelf.title}
           </a>
         ))}
@@ -193,10 +219,7 @@ export function PreviewCollection() {
                   onClick={() => setSelected(story)}
                   aria-label={`${story.title}, 공개 준비 중 안내 열기`}
                 >
-                  <span
-                    className="preview-cover"
-                    data-palette={story.palette}
-                  >
+                  <span className="preview-cover" data-palette={story.palette}>
                     <span className="preview-cover-overline">
                       FIRSTSCENE / {String(groupIndex + 1).padStart(2, "0")}
                     </span>

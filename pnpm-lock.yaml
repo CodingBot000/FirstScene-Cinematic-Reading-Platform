@@ -138,6 +138,9 @@ importers:
       '@firstscene/ui':
         specifier: workspace:*
         version: link:../../packages/ui
+      gsap:
+        specifier: 3.15.1
+        version: 3.15.1
       next:
         specifier: 16.4.6
         version: 16.4.6(@opentelemetry/api@1.10.0)(@playwright/test@1.65.1)(@types/node@24.19.2)(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
