@@ -20,7 +20,8 @@ export function Library({ catalog }: { catalog: readonly LibraryStory[] }) {
     sync,
   } = useReaderPreferences();
   const quoteHeading = useRef<HTMLHeadingElement>(null),
-    storyHeading = useRef<HTMLHeadingElement>(null);
+    storyHeading = useRef<HTMLHeadingElement>(null),
+    emptyAction = useRef<HTMLAnchorElement>(null);
   const bookmarks = desiredBookmarks(remote);
   const savedStories = bookmarks.filter((b) => b.targetId === "__story__");
   const quotes = bookmarks.filter((b) => b.targetId !== "__story__");
@@ -50,7 +51,7 @@ export function Library({ catalog }: { catalog: readonly LibraryStory[] }) {
               "[data-remove-key]",
             ),
           ].find((button) => button.dataset.removeKey === nextKey)
-        : heading.current
+        : (heading.current ?? emptyAction.current)
       )?.focus();
     });
   }
@@ -99,7 +100,7 @@ export function Library({ catalog }: { catalog: readonly LibraryStory[] }) {
           title="아직 남긴 독서 기록이 없어요."
           description="이야기를 읽거나 마음에 남는 문장을 저장하면 여기에 모여요."
           action={
-            <a href="/discover" className="fs-text-link">
+            <a href="/discover" className="fs-text-link" ref={emptyAction}>
               이야기 만나기 →
             </a>
           }
