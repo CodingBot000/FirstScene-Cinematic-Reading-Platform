@@ -369,6 +369,21 @@ for (const [id, commandArgs, artifact, kind] of specs) {
     report.collectionErrors.push(id + ":REPORT_MISSING_STALE_OR_INCOMPLETE");
   }
   if (row.exitCode) report.qualityFailures.push(id + ":EXIT_" + row.exitCode);
+  // CI must expose a bounded, redacted failure summary; without this,
+  // individual browser failures are buried in private runner artifacts.
+  if (ci && row.exitCode && ["chromium", "webkit", "visual"].includes(id)) {
+    const diagnostic = redact(output)
+      .split("\n")
+      .filter((line) =>
+        /(?:Error:|failed|FAIL|✘|×|expect\(|Assertion|Timed out|timeout|scroll-chapters|discovery-catalog|\d+ passed|\d+ failed|\d+ unexpected|Visual)/i.test(
+          line,
+        ),
+      )
+      .slice(-55)
+      .map((line) => line.slice(0, 450))
+      .join("\n");
+    console.log("CI_DIAGNOSTIC_" + id.toUpperCase() + "\n" + diagnostic);
+  }
   save();
   console.log(
     JSON.stringify({
