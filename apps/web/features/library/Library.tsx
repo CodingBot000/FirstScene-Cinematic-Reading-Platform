@@ -105,8 +105,9 @@ export function Library({ catalog }: { catalog: readonly LibraryStory[] }) {
           }
         />
       ) : null}
-      <>
-        <section className="library-section" aria-labelledby="recent-title">
+      {hasRecords ? (
+        <>
+          <section className="library-section" aria-labelledby="recent-title">
           <h2 id="recent-title">최근 읽기</h2>
           {recent.length ? (
             <ul className="library-recent">
@@ -301,7 +302,8 @@ export function Library({ catalog }: { catalog: readonly LibraryStory[] }) {
             </p>
           )}
         </section>
-      </>
+        </>
+      ) : null}
     </>
   );
 }
