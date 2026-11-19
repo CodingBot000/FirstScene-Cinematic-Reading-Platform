@@ -198,7 +198,10 @@ test("mobile: removing the final saved story restores focus to the empty library
   await expect(page.locator(".library-stories li")).toHaveCount(1);
   await page
     .locator(".library-stories")
-    .getByRole("button", { name: "저장 해제", exact: true })
+    .getByRole("button", {
+      name: "빛을 접어 보내는 우체국 저장 해제",
+      exact: true,
+    })
     .click();
   await expect(page.getByRole("link", { name: "이야기 만나기" })).toBeFocused();
   await expect(page.locator(".library-section")).toHaveCount(0);
