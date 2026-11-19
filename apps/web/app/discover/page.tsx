@@ -1,7 +1,13 @@
 import { SiteShell } from "../../components/SiteShell";
 import { Discovery } from "../../components/Discovery";
 import { stories, storyCard } from "../../lib/catalog";
-export const metadata = { title: "이야기 탐색" };
+import { previewShelves } from "../../lib/preview-catalog";
+
+export const metadata = {
+  title: "이야기 탐색",
+  description: "완결된 이야기 2편과 공개 예정인 새로운 세계 34편을 둘러보세요.",
+};
+
 export default async function Discover({
   searchParams,
 }: {
@@ -13,20 +19,34 @@ export default async function Discover({
   const mood = ["calm", "mystery"].includes(String(params.mood))
     ? String(params.mood)
     : "all";
+  const status =
+    params.status === "ready" || params.status === "coming"
+      ? params.status
+      : "all";
+  const genre =
+    typeof params.genre === "string" &&
+    previewShelves.some((shelf) => shelf.id === params.genre)
+      ? params.genre
+      : "all";
   return (
     <SiteShell>
-      <div className="page-intro">
+      <div className="page-intro discovery-intro">
+        <p className="preview-eyebrow">THE FIRSTSCENE COLLECTION</p>
         <h1>
           어떤 장면에
           <br />
           머무르고 싶나요?
         </h1>
-        <p>고요한 위로 한 편, 낯선 도시의 미스터리 한 편.</p>
+        <p>
+          지금 읽을 수 있는 두 편의 이야기, 그리고 곧 열릴 서른네 개의 세계.
+        </p>
       </div>
       <Discovery
         cards={stories.map(storyCard)}
         initialQuery={q}
         initialMood={mood}
+        initialStatus={status}
+        initialGenre={genre}
       />
     </SiteShell>
   );

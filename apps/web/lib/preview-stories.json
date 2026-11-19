@@ -11,14 +11,16 @@
         "title": "새벽 0시의 복원실",
         "summary": "망가진 하루를 복원하는 가게에, 한 번도 오지 않은 손님의 기억이 도착한다.",
         "palette": "midnight",
-        "symbol": "◐"
+        "symbol": "◐",
+        "artworkAsset": "/illustrations/midnight-restoration.svg"
       },
       {
         "id": "borrow-a-season",
         "title": "계절을 빌려드립니다",
         "summary": "겨울을 잠시 빌린 여름의 도시는 예상치 못한 봄을 맞는다.",
         "palette": "copper",
-        "symbol": "✳"
+        "symbol": "✳",
+        "artworkAsset": "/illustrations/borrow-a-season.svg"
       },
       {
         "id": "last-satellite",
@@ -69,14 +71,16 @@
         "title": "지하철이 지나지 않는 역",
         "summary": "매일 막차 방송이 들리지만 이 승강장엔 선로가 없다.",
         "palette": "forest",
-        "symbol": "≋"
+        "symbol": "≋",
+        "artworkAsset": "/illustrations/trainless-platform.svg"
       },
       {
         "id": "lost-alley-map",
         "title": "사라진 골목의 지도",
         "summary": "철거된 골목을 그린 지도에 실종자의 내일이 표시된다.",
         "palette": "sand",
-        "symbol": "◇"
+        "symbol": "◇",
+        "artworkAsset": "/illustrations/lost-alley-map.svg"
       },
       {
         "id": "silent-call",
@@ -127,7 +131,8 @@
         "title": "여름이 끝난 자리",
         "summary": "마지막 방학이 끝나고도 비워 두었던 옆자리의 주인을 기다린다.",
         "palette": "sand",
-        "symbol": "✺"
+        "symbol": "✺",
+        "artworkAsset": "/illustrations/after-summer.svg"
       },
       {
         "id": "forecast-between-us",
@@ -185,14 +190,16 @@
         "title": "종이로 접은 왕국",
         "summary": "도서관에서 접은 종이배가 물에 닿자 왕국의 문이 열린다.",
         "palette": "copper",
-        "symbol": "△"
+        "symbol": "△",
+        "artworkAsset": "/illustrations/paper-kingdom.svg"
       },
       {
         "id": "moonlight-tailor",
         "title": "달빛 수선소",
         "summary": "낡은 꿈을 수선해 주는 재봉사가 자신의 찢어진 밤을 발견한다.",
         "palette": "plum",
-        "symbol": "✴"
+        "symbol": "✴",
+        "artworkAsset": "/illustrations/moonlight-tailor.svg"
       },
       {
         "id": "cloud-library",
@@ -243,7 +250,8 @@
         "title": "불이 꺼지지 않는 방",
         "summary": "정전된 도시에서 혼자 불이 켜져 있는 방의 주민은 오래전에 떠났다.",
         "palette": "midnight",
-        "symbol": "◉"
+        "symbol": "◉",
+        "artworkAsset": "/illustrations/room-with-lights-on.svg"
       },
       {
         "id": "last-audience",

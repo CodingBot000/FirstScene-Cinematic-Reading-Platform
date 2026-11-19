@@ -15,7 +15,10 @@ test("desktop scroll scrubs three scenes and allows skipping to finished work", 
 
   await page.evaluate(() => {
     const root = document.querySelector(".cinematic-prologue")!;
-    window.scrollTo(0, root.getBoundingClientRect().top + scrollY + innerHeight * 1.4);
+    window.scrollTo(
+      0,
+      root.getBoundingClientRect().top + scrollY + innerHeight * 1.4,
+    );
   });
   await expect(prologue).toHaveAttribute("data-scene", "1");
   const pinnedTop = await prologue.evaluate(
@@ -24,14 +27,21 @@ test("desktop scroll scrubs three scenes and allows skipping to finished work", 
   expect(Math.abs(pinnedTop)).toBeLessThan(16);
 
   await page.evaluate(() => {
-    const spacer = document.querySelector(".cinematic-prologue")!.parentElement!;
-    window.scrollTo(0, spacer.getBoundingClientRect().top + scrollY + innerHeight * 2.1);
+    const spacer = document.querySelector(
+      ".cinematic-prologue",
+    )!.parentElement!;
+    window.scrollTo(
+      0,
+      spacer.getBoundingClientRect().top + scrollY + innerHeight * 2.1,
+    );
   });
   await expect(prologue).toHaveAttribute("data-scene", "2");
 
   await page.getByRole("link", { name: /연출 건너뛰기/ }).click();
   await expect(page).toHaveURL(/#read-now$/);
-  await expect(page.getByRole("heading", { name: "지금 읽을 수 있는 두 편" })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "지금 읽을 수 있는 두 편" }),
+  ).toBeVisible();
 });
 
 test("reduced motion keeps all text visible and releases pinned layout", async ({
@@ -74,13 +84,18 @@ test("mobile is a native scroll page with usable chapter links and preview dialo
     page.locator('.preview-jump-nav a[href="#preview-city"]'),
   ).toHaveAttribute("aria-current", "location");
   await page
-    .getByRole("button", { name: /지하철이 지나지 않는 역, 공개 준비 중 안내 열기/ })
+    .locator("#preview-city")
+    .getByRole("button", {
+      name: /지하철이 지나지 않는 역, 공개 준비 중 안내 열기/,
+    })
     .click();
   await expect(page.getByRole("dialog")).toBeVisible();
   await expect(page.getByRole("dialog")).toContainText("공개 준비 중");
   await page.getByRole("button", { name: "닫기" }).click();
   expect(
-    await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1),
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth + 1,
+    ),
   ).toBe(true);
 });
 
@@ -99,6 +114,8 @@ test.describe("without JavaScript", () => {
     await expect(
       page.getByRole("link", { name: /첫 장면 바로 읽기/ }),
     ).toHaveAttribute("href", "/read/post-office");
-    await expect(page.getByRole("heading", { name: /서른네 개의 세계/ })).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: /서른네 개의 세계/ }),
+    ).toBeVisible();
   });
 });

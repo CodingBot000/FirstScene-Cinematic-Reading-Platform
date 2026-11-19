@@ -34,6 +34,20 @@ export async function axe(page: Page) {
   const result = await new AxeBuilder({ page })
     .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
     .analyze();
+  if (result.violations.length) {
+    // Selected semantic evidence is enough to diagnose AA regressions
+    // without uploading full user-visible page content to CI logs.
+    console.error(
+      "VISUAL_AXE_FINDINGS " +
+        JSON.stringify(
+          result.violations.map((violation) => ({
+            rule: violation.id,
+            severity: violation.impact,
+            targets: violation.nodes.slice(0, 4).map((node) => node.target),
+          })),
+        ).slice(0, 1800),
+    );
+  }
   expect(result.violations).toEqual([]);
   return {
     violations: result.violations.length,
@@ -69,7 +83,11 @@ export async function capture(
   fs.writeFileSync(file, JSON.stringify(entries, null, 2) + "\n");
 }
 export async function settlePublicImages(page: Page) {
-  await page.evaluate(() => scrollTo(0, document.documentElement.scrollHeight));
+  // Full-page captures include images below the fold. Force native lazy
+  // images to fetch without artificially changing the user's product code.
+  await page.locator("img").evaluateAll((images) => {
+    for (const image of images) (image as HTMLImageElement).loading = "eager";
+  });
   await expect
     .poll(() =>
       page

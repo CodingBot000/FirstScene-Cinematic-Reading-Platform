@@ -408,3 +408,165 @@ html{scroll-behavior:auto}#main{scroll-margin-top:96px}body{margin:0;background:
   .editorial-line { clip-path: none!important; transform: none!important; }
   .editorial-rule { transform: none!important; }
 }
+
+
+/* Discover: finished stories and previews share one searchable catalog. */
+.discovery-intro{padding-bottom:20px}
+.discovery-intro .preview-eyebrow{margin:0 0 24px}
+.discovery-intro p:last-child{font-size:16px;line-height:1.8}
+.discovery-form-wide{max-width:none;padding-bottom:15px}
+.discovery-form-wide>.search-row{max-width:740px}
+.discovery-form-wide fieldset{min-width:0}
+.discovery-status-filters{margin:24px 0 16px}
+.discovery-mood-filters{margin:5px 0 22px}
+.discovery-form-wide .mood-filters legend{
+  position:static;clip-path:none;display:block;width:100%;font-size:13px;
+  font-weight:600;margin:0 0 10px
+}
+.discovery-form-wide .mood-filters{flex-wrap:wrap}
+.discovery-form-wide .mood-filters label{min-height:40px}
+.discovery-form-wide .mood-filters label span{padding:8px 15px;border-radius:20px}
+.discovery-genre-filter{padding:0;margin:0;border:0}
+.discovery-genre-filter>legend{font-size:13px;font-weight:600;margin-bottom:10px}
+.discovery-genre-options{display:flex;gap:8px;flex-wrap:wrap}
+.discovery-genre-options label{position:relative;display:flex;align-items:center;min-height:40px;cursor:pointer}
+.discovery-genre-options input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.discovery-genre-options span{
+  display:flex;align-items:center;min-height:40px;padding:8px 14px;
+  font-size:12px;border:1px solid #9c9c92;border-radius:20px;
+  box-sizing:border-box;pointer-events:none
+}
+.discovery-genre-options input:checked+span{
+  background:var(--fs-action);color:var(--fs-onAction);border-color:var(--fs-action)
+}
+.discovery-genre-options input:focus-visible+span{outline:2px solid var(--fs-focus);outline-offset:3px}
+.discovery-result-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #b8b3a9;margin-top:24px}
+.discovery-result-heading .results-count{border:0;margin:0;padding:24px 0}
+.discovery-reset{border:0;background:transparent;cursor:pointer;font:inherit;font-size:12px}
+.discovery-catalog{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  column-gap:18px;row-gap:36px;padding-bottom:76px;align-items:start
+}
+.discovery-catalog>.discovery-finished-card{grid-column:span 2;min-width:0}
+.discovery-catalog .discovery-finished-card .fs-story-card{
+  display:flex;gap:18px;align-items:flex-start
+}
+.discovery-catalog .discovery-finished-card .fs-story-cover{flex:0 0 38%;max-width:200px}
+.discovery-catalog .discovery-finished-card .fs-story-info h3{font-size:clamp(18px,2vw,25px)}
+.discovery-catalog .discovery-finished-card .fs-story-info p{font-size:13px}
+.discovery-preview-card{min-width:0}
+.discovery-preview-genre{display:block;margin-top:7px;font-size:11px;color:var(--fs-muted)}
+.discovery-preview-card .preview-cover{box-shadow:0 10px 24px rgba(16,25,33,.1)}
+.discovery-catalog .preview-card-summary{display:-webkit-box;-webkit-line-clamp:2;line-clamp:2}
+/* Never animate opacity on text or links. Intermediate alpha lowers
+   effective foreground contrast during axe checks and actual reading. */
+@media (prefers-reduced-motion:no-preference){
+  .discovery-catalog>.discovery-preview-card{
+    animation:discovery-appear .38s ease-out both
+  }
+  .discovery-catalog>.discovery-preview-card:nth-child(4n + 2){animation-delay:35ms}
+  .discovery-catalog>.discovery-preview-card:nth-child(4n + 3){animation-delay:65ms}
+  .discovery-catalog>.discovery-preview-card:nth-child(4n){animation-delay:95ms}
+  @keyframes discovery-appear{
+    from{transform:translateY(12px)}
+    to{transform:translateY(0)}
+  }
+}
+@media (max-width:1050px){
+  .discovery-catalog{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .discovery-catalog>.discovery-finished-card{grid-column:span 3}
+}
+@media (max-width:640px){
+  .discovery-intro{padding-top:35px}
+  .discovery-form-wide .mood-filters label span{font-size:12px}
+  .discovery-genre-options span{font-size:11px}
+  .discovery-catalog{grid-template-columns:repeat(2,minmax(0,1fr));gap:26px 12px}
+  .discovery-catalog>.discovery-finished-card{grid-column:span 2}
+  .discovery-catalog .discovery-finished-card .fs-story-card{gap:16px}
+  .discovery-catalog .discovery-finished-card .fs-story-cover{flex:0 0 38%}
+  .discovery-catalog .discovery-finished-card .fs-story-info h3{font-size:19px}
+  .discovery-catalog .discovery-finished-card .fs-story-info p{font-size:12px}
+  .discovery-preview-card .preview-cover{padding:10px}
+  .discovery-result-heading .results-count{font-size:12px}
+}
+@media (max-width:359px){
+  .discovery-catalog .discovery-finished-card .fs-story-card{display:block}
+  .discovery-catalog .discovery-finished-card .fs-story-cover{width:55%;margin-bottom:10px}
+}
+
+
+/* Eight art-directed SVG covers; existing 26 symbolic previews stay intact. */
+.preview-cover[data-illustrated="true"]{
+  background:#233446;
+}
+.preview-cover-illustration{
+  position:absolute;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:0;
+  pointer-events:none;
+  transform:scale(1.015);
+  transition:transform .45s cubic-bezier(.2,.8,.2,1),filter .45s ease;
+}
+.preview-cover[data-illustrated="true"]::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:linear-gradient(
+    180deg,
+    rgba(7,16,30,.29) 0%,
+    transparent 29%,
+    transparent 49%,
+    rgba(5,11,23,.56) 84%,
+    rgba(5,11,23,.75) 100%
+  );
+}
+.preview-cover[data-illustrated="true"] .preview-cover-art{display:none}
+.preview-cover[data-illustrated="true"] .preview-cover-overline,
+.preview-cover[data-illustrated="true"] .preview-cover-title,
+.preview-cover[data-illustrated="true"] .preview-cover-imprint{
+  position:relative;
+  z-index:2;
+  color:#fff7ed;
+  text-shadow:0 2px 10px rgba(0,0,0,.48);
+}
+@media (hover:hover) and (pointer:fine){
+  .preview-card:hover .preview-cover-illustration,
+  .preview-teaser-item:hover .preview-cover-illustration{
+    transform:scale(1.055);
+    filter:saturate(1.1);
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  .preview-cover-illustration{transition:none!important;transform:none!important}
+}
+
+
+/* Subtle scene lighting: composited fades, no new image or network request. */
+.cinematic-atmosphere{
+  position:absolute;
+  inset:0;
+  display:block;
+  pointer-events:none;
+  opacity:0;
+  transform:translateZ(0);
+}
+.cinematic-atmosphere--gold{
+  background:
+    radial-gradient(ellipse at 69% 48%,rgba(240,174,94,.39),transparent 55%),
+    linear-gradient(135deg,rgba(110,68,56,.22),transparent 62%);
+}
+.cinematic-atmosphere--tide{
+  background:
+    radial-gradient(ellipse at 77% 48%,rgba(116,192,198,.31),transparent 55%),
+    linear-gradient(135deg,rgba(11,50,68,.55),rgba(22,37,60,.18) 70%);
+}
+.cinematic-ready .cinematic-atmosphere{will-change:opacity}
+@media (prefers-reduced-motion:reduce){
+  .cinematic-atmosphere{transition:none!important;opacity:0!important;will-change:auto}
+}
