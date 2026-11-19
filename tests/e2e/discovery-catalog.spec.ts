@@ -35,7 +35,7 @@ test("genre and title filtering preserve query URL and remain keyboard operable"
   await expect(page.locator(".discovery-preview-card")).toHaveCount(7);
   await expect(page).toHaveURL(/genre=city/);
 
-  const search = page.getByRole("searchbox", { name: "작품 찾기" });
+  const search = page.getByRole("searchbox", { name: "작품 제목 검색" });
   await search.fill("지도");
   await expect(page.locator(".discovery-preview-card")).toHaveCount(1);
   await expect(page.getByRole("status")).toContainText("1편의 이야기");
