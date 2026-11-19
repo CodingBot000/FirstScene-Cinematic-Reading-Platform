@@ -72,7 +72,8 @@ export function CinematicPrologue({
             beats.length !== 3 ||
             visuals.length !== 2 ||
             atmospheres.length !== 2
-          ) return;
+          )
+            return;
 
           gsap.registerPlugin(ScrollTrigger);
           let context: ReturnType<typeof gsap.context> | null = null;
@@ -125,11 +126,7 @@ export function CinematicPrologue({
                   },
                   0,
                 )
-                .to(
-                  atmospheres[0]!,
-                  { autoAlpha: 0.85, duration: 0.8 },
-                  0.35,
-                )
+                .to(atmospheres[0]!, { autoAlpha: 0.85, duration: 0.8 }, 0.35)
                 .to(
                   beats[0]!,
                   {
@@ -148,16 +145,8 @@ export function CinematicPrologue({
                   },
                   0.88,
                 )
-                .to(
-                  atmospheres[0]!,
-                  { autoAlpha: 0.12, duration: 0.72 },
-                  0.99,
-                )
-                .to(
-                  atmospheres[1]!,
-                  { autoAlpha: 0.86, duration: 0.82 },
-                  1.05,
-                )
+                .to(atmospheres[0]!, { autoAlpha: 0.12, duration: 0.72 }, 0.99)
+                .to(atmospheres[1]!, { autoAlpha: 0.86, duration: 0.82 }, 1.05)
                 .to(
                   visuals[1]!,
                   {
@@ -205,11 +194,7 @@ export function CinematicPrologue({
                   },
                   2.05,
                 )
-                .to(
-                  atmospheres[1]!,
-                  { autoAlpha: 0.24, duration: 0.75 },
-                  2.0,
-                )
+                .to(atmospheres[1]!, { autoAlpha: 0.24, duration: 0.75 }, 2.0)
                 .to(
                   beats[2]!,
                   {

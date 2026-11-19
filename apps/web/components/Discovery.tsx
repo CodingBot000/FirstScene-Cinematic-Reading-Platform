@@ -124,9 +124,7 @@ export function Discovery({
       setMood(["calm", "mystery"].includes(nextMood) ? nextMood : "all");
       const nextStatus = params.get("status") ?? "all";
       setStatus(
-        nextStatus === "ready" || nextStatus === "coming"
-          ? nextStatus
-          : "all",
+        nextStatus === "ready" || nextStatus === "coming" ? nextStatus : "all",
       );
       const nextGenre = params.get("genre") ?? "all";
       setGenre(
@@ -141,9 +139,9 @@ export function Discovery({
 
   const ready = cards.filter(
     (card) =>
-      normalize(card.title + " " + card.summary + " " + card.tags.join(" ")).includes(
-        normalize(q),
-      ) &&
+      normalize(
+        card.title + " " + card.summary + " " + card.tags.join(" "),
+      ).includes(normalize(q)) &&
       (mood === "all" ||
         card.tags.includes(mood === "calm" ? "잔잔함" : "미스터리")) &&
       genre === "all",
@@ -179,7 +177,11 @@ export function Discovery({
 
   return (
     <>
-      <form className="discovery-form discovery-form-wide" method="get" action="/discover">
+      <form
+        className="discovery-form discovery-form-wide"
+        method="get"
+        action="/discover"
+      >
         <label htmlFor="story-search">작품 제목 검색</label>
         <div className="search-row">
           <input
@@ -198,11 +200,13 @@ export function Discovery({
 
         <fieldset className="mood-filters discovery-status-filters">
           <legend>공개 상태</legend>
-          {([
-            ["all", `전체 ${cards.length + previewCount}`],
-            ["ready", `지금 읽기 ${cards.length}`],
-            ["coming", `공개 예정 ${previewCount}`],
-          ] as const).map(([value, label]) => (
+          {(
+            [
+              ["all", `전체 ${cards.length + previewCount}`],
+              ["ready", `지금 읽기 ${cards.length}`],
+              ["coming", `공개 예정 ${previewCount}`],
+            ] as const
+          ).map(([value, label]) => (
             <label key={value}>
               <input
                 type="radio"
@@ -218,11 +222,13 @@ export function Discovery({
 
         <fieldset className="mood-filters discovery-mood-filters">
           <legend>분위기</legend>
-          {([
-            ["all", "모든 분위기"],
-            ["calm", "잔잔함"],
-            ["mystery", "미스터리"],
-          ] as const).map(([value, label]) => (
+          {(
+            [
+              ["all", "모든 분위기"],
+              ["calm", "잔잔함"],
+              ["mystery", "미스터리"],
+            ] as const
+          ).map(([value, label]) => (
             <label key={value}>
               <input
                 type="radio"
@@ -268,10 +274,18 @@ export function Discovery({
       <div className="discovery-result-heading">
         <p className="results-count" role="status">
           {count}편의 이야기
-          {visibleReady.length > 0 ? ` · 읽기 가능 ${visibleReady.length}편` : ""}
-          {visibleComing.length > 0 ? ` · 공개 예정 ${visibleComing.length}편` : ""}
+          {visibleReady.length > 0
+            ? ` · 읽기 가능 ${visibleReady.length}편`
+            : ""}
+          {visibleComing.length > 0
+            ? ` · 공개 예정 ${visibleComing.length}편`
+            : ""}
         </p>
-        <button type="button" className="fs-text-link discovery-reset" onClick={reset}>
+        <button
+          type="button"
+          className="fs-text-link discovery-reset"
+          onClick={reset}
+        >
           필터 초기화
         </button>
       </div>
@@ -319,8 +333,8 @@ export function Discovery({
         >
           <p className="preview-dialog-summary">{selected.summary}</p>
           <p>
-            본문과 읽기 기능은 아직 공개되지 않았습니다.
-            현재 완결된 두 작품은 지금 읽을 수 있습니다.
+            본문과 읽기 기능은 아직 공개되지 않았습니다. 현재 완결된 두 작품은
+            지금 읽을 수 있습니다.
           </p>
           <a className="fs-text-link" href="/discover?status=ready">
             지금 읽을 수 있는 작품 보기 ↗
