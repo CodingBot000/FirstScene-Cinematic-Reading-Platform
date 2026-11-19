@@ -74,6 +74,7 @@ test("mobile is a native scroll page with usable chapter links and preview dialo
     page.locator('.preview-jump-nav a[href="#preview-city"]'),
   ).toHaveAttribute("aria-current", "location");
   await page
+    .locator("#preview-city")
     .getByRole("button", { name: /지하철이 지나지 않는 역, 공개 준비 중 안내 열기/ })
     .click();
   await expect(page.getByRole("dialog")).toBeVisible();
