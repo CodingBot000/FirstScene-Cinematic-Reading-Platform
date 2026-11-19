@@ -141,4 +141,5 @@ test("library on an untouched browser shows an actionable empty state", async ({
     "href",
     "/discover",
   );
+  await expect(page.locator(".library-section")).toHaveCount(0);
 });
