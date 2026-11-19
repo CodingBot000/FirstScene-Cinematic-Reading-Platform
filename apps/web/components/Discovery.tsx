@@ -42,7 +42,21 @@ function PreviewCard({
         onClick={() => onSelect(story)}
         aria-label={`${story.title}, 공개 준비 중 안내 열기`}
       >
-        <span className="preview-cover" data-palette={story.palette}>
+        <span
+          className="preview-cover"
+          data-palette={story.palette}
+          data-illustrated={story.artworkAsset ? "true" : undefined}
+        >
+          {story.artworkAsset ? (
+            <img
+              className="preview-cover-illustration"
+              src={story.artworkAsset}
+              alt=""
+              loading="lazy"
+              decoding="async"
+              aria-hidden="true"
+            />
+          ) : null}
           <span className="preview-cover-overline">
             FIRSTSCENE / {String(index + 1).padStart(2, "0")}
           </span>
