@@ -153,7 +153,7 @@ test("mobile: landing → discovery → introduction → reading → library →
     expect(control.right).toBeLessThanOrEqual(391);
   }
 
-  await page.getByRole("button", { name: "← 작품 소개" }).click();
+  await page.getByRole("button", { name: "작품 소개로 돌아가기" }).click();
   await expect(page).toHaveURL(/\/stories\/post-office$/);
   await page.getByRole("link", { name: "내 서재" }).click();
   await expect(page).toHaveURL(/\/library$/);
