@@ -458,14 +458,18 @@ html{scroll-behavior:auto}#main{scroll-margin-top:96px}body{margin:0;background:
 .discovery-preview-genre{display:block;margin-top:7px;font-size:11px;color:var(--fs-muted)}
 .discovery-preview-card .preview-cover{box-shadow:0 10px 24px rgba(16,25,33,.1)}
 .discovery-catalog .preview-card-summary{display:-webkit-box;-webkit-line-clamp:2;line-clamp:2}
+/* Never animate opacity on text or links. Intermediate alpha lowers
+   effective foreground contrast during axe checks and actual reading. */
 @media (prefers-reduced-motion:no-preference){
-  .discovery-catalog>*{animation:discovery-appear .38s ease-out both}
-  .discovery-catalog>*:nth-child(4n + 2){animation-delay:35ms}
-  .discovery-catalog>*:nth-child(4n + 3){animation-delay:65ms}
-  .discovery-catalog>*:nth-child(4n){animation-delay:95ms}
+  .discovery-catalog>.discovery-preview-card{
+    animation:discovery-appear .38s ease-out both
+  }
+  .discovery-catalog>.discovery-preview-card:nth-child(4n + 2){animation-delay:35ms}
+  .discovery-catalog>.discovery-preview-card:nth-child(4n + 3){animation-delay:65ms}
+  .discovery-catalog>.discovery-preview-card:nth-child(4n){animation-delay:95ms}
   @keyframes discovery-appear{
-    from{opacity:0;transform:translateY(12px)}
-    to{opacity:1;transform:translateY(0)}
+    from{transform:translateY(12px)}
+    to{transform:translateY(0)}
   }
 }
 @media (max-width:1050px){
