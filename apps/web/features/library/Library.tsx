@@ -105,8 +105,9 @@ export function Library({ catalog }: { catalog: readonly LibraryStory[] }) {
           }
         />
       ) : null}
-      <>
-        <section className="library-section" aria-labelledby="recent-title">
+      {hasRecords ? (
+        <>
+          <section className="library-section" aria-labelledby="recent-title">
           <h2 id="recent-title">최근 읽기</h2>
           {recent.length ? (
             <ul className="library-recent">
@@ -300,8 +301,9 @@ export function Library({ catalog }: { catalog: readonly LibraryStory[] }) {
               마음에 남는 문장 옆의 별을 누르면 여기에 모여요.
             </p>
           )}
-        </section>
-      </>
+          </section>
+        </>
+      ) : null}
     </>
   );
 }
