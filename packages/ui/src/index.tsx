@@ -492,7 +492,11 @@ export function ReadingToolbar({
 }) {
   return (
     <header className="fs-reading-toolbar">
-      <Button variant="ghost" onClick={onBack} aria-label="작품 소개로 돌아가기">
+      <Button
+        variant="ghost"
+        onClick={onBack}
+        aria-label="작품 소개로 돌아가기"
+      >
         ← <span className="fs-back-label">작품 소개</span>
       </Button>
       <span className="fs-toolbar-title">{title}</span>
