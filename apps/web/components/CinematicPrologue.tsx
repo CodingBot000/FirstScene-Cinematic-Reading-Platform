@@ -25,7 +25,9 @@ export function CinematicPrologue({
     const root = rootRef.current;
     if (!root) return;
 
-    const desktop = window.matchMedia("(min-width: 900px)");
+    const desktop = window.matchMedia(
+      "(min-width: 1024px) and (min-height: 700px) and (pointer: fine)",
+    );
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
     let disposed = false;
     let generation = 0;
@@ -63,7 +65,14 @@ export function CinematicPrologue({
           const visuals = root.querySelectorAll<HTMLElement>(
             "[data-cinematic-visual]",
           );
-          if (beats.length !== 3 || visuals.length !== 2) return;
+          const atmospheres = root.querySelectorAll<HTMLElement>(
+            ".cinematic-atmosphere",
+          );
+          if (
+            beats.length !== 3 ||
+            visuals.length !== 2 ||
+            atmospheres.length !== 2
+          ) return;
 
           gsap.registerPlugin(ScrollTrigger);
           let context: ReturnType<typeof gsap.context> | null = null;
@@ -80,6 +89,7 @@ export function CinematicPrologue({
                 yPercent: 14,
                 scale: 1.11,
               });
+              gsap.set(atmospheres, { autoAlpha: 0 });
 
               const timeline = gsap.timeline({
                 defaults: { ease: "none" },
@@ -116,6 +126,11 @@ export function CinematicPrologue({
                   0,
                 )
                 .to(
+                  atmospheres[0]!,
+                  { autoAlpha: 0.85, duration: 0.8 },
+                  0.35,
+                )
+                .to(
                   beats[0]!,
                   {
                     autoAlpha: 0,
@@ -132,6 +147,16 @@ export function CinematicPrologue({
                     duration: 0.38,
                   },
                   0.88,
+                )
+                .to(
+                  atmospheres[0]!,
+                  { autoAlpha: 0.12, duration: 0.72 },
+                  0.99,
+                )
+                .to(
+                  atmospheres[1]!,
+                  { autoAlpha: 0.86, duration: 0.82 },
+                  1.05,
                 )
                 .to(
                   visuals[1]!,
@@ -179,6 +204,11 @@ export function CinematicPrologue({
                     duration: 0.4,
                   },
                   2.05,
+                )
+                .to(
+                  atmospheres[1]!,
+                  { autoAlpha: 0.24, duration: 0.75 },
+                  2.0,
                 )
                 .to(
                   beats[2]!,
@@ -245,6 +275,8 @@ export function CinematicPrologue({
     >
       <div className="cinematic-stage">
         <div className="cinematic-sky" aria-hidden="true">
+          <span className="cinematic-atmosphere cinematic-atmosphere--gold" />
+          <span className="cinematic-atmosphere cinematic-atmosphere--tide" />
           <span className="cinematic-halo" />
           <span className="cinematic-orbit cinematic-orbit-one" />
           <span className="cinematic-orbit cinematic-orbit-two" />
