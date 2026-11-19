@@ -34,6 +34,20 @@ export async function axe(page: Page) {
   const result = await new AxeBuilder({ page })
     .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
     .analyze();
+  if (result.violations.length) {
+    // Selected semantic evidence is enough to diagnose AA regressions
+    // without uploading full user-visible page content to CI logs.
+    console.error(
+      "VISUAL_AXE_FINDINGS " +
+        JSON.stringify(
+          result.violations.map((violation) => ({
+            rule: violation.id,
+            severity: violation.impact,
+            targets: violation.nodes.slice(0, 4).map((node) => node.target),
+          })),
+        ).slice(0, 1800),
+    );
+  }
   expect(result.violations).toEqual([]);
   return {
     violations: result.violations.length,
