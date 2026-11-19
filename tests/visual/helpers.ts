@@ -69,7 +69,11 @@ export async function capture(
   fs.writeFileSync(file, JSON.stringify(entries, null, 2) + "\n");
 }
 export async function settlePublicImages(page: Page) {
-  await page.evaluate(() => scrollTo(0, document.documentElement.scrollHeight));
+  // Full-page captures include images below the fold. Force native lazy
+  // images to fetch without artificially changing the user's product code.
+  await page.locator("img").evaluateAll((images) => {
+    for (const image of images) (image as HTMLImageElement).loading = "eager";
+  });
   await expect
     .poll(() =>
       page
