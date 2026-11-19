@@ -11,7 +11,6 @@ import {
 } from "../lib/preview-catalog";
 
 type Availability = "all" | "ready" | "coming";
-type Genre = "all" | (typeof previewShelves)[number]["id"];
 
 const normalize = (text: string) =>
   text.normalize("NFC").toLocaleLowerCase("ko");
@@ -181,7 +180,7 @@ export function Discovery({
   return (
     <>
       <form className="discovery-form discovery-form-wide" method="get" action="/discover">
-        <label htmlFor="story-search">작품 찾기</label>
+        <label htmlFor="story-search">작품 제목 검색</label>
         <div className="search-row">
           <input
             id="story-search"
@@ -278,7 +277,7 @@ export function Discovery({
       </div>
 
       {count ? (
-        <div className="discovery-catalog" key={`${status}:${mood}:${genre}:${q}`}>
+        <div className="discovery-catalog" key={`${status}:${mood}:${genre}`}>
           {visibleReady.map((card) => (
             <div key={card.id} className="discovery-finished-card">
               <StoryCard {...card} />
