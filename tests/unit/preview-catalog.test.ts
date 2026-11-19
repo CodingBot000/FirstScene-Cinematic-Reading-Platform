@@ -1,4 +1,6 @@
 import { describe, expect, it } from "vitest";
+import { existsSync, readFileSync } from "node:fs";
+import path from "node:path";
 import {
   previewCount,
   previewShelves,
@@ -22,6 +24,23 @@ describe("landing preview catalog", () => {
       expect(story.summary.trim().length).toBeGreaterThan(15);
       expect(story.symbol.length).toBeGreaterThan(0);
       expect(story.palette.length).toBeGreaterThan(0);
+    }
+  });
+
+  it("keeps eight unique bundled SVG covers without remote assets or scripts", () => {
+    const illustrated = items.filter((story) => story.artworkAsset);
+    expect(illustrated).toHaveLength(8);
+    expect(new Set(illustrated.map((story) => story.artworkAsset)).size).toBe(8);
+    for (const story of illustrated) {
+      expect(story.artworkAsset).toMatch(
+        /^\\/illustrations\\/[a-z0-9-]+\\.svg$/,
+      );
+      const file = path.join("apps/web/public", story.artworkAsset!);
+      expect(existsSync(file)).toBe(true);
+      const content = readFileSync(file, "utf8");
+      expect(content).toContain("<svg ");
+      expect(content).toContain("</svg>");
+      expect(content).not.toMatch(/<script|onload=|<foreignObject|https?:\\/\\//i);
     }
   });
 
