@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import "@firstscene/tokens/css";
 import "@firstscene/ui/css";
 import "./site.css";
+import "./mobile-journey.css";
 import "../components/cinematic-prologue.css";
 export const metadata: Metadata = {
   title: {

@@ -213,7 +213,12 @@ export function Discovery({
                 name="status"
                 value={value}
                 checked={status === value}
-                onChange={() => setStatus(value)}
+                onChange={() => {
+                  setStatus(value);
+                  // Genre shelves currently contain unpublished concepts only.
+                  // Switching to the two readable stories resets this incompatible filter.
+                  if (value === "ready") setGenre("all");
+                }}
               />
               <span>{label}</span>
             </label>
@@ -262,7 +267,11 @@ export function Discovery({
                   name="genre"
                   value={shelf.id}
                   checked={genre === shelf.id}
-                  onChange={() => setGenre(shelf.id)}
+                  onChange={() => {
+                    setGenre(shelf.id);
+                    // Choosing an upcoming-only shelf cannot yield readable titles.
+                    if (status === "ready") setStatus("coming");
+                  }}
                 />
                 <span>{shelf.genre}</span>
               </label>

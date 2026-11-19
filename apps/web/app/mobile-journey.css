@@ -1,0 +1,81 @@
+/*
+ * Small-screen journey polish.
+ * Layout-only overrides for existing public routes; components remain owned by
+ * their current features (Discovery, StoryActions, Library, Settings, Reader).
+ * 44px targets and >=16px text input avoid mobile mis-taps and Safari zoom.
+ */
+@media (max-width: 640px) {
+  .discovery-form-wide .search-row input {
+    font-size: 16px;
+  }
+  .discovery-form-wide .mood-filters label,
+  .discovery-genre-options label {
+    min-height: 44px;
+  }
+  .discovery-form-wide .mood-filters label span,
+  .discovery-genre-options label span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .discovery-genre-options {
+    gap: 8px;
+  }
+  .discovery-result-heading {
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0 12px;
+    padding-block: 12px;
+  }
+  .discovery-result-heading .results-count {
+    flex: 1 1 170px;
+    padding-block: 8px;
+  }
+  .discovery-reset {
+    min-height: 44px;
+    padding: 9px 4px;
+  }
+
+  .story-detail .story-actions {
+    align-items: stretch;
+    gap: 12px;
+  }
+  .story-detail .story-actions .fs-button,
+  .story-detail .story-actions .fs-text-link {
+    min-height: 44px;
+  }
+  .story-detail .story-actions .fs-text-link {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .library-section .library-cover {
+    min-width: 0;
+  }
+  .library-section .library-recent > li > div,
+  .library-section .library-stories > li > div {
+    min-width: 0;
+  }
+  .library-section .fs-text-link,
+  .library-section .library-actions .fs-button {
+    min-height: 44px;
+  }
+  .settings-fieldset .fs-toggle-group label {
+    min-height: 44px;
+  }
+}
+@media (max-width: 359px) {
+  .discovery-genre-options {
+    gap: 6px;
+  }
+  .discovery-genre-options span {
+    padding-inline: 10px;
+  }
+  .story-detail .story-actions .fs-button {
+    flex: 1 1 100%;
+  }
+  .library-section .library-recent > li,
+  .library-section .library-stories > li {
+    column-gap: 14px;
+  }
+}
