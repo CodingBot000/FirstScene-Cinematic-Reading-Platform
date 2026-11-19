@@ -122,6 +122,13 @@ test("mobile: landing → discovery → introduction → reading → library →
   await expect(
     page.getByRole("button", { name: "★ 작품 저장됨", exact: true }),
   ).toHaveAttribute("aria-pressed", "true");
+  await expect
+    .poll(async () => {
+      const response = await page.request.get("/api/v1/me");
+      if (response.status() !== 200) return 0;
+      return (await response.json()).bookmarks.length as number;
+    })
+    .toBe(1);
 
   await page.getByRole("link", { name: "첫 장면 읽기", exact: true }).click();
   await expect(page).toHaveURL(/\/read\/post-office/);
@@ -173,4 +180,32 @@ test("mobile: anonymous empty library shows one clear invitation, not repeated e
   await expect(page.getByRole("link", { name: "이야기 만나기" })).toBeVisible();
   await page.getByRole("link", { name: "이야기 만나기" }).click();
   await expect(page).toHaveURL(/\/discover$/);
+});
+
+test("mobile: removing the final saved story restores focus to the empty library action", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/stories/post-office");
+  const save = page.getByRole("button", { name: "☆ 작품 저장", exact: true });
+  await expect(save).toBeEnabled();
+  await save.click();
+  await expect
+    .poll(async () => {
+      const response = await page.request.get("/api/v1/me");
+      if (response.status() !== 200) return 0;
+      return (await response.json()).bookmarks.length as number;
+    })
+    .toBe(1);
+
+  await page.goto("/library");
+  await expect(page.locator(".library-stories li")).toHaveCount(1);
+  await page
+    .locator(".library-stories")
+    .getByRole("button", { name: "저장 해제", exact: true })
+    .click();
+  await expect(
+    page.getByRole("link", { name: "이야기 만나기" }),
+  ).toBeFocused();
+  await expect(page.locator(".library-section")).toHaveCount(0);
 });
