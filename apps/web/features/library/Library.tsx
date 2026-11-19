@@ -20,7 +20,8 @@ export function Library({ catalog }: { catalog: readonly LibraryStory[] }) {
     sync,
   } = useReaderPreferences();
   const quoteHeading = useRef<HTMLHeadingElement>(null),
-    storyHeading = useRef<HTMLHeadingElement>(null);
+    storyHeading = useRef<HTMLHeadingElement>(null),
+    emptyAction = useRef<HTMLAnchorElement>(null);
   const bookmarks = desiredBookmarks(remote);
   const savedStories = bookmarks.filter((b) => b.targetId === "__story__");
   const quotes = bookmarks.filter((b) => b.targetId !== "__story__");
@@ -50,7 +51,7 @@ export function Library({ catalog }: { catalog: readonly LibraryStory[] }) {
               "[data-remove-key]",
             ),
           ].find((button) => button.dataset.removeKey === nextKey)
-        : heading.current
+        : (heading.current ?? emptyAction.current)
       )?.focus();
     });
   }
@@ -99,209 +100,223 @@ export function Library({ catalog }: { catalog: readonly LibraryStory[] }) {
           title="아직 남긴 독서 기록이 없어요."
           description="이야기를 읽거나 마음에 남는 문장을 저장하면 여기에 모여요."
           action={
-            <a href="/discover" className="fs-text-link">
+            <a href="/discover" className="fs-text-link" ref={emptyAction}>
               이야기 만나기 →
             </a>
           }
         />
       ) : null}
-      <>
-        <section className="library-section" aria-labelledby="recent-title">
-          <h2 id="recent-title">최근 읽기</h2>
-          {recent.length ? (
-            <ul className="library-recent">
-              {recent.map(({ story, cover, anchor }) => {
-                const scene = story.scenes.find((s) => s.id === anchor.sceneId);
-                const count = story.scenes.reduce(
-                  (sum, s) => sum + s.beats.length,
-                  0,
-                );
-                const percent = anchor.completed
-                  ? 100
-                  : Math.min(
-                      99,
-                      Math.round(((anchor.furthestOrdinal + 1) / count) * 100),
-                    );
-                return (
-                  <li key={story.id}>
-                    <a href={"/read/" + story.id} className="library-cover">
-                      <ResponsiveAsset {...cover} aspectRatio="3 / 4" />
-                    </a>
-                    <div>
-                      <p className="genre">
-                        {anchor.completed
-                          ? "완독한 이야기"
-                          : "이어 읽는 이야기"}
-                      </p>
-                      <h3>
-                        <a href={"/stories/" + story.id}>{story.title}</a>
-                      </h3>
-                      <p>{scene?.title ?? "새 첫 장면"}</p>
-                      <Progress
-                        value={percent}
-                        max={100}
-                        label="최대로 읽은 위치 (추정)"
-                      />
-                      <p className="reading-note">
-                        최대로 읽은 위치 약 {percent}%
-                      </p>
-                      <a href={"/read/" + story.id} className="fs-text-link">
-                        이어 읽기 →
-                      </a>
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
-          ) : (
-            <p className="reading-note">아직 읽기 위치가 없어요.</p>
-          )}
-        </section>
-        <section
-          className="library-section"
-          aria-labelledby="saved-stories-title"
-        >
-          <h2 id="saved-stories-title" tabIndex={-1} ref={storyHeading}>
-            저장한 작품
-          </h2>
-          {savedStories.length ? (
-            <ul className="library-stories">
-              {savedStories.map((b, index) => {
-                const info = catalog.find((c) => c.story.id === b.storyId);
-                if (!info)
+      {hasRecords ? (
+        <>
+          <section className="library-section" aria-labelledby="recent-title">
+            <h2 id="recent-title">최근 읽기</h2>
+            {recent.length ? (
+              <ul className="library-recent">
+                {recent.map(({ story, cover, anchor }) => {
+                  const scene = story.scenes.find(
+                    (s) => s.id === anchor.sceneId,
+                  );
+                  const count = story.scenes.reduce(
+                    (sum, s) => sum + s.beats.length,
+                    0,
+                  );
+                  const percent = anchor.completed
+                    ? 100
+                    : Math.min(
+                        99,
+                        Math.round(
+                          ((anchor.furthestOrdinal + 1) / count) * 100,
+                        ),
+                      );
                   return (
-                    <li key={b.storyId}>
-                      <p>현재 제공하지 않는 이야기</p>
-                      <Button
-                        disabled={remote.paused}
-                        onClick={() =>
-                          remove(
-                            b.storyId,
-                            b.targetId,
-                            b.contentVersion,
-                            null,
-                            storyHeading,
-                          )
-                        }
-                      >
-                        기록에서 삭제
-                      </Button>
+                    <li key={story.id}>
+                      <a href={"/read/" + story.id} className="library-cover">
+                        <ResponsiveAsset {...cover} aspectRatio="3 / 4" />
+                      </a>
+                      <div>
+                        <p className="genre">
+                          {anchor.completed
+                            ? "완독한 이야기"
+                            : "이어 읽는 이야기"}
+                        </p>
+                        <h3>
+                          <a href={"/stories/" + story.id}>{story.title}</a>
+                        </h3>
+                        <p>{scene?.title ?? "새 첫 장면"}</p>
+                        <Progress
+                          value={percent}
+                          max={100}
+                          label="최대로 읽은 위치 (추정)"
+                        />
+                        <p className="reading-note">
+                          최대로 읽은 위치 약 {percent}%
+                        </p>
+                        <a href={"/read/" + story.id} className="fs-text-link">
+                          이어 읽기 →
+                        </a>
+                      </div>
                     </li>
                   );
-                const key = b.storyId + ":" + b.targetId;
-                const next = savedStories[index + 1];
-                return (
-                  <li key={key}>
-                    <a href={"/stories/" + b.storyId} className="library-cover">
-                      <ResponsiveAsset {...info.cover} aspectRatio="3 / 4" />
-                    </a>
-                    <div>
-                      <h3>
-                        <a href={"/stories/" + b.storyId}>{info.story.title}</a>
-                      </h3>
+                })}
+              </ul>
+            ) : (
+              <p className="reading-note">아직 읽기 위치가 없어요.</p>
+            )}
+          </section>
+          <section
+            className="library-section"
+            aria-labelledby="saved-stories-title"
+          >
+            <h2 id="saved-stories-title" tabIndex={-1} ref={storyHeading}>
+              저장한 작품
+            </h2>
+            {savedStories.length ? (
+              <ul className="library-stories">
+                {savedStories.map((b, index) => {
+                  const info = catalog.find((c) => c.story.id === b.storyId);
+                  if (!info)
+                    return (
+                      <li key={b.storyId}>
+                        <p>현재 제공하지 않는 이야기</p>
+                        <Button
+                          disabled={remote.paused}
+                          onClick={() =>
+                            remove(
+                              b.storyId,
+                              b.targetId,
+                              b.contentVersion,
+                              null,
+                              storyHeading,
+                            )
+                          }
+                        >
+                          기록에서 삭제
+                        </Button>
+                      </li>
+                    );
+                  const key = b.storyId + ":" + b.targetId;
+                  const next = savedStories[index + 1];
+                  return (
+                    <li key={key}>
                       <a
                         href={"/stories/" + b.storyId}
-                        className="fs-text-link"
+                        className="library-cover"
                       >
-                        작품 열기 →
+                        <ResponsiveAsset {...info.cover} aspectRatio="3 / 4" />
                       </a>
-                      <Button
-                        variant="ghost"
-                        disabled={remote.paused}
-                        data-remove-key={key}
-                        onClick={() =>
-                          remove(
-                            b.storyId,
-                            b.targetId,
-                            b.contentVersion,
-                            next ? next.storyId + ":" + next.targetId : null,
-                            storyHeading,
-                          )
-                        }
-                        aria-label={info.story.title + " 저장 해제"}
-                      >
-                        저장 해제
-                      </Button>
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
-          ) : (
-            <p className="reading-note">
-              저장한 작품이 없어요. 작품 소개에서 별을 눌러 보관할 수 있어요.
-            </p>
-          )}
-        </section>
-        <section
-          className="library-section"
-          aria-labelledby="saved-quotes-title"
-        >
-          <h2 id="saved-quotes-title" tabIndex={-1} ref={quoteHeading}>
-            저장한 문장
-          </h2>
-          {quotes.length ? (
-            <ol className="library-quotes">
-              {quotes.map((b, index) => {
-                const info = catalog.find((c) => c.story.id === b.storyId);
-                const scene = info?.story.scenes.find((s) =>
-                  s.beats.some((beat) => beat.id === b.targetId),
-                );
-                const beat = scene?.beats.find(
-                  (beat) => beat.id === b.targetId,
-                );
-                const key = b.storyId + ":" + b.targetId;
-                const next = quotes[index + 1];
-                return (
-                  <li key={key} data-bookmark={b.targetId}>
-                    <p className="genre">
-                      {info?.story.title ?? "이전 이야기"} ·{" "}
-                      {scene?.title ?? "변경된 문장"}
-                    </p>
-                    <blockquote>
-                      {beat?.text ??
-                        "이 문장은 갱신됐어요. 작품의 첫 장면에서 다시 읽을 수 있어요."}
-                    </blockquote>
-                    <div className="library-actions">
-                      <a
-                        href={
-                          "/read/" + b.storyId + (beat ? "#" + b.targetId : "")
-                        }
-                        className="fs-text-link"
-                      >
-                        {beat ? "문장 열기 →" : "이야기 열기 →"}
-                      </a>
-                      <Button
-                        variant="ghost"
-                        disabled={remote.paused}
-                        data-remove-key={key}
-                        onClick={() =>
-                          remove(
-                            b.storyId,
-                            b.targetId,
-                            b.contentVersion,
-                            next ? next.storyId + ":" + next.targetId : null,
-                            quoteHeading,
-                          )
-                        }
-                        aria-label={
-                          (scene?.title ?? "변경된 문장") + "의 문장 저장 해제"
-                        }
-                      >
-                        저장 해제
-                      </Button>
-                    </div>
-                  </li>
-                );
-              })}
-            </ol>
-          ) : (
-            <p className="reading-note">
-              마음에 남는 문장 옆의 별을 누르면 여기에 모여요.
-            </p>
-          )}
-        </section>
-      </>
+                      <div>
+                        <h3>
+                          <a href={"/stories/" + b.storyId}>
+                            {info.story.title}
+                          </a>
+                        </h3>
+                        <a
+                          href={"/stories/" + b.storyId}
+                          className="fs-text-link"
+                        >
+                          작품 열기 →
+                        </a>
+                        <Button
+                          variant="ghost"
+                          disabled={remote.paused}
+                          data-remove-key={key}
+                          onClick={() =>
+                            remove(
+                              b.storyId,
+                              b.targetId,
+                              b.contentVersion,
+                              next ? next.storyId + ":" + next.targetId : null,
+                              storyHeading,
+                            )
+                          }
+                          aria-label={info.story.title + " 저장 해제"}
+                        >
+                          저장 해제
+                        </Button>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            ) : (
+              <p className="reading-note">
+                저장한 작품이 없어요. 작품 소개에서 별을 눌러 보관할 수 있어요.
+              </p>
+            )}
+          </section>
+          <section
+            className="library-section"
+            aria-labelledby="saved-quotes-title"
+          >
+            <h2 id="saved-quotes-title" tabIndex={-1} ref={quoteHeading}>
+              저장한 문장
+            </h2>
+            {quotes.length ? (
+              <ol className="library-quotes">
+                {quotes.map((b, index) => {
+                  const info = catalog.find((c) => c.story.id === b.storyId);
+                  const scene = info?.story.scenes.find((s) =>
+                    s.beats.some((beat) => beat.id === b.targetId),
+                  );
+                  const beat = scene?.beats.find(
+                    (beat) => beat.id === b.targetId,
+                  );
+                  const key = b.storyId + ":" + b.targetId;
+                  const next = quotes[index + 1];
+                  return (
+                    <li key={key} data-bookmark={b.targetId}>
+                      <p className="genre">
+                        {info?.story.title ?? "이전 이야기"} ·{" "}
+                        {scene?.title ?? "변경된 문장"}
+                      </p>
+                      <blockquote>
+                        {beat?.text ??
+                          "이 문장은 갱신됐어요. 작품의 첫 장면에서 다시 읽을 수 있어요."}
+                      </blockquote>
+                      <div className="library-actions">
+                        <a
+                          href={
+                            "/read/" +
+                            b.storyId +
+                            (beat ? "#" + b.targetId : "")
+                          }
+                          className="fs-text-link"
+                        >
+                          {beat ? "문장 열기 →" : "이야기 열기 →"}
+                        </a>
+                        <Button
+                          variant="ghost"
+                          disabled={remote.paused}
+                          data-remove-key={key}
+                          onClick={() =>
+                            remove(
+                              b.storyId,
+                              b.targetId,
+                              b.contentVersion,
+                              next ? next.storyId + ":" + next.targetId : null,
+                              quoteHeading,
+                            )
+                          }
+                          aria-label={
+                            (scene?.title ?? "변경된 문장") +
+                            "의 문장 저장 해제"
+                          }
+                        >
+                          저장 해제
+                        </Button>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ol>
+            ) : (
+              <p className="reading-note">
+                마음에 남는 문장 옆의 별을 누르면 여기에 모여요.
+              </p>
+            )}
+          </section>
+        </>
+      ) : null}
     </>
   );
 }
