@@ -489,3 +489,55 @@ html{scroll-behavior:auto}#main{scroll-margin-top:96px}body{margin:0;background:
   .discovery-catalog .discovery-finished-card .fs-story-card{display:block}
   .discovery-catalog .discovery-finished-card .fs-story-cover{width:55%;margin-bottom:10px}
 }
+
+
+/* Eight art-directed SVG covers; existing 26 symbolic previews stay intact. */
+.preview-cover[data-illustrated="true"]{
+  background:#233446;
+}
+.preview-cover-illustration{
+  position:absolute;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:0;
+  pointer-events:none;
+  transform:scale(1.015);
+  transition:transform .45s cubic-bezier(.2,.8,.2,1),filter .45s ease;
+}
+.preview-cover[data-illustrated="true"]::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:linear-gradient(
+    180deg,
+    rgba(7,16,30,.29) 0%,
+    transparent 29%,
+    transparent 49%,
+    rgba(5,11,23,.56) 84%,
+    rgba(5,11,23,.75) 100%
+  );
+}
+.preview-cover[data-illustrated="true"] .preview-cover-art{display:none}
+.preview-cover[data-illustrated="true"] .preview-cover-overline,
+.preview-cover[data-illustrated="true"] .preview-cover-title,
+.preview-cover[data-illustrated="true"] .preview-cover-imprint{
+  position:relative;
+  z-index:2;
+  color:#fff7ed;
+  text-shadow:0 2px 10px rgba(0,0,0,.48);
+}
+@media (hover:hover) and (pointer:fine){
+  .preview-card:hover .preview-cover-illustration,
+  .preview-teaser-item:hover .preview-cover-illustration{
+    transform:scale(1.055);
+    filter:saturate(1.1);
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  .preview-cover-illustration{transition:none!important;transform:none!important}
+}
