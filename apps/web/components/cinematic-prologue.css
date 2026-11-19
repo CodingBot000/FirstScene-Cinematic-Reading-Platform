@@ -449,27 +449,45 @@
   }
 
 }
+/* On very narrow phones, do not squeeze Korean headings into a tiny
+   side column. Keep each cover and its prose together as one stacked scene. */
 @media (max-width: 359px) {
   .cinematic-stage {
-    padding-inline: 13px;
+    padding-inline: 16px;
   }
-  .cinematic-scene {
-    gap: 9px;
+  .cinematic-scene,
+  .cinematic-scene[data-layout="reverse"] {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 16px;
+    padding-block: 28px;
   }
-  .cinematic-beat h1, .cinematic-beat h2 {
-    font-size: 21px;
+  .cinematic-scene .cinematic-visual {
+    align-self: center;
+    width: min(58%, 168px);
+    margin: 0;
+  }
+  .cinematic-beat {
+    width: 100%;
+  }
+  .cinematic-beat h1,
+  .cinematic-beat h2 {
+    font-size: clamp(24px, 8vw, 28px);
+    line-height: 1.32;
   }
   .cinematic-kicker {
-    font-size: 7px;
+    font-size: 9px;
+    letter-spacing: .06em;
   }
   .cinematic-excerpt {
-    font-size: 11px;
+    font-size: 12px;
+    line-height: 1.75;
   }
   .cinematic-scene-action {
-    font-size: 10px;
-    padding-inline: 8px;
+    font-size: 12px;
+    padding-inline: 14px;
   }
-
 }
 @media (prefers-reduced-motion: reduce) {
   .cinematic-scene-action,

@@ -51,12 +51,21 @@ test("each narrow-screen scene pairs its own art, text, and working destination"
 
     for (const scene of layout) {
       expect(scene.imageCount).toBeGreaterThan(0);
-      expect(scene.image.top).toBeLessThan(scene.text.bottom);
-      expect(scene.image.bottom).toBeGreaterThan(scene.text.top);
-      expect(
-        scene.text.right <= scene.image.left + 1 ||
-          scene.image.right <= scene.text.left + 1,
-      ).toBe(true);
+      if (width <= 359) {
+        // Tiny phone: cover above copy, without compressing Korean headings.
+        expect(scene.image.bottom).toBeLessThanOrEqual(scene.text.top + 1);
+      } else {
+        // Other mobile widths: related cover and copy side by side.
+        expect(scene.image.top).toBeLessThan(scene.text.bottom);
+        expect(scene.image.bottom).toBeGreaterThan(scene.text.top);
+        expect(
+          scene.text.right <= scene.image.left + 1 ||
+            scene.image.right <= scene.text.left + 1,
+        ).toBe(true);
+        if (scene.sceneId === "1") {
+          expect(scene.image.right).toBeLessThanOrEqual(scene.text.left + 1);
+        }
+      }
     }
 
     const browser = await page.evaluate(() => ({
@@ -69,12 +78,35 @@ test("each narrow-screen scene pairs its own art, text, and working destination"
     expect(browser.scroll).toBeLessThanOrEqual(browser.viewport + 1);
     expect(browser.settings).toBeLessThanOrEqual(browser.viewport + 1);
 
-    if (width === 390) {
+    if (width === 320 || width === 390) {
       await page.screenshot({
-        path: "evidence/ui/mobile-cinematic-scenes-390.png",
+        path: `evidence/ui/mobile-cinematic-scenes-${width}.png`,
         fullPage: false,
       });
     }
+  }
+});
+
+test("preview card copy stays opaque during scroll reveal", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.goto("/");
+
+  const first = page.locator(".preview-tile").first();
+  const last = page.locator(".preview-tile").last();
+
+  for (const tile of [first, last]) {
+    await expect
+      .poll(() =>
+        tile.evaluate((element) => getComputedStyle(element).opacity),
+      )
+      .toBe("1");
+    await tile.scrollIntoViewIfNeeded();
+    await expect
+      .poll(() =>
+        tile.evaluate((element) => getComputedStyle(element).opacity),
+      )
+      .toBe("1");
   }
 });
 
