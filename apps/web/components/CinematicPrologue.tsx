@@ -4,13 +4,118 @@ import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { ResponsiveAsset } from "@firstscene/ui";
 import type { AssetProps } from "@firstscene/ui";
+import {
+  cinematicScenes,
+  type CinematicSceneDefinition,
+} from "../lib/cinematic-scenes";
+
+type SceneArtworkProps = {
+  scene: CinematicSceneDefinition;
+  index: number;
+  postCover: AssetProps;
+  tideCover: AssetProps;
+};
+
+function SceneArtwork({
+  scene,
+  index,
+  postCover,
+  tideCover,
+}: SceneArtworkProps) {
+  return (
+    <figure
+      className="cinematic-visual"
+      data-cinematic-visual={index}
+      aria-hidden="true"
+    >
+      {scene.illustration === "archive" ? (
+        <div className="cinematic-archive-art">
+          <img
+            src="/illustrations/midnight-restoration.svg"
+            width="480"
+            height="640"
+            loading="lazy"
+            decoding="async"
+            alt=""
+          />
+          <img
+            src="/illustrations/paper-kingdom.svg"
+            width="480"
+            height="640"
+            loading="lazy"
+            decoding="async"
+            alt=""
+          />
+        </div>
+      ) : (
+        <ResponsiveAsset
+          {...(scene.illustration === "post" ? postCover : tideCover)}
+          decorative
+          priority={index === 0}
+          aspectRatio="3 / 4"
+          sizes="(max-width: 359px) 90px, (max-width: 640px) 124px, (max-width: 1023px) 35vw, 350px"
+        />
+      )}
+      <figcaption>{scene.artworkCaption}</figcaption>
+    </figure>
+  );
+}
+
+function CinematicScene({
+  scene,
+  index,
+  postCover,
+  tideCover,
+}: SceneArtworkProps) {
+  const title = (
+    <>
+      <span className="cinematic-title-line">{scene.heading}</span>
+      <span className="cinematic-title-line cinematic-title-accent">
+        {scene.accent}
+      </span>
+    </>
+  );
+
+  return (
+    <article
+      className="cinematic-scene"
+      data-cinematic-scene={index}
+      data-layout={index === 1 ? "reverse" : "normal"}
+      aria-labelledby={`cinematic-heading-${scene.id}`}
+    >
+      <div className="cinematic-beat" data-cinematic-beat={index}>
+        <p className="cinematic-kicker">{scene.eyebrow}</p>
+        {index === 0 ? (
+          <h1 id={`cinematic-heading-${scene.id}`}>{title}</h1>
+        ) : (
+          <h2 id={`cinematic-heading-${scene.id}`}>{title}</h2>
+        )}
+        <p className="cinematic-excerpt">
+          {scene.description[0]}
+          <br />
+          {scene.description[1]}
+        </p>
+        <p className="cinematic-beat-number">{scene.chapter}</p>
+        <Link className="cinematic-scene-action" href={scene.href}>
+          {scene.action} <span aria-hidden="true">↗</span>
+        </Link>
+      </div>
+      <SceneArtwork
+        scene={scene}
+        index={index}
+        postCover={postCover}
+        tideCover={tideCover}
+      />
+    </article>
+  );
+}
 
 /**
- * The complete story reader remains separate from this presentational intro.
+ * Desktop: lazily loads ScrollTrigger and pins three semantic scenes.
+ * Mobile, touch, reduced motion and no-JS: three normal-flow scene rows,
+ * each containing its own relevant image, description, and working CTA.
  *
- * Desktop + motion permitted: a bounded GSAP ScrollTrigger pin/scrub sequence.
- * Small screens, reduced-motion, failed JS and no-JS: all three beats remain
- * in the normal document flow, with no forced scrolling or invisible copy.
+ * The scene data and GSAP timeline live in separate small modules.
  */
 export function CinematicPrologue({
   postCover,
@@ -31,221 +136,45 @@ export function CinematicPrologue({
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
     let disposed = false;
     let generation = 0;
-    let removeAnimation = () => {};
+    let cleanup = () => {};
 
-    const setup = () => {
-      generation += 1;
-      const ticket = generation;
-      removeAnimation();
-      removeAnimation = () => {};
-      root.classList.remove("cinematic-ready");
+    const configure = () => {
+      const current = ++generation;
+      cleanup();
+      cleanup = () => {};
       root.dataset.scrollMode = "static";
       root.dataset.scene = "0";
-      root.style.removeProperty("--cinematic-progress");
-
-      // Do not even fetch the animation bundle when motion is disallowed.
       if (!desktop.matches || reduced.matches) return;
 
-      void Promise.all([import("gsap"), import("gsap/ScrollTrigger")])
-        .then(([gsapModule, scrollModule]) => {
+      void import("../lib/cinematic-scroll")
+        .then(({ mountCinematicScroll }) => {
           if (
             disposed ||
-            ticket !== generation ||
+            current !== generation ||
             !desktop.matches ||
             reduced.matches
-          ) {
-            return;
-          }
-
-          const { gsap } = gsapModule;
-          const { ScrollTrigger } = scrollModule;
-          const beats = root.querySelectorAll<HTMLElement>(
-            "[data-cinematic-beat]",
-          );
-          const visuals = root.querySelectorAll<HTMLElement>(
-            "[data-cinematic-visual]",
-          );
-          const atmospheres = root.querySelectorAll<HTMLElement>(
-            ".cinematic-atmosphere",
-          );
-          if (
-            beats.length !== 3 ||
-            visuals.length !== 2 ||
-            atmospheres.length !== 2
           )
             return;
-
-          gsap.registerPlugin(ScrollTrigger);
-          let context: ReturnType<typeof gsap.context> | null = null;
-
-          try {
-            root.classList.add("cinematic-ready");
-            context = gsap.context(() => {
-              gsap.set([beats[1]!, beats[2]!], {
-                autoAlpha: 0,
-                y: 58,
-              });
-              gsap.set(visuals[1]!, {
-                autoAlpha: 0,
-                yPercent: 14,
-                scale: 1.11,
-              });
-              gsap.set(atmospheres, { autoAlpha: 0 });
-
-              const timeline = gsap.timeline({
-                defaults: { ease: "none" },
-                scrollTrigger: {
-                  trigger: root,
-                  pin: true,
-                  start: "top top",
-                  end: () => "+=" + Math.round(window.innerHeight * 2.25),
-                  scrub: 0.55,
-                  anticipatePin: 1,
-                  invalidateOnRefresh: true,
-                  onUpdate: (self) => {
-                    root.style.setProperty(
-                      "--cinematic-progress",
-                      String(self.progress),
-                    );
-                    root.dataset.scene = String(
-                      self.progress < 0.34 ? 0 : self.progress < 0.68 ? 1 : 2,
-                    );
-                  },
-                },
-              });
-
-              // Beat 01: the opening line and the first finished story.
-              timeline
-                .to(
-                  visuals[0]!,
-                  {
-                    scale: 1.18,
-                    xPercent: 9,
-                    yPercent: -11,
-                    duration: 1.03,
-                  },
-                  0,
-                )
-                .to(atmospheres[0]!, { autoAlpha: 0.85, duration: 0.8 }, 0.35)
-                .to(
-                  beats[0]!,
-                  {
-                    autoAlpha: 0,
-                    y: -45,
-                    duration: 0.3,
-                  },
-                  0.7,
-                )
-                // Beat 02: a second world enters as the first recedes.
-                .to(
-                  visuals[0]!,
-                  {
-                    autoAlpha: 0,
-                    duration: 0.38,
-                  },
-                  0.88,
-                )
-                .to(atmospheres[0]!, { autoAlpha: 0.12, duration: 0.72 }, 0.99)
-                .to(atmospheres[1]!, { autoAlpha: 0.86, duration: 0.82 }, 1.05)
-                .to(
-                  visuals[1]!,
-                  {
-                    autoAlpha: 1,
-                    scale: 1,
-                    yPercent: 0,
-                    duration: 0.47,
-                  },
-                  0.87,
-                )
-                .to(
-                  beats[1]!,
-                  {
-                    autoAlpha: 1,
-                    y: 0,
-                    duration: 0.32,
-                  },
-                  1.0,
-                )
-                .to(
-                  visuals[1]!,
-                  {
-                    scale: 1.12,
-                    xPercent: -6,
-                    yPercent: -8,
-                    duration: 1.0,
-                  },
-                  1.42,
-                )
-                .to(
-                  beats[1]!,
-                  {
-                    autoAlpha: 0,
-                    y: -45,
-                    duration: 0.3,
-                  },
-                  1.81,
-                )
-                // Beat 03: hand off to the actual catalog, never a fake reader.
-                .to(
-                  visuals[1]!,
-                  {
-                    autoAlpha: 0.3,
-                    duration: 0.4,
-                  },
-                  2.05,
-                )
-                .to(atmospheres[1]!, { autoAlpha: 0.24, duration: 0.75 }, 2.0)
-                .to(
-                  beats[2]!,
-                  {
-                    autoAlpha: 1,
-                    y: 0,
-                    duration: 0.35,
-                  },
-                  2.09,
-                )
-                .to(
-                  beats[2]!,
-                  {
-                    y: -6,
-                    duration: 0.65,
-                  },
-                  2.44,
-                );
-            }, root);
-
-            removeAnimation = () => {
-              context?.revert();
-              root.classList.remove("cinematic-ready");
-              root.dataset.scrollMode = "static";
-              root.dataset.scene = "0";
-              root.style.removeProperty("--cinematic-progress");
-            };
-            root.dataset.scrollMode = "pinned";
-          } catch {
-            context?.revert();
-            root.classList.remove("cinematic-ready");
-            root.dataset.scrollMode = "static";
-          }
+          cleanup = mountCinematicScroll(root);
         })
         .catch(() => {
-          // A missing animation chunk must never prevent reading/navigation.
-          if (!disposed && ticket === generation) {
-            root.classList.remove("cinematic-ready");
-            root.dataset.scrollMode = "static";
-          }
+          // Animation failures never hide the readable SSR scene layout.
+          if (disposed || current !== generation) return;
+          root.classList.remove("cinematic-ready");
+          root.dataset.scrollMode = "static";
+          root.style.removeProperty("--cinematic-progress");
         });
     };
 
-    setup();
-    desktop.addEventListener("change", setup);
-    reduced.addEventListener("change", setup);
+    configure();
+    desktop.addEventListener("change", configure);
+    reduced.addEventListener("change", configure);
     return () => {
       disposed = true;
       generation += 1;
-      desktop.removeEventListener("change", setup);
-      reduced.removeEventListener("change", setup);
-      removeAnimation();
+      desktop.removeEventListener("change", configure);
+      reduced.removeEventListener("change", configure);
+      cleanup();
     };
   }, []);
 
@@ -268,85 +197,19 @@ export function CinematicPrologue({
           <span className="cinematic-monogram">FS</span>
         </div>
 
-        <div className="cinematic-art" aria-hidden="true">
-          <div className="cinematic-visual" data-cinematic-visual="0">
-            <ResponsiveAsset
-              {...postCover}
-              decorative
-              priority
-              aspectRatio="3 / 4"
-              sizes="(min-width:900px) 38vw, 45vw"
+        <div className="cinematic-scenes">
+          {cinematicScenes.map((scene, index) => (
+            <CinematicScene
+              key={scene.id}
+              scene={scene}
+              index={index}
+              postCover={postCover}
+              tideCover={tideCover}
             />
-            <span>THE LAST POST OFFICE · NO. 01</span>
-          </div>
-          <div className="cinematic-visual" data-cinematic-visual="1">
-            <ResponsiveAsset
-              {...tideCover}
-              decorative
-              aspectRatio="3 / 4"
-              sizes="(min-width:900px) 38vw, 45vw"
-            />
-            <span>THE TIDELESS STATION · NO. 02</span>
-          </div>
-        </div>
-
-        <div className="cinematic-script">
-          <article className="cinematic-beat" data-cinematic-beat="0">
-            <p className="cinematic-kicker">
-              FIRSTSCENE — AN INTERACTIVE READING SPACE
-            </p>
-            <h1>
-              문장을 읽고,
-              <br />
-              <em>장면에 머물다.</em>
-            </h1>
-            <p className="cinematic-excerpt">
-              한 통의 편지에서 시작된 밤.
-              <br />
-              이야기는 눈앞의 풍경이 됩니다.
-            </p>
-            <span className="cinematic-beat-number">01 / 첫 번째 장면</span>
-          </article>
-
-          <article className="cinematic-beat" data-cinematic-beat="1">
-            <p className="cinematic-kicker">
-              TURN THE PAGE · ENTER ANOTHER WORLD
-            </p>
-            <h2>
-              멈춰 선 역에도
-              <br />
-              <em>도착하는 이야기가 있다.</em>
-            </h2>
-            <p className="cinematic-excerpt">
-              수심 없는 역, 소리가 남겨진 도시.
-              <br />
-              스크롤을 따라 다음 세계로 건너갑니다.
-            </p>
-            <span className="cinematic-beat-number">02 / 두 번째 장면</span>
-          </article>
-
-          <article className="cinematic-beat" data-cinematic-beat="2">
-            <p className="cinematic-kicker">
-              FIRSTSCENE COLLECTION / 36 STORIES
-            </p>
-            <h2>
-              아직 열리지 않은
-              <br />
-              <em>서른네 개의 세계.</em>
-            </h2>
-            <p className="cinematic-excerpt">
-              완성된 두 편은 지금 읽을 수 있습니다.
-              <br />
-              그다음 장면들은 공개를 준비하고 있어요.
-            </p>
-            <span className="cinematic-beat-number">03 / 이어질 장면들</span>
-          </article>
+          ))}
         </div>
 
         <div className="cinematic-controls">
-          <Link className="cinematic-read-link" href="/read/post-office">
-            첫 장면 바로 읽기 <span aria-hidden="true">↗</span>
-          </Link>
           <a className="cinematic-skip-link" href="#read-now">
             연출 건너뛰기 <span aria-hidden="true">↓</span>
           </a>
@@ -355,9 +218,9 @@ export function CinematicPrologue({
         <div className="cinematic-rail" aria-hidden="true">
           <span className="cinematic-rail-label">SCROLL TO UNFOLD</span>
           <div className="cinematic-rail-dots">
-            <span className="cinematic-rail-dot" />
-            <span className="cinematic-rail-dot" />
-            <span className="cinematic-rail-dot" />
+            {cinematicScenes.map((scene) => (
+              <span className="cinematic-rail-dot" key={scene.id} />
+            ))}
           </div>
           <span className="cinematic-rail-track">
             <span />
