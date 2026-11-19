@@ -30,29 +30,32 @@ for (const width of widths) {
         scroll: document.documentElement.scrollWidth,
         main: document.querySelectorAll("main").length,
       }));
-      expect(geometry.scroll, `horizontal overflow at ${path}`).toBeLessThanOrEqual(
-        geometry.viewport + 1,
-      );
+      expect(
+        geometry.scroll,
+        `horizontal overflow at ${path}`,
+      ).toBeLessThanOrEqual(geometry.viewport + 1);
       expect(geometry.main).toBe(1);
     }
 
     await page.goto("/discover");
     await expect(page.getByRole("status")).toContainText("36편의 이야기");
 
-    const tapTargets = await page.locator(
-      ".discovery-form-wide .mood-filters label, .discovery-genre-options label",
-    ).evaluateAll((labels) =>
-      labels.map((label) => {
-        const box = label.getBoundingClientRect();
-        return {
-          text: label.textContent?.trim() ?? "",
-          width: box.width,
-          height: box.height,
-          left: box.left,
-          right: box.right,
-        };
-      }),
-    );
+    const tapTargets = await page
+      .locator(
+        ".discovery-form-wide .mood-filters label, .discovery-genre-options label",
+      )
+      .evaluateAll((labels) =>
+        labels.map((label) => {
+          const box = label.getBoundingClientRect();
+          return {
+            text: label.textContent?.trim() ?? "",
+            width: box.width,
+            height: box.height,
+            left: box.left,
+            right: box.right,
+          };
+        }),
+      );
     expect(tapTargets.length).toBeGreaterThanOrEqual(12);
     for (const target of tapTargets) {
       expect(target.height, target.text).toBeGreaterThanOrEqual(44);
@@ -77,9 +80,10 @@ for (const width of widths) {
     const entryTop = await firstRead.evaluate(
       (element) => element.getBoundingClientRect().top + scrollY,
     );
-    expect(entryTop, "first read action is too far down the introduction").toBeLessThan(
-      844 * 1.25,
-    );
+    expect(
+      entryTop,
+      "first read action is too far down the introduction",
+    ).toBeLessThan(844 * 1.25);
     if (width === 390) {
       await page.screenshot({
         path: "evidence/ui/mobile-journey-story-390.png",
@@ -95,7 +99,8 @@ test("mobile: landing → discovery → introduction → reading → library →
   test.setTimeout(90000);
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
-  await page.getByRole("navigation", { name: "주 메뉴" })
+  await page
+    .getByRole("navigation", { name: "주 메뉴" })
     .getByRole("link", { name: "탐색" })
     .click();
   await expect(page).toHaveURL(/\/discover$/);
@@ -108,7 +113,10 @@ test("mobile: landing → discovery → introduction → reading → library →
     .getByRole("link")
     .click();
   await expect(page).toHaveURL(/\/stories\/post-office$/);
-  const bookmark = page.getByRole("button", { name: "☆ 작품 저장", exact: true });
+  const bookmark = page.getByRole("button", {
+    name: "☆ 작품 저장",
+    exact: true,
+  });
   await expect(bookmark).toBeEnabled();
   await bookmark.click();
   await expect(
@@ -122,13 +130,14 @@ test("mobile: landing → discovery → introduction → reading → library →
     "true",
   );
   await expect(page.locator(".fs-reading-toolbar button")).toHaveCount(3);
-  const toolbar = await page.locator(".fs-reading-toolbar button").evaluateAll(
-    (buttons) =>
+  const toolbar = await page
+    .locator(".fs-reading-toolbar button")
+    .evaluateAll((buttons) =>
       buttons.map((button) => {
         const rect = button.getBoundingClientRect();
         return { height: rect.height, left: rect.left, right: rect.right };
       }),
-  );
+    );
   for (const control of toolbar) {
     expect(control.height).toBeGreaterThanOrEqual(44);
     expect(control.left).toBeGreaterThanOrEqual(-1);
@@ -140,7 +149,9 @@ test("mobile: landing → discovery → introduction → reading → library →
   await page.getByRole("link", { name: "내 서재" }).click();
   await expect(page).toHaveURL(/\/library$/);
   await expect(page.locator(".library-stories li")).toHaveCount(1);
-  await expect(page.getByRole("heading", { name: "저장한 작품" })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: "저장한 작품" }),
+  ).toBeVisible();
 
   await page.getByRole("link", { name: "설정", exact: true }).click();
   await expect(page).toHaveURL(/\/settings$/);
