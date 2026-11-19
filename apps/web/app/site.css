@@ -541,3 +541,28 @@ html{scroll-behavior:auto}#main{scroll-margin-top:96px}body{margin:0;background:
 @media (prefers-reduced-motion:reduce){
   .preview-cover-illustration{transition:none!important;transform:none!important}
 }
+
+
+/* Subtle scene lighting: composited fades, no new image or network request. */
+.cinematic-atmosphere{
+  position:absolute;
+  inset:0;
+  display:block;
+  pointer-events:none;
+  opacity:0;
+  transform:translateZ(0);
+}
+.cinematic-atmosphere--gold{
+  background:
+    radial-gradient(ellipse at 69% 48%,rgba(240,174,94,.39),transparent 55%),
+    linear-gradient(135deg,rgba(110,68,56,.22),transparent 62%);
+}
+.cinematic-atmosphere--tide{
+  background:
+    radial-gradient(ellipse at 77% 48%,rgba(116,192,198,.31),transparent 55%),
+    linear-gradient(135deg,rgba(11,50,68,.55),rgba(22,37,60,.18) 70%);
+}
+.cinematic-ready .cinematic-atmosphere{will-change:opacity}
+@media (prefers-reduced-motion:reduce){
+  .cinematic-atmosphere{transition:none!important;opacity:0!important;will-change:auto}
+}
