@@ -14,7 +14,7 @@ describe("cinematic prologue scenes", () => {
       expect(scene.accent).toBeTruthy();
       expect(scene.description).toHaveLength(2);
       expect(scene.illustration).toBeTruthy();
-      expect(scene.href).toMatch(/^\/(?:read\/[a-z-]+|discover)$/);
+      expect(["/read/post-office", "/read/tide-station", "/discover"]).toContain(scene.href);
       expect(scene.action).toBeTruthy();
     }
   });
