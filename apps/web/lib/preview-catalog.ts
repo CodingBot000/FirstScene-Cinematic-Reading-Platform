@@ -22,6 +22,7 @@ export type PreviewStory = {
   summary: string;
   palette: PreviewPalette;
   symbol: string;
+  artworkAsset?: string;
 };
 
 export type PreviewShelf = {
