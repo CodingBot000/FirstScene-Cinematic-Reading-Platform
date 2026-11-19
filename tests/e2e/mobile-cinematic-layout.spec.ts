@@ -87,6 +87,29 @@ test("each narrow-screen scene pairs its own art, text, and working destination"
   }
 });
 
+test("preview card copy stays opaque during scroll reveal", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.goto("/");
+
+  const first = page.locator(".preview-tile").first();
+  const last = page.locator(".preview-tile").last();
+
+  for (const tile of [first, last]) {
+    await expect
+      .poll(() =>
+        tile.evaluate((element) => getComputedStyle(element).opacity),
+      )
+      .toBe("1");
+    await tile.scrollIntoViewIfNeeded();
+    await expect
+      .poll(() =>
+        tile.evaluate((element) => getComputedStyle(element).opacity),
+      )
+      .toBe("1");
+  }
+});
+
 test("switching from desktop pin to mobile removes stale scroll styles", async ({
   page,
 }) => {
