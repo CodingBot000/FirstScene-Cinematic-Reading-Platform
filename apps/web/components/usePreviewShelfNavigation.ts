@@ -63,7 +63,7 @@ export function usePreviewShelfNavigation(
       window.removeEventListener("resize", measure);
       root.classList.remove("preview-motion-ready");
     };
-  }, []);
+  }, [rootRef]);
 
   return activeShelf;
 }
