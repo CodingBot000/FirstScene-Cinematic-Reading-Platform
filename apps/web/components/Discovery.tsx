@@ -81,12 +81,13 @@ export function Discovery({
     count,
   } = filterDiscovery(cards, query.filters);
   const [selected, setSelected] = useState<PreviewStory | null>(null);
-  const { container: catalogRef, transition: transitionCatalog } = useCatalogFlip(
-    [
-      ...visibleReady.map((story) => story.id),
-      ...visibleComing.map((story) => story.id),
-    ].join("|"),
-  );
+  const { container: catalogRef, transition: transitionCatalog } =
+    useCatalogFlip(
+      [
+        ...visibleReady.map((story) => story.id),
+        ...visibleComing.map((story) => story.id),
+      ].join("|"),
+    );
   const reset = () => transitionCatalog(query.reset);
 
   return (
@@ -176,7 +177,9 @@ export function Discovery({
                   name="genre"
                   value={shelf.id}
                   checked={genre === shelf.id}
-                  onChange={() => transitionCatalog(() => query.genre(shelf.id))}
+                  onChange={() =>
+                    transitionCatalog(() => query.genre(shelf.id))
+                  }
                 />
                 <span>{shelf.genre}</span>
               </label>
