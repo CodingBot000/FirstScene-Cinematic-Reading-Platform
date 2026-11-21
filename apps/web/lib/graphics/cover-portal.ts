@@ -61,7 +61,7 @@ void main() {
   tone=mix(tone, uScene<.5?gold:(uScene<1.5?aqua:mauve), .15);
   float intensity=core+halo+rings+beam+grains*.48;
   intensity *= 0.75 + 0.25*sin(uClock*.31);
-  intensity *= smoothstep(.96,.30,r);
+  intensity *= (1.0-smoothstep(.30,.96,r));
   fragColor = vec4(tone*intensity,clamp(intensity*.65,0.0,.54));
 }
 `;
