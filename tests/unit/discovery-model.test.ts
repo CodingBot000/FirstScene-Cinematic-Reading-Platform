@@ -11,8 +11,22 @@ import {
 } from "../../apps/web/lib/discovery-model";
 
 const ready: StoryCardProps[] = [
-  { id: "post-office", title: "빛을 접어 보내는 우체국", summary: "고요한 편지", href: "/stories/post-office", cover: { variants: [], alt: "" }, tags: ["잔잔함"] },
-  { id: "tide-station", title: "수심 없는 역", summary: "도시의 미스터리", href: "/stories/tide-station", cover: { variants: [], alt: "" }, tags: ["미스터리"] },
+  {
+    id: "post-office",
+    title: "빛을 접어 보내는 우체국",
+    summary: "고요한 편지",
+    href: "/stories/post-office",
+    cover: { variants: [], alt: "" },
+    tags: ["잔잔함"],
+  },
+  {
+    id: "tide-station",
+    title: "수심 없는 역",
+    summary: "도시의 미스터리",
+    href: "/stories/tide-station",
+    cover: { variants: [], alt: "" },
+    tags: ["미스터리"],
+  },
 ];
 
 describe("discovery model and state boundaries", () => {
@@ -24,9 +38,18 @@ describe("discovery model and state boundaries", () => {
     expect(result.count).toBe(36);
   });
   it("normalizes URL query and prevents invalid ready+preview genre", () => {
-    const parsed = parseDiscoverySearch("?q=%ED%95%9C%EA%B8%80&status=ready&genre=city&mood=oops");
-    expect(parsed).toMatchObject({ q: "한글", status: "ready", genre: "all", mood: "all" });
-    expect(serializeDiscoverySearch(parsed)).toBe("?q=%ED%95%9C%EA%B8%80&status=ready");
+    const parsed = parseDiscoverySearch(
+      "?q=%ED%95%9C%EA%B8%80&status=ready&genre=city&mood=oops",
+    );
+    expect(parsed).toMatchObject({
+      q: "한글",
+      status: "ready",
+      genre: "all",
+      mood: "all",
+    });
+    expect(serializeDiscoverySearch(parsed)).toBe(
+      "?q=%ED%95%9C%EA%B8%80&status=ready",
+    );
   });
   it("changes filter choices without silently hiding every readable story", () => {
     let filters = canonicalFilters({ status: "ready" });
@@ -38,10 +61,16 @@ describe("discovery model and state boundaries", () => {
     expect(filterDiscovery(ready, filters).ready).toHaveLength(2);
   });
   it("filters Korean text and mood with no availability misrepresentation", () => {
-    const mystery = filterDiscovery(ready, canonicalFilters({ q: "수심", mood: "mystery", status: "ready" }));
+    const mystery = filterDiscovery(
+      ready,
+      canonicalFilters({ q: "수심", mood: "mystery", status: "ready" }),
+    );
     expect(mystery.ready.map((story) => story.id)).toEqual(["tide-station"]);
     expect(mystery.coming).toEqual([]);
-    const none = filterDiscovery(ready, canonicalFilters({ q: "찾을수없는제목" }));
+    const none = filterDiscovery(
+      ready,
+      canonicalFilters({ q: "찾을수없는제목" }),
+    );
     expect(none.count).toBe(0);
   });
 });

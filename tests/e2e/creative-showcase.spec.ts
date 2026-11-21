@@ -1,6 +1,8 @@
 import { expect, test } from "@playwright/test";
 
-test("desktop shader is optional and owns its GPU lifecycle", async ({ page }) => {
+test("desktop shader is optional and owns its GPU lifecycle", async ({
+  page,
+}) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await page.goto("/");
@@ -52,7 +54,9 @@ test("catalog state changes preserve titles, links and accessibility with Flip e
   await page.getByRole("radio", { name: /지금 읽기 2/ }).check();
   await expect(page.locator("[data-flip-id]")).toHaveCount(2);
   await expect(page.getByRole("status")).toContainText("2편의 이야기");
-  await expect(page.locator(".discovery-finished-card a[href^='/stories/']")).toHaveCount(6);
+  await expect(
+    page.locator(".discovery-finished-card a[href^='/stories/']"),
+  ).toHaveCount(6);
   expect(
     await page.evaluate(
       () => document.documentElement.scrollWidth <= window.innerWidth + 1,

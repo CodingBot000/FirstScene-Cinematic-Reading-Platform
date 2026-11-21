@@ -98,7 +98,7 @@ export function mountCoverPortal(
   let lastFrame = 0;
   let disposed = false;
   let visible = true;
-  const pointer = { x: .5, y: .5 };
+  const pointer = { x: 0.5, y: 0.5 };
 
   const destroy = () => {
     if (disposed) return;
@@ -116,8 +116,16 @@ export function mountCoverPortal(
 
   const move = (event: PointerEvent) => {
     const rect = root.getBoundingClientRect();
-    pointer.x = Math.min(1,Math.max(0,(event.clientX-rect.left)/Math.max(rect.width,1)));
-    pointer.y = 1-Math.min(1,Math.max(0,(event.clientY-rect.top)/Math.max(rect.height,1)));
+    pointer.x = Math.min(
+      1,
+      Math.max(0, (event.clientX - rect.left) / Math.max(rect.width, 1)),
+    );
+    pointer.y =
+      1 -
+      Math.min(
+        1,
+        Math.max(0, (event.clientY - rect.top) / Math.max(rect.height, 1)),
+      );
   };
   const contextLost = (event: Event) => {
     event.preventDefault();
@@ -125,66 +133,75 @@ export function mountCoverPortal(
   };
   // Declare observers before compilation so partial initialization is
   // rolled back through the same cleanup path.
-  const observer = new IntersectionObserver((entries) => {
-    visible = entries.some((entry) => entry.isIntersecting);
-  }, { threshold: 0 });
+  const observer = new IntersectionObserver(
+    (entries) => {
+      visible = entries.some((entry) => entry.isIntersecting);
+    },
+    { threshold: 0 },
+  );
   const sizeObserver = new ResizeObserver(() => resize());
   function resize() {
-    const rect=canvas.getBoundingClientRect();
-    const ratio=Math.min(window.devicePixelRatio||1,1.5);
-    const width=Math.max(1,Math.min(1440,Math.round(rect.width*ratio)));
-    const height=Math.max(1,Math.min(1000,Math.round(rect.height*ratio)));
-    if(canvas.width!==width||canvas.height!==height) {
-      canvas.width=width; canvas.height=height;
-      gl.viewport(0,0,width,height);
+    const rect = canvas.getBoundingClientRect();
+    const ratio = Math.min(window.devicePixelRatio || 1, 1.5);
+    const width = Math.max(1, Math.min(1440, Math.round(rect.width * ratio)));
+    const height = Math.max(1, Math.min(1000, Math.round(rect.height * ratio)));
+    if (canvas.width !== width || canvas.height !== height) {
+      canvas.width = width;
+      canvas.height = height;
+      gl.viewport(0, 0, width, height);
     }
   }
   try {
-    shaders.push(compile(gl,gl.VERTEX_SHADER,VERTEX));
-    shaders.push(compile(gl,gl.FRAGMENT_SHADER,FRAGMENT));
-    program=gl.createProgram();
-    if(!program) throw new Error("PORTAL_PROGRAM_CREATE");
-    gl.attachShader(program,shaders[0]!);
-    gl.attachShader(program,shaders[1]!);
+    shaders.push(compile(gl, gl.VERTEX_SHADER, VERTEX));
+    shaders.push(compile(gl, gl.FRAGMENT_SHADER, FRAGMENT));
+    program = gl.createProgram();
+    if (!program) throw new Error("PORTAL_PROGRAM_CREATE");
+    gl.attachShader(program, shaders[0]!);
+    gl.attachShader(program, shaders[1]!);
     gl.linkProgram(program);
-    if(!gl.getProgramParameter(program,gl.LINK_STATUS)) throw new Error("PORTAL_PROGRAM_LINK");
-    vao=gl.createVertexArray();
-    if(!vao) throw new Error("PORTAL_VAO_CREATE");
+    if (!gl.getProgramParameter(program, gl.LINK_STATUS))
+      throw new Error("PORTAL_PROGRAM_LINK");
+    vao = gl.createVertexArray();
+    if (!vao) throw new Error("PORTAL_VAO_CREATE");
     gl.bindVertexArray(vao);
     gl.useProgram(program);
     const uniforms: PortalUniforms = {
-      resolution:gl.getUniformLocation(program,"uResolution"),
-      clock:gl.getUniformLocation(program,"uClock"),
-      progress:gl.getUniformLocation(program,"uProgress"),
-      scene:gl.getUniformLocation(program,"uScene"),
-      pointer:gl.getUniformLocation(program,"uPointer"),
+      resolution: gl.getUniformLocation(program, "uResolution"),
+      clock: gl.getUniformLocation(program, "uClock"),
+      progress: gl.getUniformLocation(program, "uProgress"),
+      scene: gl.getUniformLocation(program, "uScene"),
+      pointer: gl.getUniformLocation(program, "uPointer"),
     };
     gl.enable(gl.BLEND);
-    gl.blendFunc(gl.SRC_ALPHA,gl.ONE_MINUS_SRC_ALPHA);
-    root.addEventListener("pointermove",move,{passive:true});
-    canvas.addEventListener("webglcontextlost",contextLost);
+    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+    root.addEventListener("pointermove", move, { passive: true });
+    canvas.addEventListener("webglcontextlost", contextLost);
     observer.observe(canvas);
     sizeObserver.observe(canvas);
     resize();
-    canvas.dataset.renderer="webgl2";
-    const tick=(now:number)=>{
-      if(disposed)return;
-      frame=window.requestAnimationFrame(tick);
-      if(now-lastFrame<33||document.hidden||!visible)return; // <=30fps
-      lastFrame=now;
-      const progress=Number.parseFloat(root.style.getPropertyValue("--cinematic-progress"));
-      const p=Number.isFinite(progress)?Math.min(1,Math.max(0,progress)):0;
-      gl.viewport(0,0,canvas.width,canvas.height);
-      gl.uniform2f(uniforms.resolution,canvas.width,canvas.height);
-      gl.uniform1f(uniforms.clock,now*.001);
-      gl.uniform1f(uniforms.progress,p);
-      gl.uniform1f(uniforms.scene,Number(root.dataset.scene)||0);
-      gl.uniform2f(uniforms.pointer,pointer.x,pointer.y);
-      gl.drawArrays(gl.TRIANGLES,0,3);
+    canvas.dataset.renderer = "webgl2";
+    const tick = (now: number) => {
+      if (disposed) return;
+      frame = window.requestAnimationFrame(tick);
+      if (now - lastFrame < 33 || document.hidden || !visible) return; // <=30fps
+      lastFrame = now;
+      const progress = Number.parseFloat(
+        root.style.getPropertyValue("--cinematic-progress"),
+      );
+      const p = Number.isFinite(progress)
+        ? Math.min(1, Math.max(0, progress))
+        : 0;
+      gl.viewport(0, 0, canvas.width, canvas.height);
+      gl.uniform2f(uniforms.resolution, canvas.width, canvas.height);
+      gl.uniform1f(uniforms.clock, now * 0.001);
+      gl.uniform1f(uniforms.progress, p);
+      gl.uniform1f(uniforms.scene, Number(root.dataset.scene) || 0);
+      gl.uniform2f(uniforms.pointer, pointer.x, pointer.y);
+      gl.drawArrays(gl.TRIANGLES, 0, 3);
     };
-    frame=window.requestAnimationFrame(tick);
+    frame = window.requestAnimationFrame(tick);
     return destroy;
-  } catch(error) {
+  } catch (error) {
     destroy();
     throw error;
   }

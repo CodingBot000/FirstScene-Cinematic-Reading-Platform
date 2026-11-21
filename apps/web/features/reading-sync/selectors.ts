@@ -1,5 +1,10 @@
 import type { ReaderPrefs, ReadingAnchor } from "@firstscene/story-schema";
-import type { Me, Preferences, Progress, Bookmark } from "./transport.generated";
+import type {
+  Me,
+  Preferences,
+  Progress,
+  Bookmark,
+} from "./transport.generated";
 import type { Pending } from "./outbox";
 
 /** Read-only projections; no storage, network or mutation lifecycle access. */
@@ -21,9 +26,10 @@ export const anchorFromDto = (p: Progress): ReadingAnchor => ({
 });
 
 /** Optimistic view: pending local bookmark writes override server state. */
-export function desiredBookmarks(
-  snapshot: { me: Pick<Me, "bookmarks"> | null; queue: readonly Pending[] },
-): Bookmark[] {
+export function desiredBookmarks(snapshot: {
+  me: Pick<Me, "bookmarks"> | null;
+  queue: readonly Pending[];
+}): Bookmark[] {
   const bookmarks = new Map(
     (snapshot.me?.bookmarks ?? []).map((bookmark) => [
       bookmark.storyId + ":" + bookmark.targetId,

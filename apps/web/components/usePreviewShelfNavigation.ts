@@ -4,7 +4,9 @@ import { useEffect, useState, type RefObject } from "react";
 import { previewShelves } from "../lib/preview-catalog";
 
 /** Owns landing-only shelf highlighting and cheap scroll-based reveal. */
-export function usePreviewShelfNavigation(rootRef: RefObject<HTMLElement | null>) {
+export function usePreviewShelfNavigation(
+  rootRef: RefObject<HTMLElement | null>,
+) {
   const [activeShelf, setActiveShelf] = useState(previewShelves[0]!.id);
   useEffect(() => {
     const root = rootRef.current;

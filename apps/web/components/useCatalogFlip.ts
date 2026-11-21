@@ -35,7 +35,9 @@ export function useCatalogFlip(signature: string) {
           gsap.gsap.registerPlugin(flip.Flip);
           plugin.current = flip.Flip;
         })
-        .catch(() => { /* Native grid updates are the fallback. */ });
+        .catch(() => {
+          /* Native grid updates are the fallback. */
+        });
     };
     configure();
     query.addEventListener("change", configure);
@@ -82,12 +84,17 @@ export function useCatalogFlip(signature: string) {
         // Avoid opacity fades on readable text: keep WCAG contrast stable.
         for (const element of elements) {
           element.animate(
-            [{ transform: "translateY(18px) scale(.96)" }, { transform: "none" }],
+            [
+              { transform: "translateY(18px) scale(.96)" },
+              { transform: "none" },
+            ],
             { duration: 420, easing: "ease-out" },
           );
         }
       },
-      onComplete: () => { active.current = null; },
+      onComplete: () => {
+        active.current = null;
+      },
     });
   }, [signature]);
 

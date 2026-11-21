@@ -29,7 +29,11 @@ function PreviewCard({
   onSelect: (story: PreviewStory) => void;
 }) {
   return (
-    <article className="discovery-preview-card" data-preview-story={story.id} data-flip-id={`preview-${story.id}`}>
+    <article
+      className="discovery-preview-card"
+      data-preview-story={story.id}
+      data-flip-id={`preview-${story.id}`}
+    >
       <button
         type="button"
         className="preview-card"
@@ -71,11 +75,17 @@ export function Discovery({
     genre: initialGenre,
   });
   const { q, mood, status, genre } = query.filters;
-  const { ready: visibleReady, coming: visibleComing, count } =
-    filterDiscovery(cards, query.filters);
+  const {
+    ready: visibleReady,
+    coming: visibleComing,
+    count,
+  } = filterDiscovery(cards, query.filters);
   const [selected, setSelected] = useState<PreviewStory | null>(null);
   const flip = useCatalogFlip(
-    [...visibleReady.map((story) => story.id), ...visibleComing.map((story) => story.id)].join("|"),
+    [
+      ...visibleReady.map((story) => story.id),
+      ...visibleComing.map((story) => story.id),
+    ].join("|"),
   );
   const reset = () => flip.transition(query.reset);
 
@@ -195,9 +205,17 @@ export function Discovery({
       </div>
 
       {count ? (
-        <div className="discovery-catalog" ref={flip.container} key={`${status}:${mood}:${genre}`}>
+        <div
+          className="discovery-catalog"
+          ref={flip.container}
+          key={`${status}:${mood}:${genre}`}
+        >
           {visibleReady.map((card) => (
-            <div key={card.id} className="discovery-finished-card" data-flip-id={`ready-${card.id}`}>
+            <div
+              key={card.id}
+              className="discovery-finished-card"
+              data-flip-id={`ready-${card.id}`}
+            >
               <StoryCard {...card} />
             </div>
           ))}
