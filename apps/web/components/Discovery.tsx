@@ -11,6 +11,7 @@ import {
 import { PreviewCover } from "./preview/PreviewCover";
 import { PreviewNotice } from "./preview/PreviewNotice";
 import { useDiscoveryQuery } from "./useDiscoveryQuery";
+import { useCatalogFlip } from "./useCatalogFlip";
 import {
   filterDiscovery,
   type PreviewListing,
@@ -28,7 +29,7 @@ function PreviewCard({
   onSelect: (story: PreviewStory) => void;
 }) {
   return (
-    <article className="discovery-preview-card" data-preview-story={story.id}>
+    <article className="discovery-preview-card" data-preview-story={story.id} data-flip-id={`preview-${story.id}`}>
       <button
         type="button"
         className="preview-card"
@@ -73,7 +74,10 @@ export function Discovery({
   const { ready: visibleReady, coming: visibleComing, count } =
     filterDiscovery(cards, query.filters);
   const [selected, setSelected] = useState<PreviewStory | null>(null);
-  const reset = query.reset;
+  const flip = useCatalogFlip(
+    [...visibleReady.map((story) => story.id), ...visibleComing.map((story) => story.id)].join("|"),
+  );
+  const reset = () => flip.transition(query.reset);
 
   return (
     <>
@@ -113,7 +117,7 @@ export function Discovery({
                 name="status"
                 value={value}
                 checked={status === value}
-                onChange={() => query.status(value)}
+                onChange={() => flip.transition(() => query.status(value))}
               />
               <span>{label}</span>
             </label>
@@ -135,7 +139,7 @@ export function Discovery({
                 name="mood"
                 value={value}
                 checked={mood === value}
-                onChange={() => query.mood(value)}
+                onChange={() => flip.transition(() => query.mood(value))}
               />
               <span>{label}</span>
             </label>
@@ -151,7 +155,7 @@ export function Discovery({
                 name="genre"
                 value="all"
                 checked={genre === "all"}
-                onChange={() => query.genre("all")}
+                onChange={() => flip.transition(() => query.genre("all"))}
               />
               <span>모든 장르</span>
             </label>
@@ -162,7 +166,7 @@ export function Discovery({
                   name="genre"
                   value={shelf.id}
                   checked={genre === shelf.id}
-                  onChange={() => query.genre(shelf.id)}
+                  onChange={() => flip.transition(() => query.genre(shelf.id))}
                 />
                 <span>{shelf.genre}</span>
               </label>
@@ -191,9 +195,9 @@ export function Discovery({
       </div>
 
       {count ? (
-        <div className="discovery-catalog" key={`${status}:${mood}:${genre}`}>
+        <div className="discovery-catalog" ref={flip.container} key={`${status}:${mood}:${genre}`}>
           {visibleReady.map((card) => (
-            <div key={card.id} className="discovery-finished-card">
+            <div key={card.id} className="discovery-finished-card" data-flip-id={`ready-${card.id}`}>
               <StoryCard {...card} />
             </div>
           ))}
