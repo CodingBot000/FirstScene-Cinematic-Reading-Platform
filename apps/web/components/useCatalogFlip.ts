@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef } from "react";
 
 type FlipPlugin = (typeof import("gsap/Flip"))["Flip"];
 type FlipState = ReturnType<FlipPlugin["getState"]>;
@@ -15,6 +15,21 @@ export function useCatalogFlip(signature: string) {
   const plugin = useRef<FlipPlugin | null>(null);
   const before = useRef<FlipState | null>(null);
   const active = useRef<{ kill(): void } | null>(null);
+  const entrants = useRef<Animation[]>([]);
+
+  const finishCurrent = useCallback(() => {
+    for (const animation of entrants.current) animation.cancel();
+    entrants.current = [];
+    const nodes = container.current?.querySelectorAll<HTMLElement>("[data-flip-id]");
+    if (nodes?.length) {
+      // Complete the geometry transaction before dropping the animation.
+      // A bare timeline.kill() can strand absolute-positioned cards.
+      plugin.current?.killFlipsOf(Array.from(nodes), true);
+    }
+    active.current?.kill();
+    active.current = null;
+  }, []);
+
 
   useEffect(() => {
     const query = window.matchMedia(
@@ -24,8 +39,7 @@ export function useCatalogFlip(signature: string) {
     let disposed = false;
     const configure = () => {
       const ticket = ++generation;
-      active.current?.kill();
-      active.current = null;
+      finishCurrent();
       before.current = null;
       plugin.current = null;
       if (!query.matches) return;
@@ -45,17 +59,17 @@ export function useCatalogFlip(signature: string) {
       disposed = true;
       generation += 1;
       query.removeEventListener("change", configure);
-      active.current?.kill();
-      active.current = null;
+      finishCurrent();
       plugin.current = null;
       before.current = null;
     };
-  }, []);
+  }, [finishCurrent]);
 
   const capture = () => {
     const flip = plugin.current;
     const root = container.current;
     if (!flip || !root) return;
+    finishCurrent();
     const nodes = root.querySelectorAll<HTMLElement>("[data-flip-id]");
     if (nodes.length) before.current = flip.getState(nodes);
   };
@@ -72,7 +86,7 @@ export function useCatalogFlip(signature: string) {
     if (!flip || !state || !root) return;
     const targets = root.querySelectorAll<HTMLElement>("[data-flip-id]");
     if (!targets.length) return;
-    active.current?.kill();
+    finishCurrent();
     active.current = flip.from(state, {
       targets,
       duration: 0.62,
@@ -83,12 +97,14 @@ export function useCatalogFlip(signature: string) {
       onEnter: (elements) => {
         // Avoid opacity fades on readable text: keep WCAG contrast stable.
         for (const element of elements) {
-          element.animate(
-            [
-              { transform: "translateY(18px) scale(.96)" },
-              { transform: "none" },
-            ],
-            { duration: 420, easing: "ease-out" },
+          entrants.current.push(
+            element.animate(
+              [
+                { transform: "translateY(18px) scale(.96)" },
+                { transform: "none" },
+              ],
+              { duration: 420, easing: "ease-out" },
+            ),
           );
         }
       },
@@ -96,7 +112,7 @@ export function useCatalogFlip(signature: string) {
         active.current = null;
       },
     });
-  }, [signature]);
+  }, [signature, finishCurrent]);
 
   return { container, transition };
 }
