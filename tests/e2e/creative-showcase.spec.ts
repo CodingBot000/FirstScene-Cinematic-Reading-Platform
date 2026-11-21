@@ -37,10 +37,13 @@ test("desktop shader is optional and owns its GPU lifecycle", async ({
 test("WebGL2 unavailable leaves the ordinary covers, reader links and scroll controls", async ({ page }) => {
   await page.addInitScript(() => {
     const base = HTMLCanvasElement.prototype.getContext;
-    HTMLCanvasElement.prototype.getContext = function (type: string, ...args: unknown[]) {
-      if (type === "webgl2") return null;
-      return Reflect.apply(base, this, [type, ...args]);
-    } as typeof HTMLCanvasElement.prototype.getContext;
+    Object.defineProperty(HTMLCanvasElement.prototype, "getContext", {
+      configurable: true,
+      value: function (this: HTMLCanvasElement, type: string, ...args: unknown[]) {
+        if (type === "webgl2") return null;
+        return Reflect.apply(base, this, [type, ...args]);
+      },
+    });
   });
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.emulateMedia({ reducedMotion: "no-preference" });
