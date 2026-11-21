@@ -17,7 +17,7 @@ jobs:
       - run: npm install --global pnpm@10.14.0
       - run: pnpm install --frozen-lockfile
       - run: pnpm build:packages
-      - run: pnpm lint
       - run: pnpm typecheck
       - run: pnpm --filter @firstscene/web build
+      - run: pnpm lint
       - run: pnpm exec vitest run tests/unit/discovery-model.test.ts tests/unit/reading-selectors.test.ts
