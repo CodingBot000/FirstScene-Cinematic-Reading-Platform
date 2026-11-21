@@ -81,13 +81,13 @@ export function Discovery({
     count,
   } = filterDiscovery(cards, query.filters);
   const [selected, setSelected] = useState<PreviewStory | null>(null);
-  const flip = useCatalogFlip(
+  const { container: catalogRef, transition: transitionCatalog } = useCatalogFlip(
     [
       ...visibleReady.map((story) => story.id),
       ...visibleComing.map((story) => story.id),
     ].join("|"),
   );
-  const reset = () => flip.transition(query.reset);
+  const reset = () => transitionCatalog(query.reset);
 
   return (
     <>
@@ -127,7 +127,7 @@ export function Discovery({
                 name="status"
                 value={value}
                 checked={status === value}
-                onChange={() => flip.transition(() => query.status(value))}
+                onChange={() => transitionCatalog(() => query.status(value))}
               />
               <span>{label}</span>
             </label>
@@ -149,7 +149,7 @@ export function Discovery({
                 name="mood"
                 value={value}
                 checked={mood === value}
-                onChange={() => flip.transition(() => query.mood(value))}
+                onChange={() => transitionCatalog(() => query.mood(value))}
               />
               <span>{label}</span>
             </label>
@@ -165,7 +165,7 @@ export function Discovery({
                 name="genre"
                 value="all"
                 checked={genre === "all"}
-                onChange={() => flip.transition(() => query.genre("all"))}
+                onChange={() => transitionCatalog(() => query.genre("all"))}
               />
               <span>모든 장르</span>
             </label>
@@ -176,7 +176,7 @@ export function Discovery({
                   name="genre"
                   value={shelf.id}
                   checked={genre === shelf.id}
-                  onChange={() => flip.transition(() => query.genre(shelf.id))}
+                  onChange={() => transitionCatalog(() => query.genre(shelf.id))}
                 />
                 <span>{shelf.genre}</span>
               </label>
@@ -207,7 +207,7 @@ export function Discovery({
       {count ? (
         <div
           className="discovery-catalog"
-          ref={flip.container}
+          ref={catalogRef}
           key={`${status}:${mood}:${genre}`}
         >
           {visibleReady.map((card) => (
