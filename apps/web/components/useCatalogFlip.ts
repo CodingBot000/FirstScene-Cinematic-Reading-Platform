@@ -80,8 +80,6 @@ export function useCatalogFlip(signature: string) {
       stagger: 0.025,
       onEnter: (elements) => {
         // Avoid opacity fades on readable text: keep WCAG contrast stable.
-        const gsap = flip.Flip ? null : null;
-        void gsap;
         for (const element of elements) {
           element.animate(
             [{ transform: "translateY(18px) scale(.96)" }, { transform: "none" }],
