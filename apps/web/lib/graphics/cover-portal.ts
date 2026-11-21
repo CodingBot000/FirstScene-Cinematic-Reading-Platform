@@ -43,15 +43,13 @@ void main() {
                 * exp(-r*4.0) * .25;
   float core = exp(-r*5.8) * .34;
   float beam = max(0.0,cos(angle*2.0 + time*.5)) * exp(-r*3.0)*.09;
-  float grains = 0.0;
-  for (int i=0; i<26; i++) {
-    float fi=float(i);
-    vec2 location=vec2(hash(vec2(fi,3.1)),hash(vec2(fi,4.8)));
-    location += vec2(.018*sin(time*.6+fi), .016*cos(time*.7+fi));
-    vec2 delta=uv-location;
-    delta.x *= uResolution.x/uResolution.y;
-    grains += exp(-dot(delta,delta)*10500.0) * (.21 + .22*sin(time+fi));
-  }
+  // One hashed tile instead of a per-pixel particle loop: bounded GPU work.
+  vec2 field = uv * vec2(24.0, 16.0);
+  vec2 cell = floor(field);
+  vec2 local = fract(field + vec2(time * .013, -time * .018)) - .5;
+  float starMask = step(.88, hash(cell));
+  float grains = pow(max(0.0, 1.0 - length(local) * 2.0), 18.0)
+    * starMask * (.25 + .10 * sin(time * 2.0 + cell.x));
   vec3 gold=vec3(.94,.52,.19);
   vec3 aqua=vec3(.21,.76,.79);
   vec3 mauve=vec3(.66,.48,.86);
