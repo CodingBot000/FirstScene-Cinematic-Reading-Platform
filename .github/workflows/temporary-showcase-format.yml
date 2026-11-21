@@ -22,23 +22,37 @@ jobs:
         run: |
           pnpm exec prettier --write \
             apps/web/components/preview/*.tsx \
-            apps/web/components/{PreviewCollection,Discovery,CinematicPrologue,CoverPortalLayer,useCatalogFlip,useDiscoveryQuery}.tsx \
+            apps/web/components/PreviewCollection.tsx \
+            apps/web/components/Discovery.tsx \
+            apps/web/components/CinematicPrologue.tsx \
+            apps/web/components/CoverPortalLayer.tsx \
             apps/web/components/useCatalogFlip.ts \
             apps/web/components/useDiscoveryQuery.ts \
-            apps/web/lib/{discovery-model,graphics/cover-portal}.ts \
-            apps/web/features/reading-sync/{selectors,store}.ts \
+            apps/web/components/usePreviewShelfNavigation.ts \
+            apps/web/lib/discovery-model.ts \
+            apps/web/lib/graphics/cover-portal.ts \
+            apps/web/features/reading-sync/selectors.ts \
+            apps/web/features/reading-sync/store.ts \
             packages/ui/src/*.tsx \
-            tests/{unit/discovery-model,unit/reading-selectors,e2e/creative-showcase}.test.ts \
-            2>/dev/null || true
-          # Avoid deleting the job or pushing if formatting command failed.
+            tests/unit/discovery-model.test.ts \
+            tests/unit/reading-selectors.test.ts \
+            tests/e2e/creative-showcase.spec.ts
           pnpm exec prettier --check \
             apps/web/components/preview/*.tsx \
-            apps/web/components/{PreviewCollection,Discovery,CinematicPrologue,CoverPortalLayer}.tsx \
-            apps/web/components/{useCatalogFlip,useDiscoveryQuery}.ts \
-            apps/web/lib/{discovery-model,graphics/cover-portal}.ts \
-            apps/web/features/reading-sync/{selectors,store}.ts \
+            apps/web/components/PreviewCollection.tsx \
+            apps/web/components/Discovery.tsx \
+            apps/web/components/CinematicPrologue.tsx \
+            apps/web/components/CoverPortalLayer.tsx \
+            apps/web/components/useCatalogFlip.ts \
+            apps/web/components/useDiscoveryQuery.ts \
+            apps/web/components/usePreviewShelfNavigation.ts \
+            apps/web/lib/discovery-model.ts \
+            apps/web/lib/graphics/cover-portal.ts \
+            apps/web/features/reading-sync/selectors.ts \
+            apps/web/features/reading-sync/store.ts \
             packages/ui/src/*.tsx \
-            tests/unit/{discovery-model,reading-selectors}.test.ts \
+            tests/unit/discovery-model.test.ts \
+            tests/unit/reading-selectors.test.ts \
             tests/e2e/creative-showcase.spec.ts
           git diff --check
           git config user.name "github-actions[bot]"
