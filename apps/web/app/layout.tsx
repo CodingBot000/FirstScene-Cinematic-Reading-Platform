@@ -4,8 +4,10 @@ import type { Metadata } from "next";
 import "@firstscene/tokens/css";
 import "@firstscene/ui/css";
 import "./site.css";
-import "./mobile-journey.css";
+import "../components/preview/preview-catalog.css";
+import "../components/discovery.css";
 import "../components/cinematic-prologue.css";
+import "./mobile-journey.css";
 export const metadata: Metadata = {
   title: {
     default: "FirstScene — 문장을 읽고, 장면에 머물다.",
