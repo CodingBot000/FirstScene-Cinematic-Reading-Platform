@@ -34,12 +34,18 @@ test("desktop shader is optional and owns its GPU lifecycle", async ({
   await expect(root.locator(".cinematic-scene")).toHaveCount(3);
 });
 
-test("WebGL2 unavailable leaves the ordinary covers, reader links and scroll controls", async ({ page }) => {
+test("WebGL2 unavailable leaves the ordinary covers, reader links and scroll controls", async ({
+  page,
+}) => {
   await page.addInitScript(() => {
     const base = HTMLCanvasElement.prototype.getContext;
     Object.defineProperty(HTMLCanvasElement.prototype, "getContext", {
       configurable: true,
-      value: function (this: HTMLCanvasElement, type: string, ...args: unknown[]) {
+      value: function (
+        this: HTMLCanvasElement,
+        type: string,
+        ...args: unknown[]
+      ) {
         if (type === "webgl2") return null;
         return Reflect.apply(base, this, [type, ...args]);
       },
@@ -49,13 +55,17 @@ test("WebGL2 unavailable leaves the ordinary covers, reader links and scroll con
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await page.goto("/");
   const root = page.locator(".cinematic-prologue");
-  await expect(root).toHaveAttribute("data-scroll-mode", "pinned", { timeout: 12000 });
+  await expect(root).toHaveAttribute("data-scroll-mode", "pinned", {
+    timeout: 12000,
+  });
   await expect(root.locator(".cinematic-webgl-canvas")).toHaveAttribute(
-    "data-renderer", "fallback", { timeout: 12000 },
+    "data-renderer",
+    "fallback",
+    { timeout: 12000 },
   );
-  await expect(root.getByRole("link", { name: /첫 장면 바로 읽기/ })).toHaveAttribute(
-    "href", "/read/post-office",
-  );
+  await expect(
+    root.getByRole("link", { name: /첫 장면 바로 읽기/ }),
+  ).toHaveAttribute("href", "/read/post-office");
   await expect(root.locator(".cinematic-scene")).toHaveCount(3);
 });
 
