@@ -117,7 +117,7 @@ test("Flip cleanup restores responsive grid when viewport or motion settings cha
   // The plugin is lazy. Exercise a real filter after the import has settled.
   await page.getByRole("radio", { name: "미스터리 · 도시" }).check();
   await expect(page.locator("[data-flip-id]")).toHaveCount(7);
-  await page.getByRole("radio", { name: /전체 36/ }).check();
+  await page.getByRole("radio", { name: "모든 장르" }).check();
 
   // Resize while the cards are still returning to their original positions.
   await page.setViewportSize({ width: 390, height: 844 });
