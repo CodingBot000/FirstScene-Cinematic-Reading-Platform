@@ -15,6 +15,14 @@ test("desktop shader is optional and owns its GPU lifecycle", async ({
   await expect(canvas).toHaveAttribute("data-renderer", /^(webgl2|fallback)$/, {
     timeout: 12000,
   });
+  const webglSupported = await page.evaluate(() => {
+    const probe = document.createElement("canvas");
+    return Boolean(probe.getContext("webgl2"));
+  });
+  if (webglSupported) {
+    // Detect shader/link errors rather than reporting fallback as a GPU pass.
+    await expect(canvas).toHaveAttribute("data-renderer", "webgl2");
+  }
   await expect(page.getByRole("heading", { level: 1 })).toContainText(
     "문장을 읽고",
   );
