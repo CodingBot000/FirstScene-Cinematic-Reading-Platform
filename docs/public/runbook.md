@@ -35,7 +35,7 @@ GitHub Actions의 PR 및 `main` 검사는 `pnpm check:ci`로 빌드, 실제 DB�
 
 Docker 이미지는 `pnpm container:build`로 만들고, 준비된 임시 CI DB에서 `pnpm container:smoke`로 검사합니다. 이미지는 비root 사용자로 실행하며 비밀값과 마이그레이션 소유자 환경은 포함하지 않습니다. Docker smoke의 로컬 재시작 증거는 공개 환경의rollback 증거를 대신하지 않습니다.
 
-공개 배포는 아직 수행하지 않았습니다. 연결된 공급자의 접근 확인이403으로 막혀 있습니다. 승인된 프로젝트·현재 요금·DB17호환성·TLS·pooler·비밀값 저장 위치·복귀 artifact가 확인되기 전에는 게시하지 않습니다. `pnpm deploy:preflight`와 `pnpm deploy:smoke -- --base-url URL`은 미확인 대상을 통과시키지 않습니다. 새 요금제·도메인·이미지 API 결제는 자동으로 만들지 않습니다.
+현재 공개 사이트는 [firstscene-one.vercel.app](https://firstscene-one.vercel.app/)에 배포되어 있습니다. 이는 GitHub 연동 Vercel의 빌드·배포 성공 확인을 뜻하며, 운영 DB 백업·실제 장애 복구·관리형 보안 감사·실기기 사용성 검수의 완료를 뜻하지 않습니다. 별도의 서비스 운영 릴리스 승인(`PUBLIC_RELEASE_READY`)과 공개 URL 가용성은 구분합니다. `pnpm deploy:preflight`와 `pnpm deploy:smoke -- --base-url URL`은 실제 배포 대상의 조건을 별도로 확인해야 하며, 새 요금제·도메인·이미지 API 결제는 자동으로 만들지 않습니다.
 
 PR에서는 추적 파일의 비밀값, 클라이언트 번들, 인증 우회 여부와 API 부정 사례를 검사합니다. 비공개 입력으로 확인해야 하는 별도 검사는 일치하는 증거가 없으면 `DEFERRED_TO_RELEASE`로 기록합니다. 엄격 검사에는 로컬 비공개 입력 또는 정확한 소스에 대한 유효한 검증 증거가 필요합니다.
 
