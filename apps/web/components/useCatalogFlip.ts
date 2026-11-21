@@ -20,7 +20,8 @@ export function useCatalogFlip(signature: string) {
   const finishCurrent = useCallback(() => {
     for (const animation of entrants.current) animation.cancel();
     entrants.current = [];
-    const nodes = container.current?.querySelectorAll<HTMLElement>("[data-flip-id]");
+    const nodes =
+      container.current?.querySelectorAll<HTMLElement>("[data-flip-id]");
     if (nodes?.length) {
       // Complete the geometry transaction before dropping the animation.
       // A bare timeline.kill() can strand absolute-positioned cards.
@@ -29,7 +30,6 @@ export function useCatalogFlip(signature: string) {
     active.current?.kill();
     active.current = null;
   }, []);
-
 
   useEffect(() => {
     const query = window.matchMedia(

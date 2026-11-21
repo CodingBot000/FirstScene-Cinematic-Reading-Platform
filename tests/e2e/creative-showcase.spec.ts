@@ -124,13 +124,15 @@ test("Flip cleanup restores responsive grid when viewport or motion settings cha
   await expect(page.locator("[data-flip-id]")).toHaveCount(36);
   await expect
     .poll(() =>
-      page.locator("[data-flip-id]").evaluateAll((elements) =>
-        elements.every(
-          (element) =>
-            getComputedStyle(element).position !== "absolute" &&
-            element.style.position !== "absolute",
+      page
+        .locator("[data-flip-id]")
+        .evaluateAll((elements) =>
+          elements.every(
+            (element) =>
+              getComputedStyle(element).position !== "absolute" &&
+              element.style.position !== "absolute",
+          ),
         ),
-      ),
     )
     .toBe(true);
   expect(
@@ -146,9 +148,13 @@ test("Flip cleanup restores responsive grid when viewport or motion settings cha
   await page.emulateMedia({ reducedMotion: "reduce" });
   await expect
     .poll(() =>
-      page.locator("[data-flip-id]").evaluateAll((elements) =>
-        elements.every((element) => getComputedStyle(element).position !== "absolute"),
-      ),
+      page
+        .locator("[data-flip-id]")
+        .evaluateAll((elements) =>
+          elements.every(
+            (element) => getComputedStyle(element).position !== "absolute",
+          ),
+        ),
     )
     .toBe(true);
   await expect(page.getByRole("status")).toContainText("7편의 이야기");
