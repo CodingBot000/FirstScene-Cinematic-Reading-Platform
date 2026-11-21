@@ -371,11 +371,22 @@ for (const [id, commandArgs, artifact, kind] of specs) {
   if (row.exitCode) report.qualityFailures.push(id + ":EXIT_" + row.exitCode);
   // CI must expose a bounded, redacted failure summary; without this,
   // individual browser failures are buried in private runner artifacts.
-  if (ci && row.exitCode && ["chromium", "webkit", "visual"].includes(id)) {
+  if (
+    ci &&
+    row.exitCode &&
+    [
+      "lint",
+      "type",
+      "production-build",
+      "chromium",
+      "webkit",
+      "visual",
+    ].includes(id)
+  ) {
     const diagnostic = redact(output)
       .split("\n")
       .filter((line) =>
-        /(?:Error:|failed|FAIL|✘|×|expect\(|Assertion|Timed out|timeout|scroll-chapters|discovery-catalog|\d+ passed|\d+ failed|\d+ unexpected|Visual)/i.test(
+        /(?:Error:|failed|FAIL|✘|×|expect\(|Assertion|Timed out|timeout|TS[0-9]{4}|Module not found|Failed to compile|ESLint|prettier|Could not resolve|scroll-chapters|discovery-catalog|\d+ passed|\d+ failed|\d+ unexpected|Visual)/i.test(
           line,
         ),
       )

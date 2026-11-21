@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import { CoverPortalLayer } from "./CoverPortalLayer";
 import { ResponsiveAsset } from "@firstscene/ui";
 import type { AssetProps } from "@firstscene/ui";
 import {
@@ -188,6 +189,7 @@ export function CinematicPrologue({
       data-scene="0"
     >
       <div className="cinematic-stage">
+        <CoverPortalLayer />
         <div className="cinematic-sky" aria-hidden="true">
           <span className="cinematic-atmosphere cinematic-atmosphere--gold" />
           <span className="cinematic-atmosphere cinematic-atmosphere--tide" />

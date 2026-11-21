@@ -1,70 +1,49 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
-import { Dialog, EmptyState, StoryCard } from "@firstscene/ui";
+import { useState } from "react";
+import { EmptyState, StoryCard } from "@firstscene/ui";
 import type { StoryCardProps } from "@firstscene/ui";
 import {
   previewCount,
   previewShelves,
   type PreviewStory,
 } from "../lib/preview-catalog";
-
-type Availability = "all" | "ready" | "coming";
-
-const normalize = (text: string) =>
-  text.normalize("NFC").toLocaleLowerCase("ko");
-
-const previewCards = previewShelves.flatMap((shelf) =>
-  shelf.stories.map((story) => ({
-    ...story,
-    shelfId: shelf.id,
-    shelfTitle: shelf.title,
-    genreLabel: shelf.genre,
-  })),
-);
+import { PreviewCover } from "./preview/PreviewCover";
+import { PreviewNotice } from "./preview/PreviewNotice";
+import { useDiscoveryQuery } from "./useDiscoveryQuery";
+import { useCatalogFlip } from "./useCatalogFlip";
+import {
+  filterDiscovery,
+  type PreviewListing,
+  type Availability,
+  type DiscoveryMood,
+} from "../lib/discovery-model";
 
 function PreviewCard({
   story,
   index,
   onSelect,
 }: {
-  story: (typeof previewCards)[number];
+  story: PreviewListing;
   index: number;
   onSelect: (story: PreviewStory) => void;
 }) {
   return (
-    <article className="discovery-preview-card" data-preview-story={story.id}>
+    <article
+      className="discovery-preview-card"
+      data-preview-story={story.id}
+      data-flip-id={`preview-${story.id}`}
+    >
       <button
         type="button"
         className="preview-card"
         onClick={() => onSelect(story)}
         aria-label={`${story.title}, 공개 준비 중 안내 열기`}
       >
-        <span
-          className="preview-cover"
-          data-palette={story.palette}
-          data-illustrated={story.artworkAsset ? "true" : undefined}
-        >
-          {story.artworkAsset ? (
-            <img
-              className="preview-cover-illustration"
-              src={story.artworkAsset}
-              alt=""
-              loading="lazy"
-              decoding="async"
-              aria-hidden="true"
-            />
-          ) : null}
-          <span className="preview-cover-overline">
-            FIRSTSCENE / {String(index + 1).padStart(2, "0")}
-          </span>
-          <span className="preview-cover-art" aria-hidden="true">
-            {story.symbol}
-          </span>
-          <span className="preview-cover-title">{story.title}</span>
-          <span className="preview-cover-imprint">COMING SOON</span>
-        </span>
+        <PreviewCover
+          story={story}
+          serial={`FIRSTSCENE / ${String(index + 1).padStart(2, "0")}`}
+        />
         <span className="preview-card-meta">
           <span className="preview-card-name">{story.title}</span>
           <span className="preview-card-status">공개 예정</span>
@@ -89,91 +68,27 @@ export function Discovery({
   initialStatus?: Availability;
   initialGenre?: string;
 }) {
-  const [q, setQ] = useState(initialQuery);
-  const [mood, setMood] = useState(initialMood);
-  const [status, setStatus] = useState<Availability>(initialStatus);
-  const [genre, setGenre] = useState<string>(initialGenre);
+  const query = useDiscoveryQuery({
+    q: initialQuery,
+    mood: initialMood as DiscoveryMood,
+    status: initialStatus,
+    genre: initialGenre,
+  });
+  const { q, mood, status, genre } = query.filters;
+  const {
+    ready: visibleReady,
+    coming: visibleComing,
+    count,
+  } = filterDiscovery(cards, query.filters);
   const [selected, setSelected] = useState<PreviewStory | null>(null);
-
-  const router = useRouter();
-  const first = useRef(true);
-
-  useEffect(() => {
-    if (first.current) {
-      first.current = false;
-      return;
-    }
-    const timer = setTimeout(() => {
-      const params = new URLSearchParams();
-      if (q) params.set("q", q);
-      if (mood !== "all") params.set("mood", mood);
-      if (status !== "all") params.set("status", status);
-      if (genre !== "all") params.set("genre", genre);
-      router.replace("/discover" + (params.size ? "?" + params : ""), {
-        scroll: false,
-      });
-    }, 200);
-    return () => clearTimeout(timer);
-  }, [q, mood, status, genre, router]);
-
-  useEffect(() => {
-    const sync = () => {
-      const params = new URLSearchParams(location.search);
-      setQ((params.get("q") ?? "").slice(0, 80));
-      const nextMood = params.get("mood") ?? "all";
-      setMood(["calm", "mystery"].includes(nextMood) ? nextMood : "all");
-      const nextStatus = params.get("status") ?? "all";
-      setStatus(
-        nextStatus === "ready" || nextStatus === "coming" ? nextStatus : "all",
-      );
-      const nextGenre = params.get("genre") ?? "all";
-      setGenre(
-        previewShelves.some((shelf) => shelf.id === nextGenre)
-          ? nextGenre
-          : "all",
-      );
-    };
-    addEventListener("popstate", sync);
-    return () => removeEventListener("popstate", sync);
-  }, []);
-
-  const ready = cards.filter(
-    (card) =>
-      normalize(
-        card.title + " " + card.summary + " " + card.tags.join(" "),
-      ).includes(normalize(q)) &&
-      (mood === "all" ||
-        card.tags.includes(mood === "calm" ? "잔잔함" : "미스터리")) &&
-      genre === "all",
-  );
-  const coming = previewCards.filter(
-    (story) =>
-      normalize(
-        story.title +
-          " " +
-          story.summary +
-          " " +
-          story.genreLabel +
-          " " +
-          story.shelfTitle,
-      ).includes(normalize(q)) &&
-      (genre === "all" || story.shelfId === genre) &&
-      (mood === "all" ||
-        (mood === "calm"
-          ? ["heart", "fantasy"].includes(story.shelfId)
-          : ["city", "after-dark"].includes(story.shelfId))),
-  );
-
-  const visibleReady = status === "coming" ? [] : ready;
-  const visibleComing = status === "ready" ? [] : coming;
-  const count = visibleReady.length + visibleComing.length;
-
-  const reset = () => {
-    setQ("");
-    setMood("all");
-    setStatus("all");
-    setGenre("all");
-  };
+  const { container: catalogRef, transition: transitionCatalog } =
+    useCatalogFlip(
+      [
+        ...visibleReady.map((story) => story.id),
+        ...visibleComing.map((story) => story.id),
+      ].join("|"),
+    );
+  const reset = () => transitionCatalog(query.reset);
 
   return (
     <>
@@ -190,7 +105,7 @@ export function Discovery({
             type="search"
             maxLength={80}
             value={q}
-            onChange={(event) => setQ(event.target.value)}
+            onChange={(event) => query.search(event.target.value)}
             placeholder="제목, 장르, 장면을 검색해 보세요"
           />
           <button type="submit" className="fs-button fs-secondary">
@@ -213,12 +128,7 @@ export function Discovery({
                 name="status"
                 value={value}
                 checked={status === value}
-                onChange={() => {
-                  setStatus(value);
-                  // Genre shelves currently contain unpublished concepts only.
-                  // Switching to the two readable stories resets this incompatible filter.
-                  if (value === "ready") setGenre("all");
-                }}
+                onChange={() => transitionCatalog(() => query.status(value))}
               />
               <span>{label}</span>
             </label>
@@ -240,7 +150,7 @@ export function Discovery({
                 name="mood"
                 value={value}
                 checked={mood === value}
-                onChange={() => setMood(value)}
+                onChange={() => transitionCatalog(() => query.mood(value))}
               />
               <span>{label}</span>
             </label>
@@ -256,7 +166,7 @@ export function Discovery({
                 name="genre"
                 value="all"
                 checked={genre === "all"}
-                onChange={() => setGenre("all")}
+                onChange={() => transitionCatalog(() => query.genre("all"))}
               />
               <span>모든 장르</span>
             </label>
@@ -267,11 +177,9 @@ export function Discovery({
                   name="genre"
                   value={shelf.id}
                   checked={genre === shelf.id}
-                  onChange={() => {
-                    setGenre(shelf.id);
-                    // Choosing an upcoming-only shelf cannot yield readable titles.
-                    if (status === "ready") setStatus("coming");
-                  }}
+                  onChange={() =>
+                    transitionCatalog(() => query.genre(shelf.id))
+                  }
                 />
                 <span>{shelf.genre}</span>
               </label>
@@ -300,9 +208,17 @@ export function Discovery({
       </div>
 
       {count ? (
-        <div className="discovery-catalog" key={`${status}:${mood}:${genre}`}>
+        <div
+          className="discovery-catalog"
+          ref={catalogRef}
+          key={`${status}:${mood}:${genre}`}
+        >
           {visibleReady.map((card) => (
-            <div key={card.id} className="discovery-finished-card">
+            <div
+              key={card.id}
+              className="discovery-finished-card"
+              data-flip-id={`ready-${card.id}`}
+            >
               <StoryCard {...card} />
             </div>
           ))}
@@ -331,25 +247,12 @@ export function Discovery({
         />
       )}
 
-      {selected ? (
-        <Dialog
-          open
-          onOpenChange={(open) => {
-            if (!open) setSelected(null);
-          }}
-          title={selected.title}
-          description="이 작품은 현재 공개 준비 중입니다."
-        >
-          <p className="preview-dialog-summary">{selected.summary}</p>
-          <p>
-            본문과 읽기 기능은 아직 공개되지 않았습니다. 현재 완결된 두 작품은
-            지금 읽을 수 있습니다.
-          </p>
-          <a className="fs-text-link" href="/discover?status=ready">
-            지금 읽을 수 있는 작품 보기 ↗
-          </a>
-        </Dialog>
-      ) : null}
+      <PreviewNotice
+        story={selected}
+        onDismiss={() => setSelected(null)}
+        href="/discover?status=ready"
+        linkLabel="지금 읽을 수 있는 작품 보기"
+      />
     </>
   );
 }
