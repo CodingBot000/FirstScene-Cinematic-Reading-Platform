@@ -1,0 +1,61 @@
+import { expect, test } from "@playwright/test";
+
+test("desktop shader is optional and owns its GPU lifecycle", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.goto("/");
+  const root = page.locator(".cinematic-prologue");
+  const canvas = root.locator(".cinematic-webgl-canvas");
+  await expect(canvas).toHaveCount(1);
+  await expect(root).toHaveAttribute("data-scroll-mode", "pinned", {
+    timeout: 12000,
+  });
+  await expect(canvas).toHaveAttribute("data-renderer", /^(webgl2|fallback)$/, {
+    timeout: 12000,
+  });
+  await expect(page.getByRole("heading", { level: 1 })).toContainText(
+    "문장을 읽고",
+  );
+
+  await page.setViewportSize({ width: 390, height: 844 });
+  await expect(root).toHaveAttribute("data-scroll-mode", "static");
+  await expect(canvas).toHaveAttribute("data-renderer", "inactive");
+  await expect(canvas).toBeHidden();
+  await expect(root.locator(".cinematic-scene")).toHaveCount(3);
+});
+
+test("reduced-motion receives readable semantic scenes without a GPU animation", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto("/");
+  await expect(page.locator(".cinematic-webgl-canvas")).toBeHidden();
+  await expect(page.locator(".cinematic-webgl-canvas")).toHaveAttribute(
+    "data-renderer",
+    "inactive",
+  );
+  await expect(page.locator(".cinematic-scene")).toHaveCount(3);
+  await expect(page.locator(".cinematic-scene-action")).toHaveCount(3);
+});
+
+test("catalog state changes preserve titles, links and accessibility with Flip enabled", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.goto("/discover");
+  await expect(page.locator("[data-flip-id]")).toHaveCount(36);
+  await page.getByRole("radio", { name: "미스터리 · 도시" }).check();
+  await expect(page.locator("[data-flip-id]")).toHaveCount(7);
+  await expect(page.getByRole("status")).toContainText("7편의 이야기");
+  await page.getByRole("radio", { name: /지금 읽기 2/ }).check();
+  await expect(page.locator("[data-flip-id]")).toHaveCount(2);
+  await expect(page.getByRole("status")).toContainText("2편의 이야기");
+  await expect(page.locator(".discovery-finished-card a[href^='/stories/']")).toHaveCount(6);
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= window.innerWidth + 1,
+    ),
+  ).toBe(true);
+});
