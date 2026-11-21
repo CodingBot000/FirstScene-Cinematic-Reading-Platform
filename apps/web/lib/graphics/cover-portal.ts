@@ -82,7 +82,7 @@ export function mountCoverPortal(
   canvas: HTMLCanvasElement,
   root: HTMLElement,
 ): () => void {
-  const gl = canvas.getContext("webgl2", {
+  const maybeGL = canvas.getContext("webgl2", {
     alpha: true,
     premultipliedAlpha: false,
     antialias: false,
@@ -90,7 +90,8 @@ export function mountCoverPortal(
     depth: false,
     stencil: false,
   });
-  if (!gl) throw new Error("WEBGL2_UNAVAILABLE");
+  if (!maybeGL) throw new Error("WEBGL2_UNAVAILABLE");
+  const gl: WebGL2RenderingContext = maybeGL;
   let program: WebGLProgram | null = null;
   let vao: WebGLVertexArrayObject | null = null;
   const shaders: WebGLShader[] = [];
