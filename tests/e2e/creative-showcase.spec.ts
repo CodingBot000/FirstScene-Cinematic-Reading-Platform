@@ -106,3 +106,50 @@ test("catalog state changes preserve titles, links and accessibility with Flip e
     ),
   ).toBe(true);
 });
+
+test("Flip cleanup restores responsive grid when viewport or motion settings change mid-transition", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.goto("/discover");
+
+  // The plugin is lazy. Exercise a real filter after the import has settled.
+  await page.getByRole("radio", { name: "미스터리 · 도시" }).check();
+  await expect(page.locator("[data-flip-id]")).toHaveCount(7);
+  await page.getByRole("radio", { name: /전체 36/ }).check();
+
+  // Resize while the cards are still returning to their original positions.
+  await page.setViewportSize({ width: 390, height: 844 });
+  await expect(page.locator("[data-flip-id]")).toHaveCount(36);
+  await expect
+    .poll(() =>
+      page.locator("[data-flip-id]").evaluateAll((elements) =>
+        elements.every(
+          (element) =>
+            getComputedStyle(element).position !== "absolute" &&
+            element.style.position !== "absolute",
+        ),
+      ),
+    )
+    .toBe(true);
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= window.innerWidth + 1,
+    ),
+  ).toBe(true);
+
+  // Turning on reduced motion also must leave readable CSS-grid items.
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.emulateMedia({ reducedMotion: "no-preference" });
+  await page.getByRole("radio", { name: "미스터리 · 도시" }).check();
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await expect
+    .poll(() =>
+      page.locator("[data-flip-id]").evaluateAll((elements) =>
+        elements.every((element) => getComputedStyle(element).position !== "absolute"),
+      ),
+    )
+    .toBe(true);
+  await expect(page.getByRole("status")).toContainText("7편의 이야기");
+});
