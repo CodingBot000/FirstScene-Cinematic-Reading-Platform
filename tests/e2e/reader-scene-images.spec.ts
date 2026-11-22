@@ -35,7 +35,13 @@ for (const storyId of ["post-office", "tide-station"]) {
       }
       for (const index of [0, 2, 5]) {
         const scene = story.scenes[index]!;
-        await scenes.nth(index).locator("h2").scrollIntoViewIfNeeded();
+        await scenes.nth(index).locator(".fs-reader-beat p").first().evaluate((element) => {
+          const rect = element.getBoundingClientRect();
+          scrollTo({
+            top: scrollY + rect.top + rect.height * 0.2 - innerHeight * 0.42,
+            behavior: "instant",
+          });
+        });
         await expect(reader).toHaveAttribute("data-active-scene", scene.id);
         const picture = inline.nth(index).locator(":scope > picture");
         await expect(picture).toBeVisible();
