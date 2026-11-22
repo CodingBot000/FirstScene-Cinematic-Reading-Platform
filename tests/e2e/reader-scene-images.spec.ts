@@ -25,11 +25,10 @@ for (const storyId of ["post-office", "tide-station"]) {
       await expect(inline).toHaveCount(story.scenes.length);
       if (width > 1024) {
         await expect(reader.locator(".fs-reader-stage")).toBeVisible();
-        // Desktop is not allowed to replace the real scene assets with placeholders.
-        await expect(inline.locator("picture > img")).toHaveCount(
-          story.scenes.length +
-            story.scenes.filter((scene) => scene.portraitAssetId).length,
-        );
+        // Only current and next scene images should request real assets initially.
+        // Other picture slots must keep their aspect ratios without eager requests.
+        await expect(inline.locator(":scope > picture > img")).toHaveCount(2);
+        await expect(inline.locator(".fs-reader-portrait")).toHaveCount(0);
       } else {
         await expect(reader.locator(".fs-reader-stage")).toBeHidden();
       }

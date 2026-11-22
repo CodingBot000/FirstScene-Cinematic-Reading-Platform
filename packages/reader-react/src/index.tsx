@@ -573,9 +573,7 @@ export function StoryReader({
             {preferences.mode === "cinematic" ? (
               <div className="fs-reader-mobile-image fs-reader-scene-image">
                 <ResponsiveAsset
-                  {...(!mobile ||
-                  index === sceneIndex ||
-                  index === sceneIndex + 1
+                  {...(index === sceneIndex || index === sceneIndex + 1
                     ? getAsset(scene.backgroundAssetId)
                     : fallback)}
                   decorative
@@ -583,10 +581,12 @@ export function StoryReader({
                   priority={index === 0}
                   aspectRatio="16 / 10"
                 />
-                {portrait(
-                  scene.portraitAssetId,
-                  !mobile || index === sceneIndex || index === sceneIndex + 1,
-                )}
+                {mobile
+                  ? portrait(
+                      scene.portraitAssetId,
+                      index === sceneIndex || index === sceneIndex + 1,
+                    )
+                  : null}
               </div>
             ) : null}
             <h2 id={scene.id} tabIndex={-1}>
