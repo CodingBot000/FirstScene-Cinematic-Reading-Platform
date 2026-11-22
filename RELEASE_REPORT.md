@@ -1,17 +1,35 @@
-# FirstScene 제품 QA와 출시 상태
+# FirstScene — QA 및 릴리스 증거
 
-로컬 제품 QA와 문서 인계를 완료했습니다. 개발 원장은 29/33입니다. `LOCAL_PRODUCT_READY`와 `PUBLIC_RELEASE_READY`는 false입니다. [진행 요약](PROGRESS.md)
+**기준일:** 2026-11-22 (KST)  
+**기능 소스:** `main` · squash merge `82a55454ca961874c9dbc33edd46d1d7063f87b3`  
+**기능 PR:** [#9](https://github.com/CodingBot000/FirstScene-Cinematic-Reading-Platform/pull/9)
 
-로컬 자동 검사 19개가 통과했습니다. 단위 107건, PostgreSQL 23건, API 25건, Chromium과 Linux WebKit 각 47건, 접근성 검사 2건을 실행했습니다. 화면 104장을 검수했고, 장면 전환 도중 촬영된 한 장을 안정적으로 다시 수집하도록 수정했습니다. [공개용 증거 요약](evidence/qa/public-product-qa-20261118.json)
+## 확인된 결과
 
-## 주요 기술 개선
+| 구분 | 상태 | 근거 |
+| --- | --- | --- |
+| 기능 PR 병합 | 완료 | PR #9, 병합 커밋 `82a55454` |
+| PR 검증 | 성공 | [기능 PR CI](https://github.com/CodingBot000/FirstScene-Cinematic-Reading-Platform/actions/runs/44924209499) |
+| `main` 검증 | 성공 | [병합 커밋 CI](https://github.com/CodingBot000/FirstScene-Cinematic-Reading-Platform/actions/runs/44925526025) |
+| 코드 리뷰 | Flip 화면 크기 변동 결함 수정, 회귀 테스트 추가 | 병합된 PR #9와 대응 테스트 |
+| 제품 로컬 검증 | 기존 19개 검사 그룹, Docker smoke 13개 통과 기록 | 기능 PR CI의 검증 기록 |
+| 실기기 UX/GPU | 미확인 | 자동 브라우저 검사와 별개 |
+| 사람 대상 사용성 평가 | 0건 | 현장 실측·인터뷰 없음 |
+| 관리형 보안 감사 | 미확정 | 기존 감사 ID 충돌 기록 |
+| 운영 DB 백업/복원 | 미확인 | 실제 운영 환경 검증 필요 |
+| 공개 프로덕션 배포 및 smoke | **완료 선언 불가** | 대상 프로젝트·권한·공개 URL·운영 검증 필요 |
 
-- **브라우저 설치**. Chromium은 러너에서 직접 설치해 입력 동작을 확인하고, WebKit은 운영체제 의존성이 사전 설치된 버전 고정 Playwright 이미지에서 실행합니다. 검증 커밋 `77b7f61`에서 준비 단계는 각각 13초와 28초였습니다. [워크플로](.github/workflows/check.yml)
-- **깨끗한 환경에서의 재현**. 프로덕션 빌드 뒤에 실제 PostgreSQL API 검사를 실행합니다. Lighthouse는 측정마다 Playwright가 새로 띄운 고정 Chromium에 루프백으로 연결합니다. 콜드 측정 9회와 브라우저 성능 검사 4건이 기존 예산을 통과했습니다. [실행 순서](tools/full-check.mjs) · [성능 측정 코드](tools/performance/collect-lighthouse.mjs)
-- **장면 전환 검수**. 데스크톱 캡처는 두 삽화 레이어의 전환이 완료된 후 저장합니다. 두 작품의 12개 장면을 양방향으로 확인했고, 원본 검수 자료의 해시는 공개 요약에 기록했습니다. [장면 검사](tests/visual/scenes.spec.ts) · [공개용 QA 증거](evidence/qa/public-product-qa-20261118.json)
+## 기능 변경 범위
 
-검증 커밋 `77b7f61`의 원격 `check:ci`에서 자동 검사 19개와 컨테이너 smoke 13건이 통과했습니다. [GitHub Actions 실행](https://github.com/CodingBot000/FirstScene-Cinematic-Reading-Platform/actions/runs/44307943151) · [선별된 결과 아티팩트](https://github.com/CodingBot000/FirstScene-Cinematic-Reading-Platform/actions/runs/44307943151/artifacts/14430335855)
+- 공개 가능한 완결 단편 2편과 공개 예정 34편을 탐색 화면에서 구분하고 공유 preview 표지/안내 계약을 적용
+- 검색·필터 계산과 브라우저 URL 동기화 책임을 분리
+- 데스크톱 조건부 WebGL2 Shader 포털과 GPU 자원 정리·fallback
+- 선택적 GSAP Flip 카드 전환, 모션 감소/화면 크기 변화 복구
+- UI 패키지 내부 구조 및 CSS의 영역별 분리, 기존 외부 import 호환성 유지
+- 읽기 동기화의 읽기 전용 selector 분리, 변경·epoch·outbox/삭제 상태 소유권 유지
 
-관리형 소스 감사는 발견사항 ID 충돌로 최종 확정 전이며 배포 공급자 접근은 403 상태입니다. 공개 서비스와 실제 사람의 사용성 평가 결과는 아직 없습니다. [감사 상태](evidence/security/managed-scan-review.json) · [공급자 상태](evidence/deploy/provider-access.json)
+## 완료 기준과 제한
 
-[첫 원격 실행](https://github.com/CodingBot000/FirstScene-Cinematic-Reading-Platform/actions/runs/44305718507)의 API 시작 순서와 성능 측정 실패는 수정 전 증거로 보존했습니다.
+이 문서는 기능 PR 병합과 자동 검증을 재현 가능한 링크로 기록합니다. `LOCAL_PRODUCT_READY` 또는 `PUBLIC_RELEASE_READY`를 선언하지 않습니다. 제품 완료율 원장([PROGRESS.md](PROGRESS.md))의 별도 외부 차단 항목도 임의로 완료 처리하지 않습니다.
+
+Vercel 접근/대상과 실제 운영 smoke가 검증되기 전에는 프로덕션 링크를 만들어 기재하거나 배포 성공으로 보고하지 않습니다. 배포가 수행되면 대상 커밋, 빌드/배포 ID, 공개 URL, health/작품/상태변경/rollback 검증 결과를 증거로 추가해야 합니다.

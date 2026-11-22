@@ -23,3 +23,40 @@
 - 화면 증거의 재사용 제한: 새 render source/check fingerprint와 실제 이미지hash를 검증합니다. 이전 관찰을 옮길 수 있는 경우는 픽셀이 정확히 같은 이미지뿐이며 관찰 출처를 남깁니다. 새 픽셀은 자동 승인하지 않습니다.
 
 공개용 문서는 이 디렉터리에서 선별합니다. 내부 계획 자료, 비공개 원문, 환경 파일, 세션 데이터, 로컬 Git이력을 문서 묶음에 넣지 않습니다.
+
+
+## 2026-11 Creative Frontend 병합 구조
+
+2026-11-22 기준 `main`의 기능 병합 커밋은 `82a55454ca961874c9dbc33edd46d1d7063f87b3`입니다. 기존 책임 경계를 유지하면서 아래 표시 계층만 추가·재구성했습니다.
+
+```mermaid
+flowchart LR
+  U["사용자"] --> W["Next.js App Router"]
+  W --> D["Discovery UI"]
+  W --> R["SSR Reading UI"]
+  W --> L["Landing UI"]
+  D --> M["Pure discovery model"]
+  D --> Q["URL state hook"]
+  D -. "조건부 카드 전환" .-> F["GSAP Flip hook"]
+  L -. "지원 장치에서만" .-> G["WebGL2 portal"]
+  R --> C["Reader Core / React renderer"]
+  W --> API["Same-origin API"]
+  API --> S["server-data"]
+  S --> DB[("PostgreSQL")]
+  M --> PC["Preview catalog"]
+  G -. "실패 시 정적 HTML/CSS" .-> L
+```
+
+| 실제 경로 | 책임 | 비의존 원칙 |
+| --- | --- | --- |
+| `apps/web/lib/discovery-model.ts` | 검색·필터·정규화·공개/예정 분리 | 브라우저 DOM·DB와 분리한 순수 로직 |
+| `apps/web/components/useDiscoveryQuery.ts` | URL query와 사용자 선택 상태 동기화 | 검색 결과 계산을 소유하지 않음 |
+| `apps/web/components/useCatalogFlip.ts` | 필터 변경 전/후 카드 위치 전환, 중단·정리 | 결과 집합이나 읽기 상태를 변경하지 않음 |
+| `apps/web/components/preview/*` | 예정작 표지와 안내 UI 공유 | 미완성 콘셉트에 읽기 라우트 부여하지 않음 |
+| `apps/web/components/CoverPortalLayer.tsx` | 데스크톱·motion 조건에 따른 선택적 로딩 | 서버 본문과 저장 기능에 영향 없음 |
+| `apps/web/lib/graphics/cover-portal.ts` | WebGL2 shader·렌더 루프·GPU 자원 정리 | Canvas 미지원·context loss에도 정적 화면 유지 |
+| `apps/web/features/reading-sync/selectors.ts` | 읽기 DTO의 read-only 투영 | 쓰기·outbox·epoch·삭제 전이는 기존 store에 유지 |
+
+**레이아웃 회귀:** Flip 실행 중 viewport 변경 시 이전 위치 기반 transform이 남을 수 있어 실행 취소·배치 복원 처리를 보완하고 회귀 테스트를 추가했습니다. 화면 크기 변동은 일반 카드 배치를 훼손해서는 안 됩니다. 조건부 동적 import, reduced-motion fallback, 카드 텍스트 대비 유지, 렌더 수명 종료 시 정리는 단순 장식보다 우선하는 acceptance 조건입니다.
+
+자세한 선택 이유와 버린 대안은 [ADR](adr-creative-showcase-2026-11.md), 제품 기능/검증 한계는 [릴리스 보고서](../../RELEASE_REPORT.md)를 참조합니다.
