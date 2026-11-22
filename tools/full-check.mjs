@@ -369,43 +369,6 @@ for (const [id, commandArgs, artifact, kind] of specs) {
     report.collectionErrors.push(id + ":REPORT_MISSING_STALE_OR_INCOMPLETE");
   }
   if (row.exitCode) report.qualityFailures.push(id + ":EXIT_" + row.exitCode);
-  if (id === "performance" && row.exitCode) {
-    // Preserve the performance gate, but expose only non-sensitive failure codes
-    // so CI failures can be diagnosed without publishing raw browser traces.
-    try {
-      const detail = JSON.parse(
-        fs.readFileSync("evidence/performance/current/result.json", "utf8"),
-      );
-      const navigation = JSON.parse(
-        fs.readFileSync("evidence/performance/current/navigation.json", "utf8"),
-      );
-      const resourceFile = "evidence/performance/current/resources.json";
-      const resources = fs.existsSync(resourceFile)
-        ? JSON.parse(fs.readFileSync(resourceFile, "utf8"))
-        : {};
-      console.error(
-        JSON.stringify({
-          suite: "performance-diagnostics",
-          errors: detail.errors,
-          commands: detail.commands.map(({ command, exitCode }) => ({
-            command,
-            exitCode,
-          })),
-          navigationStatus: navigation.status,
-          navigationViolations: navigation.summary?.map(({ route, violations }) => ({
-            route,
-            violations,
-          })),
-          initialSceneAssets: resources.cinematicInitialSceneAssets ?? [],
-        }),
-      );
-    } catch {
-      console.error(
-        JSON.stringify({ suite: "performance-diagnostics", status: "UNAVAILABLE" }),
-      );
-    }
-  }
-
   // CI must expose a bounded, redacted failure summary; without this,
   // individual browser failures are buried in private runner artifacts.
   if (
