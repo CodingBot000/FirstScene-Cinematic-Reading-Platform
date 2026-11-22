@@ -571,10 +571,11 @@ export function StoryReader({
             aria-labelledby={scene.id}
           >
             {preferences.mode === "cinematic" ? (
-              <div className="fs-reader-mobile-image">
+              <div className="fs-reader-mobile-image fs-reader-scene-image">
                 <ResponsiveAsset
-                  {...(mobile &&
-                  (index === sceneIndex || index === sceneIndex + 1)
+                  {...(!mobile ||
+                  index === sceneIndex ||
+                  index === sceneIndex + 1
                     ? getAsset(scene.backgroundAssetId)
                     : fallback)}
                   decorative
@@ -584,7 +585,7 @@ export function StoryReader({
                 />
                 {portrait(
                   scene.portraitAssetId,
-                  mobile && (index === sceneIndex || index === sceneIndex + 1),
+                  !mobile || index === sceneIndex || index === sceneIndex + 1,
                 )}
               </div>
             ) : null}
