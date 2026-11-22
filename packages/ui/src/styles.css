@@ -18,3 +18,6 @@
 @media(max-width:1024px){.fs-reader-beat:has(.fs-beat-bookmark){padding-right:0}.fs-reader-beat .fs-icon-wrap{position:static;display:flex;justify-content:flex-end;margin:-24px 0 24px}}
 .fs-reader-beat .fs-tooltip{left:0;transform:none}
 @media(max-width:1024px){.fs-reader-beat .fs-icon-wrap{position:relative;margin-bottom:32px}.fs-reader-beat .fs-tooltip{left:auto;right:0;top:calc(100% + 2px)}}
+
+/* Keep authored scene artwork in the reading flow at desktop widths as well. */
+@media(min-width:1025px){.fs-reader-cinematic .fs-reader-scene-image{display:block;margin:0 0 28px}.fs-reader-cinematic .fs-reader-scene-image>.fs-asset{border-radius:8px}.fs-reader-cinematic .fs-reader-scene-image .fs-reader-portrait{margin-top:16px}.fs-reader-cinematic .fs-reader-scene-image .fs-reader-portrait .fs-asset{width:64px}}
