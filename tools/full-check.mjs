@@ -400,7 +400,9 @@ for (const [id, commandArgs, artifact, kind] of specs) {
         }),
       );
     } catch {
-      console.error('{"suite":"performance-diagnostics","status":"UNAVAILABLE"}');
+      console.error(
+        JSON.stringify({ suite: "performance-diagnostics", status: "UNAVAILABLE" }),
+      );
     }
   }
 
