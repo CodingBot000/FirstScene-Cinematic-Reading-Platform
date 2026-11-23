@@ -81,3 +81,8 @@
   .discovery-catalog .discovery-finished-card .fs-story-card{display:block}
   .discovery-catalog .discovery-finished-card .fs-story-cover{width:55%;margin-bottom:10px}
 }
+
+/* Source-attributed classic entries are readable, unlike preview concepts. */
+.discovery-classic-card{min-width:0}
+.discovery-classic-card .classic-card-details strong{font-size:17px}
+@media(max-width:640px){.discovery-classic-card .classic-card-details strong{font-size:15px}.discovery-classic-card .classic-card-cover-title{font-size:19px}}

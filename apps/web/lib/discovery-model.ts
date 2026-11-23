@@ -1,5 +1,6 @@
 import type { StoryCardProps } from "@firstscene/ui";
 import { previewShelves, type PreviewStory } from "./preview-catalog";
+import { classicSummaries } from "./classic-catalog";
 
 export type Availability = "all" | "ready" | "coming";
 export type DiscoveryMood = "all" | "calm" | "mystery";
@@ -115,6 +116,17 @@ export function filterDiscovery(
               card.tags.includes(mood === "calm" ? "잔잔함" : "미스터리")) &&
             genre === "all",
         );
+  const classics =
+    status === "coming"
+      ? []
+      : classicSummaries.filter(
+          (story) =>
+            genre === "all" &&
+            mood === "all" &&
+            normalize(
+              [story.title, story.author, story.summary, "고전"].join(" "),
+            ).includes(phrase),
+        );
   const coming =
     status === "ready"
       ? []
@@ -131,5 +143,10 @@ export function filterDiscovery(
             (genre === "all" || story.shelfId === genre) &&
             (mood === "all" || moodShelves[mood].includes(story.shelfId)),
         );
-  return { ready, coming, count: ready.length + coming.length };
+  return {
+    ready,
+    classics,
+    coming,
+    count: ready.length + classics.length + coming.length,
+  };
 }

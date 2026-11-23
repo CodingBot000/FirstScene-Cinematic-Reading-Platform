@@ -90,13 +90,13 @@ test("catalog state changes preserve titles, links and accessibility with Flip e
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await page.goto("/discover");
-  await expect(page.locator("[data-flip-id]")).toHaveCount(36);
+  await expect(page.locator("[data-flip-id]")).toHaveCount(56);
   await page.getByRole("radio", { name: "미스터리 · 도시" }).check();
   await expect(page.locator("[data-flip-id]")).toHaveCount(7);
   await expect(page.getByRole("status")).toContainText("7편의 이야기");
-  await page.getByRole("radio", { name: /지금 읽기 2/ }).check();
-  await expect(page.locator("[data-flip-id]")).toHaveCount(2);
-  await expect(page.getByRole("status")).toContainText("2편의 이야기");
+  await page.getByRole("radio", { name: /지금 읽기 22/ }).check();
+  await expect(page.locator("[data-flip-id]")).toHaveCount(22);
+  await expect(page.getByRole("status")).toContainText("22편의 이야기");
   await expect(
     page.locator(".discovery-finished-card a[href^='/stories/']"),
   ).toHaveCount(6);
@@ -121,7 +121,7 @@ test("Flip cleanup restores responsive grid when viewport or motion settings cha
 
   // Resize while the cards are still returning to their original positions.
   await page.setViewportSize({ width: 390, height: 844 });
-  await expect(page.locator("[data-flip-id]")).toHaveCount(36);
+  await expect(page.locator("[data-flip-id]")).toHaveCount(56);
   await expect
     .poll(() =>
       page

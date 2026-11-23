@@ -33,9 +33,9 @@ test("P03 QA-U02 title/mood search, accurate empty state and reset preserve real
   await expect(search).toBeFocused();
   await expect(page).toHaveURL(/q=/);
   await page.getByRole("button", { name: "필터 초기화" }).click();
-  await expect(page.getByRole("status")).toContainText("36편의 이야기");
-  await page.getByRole("radio", { name: /지금 읽기 2/ }).check();
-  await expect(page.getByRole("status")).toContainText("2편의 이야기");
+  await expect(page.getByRole("status")).toContainText("56편의 이야기");
+  await page.getByRole("radio", { name: /지금 읽기 22/ }).check();
+  await expect(page.getByRole("status")).toContainText("22편의 이야기");
   await page.getByRole("radio", { name: "미스터리", exact: true }).check();
   await expect(page.getByRole("status")).toContainText("1편의 이야기");
   await expect(

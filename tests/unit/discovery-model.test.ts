@@ -30,12 +30,27 @@ const ready: StoryCardProps[] = [
 ];
 
 describe("discovery model and state boundaries", () => {
-  it("keeps 2 published and 34 unpublished works distinct", () => {
+  it("keeps 2 original, 20 public-domain classics and 34 unpublished concepts distinct", () => {
     expect(previewListings).toHaveLength(34);
     const result = filterDiscovery(ready, canonicalFilters({}));
     expect(result.ready).toHaveLength(2);
+    expect(result.classics).toHaveLength(20);
     expect(result.coming).toHaveLength(34);
-    expect(result.count).toBe(36);
+    expect(result.count).toBe(56);
+  });
+  it("returns classics for readable status, but not for unpublished concepts", () => {
+    const readyOnly = filterDiscovery(
+      ready,
+      canonicalFilters({ status: "ready", q: "김유정" }),
+    );
+    expect(readyOnly.classics.length).toBeGreaterThan(0);
+    expect(readyOnly.coming).toHaveLength(0);
+    const comingOnly = filterDiscovery(
+      ready,
+      canonicalFilters({ status: "coming" }),
+    );
+    expect(comingOnly.classics).toHaveLength(0);
+    expect(comingOnly.coming).toHaveLength(34);
   });
   it("normalizes URL query and prevents invalid ready+preview genre", () => {
     const parsed = parseDiscoverySearch(
