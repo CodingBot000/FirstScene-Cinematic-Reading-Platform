@@ -11,9 +11,7 @@ export function SiteHeader() {
           FirstScene<span aria-hidden="true">.</span>
         </Link>
         <nav aria-label="주 메뉴">
-          <Link href="/discover" data-reset-discovery>
-            탐색
-          </Link>
+          <Link href="/discover">탐색</Link>
           <Link href="/library">내 서재</Link>
           <Link href="/settings">설정</Link>
         </nav>

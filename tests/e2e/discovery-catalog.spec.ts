@@ -96,5 +96,10 @@ test("P11-T02 탐색 링크는 현재 검색어와 지연된 입력을 초기화
   await discover.click();
   await expect(search).toHaveValue("");
   await expect(page.getByRole("status")).toContainText("56편의 이야기");
+  await page.goBack();
+  await expect(search).toHaveValue("동백꽃");
+  await expect(page.getByRole("status")).toContainText("1편의 이야기");
+  await page.goForward();
+  await expect(search).toHaveValue("");
   expect(filterRequests).toEqual([]);
 });

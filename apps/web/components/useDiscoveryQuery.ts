@@ -50,16 +50,30 @@ export function useDiscoveryQuery(initial: DiscoveryFilters) {
     };
     const onClick = (event: MouseEvent) => {
       if (
-        !event.defaultPrevented &&
-        event.button === 0 &&
-        !event.metaKey &&
-        !event.ctrlKey &&
-        !event.shiftKey &&
-        !event.altKey &&
-        event.target instanceof Element &&
-        event.target.closest("a[data-reset-discovery]")
+        event.defaultPrevented ||
+        event.button !== 0 ||
+        event.metaKey ||
+        event.ctrlKey ||
+        event.shiftKey ||
+        event.altKey ||
+        !(event.target instanceof Element)
       )
-        cancel();
+        return;
+      const link = event.target.closest<HTMLAnchorElement>(
+        'a[href^="/discover"]',
+      );
+      if (!link || link.target || link.hasAttribute("download")) return;
+      const destination = new URL(link.href);
+      if (
+        destination.origin !== window.location.origin ||
+        destination.pathname !== "/discover"
+      )
+        return;
+      event.preventDefault();
+      cancel();
+      if (destination.href !== window.location.href)
+        window.history.pushState(null, "", destination.href);
+      window.dispatchEvent(new Event(urlChanged));
     };
     document.addEventListener("click", onClick, true);
     window.addEventListener("popstate", cancel);
