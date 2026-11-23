@@ -70,3 +70,31 @@ test.describe("discover works without JavaScript", () => {
     await expect(page.getByRole("status")).toContainText("22편의 이야기");
   });
 });
+
+test("P11-T02 탐색 링크는 현재 검색어와 지연된 입력을 초기화한다", async ({
+  page,
+}) => {
+  const filterRequests: string[] = [];
+  page.on("request", (request) => {
+    const url = new URL(request.url());
+    if (url.pathname === "/discover" && url.searchParams.has("q"))
+      filterRequests.push(url.search);
+  });
+  await page.goto("/discover");
+  const search = page.getByRole("searchbox");
+  const discover = page.getByRole("link", { name: "탐색", exact: true });
+  await search.fill("동백꽃");
+  await expect(page.getByRole("status")).toContainText("1편의 이야기");
+  await expect
+    .poll(() => new URL(page.url()).searchParams.get("q"))
+    .toBe("동백꽃");
+  await discover.click();
+  await expect(page).toHaveURL(/\/discover$/);
+  await expect(search).toHaveValue("");
+  await expect(page.getByRole("status")).toContainText("56편의 이야기");
+  await search.fill("동백꽃");
+  await discover.click();
+  await expect(search).toHaveValue("");
+  await expect(page.getByRole("status")).toContainText("56편의 이야기");
+  expect(filterRequests).toEqual([]);
+});

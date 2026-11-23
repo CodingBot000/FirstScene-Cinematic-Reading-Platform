@@ -1,7 +1,7 @@
 import { SiteShell } from "../../components/SiteShell";
 import { Discovery } from "./_components/Discovery";
 import { stories, storyCard } from "../../lib/catalog";
-import { previewShelves } from "../../lib/preview-catalog";
+import { parseDiscoverySearch } from "../../lib/discovery-model";
 import { classicCount } from "../../lib/classic-catalog";
 
 export const metadata = {
@@ -16,20 +16,12 @@ export default async function Discover({
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const params = await searchParams;
-  const q =
-    typeof params.q === "string" ? params.q.normalize("NFC").slice(0, 80) : "";
-  const mood = ["calm", "mystery"].includes(String(params.mood))
-    ? String(params.mood)
-    : "all";
-  const status =
-    params.status === "ready" || params.status === "coming"
-      ? params.status
-      : "all";
-  const genre =
-    typeof params.genre === "string" &&
-    previewShelves.some((shelf) => shelf.id === params.genre)
-      ? params.genre
-      : "all";
+  const url = new URLSearchParams();
+  for (const [key, value] of Object.entries(params)) {
+    const first = Array.isArray(value) ? value[0] : value;
+    if (first !== undefined) url.set(key, first);
+  }
+  const initial = parseDiscoverySearch(url.toString());
   return (
     <SiteShell>
       <div className="page-intro discovery-intro">
@@ -44,13 +36,7 @@ export default async function Discover({
           예정 콘셉트 34편.
         </p>
       </div>
-      <Discovery
-        cards={stories.map(storyCard)}
-        initialQuery={q}
-        initialMood={mood}
-        initialStatus={status}
-        initialGenre={genre}
-      />
+      <Discovery cards={stories.map(storyCard)} initial={initial} />
     </SiteShell>
   );
 }
