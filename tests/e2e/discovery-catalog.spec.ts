@@ -1,21 +1,24 @@
 import { expect, test } from "@playwright/test";
 
-test("discover presents two readable stories plus 34 clearly unpublished concepts", async ({
+test("discover separates 2 originals, 20 readable classics and 34 unpublished concepts", async ({
   page,
 }) => {
   await page.goto("/discover");
-  await expect(page.getByRole("status")).toContainText("36편의 이야기");
+  await expect(page.getByRole("status")).toContainText("56편의 이야기");
   await expect(page.locator(".discovery-finished-card")).toHaveCount(2);
+  await expect(page.locator(".discovery-classic-card")).toHaveCount(20);
   await expect(page.locator(".discovery-preview-card")).toHaveCount(34);
 
-  await page.getByRole("radio", { name: /지금 읽기 2/ }).check();
-  await expect(page.getByRole("status")).toContainText("2편의 이야기");
+  await page.getByRole("radio", { name: /지금 읽기 22/ }).check();
+  await expect(page.getByRole("status")).toContainText("22편의 이야기");
   await expect(page.locator(".discovery-preview-card")).toHaveCount(0);
   await expect(page.locator(".discovery-finished-card")).toHaveCount(2);
+  await expect(page.locator(".discovery-classic-card")).toHaveCount(20);
 
   await page.getByRole("radio", { name: /공개 예정 34/ }).check();
   await expect(page.locator(".discovery-preview-card")).toHaveCount(34);
   await expect(page.locator(".discovery-finished-card")).toHaveCount(0);
+  await expect(page.locator(".discovery-classic-card")).toHaveCount(0);
 
   await page
     .getByRole("button", { name: /새벽 0시의 복원실, 공개 준비 중 안내 열기/ })
@@ -43,7 +46,7 @@ test("genre and title filtering preserve query URL and remain keyboard operable"
 
   await page.getByRole("button", { name: "필터 초기화" }).click();
   await expect(page.locator(".discovery-preview-card")).toHaveCount(34);
-  await expect(page.getByRole("status")).toContainText("36편의 이야기");
+  await expect(page.getByRole("status")).toContainText("56편의 이야기");
 });
 
 test("mobile discovery is not horizontally clipped", async ({ page }) => {
@@ -62,7 +65,8 @@ test.describe("discover works without JavaScript", () => {
   test("server-rendered catalog respects ready status", async ({ page }) => {
     await page.goto("/discover?status=ready");
     await expect(page.locator(".discovery-finished-card")).toHaveCount(2);
+    await expect(page.locator(".discovery-classic-card")).toHaveCount(20);
     await expect(page.locator(".discovery-preview-card")).toHaveCount(0);
-    await expect(page.getByRole("status")).toContainText("2편의 이야기");
+    await expect(page.getByRole("status")).toContainText("22편의 이야기");
   });
 });
