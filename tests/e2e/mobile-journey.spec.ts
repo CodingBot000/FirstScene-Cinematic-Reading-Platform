@@ -52,7 +52,7 @@ test("390px touch journey: discover → introduction → reader → toolbar dial
   await page.getByRole("link", { name: "탐색", exact: true }).click();
   await expect(page).toHaveURL(/\/discover$/);
 
-  await page.getByRole("radio", { name: /지금 읽기 2/ }).check();
+  await page.getByRole("radio", { name: /지금 읽기 22/ }).check();
   await expect(page.locator(".discovery-finished-card")).toHaveCount(2);
   await page
     .locator('.discovery-finished-card [data-story="post-office"]')
@@ -86,13 +86,13 @@ test("mobile discover filters do not strand reader-only selections in upcoming g
 }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/discover");
-  await page.getByRole("radio", { name: /지금 읽기 2/ }).check();
+  await page.getByRole("radio", { name: /지금 읽기 22/ }).check();
   await page.getByRole("radio", { name: "미스터리 · 도시" }).check();
   await expect(page.getByRole("radio", { name: /공개 예정 34/ })).toBeChecked();
   await expect(page.locator(".discovery-preview-card")).toHaveCount(7);
   await expect(page).toHaveURL(/genre=city/);
 
-  await page.getByRole("radio", { name: /지금 읽기 2/ }).check();
+  await page.getByRole("radio", { name: /지금 읽기 22/ }).check();
   await expect(page.getByRole("radio", { name: "모든 장르" })).toBeChecked();
   await expect(page.locator(".discovery-finished-card")).toHaveCount(2);
   await expect(page.locator(".discovery-preview-card")).toHaveCount(0);
