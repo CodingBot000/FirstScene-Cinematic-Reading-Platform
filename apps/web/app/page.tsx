@@ -8,6 +8,8 @@ import {
   PreviewTeaser,
 } from "../components/PreviewCollection";
 import { stories, storyCard, asset } from "../lib/catalog";
+import { classicSummaries, classicCount } from "../lib/classic-catalog";
+import { ClassicCard } from "../components/ClassicCard";
 export default function Home() {
   return (
     <SiteShell>
@@ -26,6 +28,20 @@ export default function Home() {
         <div className="story-grid">
           {stories.map((story) => (
             <StoryCard key={story.id} {...storyCard(story)} />
+          ))}
+        </div>
+      </section>
+      <section className="classic-home" aria-labelledby="classic-home-heading">
+        <div className="section-heading">
+          <h2 id="classic-home-heading">한국 근대문학 고전 {classicCount}편</h2>
+          <Link href="/discover?status=ready" className="fs-text-link">
+            지금 읽을 수 있는 모든 작품 →
+          </Link>
+        </div>
+        <p className="reading-note">저작권 보호기간이 만료된 원작의 출처 표시된 전사본입니다. 오리지널 시네마틱 작품과 구분됩니다.</p>
+        <div className="classic-home-grid">
+          {classicSummaries.slice(0, 4).map((story, index) => (
+            <ClassicCard key={story.id} story={story} index={index} />
           ))}
         </div>
       </section>
@@ -48,7 +64,7 @@ export default function Home() {
           </div>
         </div>
         <p className="disclosure">
-          AI를 활용해 제작하고 검토한 오리지널 허구 이야기입니다.
+          시네마틱 오리지널 2편은 AI를 활용해 제작·검토했습니다. 고전 20편은 저작권 보호기간이 만료된 원작을 별도로 수록했습니다.
         </p>
       </section>
     </SiteShell>

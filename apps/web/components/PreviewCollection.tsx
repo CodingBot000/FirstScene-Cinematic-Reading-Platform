@@ -9,6 +9,7 @@ import {
   previewShelves,
   type PreviewStory,
 } from "../lib/preview-catalog";
+import { classicCount } from "../lib/classic-catalog";
 
 /**
  * A presentation catalog only. Clicking these items never creates a reader
@@ -27,7 +28,7 @@ export function PreviewTeaser() {
     <section className="preview-teaser" aria-label="공개 예정 작품 미리보기">
       <div className="preview-teaser-heading">
         <span>FIRSTSCENE ARCHIVE</span>
-        <p>읽을 수 있는 이야기 2편 + 공개 예정 작품 {previewCount}편</p>
+        <p>읽을 수 있는 이야기 {2 + classicCount}편 + 공개 예정 작품 {previewCount}편</p>
         <a href="#coming-soon" className="fs-text-link">
           전체 컬렉션 보기 <span aria-hidden="true">↗</span>
         </a>
