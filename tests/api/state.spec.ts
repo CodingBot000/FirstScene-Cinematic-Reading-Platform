@@ -445,3 +445,31 @@ test("P04 generalwrite120perminute applies even to idempotent replays", async ({
   const me = await (await request.get("/api/v1/me")).json();
   expect(me.preferences.revision).toBe(1);
 });
+
+test("P11-T01 saves a farther offline milestone with the latest backward anchor", async ({
+  request,
+}) => {
+  const input = { ...progress(1, 1), furthestOrdinal: 27 };
+  const url = "/api/v1/progress/post-office";
+  const first = await request.put(url, { headers: headers(), data: input });
+  expect(first.status()).toBe(200);
+  const result = await first.json();
+  expect(result).toMatchObject({
+    beatId: "mail-s02-b02",
+    furthestOrdinal: 27,
+    completed: false,
+    revision: 1,
+  });
+  expect(
+    await (await request.put(url, { headers: headers(), data: input })).json(),
+  ).toEqual(result);
+  for (const invalid of [-1, 36, 7.5]) {
+    const response = await request.put(url, {
+      headers: headers(),
+      data: { ...progress(1, 1, 1), furthestOrdinal: invalid },
+    });
+    expect(response.status()).toBe(400);
+  }
+  const me = await (await request.get("/api/v1/me")).json();
+  expect(me.progress[0]).toEqual(result);
+});

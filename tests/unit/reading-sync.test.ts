@@ -1067,3 +1067,47 @@ it("a late feedback acknowledgement after deletion cannot report accepted or rec
   expect((await pending).status).toBe("rejected");
   expect(h.store.getSnapshot().me).toBeNull();
 });
+
+it("P11 preserves the v1 body and replays the extended wire request unchanged after reload", async () => {
+  const disk = new Map<string, string>();
+  const me = makeMe();
+  const calls: unknown[] = [];
+  const h = harness(async (path, init) => {
+    if (path === "/api/v1/me") return response(me);
+    calls.push(JSON.parse(String(init.body)));
+    throw new Error("lost acknowledgement");
+  }, disk);
+  h.online(false);
+  const anchor = {
+    storyId: "post-office",
+    contentVersion: 1,
+    contentHash: "a".repeat(64),
+    sceneId: "mail-s02",
+    beatId: "mail-s02-b02",
+    fraction: 0.2,
+    furthestOrdinal: 27,
+    completed: false,
+  };
+  h.store.saveAnchor(anchor);
+  h.online(true);
+  await h.store.flush();
+  const item = JSON.parse(disk.get(SYNC_KEY)!).queue[0];
+  expect(item.body).not.toHaveProperty("furthestOrdinal");
+  expect(item.progressWire).toMatchObject({
+    furthestOrdinal: 27,
+    beatId: anchor.beatId,
+  });
+  expect(item.progressWire.operationId).not.toBe(item.body.operationId);
+  const restored = harness(async (path, init) => {
+    if (path === "/api/v1/me") return response(me);
+    calls.push(JSON.parse(String(init.body)));
+    return response({
+      ...anchor,
+      revision: 1,
+      updatedAt: new Date().toISOString(),
+    });
+  }, disk);
+  await restored.store.flush();
+  expect(calls).toEqual([item.progressWire, item.progressWire]);
+  expect(restored.store.getSnapshot().queue).toHaveLength(0);
+});

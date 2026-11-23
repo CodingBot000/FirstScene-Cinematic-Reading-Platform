@@ -368,6 +368,23 @@ export function createSyncStore(port: SyncPorts) {
         if (!cache.anchors[progress.storyId])
           cache.anchors[progress.storyId] = anchorFromDto(progress);
     });
+    if (!stopped && !blocked && port.foreground()) {
+      const cache = readAnchorCache();
+      for (const saved of me.progress) {
+        const local = cache?.anchors[saved.storyId];
+        if (
+          local?.contentHash === saved.contentHash &&
+          local.contentVersion === saved.contentVersion &&
+          local.furthestOrdinal > saved.furthestOrdinal &&
+          !data.queue.some((item) => item.key === "progress:" + saved.storyId)
+        )
+          queueAnchor(
+            { ...anchorFromDto(saved), furthestOrdinal: local.furthestOrdinal },
+            false,
+            cache?.anchorOwners[saved.storyId],
+          );
+      }
+    }
     if (changed) port.changed();
     return true;
   }
@@ -549,25 +566,57 @@ export function createSyncStore(port: SyncPorts) {
       )
         queueAnchor(latest, false, owner);
     }
+    if (item.key.startsWith("progress:") && isTransport("Progress", value)) {
+      const queued = data.queue.some((p) => p.key === item.key);
+      const confirmed =
+        data.me.progress.find((p) => p.storyId === value.storyId) ?? value;
+      const cached = readAnchorCache()?.anchors[value.storyId];
+      if (
+        !queued &&
+        port.foreground() &&
+        cached?.contentHash === confirmed.contentHash &&
+        cached.contentVersion === confirmed.contentVersion &&
+        cached.furthestOrdinal > confirmed.furthestOrdinal &&
+        cached.furthestOrdinal > (item.progressWire?.furthestOrdinal ?? 0)
+      ) {
+        queueAnchor(
+          {
+            ...anchorFromDto(confirmed),
+            furthestOrdinal: cached.furthestOrdinal,
+          },
+          false,
+        );
+      }
+    }
     port.changed();
     publish({ status: data.queue.length ? "saving" : "saved", notice: null });
   }
   async function transmit(item: Pending, version: number, keepalive: boolean) {
     const me = data.me!;
-    const body = { ...item.body };
+    const baseBody = { ...item.body };
     if (
       !item.sent &&
       item.key.startsWith("progress:") &&
-      "expectedRevision" in body
-    )
-      body.expectedRevision =
+      isTransport("ProgressWrite", baseBody)
+    ) {
+      baseBody.expectedRevision =
         me.progress.find((p) => p.storyId === item.key.slice(9))?.revision ?? 0;
-    // Freeze the exact payload for uncertain-outcome retries. New CAS payloads use a new id.
-    item.body = body;
+      if (item.furthestOrdinal !== undefined)
+        item.progressWire = {
+          ...baseBody,
+          operationId: port.uuid(),
+          furthestOrdinal: item.furthestOrdinal,
+        };
+    }
+    // Freeze both bodies, with separate receipt IDs for old and new tabs.
+    item.body = baseBody;
     item.sent = true;
     await persist();
-    if (!data.queue.some((p) => p.body.operationId === item.body.operationId))
-      return;
+    const pending = data.queue.find(
+      (p) => p.body.operationId === baseBody.operationId,
+    );
+    if (!pending) return;
+    const body = pending.progressWire ?? pending.body;
     if (item.key === "preferences" && item.intentId) {
       // Bind a pre-cookie choice before its first possible server mutation.
       // A denied store with no durable descriptor still supports memory-only saving.
@@ -651,7 +700,7 @@ export function createSyncStore(port: SyncPorts) {
           conflicts: 1,
           sent: false,
           body: {
-            ...body,
+            ...item.body,
             operationId: port.uuid(),
             ...("expectedRevision" in body
               ? {
@@ -665,6 +714,7 @@ export function createSyncStore(port: SyncPorts) {
               : {}),
           },
         };
+        delete retry.progressWire;
         data.queue = replacePending(data.queue, retry);
         await persist();
         await transmit(retry, version, keepalive);
@@ -850,6 +900,9 @@ export function createSyncStore(port: SyncPorts) {
       old &&
       "beatId" in old.body &&
       old.body.beatId === a.beatId &&
+      old.body.contentHash === a.contentHash &&
+      old.body.contentVersion === a.contentVersion &&
+      (old.furthestOrdinal ?? 0) >= a.furthestOrdinal &&
       Math.abs(old.body.fraction - a.fraction) < 0.005
     )
       return;
@@ -858,6 +911,8 @@ export function createSyncStore(port: SyncPorts) {
       !old &&
       confirmed?.beatId === a.beatId &&
       confirmed.contentHash === a.contentHash &&
+      confirmed.contentVersion === a.contentVersion &&
+      confirmed.furthestOrdinal >= a.furthestOrdinal &&
       Math.abs(confirmed.fraction - a.fraction) < 0.005
     )
       return;
@@ -880,6 +935,7 @@ export function createSyncStore(port: SyncPorts) {
           fraction: a.fraction,
           completed,
         },
+        furthestOrdinal: a.furthestOrdinal,
         ...(ownerId ? { ownerId } : {}),
         changedAt: port.now(),
         conflicts: 0,

@@ -87,6 +87,7 @@ export type ProgressWrite = MutationInput & {
   sceneId: string;
   beatId: string;
   fraction: number;
+  furthestOrdinal?: number;
   completed: boolean;
   expectedRevision: number;
 };

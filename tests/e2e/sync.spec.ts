@@ -401,3 +401,57 @@ test("P05 trusted scroll wins over a delayed initial server-only restoration", a
   );
   expect(before).not.toBe("mail-s04-b03");
 });
+
+test("P11-T01 offline backtracking preserves the furthest beat after re-entry", async ({
+  page,
+  context,
+  browser,
+}) => {
+  await page.goto("/read/post-office");
+  await saved(page);
+  await context.setOffline(true);
+  for (const id of ["mail-s05-b04", "mail-s02-b02"]) {
+    await page.locator("#" + id).evaluate((element) => {
+      const r = element.getBoundingClientRect();
+      scrollTo({
+        top: scrollY + r.top + r.height * 0.3 - innerHeight * 0.42,
+        behavior: "instant",
+      });
+    });
+    await expect(page.locator(".fs-reader")).toHaveAttribute(
+      "data-active-beat",
+      id,
+    );
+    await expect
+      .poll(() =>
+        page.evaluate(
+          () =>
+            JSON.parse(localStorage.getItem("firstscene:cache:v1") ?? "{}")
+              .anchors?.["post-office"],
+        ),
+      )
+      .toMatchObject({ beatId: id, furthestOrdinal: 27 });
+  }
+  await context.setOffline(false);
+  await expect
+    .poll(async () => (await me(page)).progress[0])
+    .toMatchObject({
+      beatId: "mail-s02-b02",
+      furthestOrdinal: 27,
+      completed: false,
+    });
+  const restored = await browser.newContext();
+  try {
+    await restored.addCookies(await context.cookies());
+    const tab = await restored.newPage();
+    await tab.goto(new URL("/library", page.url()).href);
+    await expect(tab.getByText("최대로 읽은 위치 약 78%")).toBeVisible();
+    await tab.getByRole("link", { name: /이어 읽기/ }).click();
+    await expect(tab.locator(".fs-reader")).toHaveAttribute(
+      "data-active-beat",
+      "mail-s02-b02",
+    );
+  } finally {
+    await restored.close();
+  }
+});
