@@ -1,9 +1,10 @@
 "use client";
 import { useMemo, useSyncExternalStore } from "react";
 import type { Story } from "@firstscene/story-schema";
+import { initialAnchors, readingView } from "./reading-view";
 import { createReaderStore } from "./local-store";
-import { useReadingSync } from "../reading-sync/use-reading-sync";
-export function useReaderPreferences(story?: Story) {
+import { useReadingSync } from "./use-reading-sync";
+export function useReadingRecords(story?: Story) {
   const store = useMemo(() => createReaderStore(story), [story]);
   const snapshot = useSyncExternalStore(
     store.subscribe,
@@ -13,7 +14,6 @@ export function useReaderPreferences(story?: Story) {
   const { sync, snapshot: syncSnapshot } = useReadingSync();
   const combined = useMemo(
     () => ({
-      ...store,
       savePreferences: (
         preferences: Parameters<typeof store.savePreferences>[0],
       ) => {
@@ -39,5 +39,24 @@ export function useReaderPreferences(story?: Story) {
     }),
     [store, sync],
   );
-  return { store: combined, snapshot, sync, syncSnapshot };
+  const initialProgress = syncSnapshot.initialProgress;
+  const initial = useMemo(
+    () => initialAnchors(initialProgress),
+    [initialProgress],
+  );
+  const view = useMemo(
+    () => readingView(syncSnapshot, initial),
+    [syncSnapshot, initial],
+  );
+  const actions = useMemo(
+    () => ({
+      retry: sync.retry,
+      erase: sync.erase,
+      resumeAfterFailedDeletion: sync.resumeAfterFailedDeletion,
+      setBookmark: sync.setBookmark,
+      sendFeedback: sync.sendFeedback,
+    }),
+    [sync],
+  );
+  return { store: combined, snapshot, sync: actions, syncSnapshot: view };
 }

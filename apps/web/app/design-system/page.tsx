@@ -1,5 +1,5 @@
 import { SiteShell } from "../../components/SiteShell";
-import { Button, Tag, Typography } from "@firstscene/ui";
+import { Button, Typography, Tag } from "@firstscene/ui/primitives";
 import { tokens } from "@firstscene/tokens";
 import { storyById } from "../../lib/catalog";
 export default function DesignSystem() {

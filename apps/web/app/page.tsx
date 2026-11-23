@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { StoryCard } from "@firstscene/ui";
+import { StoryCard } from "@firstscene/ui/cards";
 import { CinematicPrologue } from "../components/CinematicPrologue";
 import { EditorialInterlude } from "../components/EditorialInterlude";
 import { SiteShell } from "../components/SiteShell";

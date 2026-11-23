@@ -1,8 +1,7 @@
-"use client";
 import type { ReactNode } from "react";
 import { ResponsiveAsset, type AssetProps } from "./media.js";
 import { Tag } from "./typography.js";
-import { Progress } from "./forms.js";
+import { Progress } from "./progress.js";
 
 export type StoryCardProps = {
   id: string;

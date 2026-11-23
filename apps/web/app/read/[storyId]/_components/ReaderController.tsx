@@ -1,6 +1,6 @@
 "use client";
-import { useReaderPreferences } from "../features/reader-preferences/use-reader-preferences";
-import { PreferenceControls } from "./PreferenceControls";
+import { useReadingRecords } from "../../../../features/reading-sync/use-reading-records";
+import { PreferenceControls } from "../../../../features/reader-preferences/PreferenceControls";
 import {
   Component,
   useCallback,
@@ -10,17 +10,15 @@ import {
   useState,
 } from "react";
 import type { ReactNode } from "react";
-import { StoryReader } from "@firstscene/reader-react";
+import { ReadingDocument, StoryReader } from "@firstscene/reader-react";
 import type { AssetMap } from "@firstscene/reader-react";
-import { Dialog, ReadingToolbar, ErrorState, Button } from "@firstscene/ui";
+import { Button, ErrorState } from "@firstscene/ui/primitives";
+import { Dialog } from "@firstscene/ui/overlays";
+import { ReadingToolbar } from "@firstscene/ui/reader-controls";
 import type { Story, ReadingAnchor } from "@firstscene/story-schema";
-import type { StoryCardProps } from "@firstscene/ui";
-import { CompletionPanel } from "../features/completion/CompletionPanel";
-import { saveStatus } from "../features/reading-sync/use-reading-sync";
-import {
-  anchorFromDto,
-  desiredBookmarks,
-} from "../features/reading-sync/store";
+import type { StoryCardProps } from "@firstscene/ui/cards";
+import { CompletionPanel } from "../../../../features/completion/CompletionPanel";
+import { saveStatus } from "../../../../features/reading-sync/reading-view";
 
 class ReaderBoundary extends Component<
   { story: Story; children: ReactNode },
@@ -39,24 +37,7 @@ class ReaderBoundary extends Component<
           message="아래의 일반 본문으로 계속 읽을 수 있어요."
           onRetry={() => this.setState({ failed: false })}
         />
-        <article className="ssr-reading">
-          <h1>{this.props.story.title}</h1>
-          {this.props.story.scenes.map((scene) => (
-            <section key={scene.id}>
-              <h2 id={scene.id}>{scene.title}</h2>
-              {scene.beats.map((beat) => (
-                <p
-                  key={beat.id}
-                  id={beat.id}
-                  data-beat={beat.id}
-                  className="fs-type-reading"
-                >
-                  {beat.text}
-                </p>
-              ))}
-            </section>
-          ))}
-        </article>
+        <ReadingDocument story={this.props.story} />
       </>
     );
   }
@@ -70,10 +51,10 @@ export function ReaderController({
   assets: AssetMap;
   nextStory: StoryCardProps;
 }) {
-  const { store, snapshot, sync, syncSnapshot } = useReaderPreferences(story);
+  const { store, snapshot, sync, syncSnapshot } = useReadingRecords(story);
   const prefs = snapshot.preferences;
   const writesPaused = syncSnapshot.paused;
-  const bookmarked = desiredBookmarks(syncSnapshot)
+  const bookmarked = syncSnapshot.bookmarks
     .filter((b) => b.storyId === story.id)
     .map((b) => b.targetId);
   const [dialog, setDialog] = useState<"settings" | "toc" | null>(null),
@@ -87,9 +68,7 @@ export function ReaderController({
   const latest = useRef<ReadingAnchor | null>(null);
   const settingsButton = useRef<HTMLButtonElement>(null),
     tocButton = useRef<HTMLButtonElement>(null);
-  const remoteInitial = syncSnapshot.initialProgress?.find(
-    (p) => p.storyId === story.id,
-  );
+  const remoteInitial = syncSnapshot.initialAnchor(story.id);
   useEffect(() => {
     if (
       syncSnapshot.hydrated &&
@@ -207,7 +186,7 @@ export function ReaderController({
               !interacted &&
               !location.hash
                 ? remoteInitial
-                  ? anchorFromDto(remoteInitial)
+                  ? remoteInitial
                   : null
                 : null)
             }

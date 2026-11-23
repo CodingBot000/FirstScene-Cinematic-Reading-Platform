@@ -2,7 +2,8 @@ import postOffice from "../../../content/generated/stories/post-office.json";
 import tideStation from "../../../content/generated/stories/tide-station.json";
 import manifest from "../../../content/generated/assets.json";
 import type { Story } from "@firstscene/story-schema";
-import type { StoryCardProps, AssetProps } from "@firstscene/ui";
+import type { AssetProps } from "@firstscene/ui/images";
+import type { StoryCardProps } from "@firstscene/ui/cards";
 export const stories = [postOffice, tideStation] as Story[];
 export function storyById(id: string) {
   return stories.find((story) => story.id === id);

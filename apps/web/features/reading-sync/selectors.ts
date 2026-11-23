@@ -1,14 +1,16 @@
 import type { ReaderPrefs, ReadingAnchor } from "@firstscene/story-schema";
 import type {
   Me,
-  Preferences,
+  PreferencesWrite,
   Progress,
   Bookmark,
 } from "./transport.generated";
 import type { Pending } from "./outbox";
 
 /** Read-only projections; no storage, network or mutation lifecycle access. */
-export const prefsFromDto = (p: Preferences): ReaderPrefs => ({
+export const prefsFromDto = (
+  p: Pick<PreferencesWrite, "mode" | "effects" | "fontSize" | "theme">,
+): ReaderPrefs => ({
   mode: p.mode,
   reduceMotion: p.effects === "reduced",
   fontSize: p.fontSize,

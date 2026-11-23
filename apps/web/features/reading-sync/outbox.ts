@@ -219,3 +219,42 @@ export function replacePending(queue: Pending[], item: Pending) {
   if (!bounded(next)) throw new Error("OUTBOX_LIMIT");
   return next;
 }
+
+export function mergeDurable(
+  data: Durable,
+  shared: Durable | null,
+  acknowledged: Pending | undefined,
+  anchorOwners: Readonly<Record<string, string>> | undefined,
+): Durable {
+  const settled = { ...shared?.settled, ...data.settled };
+  for (const [key, timestamp] of Object.entries(shared?.settled ?? {}))
+    settled[key] = Math.max(settled[key] ?? 0, timestamp);
+  if (acknowledged)
+    settled[acknowledged.key] = Math.max(
+      settled[acknowledged.key] ?? 0,
+      acknowledged.changedAt,
+    );
+  let queue: Pending[] = [];
+  for (const item of [...(shared?.queue ?? []), ...data.queue]) {
+    if (item.changedAt <= (settled[item.key] ?? -1)) continue;
+    if (
+      item.key.startsWith("progress:") &&
+      isTransport("ProgressWrite", item.body) &&
+      !item.body.completed &&
+      item.ownerId &&
+      anchorOwners?.[item.key.slice(9)] &&
+      anchorOwners[item.key.slice(9)] !== item.ownerId
+    )
+      continue;
+    queue = replacePending(queue, item);
+  }
+  if (Object.keys(settled).length > 128) throw new Error("SYNC_LIMIT");
+  return { ...data, queue, settled };
+}
+
+export function encodeDurable(data: Durable, reset?: string) {
+  const raw = JSON.stringify(reset === undefined ? data : { ...data, reset });
+  if (new TextEncoder().encode(raw).length > 65536)
+    throw new Error("SYNC_LIMIT");
+  return raw;
+}

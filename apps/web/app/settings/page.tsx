@@ -1,5 +1,5 @@
 import { SiteShell } from "../../components/SiteShell";
-import { SettingsPanel } from "../../components/SettingsPanel";
+import { SettingsPanel } from "./_components/SettingsPanel";
 export const metadata = { title: "읽기 설정" };
 export default function Settings() {
   return (

@@ -1,9 +1,10 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ResponsiveAsset, Tag } from "@firstscene/ui";
+import { Tag } from "@firstscene/ui/primitives";
+import { ResponsiveAsset } from "@firstscene/ui/images";
 import { SiteShell } from "../../../components/SiteShell";
 import { stories, storyById, asset } from "../../../lib/catalog";
-import { StoryActions } from "../../../components/StoryActions";
+import { StoryActions } from "./_components/StoryActions";
 export function generateStaticParams() {
   return stories.map((s) => ({ storyId: s.id }));
 }

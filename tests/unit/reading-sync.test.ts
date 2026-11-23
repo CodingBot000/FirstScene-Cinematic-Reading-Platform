@@ -15,11 +15,11 @@ import {
   PREFERENCES_BINDING_KEY,
 } from "../../apps/web/features/reading-sync/outbox";
 import type { SyncPorts } from "../../apps/web/features/reading-sync/store";
+import { createReaderStore } from "../../apps/web/features/reading-sync/local-store";
 import {
   defaultPreferences,
-  createReaderStore,
   LOCAL_CACHE_KEY,
-} from "../../apps/web/features/reader-preferences/local-store";
+} from "../../apps/web/lib/reading-cache";
 import type { Pending } from "../../apps/web/features/reading-sync/outbox";
 import type { Me } from "../../apps/web/features/reading-sync/transport.generated";
 const makeMe = (): Me => ({

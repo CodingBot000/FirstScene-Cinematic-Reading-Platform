@@ -30,7 +30,7 @@ TS strict all packages and applications.
 ```sh
 pnpm check:boundaries
 ```
-Check contracts/package-boundaries.json and no src deep imports.
+Validate workspace exports and resolved TypeScript imports against contracts/package-boundaries.json, detect package/module/feature cycles, and report client-to-server dependency chains.
 
 ## CMD-CONTENT — content compiler
 ```sh

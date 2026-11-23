@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { SYNC_KEY } from "../../apps/web/features/reading-sync/outbox";
-import { LOCAL_CACHE_KEY } from "../../apps/web/features/reader-preferences/local-store";
+import { LOCAL_CACHE_KEY } from "../../apps/web/lib/reading-cache";
 test("P05 pending or failed deletion never claims erasure in another tab; retry clears actual rows and retained queue", async ({
   page,
   context,
