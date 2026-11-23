@@ -1,8 +1,11 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { SiteShell } from "../../../components/SiteShell";
-import { classicSummaries, classicById } from "../../../lib/classic-catalog";
-import { loadClassicManuscript } from "../../../lib/classic-content";
+import { classicSummaries } from "../../../lib/classic-catalog";
+import {
+  classicRecordById,
+  loadClassicManuscript,
+} from "../../../lib/classic-content";
 
 export function generateStaticParams() {
   return classicSummaries.map(({ id }) => ({ id }));
@@ -13,7 +16,7 @@ export async function generateMetadata({
 }: {
   params: Promise<{ id: string }>;
 }) {
-  const story = classicById((await params).id);
+  const story = classicRecordById((await params).id);
   return {
     title: story ? `${story.title} — ${story.author}` : "작품을 찾을 수 없어요",
     description: story?.summary,
@@ -26,7 +29,7 @@ export default async function ClassicReadPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const story = classicById(id);
+  const story = classicRecordById(id);
   if (!story) notFound();
   const document = await loadClassicManuscript(story.id);
   if (!document) notFound();

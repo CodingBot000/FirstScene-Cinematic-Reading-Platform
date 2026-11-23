@@ -1,4 +1,8 @@
 import { spawnSync } from "node:child_process";
+const classics = spawnSync("node", ["tools/generate-classics.mjs"], {
+  stdio: "inherit",
+});
+if (classics.status !== 0) process.exit(classics.status ?? 1);
 const transport = spawnSync("node", ["tools/generate-transport.mjs"], {
   stdio: "inherit",
 });

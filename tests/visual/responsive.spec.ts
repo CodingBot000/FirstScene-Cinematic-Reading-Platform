@@ -9,6 +9,7 @@ test("public surfaces keep readable geometry, keyboard entry and AA-tag axe chec
     ["discover", "/discover"],
     ["intro-post-office", "/stories/post-office"],
     ["intro-tide-station", "/stories/tide-station"],
+    ["classic-reader", "/classics/classic-lucky-day"],
     ["library", "/library"],
     ["settings", "/settings"],
     ["about", "/about"],

@@ -10,6 +10,7 @@ const sourceRoots = [
   "packages/reader-core",
   "packages/reader-react",
   "content/generated",
+  "content/classics",
   "pnpm-lock.yaml",
   "package.json",
   "pnpm-workspace.yaml",
