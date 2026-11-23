@@ -1,3 +1,4 @@
+import covers from "../lib/classic-covers.json";
 import type { ClassicSummary } from "../lib/classic-catalog";
 export function ClassicCard({
   story,
@@ -6,6 +7,7 @@ export function ClassicCard({
   story: ClassicSummary;
   index?: number;
 }) {
+  const cover = covers[story.id as keyof typeof covers] as string | undefined;
   return (
     <a
       className="classic-card"
@@ -17,6 +19,15 @@ export function ClassicCard({
         aria-hidden="true"
         data-variant={index % 5}
       >
+        {cover && (
+          <img
+            className="classic-card-art"
+            src={cover}
+            alt=""
+            loading="lazy"
+            decoding="async"
+          />
+        )}
         <span className="classic-card-cover-top">FIRSTSCENE CLASSICS</span>
         <span className="classic-card-cover-title">{story.title}</span>
         <span className="classic-card-cover-author">{story.author}</span>
