@@ -1111,3 +1111,42 @@ it("P11 preserves the v1 body and replays the extended wire request unchanged af
   expect(calls).toEqual([item.progressWire, item.progressWire]);
   expect(restored.store.getSnapshot().queue).toHaveLength(0);
 });
+
+it("P11-T03 returns rejection when the offline outbox cannot accept another bookmark", () => {
+  const h = harness();
+  h.online(false);
+  for (let i = 0; i < 64; i++)
+    expect(h.store.setBookmark("post-office", 1, "beat-" + i, true)).toBe(true);
+  expect(h.store.setBookmark("post-office", 1, "beat-0", false)).toBe(true);
+  expect(desiredBookmarks(h.store.getSnapshot())).toHaveLength(63);
+  expect(h.store.setBookmark("post-office", 1, "beat-64", true)).toBe(false);
+  expect(desiredBookmarks(h.store.getSnapshot())).toHaveLength(63);
+});
+
+it("P11-T03 confirms deletion only after storing the final marker and can finish locally", async () => {
+  class FaultyStorage extends Map<string, string> {
+    rejectFinal = true;
+    override set(key: string, value: string) {
+      if (
+        this.rejectFinal &&
+        key === RESET_KEY &&
+        JSON.parse(value).phase === "deleted"
+      )
+        throw new Error("storage denied");
+      return super.set(key, value);
+    }
+  }
+  const disk = new FaultyStorage();
+  const h = harness(async () => new Response(null, { status: 204 }), disk);
+  expect(await h.store.erase()).toBe(false);
+  expect(h.store.getSnapshot().status).toBe("delete-error");
+  expect(harness(undefined, disk).store.getSnapshot().status).toBe(
+    "delete-error",
+  );
+  disk.rejectFinal = false;
+  expect(await h.store.erase()).toBe(true);
+  expect(h.store.getSnapshot().status).toBe("deleted");
+  expect(h.calls.filter(({ init }) => init.method === "DELETE")).toHaveLength(
+    1,
+  );
+});

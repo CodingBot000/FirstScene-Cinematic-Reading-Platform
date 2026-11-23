@@ -26,15 +26,11 @@ export function useReadingRecords(story?: Story) {
         if (store.saveAnchor(anchor)) sync.saveAnchor(anchor, store.owner());
       },
       completeAnchor: (anchor: Parameters<typeof store.saveAnchor>[0]) => {
-        if (
-          !sync.canWriteLocal() ||
-          !store.saveAnchor({ ...anchor, completed: true })
-        )
-          return false;
-        return sync.completeAnchor(
-          { ...anchor, completed: true },
-          store.owner(),
-        );
+        if (!sync.canWriteLocal()) return false;
+        const completed = { ...anchor, completed: true };
+        if (!sync.completeAnchor(completed, store.owner())) return false;
+        store.saveAnchor(completed);
+        return true;
       },
     }),
     [store, sync],
