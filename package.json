@@ -18,7 +18,7 @@
     "check:state": "node tools/check-state.mjs",
     "test:unit": "vitest run",
     "storybook:build": "pnpm --filter @firstscene/ui-lab build",
-    "content:check": "pnpm --filter @firstscene/story-schema build && pnpm --filter @firstscene/content-compiler build && node tools/content-check.mjs",
+    "content:check": "pnpm --filter @firstscene/story-schema build && pnpm --filter @firstscene/content-compiler build && node tools/generate-classics.mjs --check && node tools/content-check.mjs",
     "test:db": "pnpm --filter @firstscene/server-data build && vitest run --config vitest.db.config.ts",
     "test:api": "node tools/run-browser-tests.mjs --api",
     "test:e2e": "node tools/run-browser-tests.mjs --project=chromium",
