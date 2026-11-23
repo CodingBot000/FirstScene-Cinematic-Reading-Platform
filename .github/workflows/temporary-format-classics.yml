@@ -1,0 +1,33 @@
+name: Temporary one-shot classics formatting
+"on":
+  push:
+    branches: [feat/public-domain-classics-20261123]
+permissions:
+  contents: write
+jobs:
+  format-classics:
+    if: github.repository == 'CodingBot000/FirstScene-Cinematic-Reading-Platform'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: feat/public-domain-classics-20261123
+          persist-credentials: true
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "24.22.3"
+          package-manager-cache: false
+      - run: npm install --global pnpm@10.14.0
+      - run: pnpm install --frozen-lockfile
+      - name: Format only the changed TypeScript files
+        run: pnpm exec prettier --write 'apps/web/lib/classic-catalog.ts' 'apps/web/lib/classic-content.ts' 'apps/web/lib/discovery-model.ts' 'apps/web/components/ClassicCard.tsx' 'apps/web/components/PreviewCollection.tsx' 'apps/web/components/preview/PreviewNotice.tsx' 'apps/web/app/page.tsx' 'apps/web/app/layout.tsx' 'apps/web/app/classics/[id]/page.tsx' 'apps/web/app/discover/page.tsx' 'apps/web/app/discover/_components/Discovery.tsx' 'tests/unit/classic-catalog.test.ts' 'tests/unit/discovery-model.test.ts' 'tests/e2e/public-domain-classics.spec.ts' 'tests/e2e/discovery-catalog.spec.ts' 'tests/e2e/public.spec.ts' 'tests/e2e/creative-showcase.spec.ts' 'tests/e2e/mobile-journey.spec.ts'
+      - name: Commit the formatting changes to this exact feature branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- 'apps/web/lib/classic-catalog.ts' 'apps/web/lib/classic-content.ts' 'apps/web/lib/discovery-model.ts' 'apps/web/components/ClassicCard.tsx' 'apps/web/components/PreviewCollection.tsx' 'apps/web/components/preview/PreviewNotice.tsx' 'apps/web/app/page.tsx' 'apps/web/app/layout.tsx' 'apps/web/app/classics/[id]/page.tsx' 'apps/web/app/discover/page.tsx' 'apps/web/app/discover/_components/Discovery.tsx' 'tests/unit/classic-catalog.test.ts' 'tests/unit/discovery-model.test.ts' 'tests/e2e/public-domain-classics.spec.ts' 'tests/e2e/discovery-catalog.spec.ts' 'tests/e2e/public.spec.ts' 'tests/e2e/creative-showcase.spec.ts' 'tests/e2e/mobile-journey.spec.ts'
+          if ! git diff --cached --quiet; then
+            git commit -m 'style: format public-domain classics TypeScript'
+            git push origin HEAD:refs/heads/feat/public-domain-classics-20261123
+          fi
