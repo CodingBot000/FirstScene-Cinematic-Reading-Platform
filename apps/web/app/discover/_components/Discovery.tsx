@@ -1,23 +1,24 @@
 "use client";
 
 import { useState } from "react";
-import { EmptyState, StoryCard } from "@firstscene/ui";
-import type { StoryCardProps } from "@firstscene/ui";
+import { EmptyState } from "@firstscene/ui/primitives";
+import { StoryCard } from "@firstscene/ui/cards";
+import type { StoryCardProps } from "@firstscene/ui/cards";
 import {
   previewCount,
   previewShelves,
   type PreviewStory,
-} from "../lib/preview-catalog";
-import { PreviewCover } from "./preview/PreviewCover";
-import { PreviewNotice } from "./preview/PreviewNotice";
-import { useDiscoveryQuery } from "./useDiscoveryQuery";
-import { useCatalogFlip } from "./useCatalogFlip";
+} from "../../../lib/preview-catalog";
+import { PreviewCover } from "../../../components/preview/PreviewCover";
+import { PreviewNotice } from "../../../components/preview/PreviewNotice";
+import { useDiscoveryQuery } from "../../../components/useDiscoveryQuery";
+import { useCatalogFlip } from "../../../components/useCatalogFlip";
 import {
   filterDiscovery,
   type PreviewListing,
   type Availability,
   type DiscoveryMood,
-} from "../lib/discovery-model";
+} from "../../../lib/discovery-model";
 
 function PreviewCard({
   story,

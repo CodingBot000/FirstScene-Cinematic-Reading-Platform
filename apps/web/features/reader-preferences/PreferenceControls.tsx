@@ -1,5 +1,5 @@
 "use client";
-import { ToggleGroup } from "@firstscene/ui";
+import { ToggleGroup } from "@firstscene/ui/fields";
 import type { ReaderPrefs } from "@firstscene/story-schema";
 export function PreferenceControls({
   preferences: prefs,

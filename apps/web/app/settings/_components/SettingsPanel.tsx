@@ -1,11 +1,12 @@
 "use client";
-import { PreferenceControls } from "./PreferenceControls";
-import { useReaderPreferences } from "../features/reader-preferences/use-reader-preferences";
-import { saveStatus } from "../features/reading-sync/use-reading-sync";
+import { PreferenceControls } from "../../../features/reader-preferences/PreferenceControls";
+import { useReadingRecords } from "../../../features/reading-sync/use-reading-records";
+import { saveStatus } from "../../../features/reading-sync/reading-view";
 import { useState, useRef } from "react";
-import { Dialog, Button } from "@firstscene/ui";
+import { Button } from "@firstscene/ui/primitives";
+import { Dialog } from "@firstscene/ui/overlays";
 export function SettingsPanel() {
-  const { store, snapshot, sync, syncSnapshot } = useReaderPreferences();
+  const { store, snapshot, sync, syncSnapshot } = useReadingRecords();
   const [deleting, setDeleting] = useState(false);
   const status = useRef<HTMLParagraphElement>(null);
   const deleteButton = useRef<HTMLButtonElement>(null);

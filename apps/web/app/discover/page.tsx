@@ -1,5 +1,5 @@
 import { SiteShell } from "../../components/SiteShell";
-import { Discovery } from "../../components/Discovery";
+import { Discovery } from "./_components/Discovery";
 import { stories, storyCard } from "../../lib/catalog";
 import { previewShelves } from "../../lib/preview-catalog";
 

@@ -1,7 +1,13 @@
 import { it, expect } from "vitest";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
-import { Button, IconButton, ResponsiveAsset, StoryCard } from "@firstscene/ui";
+import {
+  Button,
+  IconButton,
+  ResponsiveAsset,
+  StoryCard,
+  isAssetVariant,
+} from "@firstscene/ui";
 it("P01 loading prevents repeated native button activation without removing label", () => {
   const html = renderToStaticMarkup(
     createElement(Button, { loading: true }, "저장"),
@@ -52,4 +58,28 @@ it("P01 story card uses independent sibling action rather than nesting buttons i
   );
   expect(html).not.toMatch(/<a[^>]*>(?:(?!<\/a>)[\s\S])*<button/);
   expect(html).toContain("<h3");
+});
+
+it("P10 image rendering and preloading share the same accepted variants", () => {
+  const valid = {
+    path: "/assets/story.960.webp",
+    format: "webp",
+    width: 960,
+    height: 600,
+  } as const;
+  expect(isAssetVariant(valid)).toBe(true);
+  for (const invalid of [
+    { ...valid, format: "avif" as const },
+    { ...valid, width: 0 },
+    { ...valid, height: Infinity },
+    { ...valid, path: "/assets/story..webp" },
+    { ...valid, path: "https://example.com/story.webp" },
+  ]) {
+    expect(isAssetVariant(invalid)).toBe(false);
+    expect(
+      renderToStaticMarkup(
+        createElement(ResponsiveAsset, { variants: [invalid], alt: "표지" }),
+      ),
+    ).toContain("fs-asset-fallback");
+  }
 });

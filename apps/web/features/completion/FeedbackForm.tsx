@@ -1,8 +1,11 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { Button } from "@firstscene/ui";
-import type { FeedbackWrite } from "../reading-sync/transport.generated";
-import type { FeedbackSendResult, SyncSnapshot } from "../reading-sync/store";
+import { Button } from "@firstscene/ui/primitives";
+import type {
+  FeedbackWrite,
+  FeedbackSendResult,
+  ReadingView,
+} from "../reading-sync/reading-view";
 const options = [
   ["helpful", "연출이 몰입에 도움이 됐어요"],
   ["comfortable", "편안하게 읽었어요"],
@@ -15,7 +18,7 @@ export function FeedbackForm({
   onSubmit,
 }: {
   storyId: string;
-  remote: SyncSnapshot;
+  remote: ReadingView;
   onSubmit: (
     input: FeedbackWrite,
     epoch: string,
@@ -41,7 +44,7 @@ export function FeedbackForm({
   const unavailable =
     remote.paused ||
     !remote.hydrated ||
-    !remote.me ||
+    !remote.epoch ||
     remote.status === "expired";
   const retrying = result?.status === "retryable";
   const message = remote.paused
@@ -61,14 +64,14 @@ export function FeedbackForm({
       offline ||
       cooling ||
       !choice ||
-      !remote.me
+      !remote.epoch
     )
       return;
     inFlight.current = true;
     setBusy(true);
     const current = attempt.current ?? {
       input: { storyId, code: choice, operationId: crypto.randomUUID() },
-      epoch: remote.me.session.epoch,
+      epoch: remote.epoch,
     };
     attempt.current = current;
     try {

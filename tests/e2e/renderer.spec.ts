@@ -1,5 +1,9 @@
 import { test, expect } from "@playwright/test";
 import type { Page } from "@playwright/test";
+import {
+  installLifecycleProbe,
+  lifecycleSnapshot,
+} from "../performance/probes";
 async function jump(page: Page, id: string) {
   if (new URL(page.url()).pathname.startsWith("/read/"))
     await expect(page.locator("[data-reader-ready]")).toHaveAttribute(
@@ -152,4 +156,41 @@ test("P03 OS reduced motion changes stop effects immediately and settings keep t
   await expect(
     page.getByRole("button", { name: "설정", exact: true }),
   ).toBeFocused();
+});
+
+test("P10-T05 reader error fallback releases resources after each failed retry", async ({
+  page,
+}) => {
+  const failures = 3;
+  await installLifecycleProbe(page, failures);
+  await page.goto("/read/post-office");
+  const fallback = page.locator("article.ssr-reading");
+  const retry = page.getByRole("button", { name: "다시 시도" });
+
+  await expect(retry).toBeVisible();
+  await expect(fallback.locator("[data-beat]")).toHaveCount(36);
+  const firstFailure = await lifecycleSnapshot(page);
+  expect(firstFailure.failedReaderObservations).toBe(1);
+  expect(firstFailure.resizeObservers).toBe(0);
+
+  for (let attempt = 2; attempt <= failures; attempt++) {
+    await retry.click();
+    await expect
+      .poll(() => lifecycleSnapshot(page))
+      .toEqual({ ...firstFailure, failedReaderObservations: attempt });
+    await expect(fallback.locator("[data-beat]")).toHaveCount(36);
+  }
+
+  await expect(fallback.locator("#mail-s02-b01")).toBeVisible();
+  await page.getByRole("button", { name: "목차" }).focus();
+  await page.keyboard.press("Enter");
+  const link = page.getByRole("dialog").getByRole("link").nth(1);
+  await link.focus();
+  await page.keyboard.press("Enter");
+  await expect(fallback.locator("#mail-s02")).toBeFocused();
+
+  await retry.click();
+  await expect(page.locator(".fs-reader")).toBeVisible();
+  await expect(page.locator(".fs-reader [data-beat]")).toHaveCount(36);
+  await expect(fallback).toHaveCount(0);
 });

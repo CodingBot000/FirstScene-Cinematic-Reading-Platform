@@ -2,38 +2,34 @@
 import { useRef } from "react";
 import {
   Button,
+  Progress,
   EmptyState,
   ErrorState,
-  Progress,
-  ResponsiveAsset,
-} from "@firstscene/ui";
-import type { AssetProps } from "@firstscene/ui";
-import type { Story } from "@firstscene/story-schema";
-import { useReaderPreferences } from "../reader-preferences/use-reader-preferences";
-import { desiredBookmarks, anchorFromDto } from "../reading-sync/store";
-import { saveStatus } from "../reading-sync/use-reading-sync";
-export type LibraryStory = { story: Story; cover: AssetProps };
+} from "@firstscene/ui/primitives";
+import { ResponsiveAsset } from "@firstscene/ui/images";
+import type { AssetProps } from "@firstscene/ui/images";
+import { useReadingRecords } from "../reading-sync/use-reading-records";
+import { saveStatus } from "../reading-sync/reading-view";
+export type LibraryStory = {
+  id: string;
+  title: string;
+  cover: AssetProps;
+  scenes: readonly {
+    id: string;
+    title: string;
+    beats: readonly { id: string; text: string }[];
+  }[];
+};
 export function Library({ catalog }: { catalog: readonly LibraryStory[] }) {
-  const {
-    snapshot: local,
-    syncSnapshot: remote,
-    sync,
-  } = useReaderPreferences();
+  const { snapshot: local, syncSnapshot: remote, sync } = useReadingRecords();
   const quoteHeading = useRef<HTMLHeadingElement>(null),
     storyHeading = useRef<HTMLHeadingElement>(null);
-  const bookmarks = desiredBookmarks(remote);
+  const bookmarks = remote.bookmarks;
   const savedStories = bookmarks.filter((b) => b.targetId === "__story__");
   const quotes = bookmarks.filter((b) => b.targetId !== "__story__");
-  const recent = catalog.flatMap(({ story, cover }) => {
-    const server = remote.me?.progress.find((p) => p.storyId === story.id);
-    const pending = remote.queue.some((i) => i.key === "progress:" + story.id);
-    const anchor =
-      pending ||
-      !server ||
-      ["offline", "error", "expired"].includes(remote.status)
-        ? (local.anchors[story.id] ?? (server ? anchorFromDto(server) : null))
-        : anchorFromDto(server);
-    return anchor ? [{ story, cover, anchor }] : [];
+  const recent = catalog.flatMap((story) => {
+    const anchor = remote.recentAnchor(story.id, local.anchors[story.id]);
+    return anchor ? [{ story, anchor }] : [];
   });
   function remove(
     storyId: string,
@@ -76,7 +72,7 @@ export function Library({ catalog }: { catalog: readonly LibraryStory[] }) {
           (!hasRecords && remote.status === "local"
             ? "아직 저장된 독서 기록이 없어요."
             : saveStatus(remote.status))}
-        {!remote.me && hasRecords
+        {!remote.epoch && hasRecords
           ? " · 이 기기의 임시 기록을 사용하고 있어요."
           : ""}
       </p>
@@ -110,7 +106,7 @@ export function Library({ catalog }: { catalog: readonly LibraryStory[] }) {
           <h2 id="recent-title">최근 읽기</h2>
           {recent.length ? (
             <ul className="library-recent">
-              {recent.map(({ story, cover, anchor }) => {
+              {recent.map(({ story, anchor }) => {
                 const scene = story.scenes.find((s) => s.id === anchor.sceneId);
                 const count = story.scenes.reduce(
                   (sum, s) => sum + s.beats.length,
@@ -125,7 +121,7 @@ export function Library({ catalog }: { catalog: readonly LibraryStory[] }) {
                 return (
                   <li key={story.id}>
                     <a href={"/read/" + story.id} className="library-cover">
-                      <ResponsiveAsset {...cover} aspectRatio="3 / 4" />
+                      <ResponsiveAsset {...story.cover} aspectRatio="3 / 4" />
                     </a>
                     <div>
                       <p className="genre">
@@ -167,7 +163,7 @@ export function Library({ catalog }: { catalog: readonly LibraryStory[] }) {
           {savedStories.length ? (
             <ul className="library-stories">
               {savedStories.map((b, index) => {
-                const info = catalog.find((c) => c.story.id === b.storyId);
+                const info = catalog.find((c) => c.id === b.storyId);
                 if (!info)
                   return (
                     <li key={b.storyId}>
@@ -197,7 +193,7 @@ export function Library({ catalog }: { catalog: readonly LibraryStory[] }) {
                     </a>
                     <div>
                       <h3>
-                        <a href={"/stories/" + b.storyId}>{info.story.title}</a>
+                        <a href={"/stories/" + b.storyId}>{info.title}</a>
                       </h3>
                       <a
                         href={"/stories/" + b.storyId}
@@ -218,7 +214,7 @@ export function Library({ catalog }: { catalog: readonly LibraryStory[] }) {
                             storyHeading,
                           )
                         }
-                        aria-label={info.story.title + " 저장 해제"}
+                        aria-label={info.title + " 저장 해제"}
                       >
                         저장 해제
                       </Button>
@@ -243,8 +239,8 @@ export function Library({ catalog }: { catalog: readonly LibraryStory[] }) {
           {quotes.length ? (
             <ol className="library-quotes">
               {quotes.map((b, index) => {
-                const info = catalog.find((c) => c.story.id === b.storyId);
-                const scene = info?.story.scenes.find((s) =>
+                const info = catalog.find((c) => c.id === b.storyId);
+                const scene = info?.scenes.find((s) =>
                   s.beats.some((beat) => beat.id === b.targetId),
                 );
                 const beat = scene?.beats.find(
@@ -255,7 +251,7 @@ export function Library({ catalog }: { catalog: readonly LibraryStory[] }) {
                 return (
                   <li key={key} data-bookmark={b.targetId}>
                     <p className="genre">
-                      {info?.story.title ?? "이전 이야기"} ·{" "}
+                      {info?.title ?? "이전 이야기"} ·{" "}
                       {scene?.title ?? "변경된 문장"}
                     </p>
                     <blockquote>

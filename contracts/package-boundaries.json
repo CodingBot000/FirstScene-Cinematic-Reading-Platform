@@ -53,5 +53,13 @@
   ],
   "noDeepSourceImports": true,
   "requireExports": true,
-  "requireExternalTarballSmoke": true
+  "requireExternalTarballSmoke": true,
+  "readingRecords": {
+    "featureRoot": "apps/web/features",
+    "cache": "apps/web/lib/reading-cache.ts",
+    "publicModules": [
+      "apps/web/features/reading-sync/use-reading-records.ts",
+      "apps/web/features/reading-sync/reading-view.ts"
+    ]
+  }
 }

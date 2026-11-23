@@ -1,13 +1,13 @@
 import { it, expect } from "vitest";
 import { readFileSync } from "node:fs";
 import type { Story, ReadingAnchor } from "@firstscene/story-schema";
+import { createReaderStore } from "../../apps/web/features/reading-sync/local-store";
 import {
-  createReaderStore,
   decodeCache,
   LOCAL_CACHE_KEY,
   defaultPreferences,
   validPreferences,
-} from "../../apps/web/features/reader-preferences/local-store";
+} from "../../apps/web/lib/reading-cache";
 const story = JSON.parse(
   readFileSync("content/generated/stories/post-office.json", "utf8"),
 ) as Story;

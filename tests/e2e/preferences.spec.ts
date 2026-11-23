@@ -5,7 +5,7 @@ import path from "node:path";
 import {
   LOCAL_CACHE_KEY,
   defaultPreferences,
-} from "../../apps/web/features/reader-preferences/local-store";
+} from "../../apps/web/lib/reading-cache";
 const story = JSON.parse(
   readFileSync("content/generated/stories/post-office.json", "utf8"),
 );

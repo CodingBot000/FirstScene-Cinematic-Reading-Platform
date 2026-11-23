@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { stories, storyById, asset, storyCard } from "../../../lib/catalog";
-import { ReaderController } from "../../../components/ReaderController";
+import { ReaderController } from "./_components/ReaderController";
 export function generateStaticParams() {
   return stories.map((s) => ({ storyId: s.id }));
 }

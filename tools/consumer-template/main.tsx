@@ -6,6 +6,8 @@ import "@firstscene/tokens/css";
 import "@firstscene/ui/css";
 import { Typography } from "@firstscene/ui";
 import { Button } from "@firstscene/ui/button";
+import { Button as PrimitiveButton } from "@firstscene/ui/primitives";
+import { isAssetVariant } from "@firstscene/ui/images";
 import { assertStory } from "@firstscene/story-schema";
 import type { ReaderPrefs } from "@firstscene/story-schema";
 import { storyBeats } from "@firstscene/reader-core";
@@ -19,6 +21,11 @@ assertStory(parsedStory);
 const story = parsedStory;
 const assets = rawAssets as AssetMap;
 const count = storyBeats(story).length;
+if (
+  PrimitiveButton !== Button ||
+  !Object.values(assets).some((asset) => asset.variants.some(isAssetVariant))
+)
+  throw new Error("UI_EXPORT_MISMATCH");
 if (tokens.schemaVersion !== tokenJson.schemaVersion)
   throw new Error("TOKEN_EXPORT_MISMATCH");
 function Demo() {

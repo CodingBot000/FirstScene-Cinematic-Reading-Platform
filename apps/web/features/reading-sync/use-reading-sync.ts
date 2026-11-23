@@ -104,19 +104,3 @@ export function useReadingSync() {
   }, []);
   return { sync: readingSync, snapshot };
 }
-export function saveStatus(
-  status: ReturnType<typeof readingSync.getSnapshot>["status"],
-) {
-  return {
-    loading: "저장 상태 확인 중",
-    local: "이 기기에 임시 저장 중",
-    saving: "서버에 저장 중",
-    saved: "서버에 저장됨",
-    offline: "오프라인 · 임시 저장 중",
-    error: "저장 주의 · 임시 기록 유지",
-    expired: "세션 만료 · 임시 기록 유지",
-    deleting: "기록 삭제 중",
-    "delete-error": "삭제 실패 · 저장 중단",
-    deleted: "기록 삭제됨",
-  }[status];
-}

@@ -1,6 +1,7 @@
 import type { Page } from "@playwright/test";
-export async function installLifecycleProbe(page: Page) {
-  await page.addInitScript(() => {
+export async function installLifecycleProbe(page: Page, readerFailures = 0) {
+  await page.addInitScript((readerFailures) => {
+    let failedReaderObservations = 0;
     type Entry = {
       target: EventTarget;
       type: string;
@@ -73,6 +74,13 @@ export async function installLifecycleProbe(page: Page) {
         targets.add(target);
         observed.set(this, targets);
         super.observe(target, options);
+        if (
+          target.classList.contains("fs-reader") &&
+          failedReaderObservations < readerFailures
+        ) {
+          failedReaderObservations++;
+          throw new Error("P10_TEST_READER_LAYOUT_FAILURE");
+        }
       }
       unobserve(target: Element) {
         const targets = observed.get(this);
@@ -97,15 +105,24 @@ export async function installLifecycleProbe(page: Page) {
         return {
           listeners: Object.fromEntries(Object.entries(listeners).sort()),
           resizeObservers: observed.size,
+          failedReaderObservations,
         };
       },
     };
-  });
+  }, readerFailures);
 }
 export async function lifecycleSnapshot(page: Page) {
   return page.evaluate(() =>
     (
-      window as unknown as { firstsceneLeakProbe: { snapshot: () => unknown } }
+      window as unknown as {
+        firstsceneLeakProbe: {
+          snapshot: () => {
+            listeners: Record<string, number>;
+            resizeObservers: number;
+            failedReaderObservations: number;
+          };
+        };
+      }
     ).firstsceneLeakProbe.snapshot(),
   );
 }

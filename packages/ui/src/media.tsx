@@ -1,27 +1,11 @@
 "use client";
 import { useRef } from "react";
 
-export type AssetVariant = {
-  path: string;
-  format: "avif" | "webp";
-  width: number;
-  height: number;
-  bytes?: number;
-  sha256?: string;
-};
-export type AssetProps = {
-  variants: readonly AssetVariant[];
-  alt: string;
-  decorative?: boolean;
-  priority?: boolean;
-  aspectRatio?: string;
-  focalPoint?: { x: number; y: number };
-  sizes?: string;
-  className?: string;
-};
-const safePath = (path: string) =>
-  /^\/assets\/[a-z0-9][a-z0-9._-]*\.(?:avif|webp)$/.test(path) &&
-  !path.includes("..");
+import { isAssetVariant } from "./asset-variants.js";
+import type { AssetProps } from "./asset-variants.js";
+export { isAssetVariant } from "./asset-variants.js";
+export type { AssetProps, AssetVariant } from "./asset-variants.js";
+
 export function ResponsiveAsset({
   variants,
   alt,
@@ -32,14 +16,7 @@ export function ResponsiveAsset({
   sizes = "(max-width:640px) 100vw, 50vw",
   className = "",
 }: AssetProps) {
-  const safe = variants.filter(
-    (v) =>
-      safePath(v.path) &&
-      Number.isInteger(v.width) &&
-      v.width > 0 &&
-      Number.isInteger(v.height) &&
-      v.height > 0,
-  );
+  const safe = variants.filter(isAssetVariant);
   const fallback = safe
     .filter((v) => v.format === "webp")
     .sort((a, b) => a.width - b.width)

@@ -1,13 +1,15 @@
 "use client";
 import { FeedbackForm } from "./FeedbackForm";
-import type { FeedbackWrite } from "../reading-sync/transport.generated";
-import type { FeedbackSendResult } from "../reading-sync/store";
-import { Button, StoryCard } from "@firstscene/ui";
-import type { StoryCardProps } from "@firstscene/ui";
+import type {
+  FeedbackWrite,
+  FeedbackSendResult,
+  ReaderSnapshot,
+  ReadingView,
+} from "../reading-sync/reading-view";
+import { Button } from "@firstscene/ui/primitives";
+import { StoryCard } from "@firstscene/ui/cards";
+import type { StoryCardProps } from "@firstscene/ui/cards";
 import type { Story } from "@firstscene/story-schema";
-import type { ReaderSnapshot } from "../reader-preferences/local-store";
-import type { SyncSnapshot } from "../reading-sync/store";
-import { isTransport } from "../reading-sync/validate";
 export function CompletionPanel({
   story,
   nextStory,
@@ -19,20 +21,15 @@ export function CompletionPanel({
   story: Story;
   nextStory: StoryCardProps;
   local: ReaderSnapshot;
-  remote: SyncSnapshot;
+  remote: ReadingView;
   onComplete: () => boolean;
   onFeedback: (
     input: FeedbackWrite,
     epoch: string,
   ) => Promise<FeedbackSendResult>;
 }) {
-  const progress = remote.me?.progress.find((p) => p.storyId === story.id);
-  const pending = remote.queue.some(
-    (p) =>
-      p.key === "progress:" + story.id &&
-      isTransport("ProgressWrite", p.body) &&
-      p.body.completed,
-  );
+  const progress = remote.confirmedAnchor(story.id);
+  const pending = remote.pendingCompletion(story.id);
   const confirmed = Boolean(
     progress?.completed &&
     remote.hydrated &&
@@ -76,7 +73,7 @@ export function CompletionPanel({
         {label}
       </Button>
       <FeedbackForm
-        key={story.id + ":" + (remote.me?.session.epoch ?? "none")}
+        key={story.id + ":" + (remote.epoch ?? "none")}
         storyId={story.id}
         remote={remote}
         onSubmit={onFeedback}

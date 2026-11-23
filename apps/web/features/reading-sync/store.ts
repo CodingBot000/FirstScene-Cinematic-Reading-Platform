@@ -1,3 +1,5 @@
+import { createRequest, TransportFailure } from "./transport";
+import { anchorFromDto, prefsFromDto, desiredBookmarks } from "./selectors";
 import type { ReaderPrefs, ReadingAnchor } from "@firstscene/story-schema";
 import type {
   Me,
@@ -6,11 +8,12 @@ import type {
   FeedbackWrite,
 } from "./transport.generated";
 import { isTransport } from "./validate";
-import { prefsFromDto, anchorFromDto, desiredBookmarks } from "./selectors";
 import {
   SYNC_KEY,
   RESET_KEY,
   decodeDurable,
+  encodeDurable,
+  mergeDurable,
   replacePending,
   decodeReset,
   PREFERENCES_INTENT_KEY,
@@ -24,8 +27,10 @@ import {
   decodeCache,
   validAnchor,
   validPreferences,
-} from "../reader-preferences/local-store";
-import type { StoragePort } from "../reader-preferences/local-store";
+  readCache,
+  writeCache,
+} from "../../lib/reading-cache";
+import type { StoragePort } from "../../lib/reading-cache";
 export type SyncSnapshot = {
   paused: boolean;
   canRetry: boolean;
@@ -77,20 +82,9 @@ export type SyncPorts = {
   changed: () => void;
 };
 export { prefsFromDto, anchorFromDto, desiredBookmarks } from "./selectors";
-class TransportFailure extends Error {
-  constructor(
-    public status: number,
-    public code: string,
-    public details: {
-      currentRevision?: number;
-      currentProgress?: Progress;
-    } = {},
-    public retryAfter = 0,
-  ) {
-    super(code);
-  }
-}
+
 export function createSyncStore(port: SyncPorts) {
+  const request = createRequest((...args) => port.fetch(...args));
   let state = syncServerSnapshot;
   let data: Durable = {
     schemaVersion: 1,
@@ -243,37 +237,14 @@ export function createSyncStore(port: SyncPorts) {
         }
         if (shared?.epoch && !data.epoch)
           data = { ...data, epoch: shared.epoch, expiresAt: shared.expiresAt };
-        const settled = { ...shared?.settled, ...data.settled };
-        for (const [key, timestamp] of Object.entries(shared?.settled ?? {}))
-          settled[key] = Math.max(settled[key] ?? 0, timestamp);
-        if (acknowledged)
-          settled[acknowledged.key] = Math.max(
-            settled[acknowledged.key] ?? 0,
-            acknowledged.changedAt,
-          );
-        const cache = readAnchorCache();
-        let queue: Pending[] = [];
-        for (const item of [...(shared?.queue ?? []), ...data.queue]) {
-          if (item.changedAt <= (settled[item.key] ?? -1)) continue;
-          if (
-            item.key.startsWith("progress:") &&
-            isTransport("ProgressWrite", item.body) &&
-            !item.body.completed &&
-            item.ownerId &&
-            cache?.anchorOwners[item.key.slice(9)] &&
-            cache.anchorOwners[item.key.slice(9)] !== item.ownerId
-          )
-            continue;
-          queue = replacePending(queue, item);
-        }
-        if (Object.keys(settled).length > 128) throw new Error("SYNC_LIMIT");
-        data = { ...data, queue, settled };
-        recoverPreference();
-        const raw = JSON.stringify(
-          rollover ? { ...data, reset: rollover.id } : data,
+        data = mergeDurable(
+          data,
+          shared,
+          acknowledged,
+          readAnchorCache()?.anchorOwners,
         );
-        if (new TextEncoder().encode(raw).length > 65536)
-          throw new Error("SYNC_LIMIT");
+        recoverPreference();
+        const raw = encodeDurable(data, rollover?.id);
         if (rollover && !writeReset(rollover))
           throw new Error("RESET_WRITE_FAILED");
         port.storage().setItem(SYNC_KEY, raw);
@@ -293,16 +264,16 @@ export function createSyncStore(port: SyncPorts) {
     action: (cache: ReturnType<typeof decodeCache>["cache"]) => void,
   ) {
     try {
-      const cache = decodeCache(port.storage().getItem(LOCAL_CACHE_KEY)).cache;
+      const cache = readCache(port.storage()).cache;
       action(cache);
-      port.storage().setItem(LOCAL_CACHE_KEY, JSON.stringify(cache));
+      writeCache(port.storage(), cache);
     } catch {
       publish({ storageError: true });
     }
   }
   function readAnchorCache() {
     try {
-      const cache = decodeCache(port.storage().getItem(LOCAL_CACHE_KEY)).cache;
+      const cache = readCache(port.storage()).cache;
       return data.epoch &&
         cache.sessionEpoch &&
         data.epoch !== cache.sessionEpoch
@@ -365,44 +336,6 @@ export function createSyncStore(port: SyncPorts) {
       });
     return true;
   }
-  async function request(
-    path: string,
-    method = "GET",
-    body?: unknown,
-    keepalive = false,
-    expectedStatus?: number,
-  ) {
-    const response = await port.fetch(path, {
-      method,
-      credentials: "same-origin",
-      cache: "no-store",
-      ...(body === undefined
-        ? {}
-        : {
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(body),
-          }),
-      keepalive,
-      signal: AbortSignal.timeout(10000),
-    });
-    if (response.ok && expectedStatus && response.status !== expectedStatus)
-      throw new TransportFailure(503, "INVALID_FEEDBACK_RESPONSE");
-    if (response.status === 204) return null;
-    if (method === "DELETE" && response.ok)
-      throw new TransportFailure(503, "INVALID_DELETE_RESPONSE");
-    const value: unknown = await response.json();
-    if (!response.ok) {
-      if (isTransport("Error", value))
-        throw new TransportFailure(
-          response.status,
-          value.error.code,
-          value.error.details,
-          Math.max(0, Number(response.headers.get("retry-after")) || 0),
-        );
-      throw new TransportFailure(response.status, "INVALID_RESPONSE");
-    }
-    return value;
-  }
   async function adopt(me: Me) {
     const changed = JSON.stringify(data.me) !== JSON.stringify(me);
     if (data.epoch && data.epoch !== me.session.epoch) {
@@ -429,12 +362,7 @@ export function createSyncStore(port: SyncPorts) {
       else {
         const pending = data.queue.find((i) => i.key === "preferences")!;
         if (isTransport("PreferencesWrite", pending.body))
-          cache.preferences = {
-            mode: pending.body.mode,
-            reduceMotion: pending.body.effects === "reduced",
-            fontSize: pending.body.fontSize,
-            theme: pending.body.theme,
-          };
+          cache.preferences = prefsFromDto(pending.body);
       }
       for (const progress of me.progress)
         if (!cache.anchors[progress.storyId])
@@ -868,8 +796,7 @@ export function createSyncStore(port: SyncPorts) {
   function sameCacheEpoch() {
     initialize();
     try {
-      const cached = decodeCache(port.storage().getItem(LOCAL_CACHE_KEY)).cache
-        .sessionEpoch;
+      const cached = readCache(port.storage()).cache.sessionEpoch;
       if (data.epoch && cached && data.epoch !== cached) {
         blocked = true;
         stopped = true;
