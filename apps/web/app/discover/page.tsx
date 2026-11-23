@@ -2,10 +2,11 @@ import { SiteShell } from "../../components/SiteShell";
 import { Discovery } from "./_components/Discovery";
 import { stories, storyCard } from "../../lib/catalog";
 import { previewShelves } from "../../lib/preview-catalog";
+import { classicCount } from "../../lib/classic-catalog";
 
 export const metadata = {
   title: "이야기 탐색",
-  description: "완결된 이야기 2편과 공개 예정인 새로운 세계 34편을 둘러보세요.",
+  description: "오리지널 2편, 읽을 수 있는 고전 20편과 공개 예정 콘셉트 34편을 둘러보세요.",
 };
 
 export default async function Discover({
@@ -38,7 +39,7 @@ export default async function Discover({
           머무르고 싶나요?
         </h1>
         <p>
-          지금 읽을 수 있는 두 편의 이야기, 그리고 곧 열릴 서른네 개의 세계.
+          지금 읽을 수 있는 오리지널 2편과 고전 {classicCount}편, 그리고 공개 예정 콘셉트 34편.
         </p>
       </div>
       <Discovery

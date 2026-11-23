@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { EmptyState } from "@firstscene/ui/primitives";
 import { StoryCard } from "@firstscene/ui/cards";
+import { classicCount } from "../../../lib/classic-catalog";
+import { ClassicCard } from "../../../components/ClassicCard";
 import type { StoryCardProps } from "@firstscene/ui/cards";
 import {
   previewCount,
@@ -78,6 +80,7 @@ export function Discovery({
   const { q, mood, status, genre } = query.filters;
   const {
     ready: visibleReady,
+    classics: visibleClassics,
     coming: visibleComing,
     count,
   } = filterDiscovery(cards, query.filters);
@@ -86,6 +89,7 @@ export function Discovery({
     useCatalogFlip(
       [
         ...visibleReady.map((story) => story.id),
+        ...visibleClassics.map((story) => story.id),
         ...visibleComing.map((story) => story.id),
       ].join("|"),
     );
@@ -118,8 +122,8 @@ export function Discovery({
           <legend>공개 상태</legend>
           {(
             [
-              ["all", `전체 ${cards.length + previewCount}`],
-              ["ready", `지금 읽기 ${cards.length}`],
+              ["all", `전체 ${cards.length + classicCount + previewCount}`],
+              ["ready", `지금 읽기 ${cards.length + classicCount}`],
               ["coming", `공개 예정 ${previewCount}`],
             ] as const
           ).map(([value, label]) => (
@@ -192,8 +196,8 @@ export function Discovery({
       <div className="discovery-result-heading">
         <p className="results-count" role="status">
           {count}편의 이야기
-          {visibleReady.length > 0
-            ? ` · 읽기 가능 ${visibleReady.length}편`
+          {visibleReady.length + visibleClassics.length > 0
+            ? ` · 읽기 가능 ${visibleReady.length + visibleClassics.length}편`
             : ""}
           {visibleComing.length > 0
             ? ` · 공개 예정 ${visibleComing.length}편`
@@ -221,6 +225,16 @@ export function Discovery({
               data-flip-id={`ready-${card.id}`}
             >
               <StoryCard {...card} />
+            </div>
+          ))}
+          {visibleClassics.map((story, index) => (
+            <div
+              key={story.id}
+              className="discovery-classic-card"
+              data-classic-story={story.id}
+              data-flip-id={`classic-${story.id}`}
+            >
+              <ClassicCard story={story} index={index} />
             </div>
           ))}
           {visibleComing.map((story, index) => (

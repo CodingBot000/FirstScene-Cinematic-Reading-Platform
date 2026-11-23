@@ -6,6 +6,7 @@ import "@firstscene/ui/css";
 import "./site.css";
 import "../components/preview/preview-catalog.css";
 import "../components/discovery.css";
+import "../components/classics.css";
 import "../components/cinematic-prologue.css";
 import "./mobile-journey.css";
 export const metadata: Metadata = {
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s | FirstScene",
   },
   description:
-    "가입 없이 두 편의 오리지널 단편을 만나보세요. 장면 연출과 편안한 일반 읽기를 선택할 수 있어요.",
+    "가입 없이 오리지널 단편 2편과 저작권 보호기간 만료 고전 20편을 읽어보세요. 시네마틱 읽기와 원문 읽기를 선택할 수 있어요.",
 };
 export default async function Layout({ children }: { children: ReactNode }) {
   await headers();
