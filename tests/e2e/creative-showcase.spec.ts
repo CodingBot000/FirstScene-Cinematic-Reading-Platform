@@ -121,7 +121,7 @@ test("Flip cleanup restores responsive grid when viewport or motion settings cha
 
   // Resize while the cards are still returning to their original positions.
   await page.setViewportSize({ width: 390, height: 844 });
-  await expect(page.locator("[data-flip-id]")).toHaveCount(36);
+  await expect(page.locator("[data-flip-id]")).toHaveCount(56);
   await expect
     .poll(() =>
       page
