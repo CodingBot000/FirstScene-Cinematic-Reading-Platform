@@ -112,6 +112,7 @@ export function createSyncStore(port: SyncPorts) {
   >();
   let resetPhase: ResetPhase = "none";
   let erasing: Promise<boolean> | null = null;
+  let serverDeletionConfirmedFor: string | null = null;
   let resuming: Promise<boolean> | null = null;
   const listeners = new Set<() => void>();
   function publish(patch: Partial<SyncSnapshot> = {}) {
@@ -771,7 +772,7 @@ export function createSyncStore(port: SyncPorts) {
   }
   function enqueue(item: Pending, progress = false) {
     initialize();
-    if (resetChanged() || stopped) return;
+    if (resetChanged() || stopped) return false;
     let previousTime = Math.max(
       data.settled[item.key] ?? 0,
       ...data.queue.filter((i) => i.key === item.key).map((i) => i.changedAt),
@@ -823,7 +824,7 @@ export function createSyncStore(port: SyncPorts) {
         status: "error",
         notice: "임시 저장 한도에 도달했어요. 기존 저장 문장을 정리해 주세요.",
       });
-      return;
+      return false;
     }
     void persist();
     publish({
@@ -842,6 +843,7 @@ export function createSyncStore(port: SyncPorts) {
         Math.min(750, Math.max(0, 5000 - (port.now() - progressFirstAt))),
       );
     } else schedule(0);
+    return true;
   }
   function sameCacheEpoch() {
     initialize();
@@ -920,7 +922,7 @@ export function createSyncStore(port: SyncPorts) {
   }
   function queueAnchor(a: ReadingAnchor, completed: boolean, ownerId?: string) {
     const confirmed = data.me?.progress.find((p) => p.storyId === a.storyId);
-    enqueue(
+    return enqueue(
       {
         key: "progress:" + a.storyId,
         method: "PUT",
@@ -994,6 +996,7 @@ export function createSyncStore(port: SyncPorts) {
   }
   async function eraseOwned() {
     initialize();
+    const locallyFinishing = serverDeletionConfirmedFor === currentReset();
     stopped = true;
     blocked = true;
     generation++;
@@ -1008,9 +1011,9 @@ export function createSyncStore(port: SyncPorts) {
     port.changed();
     // Shared lock waits for an outstanding session Set-Cookie before deletion expires it.
     try {
-      await port.lock(async () => {
-        await request("/api/v1/me", "DELETE", {});
-      });
+      if (!locallyFinishing)
+        await port.lock(() => request("/api/v1/me", "DELETE", {}));
+      serverDeletionConfirmedFor = marker.id;
       try {
         port.storage().removeItem(LOCAL_CACHE_KEY);
         port.storage().removeItem(SYNC_KEY);
@@ -1027,7 +1030,18 @@ export function createSyncStore(port: SyncPorts) {
         port.changed();
         return false;
       }
-      writeReset({ ...marker, phase: "deleted" });
+      if (!writeReset({ ...marker, phase: "deleted" })) {
+        writeReset({ ...marker, phase: "failed" });
+        publish({
+          storageError: true,
+          status: "delete-error",
+          notice:
+            "서버 기록은 삭제했어요. 이 기기에 삭제 완료를 기록하지 못했어요. 삭제를 다시 시도해 주세요.",
+        });
+        port.changed();
+        return false;
+      }
+      serverDeletionConfirmedFor = null;
       data = {
         schemaVersion: 1,
         reset: currentReset(),
@@ -1063,7 +1077,12 @@ export function createSyncStore(port: SyncPorts) {
   }
   async function resumeOwned() {
     initialize();
-    if (state.status !== "delete-error" || erasing) return false;
+    if (
+      state.status !== "delete-error" ||
+      erasing ||
+      serverDeletionConfirmedFor === currentReset()
+    )
+      return false;
     const version = ++generation;
     clearTimeout(timer);
     publish({
@@ -1267,11 +1286,11 @@ export function createSyncStore(port: SyncPorts) {
         port.changed();
         return true;
       }
+      if (!queueAnchor({ ...a, completed: true }, true, ownerId)) return false;
       latestAnchors.set(a.storyId, {
         anchor: a,
         ...(ownerId ? { ownerId } : {}),
       });
-      queueAnchor({ ...a, completed: true }, true, ownerId);
       port.changed();
       return true;
     },
@@ -1297,7 +1316,7 @@ export function createSyncStore(port: SyncPorts) {
         });
         return false;
       }
-      enqueue({
+      return enqueue({
         key: `bookmark:${storyId}:${targetId}`,
         method: desired ? "PUT" : "DELETE",
         path: `/api/v1/bookmarks/${storyId}/${targetId}`,
@@ -1307,7 +1326,6 @@ export function createSyncStore(port: SyncPorts) {
         changedAt: port.now(),
         conflicts: 0,
       });
-      return true;
     },
     external,
     onlineChanged,
