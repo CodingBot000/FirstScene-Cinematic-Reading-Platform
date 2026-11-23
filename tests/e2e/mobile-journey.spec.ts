@@ -25,7 +25,9 @@ for (const width of widths) {
       const geometry = await page.evaluate(() => {
         const root = document.documentElement;
         const nav = document.querySelector<HTMLElement>(".site-header nav");
-        const toolbar = document.querySelector<HTMLElement>(".fs-reading-toolbar");
+        const toolbar = document.querySelector<HTMLElement>(
+          ".fs-reading-toolbar",
+        );
         return {
           viewport: innerWidth,
           overflow: root.scrollWidth - root.clientWidth,
@@ -112,21 +114,27 @@ test("390px discover and settings controls preserve 44px touch targets", async (
     ".discovery-genre-options label",
     ".discovery-reset",
   ]) {
-    const heights = await page.locator(selector).evaluateAll((elements) =>
-      elements.map((element) => element.getBoundingClientRect().height),
-    );
+    const heights = await page
+      .locator(selector)
+      .evaluateAll((elements) =>
+        elements.map((element) => element.getBoundingClientRect().height),
+      );
     expect(heights.length).toBeGreaterThan(0);
-    for (const height of heights) expect(height, selector).toBeGreaterThanOrEqual(43.5);
+    for (const height of heights)
+      expect(height, selector).toBeGreaterThanOrEqual(43.5);
   }
 
   await page.getByRole("link", { name: "설정", exact: true }).click();
   await expect(page).toHaveURL(/\/settings$/);
   await expect(page.locator(".settings-fieldset")).toBeEnabled();
   await expect(page.getByRole("radio", { name: "일반 읽기" })).toBeVisible();
-  const controlHeights = await page.locator(".settings-fieldset .fs-radio").evaluateAll(
-    (elements) => elements.map((element) => element.getBoundingClientRect().height),
-  );
-  for (const height of controlHeights) expect(height).toBeGreaterThanOrEqual(43.5);
+  const controlHeights = await page
+    .locator(".settings-fieldset .fs-radio")
+    .evaluateAll((elements) =>
+      elements.map((element) => element.getBoundingClientRect().height),
+    );
+  for (const height of controlHeights)
+    expect(height).toBeGreaterThanOrEqual(43.5);
 });
 
 test("library on an untouched browser shows an actionable empty state", async ({
@@ -137,10 +145,9 @@ test("library on an untouched browser shows an actionable empty state", async ({
   await expect(
     page.getByText("아직 남긴 독서 기록이 없어요.", { exact: true }),
   ).toBeVisible();
-  await expect(page.getByRole("link", { name: "이야기 만나기" })).toHaveAttribute(
-    "href",
-    "/discover",
-  );
+  await expect(
+    page.getByRole("link", { name: "이야기 만나기" }),
+  ).toHaveAttribute("href", "/discover");
   await expect(page.locator(".library-section")).toHaveCount(3);
   await expect(page.locator(".library-section").first()).toBeHidden();
 });

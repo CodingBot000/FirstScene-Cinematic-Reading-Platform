@@ -39,10 +39,16 @@ describe("discovery model and state boundaries", () => {
     expect(result.count).toBe(56);
   });
   it("returns classics for readable status, but not for unpublished concepts", () => {
-    const readyOnly = filterDiscovery(ready, canonicalFilters({ status: "ready", q: "김유정" }));
+    const readyOnly = filterDiscovery(
+      ready,
+      canonicalFilters({ status: "ready", q: "김유정" }),
+    );
     expect(readyOnly.classics.length).toBeGreaterThan(0);
     expect(readyOnly.coming).toHaveLength(0);
-    const comingOnly = filterDiscovery(ready, canonicalFilters({ status: "coming" }));
+    const comingOnly = filterDiscovery(
+      ready,
+      canonicalFilters({ status: "coming" }),
+    );
     expect(comingOnly.classics).toHaveLength(0);
     expect(comingOnly.coming).toHaveLength(34);
   });

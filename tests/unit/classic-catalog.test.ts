@@ -1,6 +1,10 @@
 import { describe, expect, it } from "vitest";
 import { existsSync, readFileSync } from "node:fs";
-import { classicSummaries, classicCount, classicById } from "../../apps/web/lib/classic-catalog";
+import {
+  classicSummaries,
+  classicCount,
+  classicById,
+} from "../../apps/web/lib/classic-catalog";
 
 describe("public-domain classic catalog", () => {
   it("has exactly 20 source-attributed complete manuscripts", () => {

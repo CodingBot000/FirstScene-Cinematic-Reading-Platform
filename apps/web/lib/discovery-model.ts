@@ -123,7 +123,9 @@ export function filterDiscovery(
           (story) =>
             genre === "all" &&
             mood === "all" &&
-            normalize([story.title, story.author, story.summary, "고전"].join(" ")).includes(phrase),
+            normalize(
+              [story.title, story.author, story.summary, "고전"].join(" "),
+            ).includes(phrase),
         );
   const coming =
     status === "ready"
@@ -141,5 +143,10 @@ export function filterDiscovery(
             (genre === "all" || story.shelfId === genre) &&
             (mood === "all" || moodShelves[mood].includes(story.shelfId)),
         );
-  return { ready, classics, coming, count: ready.length + classics.length + coming.length };
+  return {
+    ready,
+    classics,
+    coming,
+    count: ready.length + classics.length + coming.length,
+  };
 }

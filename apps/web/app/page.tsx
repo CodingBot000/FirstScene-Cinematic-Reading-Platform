@@ -38,7 +38,10 @@ export default function Home() {
             지금 읽을 수 있는 모든 작품 →
           </Link>
         </div>
-        <p className="reading-note">저작권 보호기간이 만료된 원작의 출처 표시된 전사본입니다. 오리지널 시네마틱 작품과 구분됩니다.</p>
+        <p className="reading-note">
+          저작권 보호기간이 만료된 원작의 출처 표시된 전사본입니다. 오리지널
+          시네마틱 작품과 구분됩니다.
+        </p>
         <div className="classic-home-grid">
           {classicSummaries.slice(0, 4).map((story, index) => (
             <ClassicCard key={story.id} story={story} index={index} />
@@ -64,7 +67,8 @@ export default function Home() {
           </div>
         </div>
         <p className="disclosure">
-          시네마틱 오리지널 2편은 AI를 활용해 제작·검토했습니다. 고전 20편은 저작권 보호기간이 만료된 원작을 별도로 수록했습니다.
+          시네마틱 오리지널 2편은 AI를 활용해 제작·검토했습니다. 고전 20편은
+          저작권 보호기간이 만료된 원작을 별도로 수록했습니다.
         </p>
       </section>
     </SiteShell>
