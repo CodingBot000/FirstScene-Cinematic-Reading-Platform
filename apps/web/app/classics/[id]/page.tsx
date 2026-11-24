@@ -3,6 +3,7 @@ import Link from "next/link";
 import { SiteShell } from "../../../components/SiteShell";
 import { classicSummaries, classicById } from "../../../lib/classic-catalog";
 import { loadClassicManuscript } from "../../../lib/classic-content";
+import { formatClassicParagraphs } from "../../../lib/classic-paragraphs";
 
 export function generateStaticParams() {
   return classicSummaries.map(({ id }) => ({ id }));
@@ -53,12 +54,11 @@ export default async function ClassicReadPage({
           className="classic-reading-body"
           data-classic-text={story.id}
         >
-          {document.text
-            .split(/\n\s*\n/)
-            .filter(Boolean)
-            .map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))}
+          {formatClassicParagraphs(document.text).map((paragraph, index) => (
+            <p key={index} data-paragraph-kind={paragraph.kind}>
+              {paragraph.text}
+            </p>
+          ))}
         </article>
         <footer className="classic-reading-source">
           <h2>작품과 원문 출처</h2>
@@ -82,7 +82,9 @@ export default async function ClassicReadPage({
           <p className="disclosure">
             원작의 저작권 보호기간 만료와 전사본·편집본의 별도 이용조건은
             구분됩니다. 텍스트의 전사·정제 과정에 차이가 있을 수 있으며,
-            FirstScene이 이 작품의 저작자라는 뜻이 아닙니다.
+            FirstScene이 이 작품의 저작자라는 뜻이 아닙니다. 읽기 편하도록
+            문단과 대사 사이의 줄바꿈을 재구성했으며, 원문 문구와 구두점은
+            유지합니다.
           </p>
           <Link className="fs-text-link" href="/discover?status=ready">
             다른 작품 읽기 →
