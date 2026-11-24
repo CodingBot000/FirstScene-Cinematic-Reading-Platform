@@ -114,9 +114,7 @@ function formatLine(paragraphs: ClassicParagraph[], raw: string) {
     appendParagraphs(
       paragraphs,
       line.slice(cursor, match.index),
-      /^[―—]/u.test(line.slice(cursor).trimStart())
-        ? "dialogue"
-        : "narration",
+      /^[―—]/u.test(line.slice(cursor).trimStart()) ? "dialogue" : "narration",
     );
     const quoteEnd = match.index + match[0].length;
     const nextStart = matches[index + 1]?.index ?? line.length;
