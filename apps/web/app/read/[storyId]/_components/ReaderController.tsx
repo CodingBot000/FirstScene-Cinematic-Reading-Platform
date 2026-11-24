@@ -18,6 +18,7 @@ import { ReadingToolbar } from "@firstscene/ui/reader-controls";
 import type { Story, ReadingAnchor } from "@firstscene/story-schema";
 import type { StoryCardProps } from "@firstscene/ui/cards";
 import { CompletionPanel } from "../../../../features/completion/CompletionPanel";
+import { ReaderFrame } from "./ReaderFrame";
 import { saveStatus } from "../../../../features/reading-sync/reading-view";
 
 class ReaderBoundary extends Component<
@@ -117,14 +118,7 @@ export function ReaderController({
     [story, store, snapshot.ready, syncSnapshot.hydrated, writesPaused],
   );
   return (
-    <div
-      data-theme={prefs.theme}
-      className="reader-page"
-      data-reader-ready={snapshot.ready ? "true" : "false"}
-    >
-      <a href="#main" className="skip-link">
-        본문 바로가기
-      </a>
+    <ReaderFrame theme={prefs.theme} ready={snapshot.ready}>
       <ReadingToolbar
         settingsButtonRef={settingsButton}
         tocButtonRef={tocButton}
@@ -310,6 +304,6 @@ export function ReaderController({
           ))}
         </ol>
       </Dialog>
-    </div>
+    </ReaderFrame>
   );
 }

@@ -3,8 +3,9 @@ import { expect, test } from "@playwright/test";
 test("a classic is a full-length SSR document with author and source attribution", async ({
   page,
 }) => {
-  const response = await page.goto("/classics/classic-lucky-day");
+  const response = await page.goto("/read/classic-lucky-day");
   expect(response?.status()).toBe(200);
+  await expect(page.locator(".reader-page .fs-reading-toolbar")).toBeVisible();
   await expect(
     page.getByRole("heading", { level: 1, name: "운수 좋은 날" }),
   ).toBeVisible();
@@ -51,7 +52,9 @@ test("collapsed classics render real prose and individual dialogue paragraphs", 
   const dialogue = page.locator(
     '[data-classic-text] > p[data-paragraph-kind="dialogue"]',
   );
-  await expect(dialogue.filter({ hasText: "그럼 혼자 하지 떼루 하디?" })).toHaveCount(1);
+  await expect(
+    dialogue.filter({ hasText: "그럼 혼자 하지 떼루 하디?" }),
+  ).toHaveCount(1);
   await expect(dialogue.filter({ hasText: "너 일하기 좋니?" })).toHaveCount(1);
   await expect(
     dialogue.filter({
@@ -71,6 +74,7 @@ test("the classic reader works without JavaScript and fits mobile screens", asyn
   const page = await context.newPage();
   const response = await page.goto(baseURL + "/classics/classic-camellias");
   expect(response?.status()).toBe(200);
+  await expect(page).toHaveURL(/\/read\/classic-camellias$/);
   await expect(
     page.locator('[data-classic-text="classic-camellias"]'),
   ).toContainText("점순");
@@ -85,10 +89,48 @@ test("the classic reader works without JavaScript and fits mobile screens", asyn
       () => document.documentElement.scrollWidth <= innerWidth + 1,
     ),
   ).toBe(true);
+  await page.getByRole("link", { name: "작품 소개" }).click();
+  await expect(page).toHaveURL(/\/stories\/classic-camellias$/);
   await context.close();
 });
 
 test("an unknown classic returns 404", async ({ page }) => {
   const response = await page.goto("/classics/does-not-exist");
   expect(response?.status()).toBe(404);
+});
+
+test("a classic card opens the shared story detail and reading screen", async ({
+  page,
+}) => {
+  await page.goto("/discover?status=ready");
+  await page.getByRole("link", { name: "동백꽃, 김유정 작품 소개" }).click();
+  await expect(page).toHaveURL(/\/stories\/classic-camellias$/);
+  const detail = page.locator(".story-detail");
+  await expect(detail.getByRole("heading", { name: "동백꽃" })).toBeVisible();
+  await expect(detail.getByText("고전 · 김유정")).toBeVisible();
+  const cover = detail.getByRole("img", { name: "동백꽃 표지" });
+  await expect(cover).toBeVisible();
+  await expect
+    .poll(() => cover.evaluate((img: HTMLImageElement) => img.naturalWidth))
+    .toBeGreaterThan(0);
+  await detail.getByRole("link", { name: "처음부터 읽기" }).click();
+  await expect(page).toHaveURL(/\/read\/classic-camellias$/);
+  await expect(page.locator(".fs-reader-plain .fs-reader-main")).toBeVisible();
+  await page.getByRole("button", { name: "설정", exact: true }).click();
+  const dialog = page.getByRole("dialog", { name: "읽기 설정" });
+  await expect(dialog).toBeVisible();
+  await dialog.getByRole("radio", { name: "24px", exact: true }).check();
+  await expect(page.locator("[data-classic-text] > p").first()).toHaveCSS(
+    "font-size",
+    "24px",
+  );
+  await dialog.getByRole("radio", { name: "밝게", exact: true }).check();
+  await expect(page.locator(".reader-page")).toHaveAttribute(
+    "data-theme",
+    "light",
+  );
+  await page.keyboard.press("Escape");
+  await expect(
+    page.getByRole("button", { name: "설정", exact: true }),
+  ).toBeFocused();
 });
