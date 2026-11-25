@@ -4,34 +4,40 @@ import type { ReaderPrefs } from "@firstscene/story-schema";
 export function PreferenceControls({
   preferences: prefs,
   onChange,
+  showPresentation = true,
 }: {
   preferences: ReaderPrefs;
   onChange: (p: ReaderPrefs) => void;
+  showPresentation?: boolean;
 }) {
   return (
     <>
-      <ToggleGroup
-        label="읽기 모드"
-        value={prefs.mode}
-        onValueChange={(mode) =>
-          onChange({ ...prefs, mode: mode as ReaderPrefs["mode"] })
-        }
-        options={[
-          { value: "plain", label: "일반 읽기" },
-          { value: "cinematic", label: "연출 읽기" },
-        ]}
-      />
-      <ToggleGroup
-        label="효과"
-        value={prefs.reduceMotion ? "reduced" : "full"}
-        onValueChange={(value) =>
-          onChange({ ...prefs, reduceMotion: value === "reduced" })
-        }
-        options={[
-          { value: "full", label: "기본 효과" },
-          { value: "reduced", label: "효과 줄이기" },
-        ]}
-      />
+      {showPresentation ? (
+        <>
+          <ToggleGroup
+            label="읽기 모드"
+            value={prefs.mode}
+            onValueChange={(mode) =>
+              onChange({ ...prefs, mode: mode as ReaderPrefs["mode"] })
+            }
+            options={[
+              { value: "plain", label: "일반 읽기" },
+              { value: "cinematic", label: "연출 읽기" },
+            ]}
+          />
+          <ToggleGroup
+            label="효과"
+            value={prefs.reduceMotion ? "reduced" : "full"}
+            onValueChange={(value) =>
+              onChange({ ...prefs, reduceMotion: value === "reduced" })
+            }
+            options={[
+              { value: "full", label: "기본 효과" },
+              { value: "reduced", label: "효과 줄이기" },
+            ]}
+          />
+        </>
+      ) : null}
       <ToggleGroup
         label="글자 크기"
         value={String(prefs.fontSize)}
@@ -58,8 +64,8 @@ export function PreferenceControls({
         ]}
       />
       <p className="reading-note">
-        기기의 움직임 줄이기 설정을 우선해요. 이 브라우저의 임시 설정이며 다른
-        기기에 자동 동기화되지 않아요.
+        {showPresentation ? "기기의 움직임 줄이기 설정을 우선해요. " : ""}이
+        브라우저의 임시 설정이며 다른 기기에 자동 동기화되지 않아요.
       </p>
     </>
   );

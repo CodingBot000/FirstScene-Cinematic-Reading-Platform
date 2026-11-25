@@ -1,4 +1,4 @@
-import covers from "../lib/classic-covers.json";
+import { classicCover } from "../lib/classic-cover";
 import type { ClassicSummary } from "../lib/classic-catalog";
 export function ClassicCard({
   story,
@@ -7,12 +7,12 @@ export function ClassicCard({
   story: ClassicSummary;
   index?: number;
 }) {
-  const cover = covers[story.id as keyof typeof covers] as string | undefined;
+  const cover = classicCover(story.id);
   return (
     <a
       className="classic-card"
-      href={`/classics/${story.id}`}
-      aria-label={`${story.title}, ${story.author} 작품 읽기`}
+      href={`/stories/${story.id}`}
+      aria-label={`${story.title}, ${story.author} 작품 소개`}
     >
       <span
         className="classic-card-cover"

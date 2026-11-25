@@ -65,37 +65,60 @@ export function ReadingToolbar({
   sceneCount,
   saveStatus,
   onBack,
+  backHref,
   onSettings,
   onToc,
   settingsButtonRef,
   tocButtonRef,
 }: {
   title: string;
-  sceneIndex: number;
-  sceneCount: number;
-  saveStatus: string;
-  onBack: () => void;
+  sceneIndex?: number;
+  sceneCount?: number;
+  saveStatus?: string;
+  onBack?: () => void;
+  backHref?: string;
   onSettings: () => void;
-  onToc: () => void;
+  onToc?: () => void;
   settingsButtonRef?: Ref<HTMLButtonElement>;
   tocButtonRef?: Ref<HTMLButtonElement>;
 }) {
+  const backLabel = (
+    <>
+      ← <span className="fs-back-label">작품 소개</span>
+    </>
+  );
   return (
     <header className="fs-reading-toolbar">
-      <Button variant="ghost" onClick={onBack}>
-        ← <span className="fs-back-label">작품 소개</span>
-      </Button>
+      {backHref ? (
+        <a
+          className="fs-button fs-ghost"
+          aria-label="작품 소개"
+          href={backHref}
+        >
+          {backLabel}
+        </a>
+      ) : (
+        <Button variant="ghost" onClick={onBack}>
+          {backLabel}
+        </Button>
+      )}
       <span className="fs-toolbar-title">{title}</span>
-      <span className="fs-scene-count">
-        {sceneIndex}/{sceneCount}
-      </span>
-      <Button variant="ghost" ref={tocButtonRef} onClick={onToc}>
-        목차
-      </Button>
+      {sceneIndex !== undefined && sceneCount !== undefined ? (
+        <span className="fs-scene-count">
+          {sceneIndex}/{sceneCount}
+        </span>
+      ) : null}
+      {onToc ? (
+        <Button variant="ghost" ref={tocButtonRef} onClick={onToc}>
+          목차
+        </Button>
+      ) : null}
       <Button variant="ghost" ref={settingsButtonRef} onClick={onSettings}>
         설정
       </Button>
-      <small className="fs-save-status">{saveStatus}</small>
+      {saveStatus ? (
+        <small className="fs-save-status">{saveStatus}</small>
+      ) : null}
     </header>
   );
 }

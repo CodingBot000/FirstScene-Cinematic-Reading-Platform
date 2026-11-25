@@ -2,18 +2,21 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Tag } from "@firstscene/ui/primitives";
 import { ResponsiveAsset } from "@firstscene/ui/images";
-import { SiteShell } from "../../../components/SiteShell";
+import { classicById, classicSummaries } from "../../../lib/classic-catalog";
+import { classicCover } from "../../../lib/classic-cover";
+import { StoryDetail } from "./_components/StoryDetail";
 import { stories, storyById, asset } from "../../../lib/catalog";
 import { StoryActions } from "./_components/StoryActions";
 export function generateStaticParams() {
-  return stories.map((s) => ({ storyId: s.id }));
+  return [...stories, ...classicSummaries].map(({ id }) => ({ storyId: id }));
 }
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ storyId: string }>;
 }) {
-  const s = storyById((await params).storyId);
+  const { storyId } = await params;
+  const s = storyById(storyId) ?? classicById(storyId);
   return {
     title: s?.title ?? "이야기를 찾을 수 없어요",
     description: s?.summary,
@@ -24,33 +27,67 @@ export default async function StoryPage({
 }: {
   params: Promise<{ storyId: string }>;
 }) {
-  const story = storyById((await params).storyId);
+  const { storyId } = await params;
+  const classic = classicById(storyId);
+  if (classic) {
+    const cover = classicCover(classic.id);
+    return (
+      <StoryDetail
+        title={classic.title}
+        category={"고전 · " + classic.author}
+        summary={classic.summary}
+        disclosure="저작권 보호기간이 만료된 원작의 전사본"
+        cover={
+          cover ? (
+            <div className="fs-asset" style={{ aspectRatio: "3 / 4" }}>
+              <img
+                src={cover}
+                alt={classic.title + " 표지"}
+                width={640}
+                height={853}
+                fetchPriority="high"
+                decoding="async"
+              />
+            </div>
+          ) : null
+        }
+        actions={
+          <div className="story-actions">
+            <Link
+              className="fs-button fs-primary fs-lg"
+              href={"/read/" + classic.id}
+            >
+              처음부터 읽기 <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+        }
+      />
+    );
+  }
+  const story = storyById(storyId);
   if (!story) notFound();
   return (
-    <SiteShell>
-      <Link href="/discover" className="fs-text-link">
-        ← 이야기 탐색
-      </Link>
-      <section className="story-detail">
-        <div className="detail-cover">
-          <ResponsiveAsset
-            {...asset(story.coverAssetId)}
-            priority
-            aspectRatio="3 / 4"
-          />
+    <StoryDetail
+      title={story.title}
+      category={`${story.genre} · ${story.scenes.length}개의 장면`}
+      summary={story.summary}
+      disclosure="AI를 활용해 제작하고 검토한 오리지널 허구 이야기"
+      cover={
+        <ResponsiveAsset
+          {...asset(story.coverAssetId)}
+          priority
+          aspectRatio="3 / 4"
+        />
+      }
+      tags={
+        <div className="fs-tags">
+          {story.tags.map((tag) => (
+            <Tag key={tag}>{tag}</Tag>
+          ))}
         </div>
-        <div className="detail-info">
-          <p className="genre">{story.genre} · 6개의 장면</p>
-          <h1>{story.title}</h1>
-          <div className="fs-tags">
-            {story.tags.map((tag) => (
-              <Tag key={tag}>{tag}</Tag>
-            ))}
-          </div>
-          <p className="story-summary">{story.summary}</p>
-          <p className="disclosure">
-            AI를 활용해 제작하고 검토한 오리지널 허구 이야기
-          </p>
+      }
+      actions={
+        <>
           <StoryActions
             storyId={story.id}
             version={story.version}
@@ -59,8 +96,9 @@ export default async function StoryPage({
           <p className="reading-note">
             장면 연출은 선택입니다. 설정에서 일반 읽기로 바꿀 수 있어요.
           </p>
-        </div>
-      </section>
+        </>
+      }
+    >
       <details className="story-toc">
         <summary>여섯 장면의 목차 보기</summary>
         <ol>
@@ -73,6 +111,6 @@ export default async function StoryPage({
           ))}
         </ol>
       </details>
-    </SiteShell>
+    </StoryDetail>
   );
 }
