@@ -52,3 +52,12 @@
     padding: 0;
   }
 }
+
+.fs-reader-stage-image[data-opening-cover]
+  > [data-scene-layer="current"]
+  > .fs-asset,
+.fs-reader-mobile-image[data-opening-cover] > .fs-asset {
+  background-image: var(--fs-opening-cover);
+  background-position: center;
+  background-size: cover;
+}

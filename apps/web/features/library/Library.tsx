@@ -1,4 +1,8 @@
 "use client";
+import {
+  StoryCoverTransition,
+  StoryDetailLink,
+} from "../../components/StoryCoverTransition";
 import { useRef } from "react";
 import {
   Button,
@@ -188,19 +192,26 @@ export function Library({ catalog }: { catalog: readonly LibraryStory[] }) {
                 const next = savedStories[index + 1];
                 return (
                   <li key={key}>
-                    <a href={"/stories/" + b.storyId} className="library-cover">
-                      <ResponsiveAsset {...info.cover} aspectRatio="3 / 4" />
-                    </a>
+                    <StoryDetailLink
+                      href={"/stories/" + b.storyId}
+                      className="library-cover"
+                    >
+                      <StoryCoverTransition storyId={b.storyId}>
+                        <ResponsiveAsset {...info.cover} aspectRatio="3 / 4" />
+                      </StoryCoverTransition>
+                    </StoryDetailLink>
                     <div>
                       <h3>
-                        <a href={"/stories/" + b.storyId}>{info.title}</a>
+                        <StoryDetailLink href={"/stories/" + b.storyId}>
+                          {info.title}
+                        </StoryDetailLink>
                       </h3>
-                      <a
+                      <StoryDetailLink
                         href={"/stories/" + b.storyId}
                         className="fs-text-link"
                       >
                         작품 열기 →
-                      </a>
+                      </StoryDetailLink>
                       <Button
                         variant="ghost"
                         disabled={remote.paused}

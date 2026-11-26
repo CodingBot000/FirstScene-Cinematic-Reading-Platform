@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useSyncExternalStore } from "react";
-import type { CSSProperties } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import type {
   Story,
   ReadingAnchor,
@@ -29,8 +29,9 @@ export type StoryReaderProps = {
   bookmarkedBeatIds?: readonly string[];
   bookmarkDisabled?: boolean;
   onComplete?: () => void;
-  /** Give a specific forward scene change a slide instead of a dissolve. */
-  sceneSlide?: { from: string; to: string };
+  sceneTransition?: "fade" | "slide";
+  openingCover?: AssetProps;
+  renderOpeningArtwork?: (artwork: ReactNode) => ReactNode;
 };
 const subscribeReduced = (notify: () => void) => {
   const query = matchMedia("(prefers-reduced-motion: reduce)");
@@ -65,7 +66,9 @@ export function StoryReader({
   bookmarkedBeatIds = [],
   bookmarkDisabled = false,
   onComplete,
-  sceneSlide,
+  sceneTransition = "fade",
+  openingCover,
+  renderOpeningArtwork,
 }: StoryReaderProps) {
   const stage = useRef<HTMLDivElement>(null);
   const mobileSlide = useRef<HTMLDivElement>(null);
@@ -97,11 +100,15 @@ export function StoryReader({
   );
   const previousScene =
     story.scenes.find((s) => s.id === state.previousSceneId) ?? firstScene;
-  const slideForward =
-    sceneSlide !== undefined &&
+  const previousIndex = story.scenes.indexOf(previousScene);
+  const slideDirection =
+    sceneTransition === "slide" &&
     state.animateScene &&
-    state.previousSceneId === sceneSlide.from &&
-    presentation.sceneId === sceneSlide.to;
+    previousIndex !== sceneIndex
+      ? previousIndex < sceneIndex
+        ? "forward"
+        : "backward"
+      : null;
   useReaderMotion({
     story,
     state,
@@ -113,7 +120,7 @@ export function StoryReader({
     stage,
     mobileSlide,
     mobile,
-    slideForward,
+    slideDirection,
     bootDone,
   });
   const currentScene = story.scenes[sceneIndex]!;
@@ -150,6 +157,42 @@ export function StoryReader({
         <figcaption>{story.characters[0]?.name}</figcaption>
       </figure>
     ) : null;
+  const coverVariants = openingCover?.variants.filter(isAssetVariant);
+  const previewCover =
+    coverVariants?.find(
+      (variant) => variant.format === "webp" && variant.width === 640,
+    ) ?? coverVariants?.find((variant) => variant.format === "webp");
+  const coverStyle = previewCover
+    ? ({ "--fs-opening-cover": `url("${previewCover.path}")` } as CSSProperties)
+    : undefined;
+  const stageImage = (
+    <div
+      ref={stage}
+      className="fs-reader-stage-image"
+      data-opening-cover={
+        (sceneIndex === 0 && coverStyle !== undefined) || undefined
+      }
+      style={sceneIndex === 0 ? coverStyle : undefined}
+    >
+      <div data-scene-layer="previous" aria-hidden="true">
+        <ResponsiveAsset
+          {...getAsset(previousScene.backgroundAssetId)}
+          decorative
+          alt=""
+          aspectRatio="16 / 10"
+        />
+      </div>
+      <div data-scene-layer="current">
+        <ResponsiveAsset
+          {...getAsset(currentScene.backgroundAssetId)}
+          decorative
+          alt=""
+          priority={sceneIndex === 0}
+          aspectRatio="16 / 10"
+        />
+      </div>
+    </div>
+  );
   return (
     <div
       ref={root}
@@ -165,25 +208,9 @@ export function StoryReader({
     >
       {preferences.mode === "cinematic" ? (
         <aside className="fs-reader-stage" aria-label="현재 장면">
-          <div ref={stage} className="fs-reader-stage-image">
-            <div data-scene-layer="previous" aria-hidden="true">
-              <ResponsiveAsset
-                {...getAsset(previousScene.backgroundAssetId)}
-                decorative
-                alt=""
-                aspectRatio="16 / 10"
-              />
-            </div>
-            <div data-scene-layer="current">
-              <ResponsiveAsset
-                {...getAsset(currentScene.backgroundAssetId)}
-                decorative
-                alt=""
-                priority={sceneIndex === 0}
-                aspectRatio="16 / 10"
-              />
-            </div>
-          </div>
+          {!mobile && renderOpeningArtwork
+            ? renderOpeningArtwork(stageImage)
+            : stageImage}
           <div className="fs-reader-stage-caption">
             <span>{String(sceneIndex + 1).padStart(2, "0")}</span>
             <p>{currentScene.title}</p>
@@ -194,30 +221,39 @@ export function StoryReader({
       <ReadingDocument
         story={story}
         enhanced
-        renderSceneLead={(scene, index) =>
-          preferences.mode === "cinematic" ? (
+        renderSceneLead={(scene, index) => {
+          if (preferences.mode !== "cinematic") return null;
+          const visible = mobile && Math.abs(index - sceneIndex) <= 1;
+          const artwork = (
+            <ResponsiveAsset
+              {...(visible ? getAsset(scene.backgroundAssetId) : fallback)}
+              decorative
+              alt=""
+              priority={index === 0}
+              aspectRatio="16 / 10"
+            />
+          );
+          return (
             <div
               className="fs-reader-mobile-image"
-              data-scene-slide={scene.id === sceneSlide?.to || undefined}
-              ref={scene.id === sceneSlide?.to ? mobileSlide : undefined}
+              data-scene-slide={sceneTransition === "slide" || undefined}
+              data-opening-cover={
+                (index === 0 && coverStyle !== undefined) || undefined
+              }
+              style={index === 0 ? coverStyle : undefined}
+              ref={
+                sceneTransition === "slide" && index === sceneIndex
+                  ? mobileSlide
+                  : undefined
+              }
             >
-              <ResponsiveAsset
-                {...(mobile &&
-                (index === sceneIndex || index === sceneIndex + 1)
-                  ? getAsset(scene.backgroundAssetId)
-                  : fallback)}
-                decorative
-                alt=""
-                priority={index === 0}
-                aspectRatio="16 / 10"
-              />
-              {portrait(
-                scene.portraitAssetId,
-                mobile && (index === sceneIndex || index === sceneIndex + 1),
-              )}
+              {mobile && index === 0 && renderOpeningArtwork
+                ? renderOpeningArtwork(artwork)
+                : artwork}
+              {portrait(scene.portraitAssetId, visible)}
             </div>
-          ) : null
-        }
+          );
+        }}
         renderBeatAction={
           onBookmark &&
           ((beat) => (

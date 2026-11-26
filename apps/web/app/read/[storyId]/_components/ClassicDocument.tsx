@@ -1,3 +1,5 @@
+import { StoryCoverTransition } from "../../../../components/StoryCoverTransition";
+import { classicCover } from "../../../../lib/classic-cover";
 import type { ClassicSummary } from "../../../../lib/classic-catalog";
 import { formatClassicParagraphs } from "../../../../lib/classic-paragraphs";
 
@@ -8,10 +10,27 @@ export function ClassicDocument({
   story: ClassicSummary;
   text: string;
 }) {
+  const cover = classicCover(story.id);
   return (
     <article className="fs-reader-main">
-      <h1 className="fs-type-title">{story.title}</h1>
-      <p className="genre">원작 {story.author}</p>
+      <header className="classic-reading-heading">
+        {cover ? (
+          <StoryCoverTransition storyId={story.id}>
+            <img
+              className="classic-reading-cover"
+              src={cover}
+              alt=""
+              width={72}
+              height={96}
+              decoding="async"
+            />
+          </StoryCoverTransition>
+        ) : null}
+        <div>
+          <h1 className="fs-type-title">{story.title}</h1>
+          <p className="genre">원작 {story.author}</p>
+        </div>
+      </header>
       <section
         aria-label={story.title + " 본문"}
         className="classic-reading-body fs-reader-scene"

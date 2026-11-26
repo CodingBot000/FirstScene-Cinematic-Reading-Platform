@@ -4,19 +4,34 @@ import type { ComponentProps, ReactNode } from "react";
 import { StoryCard } from "@firstscene/ui/cards";
 import type { StoryCardProps } from "@firstscene/ui/cards";
 
-const transitionType = "story-cover";
-const transitionTypes = [transitionType];
+const coverTransitionTypes = ["story-cover"];
+const openingTransitionTypes = ["story-open"];
+const noTransitionTypes: string[] = [];
+const coverSharing = {
+  "story-cover": "story-cover",
+  "story-open": "story-open",
+  default: "none",
+};
 
-export function StoryDetailLink({
-  href,
-  ...props
-}: Pick<
+type StoryLinkProps = Pick<
   ComponentProps<typeof Link>,
   "className" | "aria-label" | "children"
-> & {
-  href: string;
-}) {
-  return <Link {...props} href={href} transitionTypes={transitionTypes} />;
+> & { href: string };
+
+export function StoryDetailLink(props: StoryLinkProps) {
+  return <Link {...props} transitionTypes={coverTransitionTypes} />;
+}
+
+export function StoryOpenLink({
+  animate,
+  ...props
+}: StoryLinkProps & { animate: boolean }) {
+  return (
+    <Link
+      {...props}
+      transitionTypes={animate ? openingTransitionTypes : noTransitionTypes}
+    />
+  );
 }
 
 export function StoryCoverTransition({
@@ -30,7 +45,7 @@ export function StoryCoverTransition({
     <ViewTransition
       name={`cover-${storyId}`}
       default="none"
-      share={{ [transitionType]: transitionType, default: "none" }}
+      share={coverSharing}
     >
       {children}
     </ViewTransition>

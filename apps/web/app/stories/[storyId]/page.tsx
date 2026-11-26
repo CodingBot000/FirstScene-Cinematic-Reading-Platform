@@ -6,6 +6,7 @@ import { classicById, classicSummaries } from "../../../lib/classic-catalog";
 import { classicCover } from "../../../lib/classic-cover";
 import { StoryDetail } from "./_components/StoryDetail";
 import { stories, storyById, asset } from "../../../lib/catalog";
+import { ClassicOpenAction } from "./_components/ClassicOpenAction";
 import { StoryActions } from "./_components/StoryActions";
 export function generateStaticParams() {
   return [...stories, ...classicSummaries].map(({ id }) => ({ storyId: id }));
@@ -52,16 +53,7 @@ export default async function StoryPage({
             </div>
           ) : null
         }
-        actions={
-          <div className="story-actions">
-            <Link
-              className="fs-button fs-primary fs-lg"
-              href={"/read/" + classic.id}
-            >
-              처음부터 읽기 <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-        }
+        actions={<ClassicOpenAction storyId={classic.id} />}
       />
     );
   }

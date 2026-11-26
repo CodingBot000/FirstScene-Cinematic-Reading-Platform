@@ -19,9 +19,9 @@ import type { Story, ReadingAnchor } from "@firstscene/story-schema";
 import type { StoryCardProps } from "@firstscene/ui/cards";
 import { CompletionPanel } from "../../../../features/completion/CompletionPanel";
 import { ReaderFrame } from "./ReaderFrame";
+import type { AssetProps } from "@firstscene/ui/images";
+import { StoryCoverTransition } from "../../../../components/StoryCoverTransition";
 import { saveStatus } from "../../../../features/reading-sync/reading-view";
-
-const tideSceneSlide = { from: "tide-s01", to: "tide-s02" };
 
 class ReaderBoundary extends Component<
   { story: Story; children: ReactNode },
@@ -49,10 +49,12 @@ export function ReaderController({
   story,
   assets,
   nextStory,
+  openingCover,
 }: {
   story: Story;
   assets: AssetMap;
   nextStory: StoryCardProps;
+  openingCover: AssetProps;
 }) {
   const { store, snapshot, sync, syncSnapshot } = useReadingRecords(story);
   const prefs = snapshot.preferences;
@@ -173,9 +175,13 @@ export function ReaderController({
             key={story.contentHash + (snapshot.ready ? ":ready" : ":ssr")}
             story={story}
             assets={assets}
-            {...(story.id === "tide-station"
-              ? { sceneSlide: tideSceneSlide }
-              : {})}
+            sceneTransition="slide"
+            openingCover={openingCover}
+            renderOpeningArtwork={(artwork) => (
+              <StoryCoverTransition storyId={story.id}>
+                {artwork}
+              </StoryCoverTransition>
+            )}
             preferences={prefs}
             initialAnchor={snapshot.initialAnchor}
             layoutAnchor={

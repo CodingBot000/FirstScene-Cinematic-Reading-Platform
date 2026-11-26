@@ -2,7 +2,7 @@ import { useEffect, useLayoutEffect, useRef } from "react";
 import type { RefObject } from "react";
 import type { Story, ReaderPrefs } from "@firstscene/story-schema";
 import { storyBeats, planTextEffect } from "@firstscene/reader-core";
-import { slideScene } from "./scene-slide.js";
+import { slideScene, type SlideDirection } from "./scene-slide.js";
 import { playedByContent } from "./use-reading-layout.js";
 
 type MotionOptions = {
@@ -16,7 +16,7 @@ type MotionOptions = {
   stage: RefObject<HTMLDivElement | null>;
   mobileSlide: RefObject<HTMLDivElement | null>;
   mobile: boolean;
-  slideForward: boolean;
+  slideDirection: SlideDirection | null;
   bootDone: RefObject<boolean>;
 };
 
@@ -31,7 +31,7 @@ export function useReaderMotion({
   stage,
   mobileSlide,
   mobile,
-  slideForward,
+  slideDirection,
   bootDone,
 }: MotionOptions) {
   const lastScene = useRef(sceneId);
@@ -40,7 +40,7 @@ export function useReaderMotion({
     lastScene.current = sceneId;
     if (
       !sceneChanged ||
-      !slideForward ||
+      !slideDirection ||
       reduced ||
       preferences.mode === "plain"
     )
@@ -50,8 +50,13 @@ export function useReaderMotion({
       const lead = mobileSlide.current;
       const picture = lead?.querySelector<HTMLElement>(".fs-asset");
       const caption = lead?.parentElement?.querySelector<HTMLElement>("h2");
-      if (picture && caption) return slideScene(picture, caption);
-      return;
+      if (!picture || !caption) return;
+      const art = picture.getBoundingClientRect();
+      const title = caption.getBoundingClientRect();
+      // In the inline reader, backward scrolling can land below the artwork.
+      if (art.bottom <= 0 || title.bottom <= 0 || title.top >= innerHeight)
+        return;
+      return slideScene(picture, caption, slideDirection);
     }
 
     const frame = stage.current;
@@ -64,10 +69,11 @@ export function useReaderMotion({
     const caption = frame?.parentElement?.querySelector<HTMLElement>(
       ".fs-reader-stage-caption",
     );
-    if (current && caption) return slideScene(current, caption, previous);
+    if (current && caption)
+      return slideScene(current, caption, slideDirection, previous);
   }, [
     sceneId,
-    slideForward,
+    slideDirection,
     reduced,
     preferences.mode,
     mobile,
@@ -81,7 +87,7 @@ export function useReaderMotion({
       reduced ||
       !stage.current ||
       !state.animateScene ||
-      slideForward
+      slideDirection
     )
       return;
     let disposed = false;
@@ -101,7 +107,7 @@ export function useReaderMotion({
     preferences.mode,
     reduced,
     state.animateScene,
-    slideForward,
+    slideDirection,
     stage,
   ]);
   useEffect(() => {

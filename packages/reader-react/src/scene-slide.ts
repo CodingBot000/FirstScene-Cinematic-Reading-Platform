@@ -1,3 +1,5 @@
+export type SlideDirection = "forward" | "backward";
+
 const timing = {
   duration: 500,
   easing: "cubic-bezier(0.22, 0.72, 0.25, 1)",
@@ -7,15 +9,17 @@ const timing = {
 export function slideScene(
   incoming: HTMLElement,
   caption: HTMLElement,
+  direction: SlideDirection,
   outgoing?: HTMLElement | null,
 ) {
   const image = incoming.querySelector("img");
   if (!image || typeof incoming.animate !== "function") return;
 
+  const sign = direction === "forward" ? 1 : -1;
   const animations = [
     incoming.animate(
       [
-        { transform: outgoing ? "translateX(100%)" : "translateX(18%)" },
+        { transform: `translateX(${sign * (outgoing ? 100 : 18)}%)` },
         { transform: "none" },
       ],
       timing,
@@ -30,7 +34,7 @@ export function slideScene(
       outgoing.animate(
         [
           { opacity: 1, transform: "none" },
-          { opacity: 1, transform: "translateX(-8%)" },
+          { opacity: 1, transform: `translateX(${sign * -8}%)` },
         ],
         timing,
       ),
