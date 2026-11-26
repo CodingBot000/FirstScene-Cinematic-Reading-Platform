@@ -21,6 +21,8 @@ import { CompletionPanel } from "../../../../features/completion/CompletionPanel
 import { ReaderFrame } from "./ReaderFrame";
 import { saveStatus } from "../../../../features/reading-sync/reading-view";
 
+const tideSceneSlide = { from: "tide-s01", to: "tide-s02" };
+
 class ReaderBoundary extends Component<
   { story: Story; children: ReactNode },
   { failed: boolean }
@@ -171,6 +173,9 @@ export function ReaderController({
             key={story.contentHash + (snapshot.ready ? ":ready" : ":ssr")}
             story={story}
             assets={assets}
+            {...(story.id === "tide-station"
+              ? { sceneSlide: tideSceneSlide }
+              : {})}
             preferences={prefs}
             initialAnchor={snapshot.initialAnchor}
             layoutAnchor={

@@ -1,7 +1,13 @@
-import type { ReactNode } from "react";
+import type { ComponentType, ReactNode } from "react";
 import { ResponsiveAsset, type AssetProps } from "./media.js";
 import { Tag } from "./typography.js";
 import { Progress } from "./progress.js";
+
+type StoryCardLinkProps = {
+  href: string;
+  className?: string;
+  children: ReactNode;
+};
 
 export type StoryCardProps = {
   id: string;
@@ -12,6 +18,8 @@ export type StoryCardProps = {
   tags: readonly string[];
   progress?: number;
   action?: ReactNode;
+  linkComponent?: ComponentType<StoryCardLinkProps>;
+  renderCover?: (cover: ReactNode) => ReactNode;
 };
 export function StoryCard({
   id,
@@ -22,15 +30,19 @@ export function StoryCard({
   tags,
   progress,
   action,
+  linkComponent,
+  renderCover,
 }: StoryCardProps) {
+  const Link = linkComponent ?? "a";
+  const coverImage = <ResponsiveAsset {...cover} aspectRatio="3 / 4" />;
   return (
     <article className="fs-story-card" data-story={id}>
-      <a href={href} className="fs-story-cover">
-        <ResponsiveAsset {...cover} aspectRatio="3 / 4" />
-      </a>
+      <Link href={href} className="fs-story-cover">
+        {renderCover ? renderCover(coverImage) : coverImage}
+      </Link>
       <div className="fs-story-info">
         <h3 className="fs-type-title">
-          <a href={href}>{title}</a>
+          <Link href={href}>{title}</Link>
         </h3>
         <p>{summary}</p>
         <div className="fs-tags">
@@ -41,9 +53,9 @@ export function StoryCard({
         {progress !== undefined ? (
           <Progress value={progress} label="최대로 읽은 진도" />
         ) : null}
-        <a className="fs-text-link" href={href}>
+        <Link className="fs-text-link" href={href}>
           이야기 만나기 <span aria-hidden="true">↗</span>
-        </a>
+        </Link>
         {action}
       </div>
     </article>

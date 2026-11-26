@@ -18,3 +18,8 @@
 @media(max-width:1024px){.fs-reader-beat:has(.fs-beat-bookmark){padding-right:0}.fs-reader-beat .fs-icon-wrap{position:static;display:flex;justify-content:flex-end;margin:-24px 0 24px}}
 .fs-reader-beat .fs-tooltip{left:0;transform:none}
 @media(max-width:1024px){.fs-reader-beat .fs-icon-wrap{position:relative;margin-bottom:32px}.fs-reader-beat .fs-tooltip{left:auto;right:0;top:calc(100% + 2px)}}
+
+/* Inline scene images stay within the reading column during a slide. */
+.fs-reader-mobile-image {
+  overflow: clip;
+}

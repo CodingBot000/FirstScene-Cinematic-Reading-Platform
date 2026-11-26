@@ -1,8 +1,10 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
+import { StoryCoverTransition } from "../../../../components/StoryCoverTransition";
 import { SiteShell } from "../../../../components/SiteShell";
 
 export function StoryDetail({
+  storyId,
   title,
   category,
   cover,
@@ -12,6 +14,7 @@ export function StoryDetail({
   actions,
   children,
 }: {
+  storyId: string;
   title: string;
   category: string;
   cover: ReactNode;
@@ -27,7 +30,9 @@ export function StoryDetail({
         ← 이야기 탐색
       </Link>
       <section className="story-detail">
-        <div className="detail-cover">{cover}</div>
+        <StoryCoverTransition storyId={storyId}>
+          <div className="detail-cover">{cover}</div>
+        </StoryCoverTransition>
         <div className="detail-info">
           <p className="genre">{category}</p>
           <h1>{title}</h1>

@@ -33,6 +33,7 @@ export default async function StoryPage({
     const cover = classicCover(classic.id);
     return (
       <StoryDetail
+        storyId={classic.id}
         title={classic.title}
         category={"고전 · " + classic.author}
         summary={classic.summary}
@@ -68,6 +69,7 @@ export default async function StoryPage({
   if (!story) notFound();
   return (
     <StoryDetail
+      storyId={story.id}
       title={story.title}
       category={`${story.genre} · ${story.scenes.length}개의 장면`}
       summary={story.summary}

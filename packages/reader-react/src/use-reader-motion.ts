@@ -1,7 +1,8 @@
-import { useEffect } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import type { RefObject } from "react";
 import type { Story, ReaderPrefs } from "@firstscene/story-schema";
 import { storyBeats, planTextEffect } from "@firstscene/reader-core";
+import { slideScene } from "./scene-slide.js";
 import { playedByContent } from "./use-reading-layout.js";
 
 type MotionOptions = {
@@ -13,6 +14,9 @@ type MotionOptions = {
   reduced: boolean;
   root: RefObject<HTMLDivElement | null>;
   stage: RefObject<HTMLDivElement | null>;
+  mobileSlide: RefObject<HTMLDivElement | null>;
+  mobile: boolean;
+  slideForward: boolean;
   bootDone: RefObject<boolean>;
 };
 
@@ -25,14 +29,59 @@ export function useReaderMotion({
   reduced,
   root,
   stage,
+  mobileSlide,
+  mobile,
+  slideForward,
   bootDone,
 }: MotionOptions) {
+  const lastScene = useRef(sceneId);
+  useLayoutEffect(() => {
+    const sceneChanged = lastScene.current !== sceneId;
+    lastScene.current = sceneId;
+    if (
+      !sceneChanged ||
+      !slideForward ||
+      reduced ||
+      preferences.mode === "plain"
+    )
+      return;
+
+    if (mobile) {
+      const lead = mobileSlide.current;
+      const picture = lead?.querySelector<HTMLElement>(".fs-asset");
+      const caption = lead?.parentElement?.querySelector<HTMLElement>("h2");
+      if (picture && caption) return slideScene(picture, caption);
+      return;
+    }
+
+    const frame = stage.current;
+    const current = frame?.querySelector<HTMLElement>(
+      '[data-scene-layer="current"]',
+    );
+    const previous = frame?.querySelector<HTMLElement>(
+      '[data-scene-layer="previous"]',
+    );
+    const caption = frame?.parentElement?.querySelector<HTMLElement>(
+      ".fs-reader-stage-caption",
+    );
+    if (current && caption) return slideScene(current, caption, previous);
+  }, [
+    sceneId,
+    slideForward,
+    reduced,
+    preferences.mode,
+    mobile,
+    mobileSlide,
+    stage,
+  ]);
+
   useEffect(() => {
     if (
       preferences.mode === "plain" ||
       reduced ||
       !stage.current ||
-      !state.animateScene
+      !state.animateScene ||
+      slideForward
     )
       return;
     let disposed = false;
@@ -47,7 +96,14 @@ export function useReaderMotion({
       disposed = true;
       cleanup?.();
     };
-  }, [sceneId, preferences.mode, reduced, state.animateScene, stage]);
+  }, [
+    sceneId,
+    preferences.mode,
+    reduced,
+    state.animateScene,
+    slideForward,
+    stage,
+  ]);
   useEffect(() => {
     const beat = storyBeats(story).find(
       (entry) => entry.beat.id === state.beatId,

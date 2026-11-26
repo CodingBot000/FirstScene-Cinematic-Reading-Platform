@@ -1,3 +1,4 @@
+import { StoryCoverTransition, StoryDetailLink } from "./StoryCoverTransition";
 import { classicCover } from "../lib/classic-cover";
 import type { ClassicSummary } from "../lib/classic-catalog";
 export function ClassicCard({
@@ -9,7 +10,7 @@ export function ClassicCard({
 }) {
   const cover = classicCover(story.id);
   return (
-    <a
+    <StoryDetailLink
       className="classic-card"
       href={`/stories/${story.id}`}
       aria-label={`${story.title}, ${story.author} 작품 소개`}
@@ -20,13 +21,15 @@ export function ClassicCard({
         data-variant={index % 5}
       >
         {cover && (
-          <img
-            className="classic-card-art"
-            src={cover}
-            alt=""
-            loading="lazy"
-            decoding="async"
-          />
+          <StoryCoverTransition storyId={story.id}>
+            <img
+              className="classic-card-art"
+              src={cover}
+              alt=""
+              loading="lazy"
+              decoding="async"
+            />
+          </StoryCoverTransition>
         )}
         <span className="classic-card-cover-top">FIRSTSCENE CLASSICS</span>
         <span className="classic-card-cover-title">{story.title}</span>
@@ -40,6 +43,6 @@ export function ClassicCard({
         <strong>{story.title}</strong>
         <span className="classic-card-summary">{story.summary}</span>
       </span>
-    </a>
+    </StoryDetailLink>
   );
 }

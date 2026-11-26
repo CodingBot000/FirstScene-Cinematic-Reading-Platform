@@ -1,0 +1,34 @@
+/* The destinations are ordinary links, including when view transitions are unavailable. */
+:root:active-view-transition-type(story-cover)::view-transition {
+  pointer-events: none;
+}
+
+:root:active-view-transition-type(story-cover)::view-transition-old(root) {
+  animation: none;
+  opacity: 0;
+}
+
+:root:active-view-transition-type(story-cover)::view-transition-new(root) {
+  animation: none;
+}
+
+::view-transition-group(.story-cover) {
+  animation-duration: 400ms;
+  animation-timing-function: cubic-bezier(0.2, 0.78, 0.25, 1);
+}
+
+::view-transition-old(.story-cover),
+::view-transition-new(.story-cover) {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root:active-view-transition-type(story-cover)::view-transition-group(*),
+  :root:active-view-transition-type(story-cover)::view-transition-old(*),
+  :root:active-view-transition-type(story-cover)::view-transition-new(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}

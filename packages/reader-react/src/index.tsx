@@ -29,6 +29,8 @@ export type StoryReaderProps = {
   bookmarkedBeatIds?: readonly string[];
   bookmarkDisabled?: boolean;
   onComplete?: () => void;
+  /** Give a specific forward scene change a slide instead of a dissolve. */
+  sceneSlide?: { from: string; to: string };
 };
 const subscribeReduced = (notify: () => void) => {
   const query = matchMedia("(prefers-reduced-motion: reduce)");
@@ -63,8 +65,10 @@ export function StoryReader({
   bookmarkedBeatIds = [],
   bookmarkDisabled = false,
   onComplete,
+  sceneSlide,
 }: StoryReaderProps) {
   const stage = useRef<HTMLDivElement>(null);
+  const mobileSlide = useRef<HTMLDivElement>(null);
   const osReduced = useSyncExternalStore(
       subscribeReduced,
       reducedSnapshot,
@@ -93,6 +97,11 @@ export function StoryReader({
   );
   const previousScene =
     story.scenes.find((s) => s.id === state.previousSceneId) ?? firstScene;
+  const slideForward =
+    sceneSlide !== undefined &&
+    state.animateScene &&
+    state.previousSceneId === sceneSlide.from &&
+    presentation.sceneId === sceneSlide.to;
   useReaderMotion({
     story,
     state,
@@ -102,6 +111,9 @@ export function StoryReader({
     reduced,
     root,
     stage,
+    mobileSlide,
+    mobile,
+    slideForward,
     bootDone,
   });
   const currentScene = story.scenes[sceneIndex]!;
@@ -184,7 +196,10 @@ export function StoryReader({
         enhanced
         renderSceneLead={(scene, index) =>
           preferences.mode === "cinematic" ? (
-            <div className="fs-reader-mobile-image">
+            <div
+              className="fs-reader-mobile-image"
+              ref={scene.id === sceneSlide?.to ? mobileSlide : undefined}
+            >
               <ResponsiveAsset
                 {...(mobile &&
                 (index === sceneIndex || index === sceneIndex + 1)
