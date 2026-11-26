@@ -23,3 +23,32 @@
 .fs-reader-mobile-image {
   overflow: clip;
 }
+
+@media (max-width: 1024px) {
+  .fs-reader-mobile-image[data-scene-slide] {
+    position: relative;
+  }
+
+  /* Keep the illustration and heading together when the character has a portrait. */
+  .fs-reader-mobile-image[data-scene-slide] .fs-reader-portrait {
+    position: absolute;
+    inset-inline-end: 8px;
+    inset-block-end: 8px;
+    z-index: 1;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 4px 8px 4px 4px;
+    border-radius: 8px;
+    background: var(--fs-surface);
+  }
+
+  .fs-reader-mobile-image[data-scene-slide] .fs-reader-portrait .fs-asset {
+    width: 44px;
+    border-radius: 6px;
+  }
+
+  .fs-reader-mobile-image[data-scene-slide] .fs-reader-portrait figcaption {
+    padding: 0;
+  }
+}

@@ -198,6 +198,7 @@ export function StoryReader({
           preferences.mode === "cinematic" ? (
             <div
               className="fs-reader-mobile-image"
+              data-scene-slide={scene.id === sceneSlide?.to || undefined}
               ref={scene.id === sceneSlide?.to ? mobileSlide : undefined}
             >
               <ResponsiveAsset

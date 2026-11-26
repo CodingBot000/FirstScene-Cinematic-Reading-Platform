@@ -94,6 +94,8 @@ test("the selected classic and original covers move from the catalog to their de
 test("scrolling into the second station scene moves its image and caption together", async ({
   page,
 }) => {
+  const compact = page.viewportSize()!.width <= 640;
+  if (compact) await page.setViewportSize({ width: 320, height: 640 });
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await page.goto("/read/tide-station");
   const reader = page.locator(".fs-reader");
@@ -128,8 +130,19 @@ test("scrolling into the second station scene moves its image and caption togeth
       ) {
         const number = document.querySelector(".fs-scene-count")?.textContent;
         const title = caption?.textContent;
+        const bounds = image!.getBoundingClientRect();
+        const toolbarBottom = document
+          .querySelector(".fs-reading-toolbar")!
+          .getBoundingClientRect().bottom;
         document.documentElement.dataset.checkedSceneMotion =
           number + " " + title;
+        document.documentElement.dataset.visibleSlideArt = String(
+          Math.max(
+            0,
+            Math.min(bounds.bottom, innerHeight) -
+              Math.max(bounds.top, toolbarBottom),
+          ),
+        );
         return;
       }
       requestAnimationFrame(sample);
@@ -141,6 +154,9 @@ test("scrolling into the second station scene moves its image and caption togeth
     "data-checked-scene-motion",
     /2\/6 02\s*회수되지 않은 표/,
   );
+  expect(
+    Number(await page.locator("html").getAttribute("data-visible-slide-art")),
+  ).toBeGreaterThan(50);
   await expect(page.locator("#tide-s02-b01")).toBeVisible();
   expect(
     await page.evaluate(() => document.documentElement.scrollWidth),
