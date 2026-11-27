@@ -26,8 +26,13 @@
 !tools/build-packages.mjs
 !tools/generate-*.mjs
 !tools/content-check.mjs
+!tools/image-pipeline/
+!tools/image-pipeline/classic-covers.mjs
+!tools/image-pipeline/pipeline.mjs
 !tools/prepare-standalone.mjs
 !tools/container-entry.mjs
+!docs/
+!docs/classic-cover-art.md
 !Dockerfile
 **/node_modules
 **/dist

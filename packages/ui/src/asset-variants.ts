@@ -17,7 +17,7 @@ export type AssetProps = {
   className?: string;
 };
 const safePath = (path: string) =>
-  /^\/assets\/[a-z0-9][a-z0-9._-]*\.(?:avif|webp)$/.test(path) &&
+  /^\/assets\/(?:classics\/)?[a-z0-9][a-z0-9._-]*\.(?:avif|webp)$/.test(path) &&
   !path.includes("..");
 export function isAssetVariant(variant: AssetVariant) {
   return (

@@ -68,11 +68,18 @@ it("P10 image rendering and preloading share the same accepted variants", () => 
     height: 600,
   } as const;
   expect(isAssetVariant(valid)).toBe(true);
+  expect(
+    isAssetVariant({
+      ...valid,
+      path: "/assets/classics/classic-title.0123456789ab.960.webp",
+    }),
+  ).toBe(true);
   for (const invalid of [
     { ...valid, format: "avif" as const },
     { ...valid, width: 0 },
     { ...valid, height: Infinity },
     { ...valid, path: "/assets/story..webp" },
+    { ...valid, path: "/assets/classics/subfolder/story.webp" },
     { ...valid, path: "https://example.com/story.webp" },
   ]) {
     expect(isAssetVariant(invalid)).toBe(false);

@@ -9,6 +9,7 @@ import {
 } from "../components/PreviewCollection";
 import { stories, storyCard, asset } from "../lib/catalog";
 import { classicSummaries, classicCount } from "../lib/classic-catalog";
+import { classicCover } from "../lib/classic-cover";
 import { ClassicCard } from "../components/ClassicCard";
 export default function Home() {
   return (
@@ -44,7 +45,12 @@ export default function Home() {
         </p>
         <div className="classic-home-grid">
           {classicSummaries.slice(0, 4).map((story, index) => (
-            <ClassicCard key={story.id} story={story} index={index} />
+            <ClassicCard
+              key={story.id}
+              story={story}
+              index={index}
+              cover={classicCover(story.id, "card")}
+            />
           ))}
         </div>
       </section>

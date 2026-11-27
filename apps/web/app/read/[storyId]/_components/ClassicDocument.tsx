@@ -1,3 +1,4 @@
+import { ResponsiveAsset } from "@firstscene/ui/images";
 import { StoryCoverTransition } from "../../../../components/StoryCoverTransition";
 import { classicCover } from "../../../../lib/classic-cover";
 import type { ClassicSummary } from "../../../../lib/classic-catalog";
@@ -10,19 +11,19 @@ export function ClassicDocument({
   story: ClassicSummary;
   text: string;
 }) {
-  const cover = classicCover(story.id);
+  const cover = classicCover(story.id, "reader");
   return (
     <article className="fs-reader-main">
       <header className="classic-reading-heading">
         {cover ? (
           <StoryCoverTransition storyId={story.id}>
-            <img
+            <ResponsiveAsset
+              {...cover}
               className="classic-reading-cover"
-              src={cover}
               alt=""
-              width={72}
-              height={96}
-              decoding="async"
+              decorative
+              aspectRatio="3 / 4"
+              sizes="72px"
             />
           </StoryCoverTransition>
         ) : null}

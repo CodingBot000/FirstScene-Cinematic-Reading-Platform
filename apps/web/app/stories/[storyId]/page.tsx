@@ -8,6 +8,10 @@ import { StoryDetail } from "./_components/StoryDetail";
 import { stories, storyById, asset } from "../../../lib/catalog";
 import { ClassicOpenAction } from "./_components/ClassicOpenAction";
 import { StoryActions } from "./_components/StoryActions";
+
+const detailCoverSizes =
+  "(max-width: 359px) calc((100vw - 32px) * 0.7), (max-width: 411px) calc((100vw - 40px) * 0.7), (max-width: 860px) 260px, 320px";
+
 export function generateStaticParams() {
   return [...stories, ...classicSummaries].map(({ id }) => ({ storyId: id }));
 }
@@ -31,7 +35,7 @@ export default async function StoryPage({
   const { storyId } = await params;
   const classic = classicById(storyId);
   if (classic) {
-    const cover = classicCover(classic.id);
+    const cover = classicCover(classic.id, "detail");
     return (
       <StoryDetail
         storyId={classic.id}
@@ -41,16 +45,13 @@ export default async function StoryPage({
         disclosure="저작권 보호기간이 만료된 원작의 전사본"
         cover={
           cover ? (
-            <div className="fs-asset" style={{ aspectRatio: "3 / 4" }}>
-              <img
-                src={cover}
-                alt={classic.title + " 표지"}
-                width={640}
-                height={853}
-                fetchPriority="high"
-                decoding="async"
-              />
-            </div>
+            <ResponsiveAsset
+              {...cover}
+              alt={classic.title + " 표지"}
+              aspectRatio="3 / 4"
+              sizes={detailCoverSizes}
+              priority
+            />
           ) : null
         }
         actions={<ClassicOpenAction storyId={classic.id} />}
@@ -71,6 +72,7 @@ export default async function StoryPage({
           {...asset(story.coverAssetId)}
           priority
           aspectRatio="3 / 4"
+          sizes={detailCoverSizes}
         />
       }
       tags={
