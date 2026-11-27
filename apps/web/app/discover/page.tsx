@@ -2,7 +2,12 @@ import { SiteShell } from "../../components/SiteShell";
 import { Discovery } from "./_components/Discovery";
 import { stories, storyCard } from "../../lib/catalog";
 import { previewShelves } from "../../lib/preview-catalog";
-import { classicCount } from "../../lib/classic-catalog";
+import { classicCount, classicSummaries } from "../../lib/classic-catalog";
+import { classicCover } from "../../lib/classic-cover";
+
+const classicCovers = Object.fromEntries(
+  classicSummaries.map(({ id }) => [id, classicCover(id, "card")]),
+);
 
 export const metadata = {
   title: "이야기 탐색",
@@ -46,6 +51,7 @@ export default async function Discover({
       </div>
       <Discovery
         cards={stories.map(storyCard)}
+        classicCovers={classicCovers}
         initialQuery={q}
         initialMood={mood}
         initialStatus={status}

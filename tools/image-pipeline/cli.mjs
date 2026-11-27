@@ -1,4 +1,5 @@
 import { pipeline } from "./pipeline.mjs";
+import { verifyClassicCovers } from "./classic-covers.mjs";
 const [action, ...args] = process.argv.slice(2);
 const flags = {};
 for (let i = 0; i < args.length; i++) {
@@ -18,7 +19,8 @@ else if (action === "review")
   result = tool.review(flags.id, Number(flags.score), flags.notes);
 else if (action === "optimize") result = await tool.optimize();
 else if (action === "preview") result = await tool.optimize({ partial: true });
-else if (action === "verify") result = await tool.verify();
-else if (action === "api") tool.denyPaid();
+else if (action === "verify") {
+  result = { ...(await tool.verify()), classics: await verifyClassicCovers() };
+} else if (action === "api") tool.denyPaid();
 else throw new Error("Unknown asset command");
 console.log(JSON.stringify(result, null, 2));

@@ -4,6 +4,8 @@ import {
   compileStory,
   verifyStory,
 } from "../packages/content-compiler/dist/index.js";
+import { verifyClassicCovers } from "./image-pipeline/classic-covers.mjs";
+await verifyClassicCovers();
 const assets = JSON.parse(
   fs.readFileSync("content/asset-plan.json", "utf8"),
 ).assets;

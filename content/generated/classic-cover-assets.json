@@ -1,0 +1,2270 @@
+{
+  "schemaVersion": 1,
+  "provenance": {
+    "kind": "generated-illustration",
+    "sourceCommit": "e9b8d38a198a1578bbcaf7a1a7b09d5d4ee8450b",
+    "documentation": "docs/classic-cover-art.md"
+  },
+  "assets": [
+    {
+      "id": "classic-lucky-day",
+      "source": {
+        "path": "/assets/classics/classic-lucky-day.c3d41bec009c.webp",
+        "format": "webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 69304,
+        "sha256": "c3d41bec009c988cee0f1c4f282fa258d1754c39beae20b5c2976ce2efc95dc2"
+      },
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": [
+        {
+          "path": "/assets/classics/classic-lucky-day.c3a6f42b96ba.96.avif",
+          "format": "avif",
+          "width": 96,
+          "height": 128,
+          "bytes": 1485,
+          "sha256": "c3a6f42b96ba7782f32169e10d092290a0d66c6a3717f40c8944bd98ec7cd91f"
+        },
+        {
+          "path": "/assets/classics/classic-lucky-day.e83193c512eb.96.webp",
+          "format": "webp",
+          "width": 96,
+          "height": 128,
+          "bytes": 2394,
+          "sha256": "e83193c512eb3612e9ff6ca76705be22f612709567f5833efe1f8db91bcf0705"
+        },
+        {
+          "path": "/assets/classics/classic-lucky-day.41f761efbec4.144.avif",
+          "format": "avif",
+          "width": 144,
+          "height": 192,
+          "bytes": 2642,
+          "sha256": "41f761efbec417e16be48f8c9975946358526eb9d137b6ea299e23f68b281c9e"
+        },
+        {
+          "path": "/assets/classics/classic-lucky-day.3d7c68dfde92.144.webp",
+          "format": "webp",
+          "width": 144,
+          "height": 192,
+          "bytes": 4668,
+          "sha256": "3d7c68dfde92714a7c89fe642c630d6b79f605864ede23287634bbd1ffc5bc7c"
+        },
+        {
+          "path": "/assets/classics/classic-lucky-day.828ea6500932.240.avif",
+          "format": "avif",
+          "width": 240,
+          "height": 320,
+          "bytes": 6034,
+          "sha256": "828ea650093252102d52368c5c0eadb495348df42340932f5c8d80302a33ab75"
+        },
+        {
+          "path": "/assets/classics/classic-lucky-day.3cc302f88351.240.webp",
+          "format": "webp",
+          "width": 240,
+          "height": 320,
+          "bytes": 11188,
+          "sha256": "3cc302f88351bd0c653a3f48b27f8af19a1f2a554d278b6cff72823387a43b02"
+        },
+        {
+          "path": "/assets/classics/classic-lucky-day.985c8da1e826.320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 427,
+          "bytes": 10592,
+          "sha256": "985c8da1e826be65a3e9e697b6892d84136ef61be7258c02d1ea046958d13950"
+        },
+        {
+          "path": "/assets/classics/classic-lucky-day.8650d3726524.320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 427,
+          "bytes": 19286,
+          "sha256": "8650d3726524a36e22f6d90d57cb39270f6025475c84d06595b5c0e6e1291180"
+        },
+        {
+          "path": "/assets/classics/classic-lucky-day.fe76b9c959fa.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 640,
+          "bytes": 19437,
+          "sha256": "fe76b9c959fa5f7f94ff224394c636095af8bf8b918bee2f7fa35f2d8139b96c"
+        },
+        {
+          "path": "/assets/classics/classic-lucky-day.ec3aada68929.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 33202,
+          "sha256": "ec3aada689291a3b6521628eb1d3fedc96faebc2e991551c2e28da8da38e1aa7"
+        },
+        {
+          "path": "/assets/classics/classic-lucky-day.90ca1d36a4e3.640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 853,
+          "bytes": 37640,
+          "sha256": "90ca1d36a4e37ee55210c61fbfce4f9328900e1dc1667aca600e2e90df849091"
+        },
+        {
+          "path": "/assets/classics/classic-lucky-day.c3d41bec009c.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 853,
+          "bytes": 69304,
+          "sha256": "c3d41bec009c988cee0f1c4f282fa258d1754c39beae20b5c2976ce2efc95dc2"
+        }
+      ]
+    },
+    {
+      "id": "classic-fiery-sonata",
+      "source": {
+        "path": "/assets/classics/classic-fiery-sonata.72a62e45cd9d.webp",
+        "format": "webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 42908,
+        "sha256": "72a62e45cd9d2ed94cccfb4bf25ee1ebd0a1bb4015bdf27d28ce9da6b7f9491f"
+      },
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": [
+        {
+          "path": "/assets/classics/classic-fiery-sonata.d5748d4eb8d9.96.avif",
+          "format": "avif",
+          "width": 96,
+          "height": 128,
+          "bytes": 1417,
+          "sha256": "d5748d4eb8d95cdfef90c905e737577d8aa2c5072a6df0f02d86fec9ce04dcf1"
+        },
+        {
+          "path": "/assets/classics/classic-fiery-sonata.fac1c0eddc13.96.webp",
+          "format": "webp",
+          "width": 96,
+          "height": 128,
+          "bytes": 2132,
+          "sha256": "fac1c0eddc13ddd604e2b2dead18a8b146f587cd854e1897804770aa89f35253"
+        },
+        {
+          "path": "/assets/classics/classic-fiery-sonata.1581eeb65085.144.avif",
+          "format": "avif",
+          "width": 144,
+          "height": 192,
+          "bytes": 2521,
+          "sha256": "1581eeb650859b81b036e9ca6b7b8d1ca316282922dacafab1ef3ecbbe95282e"
+        },
+        {
+          "path": "/assets/classics/classic-fiery-sonata.6a2aa022b351.144.webp",
+          "format": "webp",
+          "width": 144,
+          "height": 192,
+          "bytes": 3940,
+          "sha256": "6a2aa022b3511a223c8c98c6d29b983d150362b581f825fd9427b16b2c80de2e"
+        },
+        {
+          "path": "/assets/classics/classic-fiery-sonata.820eadce65f2.240.avif",
+          "format": "avif",
+          "width": 240,
+          "height": 320,
+          "bytes": 5336,
+          "sha256": "820eadce65f2c271d88514b906995f22de7727fdd37cca8e110c70f4f31be3c5"
+        },
+        {
+          "path": "/assets/classics/classic-fiery-sonata.59585ee99668.240.webp",
+          "format": "webp",
+          "width": 240,
+          "height": 320,
+          "bytes": 8506,
+          "sha256": "59585ee99668df5b30e0480c27d6a04d34d05362a09f65fb087f342ffafdecaa"
+        },
+        {
+          "path": "/assets/classics/classic-fiery-sonata.76e4b38dc306.320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 427,
+          "bytes": 8787,
+          "sha256": "76e4b38dc306aee508bcdc65a76481f327ae2fdd973aa05851c4032d58490ebb"
+        },
+        {
+          "path": "/assets/classics/classic-fiery-sonata.18ed3657d87e.320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 427,
+          "bytes": 13102,
+          "sha256": "18ed3657d87e12603a602dee2b10fa55e0a373af27ec171df4446584ef795ad8"
+        },
+        {
+          "path": "/assets/classics/classic-fiery-sonata.7bd3289bd839.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 640,
+          "bytes": 14777,
+          "sha256": "7bd3289bd8392f5dd369e81528a715a163b9a761479f8a271dd9f3e9f0ed778f"
+        },
+        {
+          "path": "/assets/classics/classic-fiery-sonata.00acacee7458.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 21370,
+          "sha256": "00acacee7458fe5a5e15433f8f74a32d60e2f89738aef00b45a1ac0d6dc79306"
+        },
+        {
+          "path": "/assets/classics/classic-fiery-sonata.6a0ceb153d3b.640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 853,
+          "bytes": 25082,
+          "sha256": "6a0ceb153d3bd7378392164b06bcccc09eb4f80244f4ad3e01e3dfafa2ec8ff1"
+        },
+        {
+          "path": "/assets/classics/classic-fiery-sonata.72a62e45cd9d.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 853,
+          "bytes": 42908,
+          "sha256": "72a62e45cd9d2ed94cccfb4bf25ee1ebd0a1bb4015bdf27d28ce9da6b7f9491f"
+        }
+      ]
+    },
+    {
+      "id": "classic-camellias",
+      "source": {
+        "path": "/assets/classics/classic-camellias.e6eed6438666.webp",
+        "format": "webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 121360,
+        "sha256": "e6eed6438666236e4519e004c80610d97a7b914581ae3c83ebef059af9e7c35b"
+      },
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": [
+        {
+          "path": "/assets/classics/classic-camellias.193b84f964ab.96.avif",
+          "format": "avif",
+          "width": 96,
+          "height": 128,
+          "bytes": 1925,
+          "sha256": "193b84f964ab64419168dbb53405b287c6fb96be51132f994c12acbc41f65783"
+        },
+        {
+          "path": "/assets/classics/classic-camellias.e6ced02c51ab.96.webp",
+          "format": "webp",
+          "width": 96,
+          "height": 128,
+          "bytes": 3604,
+          "sha256": "e6ced02c51ab466dbf409e54ee6acf8a7466102693341c760ce078ebb1d110cc"
+        },
+        {
+          "path": "/assets/classics/classic-camellias.04b5c481e220.144.avif",
+          "format": "avif",
+          "width": 144,
+          "height": 192,
+          "bytes": 3649,
+          "sha256": "04b5c481e2202031e6d514e70cd69bc6c6bdbd3bc4603995cc9c13542048f25b"
+        },
+        {
+          "path": "/assets/classics/classic-camellias.4316d23b7e9b.144.webp",
+          "format": "webp",
+          "width": 144,
+          "height": 192,
+          "bytes": 7428,
+          "sha256": "4316d23b7e9b5a3d470d9db46a723262bf3527d9d0c7b58c42dfb7abf5e20c8c"
+        },
+        {
+          "path": "/assets/classics/classic-camellias.b5c5176b4c85.240.avif",
+          "format": "avif",
+          "width": 240,
+          "height": 320,
+          "bytes": 8952,
+          "sha256": "b5c5176b4c85e0851994894f9f423467c6a3f913194035e6abbf8902101a68df"
+        },
+        {
+          "path": "/assets/classics/classic-camellias.1a87942f5c99.240.webp",
+          "format": "webp",
+          "width": 240,
+          "height": 320,
+          "bytes": 18608,
+          "sha256": "1a87942f5c996d1a16557be162a37d1adc5e547d60ea474fc2e100e5ae6c5dfd"
+        },
+        {
+          "path": "/assets/classics/classic-camellias.8aef2eebf3ba.320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 427,
+          "bytes": 15976,
+          "sha256": "8aef2eebf3ba0d4d634c634b96135d56ad138a19e6153223b90ec665a6924696"
+        },
+        {
+          "path": "/assets/classics/classic-camellias.06b044d6998c.320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 427,
+          "bytes": 32288,
+          "sha256": "06b044d6998c44561d37c90225b5dfbfaa23390525a49eccdf7eeda2cb105d4e"
+        },
+        {
+          "path": "/assets/classics/classic-camellias.7e4f20837ca1.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 640,
+          "bytes": 29097,
+          "sha256": "7e4f20837ca1d90f692e546a52856cf36a420318398e03c23969d47bf7dd23a0"
+        },
+        {
+          "path": "/assets/classics/classic-camellias.2f37f6ece121.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 59910,
+          "sha256": "2f37f6ece121efadf497d4abb5f72407f804d8e87224e9a1cb5c465440814e48"
+        },
+        {
+          "path": "/assets/classics/classic-camellias.316396dbe637.640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 853,
+          "bytes": 57528,
+          "sha256": "316396dbe637df7f7dc48606ce7833384424a9cedf98b9460448f0ae9198740d"
+        },
+        {
+          "path": "/assets/classics/classic-camellias.e6eed6438666.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 853,
+          "bytes": 121360,
+          "sha256": "e6eed6438666236e4519e004c80610d97a7b914581ae3c83ebef059af9e7c35b"
+        }
+      ]
+    },
+    {
+      "id": "classic-manmubang",
+      "source": {
+        "path": "/assets/classics/classic-manmubang.cf5219bf8acb.webp",
+        "format": "webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 77992,
+        "sha256": "cf5219bf8acbffc19736ef572dd94ec2bfaf5e298c1749b8d8e1d37194c6f414"
+      },
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": [
+        {
+          "path": "/assets/classics/classic-manmubang.a1bd9ca8717f.96.avif",
+          "format": "avif",
+          "width": 96,
+          "height": 128,
+          "bytes": 1538,
+          "sha256": "a1bd9ca8717f05638610ddf69ef2bae03e7f1f91d3928cde49bb69244c018158"
+        },
+        {
+          "path": "/assets/classics/classic-manmubang.05fe7be0d3a1.96.webp",
+          "format": "webp",
+          "width": 96,
+          "height": 128,
+          "bytes": 2758,
+          "sha256": "05fe7be0d3a1ad6b06ebc2b5e10e7c1d1643e5c273f69e13ef006f2405bda3e0"
+        },
+        {
+          "path": "/assets/classics/classic-manmubang.dc15020835b4.144.avif",
+          "format": "avif",
+          "width": 144,
+          "height": 192,
+          "bytes": 2938,
+          "sha256": "dc15020835b41c3beffad7e1a92d7862535e9c7195418894e2da9cd288635530"
+        },
+        {
+          "path": "/assets/classics/classic-manmubang.1eddfbd07598.144.webp",
+          "format": "webp",
+          "width": 144,
+          "height": 192,
+          "bytes": 5416,
+          "sha256": "1eddfbd07598049f04933c5c3e72440f0e3114600cc2481434d90bc9ac3ba8d9"
+        },
+        {
+          "path": "/assets/classics/classic-manmubang.eaf53e38057c.240.avif",
+          "format": "avif",
+          "width": 240,
+          "height": 320,
+          "bytes": 6749,
+          "sha256": "eaf53e38057ce2071b6eee030afb2531831d16e48d05e023d6b0211edd5e6d32"
+        },
+        {
+          "path": "/assets/classics/classic-manmubang.31e23e66fe81.240.webp",
+          "format": "webp",
+          "width": 240,
+          "height": 320,
+          "bytes": 13072,
+          "sha256": "31e23e66fe816453849ea093262d9be23defb6b6491ace1ce618ca7ad02bf772"
+        },
+        {
+          "path": "/assets/classics/classic-manmubang.e161fd0dbead.320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 427,
+          "bytes": 11823,
+          "sha256": "e161fd0dbead35d978bee584cdfdebe3a1a6b5e32f5c6d3a94db63b1075f6a84"
+        },
+        {
+          "path": "/assets/classics/classic-manmubang.cb482aa4fa18.320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 427,
+          "bytes": 21998,
+          "sha256": "cb482aa4fa18c105cec7a00f16bb06eeae4a0b80a977f033744c295e9c82f3cb"
+        },
+        {
+          "path": "/assets/classics/classic-manmubang.1bdb4b07bf39.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 640,
+          "bytes": 21638,
+          "sha256": "1bdb4b07bf39b0dbf76f184bf782c6e6fb3d2b41869eab0d58afb3606ff52115"
+        },
+        {
+          "path": "/assets/classics/classic-manmubang.94dea051dc63.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 39106,
+          "sha256": "94dea051dc63d55b6ca933f52e45e493401c81ac0752faee1e1c3716610c29f8"
+        },
+        {
+          "path": "/assets/classics/classic-manmubang.3463d10b32ca.640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 853,
+          "bytes": 40917,
+          "sha256": "3463d10b32ca927c21e1780d599cec1bef9c04cfd8a47ab607e3627906471410"
+        },
+        {
+          "path": "/assets/classics/classic-manmubang.cf5219bf8acb.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 853,
+          "bytes": 77992,
+          "sha256": "cf5219bf8acbffc19736ef572dd94ec2bfaf5e298c1749b8d8e1d37194c6f414"
+        }
+      ]
+    },
+    {
+      "id": "classic-spring-spring",
+      "source": {
+        "path": "/assets/classics/classic-spring-spring.a909cf18c303.webp",
+        "format": "webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 87662,
+        "sha256": "a909cf18c30329689a9af79dd27dcb6eec07a0fabeef979bb33beeeb707141e3"
+      },
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": [
+        {
+          "path": "/assets/classics/classic-spring-spring.c1915ea33150.96.avif",
+          "format": "avif",
+          "width": 96,
+          "height": 128,
+          "bytes": 1704,
+          "sha256": "c1915ea33150351943a5b0fbbbc1d6a27892495fe88d49fcfa7671f6fb32b6b4"
+        },
+        {
+          "path": "/assets/classics/classic-spring-spring.7811facdbd9d.96.webp",
+          "format": "webp",
+          "width": 96,
+          "height": 128,
+          "bytes": 3192,
+          "sha256": "7811facdbd9d52c0c2d2835c2b855ef0aef8a2d25c6d45395dcb804445d9dea2"
+        },
+        {
+          "path": "/assets/classics/classic-spring-spring.3aed662308e9.144.avif",
+          "format": "avif",
+          "width": 144,
+          "height": 192,
+          "bytes": 3257,
+          "sha256": "3aed662308e92c20e8b56d1187e4b89597bffaeb0c9e1fea6ef1d2be4f9aced7"
+        },
+        {
+          "path": "/assets/classics/classic-spring-spring.5bae215b26f1.144.webp",
+          "format": "webp",
+          "width": 144,
+          "height": 192,
+          "bytes": 6356,
+          "sha256": "5bae215b26f1f24620e3990f268aa247ac31297f170fb580bf66227ca73828dd"
+        },
+        {
+          "path": "/assets/classics/classic-spring-spring.775af7f688c9.240.avif",
+          "format": "avif",
+          "width": 240,
+          "height": 320,
+          "bytes": 7648,
+          "sha256": "775af7f688c93699c43661f3b0e913256f79adf9ac90c2470609c203446d2bed"
+        },
+        {
+          "path": "/assets/classics/classic-spring-spring.bbafe68c2d4c.240.webp",
+          "format": "webp",
+          "width": 240,
+          "height": 320,
+          "bytes": 14968,
+          "sha256": "bbafe68c2d4c00fbcf6172987578c6c93f93f0fadc4db0a62adce7c3c69288ae"
+        },
+        {
+          "path": "/assets/classics/classic-spring-spring.8c1c6dfda530.320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 427,
+          "bytes": 12886,
+          "sha256": "8c1c6dfda5300a9fd1022ce07bd1861e3a1b1b2d83f5c31e843cda14c6a4a63c"
+        },
+        {
+          "path": "/assets/classics/classic-spring-spring.46dd7c1bdcec.320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 427,
+          "bytes": 24820,
+          "sha256": "46dd7c1bdcecc50b02cb5e7e56148798059ca3fc6af943597d084ea70dae7703"
+        },
+        {
+          "path": "/assets/classics/classic-spring-spring.50be021fe25f.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 640,
+          "bytes": 23280,
+          "sha256": "50be021fe25fbc97a7e89b62925d83aae2a4e0182d7c66b469c528440fae6726"
+        },
+        {
+          "path": "/assets/classics/classic-spring-spring.08311e885352.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 43906,
+          "sha256": "08311e8853528908f3de687b11acb01da76cc26d536b07a3fad2a57622dd8962"
+        },
+        {
+          "path": "/assets/classics/classic-spring-spring.f85efebd8f0f.640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 853,
+          "bytes": 44143,
+          "sha256": "f85efebd8f0fadf5bdf84cbe0222e95c31aed5c7290c4004d984b48d9bbb7808"
+        },
+        {
+          "path": "/assets/classics/classic-spring-spring.a909cf18c303.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 853,
+          "bytes": 87662,
+          "sha256": "a909cf18c30329689a9af79dd27dcb6eec07a0fabeef979bb33beeeb707141e3"
+        }
+      ]
+    },
+    {
+      "id": "classic-gold-bean-field",
+      "source": {
+        "path": "/assets/classics/classic-gold-bean-field.9003bb3c3200.webp",
+        "format": "webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 94284,
+        "sha256": "9003bb3c320002a0378eab62d0eecb415183ece41383e16cb2d8afbbdbdea6bb"
+      },
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": [
+        {
+          "path": "/assets/classics/classic-gold-bean-field.1e9e674f7a62.96.avif",
+          "format": "avif",
+          "width": 96,
+          "height": 128,
+          "bytes": 1721,
+          "sha256": "1e9e674f7a627aa6fbbeb5b3e85a86349b67bf60ab2e0a7d63b4a5543d628616"
+        },
+        {
+          "path": "/assets/classics/classic-gold-bean-field.b2d37442cc29.96.webp",
+          "format": "webp",
+          "width": 96,
+          "height": 128,
+          "bytes": 3308,
+          "sha256": "b2d37442cc29e30b7b80c6830fc539faa669cc5985180dc2bf5ffdbd15c3ca06"
+        },
+        {
+          "path": "/assets/classics/classic-gold-bean-field.64545e6b8491.144.avif",
+          "format": "avif",
+          "width": 144,
+          "height": 192,
+          "bytes": 3374,
+          "sha256": "64545e6b849168204bac4473bb20455d8119729e4f553e19321ab8dc3dd4c98c"
+        },
+        {
+          "path": "/assets/classics/classic-gold-bean-field.929d35774c3b.144.webp",
+          "format": "webp",
+          "width": 144,
+          "height": 192,
+          "bytes": 6686,
+          "sha256": "929d35774c3bb66197cc34fff8daf0fee32e8463620ea2afa52f970bc1be56a1"
+        },
+        {
+          "path": "/assets/classics/classic-gold-bean-field.9287fc2fd626.240.avif",
+          "format": "avif",
+          "width": 240,
+          "height": 320,
+          "bytes": 8042,
+          "sha256": "9287fc2fd626610b946d016c9fd12e416b8c5c76891f2096eeb8349538625d6a"
+        },
+        {
+          "path": "/assets/classics/classic-gold-bean-field.f64dad613b01.240.webp",
+          "format": "webp",
+          "width": 240,
+          "height": 320,
+          "bytes": 16100,
+          "sha256": "f64dad613b01a8fe429a86f1e06af428700a57b6b826235767ed5da3eec3a015"
+        },
+        {
+          "path": "/assets/classics/classic-gold-bean-field.4cedc640e6bc.320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 427,
+          "bytes": 13873,
+          "sha256": "4cedc640e6bc782578bd14a2779fd7dc2b0c394d7c7994a7db50b48a7fc229ba"
+        },
+        {
+          "path": "/assets/classics/classic-gold-bean-field.8cbe35a66aca.320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 427,
+          "bytes": 27660,
+          "sha256": "8cbe35a66aca38c2be6c98e7ef53c6075114c35c98b628d306d8a6cfca9eb4b4"
+        },
+        {
+          "path": "/assets/classics/classic-gold-bean-field.db279be463a0.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 640,
+          "bytes": 25123,
+          "sha256": "db279be463a0006d7585863829009ed030ce4714a1d61c4ec74c8199d37117f4"
+        },
+        {
+          "path": "/assets/classics/classic-gold-bean-field.752c02061ae6.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 47888,
+          "sha256": "752c02061ae6348cc3b13e899d46aaf01cb88d0c1d39f26e4bfaf84e7e1ff500"
+        },
+        {
+          "path": "/assets/classics/classic-gold-bean-field.c3942f5056ae.640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 853,
+          "bytes": 46696,
+          "sha256": "c3942f5056aee6aef8801836f4ed74e484a67bdfd2de1578e4a6c75241d3ce79"
+        },
+        {
+          "path": "/assets/classics/classic-gold-bean-field.9003bb3c3200.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 853,
+          "bytes": 94284,
+          "sha256": "9003bb3c320002a0378eab62d0eecb415183ece41383e16cb2d8afbbdbdea6bb"
+        }
+      ]
+    },
+    {
+      "id": "classic-buckwheat-season",
+      "source": {
+        "path": "/assets/classics/classic-buckwheat-season.d4fd4e070a39.webp",
+        "format": "webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 108658,
+        "sha256": "d4fd4e070a39b5fac1f77396e77ede944d23a2c239f8b2ccdb73fa0f022acfe7"
+      },
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": [
+        {
+          "path": "/assets/classics/classic-buckwheat-season.fa907a2134cf.96.avif",
+          "format": "avif",
+          "width": 96,
+          "height": 128,
+          "bytes": 1787,
+          "sha256": "fa907a2134cfd3d938e1330056e62fe4fe481be8801acf5211f66e2f0c3832d5"
+        },
+        {
+          "path": "/assets/classics/classic-buckwheat-season.6e426de4689f.96.webp",
+          "format": "webp",
+          "width": 96,
+          "height": 128,
+          "bytes": 3276,
+          "sha256": "6e426de4689f39a8ddb67c61e1097b80b938a22850dda6831a12f27b978f1b89"
+        },
+        {
+          "path": "/assets/classics/classic-buckwheat-season.9a60b4a9b54e.144.avif",
+          "format": "avif",
+          "width": 144,
+          "height": 192,
+          "bytes": 3462,
+          "sha256": "9a60b4a9b54ef466f7d5e551d5f22e0f52e63096c00a138787bd4eccdaea7099"
+        },
+        {
+          "path": "/assets/classics/classic-buckwheat-season.f7ae49643156.144.webp",
+          "format": "webp",
+          "width": 144,
+          "height": 192,
+          "bytes": 6762,
+          "sha256": "f7ae49643156328bdb9a0a27fce404c550df5da90a9c9f077b8faebffd9b862b"
+        },
+        {
+          "path": "/assets/classics/classic-buckwheat-season.3d2137f6878e.240.avif",
+          "format": "avif",
+          "width": 240,
+          "height": 320,
+          "bytes": 8380,
+          "sha256": "3d2137f6878e2ba25ea4ae7c3c66c6b0b69279e37a63805c203fd5b53120d389"
+        },
+        {
+          "path": "/assets/classics/classic-buckwheat-season.ced796cda3f3.240.webp",
+          "format": "webp",
+          "width": 240,
+          "height": 320,
+          "bytes": 16680,
+          "sha256": "ced796cda3f325d5e4eb3248c8fdae0e9abdb122b930c8225f184bbfdc9c7864"
+        },
+        {
+          "path": "/assets/classics/classic-buckwheat-season.06cf0d8edead.320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 427,
+          "bytes": 14775,
+          "sha256": "06cf0d8edeadf4e7d1c4899e1df2f1fcc05ff4bf2b9ceb88e9871d6a6098ff05"
+        },
+        {
+          "path": "/assets/classics/classic-buckwheat-season.0ff70a738805.320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 427,
+          "bytes": 29360,
+          "sha256": "0ff70a738805df11140fce863a7f853bd7532dc1c8999a854b088823ca59e219"
+        },
+        {
+          "path": "/assets/classics/classic-buckwheat-season.c63bfd727d44.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 640,
+          "bytes": 27107,
+          "sha256": "c63bfd727d445bba3965ce25c4b3490100682b1581c1da8dd6a9b165ad24fbe9"
+        },
+        {
+          "path": "/assets/classics/classic-buckwheat-season.5dd5f567650b.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 52998,
+          "sha256": "5dd5f567650bd6b0d2ea3af38a043ccdaf438d4b8a8093032b850bd000f74c2a"
+        },
+        {
+          "path": "/assets/classics/classic-buckwheat-season.92fcffd70244.640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 853,
+          "bytes": 53181,
+          "sha256": "92fcffd70244f493def569bcb4e54710da400e8ddff6fec1523864b7b7a5b760"
+        },
+        {
+          "path": "/assets/classics/classic-buckwheat-season.d4fd4e070a39.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 853,
+          "bytes": 108658,
+          "sha256": "d4fd4e070a39b5fac1f77396e77ede944d23a2c239f8b2ccdb73fa0f022acfe7"
+        }
+      ]
+    },
+    {
+      "id": "classic-mountain-traveler",
+      "source": {
+        "path": "/assets/classics/classic-mountain-traveler.a5427ea5bfff.webp",
+        "format": "webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 73292,
+        "sha256": "a5427ea5bfff33b48826c0401e3a3ca0811066616119259f3a08ad472c84f293"
+      },
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": [
+        {
+          "path": "/assets/classics/classic-mountain-traveler.204a0e0c3ee1.96.avif",
+          "format": "avif",
+          "width": 96,
+          "height": 128,
+          "bytes": 1496,
+          "sha256": "204a0e0c3ee1ae338fa3369627a3ec1eb70b90893541dd7de1ae2b5dee884ed5"
+        },
+        {
+          "path": "/assets/classics/classic-mountain-traveler.3a403751b224.96.webp",
+          "format": "webp",
+          "width": 96,
+          "height": 128,
+          "bytes": 2724,
+          "sha256": "3a403751b224f140eed1d32c9ad6bbe8afb62fb30ae074f6c83d701fc1e6cec1"
+        },
+        {
+          "path": "/assets/classics/classic-mountain-traveler.1fe09568cd6b.144.avif",
+          "format": "avif",
+          "width": 144,
+          "height": 192,
+          "bytes": 2914,
+          "sha256": "1fe09568cd6b00c9881692ab789db688e685ed3ccd2553ae3cca4ec623681c43"
+        },
+        {
+          "path": "/assets/classics/classic-mountain-traveler.d097a06a7cc8.144.webp",
+          "format": "webp",
+          "width": 144,
+          "height": 192,
+          "bytes": 5316,
+          "sha256": "d097a06a7cc8734067d5f7ef20cee996272fa61215f69d64aa3744974882373b"
+        },
+        {
+          "path": "/assets/classics/classic-mountain-traveler.5294d0f78f66.240.avif",
+          "format": "avif",
+          "width": 240,
+          "height": 320,
+          "bytes": 6681,
+          "sha256": "5294d0f78f66845f89de719c818372fe95299043b971b344be28420a87810dd5"
+        },
+        {
+          "path": "/assets/classics/classic-mountain-traveler.ca92b2282c6c.240.webp",
+          "format": "webp",
+          "width": 240,
+          "height": 320,
+          "bytes": 12336,
+          "sha256": "ca92b2282c6caf9e369b11ec44fd768374755c4da026280086711da17413c172"
+        },
+        {
+          "path": "/assets/classics/classic-mountain-traveler.87aeedef62d2.320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 427,
+          "bytes": 11357,
+          "sha256": "87aeedef62d268d844fd5be382a7c33446f6a6c74a0346e1aa5a3cc2c1f501df"
+        },
+        {
+          "path": "/assets/classics/classic-mountain-traveler.32b261f362fb.320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 427,
+          "bytes": 20736,
+          "sha256": "32b261f362fb12275822b74ef2842189b21801aa0c1312fd2c69767223d3552b"
+        },
+        {
+          "path": "/assets/classics/classic-mountain-traveler.68b607fc5842.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 640,
+          "bytes": 20533,
+          "sha256": "68b607fc58422f32a05b064bb58f4db695e6f941a20282cbfeeb69ef3273d34d"
+        },
+        {
+          "path": "/assets/classics/classic-mountain-traveler.14e2f1acaad7.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 35488,
+          "sha256": "14e2f1acaad798d756454c0431e1da8fa6ba4870fad3bb8e9fd928435ad824d2"
+        },
+        {
+          "path": "/assets/classics/classic-mountain-traveler.59d0ede75087.640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 853,
+          "bytes": 37679,
+          "sha256": "59d0ede7508780596d75b87ebc3fb445d452f805702225fdb006faedce8bbd20"
+        },
+        {
+          "path": "/assets/classics/classic-mountain-traveler.a5427ea5bfff.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 853,
+          "bytes": 73292,
+          "sha256": "a5427ea5bfff33b48826c0401e3a3ca0811066616119259f3a08ad472c84f293"
+        }
+      ]
+    },
+    {
+      "id": "classic-wings",
+      "source": {
+        "path": "/assets/classics/classic-wings.edf84a0c23b4.webp",
+        "format": "webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 45618,
+        "sha256": "edf84a0c23b4e6b2b3254532d8c885662812a68bbcc356788a41e7cc3e787bb0"
+      },
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": [
+        {
+          "path": "/assets/classics/classic-wings.70fbe4160637.96.avif",
+          "format": "avif",
+          "width": 96,
+          "height": 128,
+          "bytes": 1313,
+          "sha256": "70fbe416063725dcbd80b868e4778caf502a75a844d40fe892195f16afe76f03"
+        },
+        {
+          "path": "/assets/classics/classic-wings.423add53913b.96.webp",
+          "format": "webp",
+          "width": 96,
+          "height": 128,
+          "bytes": 2144,
+          "sha256": "423add53913b99eb5a9435de0ee0069aef99cf1f9aa59b801f0a5d5d5e117264"
+        },
+        {
+          "path": "/assets/classics/classic-wings.5cb6110254f5.144.avif",
+          "format": "avif",
+          "width": 144,
+          "height": 192,
+          "bytes": 2309,
+          "sha256": "5cb6110254f5907e4007d5c35a7273b280ee3004f8adcf6f878d6f0598e47c3b"
+        },
+        {
+          "path": "/assets/classics/classic-wings.ebc9147a7d79.144.webp",
+          "format": "webp",
+          "width": 144,
+          "height": 192,
+          "bytes": 3744,
+          "sha256": "ebc9147a7d79f111098e7e26ec5e4cf5fe6fd76647fa67a77f4ca9dc432c57e8"
+        },
+        {
+          "path": "/assets/classics/classic-wings.0c9a207ace52.240.avif",
+          "format": "avif",
+          "width": 240,
+          "height": 320,
+          "bytes": 4921,
+          "sha256": "0c9a207ace521b7acb4db0bff390ba1a8a3c3aaf21d7cbb9e78b22814c347858"
+        },
+        {
+          "path": "/assets/classics/classic-wings.c281bf52d6f8.240.webp",
+          "format": "webp",
+          "width": 240,
+          "height": 320,
+          "bytes": 8288,
+          "sha256": "c281bf52d6f8cdf866bac4609b2c7ef8cb48cd29d2dcf7d3b4f125be7c3b0bb9"
+        },
+        {
+          "path": "/assets/classics/classic-wings.5dc286859cfa.320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 427,
+          "bytes": 8177,
+          "sha256": "5dc286859cfa382e7937cca060ec6436e4a87195c576c5c526c171c0792d92f5"
+        },
+        {
+          "path": "/assets/classics/classic-wings.1fc0ac115779.320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 427,
+          "bytes": 13218,
+          "sha256": "1fc0ac115779e090d309bb0659e3d67674eaac2fdd67d50e44f9a74bf5151eb6"
+        },
+        {
+          "path": "/assets/classics/classic-wings.624844d258de.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 640,
+          "bytes": 13977,
+          "sha256": "624844d258de4adf2147d622f99b0239f36313b4ebd2e3a2b71941fb6286d148"
+        },
+        {
+          "path": "/assets/classics/classic-wings.dfbdd3b44192.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 21752,
+          "sha256": "dfbdd3b44192432756a94ef5937e14491987a315d6e992dc2bdc0ff975aa3151"
+        },
+        {
+          "path": "/assets/classics/classic-wings.61fac0629f87.640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 853,
+          "bytes": 23399,
+          "sha256": "61fac0629f87397935097d79b93a761e221b20ddb4ffc31ae4eb1ad3d004ed41"
+        },
+        {
+          "path": "/assets/classics/classic-wings.edf84a0c23b4.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 853,
+          "bytes": 45618,
+          "sha256": "edf84a0c23b4e6b2b3254532d8c885662812a68bbcc356788a41e7cc3e787bb0"
+        }
+      ]
+    },
+    {
+      "id": "classic-potatoes",
+      "source": {
+        "path": "/assets/classics/classic-potatoes.dfe81ceb0f4b.webp",
+        "format": "webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 75648,
+        "sha256": "dfe81ceb0f4bc3faa65dff954eb976a0c1dcca48ac365195eed35683152eb399"
+      },
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": [
+        {
+          "path": "/assets/classics/classic-potatoes.9c5a61be0d45.96.avif",
+          "format": "avif",
+          "width": 96,
+          "height": 128,
+          "bytes": 1463,
+          "sha256": "9c5a61be0d4562f123ddb761dce23080bfce295289d2f2389fd9fbf7fdcb43d5"
+        },
+        {
+          "path": "/assets/classics/classic-potatoes.ac0b1e5a8335.96.webp",
+          "format": "webp",
+          "width": 96,
+          "height": 128,
+          "bytes": 2510,
+          "sha256": "ac0b1e5a8335737d0e34e930c4b92cb6ca6135033c81b0bf10cdc39eafb1e89d"
+        },
+        {
+          "path": "/assets/classics/classic-potatoes.29ee4bd3e087.144.avif",
+          "format": "avif",
+          "width": 144,
+          "height": 192,
+          "bytes": 2737,
+          "sha256": "29ee4bd3e0875a5d600dbd2b386bf86486e30eebf605aaa4d61134cd78abfd96"
+        },
+        {
+          "path": "/assets/classics/classic-potatoes.44b50db3737c.144.webp",
+          "format": "webp",
+          "width": 144,
+          "height": 192,
+          "bytes": 4930,
+          "sha256": "44b50db3737c36154e0a7abcf40622890a8ae90d227baa9383c639f204c8f9e4"
+        },
+        {
+          "path": "/assets/classics/classic-potatoes.bf736ddd1354.240.avif",
+          "format": "avif",
+          "width": 240,
+          "height": 320,
+          "bytes": 6233,
+          "sha256": "bf736ddd1354cb29ffb6c982f83090cf280026cc69f50256768997fda3391539"
+        },
+        {
+          "path": "/assets/classics/classic-potatoes.4b5f0f395665.240.webp",
+          "format": "webp",
+          "width": 240,
+          "height": 320,
+          "bytes": 11860,
+          "sha256": "4b5f0f3956650c94f540cc3f6a5ee199d93df1f3d59a8c031d8683be76bdf87a"
+        },
+        {
+          "path": "/assets/classics/classic-potatoes.454085a41a6c.320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 427,
+          "bytes": 10937,
+          "sha256": "454085a41a6c19e091ede28afef527ef5fbc70779d8ff7b76d3196d6a066a66c"
+        },
+        {
+          "path": "/assets/classics/classic-potatoes.0927f21cecce.320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 427,
+          "bytes": 19790,
+          "sha256": "0927f21ceccea40b8a58da502d710e9352d5738d46192d89337318a69a159cad"
+        },
+        {
+          "path": "/assets/classics/classic-potatoes.987536199ca7.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 640,
+          "bytes": 20246,
+          "sha256": "987536199ca7b259175d14d01686e84d1a01aeefee6382369c5666a20d059ba9"
+        },
+        {
+          "path": "/assets/classics/classic-potatoes.3c2df362c098.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 34832,
+          "sha256": "3c2df362c0989c540ef0a371bcadb5975cbeb54577e8b339c6ce87c0cb1d40a4"
+        },
+        {
+          "path": "/assets/classics/classic-potatoes.5e623fee4ba7.640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 853,
+          "bytes": 39034,
+          "sha256": "5e623fee4ba7133529c5c771c6bc64292f3ac70693bd001cd04ff56bd31d71ae"
+        },
+        {
+          "path": "/assets/classics/classic-potatoes.dfe81ceb0f4b.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 853,
+          "bytes": 75648,
+          "sha256": "dfe81ceb0f4bc3faa65dff954eb976a0c1dcca48ac365195eed35683152eb399"
+        }
+      ]
+    },
+    {
+      "id": "classic-city-and-ghost",
+      "source": {
+        "path": "/assets/classics/classic-city-and-ghost.083bf14d30db.webp",
+        "format": "webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 65850,
+        "sha256": "083bf14d30db512133ee3d0a63173e2bdf047ffe3fdcd7be7cc8df19092c917d"
+      },
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": [
+        {
+          "path": "/assets/classics/classic-city-and-ghost.6dd7a29ad41a.96.avif",
+          "format": "avif",
+          "width": 96,
+          "height": 128,
+          "bytes": 1516,
+          "sha256": "6dd7a29ad41a1f55560439061e70bd902aac5cde3804c4d6e72185d35340f989"
+        },
+        {
+          "path": "/assets/classics/classic-city-and-ghost.bdd5583b6fb2.96.webp",
+          "format": "webp",
+          "width": 96,
+          "height": 128,
+          "bytes": 2510,
+          "sha256": "bdd5583b6fb2bba10bf96c02333e6c3c7d8f728637720022657e14847be2af88"
+        },
+        {
+          "path": "/assets/classics/classic-city-and-ghost.2c6f77ea66b5.144.avif",
+          "format": "avif",
+          "width": 144,
+          "height": 192,
+          "bytes": 2755,
+          "sha256": "2c6f77ea66b5e35fe3e3ccf52fa5cce00c11df359955ba11e7b8d3f1d3719b5d"
+        },
+        {
+          "path": "/assets/classics/classic-city-and-ghost.bd3fe15efbf5.144.webp",
+          "format": "webp",
+          "width": 144,
+          "height": 192,
+          "bytes": 4784,
+          "sha256": "bd3fe15efbf5437d7e9a862ef48aec38dc3ec035fad1c77e471f4961255c736f"
+        },
+        {
+          "path": "/assets/classics/classic-city-and-ghost.4c9d99eb6e51.240.avif",
+          "format": "avif",
+          "width": 240,
+          "height": 320,
+          "bytes": 6160,
+          "sha256": "4c9d99eb6e511c13ca8c5695a337c406cc7bbbc25ebf760d2cb5b3272caaaead"
+        },
+        {
+          "path": "/assets/classics/classic-city-and-ghost.ba539e22830e.240.webp",
+          "format": "webp",
+          "width": 240,
+          "height": 320,
+          "bytes": 11210,
+          "sha256": "ba539e22830ed55191b352af3354e86084cdc88af409ce71abc7333eae3dc2d6"
+        },
+        {
+          "path": "/assets/classics/classic-city-and-ghost.e2968e0d45b2.320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 427,
+          "bytes": 10357,
+          "sha256": "e2968e0d45b24a9656d4899ae9336ee0139b93512ebbb200b03e129adfeb5ee2"
+        },
+        {
+          "path": "/assets/classics/classic-city-and-ghost.be57a03708ba.320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 427,
+          "bytes": 18352,
+          "sha256": "be57a03708ba1cbd7076b1f829a2f39a3e2e9c9f10b8c1b310f0a1e6169b433d"
+        },
+        {
+          "path": "/assets/classics/classic-city-and-ghost.b89516db137a.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 640,
+          "bytes": 19113,
+          "sha256": "b89516db137a52e66abcc31636259ab2a54fc5336cc30eb3407c0a599b59c616"
+        },
+        {
+          "path": "/assets/classics/classic-city-and-ghost.ef2ea51c8234.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 31534,
+          "sha256": "ef2ea51c8234ba3221bb423d75f9f57a9e97aa72511bfdb7a775ccffabb6d12c"
+        },
+        {
+          "path": "/assets/classics/classic-city-and-ghost.9cc31a47a455.640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 853,
+          "bytes": 36180,
+          "sha256": "9cc31a47a4556cb6760c9d2971e0ef370405c432938ef6467a6a3501b27d6873"
+        },
+        {
+          "path": "/assets/classics/classic-city-and-ghost.083bf14d30db.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 853,
+          "bytes": 65850,
+          "sha256": "083bf14d30db512133ee3d0a63173e2bdf047ffe3fdcd7be7cc8df19092c917d"
+        }
+      ]
+    },
+    {
+      "id": "classic-baettaragi",
+      "source": {
+        "path": "/assets/classics/classic-baettaragi.a1921f797195.webp",
+        "format": "webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 68290,
+        "sha256": "a1921f797195dd3785d031fc37e2bd4d7f1258432a73d83398dd624285c4f4f3"
+      },
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": [
+        {
+          "path": "/assets/classics/classic-baettaragi.e4bd4db1ef04.96.avif",
+          "format": "avif",
+          "width": 96,
+          "height": 128,
+          "bytes": 1467,
+          "sha256": "e4bd4db1ef04ca92b4296056b1650cda32b651b672679508a0c634de299952d0"
+        },
+        {
+          "path": "/assets/classics/classic-baettaragi.b00ac44680ef.96.webp",
+          "format": "webp",
+          "width": 96,
+          "height": 128,
+          "bytes": 2304,
+          "sha256": "b00ac44680efa94926e917c1e3a594ea21949ebf41c454d192c65eda74390850"
+        },
+        {
+          "path": "/assets/classics/classic-baettaragi.6f7da5bc9fcc.144.avif",
+          "format": "avif",
+          "width": 144,
+          "height": 192,
+          "bytes": 2653,
+          "sha256": "6f7da5bc9fcc90c7fc45bec83e341d33a92136e693f7fe5fa7bf71fbce5a9cff"
+        },
+        {
+          "path": "/assets/classics/classic-baettaragi.616d131b5865.144.webp",
+          "format": "webp",
+          "width": 144,
+          "height": 192,
+          "bytes": 4462,
+          "sha256": "616d131b5865ae8e2ec9a92975d1bfc38bc764b496a30ad3a9c7695593e85f9d"
+        },
+        {
+          "path": "/assets/classics/classic-baettaragi.d7aebba2a064.240.avif",
+          "format": "avif",
+          "width": 240,
+          "height": 320,
+          "bytes": 6133,
+          "sha256": "d7aebba2a064425450b06a7dbbcb0f56a5497735912d8347596a9b1081dc9703"
+        },
+        {
+          "path": "/assets/classics/classic-baettaragi.fc9bd70919ee.240.webp",
+          "format": "webp",
+          "width": 240,
+          "height": 320,
+          "bytes": 10576,
+          "sha256": "fc9bd70919eec133bb8590815db43a2216bed6eb0b5405095c9a686962342daf"
+        },
+        {
+          "path": "/assets/classics/classic-baettaragi.5c1c25aabe1d.320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 427,
+          "bytes": 10636,
+          "sha256": "5c1c25aabe1d1424e210b44ed2fcdf6df2256b4824839126b46cf17bbf5629d7"
+        },
+        {
+          "path": "/assets/classics/classic-baettaragi.1e90d67e27c3.320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 427,
+          "bytes": 18054,
+          "sha256": "1e90d67e27c3f1cb9e64a4a6ec7327d407989b91ff6828af0db43e9353ff26cb"
+        },
+        {
+          "path": "/assets/classics/classic-baettaragi.ecee66a89f3e.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 640,
+          "bytes": 19372,
+          "sha256": "ecee66a89f3ed0d4440a38a6495b1b5c4965cd758d2289dcfb6095b3bcb39f58"
+        },
+        {
+          "path": "/assets/classics/classic-baettaragi.adbae2f56c62.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 31764,
+          "sha256": "adbae2f56c62a74e6076bbefb5c2529304e16116264aff2e6dddda5b07952ca1"
+        },
+        {
+          "path": "/assets/classics/classic-baettaragi.3c4782e603bf.640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 853,
+          "bytes": 36905,
+          "sha256": "3c4782e603bfc59c9797699ea208b1d90903a72c59bea8ecca3c0dabde4ff690"
+        },
+        {
+          "path": "/assets/classics/classic-baettaragi.a1921f797195.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 853,
+          "bytes": 68290,
+          "sha256": "a1921f797195dd3785d031fc37e2bd4d7f1258432a73d83398dd624285c4f4f3"
+        }
+      ]
+    },
+    {
+      "id": "classic-b-superintendent",
+      "source": {
+        "path": "/assets/classics/classic-b-superintendent.55a555a40f28.webp",
+        "format": "webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 43252,
+        "sha256": "55a555a40f281dba42431d86ae409c8ac0cb429e53dc952c8746d0dd0ea40b76"
+      },
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": [
+        {
+          "path": "/assets/classics/classic-b-superintendent.9e5f01711267.96.avif",
+          "format": "avif",
+          "width": 96,
+          "height": 128,
+          "bytes": 1578,
+          "sha256": "9e5f01711267f043ef4efc85bf0f7a4c97f8a5b45e0e9b959b9a4bd352fd956d"
+        },
+        {
+          "path": "/assets/classics/classic-b-superintendent.ad663a1db7fa.96.webp",
+          "format": "webp",
+          "width": 96,
+          "height": 128,
+          "bytes": 2496,
+          "sha256": "ad663a1db7fa06fc31eb4ee0f47f8394a468ea84053f22d784e449b3a4349b15"
+        },
+        {
+          "path": "/assets/classics/classic-b-superintendent.2618203a8ac5.144.avif",
+          "format": "avif",
+          "width": 144,
+          "height": 192,
+          "bytes": 2821,
+          "sha256": "2618203a8ac54bbd1e026b1bdacad17353ae72a0b8284a3a1e0f73824a152b84"
+        },
+        {
+          "path": "/assets/classics/classic-b-superintendent.d85d9dcde801.144.webp",
+          "format": "webp",
+          "width": 144,
+          "height": 192,
+          "bytes": 4564,
+          "sha256": "d85d9dcde801b429fe37fed6f5ef6791d1dda59646e6cf31875c1491ed3776a1"
+        },
+        {
+          "path": "/assets/classics/classic-b-superintendent.e12aed3e5b8c.240.avif",
+          "format": "avif",
+          "width": 240,
+          "height": 320,
+          "bytes": 5754,
+          "sha256": "e12aed3e5b8c0416d1a3a3018b36f95df496efe39c1beaf999369ea8cf91aa21"
+        },
+        {
+          "path": "/assets/classics/classic-b-superintendent.3fc7bdb337f7.240.webp",
+          "format": "webp",
+          "width": 240,
+          "height": 320,
+          "bytes": 9438,
+          "sha256": "3fc7bdb337f7c072281730a78f64c0b895b180e9707313f7381caa4d4c0ab29c"
+        },
+        {
+          "path": "/assets/classics/classic-b-superintendent.7130195b2184.320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 427,
+          "bytes": 9271,
+          "sha256": "7130195b21841ab52ae65df1be859fba28ffeb80e270cde1237e19c33afff8d7"
+        },
+        {
+          "path": "/assets/classics/classic-b-superintendent.7f4157368c2f.320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 427,
+          "bytes": 14690,
+          "sha256": "7f4157368c2f805b719b2295a28d675be3de6ca1e1524ac2300dd8033a604720"
+        },
+        {
+          "path": "/assets/classics/classic-b-superintendent.128695dba40a.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 640,
+          "bytes": 15304,
+          "sha256": "128695dba40a21cae7e938582c32ffe1a99570b0838840937c7c1781af19507d"
+        },
+        {
+          "path": "/assets/classics/classic-b-superintendent.c978189a6d44.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 22586,
+          "sha256": "c978189a6d444089d52a7d2fd655e11d6bb3ef96cd50fccf3d172472144438d9"
+        },
+        {
+          "path": "/assets/classics/classic-b-superintendent.bc24396dbc22.640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 853,
+          "bytes": 23957,
+          "sha256": "bc24396dbc225225575a8933d18f1bdc977d758064d3e7cc51201028ec6e5f12"
+        },
+        {
+          "path": "/assets/classics/classic-b-superintendent.55a555a40f28.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 853,
+          "bytes": 43252,
+          "sha256": "55a555a40f281dba42431d86ae409c8ac0cb429e53dc952c8746d0dd0ea40b76"
+        }
+      ]
+    },
+    {
+      "id": "classic-mister-bang",
+      "source": {
+        "path": "/assets/classics/classic-mister-bang.a05dd6159a36.webp",
+        "format": "webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 81692,
+        "sha256": "a05dd6159a363008b5ef5c9a82c33628df8ab30c933243c3fa5d2977192e9dd5"
+      },
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": [
+        {
+          "path": "/assets/classics/classic-mister-bang.00e244193926.96.avif",
+          "format": "avif",
+          "width": 96,
+          "height": 128,
+          "bytes": 1798,
+          "sha256": "00e24419392628b8f4930429705d54d6b7ded1d3317739df71739d7afaf029fb"
+        },
+        {
+          "path": "/assets/classics/classic-mister-bang.427b2997dca2.96.webp",
+          "format": "webp",
+          "width": 96,
+          "height": 128,
+          "bytes": 3250,
+          "sha256": "427b2997dca2c205a8f192d2e0d805ec59db7038cebc9e95bf50eab2aa776fb9"
+        },
+        {
+          "path": "/assets/classics/classic-mister-bang.bf2302cbdcb1.144.avif",
+          "format": "avif",
+          "width": 144,
+          "height": 192,
+          "bytes": 3384,
+          "sha256": "bf2302cbdcb16774315752bf5686b0d569baf7b4c28a0adee1a075d04446bb4b"
+        },
+        {
+          "path": "/assets/classics/classic-mister-bang.4993addf7c9b.144.webp",
+          "format": "webp",
+          "width": 144,
+          "height": 192,
+          "bytes": 6366,
+          "sha256": "4993addf7c9ba8967d0116707a83569aa7209b0a3917ca991d707f263d361c5a"
+        },
+        {
+          "path": "/assets/classics/classic-mister-bang.bbe3a1506c64.240.avif",
+          "format": "avif",
+          "width": 240,
+          "height": 320,
+          "bytes": 7918,
+          "sha256": "bbe3a1506c64dcf06c428ca5d003a2d63dadf24ae0dbee59be26ac5506982164"
+        },
+        {
+          "path": "/assets/classics/classic-mister-bang.217579a7640b.240.webp",
+          "format": "webp",
+          "width": 240,
+          "height": 320,
+          "bytes": 14860,
+          "sha256": "217579a7640bad7de8d997e2c439083dd3aba4aaba257ba8ce7f6f9ad5e85cc0"
+        },
+        {
+          "path": "/assets/classics/classic-mister-bang.d4f682157a29.320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 427,
+          "bytes": 12934,
+          "sha256": "d4f682157a2992849c592c45ae22240e4a822c4e991e4693a86722e9e83dcbf6"
+        },
+        {
+          "path": "/assets/classics/classic-mister-bang.77c949cb077d.320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 427,
+          "bytes": 24798,
+          "sha256": "77c949cb077dccd781ed1446decf9bc6b6f826b6c591394461c9201b7527d789"
+        },
+        {
+          "path": "/assets/classics/classic-mister-bang.775973269abd.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 640,
+          "bytes": 23220,
+          "sha256": "775973269abd88d561a828630f1be3d536ff4c73b92b9a3a4619eefacccf431b"
+        },
+        {
+          "path": "/assets/classics/classic-mister-bang.e9b4c6f1bead.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 41940,
+          "sha256": "e9b4c6f1beade5190a8aa5a037b9ef5ca4fd31979120268f29d19d1bd7506512"
+        },
+        {
+          "path": "/assets/classics/classic-mister-bang.30249eab9a77.640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 853,
+          "bytes": 42238,
+          "sha256": "30249eab9a77a5012b688c17d3b8b01cc10151e5ff47e611c9340abdc38a3e45"
+        },
+        {
+          "path": "/assets/classics/classic-mister-bang.a05dd6159a36.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 853,
+          "bytes": 81692,
+          "sha256": "a05dd6159a363008b5ef5c9a82c33628df8ab30c933243c3fa5d2977192e9dd5"
+        }
+      ]
+    },
+    {
+      "id": "classic-poor-wife",
+      "source": {
+        "path": "/assets/classics/classic-poor-wife.f02a1b53d5c0.webp",
+        "format": "webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 53862,
+        "sha256": "f02a1b53d5c0191e21edd12098565e7593897601cfb16737c536c4f4a92f9129"
+      },
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": [
+        {
+          "path": "/assets/classics/classic-poor-wife.e4087380894d.96.avif",
+          "format": "avif",
+          "width": 96,
+          "height": 128,
+          "bytes": 1428,
+          "sha256": "e4087380894d83d28c7aa1d7e32cbee6c814a1e25d7d4bb5072fb0b875619f9c"
+        },
+        {
+          "path": "/assets/classics/classic-poor-wife.d48853fcc1a9.96.webp",
+          "format": "webp",
+          "width": 96,
+          "height": 128,
+          "bytes": 2344,
+          "sha256": "d48853fcc1a98496cf8f80ba5216f1289a4e28eca350d5335b5fc2cd82575eaf"
+        },
+        {
+          "path": "/assets/classics/classic-poor-wife.07babc96079f.144.avif",
+          "format": "avif",
+          "width": 144,
+          "height": 192,
+          "bytes": 2566,
+          "sha256": "07babc96079f759a49f684f95b1e6d54e6ee1f1775ea7b77edd9cd31e7a65006"
+        },
+        {
+          "path": "/assets/classics/classic-poor-wife.60e1537f174e.144.webp",
+          "format": "webp",
+          "width": 144,
+          "height": 192,
+          "bytes": 4456,
+          "sha256": "60e1537f174e3f896a1a8307c66e446e73cb8eb55417c2ff3849d18809383ad9"
+        },
+        {
+          "path": "/assets/classics/classic-poor-wife.1534dda4137d.240.avif",
+          "format": "avif",
+          "width": 240,
+          "height": 320,
+          "bytes": 5636,
+          "sha256": "1534dda4137da17618b6bad2d29c99ac24c4045ca67c6d6fb0f0f39989847288"
+        },
+        {
+          "path": "/assets/classics/classic-poor-wife.6e7416b32bbe.240.webp",
+          "format": "webp",
+          "width": 240,
+          "height": 320,
+          "bytes": 9850,
+          "sha256": "6e7416b32bbecaa09d5c88f9b23cdc35ddde7fac5af95ffd430e83d3c630a001"
+        },
+        {
+          "path": "/assets/classics/classic-poor-wife.4765b939de3e.320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 427,
+          "bytes": 9544,
+          "sha256": "4765b939de3ec087d86e272539dab26a97e7f15259f32dc3b4853399565fbff0"
+        },
+        {
+          "path": "/assets/classics/classic-poor-wife.e223f180c01e.320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 427,
+          "bytes": 15848,
+          "sha256": "e223f180c01e661808dfe1050751cb55877803c15c7a4241af3b3f0cd2bde867"
+        },
+        {
+          "path": "/assets/classics/classic-poor-wife.ebb7402027d2.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 640,
+          "bytes": 16688,
+          "sha256": "ebb7402027d2bc174c4d7d39036eb0ee08e678d5536c2f0b5648e0ff56fe370a"
+        },
+        {
+          "path": "/assets/classics/classic-poor-wife.d72304c8d2ac.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 25922,
+          "sha256": "d72304c8d2acaf67556f73b83da459a943ea14078387aea4f861cb769ca5f973"
+        },
+        {
+          "path": "/assets/classics/classic-poor-wife.d896fa376d39.640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 853,
+          "bytes": 29558,
+          "sha256": "d896fa376d39a912ead649f3a2901a9031786a2e178f3bd1efe256574677fd57"
+        },
+        {
+          "path": "/assets/classics/classic-poor-wife.f02a1b53d5c0.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 853,
+          "bytes": 53862,
+          "sha256": "f02a1b53d5c0191e21edd12098565e7593897601cfb16737c536c4f4a92f9129"
+        }
+      ]
+    },
+    {
+      "id": "classic-escape-letter",
+      "source": {
+        "path": "/assets/classics/classic-escape-letter.3a0ef6a0c3e6.webp",
+        "format": "webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 75550,
+        "sha256": "3a0ef6a0c3e6786e494e872635c6933e1825eb4eb38c9a8352e17e65f73dc603"
+      },
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": [
+        {
+          "path": "/assets/classics/classic-escape-letter.253cd8ebc355.96.avif",
+          "format": "avif",
+          "width": 96,
+          "height": 128,
+          "bytes": 1594,
+          "sha256": "253cd8ebc355d671df03a660c90de9cc3c022056f950922fb4dfd56bcf6e2bc8"
+        },
+        {
+          "path": "/assets/classics/classic-escape-letter.b85886331b44.96.webp",
+          "format": "webp",
+          "width": 96,
+          "height": 128,
+          "bytes": 2758,
+          "sha256": "b85886331b44bdd530875ea25d547e80b1a17bbf2a24ba49280aa14827a1d96a"
+        },
+        {
+          "path": "/assets/classics/classic-escape-letter.e2d64b85c47d.144.avif",
+          "format": "avif",
+          "width": 144,
+          "height": 192,
+          "bytes": 2993,
+          "sha256": "e2d64b85c47d040d5c8495e56131e8d5110d5a55f46774311ec4fa9a5101c61a"
+        },
+        {
+          "path": "/assets/classics/classic-escape-letter.d08c3af69a0a.144.webp",
+          "format": "webp",
+          "width": 144,
+          "height": 192,
+          "bytes": 5340,
+          "sha256": "d08c3af69a0aa58e4ba33734c106e8130b5f6527a07bd16fff348bd08b19636b"
+        },
+        {
+          "path": "/assets/classics/classic-escape-letter.565d56cbd9e8.240.avif",
+          "format": "avif",
+          "width": 240,
+          "height": 320,
+          "bytes": 6341,
+          "sha256": "565d56cbd9e8b044f74e03ed43cf42125579a4223be20a74d430efc8db26a5f3"
+        },
+        {
+          "path": "/assets/classics/classic-escape-letter.b737e5297f8f.240.webp",
+          "format": "webp",
+          "width": 240,
+          "height": 320,
+          "bytes": 12280,
+          "sha256": "b737e5297f8f6ee3f1ce527d12a99b99f80ff8b4c1f160a81770e0bdd7e79c7d"
+        },
+        {
+          "path": "/assets/classics/classic-escape-letter.d9c4438d7236.320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 427,
+          "bytes": 10699,
+          "sha256": "d9c4438d7236eadca74661b69aef1b208094bec6066f1a26906390f5310f709a"
+        },
+        {
+          "path": "/assets/classics/classic-escape-letter.2d8c7fc83041.320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 427,
+          "bytes": 20748,
+          "sha256": "2d8c7fc830418097c6af54ccddecb252570e0738eb146b0d2485dcfe96aec25c"
+        },
+        {
+          "path": "/assets/classics/classic-escape-letter.c7e306eeb6a8.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 640,
+          "bytes": 19914,
+          "sha256": "c7e306eeb6a8c8fe8ec5e345c1e15279073a905f90c70fa0c4542b5b08d95637"
+        },
+        {
+          "path": "/assets/classics/classic-escape-letter.015962b19cc4.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 36150,
+          "sha256": "015962b19cc4805ca80fa57a1660ab3db15bfcb2917eda5da5e68b921b8c66af"
+        },
+        {
+          "path": "/assets/classics/classic-escape-letter.66c59764db15.640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 853,
+          "bytes": 37326,
+          "sha256": "66c59764db156f22e2ebe7514b9dad14a92af5f0eb284db4358da75943f7aff9"
+        },
+        {
+          "path": "/assets/classics/classic-escape-letter.3a0ef6a0c3e6.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 853,
+          "bytes": 75550,
+          "sha256": "3a0ef6a0c3e6786e494e872635c6933e1825eb4eb38c9a8352e17e65f73dc603"
+        }
+      ]
+    },
+    {
+      "id": "classic-samryongi",
+      "source": {
+        "path": "/assets/classics/classic-samryongi.722ea10d9496.webp",
+        "format": "webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 45404,
+        "sha256": "722ea10d94961fe907af76f7b9287c5fff419327ccf4e125f3c7763fb80a32d1"
+      },
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": [
+        {
+          "path": "/assets/classics/classic-samryongi.07ca2a249794.96.avif",
+          "format": "avif",
+          "width": 96,
+          "height": 128,
+          "bytes": 1232,
+          "sha256": "07ca2a24979448113d6a552d61fec0ebe72ad3d9559b1b2dbf411d991fe05c1c"
+        },
+        {
+          "path": "/assets/classics/classic-samryongi.c448aa27e259.96.webp",
+          "format": "webp",
+          "width": 96,
+          "height": 128,
+          "bytes": 1742,
+          "sha256": "c448aa27e259434f25caae6d48e8ac58f1ea5a17ffb7f7a40cca4ea7816dc50f"
+        },
+        {
+          "path": "/assets/classics/classic-samryongi.4104166e44ae.144.avif",
+          "format": "avif",
+          "width": 144,
+          "height": 192,
+          "bytes": 2147,
+          "sha256": "4104166e44ae4c4555f3d9040b05006c3207fda438f527ad5edae7dd46af41f9"
+        },
+        {
+          "path": "/assets/classics/classic-samryongi.b21ee7aabb4f.144.webp",
+          "format": "webp",
+          "width": 144,
+          "height": 192,
+          "bytes": 3322,
+          "sha256": "b21ee7aabb4f0e2c15601d1e82413961142bd21e37192d91ba10568ea42b7e99"
+        },
+        {
+          "path": "/assets/classics/classic-samryongi.c5811ee36e07.240.avif",
+          "format": "avif",
+          "width": 240,
+          "height": 320,
+          "bytes": 4645,
+          "sha256": "c5811ee36e0702c1d53f3dd3b9f6919cedf67d690617bb8a67a30827221a6482"
+        },
+        {
+          "path": "/assets/classics/classic-samryongi.86067518bc22.240.webp",
+          "format": "webp",
+          "width": 240,
+          "height": 320,
+          "bytes": 7400,
+          "sha256": "86067518bc2256b2219bec69d07548ba485cc0232c07fed6bcfd8a7c5325123b"
+        },
+        {
+          "path": "/assets/classics/classic-samryongi.a562f585c44e.320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 427,
+          "bytes": 7840,
+          "sha256": "a562f585c44e2e3aeae6bd6e4d8e26d7ee64182b54186878c802462ed83cdc09"
+        },
+        {
+          "path": "/assets/classics/classic-samryongi.d368152a6e60.320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 427,
+          "bytes": 12452,
+          "sha256": "d368152a6e604a7dec65798bf16d983783e46d9fdc822fe0e7e67a144a8af2b7"
+        },
+        {
+          "path": "/assets/classics/classic-samryongi.5f9b906f279a.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 640,
+          "bytes": 13913,
+          "sha256": "5f9b906f279ac9f446021d60c7ff7d88336e84765ac140da3c67ab8ba2d69093"
+        },
+        {
+          "path": "/assets/classics/classic-samryongi.fdefc50138e9.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 20600,
+          "sha256": "fdefc50138e9d3f6d6d6f66dc966b2609e792d331634cbc326ca449eef996297"
+        },
+        {
+          "path": "/assets/classics/classic-samryongi.8e3774b311cb.640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 853,
+          "bytes": 24584,
+          "sha256": "8e3774b311cb350446b2318acedba2fef371f2f6a3bb8c7248f6c1ae64bcacf0"
+        },
+        {
+          "path": "/assets/classics/classic-samryongi.722ea10d9496.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 853,
+          "bytes": 45404,
+          "sha256": "722ea10d94961fe907af76f7b9287c5fff419327ccf4e125f3c7763fb80a32d1"
+        }
+      ]
+    },
+    {
+      "id": "classic-readymade-life",
+      "source": {
+        "path": "/assets/classics/classic-readymade-life.0108cd7fdb7b.webp",
+        "format": "webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 50390,
+        "sha256": "0108cd7fdb7b7c7d298a6b81a94dcf809946717bee5fbec23c9365dffc601e33"
+      },
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": [
+        {
+          "path": "/assets/classics/classic-readymade-life.50abd2986c57.96.avif",
+          "format": "avif",
+          "width": 96,
+          "height": 128,
+          "bytes": 1424,
+          "sha256": "50abd2986c579177f655c707706e4b7d398398f49008605c7a55ae06c12060fa"
+        },
+        {
+          "path": "/assets/classics/classic-readymade-life.c8f3fd1e4a48.96.webp",
+          "format": "webp",
+          "width": 96,
+          "height": 128,
+          "bytes": 2394,
+          "sha256": "c8f3fd1e4a481bd2fc41a60f2911b829c16ee69d1da0d6f1240a836bfa1fb31d"
+        },
+        {
+          "path": "/assets/classics/classic-readymade-life.3dff27cb4656.144.avif",
+          "format": "avif",
+          "width": 144,
+          "height": 192,
+          "bytes": 2665,
+          "sha256": "3dff27cb4656a57e9c0415e5bf06ccbd4763c46b8bad3b237d301292173efa10"
+        },
+        {
+          "path": "/assets/classics/classic-readymade-life.d8b2d5834b6c.144.webp",
+          "format": "webp",
+          "width": 144,
+          "height": 192,
+          "bytes": 4462,
+          "sha256": "d8b2d5834b6c8d0e076bf4f66569392a258547b2c631ac7e261f5b28920a7181"
+        },
+        {
+          "path": "/assets/classics/classic-readymade-life.c939aff304db.240.avif",
+          "format": "avif",
+          "width": 240,
+          "height": 320,
+          "bytes": 5653,
+          "sha256": "c939aff304db952d2da74c7686f7a2ed9214d34a7e709ca73feec592182e80cb"
+        },
+        {
+          "path": "/assets/classics/classic-readymade-life.9d31b580c401.240.webp",
+          "format": "webp",
+          "width": 240,
+          "height": 320,
+          "bytes": 9654,
+          "sha256": "9d31b580c401c06e17e4524bc74b90bfae20bd0c6acb708b10f4fb6369ef4e8e"
+        },
+        {
+          "path": "/assets/classics/classic-readymade-life.e8837d362d90.320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 427,
+          "bytes": 9406,
+          "sha256": "e8837d362d9032dafed26891c8c123ef074d2c59dca339dd19bcb23486f204a2"
+        },
+        {
+          "path": "/assets/classics/classic-readymade-life.aff0788e340e.320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 427,
+          "bytes": 15450,
+          "sha256": "aff0788e340eff1b489b60847edd49d9dc6ce9f6a4f5af430268bace304e7c7b"
+        },
+        {
+          "path": "/assets/classics/classic-readymade-life.6a18ebbf6c77.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 640,
+          "bytes": 16330,
+          "sha256": "6a18ebbf6c77214ae0e0e08f3abd7dc68e16a9f7b10328d4c0b1a087a3f3fd49"
+        },
+        {
+          "path": "/assets/classics/classic-readymade-life.f668b31c02a2.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 25182,
+          "sha256": "f668b31c02a24cdbd06f8550bd3724a8de5a98e563431339304dad2a8e1ee07f"
+        },
+        {
+          "path": "/assets/classics/classic-readymade-life.270f31f9ac93.640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 853,
+          "bytes": 28057,
+          "sha256": "270f31f9ac93bfe075e72c6c4c33489280d78f9c502daad2d656f01731a9c94e"
+        },
+        {
+          "path": "/assets/classics/classic-readymade-life.0108cd7fdb7b.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 853,
+          "bytes": 50390,
+          "sha256": "0108cd7fdb7b7c7d298a6b81a94dcf809946717bee5fbec23c9365dffc601e33"
+        }
+      ]
+    },
+    {
+      "id": "classic-drinking-society",
+      "source": {
+        "path": "/assets/classics/classic-drinking-society.547dc2f334ee.webp",
+        "format": "webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 42810,
+        "sha256": "547dc2f334ee7bd1f7a6d3dcb0f3bed4bf683b1ead7872e75cbde5f4df3d962d"
+      },
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": [
+        {
+          "path": "/assets/classics/classic-drinking-society.e127e286cdf8.96.avif",
+          "format": "avif",
+          "width": 96,
+          "height": 128,
+          "bytes": 1315,
+          "sha256": "e127e286cdf8a88e1b251785800e1864e2e9d0b70852a4c71533ad72508da1aa"
+        },
+        {
+          "path": "/assets/classics/classic-drinking-society.ec7913d5b9fe.96.webp",
+          "format": "webp",
+          "width": 96,
+          "height": 128,
+          "bytes": 1872,
+          "sha256": "ec7913d5b9fe434c85d84d175b2b3fc2286c7cd92489ded967a4d3c41fca11c9"
+        },
+        {
+          "path": "/assets/classics/classic-drinking-society.635523bb1f97.144.avif",
+          "format": "avif",
+          "width": 144,
+          "height": 192,
+          "bytes": 2272,
+          "sha256": "635523bb1f976a444fbca6c57b596da6334681c801ad137ec685487ee2ba5dc0"
+        },
+        {
+          "path": "/assets/classics/classic-drinking-society.fc5d0ddefd8d.144.webp",
+          "format": "webp",
+          "width": 144,
+          "height": 192,
+          "bytes": 3582,
+          "sha256": "fc5d0ddefd8d3eed140f9b1c1e87269f11768529d834527ded8380a6f0359fb9"
+        },
+        {
+          "path": "/assets/classics/classic-drinking-society.db7bbeb9cac6.240.avif",
+          "format": "avif",
+          "width": 240,
+          "height": 320,
+          "bytes": 4877,
+          "sha256": "db7bbeb9cac66d94f96e65257c32d4ccfbb92370cf66f39f9328cc61b82aceaa"
+        },
+        {
+          "path": "/assets/classics/classic-drinking-society.6a9bb9ba8035.240.webp",
+          "format": "webp",
+          "width": 240,
+          "height": 320,
+          "bytes": 7718,
+          "sha256": "6a9bb9ba8035a6f5971bb72f13039575e02baa301ea9927d3b2c0b04e04b21a4"
+        },
+        {
+          "path": "/assets/classics/classic-drinking-society.ab8724995fa3.320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 427,
+          "bytes": 8229,
+          "sha256": "ab8724995fa3576c7f672ae5dd372a7c8bc4515a47fdb173cafb4a05a9d1e3a7"
+        },
+        {
+          "path": "/assets/classics/classic-drinking-society.6bcd1cdc7c53.320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 427,
+          "bytes": 12612,
+          "sha256": "6bcd1cdc7c53bcdacb8e59436ca02d97ea7c0a22db0570e7809353d27b6a108d"
+        },
+        {
+          "path": "/assets/classics/classic-drinking-society.db37bf3d1cbf.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 640,
+          "bytes": 14419,
+          "sha256": "db37bf3d1cbf9a002fcd97e6e5b3271c331347db4d4c4f130f4242d968ca7e16"
+        },
+        {
+          "path": "/assets/classics/classic-drinking-society.3fe4585497e4.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 20630,
+          "sha256": "3fe4585497e461f3a461702aaa3e93dd3f1b9293ee54ee68a9d643fbe2160a61"
+        },
+        {
+          "path": "/assets/classics/classic-drinking-society.fe49d32856c8.640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 853,
+          "bytes": 24610,
+          "sha256": "fe49d32856c8dbcd7ef17bc9ecc1d842a57b85678666eb7d247dc82452c56603"
+        },
+        {
+          "path": "/assets/classics/classic-drinking-society.547dc2f334ee.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 853,
+          "bytes": 42810,
+          "sha256": "547dc2f334ee7bd1f7a6d3dcb0f3bed4bf683b1ead7872e75cbde5f4df3d962d"
+        }
+      ]
+    },
+    {
+      "id": "classic-hometown",
+      "source": {
+        "path": "/assets/classics/classic-hometown.f5aaf247b5ca.webp",
+        "format": "webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 43594,
+        "sha256": "f5aaf247b5ca6ff098119f6363d116ebc52d9d76a5ebf6011ac4d8ab98c83d46"
+      },
+      "focalPoint": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "variants": [
+        {
+          "path": "/assets/classics/classic-hometown.c4781298ccdf.96.avif",
+          "format": "avif",
+          "width": 96,
+          "height": 128,
+          "bytes": 1206,
+          "sha256": "c4781298ccdf9acd1e0fb3e7b932052f75fb91223da975c7d278bef138bf4e1d"
+        },
+        {
+          "path": "/assets/classics/classic-hometown.7c9cebc4b1ae.96.webp",
+          "format": "webp",
+          "width": 96,
+          "height": 128,
+          "bytes": 1806,
+          "sha256": "7c9cebc4b1aea111a3f45560fd9783eaf11d1fa48c78456e1cef5527010a16f5"
+        },
+        {
+          "path": "/assets/classics/classic-hometown.f5bb870bfd76.144.avif",
+          "format": "avif",
+          "width": 144,
+          "height": 192,
+          "bytes": 2122,
+          "sha256": "f5bb870bfd76f98ace8a985d6250270eb4ab9b4c01cc80801adbfb120edb269c"
+        },
+        {
+          "path": "/assets/classics/classic-hometown.6ecefad02012.144.webp",
+          "format": "webp",
+          "width": 144,
+          "height": 192,
+          "bytes": 3388,
+          "sha256": "6ecefad02012c2b20ad7ba7d534c8a998af954fd13efaa8a1c63e98e6fc6c07d"
+        },
+        {
+          "path": "/assets/classics/classic-hometown.57a01ea8aa12.240.avif",
+          "format": "avif",
+          "width": 240,
+          "height": 320,
+          "bytes": 4667,
+          "sha256": "57a01ea8aa129f23f15c5cb413922b0308c7962ace3bb15506d8fda253899766"
+        },
+        {
+          "path": "/assets/classics/classic-hometown.66d40fcfaff7.240.webp",
+          "format": "webp",
+          "width": 240,
+          "height": 320,
+          "bytes": 7308,
+          "sha256": "66d40fcfaff78aa43381255924d930ec123c60bdef52b648ed6adf5d8014e64d"
+        },
+        {
+          "path": "/assets/classics/classic-hometown.26c9586cd2a3.320.avif",
+          "format": "avif",
+          "width": 320,
+          "height": 427,
+          "bytes": 7713,
+          "sha256": "26c9586cd2a3495c515adea66ab66cc81ae39de8f2af9feeeda55d3ca7e11a7a"
+        },
+        {
+          "path": "/assets/classics/classic-hometown.b2826469ca11.320.webp",
+          "format": "webp",
+          "width": 320,
+          "height": 427,
+          "bytes": 11886,
+          "sha256": "b2826469ca11c21660dbdab08d97552d38dda5e0dc4955304a943ecb31a8e455"
+        },
+        {
+          "path": "/assets/classics/classic-hometown.fb81732518bb.480.avif",
+          "format": "avif",
+          "width": 480,
+          "height": 640,
+          "bytes": 13421,
+          "sha256": "fb81732518bb17aa4c4b098feeb4819fb7dbaec98212e6fc3b16a2164743f519"
+        },
+        {
+          "path": "/assets/classics/classic-hometown.8a9388260e76.480.webp",
+          "format": "webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 20278,
+          "sha256": "8a9388260e767eb5a3048b09db1b45b76f1db4ef055d900dc51d6ab4cb471a32"
+        },
+        {
+          "path": "/assets/classics/classic-hometown.bef3dfa90786.640.avif",
+          "format": "avif",
+          "width": 640,
+          "height": 853,
+          "bytes": 24252,
+          "sha256": "bef3dfa90786348398c8bd2198901994622ebb821ff24fcd62a3f1436c236539"
+        },
+        {
+          "path": "/assets/classics/classic-hometown.f5aaf247b5ca.webp",
+          "format": "webp",
+          "width": 640,
+          "height": 853,
+          "bytes": 43594,
+          "sha256": "f5aaf247b5ca6ff098119f6363d116ebc52d9d76a5ebf6011ac4d8ab98c83d46"
+        }
+      ]
+    }
+  ]
+}

@@ -1,14 +1,26 @@
+import { ResponsiveAsset } from "@firstscene/ui/images";
 import { StoryCoverTransition, StoryDetailLink } from "./StoryCoverTransition";
-import { classicCover } from "../lib/classic-cover";
+import type { ClassicCover } from "../lib/classic-cover";
 import type { ClassicSummary } from "../lib/classic-catalog";
+
+// These widths follow the two-column mobile grids and the 1200px site shell.
+const mobileSizes =
+  "(max-width: 359px) calc((100vw - 44px) / 2), (max-width: 640px) calc((100vw - 52px) / 2)";
+const desktopSizes = "(max-width: 1264px) calc((100vw - 118px) / 4), 287px";
+const homeSizes = `${mobileSizes}, ${desktopSizes}`;
+const discoverySizes = `${mobileSizes}, (max-width: 1050px) calc((100vw - 100px) / 3), ${desktopSizes}`;
+
 export function ClassicCard({
   story,
+  cover,
   index = 0,
+  discovery = false,
 }: {
   story: ClassicSummary;
+  cover: ClassicCover | undefined;
   index?: number;
+  discovery?: boolean;
 }) {
-  const cover = classicCover(story.id);
   return (
     <StoryDetailLink
       className="classic-card"
@@ -22,12 +34,13 @@ export function ClassicCard({
       >
         {cover && (
           <StoryCoverTransition storyId={story.id}>
-            <img
+            <ResponsiveAsset
+              {...cover}
               className="classic-card-art"
-              src={cover}
+              aspectRatio="3 / 4"
               alt=""
-              loading="lazy"
-              decoding="async"
+              decorative
+              sizes={discovery ? discoverySizes : homeSizes}
             />
           </StoryCoverTransition>
         )}

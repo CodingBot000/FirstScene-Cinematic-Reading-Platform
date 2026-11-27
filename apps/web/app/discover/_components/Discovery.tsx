@@ -6,6 +6,7 @@ import { StoryBrowseCard } from "../../../components/StoryCoverTransition";
 import { classicCount } from "../../../lib/classic-catalog";
 import { ClassicCard } from "../../../components/ClassicCard";
 import type { StoryCardProps } from "@firstscene/ui/cards";
+import type { ClassicCover } from "../../../lib/classic-cover";
 import {
   previewCount,
   previewShelves,
@@ -60,12 +61,14 @@ function PreviewCard({
 
 export function Discovery({
   cards,
+  classicCovers,
   initialQuery,
   initialMood,
   initialStatus = "all",
   initialGenre = "all",
 }: {
   cards: StoryCardProps[];
+  classicCovers: Record<string, ClassicCover | undefined>;
   initialQuery: string;
   initialMood: string;
   initialStatus?: Availability;
@@ -243,7 +246,12 @@ export function Discovery({
               data-classic-story={story.id}
               data-flip-id={`classic-${story.id}`}
             >
-              <ClassicCard story={story} index={index} />
+              <ClassicCard
+                story={story}
+                index={index}
+                cover={classicCovers[story.id]}
+                discovery
+              />
             </div>
           ))}
           {visibleComing.map((story, index) => (
