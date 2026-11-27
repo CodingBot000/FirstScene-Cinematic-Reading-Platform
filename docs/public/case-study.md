@@ -1,5 +1,31 @@
 # FirstScene 구현 사례
 
+## 2026-11-28 고도화 검증
+
+### 저장 응답을 받지 못한 경우
+
+브라우저가 보낸 설정 요청을 실제 API와 PostgreSQL에 전달한 뒤, 브라우저로 돌아가는 응답만 끊었습니다. 브라우저에는 저장 확인이 표시되지 않았고, 같은 요청을 재시도하자 보관된 응답이 돌아왔습니다. PostgreSQL의 설정 revision은 한 번 증가했고 해당 요청의 영수증은 한 건이었습니다. Chromium과 Linux WebKit에서 확인했습니다. [읽기 상태 계약과 검증 PR](https://github.com/CodingBot000/FirstScene-Cinematic-Reading-Platform/pull/28)
+
+로컬 프록시 뒤의 앱 두 인스턴스에서도 A가 저장한 요청을 B가 재시도했습니다. A의 트랜잭션은 `committed`, B는 `replayed`였고, 요청별 응답 헤더와 서버 로그를 각각 대응시켰습니다. 확인한 로그 7건에서 세션 쿠키·쓰기 식별자·DB 연결 정보 노출은 0건이었습니다. [요청 상관관계 PR](https://github.com/CodingBot000/FirstScene-Cinematic-Reading-Platform/pull/30)
+
+### 이미지와 리더가 사용하는 브라우저 작업량
+
+고전 표지 20편을 카드·작품 소개·리더의 표시 크기에 맞춰 AVIF와 WebP로 제공합니다. 390×844, DPR 1, CPU 4배 제한, 네트워크 지연 150ms에서 버전별 5회 콜드 탐색을 비교했습니다. 「동백꽃」 작품 소개의 LCP 중앙값은 1,756ms에서 724ms, 탐색 초기 전송량은 778,564바이트에서 333,445바이트로 줄었습니다. 홈의 LCP 중앙값은 768ms에서 784ms로 관찰됐습니다. 이 수치는 Chromium 로컬 실험입니다. [고전 표지 PR](https://github.com/CodingBot000/FirstScene-Cinematic-Reading-Platform/pull/26) · [PR CI](https://github.com/CodingBot000/FirstScene-Cinematic-Reading-Platform/actions/runs/46061914855)
+
+![390px에서 확인한 동백꽃 작품 소개](images/fs-fse-02-classic-introduction.png)
+
+서버 ACK 구간을 추적해 진도 응답 5회에서 5번, 북마크 응답 5회에서 18번 발생하던 리더 렌더를 각각 0번으로 줄였습니다. 아트워크 프레임도 화면 밖에서 계속 잡혀 있던 예약 1건을 0건으로 줄였고, 숨김·복귀 20회에서 복귀 시 하나의 루프를 확인했습니다. 브라우저 설정에서 실제 탭 배율을 200%와 400%로 올려 키보드로 탐색·소개·본문을 열고 설정을 닫은 뒤 초점 복귀를 확인했습니다. [리더 렌더링 PR](https://github.com/CodingBot000/FirstScene-Cinematic-Reading-Platform/pull/27) · [WebGL 수명 주기 PR](https://github.com/CodingBot000/FirstScene-Cinematic-Reading-Platform/pull/29)
+
+### 빌드와 복구를 확인하는 방법
+
+OpenAPI·스토리 스키마에서 파생한 타입이 오래되면 패키지 빌드가 실패합니다. 금지된 패키지 진입점과 오래된 생성 타입을 개별 시험용 작업 트리에 넣었을 때 각 게이트는 실패했고, 원복하면 통과했습니다. 같은 브라우저 환경을 사용하도록 검증한 WebKit 이미지의 ID를 실행에 고정했습니다. [계약 게이트 PR](https://github.com/CodingBot000/FirstScene-Cinematic-Reading-Platform/pull/31)
+
+격리 PostgreSQL 17.12에서 합성 세션과 설정을 백업하고 빈 DB에 복원했습니다. 7개 테이블의 행 해시가 일치했고, 새 앱 프로세스의 조회가 복원된 설정을 반환했습니다. DB 연결을 일시 차단했을 때 readiness는 503, 공개 리더는 200을 반환했습니다. 2026-11-28의 공개 데모에서는 HTTPS 홈·탐색·고전 소개·본문·두 상태 엔드포인트를 읽기 전용으로 확인했습니다. 운영 롤백, 실물 모바일 기기, 사람 사용성 평가의 증거는 아직 없습니다. [공개 데모](https://firstscene-one.vercel.app) · [운영 가이드](runbook.md)
+
+사용자는 제품 범위, 비용과 운영 변경의 승인 경계를 결정했습니다. 에이전트는 작업 브랜치의 구현·테스트·실험과 이 기록을 작성했습니다. 위 기능 변경은 연결된 PR에서 리뷰할 수 있으며, 병합과 운영 검증은 별도로 추적합니다.
+
+## 초기 구현
+
 FirstScene은 문장 읽기를 중심으로 장면의 분위기를 보조하는 웹 제품입니다. 에디터·CMS·게임·챗봇으로 범위를 넓히지 않고, 완결 단편2편과12씬·72문단에 집중했습니다. Next.js·React·TypeScript와GSAP을 사용하고, 공유 UI·원고 계약·리더 상태·React 렌더러·서버 데이터의 패키지 경계를 분리했습니다.
 
 ## 읽기와 데이터의 경계

@@ -7,24 +7,28 @@ const files = [
   "docs/public/runbook.md",
   "docs/public/case-study.md",
   "docs/public/architecture.md",
+  "docs/public/images/fs-fse-02-classic-introduction.png",
 ];
 const directory = "artifacts/public-documents";
 fs.mkdirSync(directory, { recursive: true });
 const artifacts = [];
 for (const source of files) {
-  const content = Buffer.from(
-    fs
-      .readFileSync(source, "utf8")
-      .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, label, target) => {
-        if (/^(?:https?:|#)/.test(target)) return match;
-        const resolved = path.posix.normalize(
-          path.posix.join(path.posix.dirname(source), target),
-        );
-        return files.includes(resolved)
-          ? match
-          : label + " (project evidence: " + target + ")";
-      }),
-  );
+  const original = fs.readFileSync(source);
+  const content = source.endsWith(".md")
+    ? Buffer.from(
+        original
+          .toString("utf8")
+          .replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, label, target) => {
+            if (/^(?:https?:|#)/.test(target)) return match;
+            const resolved = path.posix.normalize(
+              path.posix.join(path.posix.dirname(source), target),
+            );
+            return files.includes(resolved)
+              ? match
+              : label + " (project evidence: " + target + ")";
+          }),
+      )
+    : original;
   const target = directory + "/" + source;
   fs.mkdirSync(path.dirname(target), { recursive: true });
   fs.writeFileSync(target, content);
