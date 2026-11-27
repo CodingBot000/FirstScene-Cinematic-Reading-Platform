@@ -2,6 +2,8 @@
 
 문장 읽기를 중심에 두고, 장면의 분위기를 선택적으로 더하는 반응형 웹 독서 플랫폼입니다. **시네마틱 오리지널 단편 2편**, **원문 읽기 가능한 한국 고전 20편**, **공개 예정 콘셉트 34편**을 구분합니다. 콘셉트 목록은 완결 원고나 제공 중인 읽기 기능을 의미하지 않습니다.
 
+[공개 데모](https://firstscene-one.vercel.app) · [대표 화면](docs/public/images/fs-fse-02-classic-introduction.png) · [읽기 기록·브라우저 성능·빌드 검증 사례](docs/public/case-study.md#2026-11-28-고도화-검증)
+
 ## 제품 사용 흐름
 
 - **랜딩:** 문장과 장면 이미지를 중심으로 한 시네마틱 인트로. 조건에 맞는 데스크톱에서는 선택적으로 WebGL2 분위기 효과를 사용하며, 그렇지 않으면 정적인 HTML/CSS 표지를 유지합니다.
@@ -40,6 +42,8 @@ node tools/start-web.mjs --port 3100
 ## 검증과 실제 한계
 
 PR #9의 검증 기록은 2026-11-22 기준입니다. 표지·읽기 전환을 추가한 PR #23은 CI 19개와 Docker smoke 13개를 통과했습니다. 같은 파일 트리를 병합한 `main` `e75db43`의 실행에서는 WebKit 3건이 실패해 Docker 검사가 생략됐습니다. 운영 배포 날짜와 확인 범위도 릴리스 보고서에 기록했습니다. [릴리스 보고서](RELEASE_REPORT.md)
+
+2026-11-28 성능 기준선을 병합한 `main` `90b5f2c`에서 CI 19개와 Docker smoke 13개가 통과했습니다. 반응형 고전 표지 후보도 별도의 PR CI에서 같은 게이트를 통과했습니다. [main CI](https://github.com/CodingBot000/FirstScene-Cinematic-Reading-Platform/actions/runs/46047305095) · [표지 후보 CI](https://github.com/CodingBot000/FirstScene-Cinematic-Reading-Platform/actions/runs/46061914855)
 
 ```sh
 pnpm check:ci
