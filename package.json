@@ -26,6 +26,7 @@
     "test:a11y": "node tools/run-browser-tests.mjs --project=chromium tests/e2e/a11y.spec.ts",
     "test:visual": "node tools/visual/collect.mjs",
     "test:perf": "node tools/performance/run.mjs",
+    "perf:baseline": "node tools/performance/collect-baseline.mjs",
     "pack:smoke": "pnpm build:packages && node tools/pack-smoke.mjs",
     "test:security": "node tools/security-check.mjs",
     "assets:plan": "node tools/image-pipeline/cli.mjs plan",

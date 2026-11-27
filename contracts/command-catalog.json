@@ -117,6 +117,12 @@
       "acceptance": "3 cold lab runs, environment/profile, median LCP/CLS/TBT and transfer budget; no field claims."
     },
     {
+      "id": "CMD-PERF-BASELINE",
+      "purpose": "opt-in browser diagnostics",
+      "command": "pnpm perf:baseline",
+      "acceptance": "Five sample pairs per route, verified build and lab profile, Lighthouse cold TBT, paired probe overhead, private raw timing and a request waterfall."
+    },
+    {
       "id": "CMD-PACK",
       "purpose": "independent consumption",
       "command": "pnpm pack:smoke",
