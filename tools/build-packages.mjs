@@ -1,19 +1,8 @@
 import { spawnSync } from "node:child_process";
-const transport = spawnSync("node", ["tools/generate-transport.mjs"], {
+const contracts = spawnSync("pnpm", ["check:generated-contracts"], {
   stdio: "inherit",
 });
-if (transport.status !== 0) process.exit(transport.status ?? 1);
-const format = spawnSync(
-  "pnpm",
-  [
-    "exec",
-    "prettier",
-    "--write",
-    "apps/web/features/reading-sync/transport.generated.ts",
-  ],
-  { stdio: "inherit" },
-);
-if (format.status !== 0) process.exit(format.status ?? 1);
+if (contracts.status !== 0) process.exit(contracts.status ?? 1);
 for (const name of [
   "tokens",
   "story-schema",

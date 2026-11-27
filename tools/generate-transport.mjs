@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import { parse } from "yaml";
+import { writeGenerated } from "./generate-output.mjs";
 const api = parse(fs.readFileSync("contracts/api.openapi.yaml", "utf8"));
 function expand(value) {
   if (Array.isArray(value)) return value.map(expand);
@@ -35,7 +36,7 @@ function check(schema) {
   if (schema.items) check(schema.items);
 }
 Object.values(schemas).forEach(check);
-fs.writeFileSync(
+await writeGenerated(
   "apps/web/features/reading-sync/transport.generated.ts",
   `// Generated from contracts/api.openapi.yaml. No server-data runtime dependency.\nimport type { FromSchema } from 'json-schema-to-ts';\nexport const transportSchemas = ${JSON.stringify(schemas, null, 2)} as const;\n${Object.keys(
     schemas,

@@ -26,6 +26,14 @@ pnpm typecheck
 ```
 TS strict all packages and applications.
 
+## CMD-GENERATED-CONTRACTS — generated transport and schemas
+
+```sh
+pnpm check:generated-contracts
+```
+
+The workspace package build checks the generated TypeScript against the OpenAPI and story schemas before compilation. After editing a source contract, run `pnpm generate:contracts` and review the generated changes in the same diff.
+
 ## CMD-BOUNDARY — package isolation
 ```sh
 pnpm check:boundaries

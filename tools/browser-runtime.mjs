@@ -66,22 +66,20 @@ export async function runLinuxWebkit(
 ) {
   if (!["functional", "visual", "performance", "consumer"].includes(mode))
     throw new Error("QA_MODE_INVALID");
-  const lock = JSON.parse(
-    fs.readFileSync("execution/browser-runtime-lock.json"),
-  );
   const prepared = JSON.parse(
     fs.readFileSync("evidence/ci/browser-runtime-image.json"),
   );
   if (
     prepared.status !== "QA_IMAGE_BUILT" ||
     prepared.dockerfileSha256 !== sha("Dockerfile.qa") ||
-    prepared.lockSha256 !== sha("execution/browser-runtime-lock.json")
+    prepared.lockSha256 !== sha("execution/browser-runtime-lock.json") ||
+    !/^sha256:[a-f0-9]{64}$/.test(prepared.imageId)
   )
     throw new Error("QA_IMAGE_PREPARATION_REQUIRED");
   const actual = await docker([
     "image",
     "inspect",
-    lock.qaImageTag,
+    prepared.imageId,
     "--format",
     "{{.Id}}",
   ]);
