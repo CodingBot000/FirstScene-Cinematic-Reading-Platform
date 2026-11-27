@@ -18,8 +18,7 @@ import { useCatalogFlip } from "../../../components/useCatalogFlip";
 import {
   filterDiscovery,
   type PreviewListing,
-  type Availability,
-  type DiscoveryMood,
+  type DiscoveryFilters,
 } from "../../../lib/discovery-model";
 
 function PreviewCard({
@@ -60,24 +59,13 @@ function PreviewCard({
 
 export function Discovery({
   cards,
-  initialQuery,
-  initialMood,
-  initialStatus = "all",
-  initialGenre = "all",
+  initial,
 }: {
   cards: StoryCardProps[];
-  initialQuery: string;
-  initialMood: string;
-  initialStatus?: Availability;
-  initialGenre?: string;
+  initial: DiscoveryFilters;
 }) {
-  const query = useDiscoveryQuery({
-    q: initialQuery,
-    mood: initialMood as DiscoveryMood,
-    status: initialStatus,
-    genre: initialGenre,
-  });
-  const { q, mood, status, genre } = query.filters;
+  const query = useDiscoveryQuery(initial);
+  const { mood, status, genre } = query.filters;
   const {
     ready: visibleReady,
     classics: visibleClassics,
@@ -101,6 +89,10 @@ export function Discovery({
         className="discovery-form discovery-form-wide"
         method="get"
         action="/discover"
+        onSubmit={(event) => {
+          event.preventDefault();
+          transitionCatalog(query.submit);
+        }}
       >
         <label htmlFor="story-search">작품 제목 검색</label>
         <div className="search-row">
@@ -109,7 +101,11 @@ export function Discovery({
             name="q"
             type="search"
             maxLength={80}
-            value={q}
+            value={query.query}
+            onCompositionStart={query.compositionStart}
+            onCompositionEnd={(event) =>
+              query.compositionEnd(event.currentTarget.value)
+            }
             onChange={(event) => query.search(event.target.value)}
             placeholder="제목, 장르, 장면을 검색해 보세요"
           />
