@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   canonicalFilters,
@@ -18,6 +18,9 @@ export function useDiscoveryQuery(initial: DiscoveryFilters) {
   const [filters, setFilters] = useState(() => canonicalFilters(initial));
   const router = useRouter();
   const hydrated = useRef(false);
+  const search = useCallback((q: string) => {
+    setFilters((old) => canonicalFilters({ ...old, q }));
+  }, []);
 
   useEffect(() => {
     if (!hydrated.current) {
@@ -40,7 +43,7 @@ export function useDiscoveryQuery(initial: DiscoveryFilters) {
 
   return {
     filters,
-    search: (q: string) => setFilters((old) => canonicalFilters({ ...old, q })),
+    search,
     mood: (mood: DiscoveryMood) =>
       setFilters((old) => canonicalFilters({ ...old, mood })),
     status: (status: Availability) =>

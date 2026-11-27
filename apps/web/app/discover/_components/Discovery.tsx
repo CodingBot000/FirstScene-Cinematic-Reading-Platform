@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { EmptyState } from "@firstscene/ui/primitives";
 import { StoryBrowseCard } from "../../../components/StoryCoverTransition";
 import { classicCount } from "../../../lib/classic-catalog";
@@ -77,6 +77,14 @@ export function Discovery({
     status: initialStatus,
     genre: initialGenre,
   });
+  const { search } = query;
+  const attachSearchInput = useCallback(
+    (input: HTMLInputElement | null) => {
+      // Keep text entered into the server-rendered control before hydration.
+      if (input && input.value !== input.defaultValue) search(input.value);
+    },
+    [search],
+  );
   const { q, mood, status, genre } = query.filters;
   const {
     ready: visibleReady,
@@ -106,11 +114,12 @@ export function Discovery({
         <div className="search-row">
           <input
             id="story-search"
+            ref={attachSearchInput}
             name="q"
             type="search"
             maxLength={80}
             value={q}
-            onChange={(event) => query.search(event.target.value)}
+            onChange={(event) => search(event.target.value)}
             placeholder="제목, 장르, 장면을 검색해 보세요"
           />
           <button type="submit" className="fs-button fs-secondary">
