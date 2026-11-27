@@ -3,9 +3,11 @@ import { useReadingRecords } from "../../../../features/reading-sync/use-reading
 import { PreferenceControls } from "../../../../features/reader-preferences/PreferenceControls";
 import {
   Component,
+  memo,
   useCallback,
   useLayoutEffect,
   useEffect,
+  useMemo,
   useRef,
   useState,
 } from "react";
@@ -22,6 +24,8 @@ import { ReaderFrame } from "./ReaderFrame";
 import type { AssetProps } from "@firstscene/ui/images";
 import { StoryCoverTransition } from "../../../../components/StoryCoverTransition";
 import { saveStatus } from "../../../../features/reading-sync/reading-view";
+
+const ReaderStage = memo(StoryReader);
 
 class ReaderBoundary extends Component<
   { story: Story; children: ReactNode },
@@ -59,9 +63,17 @@ export function ReaderController({
   const { store, snapshot, sync, syncSnapshot } = useReadingRecords(story);
   const prefs = snapshot.preferences;
   const writesPaused = syncSnapshot.paused;
-  const bookmarked = syncSnapshot.bookmarks
+  // The reader uses membership only. Keep identities stable across sync ACKs
+  // that replace bookmark DTOs or their timestamps without changing the set.
+  const bookmarkIds = syncSnapshot.bookmarks
     .filter((b) => b.storyId === story.id)
-    .map((b) => b.targetId);
+    .map((b) => b.targetId)
+    .sort()
+    .join(" ");
+  const bookmarked = useMemo(
+    () => (bookmarkIds ? bookmarkIds.split(" ") : []),
+    [bookmarkIds],
+  );
   const [dialog, setDialog] = useState<"settings" | "toc" | null>(null),
     [sceneIndex, setSceneIndex] = useState(0);
   const [layoutAnchor, setLayoutAnchor] = useState<ReadingAnchor | null>(null);
@@ -121,6 +133,27 @@ export function ReaderController({
     },
     [story, store, snapshot.ready, syncSnapshot.hydrated, writesPaused],
   );
+  const renderOpeningArtwork = useCallback(
+    (artwork: ReactNode) => (
+      <StoryCoverTransition storyId={story.id}>{artwork}</StoryCoverTransition>
+    ),
+    [story.id],
+  );
+  const settingsOpen = dialog === "settings";
+  const onLayoutRestored = useCallback(() => {
+    setRemoteRestored(true);
+    if (!settingsOpen) setLayoutAnchor(null);
+  }, [settingsOpen]);
+  const onBookmark = useCallback(
+    (beatId: string) =>
+      sync.setBookmark(
+        story.id,
+        story.version,
+        beatId,
+        !bookmarked.includes(beatId),
+      ),
+    [sync, story.id, story.version, bookmarked],
+  );
   return (
     <ReaderFrame theme={prefs.theme} ready={snapshot.ready}>
       <ReadingToolbar
@@ -171,17 +204,13 @@ export function ReaderController({
           </p>
         ) : null}
         <ReaderBoundary story={story}>
-          <StoryReader
+          <ReaderStage
             key={story.contentHash + (snapshot.ready ? ":ready" : ":ssr")}
             story={story}
             assets={assets}
             sceneTransition="slide"
             openingCover={openingCover}
-            renderOpeningArtwork={(artwork) => (
-              <StoryCoverTransition storyId={story.id}>
-                {artwork}
-              </StoryCoverTransition>
-            )}
+            renderOpeningArtwork={renderOpeningArtwork}
             preferences={prefs}
             initialAnchor={snapshot.initialAnchor}
             layoutAnchor={
@@ -198,21 +227,11 @@ export function ReaderController({
             layoutRevision={
               layoutRevision + (syncSnapshot.hydrated && remoteInitial ? 1 : 0)
             }
-            onLayoutRestored={() => {
-              setRemoteRestored(true);
-              if (dialog !== "settings") setLayoutAnchor(null);
-            }}
+            onLayoutRestored={onLayoutRestored}
             onAnchorChange={anchorChanged}
             bookmarkedBeatIds={bookmarked}
             bookmarkDisabled={!snapshot.ready || writesPaused}
-            onBookmark={(beatId) =>
-              sync.setBookmark(
-                story.id,
-                story.version,
-                beatId,
-                !bookmarked.includes(beatId),
-              )
-            }
+            onBookmark={onBookmark}
           />
         </ReaderBoundary>
         <CompletionPanel
