@@ -1,5 +1,13 @@
 # FirstScene — QA 및 릴리스 증거
 
+## PR #23 배포와 자동 검증 기록
+
+2026-11-27에 표지·읽기 시작 전환과 오리지널 장면 슬라이드·완독 도장을 추가했습니다. PR #23의 자동 검사는 19개 그룹과 Docker smoke 13건을 통과했습니다. 같은 파일 트리를 가진 squash 병합 커밋 `e75db43`의 push 검사에서는 WebKit 82건 중 3건이 실패했고 Docker 빌드·smoke가 생략됐습니다. [PR CI](https://github.com/CodingBot000/FirstScene-Cinematic-Reading-Platform/actions/runs/45994621453) · [main CI](https://github.com/CodingBot000/FirstScene-Cinematic-Reading-Platform/actions/runs/45996711779)
+
+해당 커밋은 기존 Vercel 운영 대상에 배포됐습니다. 당시 탐색에서 표지·첫 장면으로 들어가는 동작, 오리지널 장면 전환, 320px에서 JavaScript를 끈 고전 본문, DB readiness를 확인했습니다. 운영 백업·복구, 실기기·사람 평가, 관리형 감사에는 각각 별도 증거가 필요합니다. [FirstScene 운영](https://firstscene-one.vercel.app)
+
+## PR #9의 역사적 기준선
+
 **기준일:** 2026-11-22 (KST)  
 **기능 소스:** `main` · squash merge `82a55454ca961874c9dbc33edd46d1d7063f87b3`  
 **기능 PR:** [#9](https://github.com/CodingBot000/FirstScene-Cinematic-Reading-Platform/pull/9)

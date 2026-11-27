@@ -60,3 +60,8 @@ quality; hands-on device review is a distinct follow-up.
 Measure on a real handset and desktop GPU before making any frame-rate or visual
 quality claims. If WebGL is unavailable, report the fallback rather than
 calling it a successful GPU run.
+
+## 2026-11-28 검색 입력과 표지 전환 검증
+
+- 서버에서 렌더링된 검색창은 클라이언트가 연결되기 전에도 입력을 받습니다. 핸들러가 연결되는 시점에 현재 입력값을 기존 필터 상태에 받아들이고, URL 갱신은 기존 debounce와 현재 라우터를 사용합니다. 입력을 비활성화하면 즉시 입력하거나 JavaScript 없이 제출하는 흐름이 제한됩니다. 검색 전체를 새 URL 저장소로 옮기면 상태·라우터가 바뀌는 범위가 커집니다. [Playwright의 hydration 설명](https://playwright.dev/docs/navigations#hydration)
+- 표지와 모션이 활성화된 읽기 링크는 Next Link의 전체 prefetch를 사용합니다. 초기 준비가 일부만 된 링크에서는 클릭 뒤에 대상의 RSC 응답을 추가로 요청했고, 일부 WebKit 시도에서 같은 문서 탐색이 끝났는데도 공유 전환 호출이 없었습니다. 실제로 대상 응답을 모두 받은 다음 카드를 열어 공유 그룹과 읽기 시작의 클립 애니메이션을 검증합니다. 전체 prefetch는 전송량이 늘 수 있어 적용 대상을 전환 링크로 제한하고 초기 탐색과 읽기의 성능 예산을 검증합니다. JavaScript 없는 키보드 탐색은 별도 회귀에서 확인합니다. [React ViewTransition](https://react.dev/reference/react/ViewTransition) · [Next Link transitionTypes](https://nextjs.org/docs/app/api-reference/components/link#transitiontypes) · [WebKit View Transitions](https://webkit.org/blog/15865/webkit-features-in-safari-18-0/)

@@ -60,6 +60,64 @@ test("mobile discovery is not horizontally clipped", async ({ page }) => {
   ).toBe(true);
 });
 
+test("mobile catalog keeps input entered before hydration and restores search history", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 320, height: 740 });
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto("/discover?q=" + encodeURIComponent("동백꽃"));
+  const search = page.getByRole("searchbox", { name: "작품 제목 검색" });
+  const results = page.getByRole("status");
+  await expect(search).toHaveValue("동백꽃");
+  await expect(results).toContainText("1편의 이야기");
+
+  let allowScripts!: () => void;
+  const scripts = new Promise<void>((resolve) => {
+    allowScripts = resolve;
+  });
+  let heldRequests = 0;
+  await page.route("**/_next/static/**/*.js", async (route) => {
+    heldRequests += 1;
+    await scripts;
+    await route.continue();
+  });
+
+  try {
+    await page.goto("/discover", { waitUntil: "commit" });
+    await expect.poll(() => heldRequests).toBeGreaterThan(0);
+    await search.fill("존재하지않는이야기");
+    await expect(search).toBeFocused();
+    await expect(results).toContainText("56편의 이야기");
+  } finally {
+    allowScripts();
+  }
+  await expect(results).toHaveText("0편의 이야기");
+  await expect(search).toHaveValue("존재하지않는이야기");
+  await expect(search).toBeFocused();
+  await expect(page).toHaveURL(/\/discover\?q=/);
+
+  await search.fill("빛");
+  await search.fill("우체국");
+  await expect(results).toContainText("1편의 이야기");
+  await expect(
+    page.getByRole("heading", { name: "빛을 접어 보내는 우체국" }),
+  ).toBeVisible();
+  await expect(page).toHaveURL(
+    new RegExp("/discover\\?q=" + encodeURIComponent("우체국") + "$"),
+  );
+  await page.getByRole("button", { name: "필터 초기화" }).click();
+  await expect(search).toHaveValue("");
+  await expect(results).toContainText("56편의 이야기");
+  await expect(page).toHaveURL(/\/discover$/);
+
+  await page.goBack();
+  await expect(search).toHaveValue("동백꽃");
+  await expect(results).toContainText("1편의 이야기");
+  await page.goForward();
+  await expect(search).toHaveValue("");
+  await expect(results).toContainText("56편의 이야기");
+});
+
 test.describe("discover works without JavaScript", () => {
   test.use({ javaScriptEnabled: false });
   test("server-rendered catalog respects ready status", async ({ page }) => {
