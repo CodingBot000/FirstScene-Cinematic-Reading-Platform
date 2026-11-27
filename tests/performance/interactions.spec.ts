@@ -199,15 +199,20 @@ test("production controls expose lab Event Timing and animation avoids repeated 
     );
   }
   const animation = await page.evaluate(async (from) => {
-    // Measure the whole tail after rapid jumps: text effects cap at1000ms and scene fades at480ms.
+    // Observe the actual slide and the main-thread tail after rapid jumps.
     const tailStart = performance.now();
-    const frames: { time: number; opacity: number }[] = [];
+    const current = document.querySelector<HTMLElement>(
+      '[data-scene-layer="current"]',
+    )!;
+    const layerWidth = current.getBoundingClientRect().width;
+    const frames: { time: number; offsetX: number }[] = [];
     await new Promise<void>((resolve) =>
       requestAnimationFrame(function sample(now) {
-        const current = document.querySelector('[data-scene-layer="current"]');
+        const transform = getComputedStyle(current).transform;
         frames.push({
           time: now,
-          opacity: current ? Number(getComputedStyle(current).opacity) : -1,
+          offsetX:
+            transform === "none" ? 0 : new DOMMatrixReadOnly(transform).m41,
         });
         if (now - tailStart >= 2000) resolve();
         else requestAnimationFrame(sample);
@@ -223,8 +228,9 @@ test("production controls expose lab Event Timing and animation avoids repeated 
       from,
       to: performance.now(),
       frameCount: frames.length,
-      intermediateOpacityFrames: frames.filter(
-        (frame) => frame.opacity > 0 && frame.opacity < 1,
+      intermediateSlideFrames: frames.filter(
+        ({ offsetX }) =>
+          Math.abs(offsetX) > 0.5 && Math.abs(offsetX) < layerWidth - 0.5,
       ).length,
       firstFrames: frames.slice(0, 20),
       longTasks: probe.tasks.filter(
@@ -256,5 +262,5 @@ test("production controls expose lab Event Timing and animation avoids repeated 
     ) + "\n",
   );
   expect(animation.longTasks.length).toBeLessThan(2);
-  expect(animation.intermediateOpacityFrames).toBeGreaterThan(0);
+  expect(animation.intermediateSlideFrames).toBeGreaterThan(0);
 });

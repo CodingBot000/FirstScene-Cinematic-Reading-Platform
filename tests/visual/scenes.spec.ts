@@ -56,23 +56,26 @@ test("both complete stories render all twelve real images and local moods in for
         if (page.viewportSize()!.width > 1024)
           await expect
             .poll(() =>
-              page
-                .locator(".fs-reader-stage-image")
-                .evaluate((stage, initial) => {
-                  const current = stage.querySelector<HTMLElement>(
-                    '[data-scene-layer="current"]',
-                  )!;
-                  const previous = stage.querySelector<HTMLElement>(
-                    '[data-scene-layer="previous"]',
-                  )!;
-                  // On a fresh transition the default CSS opacity can match
-                  // before the lazy GSAP adapter starts. Wait for its final styles.
-                  return initial
-                    ? getComputedStyle(current).opacity === "1" &&
-                        getComputedStyle(previous).opacity === "0"
-                    : current.style.opacity === "1" &&
-                        previous.style.opacity === "0";
-                }, step === 0),
+              page.locator(".fs-reader-stage-image").evaluate((stage) => {
+                const current = stage.querySelector<HTMLElement>(
+                  '[data-scene-layer="current"]',
+                )!;
+                const previous = stage.querySelector<HTMLElement>(
+                  '[data-scene-layer="previous"]',
+                )!;
+                const caption = stage.parentElement?.querySelector(
+                  ".fs-reader-stage-caption",
+                );
+                const moving = [current, previous, caption].some(
+                  (element) => element && element.getAnimations().length > 0,
+                );
+                return (
+                  !moving &&
+                  getComputedStyle(current).transform === "none" &&
+                  getComputedStyle(current).opacity === "1" &&
+                  getComputedStyle(previous).opacity === "0"
+                );
+              }),
             )
             .toBe(true);
         await capture(page, scene.id, "cinematic", beat.mood ?? scene.mood);

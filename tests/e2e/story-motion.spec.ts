@@ -16,24 +16,44 @@ const stories = ["post-office", "tide-station"].map(
 const classicCover = "cover-classic-camellias";
 const stationCover = "cover-tide-station";
 
-async function observeCoverMovement(page: Page, name: string) {
-  await page.evaluate((coverName) => {
-    function sample() {
-      const animations = document.getAnimations();
-      const moved = animations.some(
-        ({ effect }) =>
-          effect instanceof KeyframeEffect &&
-          effect.pseudoElement === `::view-transition-group(${coverName})` &&
-          Number(effect.getTiming().duration) > 0,
+async function observeCoverTransitions(page: Page) {
+  await page.addInitScript(() => {
+    const start = document.startViewTransition;
+    if (!start) return;
+    document.startViewTransition = function (
+      this: Document,
+      ...args: Parameters<typeof start>
+    ) {
+      const transition = Reflect.apply(start, this, args);
+      // Inspect the native snapshots when they exist, before the engine removes them.
+      void transition.ready.then(
+        () => {
+          for (const animation of document.getAnimations()) {
+            const effect = animation.effect;
+            if (!(effect instanceof KeyframeEffect)) continue;
+            const name = effect.pseudoElement ?? "";
+            const group =
+              /^::view-transition-group\((cover-[a-z0-9-]+)\)$/.exec(name);
+            if (group && Number(effect.getTiming().duration) > 0) {
+              document.documentElement.dataset.checkedCoverMotion = group[1];
+            }
+            const opening =
+              /^::view-transition-new\(cover-([a-z0-9-]+)\)$/.exec(name);
+            if (
+              opening &&
+              animation instanceof CSSAnimation &&
+              animation.animationName === "story-open-art" &&
+              Number(effect.getTiming().duration) > 0
+            ) {
+              document.documentElement.dataset.checkedOpening = opening[1];
+            }
+          }
+        },
+        () => {},
       );
-      if (moved) {
-        document.documentElement.dataset.checkedCoverMotion = coverName;
-        return;
-      }
-      requestAnimationFrame(sample);
-    }
-    requestAnimationFrame(sample);
-  }, name);
+      return transition;
+    };
+  });
 }
 
 async function scrollToBeat(page: Page, beatId: string) {
@@ -63,7 +83,8 @@ test("the selected classic and original covers move from the catalog to their de
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: "no-preference" });
-  await page.goto("/discover?status=ready");
+  await observeCoverTransitions(page);
+  await page.goto("/discover?status=ready", { waitUntil: "networkidle" });
   const classic = page.getByRole("link", {
     name: "동백꽃, 김유정 작품 소개",
     exact: true,
@@ -72,7 +93,6 @@ test("the selected classic and original covers move from the catalog to their de
   await classic
     .locator("img")
     .evaluate((image) => (image as HTMLImageElement).decode());
-  await observeCoverMovement(page, classicCover);
   await classic.click();
   await expect(page).toHaveURL(/\/stories\/classic-camellias$/);
   await expect(page.locator("html")).toHaveAttribute(
@@ -81,7 +101,7 @@ test("the selected classic and original covers move from the catalog to their de
   );
   await expect(page.getByRole("img", { name: "동백꽃 표지" })).toBeVisible();
 
-  await page.goto("/discover?status=ready");
+  await page.goto("/discover?status=ready", { waitUntil: "networkidle" });
   const original = page.getByRole("link", {
     name: "수심 없는 역의 오리지널 표지",
     exact: true,
@@ -90,7 +110,6 @@ test("the selected classic and original covers move from the catalog to their de
   await original
     .locator("img")
     .evaluate((image) => (image as HTMLImageElement).decode());
-  await observeCoverMovement(page, stationCover);
   await original.focus();
   await original.press("Enter");
   await expect(page).toHaveURL(/\/stories\/tide-station$/);
@@ -107,6 +126,7 @@ test("original and classic reading starts continue the cover into the reader", a
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: "no-preference" });
+  await observeCoverTransitions(page);
   for (const [id, name, button] of [
     ["post-office", "빛을 접어 보내는 우체국", "첫 장면 읽기"],
     ["tide-station", "수심 없는 역", "첫 장면 읽기"],
@@ -116,26 +136,6 @@ test("original and classic reading starts continue the cover into the reader", a
     await page
       .locator(".detail-cover img")
       .evaluate((element) => (element as HTMLImageElement).decode());
-    await page.evaluate((storyId) => {
-      function sample() {
-        const opened = document
-          .getAnimations()
-          .some(
-            (animation) =>
-              animation instanceof CSSAnimation &&
-              animation.animationName === "story-open-art" &&
-              animation.effect instanceof KeyframeEffect &&
-              animation.effect.pseudoElement ===
-                `::view-transition-new(cover-${storyId})`,
-          );
-        if (opened) {
-          document.documentElement.dataset.checkedOpening = storyId;
-          return;
-        }
-        requestAnimationFrame(sample);
-      }
-      requestAnimationFrame(sample);
-    }, id);
     await page.getByRole("link", { name: button, exact: true }).click();
     await expect(page).toHaveURL(new RegExp("/read/" + id + "(?:#.*)?$"));
     await expect(page.locator("html")).toHaveAttribute(
@@ -298,12 +298,12 @@ test("reduced motion keeps cover navigation and the next scene immediate", async
   page,
 }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
+  await observeCoverTransitions(page);
   await page.goto("/discover?status=ready");
   const classic = page.getByRole("link", {
     name: "동백꽃, 김유정 작품 소개",
     exact: true,
   });
-  await observeCoverMovement(page, classicCover);
   await classic.click();
   await expect(page).toHaveURL(/\/stories\/classic-camellias$/);
   await expect(
