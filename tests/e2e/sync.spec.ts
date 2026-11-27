@@ -1,6 +1,8 @@
 import { test, expect } from "@playwright/test";
 import type { Page } from "@playwright/test";
+import { createPool } from "@firstscene/server-data";
 import { SYNC_KEY } from "../../apps/web/features/reading-sync/outbox";
+import { verifyActiveTestDatabase } from "../../tools/database/isolated.mjs";
 async function saved(page: Page) {
   await expect(page.getByText("서버에 저장됨", { exact: true })).toBeVisible();
 }
@@ -9,6 +11,70 @@ async function me(page: Page) {
   expect(response.status()).toBe(200);
   return response.json();
 }
+
+test("SY-01 a committed preference with a lost ACK is replayed once from its PostgreSQL receipt", async ({
+  page,
+}) => {
+  const owner = createPool(process.env.DIRECT_DATABASE_URL!, 1);
+  try {
+    await verifyActiveTestDatabase(owner);
+    await page.goto("/settings");
+    await page.getByRole("radio", { name: "18px", exact: true }).check();
+    await saved(page);
+    const originalRevision = (await me(page)).preferences.revision;
+    const requests: { operationId: string; body: string }[] = [];
+    let committed = false;
+    let release!: () => void;
+    const resumeReplay = new Promise<void>((resolve) => (release = resolve));
+    await page.route("**/api/v1/preferences", async (route) => {
+      const body = route.request().postData()!;
+      requests.push({ operationId: JSON.parse(body).operationId, body });
+      if (requests.length === 1) {
+        const response = await route.fetch();
+        committed = response.ok();
+        await route.abort("connectionreset");
+        return;
+      }
+      await resumeReplay;
+      await route.continue();
+    });
+    try {
+      await page.getByRole("radio", { name: "24px", exact: true }).check();
+      await expect.poll(() => committed).toBe(true);
+      await expect.poll(() => requests.length).toBe(2);
+      expect(requests[1]!.body === requests[0]!.body).toBe(true);
+      await expect(
+        page.getByText("서버에 저장됨", { exact: true }),
+      ).not.toBeVisible();
+      expect((await me(page)).preferences).toMatchObject({
+        fontSize: 24,
+        revision: originalRevision + 1,
+      });
+    } finally {
+      release();
+    }
+    await saved(page);
+    const receipts = await owner.query(
+      `SELECT p.font_size, p.revision::int, count(r.operation_id)::int AS receipts
+       FROM firstscene.mutation_receipts r
+       JOIN firstscene.preferences p USING (session_id)
+       WHERE r.operation_id = $1
+       GROUP BY p.font_size, p.revision`,
+      [requests[0]!.operationId],
+    );
+    expect(receipts.rows).toEqual([
+      { font_size: 24, revision: originalRevision + 1, receipts: 1 },
+    ]);
+    expect(requests).toHaveLength(2);
+    const durable = await page.evaluate(
+      (key) => JSON.parse(localStorage.getItem(key)!),
+      SYNC_KEY,
+    );
+    expect(durable.queue).toEqual([]);
+  } finally {
+    await owner.end();
+  }
+});
 test("P05 actual DB settings ack persists across reload with safe browser-only queue", async ({
   page,
 }) => {
