@@ -22,6 +22,7 @@ import type {
 } from "./contracts.js";
 import { feedbackPolicy, feedbackWindowQuery } from "./feedback-policy.js";
 import { consumeRate } from "./session.js";
+import { recordTransaction } from "./request-diagnostics.js";
 type MutationResult<T> = { status: number; body: T | null };
 type ProgressRow = {
   story_id: string;
@@ -102,6 +103,8 @@ export function createStateRepository(
       .update(route + "\n" + JSON.stringify(values))
       .digest("hex");
     const client = await pool.connect();
+    const transactionStarted = performance.now();
+    let outcome: Parameters<typeof recordTransaction>[1] = "failed";
     try {
       assertDeadline(deadline);
       await client.query("BEGIN");
@@ -137,6 +140,7 @@ export function createStateRepository(
         if (schema) assertApiResponse(receipt.response_body, schema);
         assertDeadline(deadline);
         await client.query("COMMIT");
+        outcome = "replayed";
         return { status: receipt.response_status, body: receipt.response_body };
       }
       if (receipt)
@@ -159,11 +163,14 @@ export function createStateRepository(
       );
       assertDeadline(deadline);
       await client.query("COMMIT");
+      outcome = "committed";
       return result;
     } catch (error) {
       await client.query("ROLLBACK");
+      outcome = "rolled-back";
       throw error;
     } finally {
+      recordTransaction(transactionStarted, outcome);
       client.release();
     }
   }

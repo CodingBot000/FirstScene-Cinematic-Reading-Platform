@@ -7,6 +7,7 @@ import {
   jsonResponse,
   assertApiResponse,
 } from "@firstscene/server-data";
+import { createRequest } from "../../apps/web/features/reading-sync/transport";
 const local = deriveHttpPolicy("http://127.0.0.1:3100", "local");
 const request = (body: string, headers: Record<string, string> = {}) =>
   new Request(local.origin + "/api/v1/session", {
@@ -81,16 +82,49 @@ it("P04 reads at most16KiB UTF8 and rejects unknown fields/malformedJSON", async
   ).rejects.toMatchObject({ status: 400 });
 });
 it("P04 unexpected server errors return redacted no-store envelope and server-generated requestId", async () => {
-  const response = await apiRequest("/test", async () => {
-    throw new Error("test-only-private-value");
-  });
-  const body = await response.json();
-  expect(response.status).toBe(503);
-  expect(body.error.code).toBe("STORAGE_UNAVAILABLE");
-  expect(JSON.stringify(body).includes("test-only-private-value")).toBe(false);
-  expect(body.error.requestId).toMatch(/^[a-f0-9-]{36}$/);
-  expect(response.headers.get("cache-control")).toContain("no-store");
-  expect(jsonResponse({ status: "ok" }).headers.get("vary")).toBe("Cookie");
+  const log = vi.spyOn(console, "info").mockImplementation(() => {});
+  try {
+    const response = await apiRequest("/test", async () => {
+      throw new Error("test-only-private-value");
+    });
+    const body = await response.json();
+    const record = JSON.parse(log.mock.calls[0]![0]);
+    expect(response.status).toBe(503);
+    expect(body.error.code).toBe("STORAGE_UNAVAILABLE");
+    expect(JSON.stringify(body)).not.toContain("test-only-private-value");
+    expect(JSON.stringify(record)).not.toContain("test-only-private-value");
+    expect(body.error.requestId).toMatch(/^[a-f0-9-]{36}$/);
+    expect(response.headers.get("cache-control")).toContain("no-store");
+    expect(jsonResponse({ status: "ok" }).headers.get("vary")).toBe("Cookie");
+    expect(record).toMatchObject({
+      requestId: response.headers.get("x-request-id"),
+      route: "/test",
+      status: 503,
+      code: "STORAGE_UNAVAILABLE",
+      retryable: true,
+      transaction: null,
+    });
+    expect(record.requestId).toBe(body.error.requestId);
+  } finally {
+    log.mockRestore();
+  }
+});
+it("OB-01 reading transport accepts a request ID only from the UUID response header", async () => {
+  const requestId = "7d1e7adb-852d-4e31-a543-abb3ca931eff";
+  for (const [header, expected] of [
+    [requestId, requestId],
+    ["diagnostic-text", null],
+  ] as const) {
+    const fetchRequest = vi.fn(async () =>
+      Response.json({}, { status: 503, headers: { "x-request-id": header } }),
+    );
+    await expect(
+      createRequest(fetchRequest)("/api/v1/me"),
+    ).rejects.toMatchObject({
+      code: "INVALID_RESPONSE",
+      requestId: expected,
+    });
+  }
 });
 it("P04 response privacy cannot be overridden by a caller header", () => {
   expect(
