@@ -43,6 +43,8 @@ CI=true FIRSTSCENE_CI_DISPOSABLE=1 FIRSTSCENE_LINUX_WEBKIT=1 \
 
 ## 검증과 배포
 
+별도의 동일 조건 브라우저 기준선과 DevTools 진단은 [성능 기준선](performance-baseline.md)의 절차를 사용합니다.
+
 GitHub Actions의 PR 및 `main` 검사는 `pnpm check:ci`로 빌드, 실제 DB와 브라우저 테스트, 재현 가능한 보안 검사, 성능 검사, 화면 수집을 실행합니다. `pnpm check:qa`는 전체 제품 자동 회귀와 새 화면 수집을 실행합니다. 검토한 이미지의 증거는 `pnpm test:visual -- --verify-review`로 확인합니다. `pnpm check:release`와 `pnpm check:full`은 동일한 엄격 검사이며, 관리형 감사와 수동 검수 등 출시 선행조건을 확인합니다.
 
 Docker 이미지는 `pnpm container:build`로 만들고, 준비된 임시 CI DB에서 `pnpm container:smoke`로 검사합니다. 이미지는 비root 사용자로 실행하며 비밀값과 마이그레이션 소유자 환경은 포함하지 않습니다. Docker smoke의 로컬 재시작 증거는 공개 환경의rollback 증거를 대신하지 않습니다.
