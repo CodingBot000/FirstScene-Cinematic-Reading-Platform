@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-import type { Page } from "@playwright/test";
+import type { Locator, Page } from "@playwright/test";
 import { readFileSync } from "node:fs";
 import type { Story } from "@firstscene/story-schema";
 
@@ -56,6 +56,25 @@ async function observeCoverTransitions(page: Page) {
   });
 }
 
+async function prepareStoryLink(
+  page: Page,
+  source: string,
+  destination: string,
+  link: Locator,
+) {
+  // Next's pinned App Router sends full RSC prefetches without a shell header.
+  const prefetch = page.waitForResponse(
+    (response) =>
+      new URL(response.url()).pathname === destination &&
+      response.ok() &&
+      response.request().headers().rsc === "1" &&
+      !response.request().headers()["next-router-prefetch"],
+  );
+  await page.goto(source);
+  await link.scrollIntoViewIfNeeded();
+  expect(await (await prefetch).finished()).toBeNull();
+}
+
 async function scrollToBeat(page: Page, beatId: string) {
   await page.locator("#" + beatId).evaluate((paragraph) => {
     const { top } = paragraph.getBoundingClientRect();
@@ -84,12 +103,16 @@ test("the selected classic and original covers move from the catalog to their de
 }) => {
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await observeCoverTransitions(page);
-  await page.goto("/discover?status=ready", { waitUntil: "networkidle" });
   const classic = page.getByRole("link", {
     name: "동백꽃, 김유정 작품 소개",
     exact: true,
   });
-  await classic.scrollIntoViewIfNeeded();
+  await prepareStoryLink(
+    page,
+    "/discover?status=ready",
+    "/stories/classic-camellias",
+    classic,
+  );
   await classic
     .locator("img")
     .evaluate((image) => (image as HTMLImageElement).decode());
@@ -101,12 +124,16 @@ test("the selected classic and original covers move from the catalog to their de
   );
   await expect(page.getByRole("img", { name: "동백꽃 표지" })).toBeVisible();
 
-  await page.goto("/discover?status=ready", { waitUntil: "networkidle" });
   const original = page.getByRole("link", {
     name: "수심 없는 역의 오리지널 표지",
     exact: true,
   });
-  await original.scrollIntoViewIfNeeded();
+  await prepareStoryLink(
+    page,
+    "/discover?status=ready",
+    "/stories/tide-station",
+    original,
+  );
   await original
     .locator("img")
     .evaluate((image) => (image as HTMLImageElement).decode());
@@ -132,11 +159,12 @@ test("original and classic reading starts continue the cover into the reader", a
     ["tide-station", "수심 없는 역", "첫 장면 읽기"],
     ["classic-camellias", "동백꽃", "처음부터 읽기"],
   ]) {
-    await page.goto("/stories/" + id, { waitUntil: "networkidle" });
-    await page
-      .locator(".detail-cover img")
-      .evaluate((element) => (element as HTMLImageElement).decode());
-    await page.getByRole("link", { name: button, exact: true }).click();
+    const read = page.getByRole("link", { name: button, exact: true });
+    await prepareStoryLink(page, "/stories/" + id, "/read/" + id, read);
+    const detailCover = page.locator(".detail-cover img");
+    await detailCover.evaluate((image) => (image as HTMLImageElement).decode());
+    await expect(detailCover).toBeInViewport();
+    await read.click();
     await expect(page).toHaveURL(new RegExp("/read/" + id + "(?:#.*)?$"));
     await expect(page.locator("html")).toHaveAttribute(
       "data-checked-opening",
@@ -152,6 +180,39 @@ test("original and classic reading starts continue the cover into the reader", a
       ).toBeVisible();
     }
   }
+});
+
+test.describe("cover links without JavaScript", () => {
+  test.use({ javaScriptEnabled: false });
+
+  test("catalog and introduction offer ordinary keyboard routes to readable content", async ({
+    page,
+  }) => {
+    await page.goto("/discover?status=ready");
+    const cover = page.getByRole("link", {
+      name: "동백꽃, 김유정 작품 소개",
+      exact: true,
+    });
+    await cover.focus();
+    await expect(cover).toBeFocused();
+    await cover.press("Enter");
+    await expect(page).toHaveURL(/\/stories\/classic-camellias$/);
+    await expect(page.getByRole("img", { name: "동백꽃 표지" })).toBeVisible();
+    const read = page.getByRole("link", {
+      name: "처음부터 읽기",
+      exact: true,
+    });
+    await read.focus();
+    await expect(read).toBeFocused();
+    await read.press("Enter");
+    await expect(page).toHaveURL(/\/read\/classic-camellias$/);
+    await expect(
+      page.getByRole("heading", { level: 1, name: "동백꽃" }),
+    ).toBeVisible();
+    await expect(page.locator("[data-classic-text] > p").first()).toBeVisible();
+    await page.goBack();
+    await expect(read).toBeVisible();
+  });
 });
 
 async function observeSceneMovement(

@@ -19,7 +19,9 @@ type StoryLinkProps = Pick<
 > & { href: string };
 
 export function StoryDetailLink(props: StoryLinkProps) {
-  return <Link {...props} transitionTypes={coverTransitionTypes} />;
+  return (
+    <Link {...props} prefetch={true} transitionTypes={coverTransitionTypes} />
+  );
 }
 
 export function StoryOpenLink({
@@ -29,6 +31,7 @@ export function StoryOpenLink({
   return (
     <Link
       {...props}
+      prefetch={animate ? true : "auto"}
       transitionTypes={animate ? openingTransitionTypes : noTransitionTypes}
     />
   );

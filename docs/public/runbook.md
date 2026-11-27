@@ -27,7 +27,19 @@ CI 서비스는 워크스페이스·UUID label, DB comment, 비공개 소유 rec
 
 macOS에서 WebKit의 trusted pointer 좌표가 잘못 전달되는 환경에는 명시적으로 Linux WebKit QA를 사용할 수 있습니다. `node tools/prepare-linux-webkit.mjs`로 고정된 공식 이미지를 준비한 뒤 위 명령에 `FIRSTSCENE_LINUX_WEBKIT=1`을 추가합니다. 소스는 읽기 전용으로 마운트되며 테스트 컨테이너만 소유 확인 후 정리합니다. Chromium은 호스트에서 실행합니다. 이 조합을 실물Safari/iPhone검증으로 표시하지 않습니다.
 
-전체 브라우저 검사는 독립된 spec파일4개마다 새 DB를 사용합니다. 승인된 네트워크당30세션/15분 제한을 유지하면서47개 사례를 각각 한 번 실행하기 위한 격리입니다. 실패·skip·flaky는 통합 보고서에서도 그대로 실패로 남습니다.
+전체 브라우저 검사는 독립된 스펙 파일 4개마다 새 DB를 사용합니다. 승인된 네트워크당 15분 30세션 제한을 유지하며 실패, 생략, 불안정 사례를 통합 보고서에 남깁니다.
+
+새 체크아웃에서 Linux WebKit의 특정 파일을 먼저 검사할 때는 테스트 출력의 마운트 지점을 준비합니다. 임시 CI DB를 준비한 뒤 다음 명령을 실행합니다.
+
+```sh
+pnpm build
+pnpm storybook:build
+node tools/prepare-linux-webkit.mjs
+mkdir -p test-results
+CI=true FIRSTSCENE_CI_DISPOSABLE=1 FIRSTSCENE_LINUX_WEBKIT=1 \
+  node tools/database/ci-run.mjs pnpm test:e2e:webkit -- \
+  tests/e2e/public.spec.ts tests/e2e/story-motion.spec.ts
+```
 
 ## 검증과 배포
 
@@ -35,7 +47,7 @@ GitHub Actions의 PR 및 `main` 검사는 `pnpm check:ci`로 빌드, 실제 DB�
 
 Docker 이미지는 `pnpm container:build`로 만들고, 준비된 임시 CI DB에서 `pnpm container:smoke`로 검사합니다. 이미지는 비root 사용자로 실행하며 비밀값과 마이그레이션 소유자 환경은 포함하지 않습니다. Docker smoke의 로컬 재시작 증거는 공개 환경의rollback 증거를 대신하지 않습니다.
 
-공개 배포는 아직 수행하지 않았습니다. 연결된 공급자의 접근 확인이403으로 막혀 있습니다. 승인된 프로젝트·현재 요금·DB17호환성·TLS·pooler·비밀값 저장 위치·복귀 artifact가 확인되기 전에는 게시하지 않습니다. `pnpm deploy:preflight`와 `pnpm deploy:smoke -- --base-url URL`은 미확인 대상을 통과시키지 않습니다. 새 요금제·도메인·이미지 API 결제는 자동으로 만들지 않습니다.
+2026-11-27에 `main` `e75db43`을 기존 Vercel 운영 대상에 배포했습니다. 운영 확인 범위와 CI 상태는 릴리스 보고서에 기록했습니다. 다음 배포 전에는 승인된 프로젝트, 요금, DB 호환성, TLS, 연결 풀, 비밀값 관리, 복귀 아티팩트를 확인합니다. [릴리스 보고서](../../RELEASE_REPORT.md)
 
 PR에서는 추적 파일의 비밀값, 클라이언트 번들, 인증 우회 여부와 API 부정 사례를 검사합니다. 비공개 입력으로 확인해야 하는 별도 검사는 일치하는 증거가 없으면 `DEFERRED_TO_RELEASE`로 기록합니다. 엄격 검사에는 로컬 비공개 입력 또는 정확한 소스에 대한 유효한 검증 증거가 필요합니다.
 

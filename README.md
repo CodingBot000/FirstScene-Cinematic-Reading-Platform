@@ -39,7 +39,7 @@ node tools/start-web.mjs --port 3100
 
 ## 검증과 실제 한계
 
-PR #9 기능은 `main`에 squash 병합됐습니다(커밋 `82a55454ca961874c9dbc33edd46d1d7063f87b3`). 병합 커밋의 [GitHub Actions](https://github.com/CodingBot000/FirstScene-Cinematic-Reading-Platform/actions/runs/44925526025)는 성공했습니다. 검증 범위에는 타입·정적 검사, 단위/DB/API, Chromium·WebKit, 접근성·시각/성능, Docker smoke가 포함됩니다. 자세한 실행 증거는 [릴리스 보고서](RELEASE_REPORT.md)를 참고하세요.
+PR #9의 검증 기록은 2026-11-22 기준입니다. 표지·읽기 전환을 추가한 PR #23은 CI 19개와 Docker smoke 13개를 통과했습니다. 같은 파일 트리를 병합한 `main` `e75db43`의 실행에서는 WebKit 3건이 실패해 Docker 검사가 생략됐습니다. 운영 배포 날짜와 확인 범위도 릴리스 보고서에 기록했습니다. [릴리스 보고서](RELEASE_REPORT.md)
 
 ```sh
 pnpm check:ci
@@ -47,4 +47,4 @@ pnpm check:full -- --collect
 pnpm check:full
 ```
 
-**CI 통과는 운영 배포·현장 품질 검증의 완료를 의미하지 않습니다.** 실기기 GPU/모바일 사용성, 사람 대상 사용성 평가, 관리형 보안 감사, 운영 DB 백업·복구, 공개 smoke·rollback 검증은 별도입니다. `LOCAL_PRODUCT_READY` 및 `PUBLIC_RELEASE_READY`는 선언하지 않았습니다. 확인되지 않은 실제 서비스 URL을 제공하지 않습니다.
+**CI 통과는 운영 배포·현장 품질 검증의 완료를 의미하지 않습니다.** 실기기 GPU/모바일 사용성, 사람 대상 사용성 평가, 관리형 보안 감사, 운영 DB 백업·복구, 공개 smoke·rollback 검증은 별도입니다. `LOCAL_PRODUCT_READY` 및 `PUBLIC_RELEASE_READY`는 선언하지 않았습니다. 운영 관측과 현재 코드의 검증 증거는 릴리스 보고서의 커밋과 실행 링크에서 확인할 수 있습니다.
