@@ -182,6 +182,45 @@ it("P05 offline changes persist one latest preference; no network until explicit
   expect(h.store.getSnapshot()).toMatchObject({ status: "saved", queue: [] });
   expect(h.me.preferences.fontSize).toBe(24);
 });
+it("SY-02 seeded offline and online preference sequences converge to the latest intent", async () => {
+  vi.useFakeTimers();
+  const sizes = [18, 20, 22, 24] as const;
+  for (const seed of [5, 29, 97, 4129]) {
+    const h = harness();
+    let state = seed;
+    let online = true;
+    let expected: (typeof sizes)[number] = 20;
+    for (let step = 1; step <= 64; step++) {
+      vi.setSystemTime(Date.UTC(2026, 10, 28, 0, 0, seed % 60, step));
+      state = (Math.imul(state, 1664525) + 1013904223) >>> 0;
+      const command = (state >>> 16) % 7;
+      if (command < sizes.length) {
+        expected = sizes[command]!;
+        h.store.savePreferences({ ...defaultPreferences, fontSize: expected });
+      } else if (command < 6) {
+        online = command === 4;
+        h.online(online);
+      } else {
+        const requests = h.calls.length;
+        await h.store.flush();
+        if (online) {
+          expect(h.me.preferences.fontSize, `seed ${seed}, step ${step}`).toBe(
+            expected,
+          );
+          expect(h.store.getSnapshot().queue).toHaveLength(0);
+        } else {
+          expect(h.calls).toHaveLength(requests);
+          expect(h.store.getSnapshot().queue.length).toBeLessThanOrEqual(1);
+        }
+      }
+    }
+    h.online(true);
+    await h.store.flush();
+    expect(h.me.preferences.fontSize, `seed ${seed}`).toBe(expected);
+    expect(h.store.getSnapshot().queue).toEqual([]);
+    h.store.stop();
+  }
+});
 it("P05 late ack cannot remove/overwrite a newer preference intent; next write uses confirmed revision", async () => {
   const me = makeMe();
   let release!: (r: Response) => void;
