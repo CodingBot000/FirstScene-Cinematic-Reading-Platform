@@ -211,15 +211,19 @@ export function createReaderStore(
         story && !snapshot.initialAnchor && cache.anchors[story.id]
           ? restoreAnchor(story, cache.anchors[story.id]!).anchor
           : snapshot.initialAnchor;
-      if (
+      const preferencesChanged =
         JSON.stringify(snapshot.preferences) !==
-          JSON.stringify(cache.preferences) ||
+        JSON.stringify(cache.preferences);
+      if (
+        preferencesChanged ||
         JSON.stringify(snapshot.anchors) !== JSON.stringify(cache.anchors) ||
         incomingAnchor !== snapshot.initialAnchor
       ) {
         snapshot = {
           ...snapshot,
-          preferences: cache.preferences,
+          preferences: preferencesChanged
+            ? cache.preferences
+            : snapshot.preferences,
           initialAnchor: incomingAnchor,
           anchors: cache.anchors,
           notice: next.notice,
