@@ -11,6 +11,8 @@
   "scripts": {
     "dev": "pnpm --filter @firstscene/web dev",
     "build:packages": "node tools/build-packages.mjs",
+    "generate:contracts": "node tools/generate-schema.mjs && node tools/generate-api-schema.mjs && node tools/generate-transport.mjs",
+    "check:generated-contracts": "node tools/generate-schema.mjs --check && node tools/generate-api-schema.mjs --check && node tools/generate-transport.mjs --check",
     "build": "pnpm build:packages && pnpm content:check && pnpm --filter @firstscene/web build && node tools/prepare-standalone.mjs",
     "lint": "eslint . && prettier --check \"{apps,packages}/**/*.{ts,tsx}\" \"tools/**/*.mjs\"",
     "typecheck": "pnpm build:packages && pnpm -r typecheck",

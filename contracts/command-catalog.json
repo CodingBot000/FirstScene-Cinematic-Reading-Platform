@@ -27,6 +27,12 @@
       "acceptance": "TS strict all packages and applications."
     },
     {
+      "id": "CMD-GENERATED-CONTRACTS",
+      "purpose": "verify generated transport and schemas against their source",
+      "command": "pnpm check:generated-contracts",
+      "acceptance": "Reject stale or missing generated TypeScript without rewriting it. Regenerate with pnpm generate:contracts after changing the source contracts."
+    },
+    {
       "id": "CMD-BOUNDARY",
       "purpose": "package isolation",
       "command": "pnpm check:boundaries",

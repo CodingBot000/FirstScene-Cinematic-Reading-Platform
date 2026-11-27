@@ -15,7 +15,7 @@
   "types": "./dist/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "build": "cd ../.. && node tools/generate-api-schema.mjs && pnpm exec prettier --write packages/server-data/src/api-schema.ts && pnpm exec tsc -p packages/server-data/tsconfig.json",
+    "build": "cd ../.. && node tools/generate-api-schema.mjs --check && pnpm exec tsc -p packages/server-data/tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
   "dependencies": {
