@@ -2,6 +2,7 @@ import { randomUUID } from "node:crypto";
 import { ApiError, assertApi } from "./contracts.js";
 import type { ApiSchemaName, SessionDto } from "./contracts.js";
 import type { HttpPolicy } from "./environment.js";
+import { requestDiagnostics } from "./request-diagnostics.js";
 export type { HttpPolicy } from "./environment.js";
 export { deriveOriginPolicy as deriveHttpPolicy } from "./environment.js";
 export function requestToken(
@@ -136,6 +137,7 @@ export async function apiRequest(
   let response: Response;
   let code = "OK";
   let timer: ReturnType<typeof setTimeout> | undefined;
+  const diagnostics = { transaction: null };
   try {
     const timeout = new Promise<never>((_resolve, reject) => {
       timer = setTimeout(
@@ -151,7 +153,9 @@ export async function apiRequest(
       );
     });
     response = await Promise.race([
-      action(requestId, Date.now() + 10000),
+      requestDiagnostics.run(diagnostics, () =>
+        action(requestId, Date.now() + 10000),
+      ),
       timeout,
     ]);
   } catch (error) {
@@ -181,6 +185,7 @@ export async function apiRequest(
   }
   clearTimeout(timer);
   response.headers.set("x-request-id", requestId);
+  const release = process.env.VERCEL_GIT_COMMIT_SHA;
   console.info(
     JSON.stringify({
       requestId,
@@ -188,6 +193,9 @@ export async function apiRequest(
       status: response.status,
       durationMs: Math.round(performance.now() - started),
       code,
+      retryable: response.status === 429 || response.status === 503,
+      releaseSha: release && /^[a-f0-9]{40}$/.test(release) ? release : null,
+      transaction: diagnostics.transaction,
     }),
   );
   return response;
