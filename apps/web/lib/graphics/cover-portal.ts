@@ -93,20 +93,50 @@ export function mountCoverPortal(
   let program: WebGLProgram | null = null;
   let vao: WebGLVertexArrayObject | null = null;
   const shaders: WebGLShader[] = [];
-  let frame = 0;
-  let lastFrame = 0;
+  let frame: number | null = null;
+  let tick: FrameRequestCallback | null = null;
+  let lastFrame = -Infinity;
   let disposed = false;
-  let visible = true;
+  let intersecting = false;
+  let pageShown = true;
   const pointer = { x: 0.5, y: 0.5 };
+  let pointerPosition: { x: number; y: number } | null = null;
+  let pointerDirty = false;
+
+  function canRender() {
+    return !disposed && pageShown && intersecting && !document.hidden;
+  }
+  function cancelFrame() {
+    if (frame !== null) window.cancelAnimationFrame(frame);
+    frame = null;
+    lastFrame = -Infinity;
+  }
+  function updateLoop() {
+    if (!canRender()) cancelFrame();
+    else if (frame === null && tick) frame = window.requestAnimationFrame(tick);
+  }
+  function hidePage() {
+    pageShown = false;
+    updateLoop();
+  }
+  function showPage() {
+    pageShown = true;
+    markPointerDirty();
+    updateLoop();
+  }
 
   const destroy = () => {
     if (disposed) return;
     disposed = true;
-    window.cancelAnimationFrame(frame);
+    cancelFrame();
     observer.disconnect();
     sizeObserver.disconnect();
     root.removeEventListener("pointermove", move);
     canvas.removeEventListener("webglcontextlost", contextLost);
+    document.removeEventListener("visibilitychange", updateLoop);
+    window.removeEventListener("pagehide", hidePage);
+    window.removeEventListener("pageshow", showPage);
+    window.removeEventListener("scroll", markPointerDirty);
     if (vao) gl.deleteVertexArray(vao);
     if (program) gl.deleteProgram(program);
     for (const shader of shaders) gl.deleteShader(shader);
@@ -114,32 +144,43 @@ export function mountCoverPortal(
   };
 
   const move = (event: PointerEvent) => {
+    pointerPosition = { x: event.clientX, y: event.clientY };
+    markPointerDirty();
+  };
+  function markPointerDirty() {
+    pointerDirty = true;
+  }
+  function updatePointer() {
+    if (!pointerDirty || !pointerPosition) return;
+    pointerDirty = false;
     const rect = root.getBoundingClientRect();
     pointer.x = Math.min(
       1,
-      Math.max(0, (event.clientX - rect.left) / Math.max(rect.width, 1)),
+      Math.max(0, (pointerPosition.x - rect.left) / Math.max(rect.width, 1)),
     );
     pointer.y =
       1 -
       Math.min(
         1,
-        Math.max(0, (event.clientY - rect.top) / Math.max(rect.height, 1)),
+        Math.max(0, (pointerPosition.y - rect.top) / Math.max(rect.height, 1)),
       );
-  };
-  const contextLost = (event: Event) => {
-    event.preventDefault();
+  }
+  const contextLost = () => {
     destroy();
+    canvas.dataset.renderer = "fallback";
   };
   // Declare observers before compilation so partial initialization is
   // rolled back through the same cleanup path.
   const observer = new IntersectionObserver(
     (entries) => {
-      visible = entries.some((entry) => entry.isIntersecting);
+      intersecting = entries.some((entry) => entry.isIntersecting);
+      updateLoop();
     },
     { threshold: 0 },
   );
   const sizeObserver = new ResizeObserver(() => resize());
   function resize() {
+    markPointerDirty();
     const rect = canvas.getBoundingClientRect();
     const ratio = Math.min(window.devicePixelRatio || 1, 1.5);
     const width = Math.max(1, Math.min(1440, Math.round(rect.width * ratio)));
@@ -175,15 +216,19 @@ export function mountCoverPortal(
     gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
     root.addEventListener("pointermove", move, { passive: true });
     canvas.addEventListener("webglcontextlost", contextLost);
-    observer.observe(canvas);
-    sizeObserver.observe(canvas);
-    resize();
-    canvas.dataset.renderer = "webgl2";
-    const tick = (now: number) => {
-      if (disposed) return;
-      frame = window.requestAnimationFrame(tick);
-      if (now - lastFrame < 33 || document.hidden || !visible) return; // <=30fps
+    document.addEventListener("visibilitychange", updateLoop);
+    window.addEventListener("pagehide", hidePage);
+    window.addEventListener("pageshow", showPage);
+    window.addEventListener("scroll", markPointerDirty, { passive: true });
+    tick = (now) => {
+      frame = null;
+      if (!canRender()) return;
+      if (now - lastFrame < 33) {
+        updateLoop();
+        return;
+      }
       lastFrame = now;
+      updatePointer();
       const progress = Number.parseFloat(
         root.style.getPropertyValue("--cinematic-progress"),
       );
@@ -197,8 +242,12 @@ export function mountCoverPortal(
       gl.uniform1f(uniforms.scene, Number(root.dataset.scene) || 0);
       gl.uniform2f(uniforms.pointer, pointer.x, pointer.y);
       gl.drawArrays(gl.TRIANGLES, 0, 3);
+      updateLoop();
     };
-    frame = window.requestAnimationFrame(tick);
+    canvas.dataset.renderer = "webgl2";
+    observer.observe(canvas);
+    sizeObserver.observe(canvas);
+    resize();
     return destroy;
   } catch (error) {
     destroy();
