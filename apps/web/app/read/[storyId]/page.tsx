@@ -52,6 +52,7 @@ export default async function Read({
     <ReaderController
       story={story}
       assets={assets}
+      openingCover={asset(story.coverAssetId)}
       nextStory={storyCard(stories.find((s) => s.id !== story.id)!)}
     />
   );

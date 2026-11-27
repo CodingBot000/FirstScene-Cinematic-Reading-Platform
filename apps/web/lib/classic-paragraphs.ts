@@ -1,8 +1,5 @@
 export type ClassicParagraphKind =
-  | "narration"
-  | "dialogue"
-  | "section"
-  | "source";
+  "narration" | "dialogue" | "section" | "source";
 
 export type ClassicParagraph = {
   kind: ClassicParagraphKind;

@@ -35,10 +35,17 @@ test("P05 completion is an explicit last CTA and a delayed acknowledgement prese
     });
     await route.fulfill({ response });
   });
+  await page.evaluate(() => {
+    document.addEventListener("animationstart", (event) => {
+      if (event.animationName === "reader-stamp")
+        document.documentElement.dataset.completionStamped = "true";
+    });
+  });
   await page
     .getByRole("button", { name: "이 이야기를 다 읽었어요", exact: true })
     .click();
   await expect.poll(() => Boolean(release)).toBe(true);
+  await expect(page.locator(".reader-completion-stamp")).toHaveCount(0);
   const beat = await backToFirst(page);
   const pinned = await page.evaluate(
     (key) =>
@@ -54,6 +61,14 @@ test("P05 completion is an explicit last CTA and a delayed acknowledgement prese
   });
   release();
   await expect(page.getByText("서버에 저장됨", { exact: true })).toBeVisible();
+  await expect(page.locator("html")).toHaveAttribute(
+    "data-completion-stamped",
+    "true",
+  );
+  await expect(page.locator(".reader-completion-stamp")).toHaveAttribute(
+    "data-stamp-style",
+    "postmark",
+  );
   await expect.poll(async () => (await record(page)).beatId).toBe(beat);
   expect(await record(page)).toMatchObject({
     completed: true,
@@ -77,6 +92,9 @@ test("P05 completion is an explicit last CTA and a delayed acknowledgement prese
   await expect(
     page.getByText("완독 기록이 서버에 저장됐어요.", { exact: true }),
   ).toBeVisible();
+  await expect(page.locator(".reader-completion-stamp")).not.toHaveAttribute(
+    "data-animate",
+  );
   await expect(
     page
       .locator(".reader-next-story")

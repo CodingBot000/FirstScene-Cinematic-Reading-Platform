@@ -18,3 +18,46 @@
 @media(max-width:1024px){.fs-reader-beat:has(.fs-beat-bookmark){padding-right:0}.fs-reader-beat .fs-icon-wrap{position:static;display:flex;justify-content:flex-end;margin:-24px 0 24px}}
 .fs-reader-beat .fs-tooltip{left:0;transform:none}
 @media(max-width:1024px){.fs-reader-beat .fs-icon-wrap{position:relative;margin-bottom:32px}.fs-reader-beat .fs-tooltip{left:auto;right:0;top:calc(100% + 2px)}}
+
+/* Inline scene images stay within the reading column during a slide. */
+.fs-reader-mobile-image {
+  overflow: clip;
+}
+
+@media (max-width: 1024px) {
+  .fs-reader-mobile-image[data-scene-slide] {
+    position: relative;
+  }
+
+  /* Keep the illustration and heading together when the character has a portrait. */
+  .fs-reader-mobile-image[data-scene-slide] .fs-reader-portrait {
+    position: absolute;
+    inset-inline-end: 8px;
+    inset-block-end: 8px;
+    z-index: 1;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    padding: 4px 8px 4px 4px;
+    border-radius: 8px;
+    background: var(--fs-surface);
+  }
+
+  .fs-reader-mobile-image[data-scene-slide] .fs-reader-portrait .fs-asset {
+    width: 44px;
+    border-radius: 6px;
+  }
+
+  .fs-reader-mobile-image[data-scene-slide] .fs-reader-portrait figcaption {
+    padding: 0;
+  }
+}
+
+.fs-reader-stage-image[data-opening-cover]
+  > [data-scene-layer="current"]
+  > .fs-asset,
+.fs-reader-mobile-image[data-opening-cover] > .fs-asset {
+  background-image: var(--fs-opening-cover);
+  background-position: center;
+  background-size: cover;
+}

@@ -1,5 +1,6 @@
 "use client";
 import { Button } from "@firstscene/ui/primitives";
+import { StoryOpenLink } from "../../../../components/StoryCoverTransition";
 import { useReadingRecords } from "../../../../features/reading-sync/use-reading-records";
 import { saveStatus } from "../../../../features/reading-sync/reading-view";
 export function StoryActions({
@@ -18,16 +19,19 @@ export function StoryActions({
   const hasProgress = Boolean(
     local.anchors[storyId] || remote.confirmedAnchor(storyId),
   );
+  const animateOpening =
+    local.preferences.mode === "cinematic" && !local.preferences.reduceMotion;
   return (
     <>
       <div className="story-actions">
-        <a
+        <StoryOpenLink
+          animate={!hasProgress && animateOpening}
           className="fs-button fs-primary fs-lg"
           href={"/read/" + storyId + (hasProgress ? "" : "#" + firstBeatId)}
         >
           {hasProgress ? "이어 읽기" : "첫 장면 읽기"}{" "}
           <span aria-hidden="true">→</span>
-        </a>
+        </StoryOpenLink>
         <Button
           variant="secondary"
           disabled={!local.ready || remote.paused}
@@ -39,12 +43,13 @@ export function StoryActions({
           {saved ? "★ 작품 저장됨" : "☆ 작품 저장"}
         </Button>
         {hasProgress ? (
-          <a
+          <StoryOpenLink
+            animate={animateOpening}
             className="fs-text-link"
             href={"/read/" + storyId + "#" + firstBeatId}
           >
             처음부터 읽기
-          </a>
+          </StoryOpenLink>
         ) : null}
       </div>
       <p className="reading-note" role="status">

@@ -6,6 +6,7 @@ import { classicById, classicSummaries } from "../../../lib/classic-catalog";
 import { classicCover } from "../../../lib/classic-cover";
 import { StoryDetail } from "./_components/StoryDetail";
 import { stories, storyById, asset } from "../../../lib/catalog";
+import { ClassicOpenAction } from "./_components/ClassicOpenAction";
 import { StoryActions } from "./_components/StoryActions";
 export function generateStaticParams() {
   return [...stories, ...classicSummaries].map(({ id }) => ({ storyId: id }));
@@ -33,6 +34,7 @@ export default async function StoryPage({
     const cover = classicCover(classic.id);
     return (
       <StoryDetail
+        storyId={classic.id}
         title={classic.title}
         category={"고전 · " + classic.author}
         summary={classic.summary}
@@ -51,16 +53,7 @@ export default async function StoryPage({
             </div>
           ) : null
         }
-        actions={
-          <div className="story-actions">
-            <Link
-              className="fs-button fs-primary fs-lg"
-              href={"/read/" + classic.id}
-            >
-              처음부터 읽기 <span aria-hidden="true">→</span>
-            </Link>
-          </div>
-        }
+        actions={<ClassicOpenAction storyId={classic.id} />}
       />
     );
   }
@@ -68,6 +61,7 @@ export default async function StoryPage({
   if (!story) notFound();
   return (
     <StoryDetail
+      storyId={story.id}
       title={story.title}
       category={`${story.genre} · ${story.scenes.length}개의 장면`}
       summary={story.summary}

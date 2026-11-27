@@ -97,7 +97,8 @@ try {
     interaction.status !== "COLLECTED" ||
     interaction.samples.length !== 4 ||
     interaction.animation.longTasks.length >= 2 ||
-    interaction.animation.intermediateOpacityFrames <= 0 ||
+    !Number.isSafeInteger(interaction.animation.intermediateSlideFrames) ||
+    interaction.animation.intermediateSlideFrames <= 0 ||
     interaction.samples.some(
       (sample) =>
         sample.visibility !== "visible" ||

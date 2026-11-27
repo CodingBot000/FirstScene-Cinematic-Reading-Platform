@@ -9,6 +9,7 @@ import "../components/discovery.css";
 import "../components/classics.css";
 import "../components/cinematic-prologue.css";
 import "./mobile-journey.css";
+import "./story-cover-motion.css";
 export const metadata: Metadata = {
   title: {
     default: "FirstScene — 문장을 읽고, 장면에 머물다.",

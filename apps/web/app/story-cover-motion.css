@@ -1,0 +1,121 @@
+/* The destinations are ordinary links, including when view transitions are unavailable. */
+:root:is(
+    :active-view-transition-type(story-cover),
+    :active-view-transition-type(story-open)
+  )::view-transition {
+  pointer-events: none;
+}
+
+:root:is(
+    :active-view-transition-type(story-cover),
+    :active-view-transition-type(story-open)
+  )::view-transition-old(root) {
+  animation: none;
+  opacity: 0;
+}
+
+:root:is(
+    :active-view-transition-type(story-cover),
+    :active-view-transition-type(story-open)
+  )::view-transition-new(root) {
+  animation: none;
+}
+
+::view-transition-group(.story-cover),
+::view-transition-group(.story-open) {
+  animation-duration: 400ms;
+  animation-timing-function: cubic-bezier(0.2, 0.78, 0.25, 1);
+}
+
+::view-transition-old(.story-cover),
+::view-transition-new(.story-cover),
+::view-transition-old(.story-open),
+::view-transition-new(.story-open) {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+::view-transition-new(.story-open) {
+  animation-name: story-open-art;
+  mix-blend-mode: normal;
+}
+
+@keyframes story-open-art {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root:is(
+      :active-view-transition-type(story-cover),
+      :active-view-transition-type(story-open)
+    )::view-transition-group(*),
+  :root:is(
+      :active-view-transition-type(story-cover),
+      :active-view-transition-type(story-open)
+    )::view-transition-old(*),
+  :root:is(
+      :active-view-transition-type(story-cover),
+      :active-view-transition-type(story-open)
+    )::view-transition-new(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}
+
+.reader-completion-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.reader-completion-stamp {
+  display: inline-grid;
+  min-width: 40px;
+  min-height: 40px;
+  place-items: center;
+  color: var(--fs-action);
+  border: 3px double currentColor;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+  transform: rotate(-10deg);
+}
+
+.reader-completion-stamp[data-stamp-style="postmark"] {
+  border-radius: 50%;
+}
+
+.reader-completion-stamp[data-stamp-style="ticket"] {
+  min-width: 52px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reader-completion-stamp[data-animate] {
+    animation: reader-stamp 360ms cubic-bezier(0.2, 0.75, 0.35, 1) both;
+  }
+}
+
+@keyframes reader-stamp {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(1.35) rotate(-17deg);
+  }
+
+  65% {
+    opacity: 1;
+    transform: scale(0.94) rotate(-10deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotate(-10deg);
+  }
+}

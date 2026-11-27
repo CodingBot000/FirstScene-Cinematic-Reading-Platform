@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { StoryCard } from "@firstscene/ui/cards";
+import { StoryBrowseCard } from "../components/StoryCoverTransition";
 import { CinematicPrologue } from "../components/CinematicPrologue";
 import { EditorialInterlude } from "../components/EditorialInterlude";
 import { SiteShell } from "../components/SiteShell";
@@ -27,7 +27,7 @@ export default function Home() {
         </div>
         <div className="story-grid">
           {stories.map((story) => (
-            <StoryCard key={story.id} {...storyCard(story)} />
+            <StoryBrowseCard key={story.id} {...storyCard(story)} />
           ))}
         </div>
       </section>

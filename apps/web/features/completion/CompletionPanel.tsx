@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import { FeedbackForm } from "./FeedbackForm";
 import type {
   FeedbackWrite,
@@ -7,7 +8,7 @@ import type {
   ReadingView,
 } from "../reading-sync/reading-view";
 import { Button } from "@firstscene/ui/primitives";
-import { StoryCard } from "@firstscene/ui/cards";
+import { StoryBrowseCard } from "../../components/StoryCoverTransition";
 import type { StoryCardProps } from "@firstscene/ui/cards";
 import type { Story } from "@firstscene/story-schema";
 export function CompletionPanel({
@@ -28,6 +29,7 @@ export function CompletionPanel({
     epoch: string,
   ) => Promise<FeedbackSendResult>;
 }) {
+  const [stampRequested, setStampRequested] = useState(false);
   const progress = remote.confirmedAnchor(story.id);
   const pending = remote.pendingCompletion(story.id);
   const confirmed = Boolean(
@@ -45,6 +47,10 @@ export function CompletionPanel({
         ? "완독 표시는 이 화면에 유지돼요. 서버 저장 결과를 확인해 주세요."
         : "이 기기에 완독 표시를 임시 저장했어요. 서버 확인 전까지 임시 기록으로 남아요."
       : "마지막 문장까지 함께해 주셔서 고마워요. 완독 표시는 버튼으로 직접 남겨요.";
+  const animateStamp =
+    stampRequested &&
+    local.preferences.mode === "cinematic" &&
+    !local.preferences.reduceMotion;
   const label = confirmed
     ? "✓ 완독 기록 저장됨"
     : temporary
@@ -61,17 +67,39 @@ export function CompletionPanel({
       <p className="reading-note" role="status">
         {message}
       </p>
-      <Button
-        disabled={unavailable}
-        aria-disabled={confirmed || temporary || unavailable}
-        aria-busy={pending && remote.status === "saving"}
-        variant={confirmed ? "secondary" : "primary"}
-        onClick={() => {
-          if (!confirmed && !temporary && !unavailable) onComplete();
-        }}
-      >
-        {label}
-      </Button>
+      <div className="reader-completion-actions">
+        <Button
+          disabled={unavailable}
+          aria-disabled={confirmed || temporary || unavailable}
+          aria-busy={pending && remote.status === "saving"}
+          variant={confirmed ? "secondary" : "primary"}
+          onClick={() => {
+            if (!confirmed && !temporary && !unavailable && onComplete()) {
+              if (
+                local.preferences.mode === "cinematic" &&
+                !local.preferences.reduceMotion &&
+                !matchMedia("(prefers-reduced-motion: reduce)").matches
+              )
+                setStampRequested(true);
+            }
+          }}
+        >
+          {label}
+        </Button>
+        {confirmed ? (
+          <span
+            aria-hidden="true"
+            className="reader-completion-stamp"
+            data-stamp-style={
+              story.id === "tide-station" ? "ticket" : "postmark"
+            }
+            data-animate={animateStamp || undefined}
+            onAnimationEnd={() => setStampRequested(false)}
+          >
+            ✓
+          </span>
+        ) : null}
+      </div>
       <FeedbackForm
         key={story.id + ":" + (remote.epoch ?? "none")}
         storyId={story.id}
@@ -80,7 +108,7 @@ export function CompletionPanel({
       />
       <div className="reader-next-story">
         <h2>다음 이야기</h2>
-        <StoryCard {...nextStory} />
+        <StoryBrowseCard {...nextStory} />
       </div>
     </section>
   );

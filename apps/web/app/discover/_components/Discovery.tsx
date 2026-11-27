@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { EmptyState } from "@firstscene/ui/primitives";
-import { StoryCard } from "@firstscene/ui/cards";
+import { StoryBrowseCard } from "../../../components/StoryCoverTransition";
 import { classicCount } from "../../../lib/classic-catalog";
 import { ClassicCard } from "../../../components/ClassicCard";
 import type { StoryCardProps } from "@firstscene/ui/cards";
@@ -224,7 +224,7 @@ export function Discovery({
               className="discovery-finished-card"
               data-flip-id={`ready-${card.id}`}
             >
-              <StoryCard {...card} />
+              <StoryBrowseCard {...card} />
             </div>
           ))}
           {visibleClassics.map((story, index) => (
