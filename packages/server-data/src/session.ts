@@ -41,14 +41,36 @@ export async function consumeRate(
   scope: string,
   limit: number,
   windowSeconds: number,
+  session?: SessionContext,
 ) {
   if (secret.length < 32) throw new Error("RATE_SECRET_REQUIRED");
   const key = createHmac("sha256", secret).update(scope).digest();
+  const windowStart = "to_timestamp(floor(extract(epoch from now())/$2)*$2)";
+  const bucket = `$1,${windowStart},1,${windowStart}+interval '15 minutes'`;
+  // Match session deletion's lock order and hold the lock through the bucket upsert.
+  const source = session
+    ? `SELECT ${bucket}
+       FROM firstscene.sessions
+       WHERE id=$4 AND epoch=$5 AND expires_at>now()
+       FOR UPDATE`
+    : `VALUES (${bucket})`;
   const result = await pool.query<{ count: number; retry_after: number }>(
-    `INSERT INTO firstscene.rate_buckets(bucket_key,window_start,count,expires_at) VALUES($1,to_timestamp(floor(extract(epoch from now())/$2)*$2),1,to_timestamp(floor(extract(epoch from now())/$2)*$2)+interval '15 minutes') ON CONFLICT(bucket_key,window_start) DO UPDATE SET count=least(firstscene.rate_buckets.count+1,$3+1) RETURNING count,ceil(extract(epoch from(window_start+($2||' seconds')::interval-now())))::int AS retry_after`,
-    [key, windowSeconds, limit],
+    `INSERT INTO firstscene.rate_buckets(bucket_key,window_start,count,expires_at)
+     ${source}
+     ON CONFLICT(bucket_key,window_start) DO UPDATE
+       SET count=least(firstscene.rate_buckets.count+1,$3+1)
+     RETURNING count,ceil(extract(epoch from(window_start+($2||' seconds')::interval-now())))::int AS retry_after`,
+    session
+      ? [key, windowSeconds, limit, session.id, session.epoch]
+      : [key, windowSeconds, limit],
   );
-  const row = result.rows[0]!;
+  const row = result.rows[0];
+  if (!row)
+    throw new ApiError(
+      401,
+      "SESSION_EXPIRED",
+      "저장 기간이 지나 새 독서 기록을 시작해요.",
+    );
   if (row.count > limit) {
     const error = new ApiError(
       429,
@@ -59,6 +81,14 @@ export async function consumeRate(
     throw error;
   }
   return Math.max(1, row.retry_after);
+}
+
+export function consumeSessionWriteRate(
+  pool: Pool,
+  secret: string,
+  session: SessionContext,
+) {
+  return consumeRate(pool, secret, "write:" + session.epoch, 120, 60, session);
 }
 export async function issueSession(
   pool: Pool,

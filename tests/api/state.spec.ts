@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { randomUUID } from "node:crypto";
+import { createHmac, randomUUID } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { createPool, assertApi } from "@firstscene/server-data";
 import type { Pool } from "@firstscene/server-data";
@@ -164,11 +164,15 @@ test("P04 QA-D05 concurrentinitial writes serialize bysession and onlyone winsCA
   expect(retry.status()).toBe(200);
   expect((await retry.json()).revision).toBe(2);
 });
-test("P04 operation IDs cannot be reused on differentroutes; failedCAS has no receipt", async ({
+test("P04 conflicting writes consume the rate allowance without creating a receipt", async ({
   request,
 }) => {
   const input = prefs();
-  await request.put("/api/v1/preferences", { headers: headers(), data: input });
+  const saved = await request.put("/api/v1/preferences", {
+    headers: headers(),
+    data: input,
+  });
+  expect(saved.status()).toBe(200);
   const reused = await request.put("/api/v1/progress/post-office", {
     headers: headers(),
     data: { ...progress(), operationId: input.operationId },
@@ -194,6 +198,17 @@ test("P04 operation IDs cannot be reused on differentroutes; failedCAS has no re
       ).rows[0].count,
     ),
   ).toBe(0);
+  const me = await request.get("/api/v1/me");
+  expect(me.status()).toBe(200);
+  const { session } = await me.json();
+  const bucket = createHmac("sha256", process.env.RATE_LIMIT_HMAC_SECRET!)
+    .update("write:" + session.epoch)
+    .digest();
+  const { rows } = await owner.query<{ count: number }>(
+    "SELECT coalesce(sum(count),0)::int AS count FROM firstscene.rate_buckets WHERE bucket_key=$1",
+    [bucket],
+  );
+  expect(rows[0]?.count).toBe(3);
 });
 test("P04 content/anchor/version/input guards rejectbeforestoreddata changes", async ({
   request,
