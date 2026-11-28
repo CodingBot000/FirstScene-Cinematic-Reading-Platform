@@ -1,5 +1,7 @@
 import fs from "node:fs";
 import {
+  hasExcludedSourceIdentifier,
+  loadPrivateSourceDigests,
   publicSourceFingerprint,
   validatePrivacyReceipt,
 } from "./security-privacy.mjs";
@@ -232,10 +234,15 @@ check("TRACKED_CREDENTIAL_AND_PATH_SCAN", () => {
   return { files: tracked.length, credentialValuesPrinted: false };
 });
 check("PUBLIC_PRIVATE_SOURCE_NAME_SCAN", () => {
-  const metadata = "references/source-provenance.json";
-  const supplied = fs.existsSync(metadata)
-    ? JSON.parse(fs.readFileSync(metadata)).name
+  const digestFile = process.env.FIRSTSCENE_PRIVATE_SOURCE_DIGESTS_FILE;
+  const digests = digestFile
+    ? loadPrivateSourceDigests(JSON.parse(fs.readFileSync(digestFile, "utf8")))
     : null;
+  const metadata = "references/source-provenance.json";
+  const supplied =
+    !digests && fs.existsSync(metadata)
+      ? JSON.parse(fs.readFileSync(metadata)).name
+      : null;
   const stems = supplied
     ? [
         path
@@ -244,7 +251,7 @@ check("PUBLIC_PRIVATE_SOURCE_NAME_SCAN", () => {
           .replace(/\.md$/, ""),
       ].filter((value) => value.length >= 2)
     : [];
-  if (!stems.length) {
+  if (!digests && !stems.length) {
     const receiptFile = "evidence/security/public-source-review.json";
     if (!process.env.CI && !portable) throw new Error();
     try {
@@ -261,12 +268,17 @@ check("PUBLIC_PRIVATE_SOURCE_NAME_SCAN", () => {
       };
     }
   }
-  for (const file of new Set([...publicFiles, ...tracked]))
+  for (const file of new Set([...publicFiles, ...tracked])) {
+    if (!/\.(?:[cm]?[jt]sx?|json|ya?ml|md|txt|py|toml)$/.test(file)) continue;
+    const text = fs.readFileSync(file, "utf8");
     if (
-      /\.(?:[cm]?[jt]sx?|json|ya?ml|md|txt|py|toml)$/.test(file) &&
-      stems.some((term) => fs.readFileSync(file, "utf8").includes(term))
+      digests
+        ? hasExcludedSourceIdentifier(file, digests) ||
+          hasExcludedSourceIdentifier(text, digests)
+        : stems.some((term) => file.includes(term) || text.includes(term))
     )
-      throw new Error();
+      throw new Error("EXCLUDED_SOURCE_IDENTIFIER_FOUND");
+  }
   const receiptFile = "evidence/security/public-source-review.json";
   const sourceFingerprint = publicSourceFingerprint(trackedPublicFiles);
   fs.writeFileSync(

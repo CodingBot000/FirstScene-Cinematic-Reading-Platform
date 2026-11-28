@@ -1,6 +1,11 @@
 import { it, expect } from "vitest";
+import { createHash } from "node:crypto";
 // @ts-expect-error Internal Node orchestration module, not a public runtime package.
-import { validatePrivacyReceipt } from "../../tools/security-privacy.mjs";
+import {
+  hasExcludedSourceIdentifier,
+  loadPrivateSourceDigests,
+  validatePrivacyReceipt,
+} from "../../tools/security-privacy.mjs";
 // @ts-expect-error Internal Node orchestration module, not a public runtime package.
 import { assertExecutedPerformance } from "../../tools/suite-evidence.mjs";
 const fingerprint = { files: 20, sha256: "a".repeat(64) };
@@ -29,6 +34,27 @@ it("an empty or unreviewed privacy scope cannot produce a CI pass", () => {
   expect(() =>
     validatePrivacyReceipt(receipt, { files: 0, sha256: fingerprint.sha256 }),
   ).toThrow();
+});
+it("scans normalized identifiers from hashes without loading the source text", () => {
+  const digest = (value: string) =>
+    createHash("sha256").update(value).digest("hex");
+  const values = loadPrivateSourceDigests([
+    digest("firstsceneportable"),
+    digest("fstest"),
+    digest("검수"),
+  ]);
+  expect(
+    hasExcludedSourceIdentifier("ＦＩＲＳＴＳＣＥＮＥＰＯＲＴＡＢＬＥ", values),
+  ).toBe(true);
+  expect(hasExcludedSourceIdentifier("source/FS-test.json", values)).toBe(true);
+  expect(hasExcludedSourceIdentifier("화면 검수", values)).toBe(true);
+  expect(hasExcludedSourceIdentifier("다른 파일", values)).toBe(false);
+  expect(() => loadPrivateSourceDigests([])).toThrow(
+    "PRIVATE_SOURCE_DIGESTS_INVALID",
+  );
+  expect(() => loadPrivateSourceDigests(["firstsceneportable"])).toThrow(
+    "PRIVATE_SOURCE_DIGESTS_INVALID",
+  );
 });
 const navigation = { runs: Array.from({ length: 9 }, () => ({})) };
 const browser = {
