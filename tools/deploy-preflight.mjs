@@ -1,41 +1,42 @@
 import fs from "node:fs";
-import { execFileSync } from "node:child_process";
-const configuredPaths = [
-  ".vercel/project.json",
-  "apps/web/.vercel/project.json",
-];
-const targets = configuredPaths.filter((file) => fs.existsSync(file));
-const remotes = execFileSync("git", ["remote"], { encoding: "utf8" })
-  .trim()
-  .split("\n")
-  .filter(Boolean);
-const receiptFile = "evidence/deploy/provider-access.json";
-const receipt = fs.existsSync(receiptFile)
-  ? JSON.parse(fs.readFileSync(receiptFile, "utf8"))
-  : null;
-// A linked project is metadata, not release authorization or proof of database/billing availability.
-const report = {
-  observedAt: new Date().toISOString(),
-  status: "BLOCKED_EXTERNAL",
-  configuredTargetFiles: targets,
-  gitRemoteCount: remotes.length,
-  providerAccess: receipt?.status ?? "UNVERIFIED",
-  providerReceipt: receiptFile,
-  approvedReleaseTarget: false,
-  costTier: "unknown",
-  externalDatabase: "unverified",
-  publicUrl: null,
-  reason:
-    receipt?.httpStatus === 403
-      ? "Connected provider scope returned403; target/billing/database cannot be verified."
-      : "No verified authorized deployment target/database/billing evidence.",
-  mutationPerformed: false,
-  secretsPrinted: false,
-};
-fs.mkdirSync("evidence/deploy", { recursive: true });
-fs.writeFileSync(
-  "evidence/deploy/preflight.json",
-  JSON.stringify(report, null, 2) + "\n",
-);
+import { buildReleaseReceipts } from "./release-evidence.mjs";
+
+const args = process.argv.slice(2).filter((arg) => arg !== "--");
+const directory = "evidence/deploy";
+const input = args[1] ?? directory + "/release-target.json";
+const output = directory + "/preflight.json";
+const observedAt = new Date().toISOString();
+let report;
+let deployment;
+try {
+  if (args.length && (args.length !== 2 || args[0] !== "--evidence"))
+    throw new Error("RELEASE_EVIDENCE_ARGUMENTS_INVALID");
+  if (!fs.existsSync(input))
+    throw new Error("RELEASE_TARGET_EVIDENCE_REQUIRED");
+  const evidence = JSON.parse(fs.readFileSync(input, "utf8"));
+  const receipts = buildReleaseReceipts(evidence, observedAt);
+  report = receipts.preflight;
+  deployment = receipts.deployment;
+} catch (error) {
+  report = {
+    observedAt,
+    status: "BLOCKED_EXTERNAL",
+    approvedReleaseTarget: false,
+    smokeWritesApproved: false,
+    reason: /^[A-Z_]+$/.test(error.message)
+      ? error.message
+      : "RELEASE_TARGET_EVIDENCE_INVALID",
+    mutationPerformed: false,
+    secretsPrinted: false,
+  };
+  process.exitCode = 2;
+}
+
+fs.mkdirSync(directory, { recursive: true });
+if (deployment)
+  fs.writeFileSync(
+    directory + "/deployment.json",
+    JSON.stringify(deployment, null, 2) + "\n",
+  );
+fs.writeFileSync(output, JSON.stringify(report, null, 2) + "\n");
 console.log(JSON.stringify(report));
-process.exitCode = 2;

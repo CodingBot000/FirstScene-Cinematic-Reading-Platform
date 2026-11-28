@@ -87,7 +87,9 @@ test("each narrow-screen scene pairs its own art, text, and working destination"
   }
 });
 
-test("preview card copy stays opaque during scroll reveal", async ({ page }) => {
+test("preview card copy stays opaque during scroll reveal", async ({
+  page,
+}) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ reducedMotion: "no-preference" });
   await page.goto("/");
@@ -97,15 +99,11 @@ test("preview card copy stays opaque during scroll reveal", async ({ page }) => 
 
   for (const tile of [first, last]) {
     await expect
-      .poll(() =>
-        tile.evaluate((element) => getComputedStyle(element).opacity),
-      )
+      .poll(() => tile.evaluate((element) => getComputedStyle(element).opacity))
       .toBe("1");
     await tile.scrollIntoViewIfNeeded();
     await expect
-      .poll(() =>
-        tile.evaluate((element) => getComputedStyle(element).opacity),
-      )
+      .poll(() => tile.evaluate((element) => getComputedStyle(element).opacity))
       .toBe("1");
   }
 });
@@ -144,6 +142,17 @@ test.describe("without JavaScript", () => {
     await expect(scenes.nth(0).locator("h1")).toContainText("장면에 머물다");
     await expect(scenes.nth(1).locator("h2")).toContainText("도착하는 이야기");
     await expect(scenes.nth(2).locator("h2")).toContainText("서른네 개의 세계");
+    await expect(
+      scenes.nth(2).getByText("공개 예정 컬렉션", { exact: true }),
+    ).toBeVisible();
+    const excerpt = scenes.nth(2).locator(".cinematic-excerpt");
+    await expect(excerpt).toBeVisible();
+    await expect(excerpt).toContainText(
+      "오리지널과 고전은 지금 읽을 수 있어요.",
+    );
+    await expect(
+      scenes.nth(2).getByRole("link", { name: "전체 컬렉션 탐색" }),
+    ).toHaveAttribute("href", "/discover");
     await expect(
       scenes.nth(1).getByRole("link", { name: /두 번째 이야기 읽기/ }),
     ).toHaveAttribute("href", "/read/tide-station");

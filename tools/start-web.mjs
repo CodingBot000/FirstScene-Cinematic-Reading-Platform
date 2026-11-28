@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { parseEnv } from "node:util";
 import { spawn } from "node:child_process";
+import { createInterface } from "node:readline";
 import { prepareStandalone, workspace } from "./prepare-standalone.mjs";
 import { validateRuntimeEnvironment } from "../packages/server-data/dist/environment.js";
 const args = process.argv.slice(2);
@@ -31,6 +32,11 @@ const env = {
 };
 delete env.DIRECT_DATABASE_URL;
 delete env.LOCAL_POSTGRES_PASSWORD;
+const requestLog =
+  env.DEPLOY_TARGET === "local" && env.FIRSTSCENE_TEST_KIND === "browser"
+    ? env.FIRSTSCENE_TEST_REQUEST_LOG
+    : undefined;
+delete env.FIRSTSCENE_TEST_REQUEST_LOG;
 try {
   validateRuntimeEnvironment(env);
 } catch (error) {
@@ -48,8 +54,33 @@ try {
 const child = spawn(process.execPath, [server], {
   cwd: app,
   env,
-  stdio: "inherit",
+  stdio: requestLog ? ["inherit", "pipe", "inherit"] : "inherit",
 });
+if (requestLog) {
+  child.stdout.pipe(process.stdout, { end: false });
+  createInterface({ input: child.stdout }).on("line", (line) => {
+    if (!line.startsWith("{")) return;
+    let event;
+    try {
+      event = JSON.parse(line);
+    } catch {
+      return;
+    }
+    const outcome = event?.transaction?.outcome;
+    if (
+      event?.route === "/api/v1/preferences" &&
+      event.status === 200 &&
+      typeof event.requestId === "string" &&
+      /^[a-f0-9-]{36}$/.test(event.requestId) &&
+      (outcome === "committed" || outcome === "replayed")
+    )
+      fs.appendFileSync(
+        requestLog,
+        JSON.stringify({ requestId: event.requestId, outcome }) + "\n",
+        { mode: 0o600 },
+      );
+  });
+}
 for (const signal of ["SIGINT", "SIGTERM"])
   process.once(signal, () => child.kill(signal));
 child.on("error", () => {

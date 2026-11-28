@@ -1,6 +1,7 @@
 import { spawn } from "node:child_process";
 import { randomBytes } from "node:crypto";
 import fs from "node:fs";
+import { tmpdir } from "node:os";
 import path from "node:path";
 import { randomUUID } from "node:crypto";
 import {
@@ -36,7 +37,12 @@ if (
 ) {
   const files = fs
     .readdirSync("tests/e2e")
-    .filter((file) => /\.spec\.[cm]?[jt]sx?$/.test(file))
+    .filter(
+      (file) =>
+        /\.spec\.[cm]?[jt]sx?$/.test(file) &&
+        (projects[0] !== "--project=webkit" ||
+          !file.endsWith(".chromium.spec.ts")),
+    )
     .sort()
     .map((file) => "tests/e2e/" + file);
   const directory =
@@ -117,6 +123,7 @@ if (
   );
 }
 let db;
+let requestLogDirectory;
 try {
   db = await isolatedDatabase();
   const origin = process.env.FIRSTSCENE_TEST_ORIGIN ?? "http://127.0.0.1:3110";
@@ -127,6 +134,10 @@ try {
     url.origin !== origin
   )
     throw new Error("LOOPBACK_TEST_ORIGIN_REQUIRED");
+  if (!api)
+    requestLogDirectory = fs.mkdtempSync(
+      path.join(tmpdir(), "firstscene-requests-"),
+    );
   const env = {
     ...process.env,
     DATABASE_URL: db.runtimeUrl,
@@ -136,6 +147,9 @@ try {
     RATE_LIMIT_HMAC_SECRET: randomBytes(32).toString("hex"),
     FIRSTSCENE_TEST_ORIGIN: origin,
     FIRSTSCENE_TEST_KIND: api ? "api" : "browser",
+    FIRSTSCENE_TEST_REQUEST_LOG: requestLogDirectory
+      ? path.join(requestLogDirectory, "preferences.ndjson")
+      : "",
   };
   const report = {
     observedAt: new Date().toISOString(),
@@ -189,4 +203,6 @@ try {
       console.error("ISOLATED_TEST_DATABASE_CLEANUP_FAILED");
       process.exitCode = 1;
     }
+  if (requestLogDirectory)
+    fs.rmSync(requestLogDirectory, { recursive: true, force: true });
 }

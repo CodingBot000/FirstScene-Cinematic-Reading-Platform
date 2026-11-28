@@ -1,5 +1,69 @@
 import fs from "node:fs";
 import { createHash } from "node:crypto";
+
+const nameParticles = new Set([
+  "은",
+  "는",
+  "이",
+  "가",
+  "을",
+  "를",
+  "의",
+  "도",
+  "에",
+  "에게",
+  "한테",
+  "과",
+  "와",
+  "로",
+  "으로",
+  "만",
+  "부터",
+  "까지",
+  "님",
+  "씨",
+  "라고",
+  "이라고",
+]);
+
+export function loadPrivateSourceDigests(input) {
+  if (
+    !Array.isArray(input) ||
+    !input.length ||
+    input.some(
+      (digest) => typeof digest !== "string" || !/^[a-f0-9]{64}$/.test(digest),
+    )
+  )
+    throw new Error("PRIVATE_SOURCE_DIGESTS_INVALID");
+  return new Set(input);
+}
+
+export function hasExcludedSourceIdentifier(
+  value,
+  digests,
+  { embeddedHangul = false } = {},
+) {
+  const matches = (identifier) =>
+    digests.has(createHash("sha256").update(identifier).digest("hex"));
+  const text = value.normalize("NFKC").toLowerCase();
+  for (const [word] of text.matchAll(/(?<![a-z0-9])[a-z0-9]+(?![a-z0-9])/g)) {
+    if (matches(word)) return true;
+  }
+  for (const [, first, last] of text.matchAll(
+    /(?<![a-z0-9])(?=([a-z]{2,3})[ \t._/-]*([a-z]{2,5}|[\uac00-\ud7a3]{2})(?![a-z0-9\uac00-\ud7a3]))/gu,
+  )) {
+    if (matches(first + last)) return true;
+  }
+  for (const [word] of text.matchAll(/[\uac00-\ud7a3]+/gu)) {
+    if (matches(word)) return true;
+    if (nameParticles.has(word.slice(2)) && matches(word.slice(0, 2)))
+      return true;
+    if (embeddedHangul)
+      for (let index = 0; index + 1 < word.length; index++)
+        if (matches(word.slice(index, index + 2))) return true;
+  }
+  return false;
+}
 export function publicSourceFingerprint(files) {
   const entries = [...new Set(files)]
     .sort()

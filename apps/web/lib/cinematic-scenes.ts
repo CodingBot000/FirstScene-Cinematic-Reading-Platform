@@ -49,12 +49,12 @@ export const cinematicScenes: readonly CinematicSceneDefinition[] = [
   },
   {
     id: "archive",
-    eyebrow: "FIRSTSCENE COLLECTION / 36 STORIES",
+    eyebrow: "공개 예정 컬렉션",
     heading: "아직 열리지 않은",
     accent: "서른네 개의 세계.",
     description: [
-      "완성된 두 편은 지금 읽을 수 있습니다.",
-      "그다음 장면들은 공개를 준비하고 있어요.",
+      "오리지널과 고전은 지금 읽을 수 있어요.",
+      "공개 예정 작품은 전체 컬렉션에서 확인할 수 있어요.",
     ],
     chapter: "03 / 이어질 장면들",
     illustration: "archive",

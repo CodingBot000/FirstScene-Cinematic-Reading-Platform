@@ -71,10 +71,14 @@ function attach() {
   const hide = () => {
     void readingSync.flush(true);
   };
+  const restore = (event: PageTransitionEvent) => {
+    if (event.persisted) externalChange();
+  };
   window.addEventListener("online", online);
   window.addEventListener("offline", online);
   window.addEventListener("storage", storage);
   window.addEventListener("pagehide", hide);
+  window.addEventListener("pageshow", restore);
   document.addEventListener("visibilitychange", hidden);
   detach = () => {
     readingSync.stop();
@@ -84,6 +88,7 @@ function attach() {
     window.removeEventListener("offline", online);
     window.removeEventListener("storage", storage);
     window.removeEventListener("pagehide", hide);
+    window.removeEventListener("pageshow", restore);
     document.removeEventListener("visibilitychange", hidden);
   };
   readingSync.beginNew();

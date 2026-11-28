@@ -1,3 +1,4 @@
+import "server-only";
 import type { ClassicSummary } from "./classic-catalog";
 export type ClassicManuscript = {
   title: string;
