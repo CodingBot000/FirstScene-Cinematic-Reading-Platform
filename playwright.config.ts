@@ -44,6 +44,7 @@ export default defineConfig({
     {
       name: "webkit",
       testDir: "./tests/e2e",
+      testIgnore: "**/*.chromium.spec.ts",
       use: { browserName: "webkit", viewport: { width: 390, height: 844 } },
     },
     { name: "api", testDir: "./tests/api" },

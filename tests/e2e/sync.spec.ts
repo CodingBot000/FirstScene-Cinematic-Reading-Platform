@@ -1,5 +1,6 @@
 import { test, expect } from "@playwright/test";
 import type { Page } from "@playwright/test";
+import { readFileSync } from "node:fs";
 import { createPool } from "@firstscene/server-data";
 import { SYNC_KEY } from "../../apps/web/features/reading-sync/outbox";
 import { verifyActiveTestDatabase } from "../../tools/database/isolated.mjs";
@@ -12,9 +13,23 @@ async function me(page: Page) {
   return response.json();
 }
 
-test("SY-01 a committed preference with a lost ACK is replayed once from its PostgreSQL receipt", async ({
+test("SY-01 a browser setting becomes saved only after the committed request is replayed", async ({
   page,
-}) => {
+}, testInfo) => {
+  const requestLog = process.env.FIRSTSCENE_TEST_REQUEST_LOG;
+  if (!requestLog) throw new Error("DISPOSABLE_REQUEST_LOG_REQUIRED");
+  const outcome = (requestId: string) => {
+    try {
+      return readFileSync(requestLog, "utf8")
+        .split("\n")
+        .filter(Boolean)
+        .map((line) => JSON.parse(line))
+        .find((entry) => entry.requestId === requestId)?.outcome;
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== "ENOENT") throw error;
+      return undefined;
+    }
+  };
   const owner = createPool(process.env.DIRECT_DATABASE_URL!, 1);
   try {
     await verifyActiveTestDatabase(owner);
@@ -23,7 +38,7 @@ test("SY-01 a committed preference with a lost ACK is replayed once from its Pos
     await saved(page);
     const originalRevision = (await me(page)).preferences.revision;
     const requests: { operationId: string; body: string }[] = [];
-    let committed = false;
+    let commitRequestId: string | undefined;
     let release!: () => void;
     const resumeReplay = new Promise<void>((resolve) => (release = resolve));
     await page.route("**/api/v1/preferences", async (route) => {
@@ -31,16 +46,19 @@ test("SY-01 a committed preference with a lost ACK is replayed once from its Pos
       requests.push({ operationId: JSON.parse(body).operationId, body });
       if (requests.length === 1) {
         const response = await route.fetch();
-        committed = response.ok();
+        expect(response.ok()).toBe(true);
+        commitRequestId = response.headers()["x-request-id"];
         await route.abort("connectionreset");
         return;
       }
       await resumeReplay;
       await route.continue();
     });
+    let replay;
     try {
       await page.getByRole("radio", { name: "24px", exact: true }).check();
-      await expect.poll(() => committed).toBe(true);
+      await expect.poll(() => Boolean(commitRequestId)).toBe(true);
+      await expect.poll(() => outcome(commitRequestId!)).toBe("committed");
       await expect.poll(() => requests.length).toBe(2);
       expect(requests[1]!.body === requests[0]!.body).toBe(true);
       await expect(
@@ -50,9 +68,20 @@ test("SY-01 a committed preference with a lost ACK is replayed once from its Pos
         fontSize: 24,
         revision: originalRevision + 1,
       });
+      replay = page.waitForResponse(
+        (response) =>
+          response.request().method() === "PUT" &&
+          new URL(response.url()).pathname === "/api/v1/preferences" &&
+          response.status() === 200,
+      );
     } finally {
       release();
     }
+    const replayRequestId = (await replay).headers()["x-request-id"]!;
+    expect(
+      Boolean(replayRequestId) && replayRequestId !== commitRequestId,
+    ).toBe(true);
+    await expect.poll(() => outcome(replayRequestId)).toBe("replayed");
     await saved(page);
     const receipts = await owner.query(
       `SELECT p.font_size, p.revision::int, count(r.operation_id)::int AS receipts
@@ -71,6 +100,16 @@ test("SY-01 a committed preference with a lost ACK is replayed once from its Pos
       SYNC_KEY,
     );
     expect(durable.queue).toEqual([]);
+    await testInfo.attach("browser-to-database-confirmation", {
+      body: JSON.stringify({
+        firstRequest: "committed",
+        secondRequest: "replayed",
+        databaseReceipts: 1,
+        revisionDelta: 1,
+        uiConfirmed: true,
+      }),
+      contentType: "application/json",
+    });
   } finally {
     await owner.end();
   }
