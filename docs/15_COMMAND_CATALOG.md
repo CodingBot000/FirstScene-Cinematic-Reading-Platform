@@ -136,6 +136,14 @@ pnpm test:security
 ```
 Ownership/CSRF/limits/XSS + secret/public-name scan; no false audit claims.
 
+For a local private-source review with no raw source identifiers, set
+`FIRSTSCENE_PRIVATE_SOURCE_DIGESTS_FILE` when running `pnpm test:security`.
+Point it to the reviewed local JSON array of lowercase SHA-256 digests.
+The scan uses NFKC-normalized lowercase identifiers, including the project's
+two-syllable and joined-name forms. A clean scan issues
+`evidence/security/public-source-review.json` for the exact tracked public
+source fingerprint.
+
 ## CMD-ASSET-PLAN — generation queue
 ```sh
 pnpm assets:plan
@@ -249,14 +257,6 @@ pnpm deploy:smoke -- --base-url VERIFIED_URL
 Run from the deployed Git revision using the paired receipts. The explicit
 `approval.smokeWrites` decision controls whether the script creates temporary
 sessions and checks saving, reload, isolation and assets.
-
-For a local private-source review with no raw source identifiers, set
-`FIRSTSCENE_PRIVATE_SOURCE_DIGESTS_FILE` when running `pnpm test:security`.
-Point it to the reviewed local JSON array of lowercase SHA-256 digests.
-The scan uses NFKC-normalized lowercase identifiers, including the project's
-two-syllable and joined-name forms. A clean scan issues
-`evidence/security/public-source-review.json` for the exact tracked public
-source fingerprint.
 
 ## CMD-DOCS — package docs check
 ```sh

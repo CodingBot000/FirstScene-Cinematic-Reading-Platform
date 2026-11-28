@@ -187,6 +187,37 @@ describe("release evidence", () => {
         reason: "OPERATIONAL_SMOKE_WRITE_APPROVAL_REQUIRED",
         mutationPerformed: false,
       });
+
+      input.approval.smokeWrites = true;
+      writeFileSync(file, JSON.stringify(input));
+      expect(cli("deploy-preflight.mjs").status).toBe(0);
+      expect(
+        spawnSync("git", ["init", "--quiet", "--template="], { cwd }).status,
+      ).toBe(0);
+      expect(
+        spawnSync(
+          "git",
+          [
+            "-c",
+            "user.name=FirstScene fixture",
+            "-c",
+            "user.email=fixture@firstscene.example.org",
+            "commit",
+            "--allow-empty",
+            "--no-gpg-sign",
+            "--quiet",
+            "-m",
+            "fixture revision",
+          ],
+          { cwd },
+        ).status,
+      ).toBe(0);
+      expect(cli("deploy-smoke.mjs", "--base-url", origin).status).toBe(2);
+      expect(read("final-smoke")).toMatchObject({
+        reason: "DEPLOYMENT_SOURCE_COMMIT_MISMATCH",
+        mutationPerformed: false,
+      });
+
       rmSync(file);
       expect(cli("deploy-preflight.mjs").status).toBe(2);
       expect(read("preflight")).toMatchObject({
