@@ -14,7 +14,7 @@ DB 정지 시 `execution/local-database.json`의 소유한 컨테이너를 확�
 
 `.env.local`, `apps/web/.env.local`, `artifacts/private/`는 비공개이며 Git에 추가하지 않습니다. 비밀번호나 접속 URL은 로그에서 제외합니다. 공개 서비스는 Vercel에서 실행되며, Neon PostgreSQL 17을 운영 DB로 사용합니다. 애플리케이션은 제한된 런타임 역할로 접근합니다. 운영 백업의 보존 기한과 복구 작업은 데이터 소유자의 승인을 받습니다. 격리 환경에서 백업은 `pg_dump -Fc`로 비공개 경로에 저장하고 별도의 빈 DB에 복원합니다. [공개 서비스](https://firstscene-one.vercel.app)
 
-마이그레이션은 advisory lock과checksum으로 순서 및 변경을 확인합니다. 배포 서버 시작에서 자동 실행하지 않습니다. `pnpm db:cleanup`은 명시적으로 확인한 로컬 DB에서 만료 세션·receipt·rate bucket을 제한된 배치로 정리합니다. 발급 후30일 유효기간과 실제 정리 시점은 다릅니다. 기록 삭제는 서버204성공 후에만 완료로 표시됩니다. 실패 시 보류 중 변경과 복구 동작을 유지합니다.
+마이그레이션은 advisory lock과checksum으로 순서 및 변경을 확인합니다. 배포 서버 시작에서 자동 실행하지 않습니다. 만료 데이터 정리는 운영자 작업으로 실행합니다. `pnpm db:cleanup`은 명시적으로 확인한 로컬 DB에서 만료 세션·receipt·rate bucket을 제한된 배치로 정리합니다. 발급 후30일 유효기간과 실제 정리 시점은 다릅니다. 기록 삭제는 서버204성공 후에만 완료로 표시됩니다. 실패 시 보류 중 변경과 복구 동작을 유지합니다.
 
 ## 임시 CI DB
 

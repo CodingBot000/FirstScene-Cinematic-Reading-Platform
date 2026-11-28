@@ -1,4 +1,4 @@
-import { beforeAll, afterAll, it, expect } from "vitest";
+import { beforeAll, afterAll, it, expect, vi } from "vitest";
 import { randomUUID, createHmac } from "node:crypto";
 import {
   cleanupExpired,
@@ -6,6 +6,8 @@ import {
   issueSession,
   authenticateSession,
   createStateRepository,
+  consumeRate,
+  createPool,
 } from "@firstscene/server-data";
 import type { Story } from "@firstscene/story-schema";
 import { readFileSync } from "node:fs";
@@ -18,10 +20,20 @@ beforeAll(async () => {
 afterAll(async () => {
   await db?.cleanup();
 });
-it("P04 delete cascades all owned rows and write bucket; repeated and expired-token deletion is safe", async () => {
+it("P04 session deletion clears owned rows and stale contexts cannot restore the write bucket", async () => {
   const a = await issueSession(db.runtime, secret(), null, "loopback");
   const b = await issueSession(db.runtime, secret(), null, "loopback");
   const ctx = (await authenticateSession(db.runtime, a.token))!;
+  const writeBucket = createHmac("sha256", secret())
+    .update("write:" + ctx.epoch)
+    .digest();
+  const bucketRows = async () =>
+    (
+      await db.owner.query(
+        "SELECT 1 FROM firstscene.rate_buckets WHERE bucket_key=$1",
+        [writeBucket],
+      )
+    ).rowCount;
   const story = JSON.parse(
     readFileSync("content/generated/stories/post-office.json", "utf8"),
   ) as Story;
@@ -65,18 +77,7 @@ it("P04 delete cascades all owned rows and write bucket; repeated and expired-to
         )
       ).rowCount,
     ).toBe(0);
-  expect(
-    (
-      await db.owner.query(
-        "SELECT 1 FROM firstscene.rate_buckets WHERE bucket_key=$1",
-        [
-          createHmac("sha256", secret())
-            .update("write:" + ctx.epoch)
-            .digest(),
-        ],
-      )
-    ).rowCount,
-  ).toBe(0);
+  expect(await bucketRows()).toBe(0);
   expect(await authenticateSession(db.runtime, b.token)).not.toBeNull();
   await expect(
     repo.putPreferences(ctx, {
@@ -88,6 +89,69 @@ it("P04 delete cascades all owned rows and write bucket; repeated and expired-to
       theme: "dark",
     }),
   ).rejects.toMatchObject({ status: 401 });
+  expect(await bucketRows()).toBe(0);
+});
+it("P04 deletion clears a bucket committed while waiting for the session lock", async () => {
+  const session = await issueSession(db.runtime, secret(), null, "loopback");
+  const context = (await authenticateSession(db.runtime, session.token))!;
+  const deletingPool = createPool(db.runtimeUrl, 1);
+  const writer = await db.runtime.connect();
+  let writerInTransaction = false;
+  let deleting: Promise<void> | undefined;
+  try {
+    await deletingPool.query(
+      "SET SESSION CHARACTERISTICS AS TRANSACTION ISOLATION LEVEL REPEATABLE READ",
+    );
+    const { rows: deletingConnection } = await deletingPool.query<{
+      pid: number;
+    }>("SELECT pg_backend_pid() AS pid");
+    const { rows: writingConnection } = await writer.query<{ pid: number }>(
+      "SELECT pg_backend_pid() AS pid",
+    );
+    await writer.query("BEGIN");
+    writerInTransaction = true;
+    await consumeRate(
+      writer,
+      secret(),
+      "write:" + context.epoch,
+      120,
+      60,
+      context,
+    );
+    deleting = deleteSession(deletingPool, session.token, secret());
+    void deleting.catch(() => {});
+    await vi.waitFor(async () => {
+      const { rows } = await db.owner.query<{ waiting: boolean }>(
+        "SELECT $2::int = ANY(pg_blocking_pids($1)) AS waiting",
+        [deletingConnection[0]?.pid, writingConnection[0]?.pid],
+      );
+      expect(rows[0]?.waiting).toBe(true);
+    });
+    await writer.query("COMMIT");
+    writerInTransaction = false;
+    await deleting;
+    expect(await authenticateSession(db.runtime, session.token)).toBeNull();
+    const { rowCount } = await db.owner.query(
+      "SELECT 1 FROM firstscene.rate_buckets WHERE bucket_key=$1",
+      [
+        createHmac("sha256", secret())
+          .update("write:" + context.epoch)
+          .digest(),
+      ],
+    );
+    expect(rowCount).toBe(0);
+  } finally {
+    try {
+      if (writerInTransaction) {
+        await writer.query("ROLLBACK");
+        writerInTransaction = false;
+      }
+    } finally {
+      writer.release(writerInTransaction);
+      await deleting?.catch(() => {});
+      await deletingPool.end();
+    }
+  }
 });
 it("P04 cleanup bounds each table, skips locked rows and preserves live sessions/receipts/buckets", async () => {
   const live = await issueSession(db.runtime, secret(), null, "loopback");

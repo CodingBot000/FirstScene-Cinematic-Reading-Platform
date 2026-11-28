@@ -38,7 +38,8 @@ export async function deleteSession(
   const client = await pool.connect();
   try {
     assertDeadline(deadline);
-    await client.query("BEGIN");
+    // Read the bucket committed by a writer that held the session lock.
+    await client.query("BEGIN ISOLATION LEVEL READ COMMITTED");
     const row = (
       await client.query<{ epoch: string }>(
         "DELETE FROM firstscene.sessions WHERE token_hash=$1 RETURNING epoch",

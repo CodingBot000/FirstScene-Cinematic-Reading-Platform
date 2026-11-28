@@ -21,7 +21,7 @@ import type {
   ApiSchemaName,
 } from "./contracts.js";
 import { feedbackPolicy, feedbackWindowQuery } from "./feedback-policy.js";
-import { consumeRate } from "./session.js";
+import { consumeSessionWriteRate } from "./session.js";
 import { recordTransaction } from "./request-diagnostics.js";
 type MutationResult<T> = { status: number; body: T | null };
 type ProgressRow = {
@@ -93,7 +93,7 @@ export function createStateRepository(
     deadline: number,
   ): Promise<MutationResult<T>> {
     assertDeadline(deadline);
-    await consumeRate(pool, secret, "write:" + context.epoch, 120, 60);
+    await consumeSessionWriteRate(pool, secret, context);
     const values = Object.fromEntries(
       Object.entries(body)
         .filter(([key]) => key !== "operationId")

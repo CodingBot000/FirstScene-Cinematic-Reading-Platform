@@ -1,8 +1,5 @@
 export { createPool, assertOwnedLocalUrl } from "./pool.js";
-export {
-  validateRuntimeEnvironment,
-  shouldRunRequestCleanup,
-} from "./environment.js";
+export { validateRuntimeEnvironment } from "./environment.js";
 export { migrateDatabase, ensureRuntimeRole } from "./migrations.js";
 export type { Pool, PoolClient, QueryResultRow } from "./pool.js";
 export {

@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { createHash } from "node:crypto";
-import { createPool, assertApi } from "@firstscene/server-data";
+import { cleanupExpired, createPool, assertApi } from "@firstscene/server-data";
 import type { Pool } from "@firstscene/server-data";
 import { verifyActiveTestDatabase } from "../../tools/database/isolated.mjs";
 let owner: Pool;
@@ -175,7 +175,7 @@ test("P04 realCookieA/B ownedread ignores requested foreignsession IDs", async (
     await b.dispose();
   }
 });
-test("P04 expiredcookie cannot authenticate and receives a newepoch only byPOST", async ({
+test("P04 rejects expired sessions and keeps their rows for explicit maintenance", async ({
   request,
 }) => {
   const first = await (
@@ -191,7 +191,17 @@ test("P04 expiredcookie cannot authenticate and receives a newepoch only byPOST"
     data: {},
   });
   expect(next.status()).toBe(200);
-  expect((await next.json()).epoch === first.epoch).toBe(false);
+  expect((await next.json()).epoch).not.toBe(first.epoch);
+  const expiredRows = async () =>
+    (
+      await owner.query("SELECT 1 FROM firstscene.sessions WHERE epoch=$1", [
+        first.epoch,
+      ])
+    ).rowCount;
+  expect(await expiredRows()).toBe(1);
+  await cleanupExpired(owner);
+  expect(await expiredRows()).toBe(0);
+  expect((await request.get("/api/v1/me")).status()).toBe(200);
 });
 test("P04 concurrent61newcookie-lessHTTPcalls obey30perfixednetworkwindow despite spoofedXFF", async ({
   baseURL,
