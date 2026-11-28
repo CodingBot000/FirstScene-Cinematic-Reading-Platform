@@ -12,7 +12,7 @@ DB 정지 시 `execution/local-database.json`의 소유한 컨테이너를 확�
 
 2026-11-28 로컬 복구 훈련에서는 격리 PostgreSQL 17.12의 합성 세션·설정·영수증을 `pg_dump -Fc`로 백업했습니다. 별도 빈 DB에 `pg_restore --no-owner --exit-on-error`로 복원한 뒤 7개 테이블의 행 해시와 제한 역할을 쓰는 앱의 설정 조회를 확인했습니다. 운영 백업 복원과 운영 롤백은 별도 승인과 검증이 필요합니다. [복구 훈련과 증거](case-study.md#빌드와-복구를-확인하는-방법)
 
-`.env.local`, `apps/web/.env.local`, `artifacts/private/`는 비공개이며 Git에 추가하지 않습니다. 비밀번호나 접속URL을 로그에 복사하지 마세요. DB 백업은 비공개 경로에pg_dump custom format으로 저장하고, 복원은 별도의 빈 DB에 수행합니다. 현재 이 프로젝트의 공개 운영 DB나 승인된 운영 백업 보존 기준은 없습니다. 실제 운영 복구는 대상·권한·보존 기준을 확인한 후 검증해야 합니다.
+`.env.local`, `apps/web/.env.local`, `artifacts/private/`는 비공개이며 Git에 추가하지 않습니다. 비밀번호나 접속 URL은 로그에서 제외합니다. 공개 서비스는 Vercel에서 실행되며, Neon PostgreSQL 17을 운영 DB로 사용합니다. 애플리케이션은 제한된 런타임 역할로 접근합니다. 운영 백업의 보존 기한과 복구 작업은 데이터 소유자의 승인을 받습니다. 격리 환경에서 백업은 `pg_dump -Fc`로 비공개 경로에 저장하고 별도의 빈 DB에 복원합니다. [공개 서비스](https://firstscene-one.vercel.app)
 
 마이그레이션은 advisory lock과checksum으로 순서 및 변경을 확인합니다. 배포 서버 시작에서 자동 실행하지 않습니다. `pnpm db:cleanup`은 명시적으로 확인한 로컬 DB에서 만료 세션·receipt·rate bucket을 제한된 배치로 정리합니다. 발급 후30일 유효기간과 실제 정리 시점은 다릅니다. 기록 삭제는 서버204성공 후에만 완료로 표시됩니다. 실패 시 보류 중 변경과 복구 동작을 유지합니다.
 
@@ -51,7 +51,9 @@ GitHub Actions의 PR 및 `main` 검사는 `pnpm check:ci`로 빌드, 실제 DB�
 
 Docker 이미지는 `pnpm container:build`로 만들고, 준비된 임시 CI DB에서 `pnpm container:smoke`로 검사합니다. 이미지는 비root 사용자로 실행하며 비밀값과 마이그레이션 소유자 환경은 포함하지 않습니다. Docker smoke의 로컬 재시작 증거는 공개 환경의rollback 증거를 대신하지 않습니다.
 
-2026-11-27에 `main` `e75db43`을 기존 Vercel 운영 대상에 배포했습니다. 운영 확인 범위와 CI 상태는 릴리스 보고서에 기록했습니다. 다음 배포 전에는 승인된 프로젝트, 요금, DB 호환성, TLS, 연결 풀, 비밀값 관리, 복귀 아티팩트를 확인합니다. [릴리스 보고서](../../RELEASE_REPORT.md)
+2026-11-28에 공개 `main` `45f1878`의 Vercel 운영 배포를 확인했습니다. 같은 커밋의 CI 19개와 Docker smoke 13건이 통과했고, 공개 도메인의 읽기 전용 경로 6곳이 HTTP 200을 반환했습니다. [main CI](https://github.com/CodingBot000/FirstScene-Cinematic-Reading-Platform/actions/runs/46074995204) · [운영 배포](https://vercel.com/miracle3days-projects/firstscene/BKopQQcjCk7KPSShWyvU7mf5pWFW)
+
+`pnpm deploy:preflight`는 승인된 프로젝트의 요금, DB 호환성, TLS, 연결 풀, 최소 권한 및 비밀값 보관 증거를 검증해 영수증을 발행합니다. `pnpm deploy:smoke`는 배포 커밋과 영수증을 대조한 뒤 승인된 임시 세션의 저장과 격리를 확인합니다. 운영 롤백과 백업 복원은 해당 작업의 승인을 받습니다. [입력 형식과 명령](../15_COMMAND_CATALOG.md#cmd-deploy-preflight--remote-capability)
 
 PR에서는 추적 파일의 비밀값, 클라이언트 번들, 인증 우회 여부와 API 부정 사례를 검사합니다. 비공개 입력으로 확인해야 하는 별도 검사는 일치하는 증거가 없으면 `DEFERRED_TO_RELEASE`로 기록합니다. 엄격 검사에는 로컬 비공개 입력 또는 정확한 소스에 대한 유효한 검증 증거가 필요합니다.
 
