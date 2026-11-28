@@ -201,13 +201,54 @@ Delete expired session/receipt/rate data in bounded batches, redacted counts onl
 ```sh
 pnpm deploy:preflight
 ```
-Read-only target/auth/cost/version checks. Never auto-create paid resources.
+Use a reviewed, secret-free snapshot of the approved target at
+`evidence/deploy/release-target.json` or pass `-- --evidence FILE`. Keep this
+operator input local. Record its observation time, the approval reference and
+exact approved origin, current hosting and database plans, provider secret
+storage, and verified PostgreSQL 17, TLS, pooling and runtime privileges.
+
+```json
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-10-01T00:00:00Z",
+  "approval": {
+    "targetId": "prj_example",
+    "publicUrl": "https://firstscene.example.org",
+    "reference": "recorded project approval",
+    "smokeWrites": false
+  },
+  "provider": {
+    "status": "VERIFIED",
+    "projectId": "prj_example",
+    "publicUrl": "https://firstscene.example.org",
+    "plan": "hobby",
+    "secretStorage": "vercel-environment"
+  },
+  "database": {
+    "provider": "neon",
+    "major": 17,
+    "plan": "free",
+    "tlsVerified": true,
+    "pooled": true,
+    "restrictedRuntimeRole": true
+  },
+  "costWithinApproval": true
+}
+```
+
+Use values from the approved project and its current provider observations.
+Preflight writes `evidence/deploy/preflight.json`. To issue the matching
+`deployment.json`, include an observed `deployment` object with `projectId`,
+`publicUrl`, `id`, full Git `commit`, `state: "READY"`, `target: "production"`
+and `aliasVerified: true`.
 
 ## CMD-DEPLOY-SMOKE — public validation
 ```sh
 pnpm deploy:smoke -- --base-url VERIFIED_URL
 ```
-Verify actual production session/TLS/DB/isolation/assets; same-origin headers correctly set.
+Run from the deployed Git revision using the paired receipts. The explicit
+`approval.smokeWrites` decision controls whether the script creates temporary
+sessions and checks saving, reload, isolation and assets.
 
 ## CMD-DOCS — package docs check
 ```sh

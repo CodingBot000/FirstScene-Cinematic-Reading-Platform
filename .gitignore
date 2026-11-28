@@ -26,6 +26,7 @@
 *.dump
 *.sql.gz
 /execution/local-database.json
+/evidence/deploy/release-target.json
 
 # Installed dependencies and generated outputs.
 node_modules/

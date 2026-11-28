@@ -192,7 +192,7 @@
       "id": "CMD-DEPLOY-PREFLIGHT",
       "purpose": "remote capability",
       "command": "pnpm deploy:preflight",
-      "acceptance": "Read-only target/auth/cost/version checks. Never auto-create paid resources."
+      "acceptance": "Validate the recorded approval, target, cost, and runtime evidence. Issue bound receipts for the approved target and observed production deployment."
     },
     {
       "id": "CMD-DEPLOY-SMOKE",

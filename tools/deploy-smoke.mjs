@@ -1,6 +1,11 @@
 import fs from "node:fs";
+import { execFileSync } from "node:child_process";
 import { randomUUID, createHash } from "node:crypto";
 import { request } from "@playwright/test";
+import {
+  canonicalPublicOrigin,
+  validateSmokeEvidence,
+} from "./release-evidence.mjs";
 const args = process.argv.slice(2).filter((arg) => arg !== "--");
 const directory = "evidence/deploy";
 fs.mkdirSync(directory, { recursive: true });
@@ -24,56 +29,40 @@ const created = [];
 try {
   if (args.length !== 2 || args[0] !== "--base-url")
     throw new Error("VERIFIED_BASE_URL_REQUIRED");
-  const url = new URL(args[1]);
-  if (
-    url.protocol !== "https:" ||
-    url.origin !== args[1] ||
-    url.username ||
-    url.password ||
-    /^(?:localhost|127\.|\[?::1)/.test(url.hostname)
-  )
-    throw new Error("CANONICAL_PUBLIC_HTTPS_REQUIRED");
+  const origin = canonicalPublicOrigin(args[1]);
   const preflightFile = directory + "/preflight.json",
     deploymentFile = directory + "/deployment.json";
   if (!fs.existsSync(preflightFile) || !fs.existsSync(deploymentFile))
     throw new Error("APPROVED_DEPLOYMENT_EVIDENCE_REQUIRED");
   const preflight = JSON.parse(fs.readFileSync(preflightFile)),
     deployment = JSON.parse(fs.readFileSync(deploymentFile));
-  if (
-    preflight.status !== "PREFLIGHT_PASSED" ||
-    preflight.approvedReleaseTarget !== true ||
-    deployment.status !== "DEPLOYED" ||
-    deployment.publicUrl !== url.origin ||
-    !deployment.commit ||
-    !deployment.deploymentId ||
-    deployment.targetId !== preflight.targetId
-  )
-    throw new Error("APPROVED_DEPLOYMENT_EVIDENCE_REQUIRED");
+  validateSmokeEvidence(preflight, deployment, origin);
+  const sourceCommit = execFileSync("git", ["rev-parse", "HEAD"], {
+    encoding: "utf8",
+    stdio: ["ignore", "pipe", "ignore"],
+  }).trim();
+  if (deployment.commit !== sourceCommit)
+    throw new Error("DEPLOYMENT_SOURCE_COMMIT_MISMATCH");
   authorized = true;
-  report.baseUrl = url.origin;
+  report.baseUrl = origin;
   report.deploymentCommit = deployment.commit;
   report.deploymentId = deployment.deploymentId;
   report.receipts = [preflightFile, deploymentFile].map((path) => ({
     path,
     sha256: createHash("sha256").update(fs.readFileSync(path)).digest("hex"),
   }));
-  const headers = { origin: url.origin, "content-type": "application/json" };
-  a = await request.newContext({
-    baseURL: url.origin,
+  const headers = { origin, "content-type": "application/json" };
+  const options = {
+    baseURL: origin,
     extraHTTPHeaders: headers,
     ignoreHTTPSErrors: false,
-  });
-  b = await request.newContext({
-    baseURL: url.origin,
-    extraHTTPHeaders: headers,
-    ignoreHTTPSErrors: false,
-  });
+    maxRedirects: 0,
+  };
+  a = await request.newContext(options);
+  b = await request.newContext(options);
   for (const endpoint of ["/health/live", "/health/ready"]) {
     const response = await a.get(endpoint);
-    if (
-      response.status() !== 200 ||
-      new URL(response.url()).origin !== url.origin
-    )
+    if (response.status() !== 200 || new URL(response.url()).origin !== origin)
       throw new Error("HTTPS_HEALTH_FAILED");
     report.checks.push({ name: endpoint, status: "PASS" });
   }
@@ -118,9 +107,8 @@ try {
   if (put.status() !== 200) throw new Error("DATABASE_WRITE_FAILED");
   const state = await a.storageState();
   const reload = await request.newContext({
-    baseURL: url.origin,
+    ...options,
     storageState: state,
-    extraHTTPHeaders: headers,
   });
   try {
     const restored = await (await reload.get("/api/v1/me")).json(),
