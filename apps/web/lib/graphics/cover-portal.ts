@@ -137,8 +137,14 @@ export function mountCoverPortal(
     window.removeEventListener("pagehide", hidePage);
     window.removeEventListener("pageshow", showPage);
     window.removeEventListener("scroll", markPointerDirty);
-    if (vao) gl.deleteVertexArray(vao);
-    if (program) gl.deleteProgram(program);
+    if (vao) {
+      gl.bindVertexArray(null);
+      gl.deleteVertexArray(vao);
+    }
+    if (program) {
+      gl.useProgram(null);
+      gl.deleteProgram(program);
+    }
     for (const shader of shaders) gl.deleteShader(shader);
     canvas.dataset.renderer = "inactive";
   };
