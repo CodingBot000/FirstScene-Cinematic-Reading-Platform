@@ -48,6 +48,13 @@ it("scans normalized identifiers from hashes without loading the source text", (
   ).toBe(true);
   expect(hasExcludedSourceIdentifier("source/FS-test.json", values)).toBe(true);
   expect(hasExcludedSourceIdentifier("화면 검수", values)).toBe(true);
+  expect(hasExcludedSourceIdentifier("검수에게 전달", values)).toBe(true);
+  expect(hasExcludedSourceIdentifier("검수자료실", values)).toBe(false);
+  expect(
+    hasExcludedSourceIdentifier("검수자료실.md", values, {
+      embeddedHangul: true,
+    }),
+  ).toBe(true);
   expect(hasExcludedSourceIdentifier("다른 파일", values)).toBe(false);
   expect(() => loadPrivateSourceDigests([])).toThrow(
     "PRIVATE_SOURCE_DIGESTS_INVALID",

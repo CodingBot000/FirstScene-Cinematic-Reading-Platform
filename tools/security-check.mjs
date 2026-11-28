@@ -273,8 +273,9 @@ check("PUBLIC_PRIVATE_SOURCE_NAME_SCAN", () => {
     const text = fs.readFileSync(file, "utf8");
     if (
       digests
-        ? hasExcludedSourceIdentifier(file, digests) ||
-          hasExcludedSourceIdentifier(text, digests)
+        ? hasExcludedSourceIdentifier(file, digests, {
+            embeddedHangul: true,
+          }) || hasExcludedSourceIdentifier(text, digests)
         : stems.some((term) => file.includes(term) || text.includes(term))
     )
       throw new Error("EXCLUDED_SOURCE_IDENTIFIER_FOUND");
