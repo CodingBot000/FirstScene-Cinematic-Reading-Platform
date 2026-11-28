@@ -157,6 +157,11 @@ export const transportSchemas = {
         type: "string",
         pattern: "^[a-z][a-z0-9-]{1,63}$",
       },
+      furthestOrdinal: {
+        type: "integer",
+        minimum: 0,
+        maximum: 35,
+      },
       fraction: {
         type: "number",
         minimum: 0,

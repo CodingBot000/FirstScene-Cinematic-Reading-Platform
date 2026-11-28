@@ -51,6 +51,9 @@ export type Pending = {
   sent?: boolean;
   ownerId?: string;
   intentId?: string;
+  furthestOrdinal?: number;
+  // Older tabs read the v1 body and ignore the independently frozen request.
+  progressWire?: ProgressWrite;
 };
 export type Durable = {
   schemaVersion: 1;
@@ -83,7 +86,21 @@ export function validPending(item: Pending) {
     return (
       item.method === "PUT" &&
       item.path === "/api/v1/progress/" + item.key.slice(9) &&
-      isTransport("ProgressWrite", item.body)
+      isTransport("ProgressWrite", item.body) &&
+      (item.furthestOrdinal === undefined ||
+        (Number.isInteger(item.furthestOrdinal) &&
+          item.furthestOrdinal >= 0 &&
+          item.furthestOrdinal <= 35)) &&
+      (item.progressWire === undefined ||
+        (isTransport("ProgressWrite", item.progressWire) &&
+          item.progressWire.operationId !== item.body.operationId &&
+          item.progressWire.contentHash === item.body.contentHash &&
+          item.progressWire.contentVersion === item.body.contentVersion &&
+          item.progressWire.sceneId === item.body.sceneId &&
+          item.progressWire.beatId === item.body.beatId &&
+          item.progressWire.fraction === item.body.fraction &&
+          item.progressWire.expectedRevision === item.body.expectedRevision &&
+          item.progressWire.completed === item.body.completed))
     );
   if (new RegExp(`^bookmark:${id}:(?:__story__|${id})$`).test(item.key))
     return (
@@ -143,18 +160,40 @@ export function mergePending(previous: Pending, item: Pending): Pending {
     if (previous.conflicts !== item.conflicts)
       return previous.conflicts > item.conflicts ? previous : item;
   }
-  if (previous.body.operationId === item.body.operationId)
-    return previous.sent ? previous : item;
+  const sameOperation = previous.body.operationId === item.body.operationId;
+  const newest = previous.changedAt > item.changedAt ? previous : item;
+  const selected = sameOperation
+    ? previous.progressWire || (previous.sent && !item.progressWire)
+      ? previous
+      : item
+    : newest;
   if (
     previous.key.startsWith("progress:") &&
     isTransport("ProgressWrite", previous.body) &&
     isTransport("ProgressWrite", item.body)
   ) {
-    // A completion is an explicit milestone. The latest ordinary anchor remains in the existing bounded cache until its acknowledgement.
-    if (previous.body.completed && !item.body.completed) return previous;
-    if (item.body.completed && !previous.body.completed) return item;
+    const winner =
+      previous.body.completed !== item.body.completed
+        ? previous.body.completed
+          ? previous
+          : item
+        : selected;
+    if (
+      previous.body.contentHash !== item.body.contentHash ||
+      previous.body.contentVersion !== item.body.contentVersion ||
+      (previous.furthestOrdinal === undefined &&
+        item.furthestOrdinal === undefined)
+    )
+      return winner;
+    return {
+      ...winner,
+      furthestOrdinal: Math.max(
+        previous.furthestOrdinal ?? 0,
+        item.furthestOrdinal ?? 0,
+      ),
+    };
   }
-  return previous.changedAt > item.changedAt ? previous : item;
+  return selected;
 }
 export type PreferenceIntent = {
   schemaVersion: 1;

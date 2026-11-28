@@ -261,6 +261,9 @@ export function createStateRepository(
     );
     if (ordinal < 0)
       throw new ApiError(400, "INVALID_ANCHOR", "유효한 문장 위치가 아니에요.");
+    const furthest = Math.max(ordinal, input.furthestOrdinal ?? ordinal);
+    if (furthest >= info.beats.length)
+      throw new ApiError(400, "INVALID_ANCHOR", "유효한 문장 위치가 아니에요.");
     if (input.completed && ordinal !== info.beats.length - 1)
       throw new ApiError(
         400,
@@ -302,7 +305,7 @@ export function createStateRepository(
               input.sceneId,
               input.beatId,
               input.fraction,
-              ordinal,
+              furthest,
               input.completed,
             ],
           )

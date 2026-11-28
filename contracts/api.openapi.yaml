@@ -795,6 +795,10 @@ components:
         contentHash: *id010
         sceneId: *id007
         beatId: *id007
+        furthestOrdinal:
+          type: integer
+          minimum: 0
+          maximum: 35
         fraction: *id011
         completed: *id012
         expectedRevision: *id005
